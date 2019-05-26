@@ -11,7 +11,7 @@ We will use a combination of the topics you go through the first three days to s
 
 ### 1. Setting things up
 
-Here it will be decribed how to connect the raspberry pi to the computer and make it appear on the screen. (too basic?)
+Here it will be decribed how to connect the rPi to the computer and make it appear on the screen. (too basic?)
 
 ### 2. Connection to the rPi with SSH
 
@@ -19,4 +19,4 @@ Here it will be decribed how to connect to the rPi over SSH using the terminal. 
 
 ### 3. Changing the SSH password
 
-Here it will be decribed how to change the SSH password for the user using the terminal. Complementary information will be added.
+Here it will be decribed how to change the SSH password using the terminal. Complementary information will be added.

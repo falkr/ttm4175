@@ -13,11 +13,11 @@ Here it will be described what what Vim (Or Leafpad) is, and how to use it.
 
 ### 2. Setting things up
 
-Here it will be described where they can find and HTML template file which they will edit to see their work in action. They will also learn about `xdg-open`to open their files after they save. 
+Here it will be described where they can find and HTML template file which they will edit to see their work in action. They will also learn about `xdg-open`to open their *.html* files.
 
 ### 3. Making a website
 
-Here it will be purposed things to put in their HTML file (lists, headers, boxes, buttons etc). They can play around with this. Opening the HTML file in a browser will hopefully give them and understanding of what HTML is.
+Here it will be purposed things to put in their HTML file (lists, headers, boxes, buttons etc). They can play around with this. Opening their file in a browser will hopefully give them and understanding of what HTML is.
 
 
 
