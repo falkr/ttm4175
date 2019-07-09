@@ -15,26 +15,8 @@ De to første ukene er emnet integrert i studiestart:
 Fra uke 35 har vi følgende rom og tider:
 
 * onsdag, 08:15-10:00 Forelesning of forberedelse. [GL-VE VE22 (Smash Lab)](smash.html)
-* onsdag, 10:00-12:00 Lab, del 1 [Sahara Lab](http://s.mazemap.com/1MS2Os5 )
-* torsdag, 10:15-12:00 Lab, del 2 [Sahara Lab](http://s.mazemap.com/1MS2Os5 )
-
-
-## Forventninger til deg som student
-
-Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.
-
-Vi forventer at du:
-
-- Deltar aktivt på alle forelesningene.
-- Deltar aktivt i labarbeidene på de oppsatte veiledningstimene.
-- Bidrar til et positivt og konstruktivt gruppearbeid.
-- Bidrar i å skrive avsluttende rapport fra hver lab.
-- Vurdering
-
-Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.
-
-Det er ingen eksamen i emnet.
-
+* onsdag, 10:00-12:00 Lab, del 1 [Sahara Lab](http://s.mazemap.com/1MS2Os5)
+* torsdag, 10:15-12:00 Lab, del 2 [Sahara Lab](http://s.mazemap.com/1MS2Os5)
 
 <div>
 <table class="table table-sm">
@@ -74,3 +56,23 @@ Det er ingen eksamen i emnet.
 </tbody>
 </table>
 </div>
+
+
+## Forventninger til deg som student
+
+Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.
+
+Vi forventer at du:
+
+- Deltar aktivt på alle forelesningene.
+- Deltar aktivt i labarbeidene på de oppsatte veiledningstimene.
+- Bidrar til et positivt og konstruktivt gruppearbeid.
+- Bidrar i å skrive avsluttende rapport fra hver lab.
+
+## Vurdering
+
+Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.
+
+Det er ingen eksamen i emnet.
+
+
