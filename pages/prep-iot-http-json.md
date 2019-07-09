@@ -1,0 +1,1 @@
+<a href="https://www.iik.ntnu.no/ttm4175/wp-content/uploads/2018/10/http.pdf">Preparation material as PDF</a>
