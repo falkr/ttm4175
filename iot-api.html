@@ -121,40 +121,45 @@
 
 
 <div class="page">
-    </section>
     <section class="content">
-<h1 id="internet-of-things">Internet of Things</h1>
+<p><strong>Goal:</strong> Letâs create a more advanced alarm system that detects some movement (with the PIR sensor), takes a picture (with the USB webcam) and notifies you via Slack.</p>
+<p>For this task, we work again in Python.</p>
+<p>Altogether, this is a difficult and complex task; you need to coordinate many functions and APIs. Therefore, try to build the application step by step, and try each function in isolation before putting everything together.</p>
+<p>Below is a list of steps. You don’t have to do them in the given order.</p>
+<p><strong>Task:</strong> Read first through all steps, and try to make a sequence diagram of the final application. The diagram should show a lifeline for your application, a lifeline for the PIR sensor, the camera, the cloudinary API and the Slack API.</p>
+<p><strong>Task:</strong> Think through if you are using an approach that is more of an orchestration or an choreography. Which approach works here?</p>
+<p><strong>Task:</strong> Once you have the sequence diagram, work on each of the steps.</p>
+<h3 id="step-slack-message-with-image">Step: Slack Message with Image</h3>
+<p>The Slack API allows you to display an image alongside your message. However, Slack expects that you send the URL of an image, not the image itself. (This may have changed, and there may be a way to also upload the image directly to Slack. You can select how to do this.)</p>
+<p>Before you try to upload your own image from the webcam, you should test how the Slack API works and provide it with an image that is accessible on the internet by a url. (You can for instance use http://lorempixel.com for that.)</p>
+<ul>
+<li>Check the <a href="https://api.slack.com/rtm">messaging API of Slack.</a> This tells you about how to add an image to a message.</li>
+<li>Slack also has an <a href="https://slackapi.github.io/python-slackclient/">SDK for Python.</a></li>
+</ul>
 
-<p>We start the second lab with an introduction to the vision of the Internet of Things.</p>
+<h3 id="step-taking-a-picture">Step: Taking a Picture</h3>
+<p>Find a way to capture an image with a USB camera in Python. Itâs a standard USB camera, and there should be code out there that does the job.</p>
+<h3 id="step-uploading-an-image-to-slack">Step: Uploading an Image to Slack</h3>
+<p>This should work with the <a href="https://slackapi.github.io/python-slackclient/">SDK for Python.</a></p>
 
-<h2 id="what-is-the-internet-of-things">What is the Internet of Things?</h2>
-<p>Let’s start with a talk on the opportunities that the Internet of Things may give us:</p>
-<!-- 16:37 -->
+<h3 id="alternative-step-uploading-an-image-to-cloudinary">Alternative Step: Uploading an Image to Cloudinary</h3>
+<p>This is only necessary if you din’t manage to upload an image to Slack. Since Slack expects the URL to an image and not the image itself, we need to upload the camera picture somewhere and make it accessible via an URL.</p>
+<p>One way to achieve it is to use a hosting service for images, like <a href="cloudinary.com">Cloudinary</a>. It offers an API to uplpoad images, and retrieve a URL for them. Have a look at their <a href="https://github.com/cloudinary/pycloudinary">SDK for Python on Github</a>. (Tip: It seems you can install it again via <em>pip install cloudinary</em>.)</p>
+<ul>
+<li>Create an account at Cloudinary.</li>
+<li>Install the Python SDK.</li>
+<li>Upload an image and test if it is accessible in the URL via a browser.</li>
+</ul>
 
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_AlcRoqS65E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h2 id="iot-security-safety-privacy">IoT Security, Safety, Privacy</h2>
-<p>The following are three videos that discuss security, safety and privacy within the IoT. Let’s first have a look at security in general:</p>
-<!-- 15:15 -->
+<h3 id="step-sensing-movement">Step: Sensing Movement</h3>
+<p>Use the PIR sensor to detect movement, as in the first week.</p>
+<h3 id="finally-putting-all-together">Finally: Putting all Together</h3>
+<p>Once you have control over all of the individual steps above, put everything together to build the complete alarm system.</p>
+<p><strong>For the Report:</strong> Document how it works in a series of screenshots and photos, for instance like in a comic strip. Also, take a video that shows how your system works. The video can (and should) be short, ca 1 or 2 minutes. You don’t have to do a lot of editing, just show how the system works. We have added a section in Blackboard to deliver the video.</p>
+<p><strong>Well done!</strong></p>
+<h3 id="optionally-add-more-functionality">Optionally: Add More Functionality</h3>
+<p>If you have time and energy left, try to find other APIs on the web and extend your application with some more useful functionality.</p>
 
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D3yrk4TaIQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h2 id="safety-in-iot">Safety in IoT</h2>
-<!-- 7:48 -->
-<p>This is a video from the Computerphile Channel. From the description: “A hacked car that could kill you should be more worrying than a thousand lightbulbs taking Facebook offline. University of Cambridge’s Professor Ross Anderson explains why safety should be higher on the agenda than privacy.”</p>
-
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PLiE0Nr8VOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h2 id="discussion-with-richard-stallman">Discussion with Richard Stallman</h2>
-<!-- 17:37  -->
-<p>The following is an interview with <a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>, the founder of the Free Software Foundation. The interview starts a bit awkward, but gets into the fundamental privacy issues raised by IoT.</p>
-
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AAP4N3KyLmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
     </section>
 </div>
 
