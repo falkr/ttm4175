@@ -223,7 +223,7 @@ of the following 15 subscription topics will receive this message?
 <caption style=""></caption>
 <thead>
 <tr class="row-1">
-<th>Week</th><th>Date</th><th>Preparation</th>
+<th></th><th>Subscription Topic</th>
 </tr>
 </thead>
 <tbody class="row-hover">
