@@ -1,5 +1,6 @@
 # HTTP and JSON
 
+
 In this week, we will communicate via HTTP and build our own little
 server for that. This server will be able to serve a simple website and
 we will use it to store data from the Raspberry Pi.
@@ -259,7 +260,7 @@ standard that explains how letters, numbers and other signs are
 transformed into bits. A text (or *string*) is a sequence of characters,
 An `A`, for instance, is represented by the bits `100 0001`. The Unicode
 standard expands ASCII to convert a much larger set of symbols,
-including `Ê`, `¯`, and `Â`. Unicode also encodes emoji. To transfer
+including `ÃŠ`, `Â¯`, and `Ã‚`. Unicode also encodes emoji. To transfer
 text or emoji, we must hence know ho they are encoded (for instance
 which specific version of Unicode) and look up the bits and bytes in a
 table. (We *serialized* the data.) The other way round, when we receive
