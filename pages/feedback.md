@@ -1,18 +1,18 @@
 # Tilbakemelding
 
-Vi er svÃ¦rt interessert Ã¥ fÃ¥ din tilbakemelding for Ã¥ kunne forbedre undervisningen. Hvis det er noe du syntes som kan forbedres eller noe du syntes som er veldig bra som vi bÃ¸r fortsette med, sÃ¥ setter vi stor pris pÃ¥ dine kommentarer. Det er flere mÃ¥ter Ã¥ gi din tilbakemelding pÃ¥:
+Vi er svært interessert å få din tilbakemelding for å kunne forbedre undervisningen. Hvis det er noe du syntes som kan forbedres eller noe du syntes som er veldig bra som vi bør fortsette med, så setter vi stor pris på dine kommentarer. Det er flere måter å gi din tilbakemelding på:
 
-* Direkte tilbakemelding til faglÃ¦rere, vit.ass og stud.ass.
+* Direkte tilbakemelding til faglærere, vit.ass og stud.ass.
 * Tilbakemelding til referansegruppen (se under).
-* Tilbakemelding gjennom semesterundersÃ¸kelsene arrangert av StudieprogramrÃ¥det for KomTek
+* Tilbakemelding gjennom semesterundersøkelsene arrangert av Studieprogramrådet for KomTek
 
 Du kan lese mer om utdanningskvalitet [her](http://www.item.ntnu.no/academics/quality|her).
 
 ## Referansegruppen
 
-Referansegruppen i emnet bestÃ¥r av 3-4 studenter som har ansvar for Ã¥ bringe tilbakemeldinger i emnet til fagpersonell. Du er ogsÃ¥ velkommen til Ã¥ gi tilbakemeldinger direkte til fagpersonell. Fagpersonell og referansegruppen vil ha 2-3 mÃ¸ter i lÃ¸pet av semesteret. 
+Referansegruppen i emnet består av 3-4 studenter som har ansvar for å bringe tilbakemeldinger i emnet til fagpersonell. Du er også velkommen til å gi tilbakemeldinger direkte til fagpersonell. Fagpersonell og referansegruppen vil ha 2-3 møter i løpet av semesteret. 
 
-FÃ¸lgende studenter er med i referansegruppen:
+Følgende studenter er med i referansegruppen:
 
 * (kommer)
 
