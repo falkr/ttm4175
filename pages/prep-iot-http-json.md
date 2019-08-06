@@ -377,3 +377,9 @@ into data again.
 
 [^3]: These code snippets are taken from
     <https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session_state>
+    
+    
+```bash
+pip3 install numpy
+```
+

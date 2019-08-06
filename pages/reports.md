@@ -6,12 +6,12 @@ Denne siden her samler alt teknisk info om rapportene, du skal også [lese mer o
 
 ## Teknisk info
 
-* Det leveres en rapport per gruppe.
-* Alle medlemer av en gruppe må bidra i like deler til begge rapporter.
-* For å skrive kan dere gjerne bruke Google Docs, men det er lov å bruke hvilket som helst verktøy.
-* Vi har lagt et [mal i Google Docs](https://docs.google.com/document/d/1x8_8mBo4aPcozmXyrsjqivVjKW5vXxwN4EAglvT2pwk/edit?usp=sharing) som kan brukes. Klikk på File, Make a copy... for å ta den i bruk.
-* Hvis dere ikke bruker Google Docs, ta med samme informasjon på frontsiden som i malen.
-* Dere kan skrive på norsk eller engelsk.
+  * Det leveres en rapport per gruppe.
+  * Alle medlemer av en gruppe må bidra i like deler til begge rapporter.
+  * For å skrive kan dere gjerne bruke Google Docs, men det er lov å bruke hvilket som helst verktøy.
+  * Vi har lagt et [mal i Google Docs](https://docs.google.com/document/d/1x8_8mBo4aPcozmXyrsjqivVjKW5vXxwN4EAglvT2pwk/edit?usp=sharing) som kan brukes. Klikk på File, Make a copy... for å ta den i bruk.
+  * Hvis dere ikke bruker Google Docs, ta med samme informasjon på frontsiden som i malen.
+  * Dere kan skrive på norsk eller engelsk.
 
 ## Innlevering
 

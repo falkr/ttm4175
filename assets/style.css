@@ -342,6 +342,13 @@ code {
   font-size: 100%
 }
 
+pre.bash {
+    color: lightgrey;
+    background-color: #263238;
+    text-shadow: 0 0 1px white;
+    font-size: 100%
+}
+
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */

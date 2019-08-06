@@ -248,7 +248,7 @@ Connection: close
 <div class="figure">
 <img src="figures/iot/serialization.png" width="100%"/>
 </div>
-<p>If we just want to transfer text, there is for instance the ASCII standard that explains how letters, numbers and other signs are transformed into bits. A text (or <em>string</em>) is a sequence of characters, An <code>A</code>, for instance, is represented by the bits <code>100 0001</code>. The Unicode standard expands ASCII to convert a much larger set of symbols, including <code>Ã</code>, <code>Â¯</code>, and <code>Ã</code>. Unicode also encodes emoji. To transfer text or emoji, we must hence know ho they are encoded (for instance which specific version of Unicode) and look up the bits and bytes in a table. (We <em>serialized</em> the data.) The other way round, when we receive bits and want to create letters from it, we <em>deserialize</em> the data, which means that we look up which letters the bits correspond to.</p>
+<p>If we just want to transfer text, there is for instance the ASCII standard that explains how letters, numbers and other signs are transformed into bits. A text (or <em>string</em>) is a sequence of characters, An <code>A</code>, for instance, is represented by the bits <code>100 0001</code>. The Unicode standard expands ASCII to convert a much larger set of symbols, including <code>Ê</code>, <code>¯</code>, and <code>Â</code>. Unicode also encodes emoji. To transfer text or emoji, we must hence know ho they are encoded (for instance which specific version of Unicode) and look up the bits and bytes in a table. (We <em>serialized</em> the data.) The other way round, when we receive bits and want to create letters from it, we <em>deserialize</em> the data, which means that we look up which letters the bits correspond to.</p>
 <p>Serialization is not only useful when we want to transmit data from one computer to another. It is also useful when we want to store a data structure into a file. A file is storing a series of bytes, and serialization determines how we get these bytes from a data structure.</p>
 <p>Now imagine we want to transfer more structured data, for instance the measurements of a sensor in a house. We would like to send the current time, the temperature and the humidity. To do that, we could of course send a string that just lists the different data items in a sequence, for instance:</p>
 <pre><code>12:05  20.0  54.3</code></pre>
@@ -287,6 +287,8 @@ print(string)</code></pre>
 <pre><code>measurement = json.loads(&#39;{&quot;time&quot;: &quot;12:05&quot;, &quot;humidity&quot;: 54.3, &quot;temperature&quot;: 20.0}&#39;)</code></pre>
 <p>The result is that the variable <code>measurement</code> now has data of type <code>dict</code>. Now we can work on the data like with any other Python data type, and integrate it in our application.</p>
 <p>So, simplified said, with JSON we can convert any Python data type into a string that follows the JSON specification. It is then easy to store or transmit this string (as a series of bytes), and transform it back into data again.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">pip3</span> install numpy</a></code></pre></div>
 
     </section>
 </div>
