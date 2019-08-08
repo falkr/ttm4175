@@ -98,7 +98,6 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
-      <a class="dropdown-item" href="writing-reports.html">Writing Reports</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -127,15 +126,13 @@
 <p>This week we are going to construct an application that consists of several components, some running on the Raspberry Pi, others running on a server that we don’t even have control over. In particular, we are going to build an alarm application, which consists of a movement sensor, a webcam, and the Sense HAT to display an alarm. In addition, we want the alarm system to send a message via Slack, and also upload a picture to it. For that, we need to use the Slack API, so that we can integrate it into our application.</p>
 <h2 id="learning-goals">Learning Goals</h2>
 
-<div class="goals">
-<p>After this week, you will be able to:</p>
+<div class="goals"><p>After this week, you will be able to:</p>
 <ul>
 <li>Read the documentation of an API and understand elements of it.</li>
 <li>Understand <em>some</em> of the mechanisms of APIs.</li>
 <li>Create simple applications from APIs.</li>
 <li>Understand some of the principles of REST API.</li>
 </ul>
-
 </div>
     </section>
     <section class="content">
@@ -161,7 +158,7 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <p>APIs try to hide as much complexity of a problem as possible. With the example of our very simple temperature API, we can use the API without knowing how the details are implemented, for instance how the component measures the temperature, or how it processes our request. To use it properly, we are just interested in the behavior of the component as a “black box.”[^1]</p>
 <p>Abstraction also allows that a component changes over time how it provides an API. It can for instance change details of the implementation without that the user of the API needs to adapt anything. (We come back to that later.)</p>
 <h2 id="apis-are-written-with-use-cases-in-mind">APIs Are Written With Use Cases in Mind</h2>
-<p>For an API to be useful, it should provide access to use cases that are relevant for the programs that use it. This means how the individual functions one can call are structured. For a math API, it seems to be a good idea to have a method <code>add(a,Â b)</code> to add two numbers. A method <code>add_two_(a)</code> which always adds the value two to a number is also possible, but you may wonder if it is useful for an API. That depends of course on the problem we build the API for. If the problem we want to support needs to add the number two a lot, then we could think of offering that as a dedicated method of the API.[^2]. Therefore it requires some experience and some attempts to write a “good” API.</p>
+<p>For an API to be useful, it should provide access to use cases that are relevant for the programs that use it. This means how the individual functions one can call are structured. For a math API, it seems to be a good idea to have a method <code>add(a, b)</code> to add two numbers. A method <code>add_two_(a)</code> which always adds the value two to a number is also possible, but you may wonder if it is useful for an API. That depends of course on the problem we build the API for. If the problem we want to support needs to add the number two a lot, then we could think of offering that as a dedicated method of the API.[^2]. Therefore it requires some experience and some attempts to write a “good” API.</p>
 <h2 id="apis-evolve-over-time">APIs Evolve Over Time</h2>
 <p>We have said above that APIs evolve over time, and because of their way of hiding features this can often happen without the other programs noticing. However, that is not always the case. Sometimes the API itself has to change more drastically, so that we can offer new functionality. This is why APIs often have version numbers and evolve just like other software. Sometimes updating to a new version of an API is simple, while it sometimes may require a lot of changes.</p>
 <h2 id="ingredients-for-an-api">Ingredients for an API</h2>
@@ -218,7 +215,7 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 
     </section>
     <section class="content">
-<h1 id="orchestration-vs.âchoreography">Orchestration vs.Â Choreography</h1>
+<h1 id="orchestration-vs.-choreography">Orchestration vs. Choreography</h1>
 <p>Once we have a set of APIs we need to control how the overall system is coordinated. For that, we distinguish two different patterns; <strong>orchestration</strong> and <strong>choreography</strong>.</p>
 <p>Let’s start with an example from everyday life. Imagine you want to organize a visit to the cinema with some friends, and you need to agree on which movie to watch and when to meet and so on. There is two ways of how to organize it:</p>
 <ul>
@@ -243,7 +240,8 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <aside name="figures/iot/api-choreography.svg"><p><p>In a choreography, the interaction emerges from the individual components, but there is no central manager.</p>
 </p></aside>
 </div>
-EMPTY
+
+
     </section>
 </div>
 

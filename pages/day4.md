@@ -2,7 +2,7 @@
 
 To set up an apache web server there are a few steps that we need to go through.
 
-# Learning Goals
+## Learning Goals
 
 :goals:
 - Become even more familiar with the Raspberry Pi
@@ -85,7 +85,7 @@ touch index.html
 Then, edit the file with Vim:
 
 ```bash
-vim index.html`
+vim index.html
 ```
 
 Write HTML code here to personalize your web page. Start with the template below, or find a template online.
@@ -109,6 +109,7 @@ Write HTML code here to personalize your web page. Start with the template below
 </html>
 ```
 
+:aside: <i class="fas fa-language"></i> _Template_ betyr _mal_ på norsk. 
 
 
 

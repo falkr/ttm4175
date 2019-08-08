@@ -7,11 +7,12 @@ Today, many of you will take your first steps with the powerful Linux Terminal.
 :goals:
 - Become familiar with Linux
 - Feel home on the Raspberry Pi
+- understand user rights
 
 ### New Linux Commands
 
-- [passwd](commands.html/#passwd) --- to change passwords.
-- [ls](commands.html/#ls) --- to list files and folders.
+- ip address
+- ssh --- to start the SSH server
 
 
 

@@ -98,7 +98,6 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
-      <a class="dropdown-item" href="writing-reports.html">Writing Reports</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -123,36 +122,87 @@
 <div class="page">
     </section>
     <section class="content">
+<h1 id="project-goal">Project Goal</h1>
+<p>For this week we have set a goal: <em>We want you to be able to create your own web server, running on a computer that you control and configure, and that serves your own website.</em> Each day we get a bit closer to that goal.</p>
+
+<div class="figure">
+<img src="figures/teknostart/goals.png" alt="Each day we try to reach a new goal. The final goal is to run our own website." width="100%"/>
+<span name="figures/teknostart/goals.png">&nbsp;</span>
+<aside name="figures/teknostart/goals.png"><p><p>Each day we try to reach a new goal. The final goal is to run our own website.</p>
+</p></aside>
+</div>
+<p>Of course, you learn much more than just serving your own website. On our way you will learn many useful things that will help you through the rest of this course, the rest of your studies and also later during your job:</p>
+
+<div class="goals"><ul>
+<li>You will be able to operate your own computer.</li>
+<li>You will get familiar with the most important commands.</li>
+<li>You will learn to work in teams.</li>
+<li>You will get used to English as instruction language.</li>
+</ul>
+<p>For our project we use the <a href="https://www.raspberrypi.org">Raspberry Pi</a>. It’s a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers, since it runs the same commands. So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.</p>
+</div>
+    </section>
+    <section class="content">
 <h1 id="day-1-the-raspberry-pi">Day 1: The Raspberry Pi</h1>
 <p>Today we will start things off by letting you become familiar with the Raspberry Pi. We will use a combination of the topics you go through the first three days to set up our own webserver and website, so pay attention!</p>
 
-<h3 id="learning-goals">Learning Goals</h3>
+<h3 id="learning-goals-for-today">Learning Goals for Today</h3>
 
 <div class="goals"><ul>
 <li>Become familiar with the Raspberry Pi</li>
+<li>Connecting the Pi</li>
+<li>Changing the default password</li>
+<li>Logging in remotely via SSH</li>
 </ul>
 </div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
-<li><a href="commands.html/#passwd">passwd</a> — to change passwords.</li>
 <li><a href="commands.html/#ls">ls</a> — to list files and folders.</li>
+<li><a href="commands.html/#passwd">passwd</a> — to change passwords.</li>
+<li><a href="commands.html/#pwd">pwd</a> — to show in which directory you are.</li>
 </ul>
 
     </section>
     <section class="content">
 <h1 id="starting-the-raspberry-pi">Starting the Raspberry Pi</h1>
-<p>Here it will be decribed how to connect the rPi to the computer and make it appear on the screen. (too basic?)</p>
+<ul>
+<li>Make sure the SD-card is inserted correctly</li>
+<li>Connect the Pi to the monitor in the lab using the HDMI cable</li>
+<li>Connect the Pi via USB to mouse and keyboard</li>
+<li>Connect the Pi with the Power supply</li>
+<li><em>Do <em>not</em> connect the Ethernet cable</em></li>
+</ul>
+<p>Now, plug in the power supply. You should see that the Raspberry Pi boots up.</p>
 
     </section>
     <section class="content">
-<h1 id="connecting-with-ssh">Connecting with SSH</h1>
+<h1 id="logging-in-and-changing-the-password">Logging In and Changing the Password</h1>
 
-<p>Here it will be decribed how to connect to the rPi over SSH using the terminal. Complementary information will be added.</p>
+<h2 id="logging-in">Logging In</h2>
+<p>By default, the Raspberry Pi is configured with a default user with the name <code>pi</code> and the password <code>raspberry</code>.</p>
+<p>Type first the username:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">pi</span></a></code></pre></div>
+
+<p>Then, type the password, followed by enter:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">raspberry</span></a></code></pre></div>
+
+<h2 id="command-line">Command Line</h2>
+<p>The Raspberry Pi will probably boot directly into a graphical user interface with windows. This looks a lot like Windows or macOS, and you can use it in a similar way. For many tasks related to system administration and programming it is useful to use the <em>command line</em>. This is especially the case when the computer is somewhere in a server room or data center far away and you want to log into it remotely. (We will do that later.) Therefore, we are going to learn how to use the command line.</p>
+
+<h2 id="changing-the-password">Changing the Password</h2>
+<p>Everybody knows the default login. This is why we do not yet connect the Raspberry Pi to the network: Anyone on the internet could connect to your Pi with this default username and password, and do all sorts of stuff,like deleting files, copying information, but also using your Pi to attack other computers! And they even can change the password so that you cannot do anything anymore! We are not joking here, this <em>really</em> happens.</p>
+<p>Therefore we need to change the password before we connect the Pi to the network. For this, we use the command <code>passwd</code>. Type the command in the command line:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">passwd</span></a></code></pre></div>
+
+<p>Select a password and share it with your team members.</p>
 
     </section>
     <section class="content">
-<h1 id="changing-the-password">Changing the Password</h1>
-<p>Here it will be decribed how to change the SSH password using the terminal. Complementary information will be added.</p>
+<h1 id="connecting-to-the-internet">Connecting to the Internet</h1>
+<p>After you have changed the default password, you can connect the Pi to the internet. Use the provided ethernet cable and plug the Pi into the Ethernet plug in the lab.</p>
 
     </section>
     <section class="content">

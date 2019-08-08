@@ -98,7 +98,6 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
-      <a class="dropdown-item" href="writing-reports.html">Writing Reports</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -125,10 +124,7 @@
     <section class="content">
 <h1 id="day-4-5-apache">Day 4 &amp; 5: Apache</h1>
 <p>To set up an apache web server there are a few steps that we need to go through.</p>
-
-    </section>
-    <section class="content">
-<h1 id="learning-goals">Learning Goals</h1>
+<h2 id="learning-goals">Learning Goals</h2>
 
 <div class="goals"><ul>
 <li>Become even more familiar with the Raspberry Pi</li>
@@ -141,11 +137,11 @@
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us.</p>
 <p>First, we need to update the list of available software:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
 
 <p>Then we install Apache:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -154,7 +150,7 @@
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
 <p>Let’s start the service:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
 
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
@@ -183,28 +179,30 @@
 <p>We now want to create our new website.</p>
 <p>First, create the file <code>index.html</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">touch</span> index.html</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">touch</span> index.html</a></code></pre></div>
 
 <p>Then, edit the file with Vim:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">vim</span> index.html<span class="kw">`</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">vim</span> index.html</a></code></pre></div>
 
 <p>Write HTML code here to personalize your web page. Start with the template below, or find a template online.</p>
 
 <h3 id="html-template">HTML Template</h3>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3">        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 
+<span name="00c10b"></span><aside name="00c10b"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p>
+</aside>
     </section>
     <section class="content">
 <h1 id="final-steps">Final steps</h1>

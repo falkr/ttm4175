@@ -11,10 +11,7 @@ integrate it into our application.
 
 ## Learning Goals
 
-
-
-
-Goals: After this week, you will be able to:
+:goals: After this week, you will be able to:
 
 - Read the documentation of an API and understand elements of it.
 - Understand *some* of the mechanisms of APIs.

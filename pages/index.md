@@ -57,6 +57,45 @@ Fra uke 35 har vi følgende rom og tider:
 </table>
 </div>
 
+# Innhold
+
+Emnet består av oppstartsuka, etterfølgt av tre deler med litt forskjellig fokus:
+
+### Oppstartsuka
+
+I første uken blir du kjent med datamaskiner og nettverk. Vi kommer til å konfigurere og starte vår egen webserver, og du lærer masse ting rundt dette. 
+
+---
+type: figure
+source: figures/teknostart/goals.png
+caption: "Each day we try to reach a new goal. The final goal is to run our own website."
+---
+
+
+### Nettverk
+
+Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
+Du skal bland annet konfigurere ditt eget nettverk.
+
+:aside: <img src="figures/david.jpg" width="100px"><p><a href="https://www.ntnu.no/ansatte/david.palma">David Palma</a><br/><i class="far fa-envelope"></i> david.palma@ntnu.no</p>
+
+
+### Sikkerhet
+
+:aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> Elissar.Khloussy@NGU.NO</p>
+
+
+### Tingenes Internet
+
+Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.
+
+---
+type: figure
+source: figures/iot/overview.png
+---
+
+:aside: <img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p>
+
 
 ## Forventninger til deg som student
 
@@ -74,5 +113,10 @@ Vi forventer at du:
 Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.
 
 Det er ingen eksamen i emnet.
+
+
+## Gruppeindeling
+
+Fyll ut <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUNkNZOVBTNkhWVFVQU0tMTFQ1SUM1VE1VUS4u">skjemaet for gruppeinndeling</a> etter du har fått tilgang til din studentkonto. Vi bruker denne informasjonen til å lage gode teams.
 
 

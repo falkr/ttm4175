@@ -98,7 +98,6 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
-      <a class="dropdown-item" href="writing-reports.html">Writing Reports</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -150,11 +149,9 @@
 </ol>
 <h2 id="broker-architecture">Broker Architecture</h2>
 <p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a repetition, remember first the client-server architecture, as we have it for instance in HTTP:</p>
-<dl>
-<dt><strong>Client-server:</strong></dt>
-<dd><p>The client knows the address of the server. The server gets to know the client only after the client makes initial contact. Since only the client knows the address of the server initially, it is only the clients that can make the first contact and take initiative. In the world wide web, servers can host web sites and are contacted by browsers (the clients.) This is an example where there are many clients and only few servers, and where servers are optimized to server many clients. But there are also protocols in which the server is on a tiny sensor device, and “serves” the values of the sensor to any client that is interested in them.</p>
-</dd>
-</dl>
+<p><strong>Client-server:</strong></p>
+
+<div class="   the client knows the address of the server. the server gets to know"><p>the client only after the client makes initial contact. Since only the client knows the address of the server initially, it is only the clients that can make the first contact and take initiative. In the world wide web, servers can host web sites and are contacted by browsers (the clients.) This is an example where there are many clients and only few servers, and where servers are optimized to server many clients. But there are also protocols in which the server is on a tiny sensor device, and “serves” the values of the sensor to any client that is interested in them.</p>
 <p><strong>Example:</strong> Assume again a home automation system, in which a controller adjusts the heater (on/off) based on the temperature reported by several sensors that are distributed in the room. With HTTP, the two communication parts were client and servers, and the client can send data to the server or request data via the request-response pattern. We have hence two possibilities, depending on how we assign the roles of client and server:</p>
 <ul>
 <li><p><strong>HTTP, sensors act as clients:</strong> The sensors are HTTP clients and repeatedly send their temperature measurements to the heater, which is acts as a HTTP server.</p></li>
@@ -166,7 +163,7 @@
 <li><p>If the sensors act as HTTP servers and we introduce the blind controller, they don’t have to change their code. They just answer now double as many requests; the ones from the heater and the ones from the blind controller. For the battery life this is equally bad as the solution above.</p></li>
 </ul>
 <p>The problem with the above scenario is that we used a direct communication between the sensors and the control units, as shown in the figure below. Each sensor (in red) is connected to each controller.</p>
-
+</div>
 <div class="figure">
 <img src="figures/iot/mqtt-without-broker.svg" alt="This architecture connects each sensor with each client, which is not suitable." width="100%"/>
 <span name="figures/iot/mqtt-without-broker.svg">&nbsp;</span>
@@ -181,12 +178,10 @@
 <aside name="figures/iot/mqtt-with-broker.svg"><p><p>This architecture introduces a broker, and sensors only connect to this broker.</p>
 </p></aside>
 </div>
-<dl>
-<dt><strong>Client-broker:</strong></dt>
-<dd><p>A message broker is a server that distributes messages. The message broker usually does not care about the specific application or the content of the message. Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
-</dd>
-</dl>
+<p><strong>Client-broker:</strong></p>
 
+<div class="   a message broker is a server that distributes messages. the message"><p>broker usually does not care about the specific application or the content of the message. Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
+</div>
 <h2 id="mqtt-brokers">MQTT Brokers</h2>
 <p>The broker is a generic component, which means that it is not specific for any application and that you can use the same broker for many different applications. You hence don’t need to write your own broker, but can use an existing one and just configure it. There are several MQTT brokers available. The one we are going to use is called <strong>Mosquitto</strong>.</p>
 
@@ -415,7 +410,7 @@ client.connect(&#39;iot.eclipse.org&#39;, 1883, 60)   </code></pre>
 <img src="figures/iot/mqtt-fx.png" width="100%"/>
 </div>
 <p>MQTT.FX[^3] is a tool useful during development. Using MQTT.FX is really simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Once the system is done, you don’t need MQTT.FX anymore.</p>
-<p>Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. This does not sound like much. However, MQTT.FX has a generic user interface, you can use MQTT.FX while you construct your application to see how the other system components publish messages, and you can also &quot;inject&quot; messages into the system, by publishing to any topic you want.</p>
+<p>Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. This does not sound like much. However, MQTT.FX has a generic user interface, you can use MQTT.FX while you construct your application to see how the other system components publish messages, and you can also "inject" messages into the system, by publishing to any topic you want.</p>
 
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>

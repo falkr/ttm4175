@@ -14,7 +14,7 @@ Today we will explore the world of HTML, the marking language used to build ever
 - [ls](commands.html/#ls) --- to list files and folders.
 
 
-# Vim (Or Leafpad)
+# Nano/ Vim (Or Leafpad)
 
 Here it will be described what what Vim (Or Leafpad) is, and how to use it. 
 
