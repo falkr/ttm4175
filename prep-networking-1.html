@@ -50,10 +50,9 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
-      <a class="dropdown-item" href="prep-rpi.html">Raspberry Pi</a>
-      <a class="dropdown-item" href="prep-rpi-linux.html">Raspberry Pi</a>
-      <a class="dropdown-item" href="prep-communication.html">Communication</a>
-      <a class="dropdown-item" href="prep-networking.html">Networking</a>
+      <a class="dropdown-item" href="prep-networking-1.html">Networking 1</a>
+      <a class="dropdown-item" href="prep-networking-2.html">Networking 2</a>
+      <a class="dropdown-item" href="prep-networking-3.html">Networking 3</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Security</strong></a>
       <a class="dropdown-item" href="prep-security-1.html">Security 1</a>
@@ -62,10 +61,11 @@
       <a class="dropdown-item" href="prep-security-4.html">Security 4</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
-      <a class="dropdown-item" href="prep-iot-intro.html">Introduction to the IoT</a>
-      <a class="dropdown-item" href="prep-iot-http-json.html">HTTP and JSON</a>
-      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT</a>
-      <a class="dropdown-item" href="prep-iot-mqtt.html">MQTT</a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>
     </div>
   </li>
   
@@ -73,8 +73,9 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
-        <a class="dropdown-item" href="networking-rpi.html">Raspberry Pi</a>
-        <a class="dropdown-item" href="networking-linux.html">Networking Linux</a>
+        <a class="dropdown-item" href="networking-1.html">Networking 1</a>
+        <a class="dropdown-item" href="networking-2.html">Networking 2</a>
+        <a class="dropdown-item" href="networking-3.html">Networking 3</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1.html">Security 1</a>
@@ -83,11 +84,10 @@
         <a class="dropdown-item" href="security-4.html">Security 4</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
-        <a class="dropdown-item" href="prep-iot-intro.html">Introduction to the IoT</a>
         <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
         <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
-        <a class="dropdown-item" href="iot-slack.html">Slack API</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>
       </div>
   </li>
   
@@ -97,7 +97,6 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
-      <a class="dropdown-item" href="writing-reports.html">Writing Reports</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -120,45 +119,6 @@
 
 
 <div class="page">
-    <section class="content">
-<p><strong>Goal:</strong> Letâs create a more advanced alarm system that detects some movement (with the PIR sensor), takes a picture (with the USB webcam) and notifies you via Slack.</p>
-<p>For this task, we work again in Python.</p>
-<p>Altogether, this is a difficult and complex task; you need to coordinate many functions and APIs. Therefore, try to build the application step by step, and try each function in isolation before putting everything together.</p>
-<p>Below is a list of steps. You don’t have to do them in the given order.</p>
-<p><strong>Task:</strong> Read first through all steps, and try to make a sequence diagram of the final application. The diagram should show a lifeline for your application, a lifeline for the PIR sensor, the camera, the cloudinary API and the Slack API.</p>
-<p><strong>Task:</strong> Think through if you are using an approach that is more of an orchestration or an choreography. Which approach works here?</p>
-<p><strong>Task:</strong> Once you have the sequence diagram, work on each of the steps.</p>
-<h3 id="step-slack-message-with-image">Step: Slack Message with Image</h3>
-<p>The Slack API allows you to display an image alongside your message. However, Slack expects that you send the URL of an image, not the image itself. (This may have changed, and there may be a way to also upload the image directly to Slack. You can select how to do this.)</p>
-<p>Before you try to upload your own image from the webcam, you should test how the Slack API works and provide it with an image that is accessible on the internet by a url. (You can for instance use http://lorempixel.com for that.)</p>
-<ul>
-<li>Check the <a href="https://api.slack.com/rtm">messaging API of Slack.</a> This tells you about how to add an image to a message.</li>
-<li>Slack also has an <a href="https://slackapi.github.io/python-slackclient/">SDK for Python.</a></li>
-</ul>
-
-<h3 id="step-taking-a-picture">Step: Taking a Picture</h3>
-<p>Find a way to capture an image with a USB camera in Python. Itâs a standard USB camera, and there should be code out there that does the job.</p>
-<h3 id="step-uploading-an-image-to-slack">Step: Uploading an Image to Slack</h3>
-<p>This should work with the <a href="https://slackapi.github.io/python-slackclient/">SDK for Python.</a></p>
-
-<h3 id="alternative-step-uploading-an-image-to-cloudinary">Alternative Step: Uploading an Image to Cloudinary</h3>
-<p>This is only necessary if you din’t manage to upload an image to Slack. Since Slack expects the URL to an image and not the image itself, we need to upload the camera picture somewhere and make it accessible via an URL.</p>
-<p>One way to achieve it is to use a hosting service for images, like <a href="cloudinary.com">Cloudinary</a>. It offers an API to uplpoad images, and retrieve a URL for them. Have a look at their <a href="https://github.com/cloudinary/pycloudinary">SDK for Python on Github</a>. (Tip: It seems you can install it again via <em>pip install cloudinary</em>.)</p>
-<ul>
-<li>Create an account at Cloudinary.</li>
-<li>Install the Python SDK.</li>
-<li>Upload an image and test if it is accessible in the URL via a browser.</li>
-</ul>
-
-<h3 id="step-sensing-movement">Step: Sensing Movement</h3>
-<p>Use the PIR sensor to detect movement, as in the first week.</p>
-<h3 id="finally-putting-all-together">Finally: Putting all Together</h3>
-<p>Once you have control over all of the individual steps above, put everything together to build the complete alarm system.</p>
-<p><strong>For the Report:</strong> Document how it works in a series of screenshots and photos, for instance like in a comic strip. Also, take a video that shows how your system works. The video can (and should) be short, ca 1 or 2 minutes. You don’t have to do a lot of editing, just show how the system works. We have added a section in Blackboard to deliver the video.</p>
-<p><strong>Well done!</strong></p>
-<h3 id="optionally-add-more-functionality">Optionally: Add More Functionality</h3>
-<p>If you have time and energy left, try to find other APIs on the web and extend your application with some more useful functionality.</p>
-
     </section>
 </div>
 

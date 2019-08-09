@@ -28,29 +28,29 @@ Fra uke 35 har vi følgende rom og tider:
 </thead>
 <tbody class="row-hover">
 <tr class="row-2">
-<td class="column-1">35</td><td class="column-2">28.-29. aug.</td><td class="column-3">Networking: 1</td></tr>
+<td class="column-1">35</td><td class="column-2">28.-29. aug.</td><td class="column-3"><a href="prep-networking-1.html">Networking: 1</a></td></tr>
 <tr class="row-3">
-<td class="column-1">36</td><td class="column-2">4.-5. sep.</td><td class="column-3">Networking: 2</td></tr>
+<td class="column-1">36</td><td class="column-2">4.-5. sep.</td><td class="column-3"><a href="prep-networking-2.html">Networking: 2</a></td></tr>
 <tr class="row-4">
-<td class="column-1">37</td><td class="column-2">11.-12. sep.</td><td class="column-3">Networking: 3</td></tr>
+<td class="column-1">37</td><td class="column-2">11.-12. sep.</td><td class="column-3"><a href="prep-networking-3.html">Networking: 3</a></td></tr>
 <tr class="row-5">
-<td class="column-1">38</td><td class="column-2">18.-19. sep.</td><td class="column-3">Security: 1</td></tr>
+<td class="column-1">38</td><td class="column-2">18.-19. sep.</td><td class="column-3"><a href="prep-security-1.html">Security: 1</a></td></tr>
 <tr class="row-6">
-<td class="column-1">39</td><td class="column-2">25.-26. sep.</td><td class="column-3">Security: 2</td></tr>
+<td class="column-1">39</td><td class="column-2">25.-26. sep.</td><td class="column-3"><a href="prep-security-2.html">Security: 2</a></td></tr>
 <tr class="row-7">
-<td class="column-1">40</td><td class="column-2">2.-3. okt.</td><td class="column-3">Security: 3</td></tr>
+<td class="column-1">40</td><td class="column-2">2.-3. okt.</td><td class="column-3"><a href="prep-security-3.html">Security: 3</a></td></tr>
 <tr class="row-8">
-<td class="column-1">41</td><td class="column-2">9.-10. okt.</td><td class="column-3">Security: 4</td></tr>
+<td class="column-1">41</td><td class="column-2">9.-10. okt.</td><td class="column-3"><a href="prep-security-4.html">Security: 4</a></td></tr>
 <tr class="row-9">
-<td class="column-1">42</td><td class="column-2">16.-17. okt</td><td class="column-3">IoT: 1</td></tr>
+<td class="column-1">42</td><td class="column-2">16.-17. okt</td><td class="column-3"><a href="prep-iot-intro.html">IoT: 1 - Introduction</a></td></tr>
 <tr class="row-10">
-<td class="column-1">43</td><td class="column-2">23.-24. okt.</td><td class="column-3">IoT: 2</td></tr>
+<td class="column-1">43</td><td class="column-2">23.-24. okt.</td><td class="column-3">tba</td></tr>
 <tr class="row-11">
-<td class="column-1">44</td><td class="column-2">30.-31. okt.</td><td class="column-3">IoT: 3</td></tr>
+<td class="column-1">44</td><td class="column-2">30.-31. okt.</td><td class="column-3"><a href="prep-iot-http-json.html">IoT: 2 - HTTP and JSON</a></td></tr>
 <tr class="row-12">
-<td class="column-1">45</td><td class="column-2">6.-7. nov</td><td class="column-3">IoT: 4</td></tr>
+<td class="column-1">45</td><td class="column-2">6.-7. nov</td><td class="column-3"><a href="prep-iot-mqtt.html">IoT: 3 - MQTT</a></td></tr>
 <tr class="row-13">
-<td class="column-1">46</td><td class="column-2">13.-14. nov.</td><td class="column-3">tba</td></tr>
+<td class="column-1">46</td><td class="column-2">13.-14. nov.</td><td class="column-3"><a href="prep-iot-api.html">IoT: 4 - APIs and Applications</a></td></tr>
 <tr class="row-14">
 <td class="column-1">47</td><td class="column-2">20.-21. nov.</td><td class="column-3">tba</td></tr>
 </tbody>
@@ -82,7 +82,7 @@ Du skal bland annet konfigurere ditt eget nettverk.
 
 ### Sikkerhet
 
-:aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> Elissar.Khloussy@NGU.NO</p>
+:aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> elissar.khloussy@ngu.no</p>
 
 
 ### Tingenes Internet
@@ -103,9 +103,9 @@ Ett av hovedmålene med undervisningen er å engasjere alle for å skape et posi
 
 Vi forventer at du:
 
-- Deltar aktivt på alle forelesningene.
+- Deltar aktivt på alle forelesningene. Om du er forhindret, send en mail til [Frank](mailto:kraemer@ntnu.no) på forhånd.
 - Deltar aktivt i labarbeidene på de oppsatte veiledningstimene.
-- Bidrar til et positivt og konstruktivt gruppearbeid.
+- Bidrar til positivt og konstruktivt gruppearbeid.
 - Bidrar i å skrive avsluttende rapport fra hver lab.
 
 ## Vurdering
