@@ -1,6 +1,6 @@
 # Day 4 & 5: Apache
 
-To set up an apache web server there are a few steps that we need to go through.
+These last two days we are going to createe our own web site and set up a web server on the Raspberry Pi. The web server we will use is called Apache.
 
 ## Learning Goals
 
@@ -8,6 +8,13 @@ To set up an apache web server there are a few steps that we need to go through.
 - Become even more familiar with the Raspberry Pi
 - get an overview of how a webserver can be used to host your own websites.
 
+### Apache and webserver 
+
+Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.
+
+ So what is a web server? A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.
+ 
+ To install Apache and start our own server, there are a few steps we need to go through.a
 
 # Step 1: Installing Apache
 
@@ -64,7 +71,7 @@ It is now time to create our own website.
 
 ## Editing the content of the website
 
-The default folder from where Apache gets the content for the website is `/var/www/html`. By default, only one file resides here, the Apache test page. Again, by default, Apache looks for a file named `index.html`, which currently only stores the content of the testpage. 
+The default folder from where Apache gets the content for the website is `/var/www/html`. By default, only one file resides here, the Apache test page. By default, Apache looks for a file named `index.html`, which currently only stores the content of the testpage. 
 
 We can go ahead and remove this file:
 1. `~$ cd /var/www/html` *Navigates to the folder*
@@ -77,21 +84,25 @@ If you go back to your website and hit refresh, you will see that instead of loa
 We now want to create our new website.
 
 First, create the file `index.html`:
-
+ 
 ```bash
 touch index.html
 ```
 
-Then, edit the file with Vim:
+Then, edit the file with leafpad: (which editor?)
 
 ```bash
-vim index.html
+leafpad index.html
 ```
 
 Write HTML code here to personalize your web page. Start with the template below, or find a template online.
 
 
+### What is HTML?
+Firstly, HTML is short for "HyperText Markup Language". That may sound scary, but it simply means it is a language for describing web-pages using ordinary text. HTML is not a complex programming language.
 
+Every web page is actually a HTML file. Each HTML file is just a plain-text file, but with a .html file extension instead of .txt, and is made up of many HTML tags as well as the content for a web page.
+A web site will often contain many html files that link to each other. You can edit HTML files with your favourite editor.
 ### HTML Template
 
 
@@ -116,3 +127,4 @@ Write HTML code here to personalize your web page. Start with the template below
 # Final steps
 
  You can now edit the website as you want. Try to go to each others webpages by typing in their IP-address and port in the URL on the same format as earlier.
+
