@@ -121,58 +121,18 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="day-4-5-apache">Day 4 &amp; 5: Apache</h1>
-<p>These last two days we are going to createe our own web site and set up a web server on the Raspberry Pi. The web server we will use is called Apache.</p>
-<h2 id="learning-goals">Learning Goals</h2>
+<h1 id="day-5-our-own-web-site">Day 5: Our own Web Site</h1>
+<p>These last two days we are going to create our own web site and set up a web server on the Raspberry Pi. The web server we will use is called <em>Apache</em>.</p>
+<h3 id="learning-goals-for-today">Learning Goals for Today</h3>
 
 <div class="goals"><ul>
 <li>Become even more familiar with the Raspberry Pi</li>
 <li>get an overview of how a webserver can be used to host your own websites.</li>
 </ul>
-<h3 id="apache-and-webserver">Apache and webserver</h3>
-<p>Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.</p>
-<p>So what is a web server? A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.</p>
-<p>To install Apache and start our own server, there are a few steps we need to go through.a</p>
 </div>
     </section>
     <section class="content">
-<h1 id="step-1-installing-apache">Step 1: Installing Apache</h1>
-<p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us.</p>
-<p>First, we need to update the list of available software:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
-
-<p>Then we install Apache:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
-
-    </section>
-    <section class="content">
-<h1 id="step-2-starting-apache">Step 2: Starting Apache</h1>
-<p>Now that we have Apache installed, we need to start the <em>service</em>, i.e the program.</p>
-<p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
-<p>Let’s start the service:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
-
-<p>List of useful <code>systemctl</code> commands:</p>
-<ul>
-<li><code>~$ systemctl status apache2</code> — <em>checks the current status of apache2</em></li>
-<li><code>~$ systemctl start apache2</code> — <em>starts the service</em></li>
-<li><code>~$ systemctl stop apache2</code> — <em>stops the service</em></li>
-<li><code>~$ systemctl restart apache2</code> — <em>restarts the service</em></li>
-</ul>
-
-    </section>
-    <section class="content">
-<h1 id="step-3-testing-the-server">Step 3: Testing the Server</h1>
-<p>Apache is set up and is running. This means we go ahead and check if the service works and edit our home page.</p>
-<p>First, we would like to check wether our Apache server is working as expected. The Apache server runs on port 80 by default, so in order to check whether the service is running, we have to check this port specifically.</p>
-<p><strong>Check that Apache works as expected:</strong> 1. Find your IP-address 2. Type the IP-address in your browser, and specify port number 80. i.e <em>http://192.168.10.19:80</em> 3. If the Apache test-page pops up, the server is running as expected. (link to apache test-page)</p>
-
-    </section>
-    <section class="content">
-<h1 id="step-4-our-own-website">Step 4: Our own Website</h1>
+<h1 id="step-1-our-own-website">Step 1: Our own Website</h1>
 <p>It is now time to create our own website.</p>
 <h2 id="editing-the-content-of-the-website">Editing the content of the website</h2>
 <p>The default folder from where Apache gets the content for the website is <code>/var/www/html</code>. By default, only one file resides here, the Apache test page. By default, Apache looks for a file named <code>index.html</code>, which currently only stores the content of the testpage.</p>
