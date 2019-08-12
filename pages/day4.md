@@ -5,7 +5,7 @@ These last two days we are going to create our own web site and set up a web ser
 ### Learning Goals for Today
 
 :goals:
-- Install a new program on Linux
+- Install a new program (Apache) on Linux
 - Get an overview of how a webserver can be used to host your own websites.
 
 ### New Linux Commands
