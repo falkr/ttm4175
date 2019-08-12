@@ -43,12 +43,13 @@ Now let's communicate, only by using MQTT.fx.
 
 **Tasks:**
 
-* Install the MQTT broker called **Mosquitto** on the Raspberry Pi.
-* (Find relevant instructions on your own, this is part of the learning experience.) 
-* Find which IP address your Pi has, you need this when connecting to your broker.
-* Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.
-* Use MQTT.fx on another laptop, and also connect to the broker.
-* Send messages from laptop to laptop via the broker. (Select any topic you want.)
+:steps:
+1. Install the MQTT broker called **Mosquitto** on the Raspberry Pi. <small>Find relevant instructions on your own, this is part of the learning experience.</small> 
+2. Find which IP address your Pi has, you need this when connecting to your broker.
+3. Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.
+4. Use MQTT.fx on another laptop, and also connect to the broker.
+5. Send messages from laptop to laptop via the broker. (Select any topic you want.)
+
 
 **For the Report:**
 

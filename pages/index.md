@@ -14,8 +14,9 @@ De to første ukene er emnet integrert i studiestart:
 
 Fra uke 35 har vi følgende rom og tider:
 
-* onsdag, 08:15-10:00 Forelesning of forberedelse. [GL-VE VE22 (Smash Lab)](smash.html)
-* onsdag, 10:00-12:00 Lab, del 1 [Sahara Lab](http://s.mazemap.com/1MS2Os5)
+* onsdag, 08:15-12:00
+  * Forelesning og forberedelse i [GL-VE VE22 (Smash Lab)](smash.html)
+  * Lab, del 1 i [Sahara Lab](http://s.mazemap.com/1MS2Os5)
 * torsdag, 10:15-12:00 Lab, del 2 [Sahara Lab](http://s.mazemap.com/1MS2Os5)
 
 <div>
