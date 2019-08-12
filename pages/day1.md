@@ -38,9 +38,9 @@ We will use a combination of the topics you go through the first three days to s
 
 ### New Linux Commands
 
-- [ls](commands.html/#ls) --- to list files and folders.
-- [passwd](commands.html/#passwd) --- to change passwords.
-- [pwd](commands.html/#pwd) --- to show in which directory you are.
+- [ls](commands.html#ls) --- to list files and folders.
+- [passwd](commands.html#passwd) --- to change passwords.
+- [pwd](commands.html#pwd) --- to show in which directory you are.
 
 
 # Starting the Raspberry Pi

@@ -122,13 +122,17 @@
     </section>
     <section class="content">
 <h1 id="day-4-5-apache">Day 4 &amp; 5: Apache</h1>
-<p>To set up an apache web server there are a few steps that we need to go through.</p>
+<p>These last two days we are going to createe our own web site and set up a web server on the Raspberry Pi. The web server we will use is called Apache.</p>
 <h2 id="learning-goals">Learning Goals</h2>
 
 <div class="goals"><ul>
 <li>Become even more familiar with the Raspberry Pi</li>
 <li>get an overview of how a webserver can be used to host your own websites.</li>
 </ul>
+<h3 id="apache-and-webserver">Apache and webserver</h3>
+<p>Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.</p>
+<p>So what is a web server? A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.</p>
+<p>To install Apache and start our own server, there are a few steps we need to go through.a</p>
 </div>
     </section>
     <section class="content">
@@ -136,11 +140,11 @@
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us.</p>
 <p>First, we need to update the list of available software:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
 
 <p>Then we install Apache:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -149,7 +153,7 @@
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
 <p>Let’s start the service:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
 
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
@@ -171,36 +175,38 @@
 <h1 id="step-4-our-own-website">Step 4: Our own Website</h1>
 <p>It is now time to create our own website.</p>
 <h2 id="editing-the-content-of-the-website">Editing the content of the website</h2>
-<p>The default folder from where Apache gets the content for the website is <code>/var/www/html</code>. By default, only one file resides here, the Apache test page. Again, by default, Apache looks for a file named <code>index.html</code>, which currently only stores the content of the testpage.</p>
+<p>The default folder from where Apache gets the content for the website is <code>/var/www/html</code>. By default, only one file resides here, the Apache test page. By default, Apache looks for a file named <code>index.html</code>, which currently only stores the content of the testpage.</p>
 <p>We can go ahead and remove this file: 1. <code>~$ cd /var/www/html</code> <em>Navigates to the folder</em> 2. <code>~$ rm index.html</code><em>Removes the file</em></p>
 <p>If you go back to your website and hit refresh, you will see that instead of loading the test page, an error message will pop up. Since we deleted the file, Apache has nothing to give us on our website.</p>
 <h2 id="creating-a-new-site">Creating a new site</h2>
 <p>We now want to create our new website.</p>
 <p>First, create the file <code>index.html</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">touch</span> index.html</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">touch</span> index.html</a></code></pre></div>
 
-<p>Then, edit the file with Vim:</p>
+<p>Then, edit the file with leafpad: (which editor?)</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">vim</span> index.html</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">leafpad</span> index.html</a></code></pre></div>
 
 <p>Write HTML code here to personalize your web page. Start with the template below, or find a template online.</p>
 
-<h3 id="html-template">HTML Template</h3>
+<h3 id="what-is-html">What is HTML?</h3>
+<p>Firstly, HTML is short for “HyperText Markup Language”. That may sound scary, but it simply means it is a language for describing web-pages using ordinary text. HTML is not a complex programming language.</p>
+<p>Every web page is actually a HTML file. Each HTML file is just a plain-text file, but with a .html file extension instead of .txt, and is made up of many HTML tags as well as the content for a web page. A web site will often contain many html files that link to each other. You can edit HTML files with your favourite editor. ### HTML Template</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;html&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 
-<span name="00c10b"></span><aside name="00c10b"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p>
+<span name="d8b418"></span><aside name="d8b418"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p>
 </aside>
     </section>
     <section class="content">
