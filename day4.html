@@ -126,7 +126,7 @@
 <h3 id="learning-goals-for-today">Learning Goals for Today</h3>
 
 <div class="goals"><ul>
-<li>Install a new program on Linux</li>
+<li>Install a new program (Apache) on Linux</li>
 <li>Get an overview of how a webserver can be used to host your own websites.</li>
 </ul>
 <h3 id="new-linux-commands">New Linux Commands</h3>
@@ -149,11 +149,11 @@
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us — it’s like an app store, but for Linux.</p>
 <p>First, we need to update the list of available software:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
 
 <p>Then we install Apache:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -164,7 +164,7 @@
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
 <p>Let’s start the service:</p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
 
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
