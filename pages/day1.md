@@ -13,19 +13,19 @@ Of course, you learn much more than just serving your own website. On our way yo
 
 :goals:
 - You will be able to operate your own computer.
-- You will get familiar with the most important commands.
+- You will get familiar with the most important commands to control the computer and the applications running on it.
+- You will be able to operate a computer remotely.
+- You will get some basic understanding of networking.
+
+But you will also learn some more skills that will be useful:
+
 - You will learn to work in teams.
 - You will get used to English as instruction language.
-
-For our project we use the [Raspberry Pi](https://www.raspberrypi.org). It's a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers, since it runs the same commands. So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.
-
 
 
 # Day 1: The Raspberry Pi
 
 Today we will start things off by letting you become familiar with the Raspberry Pi.
-We will use a combination of the topics you go through the first three days to set up our own webserver and website, so pay attention!
-
 
 ### Learning Goals for Today
 
@@ -43,7 +43,43 @@ We will use a combination of the topics you go through the first three days to s
 - [pwd](commands.html#pwd) --- to show in which directory you are.
 
 
+# Teamwork 
+
+We organized you in teams of **3 students** in this semester. 
+This is a good number to work together behind a computer. It's enough to learn something from each other and work together, but not too many so it get's to hard to coordinate your work. 
+
+The teams are **fixed over the semester** so that you get used to each other and develop a better team dynamic over time. 
+
+During the beginning of the lab, when we do quizzes, for example, we join always two teams of three into a **double-team** of six students. The pairing of the teams is also the same each week. Team 1 is a double team with team 2, and team 3 with team 4, and so on. 
+
+:aside: <img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.
+
+
+We start with a task on teamwork.
+
+---
+type: button
+url: teamwork-1.html
+text: "Go to teamwork task"
+---
+
+
+
 # Starting the Raspberry Pi
+
+For our project we use the [Raspberry Pi](https://www.raspberrypi.org). It's a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers. **The Raspberry Pi runs the same commands (programs) and operating system like "real" servers.** So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.
+
+The following video provides an introduction, and shows how to operate the Pi:
+
+---
+type: youtube
+video: wjWZhV1v3Pk
+caption: "How to get started with the Raspberry Pi."
+--- 
+
+## Task: Connecting the Pi
+
+With the knowledge from above, connect the Pi!
 
 - Make sure the SD-card is inserted correctly
 - Connect the Pi to the monitor in the lab using the HDMI cable
@@ -53,9 +89,10 @@ We will use a combination of the topics you go through the first three days to s
 
 Now, plug in the power supply. You should see that the Raspberry Pi boots up.
 
+:tip: **Tip:** The Pi does not come with an on/off button. To switch it off, you _can_ simply unplug it from the power source. However, if the Pi is busy writing your files to the storage, you may end up with some errors. Therefore, to make sure all is fine, use the command `shutdown`, wait until the Pi has finished, and unplug the power then safely. 
 
 
-# Logging In and Changing the Password
+# Logging In and Changing Passwords
 
 
 ## Logging In
@@ -68,7 +105,7 @@ Type first the username:
 pi
 ```
 
-Then, type the password, followed by enter:
+Then, type the password, followed by the key `enter`:
 
 ```bash
 raspberry
