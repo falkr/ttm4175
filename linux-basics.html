@@ -1,0 +1,819 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4115">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Design of Communicating Systems">
+<meta property="og:description" content="Design of Communicating Systems">
+
+
+<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+
+<!--<script src="jquery-1.10.1.min.js"></script>-->
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day1.html">Dag 1: Raspberry Pi</a>
+      <a class="dropdown-item" href="day2.html">Dag 2: Linux</a>
+      <a class="dropdown-item" href="day3.html">Dag 3: IP og HTML</a>
+      <a class="dropdown-item" href="day4.html">Dag 4: Webserver 1</a>
+      <a class="dropdown-item" href="day5.html">Dag 5: Webserver 2</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Networking</strong></a>
+      <a class="dropdown-item" href="prep-networking-1.html">Networking 1</a>
+      <a class="dropdown-item" href="prep-networking-2.html">Networking 2</a>
+      <a class="dropdown-item" href="prep-networking-3.html">Networking 3</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item" href="prep-security-1.html">Security 1</a>
+      <a class="dropdown-item" href="prep-security-2.html">Security 2</a>
+      <a class="dropdown-item" href="prep-security-3.html">Security 3</a>
+      <a class="dropdown-item" href="prep-security-4.html">Security 4</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Networking</strong></a>
+        <a class="dropdown-item" href="networking-1.html">Networking 1</a>
+        <a class="dropdown-item" href="networking-2.html">Networking 2</a>
+        <a class="dropdown-item" href="networking-3.html">Networking 3</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1.html">Security 1</a>
+        <a class="dropdown-item" href="security-2.html">Security 2</a>
+        <a class="dropdown-item" href="security-3.html">Security 3</a>
+        <a class="dropdown-item" href="security-4.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>
+      </div>
+  </li>
+  
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1 id="lesson1">Introduction to Linux</h1>
+<h2 id="exercises">Exercises</h2>
+<p>Connect your Raspberry PI to the monitor and keyboard but <strong>do not</strong> connect the mouse nor the network/ethernet cable. Finally, connect the power cable (micro-USB) to your Pi.</p>
+<p>These exercises should be completed in teams.</p>
+<h3 id="exercise-1-first-boot">Exercise 1 — First boot</h3>
+<p>First boot and basics.</p>
+<ol type="1">
+<li>Type on your keyboard the keys <code>Ctrl+Alt+F2</code> (i.e. press <code>Ctrl</code>, <code>Alt</code> and <code>F2</code> simultaneously).</li>
+</ol>
+<blockquote>
+<p>Your display should now show a black and white command line interface, a terminal or virtual console, with a login screen.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Log in using “pi” as the username (type and press <code>enter</code>) and the password “reactive4115”.</li>
+</ol>
+<blockquote>
+<p>Password inputs in Linux are usually “silent” (i.e. don’t worry if you don’t see your password being typed in!).</p>
+</blockquote>
+<hr />
+<p>Welcome to <code>bash</code>! One of the most famous Linux shells, an interactive terminal where we can run multiple commands or programs. A <strong>Unix</strong> shell is a user interface (usually interactive) to interpret commands and give instructions to the operating system using <strong>GNU</strong> or other software. It can also be seen as a programming language but we won’t be looking at that. The <code>bash</code> is the Bourne Again Shell, an evolution from <code>sh</code> or the <strong>Bourne Shell</strong> (from Stephen Bourne) and there are several others (e.g. <code>zsh</code> is a very popular choice too).</p>
+<hr />
+<ol start="3" type="1">
+<li>Print “Hello World!” in your terminal by typing the command <code>echo 'Hello World!'</code> followed by the <code>enter</code> key.</li>
+</ol>
+<blockquote>
+<p>All commands should be followed by the <code>enter</code> or carriage return key.</p>
+</blockquote>
+
+<pre><code>$ echo &#39;Hello World!&#39; # Note: use single quotes
+Hello World!
+$</code></pre>
+
+<ol start="4" type="1">
+<li>Alternate between terminals using <code>Alt+F3</code> (F4, F5, …) or <code>Alt+Left/Right arrows</code> and login again.</li>
+</ol>
+<blockquote>
+<p>Linux is a multitasking/multiuser operating system which means that it allows several processes and users to work simultaneously.</p>
+<p><strong>Challenge:</strong> enter the command <code>sleep 60</code>, notice how the terminal is occupied, type <code>Ctrl+z</code> to move it to the background and <code>fg</code> to bring it back to the foreground (you can use this with any command and alternatively you may cancel the <code>sleep</code> command with <code>Ctrl+c</code>).</p>
+</blockquote>
+<ol start="5" type="1">
+<li>Logout from one of the terminals using the commands <code>logout</code>, <code>exit</code> or by pressing <code>Ctrl+d</code>.</li>
+<li>Linux is case sensitive, meaning that the command <code>echo</code> cannot be typed as <code>Echo</code>. What happens if you enter the command <code>Echo</code>?</li>
+</ol>
+
+<pre><code>$ Echo &#39;wrong...&#39;
+bash: Echo: command not found
+$</code></pre>
+
+<ol start="7" type="1">
+<li>When typing a command, <code>bash</code> (the shell we are using), allows saving time with shortcuts such as the <code>Tab</code> key to auto-complete and with <code>Ctrl+a/e</code> commands and move in the command line. Type <code>ec+Tab</code>. What happens?</li>
+</ol>
+
+<pre><code>$ ec+Tab
+$ echo</code></pre>
+
+<ol start="8" type="1">
+<li>Press the <code>up</code> key one or more times. What happens?</li>
+</ol>
+<blockquote>
+<p>With this shortcut you can press the <code>enter</code> key to confirm your command and <code>Ctrl+c</code> to cancel.</p>
+</blockquote>
+<ol start="9" type="1">
+<li>Press <code>Ctrl+r</code> followed by “Hello” and <code>enter</code>. What happens?</li>
+</ol>
+<blockquote>
+<p>Press <code>Ctrl+r</code> multiple times to find other matches, <code>enter</code> to confirm, <code>Ctrl+c</code> to cancel and the arrow keys to edit.</p>
+</blockquote>
+
+<pre><code>$ (reverse-i-search)`Hello&#39;: echo &#39;Hello World!&#39;
+Hello World!</code></pre>
+
+<ol start="10" type="1">
+<li>An important aspect of GNU/Linux is the availability of documentation for all (or almost all) installed commands. Type <code>man bash</code>, scroll through using the arrow or space keys, pay attention to the <strong>definitions and reserved words</strong>, leave by pressing <code>q</code>.</li>
+</ol>
+<blockquote>
+<p><strong>Challenge:</strong> A command similar to <code>man</code> but with typically much more detail is <code>info</code>, learn how to use it with <code>info info</code>.</p>
+</blockquote>
+<ol start="11" type="1">
+<li>Almost all commands in Linux support the argument “--help” or the option “-h” for a very brief explanation. Try <code>bash --help</code>.</li>
+</ol>
+<blockquote>
+<p>Arguments and options are additional keywords given to commands.</p>
+</blockquote>
+<hr />
+<p>To sum-up, the simplicity of Unix systems, or the <strong>Unix philosophy</strong>, aims at systems composed of programs that:</p>
+<ol type="1">
+<li>are simple and elegant (do one thing and do it well);</li>
+<li>work together;</li>
+<li>use universal interfaces (e.g. text).</li>
+</ol>
+<hr />
+<h3 id="exercise-2-file-operations">Exercise 2 — File Operations</h3>
+<ol type="1">
+<li>In a new terminal log in again with the user <code>pi</code>.</li>
+<li>List all the files in the current directory by issuing the <code>ls</code> command.</li>
+</ol>
+
+<pre><code>$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  python_games  Templates  Videos
+$</code></pre>
+
+<ol start="3" type="1">
+<li>Find additional options for the command <code>ls</code> (use <code>--help</code> or <code>man ls</code>).</li>
+</ol>
+
+<pre><code>$ ls --help
+...
+$ man ls
+$</code></pre>
+
+<ol start="4" type="1">
+<li>Identify the current working directory using the command <code>pwd</code>.</li>
+</ol>
+<blockquote>
+<p>In Linux files and directories are organised in a hierarchy, or in a tree, and the root of the tree is represented by <strong>‘/’</strong>. This tree is actually a way of representing a disk or disk partitions from a computer, and we can have several ones (typically found in <code>/dev/</code>, such as <code>/dev/sdb</code>), <em>mounted</em> in our system.</p>
+</blockquote>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource unix numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">$ pwd</a>
+<a class="sourceLine" id="cb1-2" title="2">/home/pi/</a>
+<a class="sourceLine" id="cb1-3" title="3">$</a></code></pre></div>
+
+<ol start="5" type="1">
+<li>Change your current directory by using the <code>cd</code> command and check your new working directory again with <code>pwd</code> (e.g. <code>cd Desktop</code>).</li>
+</ol>
+
+<pre><code>$ cd Desktop
+$ pwd
+/home/pi/Desktop
+$</code></pre>
+
+<ol start="6" type="1">
+<li>Return to the previous directory using <code>cd ..</code></li>
+</ol>
+<blockquote>
+<p>If we use <code>ls -a</code> we’ll see <em>all</em> existing files and folders, even the hidden ones, as well as the <code>..</code> which corresponds to the parent folder, or the folder that contains our current location (the <code>.</code> is our current location).</p>
+</blockquote>
+<ol start="7" type="1">
+<li>Enter the command <code>cd notworking</code>. What happens?</li>
+</ol>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">$ cd notworking</a>
+<a class="sourceLine" id="cb1-2" title="2">-bash: cd: notworking: No such file or directory</a>
+<a class="sourceLine" id="cb1-3" title="3">$</a></code></pre></div>
+
+<ol start="8" type="1">
+<li>Enter the command <code>cd ..</code>, repeat the <code>pwd</code> command, what’s the result?</li>
+</ol>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">$ cd ..</a>
+<a class="sourceLine" id="cb1-2" title="2">$ pwd</a>
+<a class="sourceLine" id="cb1-3" title="3">/home/</a>
+<a class="sourceLine" id="cb1-4" title="4">$</a></code></pre></div>
+
+<ol start="9" type="1">
+<li>Enter the command <code>ls</code>. What do you see?</li>
+</ol>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">$ ls</a>
+<a class="sourceLine" id="cb1-2" title="2">pi</a>
+<a class="sourceLine" id="cb1-3" title="3">$</a></code></pre></div>
+
+<ol start="10" type="1">
+<li>Enter the command <code>cd</code>. What’s your current directory?</li>
+</ol>
+<blockquote>
+<p>Users have a home folder, which generically corresponds to their root, and they can easily navigate there with the shortcut <code>~</code>.</p>
+</blockquote>
+
+<p>```</p>
+<p>``` {.numberLines}</p>
+
+<p>$ cd $ pwd /home/pi/ $</p>
+
+<p><code>11. Enter the command `cd ../../`. What's your current directory?</code> {.numberLines}</p>
+
+<p>$ cd ../../ $ pwd / $</p>
+
+<p><code>12. Enter the command `cd root`. What's the result? Why?</code> {.numberLines}</p>
+
+<p>$ cd root -bash: cd: root: Permission denied $</p>
+
+<p><code>13. Enter the command `cd ~`. What's you current directory?</code> {.numberLines}</p>
+
+<p>$ cd ~ /home/pi/ $</p>
+
+<pre><code>
+14. Create a new directory, or folder, called &quot;test&quot; with the command `mkdir test`. Change your working directory to this folder.</code></pre>
+
+<p>$ mkdir test $ cd test $</p>
+
+<pre><code>
+15. Create two empty files with the command `touch` (e.g. `touch file1`) and verify with `ls`.</code></pre>
+
+<p>$ touch file1 $ touch file2 $ ls file1 file2 $</p>
+
+<pre><code>
+16. Remove one of the files by issuing the command `rm` and then verify again.
+
+&gt; **Note:** the file has been effectively deleted (or unlinked to be precise), there&#39;s no trash or recycle bin, so take care or use the option &quot;-i&quot; to enable confirmation before deletion.
+</code></pre>
+
+<p>$ rm file1 $ ls file2 $</p>
+
+<pre><code>
+17. Go to the parent directory (i.e. the previous folder), confirm your location (you should see the &quot;test&quot; folder you created).</code></pre>
+
+<p>$ cd .. $ pwd /home/pi $ ls … Templates test Videos $</p>
+
+<pre><code>
+18. Attempt to delete the &quot;test&quot; folder with `rmdir test` (remember we still have a file inside this folder). What happens?</code></pre>
+
+<p>$ rmdir test rmdir: failed to remove ‘test’: Directory not empty $</p>
+
+<pre><code>
+19. Delete the &quot;test&quot; folder by first removing the remaining file with `rm ./test/file2` and then using `rmdir`.
+
+&gt; **Note:** if we are sure that we want to delete everything inside a directory we can use the command `rm -r` but it&#39;s dangerous because it removes everything inside that folder. Moreover, if by mistake we delete system files/folders we may end up with a destroyed system.
+</code></pre>
+
+<p>$ rm ./test/file2 $ rmdir test $</p>
+
+<pre><code>20. Create a new file named &quot;notaudio.mp3&quot;</code></pre>
+
+<p>$ touch notaudio.mp3"</p>
+
+<pre><code>21. Create a copy of the new file in the folder &quot;Music&quot; using the name &quot;na_copy.mp3&quot;, by typing the following command `cp notaudio.mp3 ./Music/na_copy.mp3`. Verify that it is created in the right folder with the right name.</code></pre>
+
+<p>$ cp notaudio.mp3 Music/na_copy.mp3 $ ls Music/ na_copy.mp3 $</p>
+
+<pre><code>22. Move the file &quot;notaudio.mp3&quot; to the &quot;Music&quot; folder using the command `mv`.
+
+&gt; When moving or copying files, if we only specify the destination and omit the name, the origin name of a file/directory will be used (if a different path is used).
+</code></pre>
+
+<p>$ mv notaudio.mp3 Music/ $</p>
+
+<pre><code>
+23. Rename the file &quot;na_copy.mp3&quot; to &quot;notaudio2.mp3&quot; also by using the command `mv`.
+
+&gt; **Hint 1:** Don&#39;t forget to use the `Tab` key to speed up your typing.
+&gt;
+&gt; **Hint 2:** `cp` and `mv` can also use the option &#39;-i&#39;, which is helpful for avoiding overwriting already existing files in the destination target (similar to the `rm` command for confirmation).
+</code></pre>
+
+<p>$ cd Mu+Tab $ mv -i na+Tab not+Tab (and add 2 to the name) $ cd .. $</p>
+
+<pre><code>### Exercise 3 --- Viewing and editing files
+
+View the content of files in the terminal and/or edit them.
+
+1. Print the output of the system&#39;s log, which is stored in &quot;/var/log/messages&quot;, using the command `cat`.
+
+&gt; Due to the importance of this file, its contents can also be seen by simply issuing the command `dmesg`.
+&gt; To scroll up and down we can use `Shift+pgup` and `Shift+pgdown`.
+&gt;
+&gt; An alternative to `cat` is `nl`, if we want to see line numbers in the output.
+</code></pre>
+
+<p>$ cat /var/log/messages … $</p>
+
+<pre><code>
+2. To determine how many lines a file has the command `wc` can be used. How many lines does your log have?</code></pre>
+
+<p>$ wc -l /var/log/messages 1099 #approx $</p>
+
+<pre><code>
+3. To print the first or last few lines of a file the commands `head` and `tail` can be used respectively. How many lines do you see?</code></pre>
+
+<p>$ head /var/log/messages #or tail … #10 lines is the default $</p>
+
+<pre><code>
+4. Open the log file with the viewer `less` and find the available options by pressing `h`. How do you exit the viewer?</code></pre>
+
+<p>$ less /var/log/messages #q to exit $</p>
+
+<pre><code>
+5. Inside `less` search for the line in the log file that contains the text &quot;Linux version&quot;. What&#39;s the line number and Linux version?
+
+&gt; **Hint:** Use `less -N` and its search functionalities. Replace *pattern* by &quot;Linux version&quot;.
+</code></pre>
+
+<p>$ less -N #/Linux version + enter $</p>
+
+<pre><code>
+6. Search for the total number of processors mentioned in the log file using the pattern &quot;Total.*processor&quot;. &lt;!--- *vim... ---&gt;
+How many processors are activated?
+
+&gt; **Note:** This exercise is using a regular expression pattern, matching all strings that contain &quot;Total&quot; and &quot;processor&quot; with anything in between.
+</code></pre>
+
+<p>$ less -N # type /Total.*processor + enter –&gt; 4 processors $</p>
+
+<pre><code>7. Instead of viewing or printing entire files `grep` can be used to efficiently search for patterns inside files.
+Search for the total number of processors using `grep`.
+What option can you use to also print the line number?</code></pre>
+
+<p>$ grep -n "Total.*processor" /var/log/messages ###:Aug 27 … raspberry kernel: … Total of 4 processors activated $</p>
+
+<pre><code>
+8. Knowing the line number of interest, it&#39;s easy to return to `less` and verify surrounding context by typing `:` followed by the line number.
+How can we use `grep` to also show this context? For example 5 lines before and after the line of interest?
+</code></pre>
+
+<p>$ grep -n -C 5 "Total.*processor" … $</p>
+
+<pre><code>
+-------
+
+Other widely used programs are `sed` and `awk`.
+They are both quite powerful and allow editing the files we are working with.
+In particular, `sed` is a typical solution for finding and replacing parts of a file **without having to manually edit** them, while `awk` implements the AWK programming language and is more suited for managing files organised in columns or using specific separators.
+Remember that `grep` is the best option for extracting text but we can also return to the log file example using both `sed` and `awk`:
+
+&lt;!-- `sed &#39;s/\(total.*processor\)/\1/i;t;d&#39; /var/log/messages`--&gt;
+`sed -n &#39;/total.*processor/Ip&#39; /var/log/messages`
+
+or
+
+`awk &#39;/[tT]otal.*processor/&#39; /var/log/messages`
+
+Apart from simple command line tools for viewing and editing files based on filters and expressions, there are also several Command Line Interface (CLI) editors that can be used, examples are `vim`, `nano` and `emacs`.
+
+---------
+
+9. In your home directory enter the command `nano myfile.txt`, which will open the editor `nano` and type in &quot;This editor is great!&quot;. Save and exit `nano`.
+
+&gt; **Hint:** You can get help and a list of shortcuts by pressing `^G`.
+This means pressing `Ctrl+g` and `M-r` means `Meta+r` (the meta key is usually the Alt key).
+</code></pre>
+
+<p>$ nano myfile.txt This editor is great! –&gt;^X, Y, enter $</p>
+
+<pre><code>
+10. Open again the same file with `nano` and press `Ctrl+\`, type &quot;great&quot; and press `enter`, type &quot;ok&quot; and `enter`, press &#39;y&#39;. 
+What happens?</code></pre>
+
+<p>$ nano myfile.txt This editor is ok! –&gt;^, great, ok, Y $</p>
+
+<pre><code>11. Open &quot;myfile.txt&quot; with the command `vi`, press `i` to enter the *INSERT mode*, edit the file (write something) and press `Esc Esc` to return to the *COMMAND mode*, followed by `:q` to exit the editor.
+What happened?
+Follow the editor&#39;s suggestion to exit without writing the file.
+</code></pre>
+
+<p>$ vi myfile.txt … –&gt; after :q E37: No write since last change (add ! to override) –&gt; use :q! to ignore changes $</p>
+
+<pre><code>
+### Exercise 4 --- Linux Permissions
+
+Permissions, users and groups.
+
+-----------
+
+In Linux each file has a set of permissions or access mode (read, write and execute), as well as an owner and group owner.
+This is one of the reasons why Unix/Linux are also considered to be secure, providing quite a robust line of defence that separates files and folders from users, groups and applications.
+Nowadays most operating systems have something like this, or similar.
+
+-----------
+
+1. Try to list the contents of the directory in &quot;/root/&quot; using the user &quot;pi&quot;. What happens?
+
+&gt; With the command `ls -ld /targetdir/` you can verify the permissions of a directory (first column) as well as its owner (3rd col.) and group (4th col.)
+&gt;
+&gt; You should see something like: `drwx------ 2 root root 4096 Aug 27 14:00 /root`.
+&gt; In the first col. the &#39;d&#39; stands for directory and the remaining 9 characters are the permissions for the user (&#39;rwx&#39;), for the group (&#39;\-\-\-&#39;) and for others (&#39;\-\-\-&#39;), explained after the next exercise.
+</code></pre>
+
+<p>$ ls /root/ ls: cannot open directory /root: Permission denied $</p>
+
+<pre><code>
+2. Find your username and associated groups using the commands `whoami` and `groups`</code></pre>
+
+<p>$ whoami pi $ groups pi adm dialout cdrom sudo audio video plugdev games users immput netdev gpio i2c spi $</p>
+
+<pre><code>
+------------
+
+With the information about users, groups and permissions we can better manage who accesses what and prevent mistakes or malicious actions.
+To change permissions we can use the command `chmod` followed by a flag for the user (**u**), group (**g**) and others (**o**), a sign for adding or removing permissions (**+** and **-** respectively), and the permission we want to edit: read (**r**), write (**w**) or execute (**x**).
+
+In all Linux machines there is a super user, or &quot;root&quot;.
+This user can access all the directories and files from other users, regardless of the permissions, and even change/create new users and change their passwords.
+To run commands with administrator or root privileges we use the command `sudo` or change our terminal with `su` and run multiple commands as root.
+The command `su` allows us to change our current terminal not only to root but also to any other existing user, provided we know the login name and password (e.g. `su - palma`).
+However, if we are the super user, we can simply change user without need for any password (**Remember:** with great power comes great responsibility).
+
+------------
+
+3. Run the command `sudo whoami`. What&#39;s the result? What does this mean?</code></pre>
+
+<p>$ sudo whoami root #this means we ran the command whoami as the super user $</p>
+
+<pre><code>
+4. List the contents of the directory in `/root/` using `sudo`. How many files are in that directory?</code></pre>
+
+<p>$ sudo ls -l /root total 0 $</p>
+
+<pre><code>
+5. Change the permissions of the folder &quot;/root/&quot; with the command `chmod o+r` so that other users can read the content of the folder.
+Check the new permissions with `ls -ld`.
+List its contents **without** using `sudo`.
+
+&gt; **Note:** The new permissions include an &#39;r&#39; in the permissions for others.
+</code></pre>
+
+<p>$ sudo chmod o+r /root $ ls -ld /root drwx—r– 2 root root 4096 Aug 27 14:00 /root $ ls -l /root total 0 $</p>
+
+<pre><code>6. Change your current user to root with the command `sudo su` and confirm it with `whoami`.
+
+&gt; **Note:** You should be very careful when working as root and should avoid it unless it is completely necessary!
+</code></pre>
+
+<p>$ sudo su $ whoami root $</p>
+
+<pre><code>
+7. Revert the permissions of the `/root/` folder, without using `sudo`, so other users cannot read it (&#39;o-r&#39;).
+Exit the &quot;root terminal&quot; by entering the `exit` command in the terminal.
+</code></pre>
+
+<p>$ chmod o-x /root $ exit $</p>
+
+<pre><code>
+### Exercise 5 --- Personalisation
+
+1. Change the default password (`passwd`) of the user &quot;pi&quot;.
+
+&gt; **Milestone:** make sure you have changed the password before continuing (e.g. login in another terminal using the new password).
+&gt; If you skip this step your Raspberry Pi will be **vulnerable to remote attacks** as soon as we connect it to the Internet.
+</code></pre>
+
+<p>$ passwd Changing password for pi. (current) UNIX password: reactive4115 Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully $</p>
+
+<pre><code>
+2. Create a new user (`useradd`) using a login name of your choice, while also including the user in the already existing groups &quot;dialout,audio,video&quot;.
+Alternatively, create a user and add it to these groups afterwards (`usermod`).
+Don&#39;t forget to set the password for the new account!
+What options did you use?
+
+&gt; **Hint:** remember to use Linux&#39;s existing help commands and that you&#39;ll need administrator privileges.
+</code></pre>
+
+<p>$ sudo useradd -d /home/user/ -s /bin/bash/ -m -g users<br />
+-G dialout,audio,video user $ # omit -g users to automatically create a group named ‘user’ $ sudo passwd user Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully $</p>
+
+<pre><code>
+3. Change terminal and login with the new user name.</code></pre>
+
+<p>$ # Alt+<F2> to change terminal $ login: user <enter> $ Password: <enter></p>
+
+<pre><code>
+4. Add the new user to the list of *sudoers*
+    - Return to the first terminal;
+    - Add write permissions to the file **010_pi-nopasswd** `/etc/sudoers.d/` (`chmod`);
+    - Edit the file to include your new user;
+    - Remove the write permissions (`chmod`) and return to the previous terminal.
+</code></pre>
+
+<p>$ # Alt+left to change terminal $ cd /etc/sudoers.d $ sudo chmod +x 010_pi-nopasswd $ sudo vim 010_pi-nopasswd # yyp:s/pi/user<enter>:wq<enter> $ sudo chmod -x 010_pi-nopasswd $ cd $ # Alt+right</p>
+
+<pre><code>
+5. Change your _hostname_ to match your team number (e.g. &quot;Team1&quot;), based on the following steps:
+    - find and edit the files **hostname** and **hosts** in &quot;/etc&quot;;
+    - replace any entries with your current _hostname_ with the new one;
+    - reboot the system with the `reboot` command or with `shutdown -r`.
+
+&gt; With the `shutdown` command we can turn off the system completely, or halt, by typing `shutdown -h now`, reboot, schedule a shutdown or cancel a scheduled shutdown.
+</code></pre>
+
+<p>$ cd /etc $ ls host<em> $ sudo vim hostname #edit, :wq to save and quit $ sudo vim hosts #edit, :wq to save and quit $ # alternative option - use find and repeat the other commands find /etc -type f -name host</em> 2&gt; /dev/null $ # same vim commands as in option 2</p>
+<p>$ reboot # for all</p>
+
+<pre><code>
+6. How could you repeat the previous step without manually editing each file? (answer either by explaining the overall idea or with the actual command(s) you would use)</code></pre>
+
+<p>$ sudo sed -i ‘s/pi/team1/’ /etc/hosts /etc/hostname</p>
+
+<pre><code>
+7. What would happen if you added &quot;ntnu.no&quot; after your hostname in your hosts file?</code></pre>
+
+<p>$ # every internet access to ntnu.no would be redirected to localhost $ ping ntnu.no PING team1 (127.0.0.1) 56(84) bytes of data. …</p>
+
+<pre><code>
+### Exercise 6 --- Networking
+
+Connecting the Raspberry Pi to the Internet.
+
+1. Verify your system&#39;s IP addresse(s) by issuing the command `ip address`.
+How many interfaces do you see?
+Note the information for &quot;eth0&quot;.
+
+&gt; **Hint:** Existing interfaces are numbered and named (e.g. &quot;1:  XXX:&quot;).
+&gt; IP(v4) addresses and the respective mask follow the format XXX.XXX.XXX.XXX/YY.
+</code></pre>
+
+<p>$ ip address 1: lo: … state UNKNOWN link/loopback … inet 127.0.0.1/8 scope host lo … 2: eth0: … state DOWN link/ether …</p>
+
+<pre><code>
+2. What&#39;s the route your Raspberry Pi will follow to reach the Internet? Find out with `ip route`.</code></pre>
+
+<p>$ ip route $ #no route to the Internet (the cable is disconnected…)</p>
+
+<pre><code>
+3. Connect the ethernet cable to your Raspberry and note the changes in your IP addresses and routes.
+
+&gt; **Note:** By default, the Linux distribution we are using has a running service, or daemon, that automatically configures network interfaces whenever a new link is found.
+&gt; This service is called `dhcpcd` and runs a networking protocol called DHCP.
+</code></pre>
+
+<p>$ ip address 1: lo: … state UNKNOWN link/loopback … inet 127.0.0.1/8 scope host lo … 2: eth0: … state UP/UNKNOWN link/ether … inet 129.241.200.XXX/24 … $ $ ip route default via 129.241.200.1 dev eth0 proto dhcp src 129.241.200.XXX 129.241.200.0/24 dev eth0 proto kernel scope link src 129.241.200.XXX 129.241.200.1 dev eth0 proto dhcp scope link src 129.241.200.XXX</p>
+
+<pre><code>
+4. Check if you have Internet connectivity using the command `ping` (stop it with `Ctrl+c`).
+This will use the ICMP protocol to contact an Internet server of your choice (e.g. `ping ntnu.no` or `ping 8.8.8.8`).
+
+&gt; **Milestone:** if this command fails please ask for help before continuing.
+</code></pre>
+
+<p>$ PING ntnu.no (129.241.160.102) 56(84) bytes of data. 64 bytes from ntnu.no (129.241.160.X): icmp_seq=1 ttl=61 time=0.263 ms 64 bytes from ntnu.no (129.241.160.X): icmp_seq=2 ttl=61 time=0.311 ms ^C — ntnu.no ping statistics — 2 packets transmitted, 2 received, 0% packet loss, time 3ms rtt min/avg/max/mdev = 0.263/0.287/0.311/0.024 ms $</p>
+
+<pre><code>
+5. Use `wget` to download a *zip* file from:
+ - https://www.iik.ntnu.no/ttm4175/wp-content/uploads/2018/08/ttm4175-files.zip</code></pre>
+
+<p>$ wget https://www. … .zip –2018-08-23 13:58:23– https://www. … Loaded CA certificate ‘/etc/ssl/certs/ca-certificates.crt’ Resolving www.iik.ntnu.no (www.iik.ntnu.no)… 129.241.200.18 Connecting to www.iik.ntnu.no|129.241.200.18|:443… connected. HTTP request sent, awaiting response… 200 OK Length: 682251 (666K) [application/zip] Saving to: ‘ttm4175-files.zip’</p>
+<p>ttm4175-files.zip 100%[===…==&gt;] 666.26K –.-KB/s in 0.06s</p>
+<p>2018-08-27 … (11.4 MB/s) - ttm4175-files.zip saved [682251/682251] $</p>
+
+<pre><code>
+6. Create a new user named &quot;guest&quot; with the password &quot;komtek18!&quot;, making sure you also create a home folder (`-m` option in `useradd`).
+
+&gt; **Note:** this new user will be used for another team to login into your system.
+</code></pre>
+
+<p>$ sudo useradd -d /home/guest/ -m guest $ sudo passwd guest Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully $</p>
+
+<pre><code>
+7. In the Linux distribution we are using the home directories give read and execute privileges to &quot;group&quot; and &quot;others&quot;.
+Change the permissions of the home directory of the user &quot;pi&quot; so that your guest cannot see its contents.</code></pre>
+
+<p>$ chmod o-rx /home/pi $</p>
+
+<pre><code>
+8. Find a team close to you and exchange your IP addresses.
+Use the received address, together with the command `ssh` to connect to the other team&#39;s computer (e.g. `ssh guest@ipaddress`).
+
+&gt; **Note:** a warning message should appear the first time you connect since the certificates being used have never been exchanged before.
+&gt; After logging in you should notice a different hostname.
+</code></pre>
+
+<p>$ ssh guest@129.241.200.XXX The authenticity of host … … Are you sure you want to continue connecting (yes/no)? yes <enter> guest@129.241.200.XXX’s password: <enter> … $</p>
+
+<pre><code>
+9. Send a message to all the users/terminals of the remote machine by using the command `wall`. What happened? Check with the other team.
+
+&gt; **Note:** if nothing happened on the remote side, ask the other team to type the command `mesg y` in their terminal.
+</code></pre>
+
+<p>$ wall my_message Broadcast message from guest@teamX (pts/1) (Mon Aug…)</p>
+<p>my_message</p>
+<p>$</p>
+
+<pre><code>
+10. Instead of sending a message to all the users, use the command `who`, or the command `w` to find out who&#39;s in the system and send a message directly to their terminal using the command `write` and `Ctrl+d` to terminate the message.
+
+&gt; **Note:** if you receive the output &quot;write: *user* has messages disabled on ttyX&quot; ask your colleagues to type `mesg y` in their terminal.
+</code></pre>
+
+<p>$ write pi tty1 a message <enter> ^D $</p>
+
+<pre><code>
+11. In a different terminal (or exit the `ssh` session), copy the file &quot;myfile.txt&quot; created earlier to the other team&#39;s machine using the command `scp`.
+Verify that the home folder of the &quot;guest&quot; user has a copy of this file afterwards.</code></pre>
+
+<p>$ scp /home/pi/myfile.txt guest@129.241.200.XXX:. guest@129.241.200.XXX’s password: <enter> myfile.txt 100% 25 0.0KB/s 00:00 $</p>
+
+<pre><code>
+12. Return to the terminal with the remote session (or use `ssh` again), and try the following commands replacing the *user* and *tty* with the information obtained when checking `who`&#39;s logged in:
+- `echo &quot;Redirecting to a new file (destructive).&quot; &gt; redir.txt`
+- `echo &quot;Redirecting, don&#39;t care if it already exists!&quot; &gt; redir.txt`
+- `echo &quot;Appending if it exists, creating if not.&quot; &gt;&gt; append.txt`
+- `echo &quot;Appending if it exists, creating if not.&quot; &gt;&gt; myfile.txt`
+- `write user tty &lt; myfile.txt`
+
+What happened? Were the new files created locally or remotely?</code></pre>
+
+<p>The first creates a new file (“redir.txt”) with the same string. The second replaces the contents of “redir.txt” with the new string. The third creates a new file (“append.txt”) with the same string. The fourth appends the new string instead of replacing the content. The fifth used the content of “myfile.txt” as the input text for write.</p>
+<p>The files were created remotely because we were in a remote terminal.</p>
+
+<pre><code>
+13. Try the commands:
+- `cat myfile.txt | write user tty`
+- `sed &#39;s/ /_/g&#39; myfile.txt | write user tty`
+
+What happened? Was &quot;myfile.txt&quot; modified by any of the commands?
+</code></pre>
+
+<p>The first outputs the contents of “myfile.txt” to write. The second replaces all the spaces by underscores and outputs the changed contents to write.</p>
+<p>The file was not modified.</p>
+
+<pre><code>
+------------
+
+Before commands are executed, their input and output can be redirected using a special notation interpreted by the shell.
+&quot;&gt;&quot; and &quot;&lt;&quot;  are symbols used for enabling this redirection, opening and closing files for the respective shell execution environment.
+
+&quot;|&quot; is the *pipe* symbol, used in the famous Unix pipeline, in which the output of one command becomes the input of a second.
+This allows using text as an interface between different programs and the creation of more complex programs based on simpler ones. 
+
+------------
+
+&lt;!-- TODO
+ - run remote commands without interactive shell
+ - create ssh keys
+ - screen
+--&gt;
+
+### Exercise 7 --- More GNU/Linux
+
+Additional experiments with common GNU/Linux programs.
+
+1. Extract the *zip* file downloaded earlier with the command `unzip`.</code></pre>
+
+<p>$ unzip ttm4175-files.zip Archive: ttm4175-files.zip creating: ttm4175-files/ … inflating: ttm4175-files/onesmall.wav $</p>
+
+<pre><code>
+2. Verify the size of the created folder and *zip* file with the commands:
+- `ls -ld ttm4175-files*`
+- `ls -ld --block-size=K ttm4175-files*`
+
+Explain what you observe.</code></pre>
+
+<p>$ ls -ld –block-size=K ttm4175-files* drwx–x— 7 pi pi 4K Aug 27 2018 ttm4175-files -rw-r–r– 1 pi pi 667K Aug 27 15:51 ttm4175-files.zip $</p>
+
+<pre><code>
+3. In the previous exercise, how can you use the command `sed &#39;s/.* \([0-9]*K\).*/\1/&#39;` the see the size only?</code></pre>
+
+<p>$ ls -ld –block-size=K ttm4175-files* | sed ‘s/.* ([0-9]<em>K).</em>/\1/’ # UNIX pipeline 4K 667K $</p>
+
+<pre><code>
+4. As you may have noticed, the uncompressed folder is smaller than the compressed file.
+Or is it?
+Use the command `du`, with the necessary options, to verify the actual disk usage of the files in the folder.
+
+&gt; In Linux &quot;everything&quot; is a file, even a directory, and the command `ls` shows the size of the file corresponding to the directory, not its files.
+</code></pre>
+
+<p>$ du -hs ttm4175-files* 2.1M ttm4175-files 668K ttm4175-files.zip</p>
+
+<pre><code>
+5. Enter the &quot;ttm4175-files&quot; directory, execute the following commands and register what happens with each:
+- `ln -s a/very/strange/directory/structure struct`
+- `ls *.mp3`
+- `file *.mp3`
+- `ls *one*`
+- `find . -name &quot;*.txt&quot;`
+- `find . -type f -name &quot;*.txt.&quot;`
+- `find . -type f -name &quot;*.txt&quot; -print`
+- `find . -type f -name &quot;*.txt&quot; -print -exec head &#39;{}&#39; \;`
+- `find /usr -type f -executable -name find`
+- `whereis find` 
+- `time find /usr -type f -executable -name find`
+- `time whereis find` 
+
+&gt; **Hint:** Use the documentation to find what the commands do and experiment with commands you already know (`ls`, `pwd`, etc.).
+</code></pre>
+
+<p>$ ln -s a/very/strange/directory/structure struct # soft/symbolic link $ ls -la struct lrwxrwxrwx 1 pi pi 34 Aug 23 01:12 struct -&gt; a/very/strange/directory/structure $ $ ls <em>.mp3 onesmall.mp3 torvalds-says-linux.mp3 $ $ file </em>.mp3 onesmall.mp3: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 8 bit, mono 11025 Hz torvalds-says-linux.mp3: MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, Stereo $ etc. etc.</p>
+
+<p>```</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=wjWZhV1v3Pk">Raspberry Pi – Getting Started</a></li>
+<li><a href="https://www.youtube.com/watch?v=bKzonnwoR2I">Unix Pipeline</a></li>
+<li><a href="https://www.youtube.com/watch?v=NTfOnGZUZDk">grep</a></li>
+<li><a href="https://hackaday.com/2018/03/09/linux-fu-regular-expressions/">Regular Expressions</a><a href="https://xkcd.com/208/">.</a></li>
+<li><a href="https://www.youtube.com/watch?v=PG9oKZdFb7w">Network Stacks and the Internet</a></li>
+<li><a href="https://www.youtube.com/watch?v=iGPXkxeOfdk">Why do we need IP addresses?</a></li>
+<li><a href="https://www.youtube.com/watch?v=L6bDA5FK6gs">IP addresses and the Internet</a></li>
+</ul>
+<p>Additional <em>optional</em> materials:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=tc4ROCJYbm0">A little bit of history</a></li>
+<li><a href="http://tille.garrels.be/training/tldp/index.html">Introduction to Linux</a> (only chapters 1, 2, 3, 5 and 6)</li>
+<li><a href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html">Bash Guide for Beginners</a> (only sections 1.1, 1.3, 1.6, 3.4, 4.1, 4.2, 5.1, 5.2, 6.1, 6.2 and 6.3)</li>
+<li><a href="https://www.ibm.com/developerworks/linux/tutorials/l-vi/index.html#N101AE">Quick introduction to <code>vim</code></a></li>
+<li><a href="http://vimgenius.com/">Interactive <code>vim</code> tutorial</a></li>
+<li><a href="https://mywiki.wooledge.org/BashPitfalls">Bash Pitfalls and Solutions</a> (<strong>advanced!</strong>)</li>
+</ul>
+<hr />
+
+    </section>
+</div>
+
+
+<footer></footer>
+</body>
+</html>

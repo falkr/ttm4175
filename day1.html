@@ -134,17 +134,20 @@
 
 <div class="goals"><ul>
 <li>You will be able to operate your own computer.</li>
-<li>You will get familiar with the most important commands.</li>
+<li>You will get familiar with the most important commands to control the computer and the applications running on it.</li>
+<li>You will be able to operate a computer remotely.</li>
+<li>You will get some basic understanding of networking.</li>
+</ul>
+<p>But you will also learn some more skills that will be useful:</p>
+<ul>
 <li>You will learn to work in teams.</li>
 <li>You will get used to English as instruction language.</li>
 </ul>
-<p>For our project we use the <a href="https://www.raspberrypi.org">Raspberry Pi</a>. It’s a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers, since it runs the same commands. So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.</p>
 </div>
     </section>
     <section class="content">
 <h1 id="day-1-the-raspberry-pi">Day 1: The Raspberry Pi</h1>
-<p>Today we will start things off by letting you become familiar with the Raspberry Pi. We will use a combination of the topics you go through the first three days to set up our own webserver and website, so pay attention!</p>
-
+<p>Today we will start things off by letting you become familiar with the Raspberry Pi.</p>
 <h3 id="learning-goals-for-today">Learning Goals for Today</h3>
 
 <div class="goals"><ul>
@@ -156,14 +159,37 @@
 </div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
-<li><a href="commands.html/#ls">ls</a> — to list files and folders.</li>
-<li><a href="commands.html/#passwd">passwd</a> — to change passwords.</li>
-<li><a href="commands.html/#pwd">pwd</a> — to show in which directory you are.</li>
+<li><a href="commands.html#ls">ls</a> — to list files and folders.</li>
+<li><a href="commands.html#passwd">passwd</a> — to change passwords.</li>
+<li><a href="commands.html#pwd">pwd</a> — to show in which directory you are.</li>
 </ul>
 
     </section>
     <section class="content">
+<h1 id="teamwork">Teamwork</h1>
+<p>We organized you in teams of <strong>3 students</strong> in this semester. This is a good number to work together behind a computer. It’s enough to learn something from each other and work together, but not too many so it get’s to hard to coordinate your work.</p>
+<p>The teams are <strong>fixed over the semester</strong> so that you get used to each other and develop a better team dynamic over time.</p>
+<p>During the beginning of the lab, when we do quizzes, for example, we join always two teams of three into a <strong>double-team</strong> of six students. The pairing of the teams is also the same each week. Team 1 is a double team with team 2, and team 3 with team 4, and so on.</p>
+
+<span name="cf52b3"></span><aside name="cf52b3"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
+</aside>
+<p>We start with a task on teamwork.</p>
+
+<a class="ntnu-button" href="teamwork-1.html">Go to teamwork task</a>
+    </section>
+    <section class="content">
 <h1 id="starting-the-raspberry-pi">Starting the Raspberry Pi</h1>
+<p>For our project we use the <a href="https://www.raspberrypi.org">Raspberry Pi</a>. It’s a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers. <strong>The Raspberry Pi runs the same commands (programs) and operating system like “real” servers.</strong> So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.</p>
+<p>The following video provides an introduction, and shows how to operate the Pi:</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wjWZhV1v3Pk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<span name="wjWZhV1v3Pk">&nbsp;</span>
+<aside name="wjWZhV1v3Pk"><p><p>How to get started with the Raspberry Pi.</p>
+</p></aside>
+</div>
+<h2 id="task-connecting-the-pi">Task: Connecting the Pi</h2>
+<p>With the knowledge from above, connect the Pi!</p>
 <ul>
 <li>Make sure the SD-card is inserted correctly</li>
 <li>Connect the Pi to the monitor in the lab using the HDMI cable</li>
@@ -173,9 +199,11 @@
 </ul>
 <p>Now, plug in the power supply. You should see that the Raspberry Pi boots up.</p>
 
+<div class="tip"><p><strong>Tip:</strong> The Pi does not come with an on/off button. To switch it off, you <em>can</em> simply unplug it from the power source. However, if the Pi is busy writing your files to the storage, you may end up with some errors. Therefore, to make sure all is fine, use the command <code>shutdown</code>, wait until the Pi has finished, and unplug the power then safely.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="logging-in-and-changing-the-password">Logging In and Changing the Password</h1>
+<h1 id="logging-in-and-changing-passwords">Logging In and Changing Passwords</h1>
 
 <h2 id="logging-in">Logging In</h2>
 <p>By default, the Raspberry Pi is configured with a default user with the name <code>pi</code> and the password <code>raspberry</code>.</p>
@@ -183,7 +211,7 @@
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">pi</span></a></code></pre></div>
 
-<p>Then, type the password, followed by enter:</p>
+<p>Then, type the password, followed by the key <code>enter</code>:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">raspberry</span></a></code></pre></div>
 
