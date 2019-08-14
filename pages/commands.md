@@ -1,7 +1,6 @@
 # Linux Commands
 
 
-
 ### Man-Pages
 
 If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (_man_ for _manual_). For instance, to know read more about the `cd` command, type 
@@ -27,6 +26,7 @@ DESCRIPTION
      not continue unless the correct password is entered.
 ...
 ```
+
 You can return to the command line by pressing `q` (for _quit_).
 You can also [browse man-pages online](http://man7.org/linux/man-pages/dir_all_alphabetic.html).
 
@@ -75,6 +75,7 @@ cd --help
 
 
 
+# apt
 
 # cd
 
@@ -91,6 +92,9 @@ cd --help
 Changes the password
 
 
+# sudo
+
+# systemctl
 
 # touch
 

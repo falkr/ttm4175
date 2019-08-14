@@ -10,8 +10,8 @@ Today we will explore the world of HTML, the marking language used to build ever
 
 ### New Linux Commands
 
-- [passwd](commands.html/#passwd) --- to change passwords.
-- [ls](commands.html/#ls) --- to list files and folders.
+- [passwd](commands.html#passwd) --- to change passwords.
+- [ls](commands.html#ls) --- to list files and folders.
 
 
 # Nano/ Vim (Or Leafpad)
