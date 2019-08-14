@@ -122,24 +122,103 @@
     </section>
     <section class="content">
 <h1 id="day-2-the-linux-terminal">Day 2: The Linux Terminal</h1>
-<p>Today, many of you will take your first steps with the powerful Linux Terminal.</p>
+<p>Today, many of you will take your first steps with the powerful Linux terminal.</p>
 <h3 id="learning-goals">Learning Goals</h3>
 
 <div class="goals"><ul>
-<li>Become familiar with Linux</li>
+<li>Become familiar with Linux commands and the terminal</li>
 <li>Feel home on the Raspberry Pi</li>
-<li>understand user rights</li>
+<li>understand user permissions</li>
 </ul>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
-<li>ip address</li>
-<li>ssh — to start the SSH server</li>
+<li><a href="commands.html#curl">curl</a> — powerful tool for web requests, among other to download a file</li>
 </ul>
 </div>
     </section>
     <section class="content">
 <h1 id="capture-the-flag">Capture the Flag</h1>
-<p>Here it will be described where they can find the CTF software, how to run it, and how to use it. The goal is to get through all of the tasks in the CTF.</p>
+<p>Capture the Flag (CTF) is a special kind of information security competition. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.</p>
+<ul>
+<li>Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example, Web, Forensic, Crypto, Binary or something else. A team gets some points for every solved task. Generally teams will be awarded more points for more difficult tasks. The next task in the chain will be unlocked after you solve the previous one. The team with the most points when the time is over is the winner. A famous example of this kind of CTF is the DEFCON CTF Qualifier.</li>
+<li>Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnarable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams. So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.</li>
+</ul>
+<p>Today we are going to do a relatively short Jeopardy-style CTF. The category is Linux, which means that the security aspect of the CTF is not really present. It is more of a way to become more familiar with the terminal and navigation around the Linux file structure. The game consists of 10 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
+
+<h2 id="install-ctf">Install CTF</h2>
+<p>The file <code>teknostart_ctf.py</code> is located in you home folder, which would be <code>/home/pi</code>. This is a progam written in the programming language <a href="https://www.python.org/">Python</a>, and is a terminal-based game.</p>
+
+<h3 id="step-1-move-to-the-home-directory">Step 1: Move to the Home Directory</h3>
+<p>Open the terminal and check in which folder you are. We do that with the command <code>pwd</code> (<em>“print working directory”</em>):</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">pwd</span></a></code></pre></div>
+
+<p>The output shows in which folder or directory you are. Move into your home directory, using the <code>cd</code> (<em>“change directory”</em>) command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">pwd</span> /home/pi/</a></code></pre></div>
+
+<div class="tip"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
+</div>
+<h3 id="step-2-download-ctf">Step 2: Download CTF</h3>
+
+<p>We now download the file containing the CTF program.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">curl</span> .... </a></code></pre></div>
+
+<h3 id="step-3-run-the-program">Step 3: Run the program</h3>
+<p>To run an executable file in Linux, we type <code>./</code> followed by the name of the program. Run the program <code>teknostart_ctf.py</code>.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+
+    </section>
+    <section class="content">
+<h1 id="example-first-ctf-task">Example: First CTF Task</h1>
+<h3 id="step-1">Step 1</h3>
+<p>Run the program for the first time:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+
+<p>You should get an output back that looks like this.</p>
+
+<pre><code>CURRENT LEVEL: level 1
+----------------------------------------
+
+I /etc/komtek ligger det èn fil, hva er navnet på denne filen?
+
+Example answer:      filnavn.txt         
+Answer given:        None                
+Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
+Correct hash:        3240af5f279f28ba703346977438465621d43c5cfe10b053bfb48311b4de0058
+
+----------------------------------------</code></pre>
+
+<ul>
+<li><code>CURRENT LEVEL</code> <em>is the level that you are currently on, this will increase as you progress</em></li>
+<li><code>Question</code> <em>is the task for this level, read it carefully</em></li>
+<li><code>Example answer</code> <em>is an example answer to give you an idea of what format the answer should be. for instance, when asked about a file name, this example tries to show that we are looking for the full filename, including the file ending <code>.txt</code>.</em></li>
+<li><code>Answer given</code> <em>is the answer you gave, which is “None” by default</em></li>
+<li><code>Hash of answer</code> <em>is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a <a href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> which it will try to compare to the hashed version of the correct answer.</em> <strong>(TODO: Make this more clear)</strong></li>
+<li><code>Correct hash</code> <em>is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct</em></li>
+</ul>
+
+<h3 id="step-2-solve-the-task">Step 2: Solve the task</h3>
+<p>The first you will see is what level you are on, in this case, level 1. As you progress, this will increase. Next is the challenge for this level. This question asks for a file name stored at a particular location, more specifically in <code>/etc/komtek</code>.</p>
+<p>In this example, the task is to find the file in <code>/etc/komtek</code>.</p>
+<p>First we change our directory to that folder: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-40.png" alt="alt text" /></p>
+<p>To check that we are in fact in the right folder, we can use <code>pwd</code>.</p>
+<figure>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-42.png" alt="alt text" /><figcaption>alt text</figcaption>
+</figure>
+<p>We can now list all the files in the folder with the command <code>ls</code>. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-43.png" alt="alt text" /></p>
+<p>and here is our file!</p>
+<h3 id="step-3-check-if-you-got-the-correct-answer">Step 3: Check if you got the correct answer</h3>
+<p>To test our answer, we run the program again and input our answer <code>first_flag.txt</code>.</p>
+<p>First we change directory back to where <code>./teknostart_ctf.py</code>is located. 1. <code>cd /home</code> or simply <code>cd</code>, these commands both changes the current directory to you home folder. 2. <code>./teknostart_ctf.py first_flag.txt</code></p>
+<p>You will receive the message:</p>
+
+<pre><code>Congratulations, you have been promoted to the next level!</code></pre>
+
+<p>followed by the next question. Try to solve as many of the tasks as you can.</p>
 
     </section>
 </div>
