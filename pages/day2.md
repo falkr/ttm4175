@@ -42,7 +42,7 @@ pwd
 The output shows in which folder or directory  you are. Move into your home directory, using the `cd` (_"change directory"_) command:
 
 ```bash
-pwd /home/pi/
+cd /home/pi/
 ````
 
 :tip: You can also move to the home directory by writing `cd ~`. The wiggly line that looks like a snake is called _tilde_ and an abbreviation for your home directory.
@@ -56,6 +56,9 @@ We now download the file containing the CTF program.
 ```bash
 curl .... 
 ```
+
+:tip: When you download such a file and then run it, you need to make sure that you know what it contains or trust its origin. The file can run programs that have access to everything on your computer. 
+
 
 ### Step 3: Run the program
 
