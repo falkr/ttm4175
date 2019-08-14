@@ -14,6 +14,8 @@ Today, many of you will take your first steps with the powerful Linux Terminal.
 - ip address
 - ssh --- to start the SSH server
 
+
+
 # What are CTFs?
 
 Capture the Flag (CTF) is a special kind of information security competitions. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.
@@ -46,3 +48,59 @@ Check if the `teknostart_ctf.py`is in the folder.
 
 ### Example
 
+To run an executable file in Linux, we type `./`followed by the name of the program. 
+
+#### Step 1/3: Run the program
+Run the program `teknostart_ctf.py`. You should get an output back that looks like this. 
+
+
+```
+CURRENT LEVEL: level 1
+----------------------------------------
+
+I /etc/komtek ligger det èn fil, hva er navnet på denne filen?
+
+Example answer:      filnavn.txt         
+Answer given:        None                
+Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
+Correct hash:        3240af5f279f28ba703346977438465621d43c5cfe10b053bfb48311b4de0058
+
+----------------------------------------
+```
+
+`CURRENT LEVEL` *is the level that you are currently on, this will increase as you progress*
+`Question` *is the task for this level, read it carefully* 
+`Example answer` *is an example answer to give you an idea of what format the answer shoul be. for instance, when asked about a file    name, this example tries to show that we are looking for the full filename, including the file ending `.txt`.*
+`Answer given` *is the answer you gave, which is "None" by default*
+`Hash of answer` *is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a  [string](https://en.wikipedia.org/wiki/String_(computer_science)) which it will try to compare to the hashed version of the correct answer.*  **(TODO: Make this more clear)**
+`Correct hash` *is the hashed version of the correct answer. if This hash matches the hash of your answer, the answer is correct*
+
+### Step 2/3: Solve the task
+The first you will see is what level you are on, in this case, level 1. As you progress, this will increase. Next is the challenge for this level. This question asks for a file name stored at a particular location, more specifically in `/etc/komtek`. 
+
+In this example, the task is to find the file in `/etc/komtek`.
+
+First we change our directory to that folder:
+![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-40.png)
+
+To check that we are in fact in the right folder, we can use `pwd`.
+
+![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-42.png)
+
+We can now list all the files in the folder with the command `ls`.
+![alt text ](https://home.samfundet.no/~halvogro/ting/bilder/image-43.png)
+
+and here is our file!
+
+### Step 3/3: Check if you got the correct answer
+To test our answer, we run the program again and input our answer `first_flag.txt`.
+
+First we change directory back to where `./teknostart_ctf.py`is located.
+1. `cd /home` or simply `cd`, these commands both changes the current directory to you home folder. 
+2. `./teknostart_ctf.py first_flag.txt`
+
+You will receive the message:
+```
+Congratulations, you have been promoted to the next level!
+```
+followed by the next question. Try to solve as many of the tasks as you can.
