@@ -76,7 +76,15 @@ caption: "Each day we try to reach a new goal. The final goal is to run our own 
 ### Nettverk
 
 Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
-Du skal bland annet konfigurere ditt eget nettverk.
+Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tjenestere.
+
+Til slutt vil du ha laget din egen trådløse ruter med en innebygd brannmur og forstå nerdete vitser om nettverk!
+
+---
+type: figure
+source: figures/net/campfire.png
+---
+
 
 :aside: <img src="figures/david.jpg" width="100px"><p><a href="https://www.ntnu.no/ansatte/david.palma">David Palma</a><br/><i class="far fa-envelope"></i> david.palma@ntnu.no</p>
 
