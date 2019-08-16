@@ -81,7 +81,7 @@ Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tj
 Til slutt vil du være i stand til å forstå hvordan du kan:
 
 * lage et datanettverk,
-* klare et datanettverk og
+* håndtere et datanettverk og
 * beskytte et datanettverk.
 
 Vi kommer til å bruke en Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndtere uønsket tilgang med humor!
