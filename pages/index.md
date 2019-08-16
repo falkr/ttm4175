@@ -78,11 +78,17 @@ caption: "Each day we try to reach a new goal. The final goal is to run our own 
 Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
 Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tjenestere.
 
-Til slutt vil du ha laget din egen trådløse ruter med en innebygd brannmur og forstå nerdete vitser om nettverk!
+Til slutt vil du være i stand til å forstå hvordan du kan:
+
+* lage et datanettverk,
+* klare et datanettverk og
+* beskytte et datanettverk.
+
+Vi kommer til å bruke en Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndtere uønsket tilgang med humor!
 
 ---
 type: figure
-source: figures/net/campfire.png
+source: figures/net/networking.png
 ---
 
 
