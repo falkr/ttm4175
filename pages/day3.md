@@ -33,11 +33,11 @@ ip address
 
 This command shows you all the existing IP addresses associated with your Raspberry PI.
 These addresses are fundamental for connecting computers and other devices to each other and the Internet.
-
-Each network card (e.g. wireless card) is called an interface and it may have one or more IP addresses.
-A typical IP(v4) address at NTNU looks something like 129.241.200.112/24.
+Each network card (e.g. wireless card) is called an _interface_ and it may have one or more IP addresses.
+A typical IP(v4) address at NTNU looks something like `129.241.200.112/24.`
 
 Write down the address and mask of the interface `eth0`.
+
 
 # Testing Internet Connectivity
 
@@ -53,7 +53,16 @@ ip route
 ```
 
 You should see a *default route* via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet.
-Try pinging that router with the command `ping` as such:
+
+To see if we can send something back and forth between two computers, we can use the command `ping`. 
+It does exactly what it sounds like... It sends a "ping" message to the other computer, which then answers. 
+
+---
+type: youtube
+video: jr0JaXfKj68
+---
+
+Try pinging that router with the command `ping`:
 
 ```bash
 ping 129.241.200.1
@@ -62,8 +71,12 @@ ping 129.241.200.1
 You can also use the same command to `ping` other online machines such as the server hosting the website from the European Space Agency at *www.esa.int*.
 Can you see any significant difference from the previous `ping` command?
 
+```bash
+ping www.esa.int
+```
 
-# Remotely accessing and managing a Linux machine
+
+# Remote Access to a Computer
 
 It is possible to remotely access a Linux system, and manage it, using different tools.
 One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as `ssh`.

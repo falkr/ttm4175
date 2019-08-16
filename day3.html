@@ -40,7 +40,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day1.html">Dag 1: Raspberry Pi</a>
       <a class="dropdown-item" href="day2.html">Dag 2: Linux</a>
-      <a class="dropdown-item" href="day3.html">Dag 3: IP og HTML</a>
+      <a class="dropdown-item" href="day3.html">Dag 3: IP, SSH og HTML</a>
       <a class="dropdown-item" href="day4.html">Dag 4: Webserver 1</a>
       <a class="dropdown-item" href="day5.html">Dag 5: Webserver 2</a>
     </div>
@@ -149,8 +149,7 @@
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">ip</span> address</a></code></pre></div>
 
-<p>This command shows you all the existing IP addresses associated with your Raspberry PI. These addresses are fundamental for connecting computers and other devices to each other and the Internet.</p>
-<p>Each network card (e.g. wireless card) is called an interface and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like 129.241.200.112/24.</p>
+<p>This command shows you all the existing IP addresses associated with your Raspberry PI. These addresses are fundamental for connecting computers and other devices to each other and the Internet. Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24.</code></p>
 <p>Write down the address and mask of the interface <code>eth0</code>.</p>
 
     </section>
@@ -161,15 +160,23 @@
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">ip</span> route</a></code></pre></div>
 
-<p>You should see a <em>default route</em> via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet. Try pinging that router with the command <code>ping</code> as such:</p>
+<p>You should see a <em>default route</em> via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet.</p>
+<p>To see if we can send something back and forth between two computers, we can use the command <code>ping</code>. It does exactly what it sounds like… It sends a “ping” message to the other computer, which then answers.</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jr0JaXfKj68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Try pinging that router with the command <code>ping</code>:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ping</span> 129.241.200.1</a></code></pre></div>
 
 <p>You can also use the same command to <code>ping</code> other online machines such as the server hosting the website from the European Space Agency at <em>www.esa.int</em>. Can you see any significant difference from the previous <code>ping</code> command?</p>
 
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ping</span> www.esa.int</a></code></pre></div>
+
     </section>
     <section class="content">
-<h1 id="remotely-accessing-and-managing-a-linux-machine">Remotely accessing and managing a Linux machine</h1>
+<h1 id="remote-access-to-a-computer">Remote Access to a Computer</h1>
 <p>It is possible to remotely access a Linux system, and manage it, using different tools. One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as <code>ssh</code>.</p>
 <p>This service needs to be enabled <strong>in your Raspberry Pi</strong> with the following commands:</p>
 
