@@ -76,7 +76,21 @@ caption: "Each day we try to reach a new goal. The final goal is to run our own 
 ### Nettverk
 
 Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
-Du skal bland annet konfigurere ditt eget nettverk.
+Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tjenestere.
+
+Til slutt vil du være i stand til å forstå hvordan du kan:
+
+* lage et datanettverk,
+* håndtere et datanettverk og
+* beskytte et datanettverk.
+
+Vi kommer til å bruke en Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndtere uønsket tilgang med humor!
+
+---
+type: figure
+source: figures/net/networking.png
+---
+
 
 :aside: <img src="figures/david.jpg" width="100px"><p><a href="https://www.ntnu.no/ansatte/david.palma">David Palma</a><br/><i class="far fa-envelope"></i> david.palma@ntnu.no</p>
 
