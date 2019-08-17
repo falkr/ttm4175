@@ -118,6 +118,18 @@ For many tasks related to system administration and programming it is useful to 
 This is especially the case when the computer is somewhere in a server room or data center far away and you want to log into it remotely. (We will do that later.)
 Therefore, we are going to learn how to use the command line.
 
+You can access the command line by opening the terminal application from the menu:
+
+---
+type: figure
+source: figures/teknostart/rpi-terminal-1.png
+---
+
+---
+type: figure
+source: figures/teknostart/rpi-terminal-2.png
+---
+
 
 
 
