@@ -13,12 +13,12 @@ In order to this we will also briefly look into IP addresses and the Secure Shel
 
 ### New Linux Commands
 
-- [ip](ip.html#ip) --- show / manipulate routing, network devices, interfaces and tunnels.
-- [ssh](ssh.html#ssh) --- remote login program.
-- [scp](scp.html#scp) --- remote file copy program.
-- [ping](ping.html#ping) --- send ICMP *ECHO_REQUEST* to network hosts.
-- [curl](curl.html#curl) --- transfer a URL.
-- [aplay](aplay.html#aplay) --- command-line sound player for ALSA.
+- [ip](commands.html#ip) --- show / manipulate routing, network devices, interfaces and tunnels.
+- [ssh](commands.html#ssh) --- remote login program.
+- [scp](commands.html#scp) --- remote file copy program.
+- [ping](commands.html#ping) --- send ICMP *ECHO_REQUEST* to network hosts.
+- [curl](commands.html#curl) --- transfer a URL.
+- [aplay](commands.html#aplay) --- command-line sound player for ALSA.
 
 
 # Finding your IP address and checking for connectivity
@@ -35,7 +35,7 @@ These addresses are fundamental for connecting computers and other devices to ea
 Each network card (e.g. wireless card) is called an _interface_ and it may have one or more IP addresses.
 A typical IP(v4) address at NTNU looks something like `129.241.200.112/24.`
 
-Write down the address and mask of the interface `eth0`.
+Write down the address and mask of the interface `eth0`. You will need it later.
 
 
 # Testing Internet Connectivity
@@ -81,16 +81,22 @@ The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.t
 Most servers used in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
 Also, most companies don't even own their own servers anymore, but rent servers as services in big data centers that are remotely located.
 
-So we don't have access to the computer via monitor, keyboard or mouse. What we _can_ do though, is remotely manage and control it through **SSH**.
+So we don't have access to the computer via monitor, keyboard or mouse. What we _can_ do though, is remotely manage and control it through a service (or pgoram) called **SSH** _("secure shell")_.
+This program gives remote access to the shell (the terminal or command line) of the Raspberry --- remote means from another computer.
 
-This service needs to be enabled **in your Raspberry Pi** with the following commands:
+### Turn on SSH
+
+First, SSH needs to be enabled **in your Raspberry Pi** with the following commands:
 
 ```bash
 sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
 
-Now, **from your desktop** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
+### Connecting to the Raspberry Pi
+
+Connect the monitor, keyboard and mouse in the lab again with the stationary PC from the lab. (It's okay to carefully take out the USB and HDMI connector from the Pi.)
+Log into the PC of the lab with your norma NTNU account. Now, **from the lab PC** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
 
 ```bash
 ssh pi@<your_ip_address>
@@ -99,17 +105,27 @@ ssh pi@<your_ip_address>
 **Note:** a warning message should appear the first time you connect since the certificates being used have never been exchanged before.
 It is okay to say "yes" and then type in your password.
 
-Now that you are remotely controlling your Raspberry IP issue the following command to download a simple *wave* file:
+You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your deks, in a room nearby, in a data center far away!
+
+Play around with some commands (`pwd`, `cd`, `ls`) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.
+
+
+### Playing a sound... Remotely!
+
+Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:
 
 ```bash
 curl https://ttm4175.iik.ntnu.no/onesmall.wav -O
 ```
 
-And play it!
+Connect the speaker from the box to the audio-connector of the Pi, and turn it on. (It may require some power, too.)
+
+And play the sound file with the following command:
 
 ```bash
 aplay onesmall.wav
 ```
+
 
 # Step 1: Setting up a web site
 
@@ -157,7 +173,7 @@ You should get a message that looks like this:
 
 ---
 type: figure
-source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png)
+source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
 ---
 
 You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
