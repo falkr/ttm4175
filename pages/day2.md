@@ -9,16 +9,113 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - Feel home on the Raspberry Pi
 - understand user permissions
 
+
 ### New Linux Commands
 
+- [cd](commands.html#cd) --- change into another directory 
 - [curl](commands.html#curl) --- powerful tool for web requests, among other to download a file
-- ls --- List the files in you current directory
-- mkdir --- Create a folder in your current directory
-- cd --- Change directory
-- touch --- Create a file in your current directory
-- rmdir --- Remove a folder
-- rm --- remove a file
-- 
+- [ls](commands.html#ls) --- list files and folders
+- [pwd](commands.html#pwd) --- show in which directry you are
+- [sudo](commands.html#sudo) --- running commands as super user
+- [mkdir](commands.html#mkdir) --- create a folder
+- [rmdir](commands.html#rmdir) --- remove a folder
+- [rm](commands.html#sudo) --- remove a file
+- [touch](commands.html#sudo) --- create a file
+
+
+# Navigating Folders and Files
+
+On Linux, **files** are sorted in **folders**, just like you are used to from other computers. 
+Sometimes, _folder_ are also called _directories_. 
+Since folders can be other folders, this creates a tree-like hierarchy. 
+Each file and folder therefore has a **path**.
+
+The path of the home directory, for instance, is in `/home/pi`, for the default user with the name `pi`.
+There are two things about paths you need to remember:
+
+- They start with a `/` in the beginning, this is the topmost folder. This topmost folder is also called _root_ folder.
+- The different folders and files are separated by `/`.
+
+
+### Find out where you are with pwd
+
+When you are in the terminal, you are always in some folder. When you boot up and just open a terminal, you usually start in the home folder. If you are not sure, where you are currently, type the `pwd`command, which stands for _"**p**rint **w**orking **d**irectory"_.
+
+```bash
+pwd
+```
+
+The output of this command will then be the path of the current folder you are in.
+
+### Change the folder with cd
+
+Using the `cd` command, which stands for _"**c**hange **d**irectory"_, you can change into any riectory, using its path. Type the following to move into your home folder:
+
+```bash
+cd /home/pi
+```
+
+Since the home folder is so so useful, its path has an abbreviation, which is the funny snake `~` (tilde). You can hence also write the following to change into the home directory:
+
+```bash
+cd ~
+```
+
+If you want to move just one folder up in the hierarchy, for example, you are in `/home/pi` but would like to go into `/home/`, you can do that with the special path `..`. Here, the `..` just means "one up". So, we can type the following:
+
+```bash
+cd ..
+```
+
+This moves you one folder up. You can check where you are using the `pwd` command. 
+
+### Listing Folder Content with ls
+
+To look at the files and folders inside a folder use the `ls` command. (Remember it with the word _"**l**i**s**t"_.) For example, move into the root folder at the top and see which files and folders are listed there:
+
+```bash
+cd /
+```
+
+and then 
+
+```bash
+ls
+```
+
+will list the following:
+
+---
+type: figure
+source: figures/teknostart/rpi-terminal-folders-1.png
+---
+
+Note that there are different colors for folders and files. 
+
+If you want some more detailed information about folders and files, you can use the `ls -l` command, that means, the `ls` command with an **option** `-l`. When you invoke it in the root folder, for instance:
+
+```bash
+ls -l
+```
+
+now the listing will look as follows:
+
+---
+type: figure
+source: figures/teknostart/rpi-terminal-folders-2.png
+---
+
+
+# Being Super User
+
+Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system.
+As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. SOmtimes you just add this in front of another command that you want to execute with special rights. 
+
+```bash
+sudo <important command...>
+```
+
+Think of it as when your parents told you to say "Please!"
 
 
 
