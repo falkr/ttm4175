@@ -77,8 +77,11 @@ ping www.esa.int
 
 # Remote Access to a Computer
 
-It is possible to remotely access a Linux system, and manage it, using different tools.
-One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as `ssh`.
+The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. 
+Most servers used in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
+Also, most companies don't even own their own servers anymore, but rent servers as services in big data centers that are remotely located.
+
+So we don't have access to the computer via monitor, keyboard or mouse. What we _can_ do though, is remotely manage and control it through **SSH**.
 
 This service needs to be enabled **in your Raspberry Pi** with the following commands:
 
@@ -109,9 +112,11 @@ aplay onesmall.wav
 ```
 
 # Step 1: Setting up a web site
-The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. What we _can_ do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
 
-:note-box: It is important to note that today, most servers in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
+ When we are connected via SSH, there is another challenge that we have to overcome in order to begin developing our website:
+ The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. 
+ There are a few option for doing this. The three most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
+
 
 ## The Nano Editor
 
@@ -120,9 +125,13 @@ Enter [Nano](https://www.nano-editor.org/), an easy-to-use text editor that prov
 
 ### How to Use Nano:
 
-To create a new file in Nano, we simply type `nano`in our terminal. Nano will open in a windows that looks something like this. 
+To create a new file in Nano, we simply type `nano`in our terminal. Nano will open in a window that looks like this: 
 
-![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-45.png)
+---
+type: figure
+source: https://home.samfundet.no/~halvogro/ting/bilder/image-45.png
+caption: "The Nano editor"
+---
 
 Now we can start typing the contents of the file. 
 
@@ -144,10 +153,14 @@ As mentioned, we will use SSH to connect to the NTNU server.
 2. type `ssh <ntnu_username>@login.stud.ntnu.no` and press enter
 3. Enter you password
 
-If you get a message that looks like this:
-![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-46.png)
+You should get a message that looks like this:
 
-Congratulations, you are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
+---
+type: figure
+source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png)
+---
+
+You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
 
 
 # Styep 3: Making a website
@@ -155,7 +168,9 @@ Congratulations, you are now successfully connected to the server. Here you have
 NTNU has made a solution for students to create their own website and immediately publish them on the internet. 
 
 ### HTML
-Hyper Text Markup Language (HTML) is a markup language[1] for creating a webpage. Webpages are usually viewed in a web browser. They can include writing, links, pictures, and even sound and video. HTML is used to mark and describe each of these kinds of content so the web browser can display them correctly.
+
+Hyper Text Markup Language (HTML) is a language for creating a webpage. Webpages are usually viewed in a web browser. They can include text, links, pictures, and even sound and video. 
+HTML is used to mark and describe each of these kinds of content so the web browser can display them correctly.
 
 Ultimately, every webpage on the internet is written in HTML. To see the HTML code that lies behind any website, open Firefox and navigate to any website that you like. Then, right click on the page and choose `View Page Source`. This will take you to the underlying HTML code for this site that your browser uses to present the site in a viewable way.
 
