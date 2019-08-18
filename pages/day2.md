@@ -21,6 +21,7 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - [rmdir](commands.html#rmdir) --- remove a folder
 - [rm](commands.html#sudo) --- remove a file
 - [touch](commands.html#sudo) --- create a file
+- [grep](commands.html#grep) --- search for text in a file
 
 
 # Navigating Folders and Files
