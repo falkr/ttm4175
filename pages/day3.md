@@ -109,6 +109,12 @@ You now have access to the terminal of the Raspberry Pi, but without it being co
 
 Play around with some commands (`pwd`, `cd`, `ls`) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.
 
+---
+type: figure
+source: figures/teknostart/ssh-computers.png
+caption: "The connection between the local PC and the Raspberry Pi. The Pi could be anywhere, you only access it via the internet and SSH from the local PC."
+---
+
 
 ### Playing a sound... Remotely!
 
