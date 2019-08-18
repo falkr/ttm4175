@@ -130,10 +130,68 @@
 <li>Feel home on the Raspberry Pi</li>
 <li>understand user permissions</li>
 </ul>
+</div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
+<li><a href="commands.html#cd">cd</a> — change into another directory</li>
 <li><a href="commands.html#curl">curl</a> — powerful tool for web requests, among other to download a file</li>
+<li><a href="commands.html#ls">ls</a> — list files and folders</li>
+<li><a href="commands.html#pwd">pwd</a> — show in which directry you are</li>
 </ul>
+
+    </section>
+    <section class="content">
+<h1 id="navigating-folders-and-files">Navigating Folders and Files</h1>
+<p>On Linux, <strong>files</strong> are sorted in <strong>folders</strong>, just like you are used to from other computers. Sometimes, <em>folder</em> are also called <em>directories</em>. Since folders can be other folders, this creates a tree-like hierarchy. Each file and folder therefore has a <strong>path</strong>.</p>
+<p>The path of the home directory, for instance, is in <code>/home/pi</code>, for the default user with the name <code>pi</code>. There are two things about paths you need to remember:</p>
+<ul>
+<li>They start with a <code>/</code> in the beginning, this is the topmost folder. This topmost folder is also called <em>root</em> folder.</li>
+<li>The different folders and files are separated by <code>/</code>.</li>
+</ul>
+
+<h3 id="find-out-where-you-are-with-pwd">Find out where you are with pwd</h3>
+<p>When you are in the terminal, you are always in some folder. When you boot up and just open a terminal, you usually start in the home folder. If you are not sure, where you are currently, type the <code>pwd</code>command, which stands for <em>“<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory”</em>.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
+
+<p>The output of this command will then be the path of the current folder you are in.</p>
+<h3 id="change-the-folder-with-cd">Change the folder with cd</h3>
+<p>Using the <code>cd</code> command, which stands for <em>“<strong>c</strong>hange <strong>d</strong>irectory”</em>, you can change into any riectory, using its path. Type the following to move into your home folder:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi</a></code></pre></div>
+
+<p>Since the home folder is so so useful, its path has an abbreviation, which is the funny snake <code>~</code> (tilde). You can hence also write the following to change into the home directory:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ~</a></code></pre></div>
+
+<p>If you want to move just one folder up in the hierarchy, for example, you are in <code>/home/pi</code> but would like to go into <code>/home/</code>, you can do that with the special path <code>..</code>. Here, the <code>..</code> just means “one up”. So, we can type the following:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ..</a></code></pre></div>
+
+<p>This moves you one folder up. You can check where you are using the <code>pwd</code> command.</p>
+<h3 id="listing-folder-content-with-ls">Listing Folder Content with ls</h3>
+<p>To look at the files and folders inside a folder use the <code>ls</code> command. (Remember it with the word <em>“<strong>l</strong>i<strong>s</strong>t”</em>.) For example, move into the root folder at the top and see which files and folders are listed there:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /</a></code></pre></div>
+
+<p>and then</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span></a></code></pre></div>
+
+<p>will list the following:</p>
+
+<div class="figure">
+<img src="figures/teknostart/rpi-terminal-folders-1.png" width="100%"/>
+</div>
+<p>Note that there are different colors for folders and files.</p>
+<p>If you want some more detailed information about folders and files, you can use the <code>ls -l</code> command, that means, the <code>ls</code> command with an <strong>option</strong> <code>-l</code>. When you invoke it in the root folder, for instance:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span> -l</a></code></pre></div>
+
+<p>the listing will look as follows:</p>
+
+<div class="figure">
+<img src="figures/teknostart/rpi-terminal-folders-2.png" width="100%"/>
 </div>
     </section>
     <section class="content">
@@ -151,11 +209,11 @@
 <h3 id="step-1-move-to-the-home-directory">Step 1: Move to the Home Directory</h3>
 <p>Open the terminal and check in which folder you are. We do that with the command <code>pwd</code> (<em>“print working directory”</em>):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">pwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
 
 <p>The output shows in which folder or directory you are. Move into your home directory, using the <code>cd</code> (<em>“change directory”</em>) command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> /home/pi/</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi/</a></code></pre></div>
 
 <div class="tip"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
 </div>
@@ -163,14 +221,14 @@
 
 <p>We now download the file containing the CTF program.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">curl</span> .... </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> .... </a></code></pre></div>
 
 <div class="tip"><p>When you download such a file and then run it, you need to make sure that you know what it contains or trust its origin. The file can run programs that have access to everything on your computer.</p>
 </div>
 <h3 id="step-3-run-the-program">Step 3: Run the program</h3>
 <p>To run an executable file in Linux, we type <code>./</code> followed by the name of the program. Run the program <code>teknostart_ctf.py</code>.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
 
     </section>
     <section class="content">
@@ -178,7 +236,7 @@
 <h3 id="step-1">Step 1</h3>
 <p>Run the program for the first time:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
 
 <p>You should get an output back that looks like this.</p>
 
