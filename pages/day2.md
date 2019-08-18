@@ -16,6 +16,7 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - [curl](commands.html#curl) --- powerful tool for web requests, among other to download a file
 - [ls](commands.html#ls) --- list files and folders
 - [pwd](commands.html#pwd) --- show in which directry you are
+- [sudo](commands.html#sudo) --- running commands as super user
 
 
 # Navigating Folders and Files
@@ -101,6 +102,16 @@ source: figures/teknostart/rpi-terminal-folders-2.png
 ---
 
 
+# Being Super User
+
+Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system.
+As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. SOmtimes you just add this in front of another command that you want to execute with special rights. 
+
+```bash
+sudo <important command...>
+```
+
+Think of it as when your parents told you to say "Please!"
 
 
 

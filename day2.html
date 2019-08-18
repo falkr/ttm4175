@@ -137,6 +137,7 @@
 <li><a href="commands.html#curl">curl</a> — powerful tool for web requests, among other to download a file</li>
 <li><a href="commands.html#ls">ls</a> — list files and folders</li>
 <li><a href="commands.html#pwd">pwd</a> — show in which directry you are</li>
+<li><a href="commands.html#sudo">sudo</a> — running commands as super user</li>
 </ul>
 
     </section>
@@ -193,6 +194,15 @@
 <div class="figure">
 <img src="figures/teknostart/rpi-terminal-folders-2.png" width="100%"/>
 </div>
+    </section>
+    <section class="content">
+<h1 id="being-super-user">Being Super User</h1>
+<p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. SOmtimes you just add this in front of another command that you want to execute with special rights.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
+
+<p>Think of it as when your parents told you to say “Please!”</p>
+
     </section>
     <section class="content">
 <h1 id="capture-the-flag">Capture the Flag</h1>
