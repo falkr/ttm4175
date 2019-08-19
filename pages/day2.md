@@ -1,4 +1,4 @@
-y 2: The Linux Terminal
+# Day 2: The Linux Terminal
 
 Today, many of you will take your first steps with the powerful Linux terminal.
 
@@ -6,8 +6,8 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 
 :goals:
 - Become familiar with Linux commands and the terminal
-- Feel home on the Raspberry Pi
-- understand user permissions
+- Feel at home on the Raspberry Pi
+- Understand user permissions
 
 
 ### New Linux Commands
@@ -15,7 +15,7 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - [cd](commands.html#cd) --- change into another directory 
 - [curl](commands.html#curl) --- powerful tool for web requests, among other to download a file
 - [ls](commands.html#ls) --- list files and folders
-- [pwd](commands.html#pwd) --- show in which directry you are
+- [pwd](commands.html#pwd) --- show in which directory you are
 - [sudo](commands.html#sudo) --- running commands as super user
 - [mkdir](commands.html#mkdir) --- create a folder
 - [rmdir](commands.html#rmdir) --- remove a folder
@@ -110,7 +110,7 @@ source: figures/teknostart/rpi-terminal-folders-2.png
 # Being Super User
 
 Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system.
-As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. SOmtimes you just add this in front of another command that you want to execute with special rights. 
+As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. Sometimes you just add this in front of another command that you want to execute with special rights. 
 
 ```bash
 sudo <important command...>
@@ -125,7 +125,7 @@ Think of it as when your parents told you to say "Please!"
 Capture the Flag (CTF) is a special kind of information security competition. The goal is to collect passwords, or **flags** to progress. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.
 
 - Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example, Web, Forensic, Crypto, Binary or something else. A team gets some points for every solved task. Generally teams will be awarded more points for more difficult tasks. The next task in the chain will be unlocked after you solve the previous one. The team with the most points when the time is over is the winner. A famous example of this kind of CTF is the DEFCON CTF Qualifier.
-- Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnarable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams.  So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.
+- Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnerable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams.  So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.
 
 Today we are going to do a relatively short Jeopardy-style CTF. The category is Linux, which means that the security aspect of the CTF is not really present. It is more of a way to become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.
 
@@ -166,15 +166,15 @@ With `curl`, you downloaded a zip file. All the files needed for the CTF is here
 
 1. Unzip the files by typing `unzip teknostart_ctf.zip`
 
-To be able to run the program we first need to som files.
+To be able to run the program we first need to some files.
 
 2. Type `cd teknostart_ctf`to change directory to the folder you just unzipped. 
 3. Type `pwd`and confirm that you are inside the `/home/pi/teknostart_ctf`folder. 
 
 Here there are three files that are important for the CTF:
-- `teknostart_ctf.py`, which is the actual CTF program, it wil be demostrated later how to use it.
---  This is a terminal based game and is written in the programming language [Python]((https://www.python.org/))
-- `levelcheck` is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. used to retrieve the flag (password) for some levels, where it has to be checked wether you completed the task correctly`
+- `teknostart_ctf.py`, which is the actual CTF program, it will be demonstrated later how to use it.
+-  This is a terminal based game and is written in the programming language [Python]((https://www.python.org/))
+- `levelcheck` is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly`
 - `install` is an executable program that is only going to be run once to set everything up. 
 
 To run an executable file in the folder that you are currently in, we type `./` followed by the name of the program.
