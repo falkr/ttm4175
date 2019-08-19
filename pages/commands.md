@@ -1,7 +1,8 @@
 # Linux Commands
 
+There are several ways to find out more about commands. 
 
-### Man-Pages
+## Man-Pages
 
 If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (_man_ for _manual_). For instance, to know read more about the `cd` command, type 
 
@@ -31,7 +32,7 @@ You can return to the command line by pressing `q` (for _quit_).
 You can also [browse man-pages online](http://man7.org/linux/man-pages/dir_all_alphabetic.html).
 
 
-### apropos Command
+## apropos Command
 
 Let's say you want to copy a file but are unsure what the proper command is called. You can search in your local man-pages using the apropos command, for instance:
 
@@ -65,7 +66,7 @@ From there you can read that `cp` is probably the right command.
 
 
 
-### Command Help
+## Command Help
 
 The man pages are quite extensive, and sometimes you want to have a shorter description. Then you can use the help text for the command, which is often available when you use the `--help` flag for the command:
 
@@ -73,11 +74,52 @@ The man pages are quite extensive, and sometimes you want to have a shorter desc
 cd --help
 ```
 
+This reveals the following:
+
+```bash
+cd: cd [-L|[-P [-e]] [-@]] [dir]
+    Change the shell working directory.
+   
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
+   
+    The variable CDPATH defines the search path for the directory containing
+    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash (/), then CDPATH is not used.
+   
+    If the directory is not found, and the shell option `cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used for DIR.
+...
+```
 
 
 # apt
 
 # cd
+
+
+Moving into a directoy:
+
+```bash 
+cd <path-to-directory>
+```
+
+Moving one directory up:
+
+```bash
+cd ..
+```
+
+Moving in the home directory:
+
+```bash
+cd ~
+```
+
+
+
 
 # rm
 
