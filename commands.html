@@ -122,8 +122,8 @@
     </section>
     <section class="content">
 <h1 id="linux-commands">Linux Commands</h1>
-
-<h3 id="man-pages">Man-Pages</h3>
+<p>There are several ways to find out more about commands.</p>
+<h2 id="man-pages">Man-Pages</h2>
 <p>If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (<em>man</em> for <em>manual</em>). For instance, to know read more about the <code>cd</code> command, type</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">man</span> passwd</a></code></pre></div>
@@ -146,7 +146,7 @@
 
 <p>You can return to the command line by pressing <code>q</code> (for <em>quit</em>). You can also <a href="http://man7.org/linux/man-pages/dir_all_alphabetic.html">browse man-pages online</a>.</p>
 
-<h3 id="apropos-command">apropos Command</h3>
+<h2 id="apropos-command">apropos Command</h2>
 <p>Let’s say you want to copy a file but are unsure what the proper command is called. You can search in your local man-pages using the apropos command, for instance:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">apropos</span> copy</a></code></pre></div>
@@ -173,14 +173,28 @@
 
 <p>From there you can read that <code>cp</code> is probably the right command.</p>
 
-<h3 id="command-help">Command Help</h3>
+<h2 id="command-help">Command Help</h2>
 <p>The man pages are quite extensive, and sometimes you want to have a shorter description. Then you can use the help text for the command, which is often available when you use the <code>--help</code> flag for the command:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> --help</a></code></pre></div>
 
-    </section>
-    <section class="content">
-<h1 id="apt">apt</h1>
+<p>This reveals the following:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">cd</span>: cd [-L<span class="kw">|</span>[<span class="ex">-P</span> [-e]] [-@]] [dir]</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="ex">Change</span> the shell working directory.</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">   </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="ex">Change</span> the current directory to DIR.  The default DIR is the value of the</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="ex">HOME</span> shell variable.</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">   </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">    <span class="ex">The</span> variable CDPATH defines the search path for the directory containing</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">    <span class="ex">DIR.</span>  Alternative directory names in CDPATH are separated by a colon (:)<span class="ex">.</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    <span class="ex">A</span> null directory name is the same as the current directory.  If DIR begins</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    <span class="ex">with</span> a slash (/), <span class="kw">then</span> <span class="ex">CDPATH</span> is not used.</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">   </a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">    <span class="ex">If</span> the directory is not found, and the shell option <span class="kw">`</span><span class="ex">cdable_vars</span><span class="st">&#39; is set,</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="st">    the word is assumed to be  a variable name.  If that variable has a value,</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="st">    its value is used for DIR.</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="st">...</span></a></code></pre></div>
 
     </section>
     <section class="content">
@@ -189,6 +203,18 @@
     </section>
     <section class="content">
 <h1 id="cd">cd</h1>
+
+<p>Moving into a directoy:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> <span class="op">&lt;</span>path-to-directory<span class="op">&gt;</span></a></code></pre></div>
+
+<p>Moving one directory up:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> ..</a></code></pre></div>
+
+<p>Moving in the home directory:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> ~</a></code></pre></div>
 
     </section>
     <section class="content">

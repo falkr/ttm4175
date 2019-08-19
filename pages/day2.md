@@ -15,8 +15,7 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - [cd](commands.html#cd) --- change into another directory 
 - [curl](commands.html#curl) --- powerful tool for web requests, among other to download a file
 - [ls](commands.html#ls) --- list files and folders
-- [pwd](commands.html#pwd) --- show in which directry you are
-- [sudo](commands.html#sudo) --- running commands as super user
+- [pwd](commands.html#pwd) --- show in which directory you are
 
 
 # Navigating Folders and Files
@@ -100,21 +99,6 @@ now the listing will look as follows:
 type: figure
 source: figures/teknostart/rpi-terminal-folders-2.png
 ---
-
-
-# Being Super User
-
-Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system.
-As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. SOmtimes you just add this in front of another command that you want to execute with special rights. 
-
-```bash
-sudo <important command...>
-```
-
-Think of it as when your parents told you to say "Please!"
-
-
-
 
 
 # Capture the Flag
@@ -237,3 +221,35 @@ You will receive the message:
 Congratulations, you have been promoted to the next level!
 ```
 followed by the next question. Try to solve as many of the tasks as you can.
+
+
+# Final Steps
+
+### Learning Goals
+
+In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
+
+:aside: <img src="figures/doubleteam.png" width="30"/>
+
+
+### Individual Reflection
+
+Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+
+
+### Cleaning Up
+
+:todo:
+- Put all hardware back into the box.
+- Store the box in one of the lockers in the lab, using the combination lock.
+- Connect all parts of the PC back to it (keyboard, mouse, monitor).
+- Take out any trash. (Even if its not yours... thank you!)
+- Put the chairs back to the table.
+
+### Individual Exercises
+
+We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
+- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
+- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
+- Some of the Linux-related exercises also work on the Linux-PCs in the lab.

@@ -3,7 +3,7 @@
 Today we will explore the world of HTML, the marking language used to build every website on the World Wide Web.
 In order to this we will also briefly look into IP addresses and the Secure Shell (SSH). NTNU hosts servers from where we can host our web sites. What a web server is will be explained tomorrow, but in the end it is just a computer that you can ask for a web site, and it will return the web site you asked for. Today we will be using the web server already hosted by NTNU to serve our web site out into the internet.
 
-### Learning Goals
+### Learning Goals for Today
 
 :goals:
 - Become familiar with HTML
@@ -185,18 +185,20 @@ source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
 You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
 
 
-# Styep 3: Making a website
+# Step 3: Making a Website
 
 NTNU has made a solution for students to create their own website and immediately publish them on the internet. 
 
 ### HTML
 
 Hyper Text Markup Language (HTML) is a language for creating a webpage. Webpages are usually viewed in a web browser. They can include text, links, pictures, and even sound and video. 
-HTML is used to mark and describe each of these kinds of content so the web browser can display them correctly.
+HTML is used to describe each of these kinds of content so the web browser can display them correctly.
 
-Ultimately, every webpage on the internet is written in HTML. To see the HTML code that lies behind any website, open Firefox and navigate to any website that you like. Then, right click on the page and choose `View Page Source`. This will take you to the underlying HTML code for this site that your browser uses to present the site in a viewable way.
+Websites on the internet are written in HTML. Each HTML file is just a plain text file, but with a _.html_ file extension instead of _.txt_.
+To see the HTML code that lies behind any website, open Firefox and navigate to any website that you like. Then, right click on the page and choose `View Page Source`. This will take you to the underlying HTML code for this site that your browser uses to present the site in a viewable way.
 
-### Creating the site
+
+### Creating the Website
 
 Although [this guide](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website) explains how to set it up in simple terms, the steps are as follows:
 
@@ -208,5 +210,36 @@ Although [this guide](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+ow
 
 
 You can find a sample HTML page [**here**](https://home.samfundet.no/~halvogro/komtekintro/sample.txt).
-Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by coping the the source code found by viewing the page source. Try copying ['vg.no'](https://www.vg.no/) for instance. 
+Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by coping the the source code found by viewing the page source. Try copying ['https://nrk.no'](https://www.nrk.no/) for instance. 
 
+
+# Final Steps
+
+### Learning Goals
+
+In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
+
+:aside: <img src="figures/doubleteam.png" width="30"/>
+
+
+### Individual Reflection
+
+Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+
+
+### Cleaning Up
+
+:todo:
+- Put all hardware back into the box.
+- Store the box in one of the lockers in the lab, using the combination lock.
+- Connect all parts of the PC back to it (keyboard, mouse, monitor).
+- Take out any trash. (Even if its not yours... thank you!)
+- Put the chairs back to the table.
+
+### Individual Exercises
+
+We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
+- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
+- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
+- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
