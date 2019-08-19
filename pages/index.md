@@ -62,7 +62,7 @@ Fra uke 35 har vi følgende rom og tider:
 
 Emnet består av oppstartsuka, etterfølgt av tre deler med litt forskjellig fokus:
 
-### Oppstartsuka
+## Oppstartsuka
 
 I første uken blir du kjent med datamaskiner og nettverk. Vi kommer til å konfigurere og starte vår egen webserver, og du lærer masse ting rundt dette. 
 
@@ -73,7 +73,7 @@ caption: "Each day we try to reach a new goal. The final goal is to run our own 
 ---
 
 
-### Nettverk
+## Nettverk
 
 Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
 Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tjenestere.
@@ -95,12 +95,12 @@ source: figures/net/networking.png
 :aside: <img src="figures/david.jpg" width="100px"><p><a href="https://www.ntnu.no/ansatte/david.palma">David Palma</a><br/><i class="far fa-envelope"></i> david.palma@ntnu.no</p>
 
 
-### Sikkerhet
+## Sikkerhet
 
 :aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> elissar.khloussy@ngu.no</p>
 
 
-### Tingenes Internet
+## Tingenes Internet
 
 Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.
 
@@ -111,6 +111,8 @@ source: figures/iot/overview.png
 
 :aside: <img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p>
 
+
+# Om Emnet
 
 ## Forventninger til deg som student
 
@@ -130,7 +132,7 @@ Emnet vurderes med bestått / ikke bestått. For å få bestått må man få god
 Det er ingen eksamen i emnet.
 
 
-## Gruppeindeling
+## Gruppeinndeling
 
 Fyll ut <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUNkNZOVBTNkhWVFVQU0tMTFQ1SUM1VE1VUS4u">skjemaet for gruppeinndeling</a> etter du har fått tilgang til din studentkonto. Vi bruker denne informasjonen til å lage gode teams.
 
