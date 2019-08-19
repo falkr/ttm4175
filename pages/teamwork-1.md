@@ -38,32 +38,3 @@ Nå at dere har lært om deres partner, ta en runde sammen med alle og presenter
 > "Dette er Petter, han kommer fra...
 
 Bruk ca 2 minutter per person, altså **12 minutter** tilsammen.
-
-## Gruppebilde
-
-- Ta et gruppebilde med navneskilt
-- Last opp gruppebildet på MS Teams
-
-
-
-# Regler for Samarbeid
-
-:aside: <img src="figures/doubleteam.png" width="30"/>
-
-
-Det er lurt å bestemme retningslinjer for samarbeidet. Ved å gå igjennom forventninger dere har til samarbeidet, kan det gjøre samarbeidet lettere. Nå skal dere i fellesskap utarbeide en liste med punkter som er viktig i et samarbeid.
-
-## Individuelt (5 min)
-
-Ta stilling til påstandene i tabellen “Spilleregler for teamarbeid”. Sett et kryss på skalaen ettersom hvor enig/uenig du er. Gjerne trekk inn tidligere erfaringer fra videregående skole og/eller fritidsaktiviteter inn i din vurdering. Tenk også på dine forventninger til gruppearbeid under Teknostart.
-
-## I gruppen (15 min)
-
-Velg en sekretær som tar notater underveis som grunnlag for å lage en teamkontrakt. Diskutér utsagnene ett for ett, begrunn deres meninger og diskutér dere frem til enighet. Gruppens standpunkt merkes med en sirkel. Sammenlign det med egen avkrysning. På grunnlag av diskusjonen formulerer gruppa 4-7 retningslinjer for det videre arbeidet som gruppemedlemmene er enige om og vil følge.
-
----
-type: figure
-source: figures/teknostart/spilleregler.png
-link: figures/teknostart/spilleregler.pdf
-caption: "Spilleregler for samarbeid i gruppe."
----
