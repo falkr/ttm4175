@@ -179,6 +179,7 @@ Here there are three files that are important for the CTF:
 - `install` is an executable program that is only going to be run once to set everything up. 
 
 To run an executable file in the folder that you are currently in, we type `./` followed by the name of the program.
+
 4. Type `./install`to run the installer.
 
 Now we are ready to begin the CTF.
