@@ -12,6 +12,7 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 
 ### New Linux Commands
 
+- [cat](commands.html#cat) --- concatenate files (and lots more) 
 - [cd](commands.html#cd) --- change into another directory 
 - [curl](commands.html#curl) --- powerful tool for web requests, among other to download a file
 - [ls](commands.html#ls) --- list files and folders
@@ -107,6 +108,18 @@ type: figure
 source: figures/teknostart/rpi-terminal-folders-2.png
 ---
 
+# Creating Folders and Files
+
+### touch
+
+### mkdir
+
+### rmdir
+
+### rm
+
+grep GET dump.txt
+
 
 # Being Super User
 
@@ -169,13 +182,13 @@ With `curl`, you downloaded a zip file. All the files needed for the CTF is here
 
 To be able to run the program we first need to some files.
 
-2. Type `cd teknostart_ctf`to change directory to the folder you just unzipped. 
-3. Type `pwd`and confirm that you are inside the `/home/pi/teknostart_ctf`folder. 
+2. Type `cd teknostart_ctf` to change directory to the folder you just unzipped. 
+3. Type `pwd`and confirm that you are inside the `/home/pi/teknostart_ctf` folder. 
 
 Here there are three files that are important for the CTF:
 - `teknostart_ctf.py`, which is the actual CTF program, it will be demonstrated later how to use it.
 -  This is a terminal based game and is written in the programming language [Python]((https://www.python.org/))
-- `levelcheck` is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly`
+- `levelcheck` is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.
 - `install` is an executable program that is only going to be run once to set everything up. 
 
 To run an executable file in the folder that you are currently in, we type `./` followed by the name of the program.

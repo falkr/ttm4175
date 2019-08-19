@@ -33,7 +33,6 @@ Today we will start things off by letting you become familiar with the Raspberry
 - Become familiar with the Raspberry Pi
 - Connecting the Pi
 - Changing the default password
-- Logging in remotely via SSH
 
 
 ### New Linux Commands
