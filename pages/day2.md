@@ -183,9 +183,10 @@ With `curl`, you downloaded a zip file. All the files needed for the CTF is here
 To be able to run the program we first need to some files.
 
 2. Type `cd teknostart_ctf` to change directory to the folder you just unzipped. 
-3. Type `pwd`and confirm that you are inside the `/home/pi/teknostart_ctf` folder. 
+3. Type `pwd` and confirm that you are inside the `/home/pi/teknostart_ctf` folder. 
 
 Here there are three files that are important for the CTF:
+
 - `teknostart_ctf.py`, which is the actual CTF program, it will be demonstrated later how to use it.
 -  This is a terminal based game and is written in the programming language [Python]((https://www.python.org/))
 - `levelcheck` is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.
@@ -193,7 +194,7 @@ Here there are three files that are important for the CTF:
 
 To run an executable file in the folder that you are currently in, we type `./` followed by the name of the program.
 
-4. Type `./install`to run the installer.
+4. Type `./install` to run the installer.
 
 Now we are ready to begin the CTF.
 
@@ -233,7 +234,7 @@ Levelchecker:        NO
 - `Hash of answer` *is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a  [string](https://en.wikipedia.org/wiki/String_(computer_science)) which it will try to compare to the hashed version of the correct answer.* 
 - `Correct hash` *is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct*
 - LevelChecker *Tells you if you have to get check that you done the task correctly.*
--- The value is either `YES` or `NO` for each level. If this says `YES`, it means you have to navigate to `/home/pi/teknostart_ctf`and run `./levelchecker`to check that you have completed the task correctly. If you have you will get the password (flag) to progress to the next level. 
+-- The value is either `YES` or `NO` for each level. If this says `YES`, it means you have to navigate to `/home/pi/teknostart_ctf` and run `./levelchecker` to check that you have completed the task correctly. If you have, you will get the password (flag) to progress to the next level. 
 
 
 ### Step 2: Solve the task
@@ -253,7 +254,7 @@ As we can see, we are located in `/home/pi`.
 
 To test our answer, we run the program again and input our answer `/home/pi`.
 
-First we change directory back to where the program `teknostart_ctf.py`is located.
+First we change directory back to where the program `teknostart_ctf.py` is located.
 
 Because we are already inside the folder `/home/pi` we can simply type `cd teknostart_ctf`, which will put us in  `/home/pi/teknostart_ctf`. 
 
