@@ -8,6 +8,7 @@ These last two days we are going to create our own web site and set up a web ser
 - Install a new program (Apache) on Linux
 - Get an overview of how a webserver can be used to host your own websites.
 
+
 ### New Linux Commands
 
 - [sudo](commands.html#sudo) --- execute a program as super user.
@@ -15,13 +16,26 @@ These last two days we are going to create our own web site and set up a web ser
 - [systemctl](commands.html#systemctl) --- control system services.
 
 
-### Apache and Webserver 
+# Being Super User
+
+Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system.
+As the user `pi`, you _have_ all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command `sudo` exists, which stands for _"**s**uper **u**ser **do**"_. SOmtimes you just add this in front of another command that you want to execute with special rights. 
+
+```bash
+sudo <important command...>
+```
+
+Think of it as when your parents told you to say "Please!"
+
+
+
+# Apache and Webserver 
 
 :factbox: *Web Server:* A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.
 
 :factbox: *Apache:* Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.
  
- To install Apache and start our own server, there are a few steps we need to go through.a
+
 
 # Step 1: Installing Apache
 
@@ -73,3 +87,35 @@ First, we would like to check wether our Apache server is working as expected. T
 1. Find your IP-address
 2. Type the IP-address in your browser, and specify port number 80. i.e *http://192.168.10.19:80*
 3. If the Apache test-page pops up, the server is running as expected. (link to apache test-page)
+
+
+# Final Steps
+
+### Learning Goals
+
+In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
+
+:aside: <img src="figures/doubleteam.png" width="30"/>
+
+
+### Individual Reflection
+
+Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+
+
+### Cleaning Up
+
+:todo:
+- Put all hardware back into the box.
+- Store the box in one of the lockers in the lab, using the combination lock.
+- Connect all parts of the PC back to it (keyboard, mouse, monitor).
+- Take out any trash. (Even if its not yours... thank you!)
+- Put the chairs back to the table.
+
+### Individual Exercises
+
+We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
+- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
+- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
+- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
