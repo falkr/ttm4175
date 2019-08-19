@@ -1,4 +1,4 @@
-# Day 3: IP, SSH/SCP and HTML
+# Day 3: Exploring IP, SSH and HTML
 
 Today we will explore the world of HTML, the marking language used to build every website on the World Wide Web.
 In order to this we will also briefly look into IP addresses and the Secure Shell (SSH). NTNU hosts servers from where we can host our web sites. What a web server is will be explained tomorrow, but in the end it is just a computer that you can ask for a web site, and it will return the web site you asked for. Today we will be using the web server already hosted by NTNU to serve our web site out into the internet.
@@ -10,15 +10,16 @@ In order to this we will also briefly look into IP addresses and the Secure Shel
 - Understand IP addressing
 - Learn how to use SSH and SCP
 
-
 ### New Linux Commands
 
-- [ip](commands.html#ip) --- show / manipulate routing, network devices, interfaces and tunnels.
-- [ssh](commands.html#ssh) --- remote login program.
-- [scp](commands.html#scp) --- remote file copy program.
-- [ping](commands.html#ping) --- send ICMP *ECHO_REQUEST* to network hosts.
-- [curl](commands.html#curl) --- transfer a URL.
-- [aplay](commands.html#aplay) --- command-line sound player for ALSA.
+- [passwd](commands.html#passwd) --- to change passwords.
+- [ls](commands.html#ls) --- to list files and folders.
+- [ip](ip.html#ip) --- show / manipulate routing, network devices, interfaces and tunnels.
+- [ssh](ssh.html#ssh) --- remote login program.
+- [scp](scp.html#scp) --- remote file copy program.
+- [ping](ping.html#ping) --- send ICMP *ECHO_REQUEST* to network hosts.
+- [curl](curl.html#curl) --- transfer a URL.
+- [aplay](aplay.html#aplay) --- command-line sound player for ALSA.
 
 
 # Finding your IP address and checking for connectivity
@@ -35,7 +36,7 @@ These addresses are fundamental for connecting computers and other devices to ea
 Each network card (e.g. wireless card) is called an _interface_ and it may have one or more IP addresses.
 A typical IP(v4) address at NTNU looks something like `129.241.200.112/24.`
 
-Write down the address and mask of the interface `eth0`. You will need it later.
+Write down the address and mask of the interface `eth0`.
 
 
 # Testing Internet Connectivity
@@ -77,26 +78,17 @@ ping www.esa.int
 
 # Remote Access to a Computer
 
-The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. 
-Most servers used in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
-Also, most companies don't even own their own servers anymore, but rent servers as services in big data centers that are remotely located.
+It is possible to remotely access a Linux system, and manage it, using different tools.
+One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as `ssh`.
 
-So we don't have access to the computer via monitor, keyboard or mouse. What we _can_ do though, is remotely manage and control it through a service (or pgoram) called **SSH** _("secure shell")_.
-This program gives remote access to the shell (the terminal or command line) of the Raspberry --- remote means from another computer.
-
-### Turn on SSH
-
-First, SSH needs to be enabled **in your Raspberry Pi** with the following commands:
+This service needs to be enabled **in your Raspberry Pi** with the following commands:
 
 ```bash
 sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
 
-### Connecting to the Raspberry Pi
-
-Connect the monitor, keyboard and mouse in the lab again with the stationary PC from the lab. (It's okay to carefully take out the USB and HDMI connector from the Pi.)
-Log into the PC of the lab with your norma NTNU account. Now, **from the lab PC** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
+Now, **from your desktop** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
 
 ```bash
 ssh pi@<your_ip_address>
@@ -105,69 +97,48 @@ ssh pi@<your_ip_address>
 **Note:** a warning message should appear the first time you connect since the certificates being used have never been exchanged before.
 It is okay to say "yes" and then type in your password.
 
-You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your deks, in a room nearby, in a data center far away!
-
-Play around with some commands (`pwd`, `cd`, `ls`) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.
-
----
-type: figure
-source: figures/teknostart/ssh-computers.png
-caption: "The connection between the local PC and the Raspberry Pi. The Pi could be anywhere, you only access it via the internet and SSH from the local PC."
----
-
-
-### Playing a sound... Remotely!
-
-Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:
+Now that you are remotely controlling your Raspberry IP issue the following command to download a simple *wave* file:
 
 ```bash
 curl https://ttm4175.iik.ntnu.no/onesmall.wav -O
 ```
 
-Connect the speaker from the box to the audio-connector of the Pi, and turn it on. (It may require some power, too.)
-
-And play the sound file with the following command:
+And play it!
 
 ```bash
 aplay onesmall.wav
 ```
 
 
-# Step 1: Setting up a web site
+# Setting up a web site
 
- When we are connected via SSH, there is another challenge that we have to overcome in order to begin developing our website:
- The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. 
- There are a few option for doing this. The three most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
+The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. What we _can_ do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
 
+:note-box: It is important to note that today, most servers in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
 
-## The Nano Editor
+## 1.Nano
 
 When getting used to the command-line, people who are new to Linux can be put off by other, more advanced text editors such as for instance Vim and emacs. While these two are excellent programs, they do have a bit of a learning curve.
 Enter [Nano](https://www.nano-editor.org/), an easy-to-use text editor that proves itself versatile and simple. Nano is installed by default in Ubuntu and many other Linux distributions, which also means that our server at NTNU also has it installed.
 
-### How to Use Nano:
+#### How to Nano:
 
-To create a new file in Nano, we simply type `nano`in our terminal. Nano will open in a window that looks like this: 
+To create a new file in Nano, we simply type `nano`in our terminal. Nano will open in a windows that looks something like this. 
 
----
-type: figure
-source: https://home.samfundet.no/~halvogro/ting/bilder/image-45.png
-caption: "The Nano editor"
----
+![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-45.png)
 
 Now we can start typing the contents of the file. 
 
-### Saving and exiting
-
+#### Saving and exiting
 If you want to save the changes you've made, press `Ctrl + O`. To exit nano, type `Ctrl + X`. If you ask nano to exit from a modified file, it will ask you if you want to save it. Just press `N` in case you don't, or `Y` in case you do. It will then ask you for a filename. Just type it in and press Enter.
 
-### Open an already existing file
+#### Open already existing file
 To open an already existing file in Nano, we write `nano path/to/filename` or simply `nano filename`if you are in the correct folder path. Saving and exiting is the same as above.
 
 Check out this list of useful commands used in Nano: [Nano Cheatsheet](https://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/) 
 
 
-# Step 2: Connecting to the server
+## 2. Connecting to the server
 
 As mentioned, we will use SSH to connect to the NTNU server.
 
@@ -175,14 +146,10 @@ As mentioned, we will use SSH to connect to the NTNU server.
 2. type `ssh <ntnu_username>@login.stud.ntnu.no` and press enter
 3. Enter you password
 
-You should get a message that looks like this:
-
----
-type: figure
-source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
----
-
-You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
+If you get a message that looks like this:
+![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
+)
+Congratulations, you are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
 
 
 # Step 3: Making a Website
@@ -200,13 +167,15 @@ To see the HTML code that lies behind any website, open Firefox and navigate to 
 
 ### Creating the Website
 
-Although [this guide](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website) explains how to set it up in simple terms, the steps are as follows:
 
-:steps:
-1. In the terminal connected to the server via SSH, navigate to the folder `/web/folk/<ntnu_username>`. (Hint: Use the `cd` command)
-2. Here, create a file with Nano called `index.html`. The reason we make a file called `index.html` is because the server will automatically look for a file with this name, and publish the website that is written in this file.
+Although [This](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website) guide explains how to set it up, in simple terms, the steps are as follows
+
+1. In the terminal connected to the server via SSH, navigate to the folder `/web/folk/<ntnu_username>`.
+:hint: use the `cd`command
+2. Here, create a file with Nano called `index.html`. 
+- The reason we make a file called `index.html`is because the server will automatically look for a file with this name, and publish the website that is written in this file.
 3. Write your HTML code and save the file. 
-4. Navigate to `https://folk.ntnu.no/<ntnu_username>` in your browser to view you website.
+4. Navigate to `https://folk.ntnu.no/<ntnu_username>`in your browser to view you website.
 
 
 You can find a sample HTML page [**here**](https://home.samfundet.no/~halvogro/komtekintro/sample.txt).
@@ -239,6 +208,7 @@ Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS
 ### Individual Exercises
 
 We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
 
 - You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
 - Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
