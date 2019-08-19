@@ -136,7 +136,7 @@
 <p>It is now time to create our own website.</p>
 <h2 id="editing-the-content-of-the-website">Editing the content of the website</h2>
 <p>The default folder from where Apache gets the content for the website is <code>/var/www/html</code>. By default, only one file resides here, the Apache test page. By default, Apache looks for a file named <code>index.html</code>, which currently only stores the content of the testpage.</p>
-<p>We can go ahead and remove this file: 1. <code>~$ cd /var/www/html</code> <em>Navigates to the folder</em> 2. <code>~$ rm index.html</code><em>Removes the file</em></p>
+<p>We can go ahead and remove this file: 1. <code>~$ cd /var/www/html</code> <em>Navigates to the folder</em> 2. <code>~$ rm index.html</code> <em>Removes the file</em></p>
 <p>If you go back to your website and hit refresh, you will see that instead of loading the test page, an error message will pop up. Since we deleted the file, Apache has nothing to give us on our website.</p>
 <h2 id="creating-a-new-site">Creating a new site</h2>
 <p>We now want to create our new website.</p>
@@ -144,15 +144,11 @@
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">touch</span> index.html</a></code></pre></div>
 
-<p>Then, edit the file with leafpad: (which editor?)</p>
+<p>Then, edit the file with leafpad:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">leafpad</span> index.html</a></code></pre></div>
 
 <p>Write HTML code here to personalize your web page. Start with the template below, or find a template online.</p>
-
-<h3 id="what-is-html">What is HTML?</h3>
-<p>Firstly, HTML is short for “HyperText Markup Language”. That may sound scary, but it simply means it is a language for describing web-pages using ordinary text. HTML is not a complex programming language.</p>
-<p>Every web page is actually a HTML file. Each HTML file is just a plain-text file, but with a .html file extension instead of .txt, and is made up of many HTML tags as well as the content for a web page. A web site will often contain many html files that link to each other. You can edit HTML files with your favourite editor. ### HTML Template</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
@@ -170,12 +166,37 @@
 </aside>
     </section>
     <section class="content">
-<h1 id="final-steps">Final steps</h1>
+<h1 id="editing-your-website">Editing Your Website</h1>
 <p>You can now edit the website as you want. Try to go to each others webpages by typing in their IP-address and port in the URL on the same format as earlier.</p>
 
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<div class="ribbon">Goal!</div>
+<span name="a81e48"></span><aside name="a81e48"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
 
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
     </section>
 </div>
 

@@ -127,8 +127,8 @@
 
 <div class="goals"><ul>
 <li>Become familiar with Linux commands and the terminal</li>
-<li>Feel home on the Raspberry Pi</li>
-<li>understand user permissions</li>
+<li>Feel at home on the Raspberry Pi</li>
+<li>Understand user permissions</li>
 </ul>
 </div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
@@ -136,8 +136,13 @@
 <li><a href="commands.html#cd">cd</a> — change into another directory</li>
 <li><a href="commands.html#curl">curl</a> — powerful tool for web requests, among other to download a file</li>
 <li><a href="commands.html#ls">ls</a> — list files and folders</li>
-<li><a href="commands.html#pwd">pwd</a> — show in which directry you are</li>
+<li><a href="commands.html#pwd">pwd</a> — show in which directory you are</li>
 <li><a href="commands.html#sudo">sudo</a> — running commands as super user</li>
+<li><a href="commands.html#mkdir">mkdir</a> — create a folder</li>
+<li><a href="commands.html#rmdir">rmdir</a> — remove a folder</li>
+<li><a href="commands.html#sudo">rm</a> — remove a file</li>
+<li><a href="commands.html#sudo">touch</a> — create a file</li>
+<li><a href="commands.html#grep">grep</a> — search for text in a file</li>
 </ul>
 
     </section>
@@ -153,31 +158,31 @@
 <h3 id="find-out-where-you-are-with-pwd">Find out where you are with pwd</h3>
 <p>When you are in the terminal, you are always in some folder. When you boot up and just open a terminal, you usually start in the home folder. If you are not sure, where you are currently, type the <code>pwd</code>command, which stands for <em>“<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory”</em>.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">pwd</span></a></code></pre></div>
 
 <p>The output of this command will then be the path of the current folder you are in.</p>
 <h3 id="change-the-folder-with-cd">Change the folder with cd</h3>
 <p>Using the <code>cd</code> command, which stands for <em>“<strong>c</strong>hange <strong>d</strong>irectory”</em>, you can change into any riectory, using its path. Type the following to move into your home folder:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> /home/pi</a></code></pre></div>
 
 <p>Since the home folder is so so useful, its path has an abbreviation, which is the funny snake <code>~</code> (tilde). You can hence also write the following to change into the home directory:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ~</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> ~</a></code></pre></div>
 
 <p>If you want to move just one folder up in the hierarchy, for example, you are in <code>/home/pi</code> but would like to go into <code>/home/</code>, you can do that with the special path <code>..</code>. Here, the <code>..</code> just means “one up”. So, we can type the following:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ..</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> ..</a></code></pre></div>
 
 <p>This moves you one folder up. You can check where you are using the <code>pwd</code> command.</p>
 <h3 id="listing-folder-content-with-ls">Listing Folder Content with ls</h3>
 <p>To look at the files and folders inside a folder use the <code>ls</code> command. (Remember it with the word <em>“<strong>l</strong>i<strong>s</strong>t”</em>.) For example, move into the root folder at the top and see which files and folders are listed there:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> /</a></code></pre></div>
 
 <p>and then</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
 
 <p>will list the following:</p>
 
@@ -187,7 +192,7 @@
 <p>Note that there are different colors for folders and files.</p>
 <p>If you want some more detailed information about folders and files, you can use the <code>ls -l</code> command, that means, the <code>ls</code> command with an <strong>option</strong> <code>-l</code>. When you invoke it in the root folder, for instance:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span> -l</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ls</span> -l</a></code></pre></div>
 
 <p>now the listing will look as follows:</p>
 
@@ -197,33 +202,31 @@
     </section>
     <section class="content">
 <h1 id="being-super-user">Being Super User</h1>
-<p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. SOmtimes you just add this in front of another command that you want to execute with special rights.</p>
+<p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. Sometimes you just add this in front of another command that you want to execute with special rights.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
 
 <p>Think of it as when your parents told you to say “Please!”</p>
 
     </section>
     <section class="content">
 <h1 id="capture-the-flag">Capture the Flag</h1>
-<p>Capture the Flag (CTF) is a special kind of information security competition. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.</p>
+<p>Capture the Flag (CTF) is a special kind of information security competition. The goal is to collect passwords, or <strong>flags</strong> to progress. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.</p>
 <ul>
 <li>Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example, Web, Forensic, Crypto, Binary or something else. A team gets some points for every solved task. Generally teams will be awarded more points for more difficult tasks. The next task in the chain will be unlocked after you solve the previous one. The team with the most points when the time is over is the winner. A famous example of this kind of CTF is the DEFCON CTF Qualifier.</li>
-<li>Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnarable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams. So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.</li>
+<li>Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnerable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams. So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.</li>
 </ul>
-<p>Today we are going to do a relatively short Jeopardy-style CTF. The category is Linux, which means that the security aspect of the CTF is not really present. It is more of a way to become more familiar with the terminal and navigation around the Linux file structure. The game consists of 10 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
+<p>Today we are going to do a relatively short Jeopardy-style CTF. The category is Linux, which means that the security aspect of the CTF is not really present. It is more of a way to become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
 
-<h2 id="install-ctf">Install CTF</h2>
-<p>The file <code>teknostart_ctf.py</code> is located in you home folder, which would be <code>/home/pi</code>. This is a progam written in the programming language <a href="https://www.python.org/">Python</a>, and is a terminal-based game.</p>
-
+<h2 id="preparing-the-ctf">Preparing the CTF</h2>
 <h3 id="step-1-move-to-the-home-directory">Step 1: Move to the Home Directory</h3>
 <p>Open the terminal and check in which folder you are. We do that with the command <code>pwd</code> (<em>“print working directory”</em>):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">pwd</span></a></code></pre></div>
 
 <p>The output shows in which folder or directory you are. Move into your home directory, using the <code>cd</code> (<em>“change directory”</em>) command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi/</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">cd</span> /home/pi/</a></code></pre></div>
 
 <div class="tip"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
 </div>
@@ -231,14 +234,23 @@
 
 <p>We now download the file containing the CTF program.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> .... </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">curl</span> https://home.samfundet.no/~halvogro/ting/teknostart_ctf.zip -O</a></code></pre></div>
 
 <div class="tip"><p>When you download such a file and then run it, you need to make sure that you know what it contains or trust its origin. The file can run programs that have access to everything on your computer.</p>
 </div>
-<h3 id="step-3-run-the-program">Step 3: Run the program</h3>
-<p>To run an executable file in Linux, we type <code>./</code> followed by the name of the program. Run the program <code>teknostart_ctf.py</code>.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+<h3 id="step-3-install-and-run">Step 3: Install and run</h3>
+<p>With <code>curl</code>, you downloaded a zip file. All the files needed for the CTF is here.</p>
+<ol type="1">
+<li>Unzip the files by typing <code>unzip teknostart_ctf.zip</code></li>
+</ol>
+<p>To be able to run the program we first need to some files.</p>
+<ol start="2" type="1">
+<li>Type <code>cd teknostart_ctf</code>to change directory to the folder you just unzipped.</li>
+<li>Type <code>pwd</code>and confirm that you are inside the <code>/home/pi/teknostart_ctf</code>folder.</li>
+</ol>
+<p>Here there are three files that are important for the CTF: - <code>teknostart_ctf.py</code>, which is the actual CTF program, it will be demonstrated later how to use it. - This is a terminal based game and is written in the programming language <a href="(https://www.python.org/)">Python</a> - <code>levelcheck</code> is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly<code>-</code>install` is an executable program that is only going to be run once to set everything up.</p>
+<p>To run an executable file in the folder that you are currently in, we type <code>./</code> followed by the name of the program. 4. Type <code>./install</code>to run the installer.</p>
+<p>Now we are ready to begin the CTF.</p>
 
     </section>
     <section class="content">
@@ -246,50 +258,79 @@
 <h3 id="step-1">Step 1</h3>
 <p>Run the program for the first time:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
 
 <p>You should get an output back that looks like this.</p>
 
 <pre><code>CURRENT LEVEL: level 1
+
 ----------------------------------------
 
-I /etc/komtek ligger det èn fil, hva er navnet på denne filen?
+In which folder are you located when you open the terminal?
 
-Example answer:      filnavn.txt         
+Example answer:      /folder/folder      
 Answer given:        None                
 Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
-Correct hash:        3240af5f279f28ba703346977438465621d43c5cfe10b053bfb48311b4de0058
+Correct hash:        1c4d3877bf4fe64f9d55cdbbf10d9b02c329b2a5a162ae3014b83da8c3024a71
+Levelchecker:        NO                  
 
-----------------------------------------</code></pre>
+----------------------------------------
+</code></pre>
 
 <ul>
 <li><code>CURRENT LEVEL</code> <em>is the level that you are currently on, this will increase as you progress</em></li>
 <li><code>Question</code> <em>is the task for this level, read it carefully</em></li>
 <li><code>Example answer</code> <em>is an example answer to give you an idea of what format the answer should be. for instance, when asked about a file name, this example tries to show that we are looking for the full filename, including the file ending <code>.txt</code>.</em></li>
 <li><code>Answer given</code> <em>is the answer you gave, which is “None” by default</em></li>
-<li><code>Hash of answer</code> <em>is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a <a href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> which it will try to compare to the hashed version of the correct answer.</em> <strong>(TODO: Make this more clear)</strong></li>
+<li><code>Hash of answer</code> <em>is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a <a href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> which it will try to compare to the hashed version of the correct answer.</em></li>
 <li><code>Correct hash</code> <em>is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct</em></li>
+<li>LevelChecker <em>Tells you if you have to get check that you done the task correctly.</em> – The value is either <code>YES</code> or <code>NO</code> for each level. If this says <code>YES</code>, it means you have to navigate to <code>/home/pi/teknostart_ctf</code>and run <code>./levelchecker</code>to check that you have completed the task correctly. If you have you will get the password (flag) to progress to the next level.</li>
 </ul>
 
 <h3 id="step-2-solve-the-task">Step 2: Solve the task</h3>
-<p>The first you will see is what level you are on, in this case, level 1. As you progress, this will increase. Next is the challenge for this level. This question asks for a file name stored at a particular location, more specifically in <code>/etc/komtek</code>.</p>
-<p>In this example, the task is to find the file in <code>/etc/komtek</code>.</p>
-<p>First we change our directory to that folder: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-40.png" alt="alt text" /></p>
-<p>To check that we are in fact in the right folder, we can use <code>pwd</code>.</p>
+<p>The first you will see is what level you are on, in this case, level 1. As you progress, this will increase. Next is the challenge for this level. This question asks for the folder path that you are in when you each time you launch a new terminal.</p>
+<p>First we open a new terminal: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-47.png" alt="alt text" /></p>
+<p>Now, to check which folder location we are in, we type <code>pwd</code></p>
 <figure>
-<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-42.png" alt="alt text" /><figcaption>alt text</figcaption>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-48.png" alt="alt text" /><figcaption>alt text</figcaption>
 </figure>
-<p>We can now list all the files in the folder with the command <code>ls</code>. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-43.png" alt="alt text" /></p>
-<p>and here is our file!</p>
+<p>As we can see, we are located in <code>/home/pi</code>.</p>
 <h3 id="step-3-check-if-you-got-the-correct-answer">Step 3: Check if you got the correct answer</h3>
-<p>To test our answer, we run the program again and input our answer <code>first_flag.txt</code>.</p>
-<p>First we change directory back to where <code>./teknostart_ctf.py</code>is located. 1. <code>cd /home</code> or simply <code>cd</code>, these commands both changes the current directory to you home folder. 2. <code>./teknostart_ctf.py first_flag.txt</code></p>
-<p>You will receive the message:</p>
+<p>To test our answer, we run the program again and input our answer <code>/home/pi</code>.</p>
+<p>First we change directory back to where the program <code>teknostart_ctf.py</code>is located.</p>
+<p>Because we are already inside the folder <code>/home/pi</code> we can simply type <code>cd teknostart_ctf</code>, which will put us in <code>/home/pi/teknostart_ctf</code>.</p>
+<p>When we now type <code>ls</code> to list the files in the directory, we se our <code>teknostart_ctf.py</code>file. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-50.png" alt="alt text" /></p>
+<p>We can now run it, and input our answer <code>/home/pi</code>. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-52.png" alt="alt text" /></p>
+<p>Success! We had the right flag. The next task is given to us, try to solve that and as many of the following tasks as you can.</p>
 
-<pre><code>Congratulations, you have been promoted to the next level!</code></pre>
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<p>followed by the next question. Try to solve as many of the tasks as you can.</p>
+<span name="da6005"></span><aside name="da6005"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
 
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
     </section>
 </div>
 

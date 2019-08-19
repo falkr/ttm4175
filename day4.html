@@ -129,19 +129,30 @@
 <li>Install a new program (Apache) on Linux</li>
 <li>Get an overview of how a webserver can be used to host your own websites.</li>
 </ul>
+</div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
 <li><a href="commands.html#sudo">sudo</a> — execute a program as super user.</li>
 <li><a href="commands.html#apt">apt</a> — install new programs.</li>
 <li><a href="commands.html#systemctl">systemctl</a> — control system services.</li>
 </ul>
-</div>
-<h3 id="apache-and-webserver">Apache and Webserver</h3>
+
+    </section>
+    <section class="content">
+<h1 id="being-super-user">Being Super User</h1>
+<p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. SOmtimes you just add this in front of another command that you want to execute with special rights.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
+
+<p>Think of it as when your parents told you to say “Please!”</p>
+
+    </section>
+    <section class="content">
+<h1 id="apache-and-webserver">Apache and Webserver</h1>
 
 <div class="factbox"><p><em>Web Server:</em> A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.</p>
 </div>
 <div class="factbox"><p><em>Apache:</em> Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.</p>
-<p>To install Apache and start our own server, there are a few steps we need to go through.a</p>
 </div>
     </section>
     <section class="content">
@@ -149,11 +160,11 @@
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us — it’s like an app store, but for Linux.</p>
 <p>First, we need to update the list of available software:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
 
 <p>Then we install Apache:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -164,7 +175,7 @@
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
 <p>Let’s start the service:</p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
 
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
@@ -181,6 +192,34 @@
 <p>First, we would like to check wether our Apache server is working as expected. The Apache server runs on port 80 by default, so in order to check whether the service is running, we have to check this port specifically.</p>
 <p><strong>Check that Apache works as expected:</strong> 1. Find your IP-address 2. Type the IP-address in your browser, and specify port number 80. i.e <em>http://192.168.10.19:80</em> 3. If the Apache test-page pops up, the server is running as expected. (link to apache test-page)</p>
 
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
+
+<span name="3fedb8"></span><aside name="3fedb8"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
+
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
     </section>
 </div>
 
