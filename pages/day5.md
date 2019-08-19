@@ -19,7 +19,7 @@ The default folder from where Apache gets the content for the website is `/var/w
 
 We can go ahead and remove this file:
 1. `~$ cd /var/www/html` *Navigates to the folder*
-2. `~$ rm index.html`*Removes the file*
+2. `~$ rm index.html` *Removes the file*
 
 If you go back to your website and hit refresh, you will see that instead of loading the test page, an error message will pop up. Since we deleted the file, Apache has nothing to give us on our website. 
 
@@ -33,22 +33,13 @@ First, create the file `index.html`:
 touch index.html
 ```
 
-Then, edit the file with leafpad: (which editor?)
+Then, edit the file with leafpad:
 
 ```bash
 leafpad index.html
 ```
 
 Write HTML code here to personalize your web page. Start with the template below, or find a template online.
-
-
-### What is HTML?
-Firstly, HTML is short for "HyperText Markup Language". That may sound scary, but it simply means it is a language for describing web-pages using ordinary text. HTML is not a complex programming language.
-
-Every web page is actually a HTML file. Each HTML file is just a plain-text file, but with a .html file extension instead of .txt, and is made up of many HTML tags as well as the content for a web page.
-A web site will often contain many html files that link to each other. You can edit HTML files with your favourite editor.
-### HTML Template
-
 
 ```html
 <html>
@@ -68,7 +59,38 @@ A web site will often contain many html files that link to each other. You can e
 
 
 
-# Final steps
+# Editing Your Website 
 
- You can now edit the website as you want. Try to go to each others webpages by typing in their IP-address and port in the URL on the same format as earlier.
+You can now edit the website as you want. Try to go to each others webpages by typing in their IP-address and port in the URL on the same format as earlier.
 
+
+# Final Steps
+
+### Learning Goals
+
+In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
+
+:aside: <img src="figures/doubleteam.png" width="30"/>
+
+
+### Individual Reflection
+
+Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+
+
+### Cleaning Up
+
+:todo:
+- Put all hardware back into the box.
+- Store the box in one of the lockers in the lab, using the combination lock.
+- Connect all parts of the PC back to it (keyboard, mouse, monitor).
+- Take out any trash. (Even if its not yours... thank you!)
+- Put the chairs back to the table.
+
+### Individual Exercises
+
+We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
+- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
+- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
+- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
