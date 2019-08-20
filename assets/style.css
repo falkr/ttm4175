@@ -353,7 +353,7 @@ div.hint_title {
   padding: 18px 32px 18px 32px
 }
 
-.steps ol {
+.steps ol, .steps ul {
   counter-reset: section;
   list-style: none;
   margin-left: 10px

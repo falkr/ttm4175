@@ -97,10 +97,12 @@ cd: cd [-L|[-P [-e]] [-@]] [dir]
 
 # apt
 
+# cat
+
 # cd
 
 
-Moving into a directoy:
+Moving into a directory:
 
 ```bash 
 cd <path-to-directory>
@@ -118,6 +120,11 @@ Moving in the home directory:
 cd ~
 ```
 
+# curl
+
+# grep
+
+# mkdir
 
 
 

@@ -25,6 +25,9 @@ Today, many of you will take your first steps with the powerful Linux terminal.
 - [grep](commands.html#grep) --- search for text in a file
 
 
+At the top of the page with the list of commands, we [listed three ways to find more about commands](commands.html): `man`, `apropos` and the `--help` option.
+
+
 
 # Navigating Folders and Files
 
@@ -110,15 +113,58 @@ source: figures/teknostart/rpi-terminal-folders-2.png
 
 # Creating Folders and Files
 
-### touch
+### touch and rm
 
-### mkdir
+You can create a file with the command `touch`. The created file is empty, but you can then use other programs, for example a text editor, to add content to it.
 
-### rmdir
+```bash 
+touch file.txt
+```
 
-### rm
+With the `rm` _("**r**e**m**ove")_, you can delete a file:
 
-grep GET dump.txt
+```bash 
+rm file.txt
+```
+
+:tip: Be careful with the **rm** command. You can destroy your system when you delete the wrong files. You won't get them back.
+
+
+### mkdir and rmdir
+
+You can create a folder or directory with the `mkdir` command. _("**m**a**k**e **dir**ectory")_
+
+```bash
+mkdir mydirectory
+```
+
+With the `rmdir` _("**r**e**m**ove **dir**ectory")_ command, you can delete a directory
+
+```bash
+rmdir mydirectory
+```
+
+
+
+# Advanced File Stuff
+
+### grep
+
+With the `grep` command, you can read a file and out put all lines that match a certain criteria. 
+For example, the following command finds all lines that include the string `hello` in the file `log.txt`.
+
+```bash
+grep hello log.txt
+```
+
+
+### cat
+
+With the `cat` command, you can simply view the contents of a file. The following will print the contents of the file `log.txt`.
+
+```bash
+cat log.txt
+```
 
 
 # Being Super User
@@ -132,6 +178,58 @@ sudo <important command...>
 
 Think of it as when your parents told you to say "Please!"
 
+
+
+# Command Memory
+
+Go through the command descriptions above. Read together as good as it works, repeat reading this on your own as homework. You can use the commands 
+[listed here](commands.html) to get help with the solutions.
+
+Use the scissors and create a stack of cards. 
+
+
+## Round 1: Commands and their Purpose
+
+:steps:
+- Create one stack of cards, place the command keywords facing up. 
+- Shuffle them a bit.
+- Each of you should draw the top card, read the command keyword, and tell the others (without looking) what the command is used for.
+- Turn the card around to see if you were right. If not, put the card to the end of the stack.
+- Repeat until you went through all cards.
+
+---
+type: figure
+source: figures/teknostart/command-memory-1.jpg
+---
+
+
+## Round 2: Which command to use?
+
+:steps: 
+- Place all cards with the command facing upwards on the table.
+- Read the list below, and find the proper command.
+- Only if you agree in team, turn the card around and see if you were right.
+
+---
+type: figure
+source: figures/teknostart/command-memory-2.jpg
+---
+
+
+The commands you should look for:
+
+  1. change into another directory	
+  2. create a new empty file	
+  3. delete a directory
+  4. delete a file	
+  5. download a file from a web address	
+  6. find lines in a file	
+  7. list the contents of a directory	
+  8. make a new directory	
+  9. print the contents of a file	
+  10. read the help for a command
+  11. run a command as super user
+  12. search in help pages
 
 
 # Capture the Flag
