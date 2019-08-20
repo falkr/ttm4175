@@ -172,6 +172,8 @@ Although [This](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+webs
 
 1. In the terminal connected to the server via SSH, navigate to the folder `/web/folk/<ntnu_username>`.
 :hint: use the `cd`command
+
+
 2. Here, create a file with Nano called `index.html`. 
 - The reason we make a file called `index.html`is because the server will automatically look for a file with this name, and publish the website that is written in this file.
 3. Write your HTML code and save the file. 
@@ -179,7 +181,7 @@ Although [This](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+webs
 
 
 You can find a sample HTML page [**here**](https://home.samfundet.no/~halvogro/komtekintro/sample.txt).
-Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by coping the the source code found by viewing the page source. Try copying ['https://nrk.no'](https://www.nrk.no/) for instance. 
+Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Try copying ['https://nrk.no'](https://www.nrk.no/) for instance. 
 
 
 # Final Steps
