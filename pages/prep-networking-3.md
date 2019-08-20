@@ -17,6 +17,7 @@ Remember that the *details about the required readings will be available in each
     - configuring IP masquerading
     - installing and configuring a basic Wi-Fi access point
 
+
 # Understanding NAT
 
 As you now know there are special types of IP addresses and a lack of public IPv4 addresses.

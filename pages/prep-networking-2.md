@@ -17,6 +17,7 @@ Remember that the *details about the required readings will be available in each
     - installing and configuring a basic DHCP server
     - checking DNS information
 
+
 # Understanding DNS
 
 Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. *ntnu.no* or *google.com*).
