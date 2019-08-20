@@ -331,7 +331,7 @@ Levelchecker:        NO
 - `Answer given` *is the answer you gave, which is "None" by default*
 - `Hash of answer` *is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a  [string](https://en.wikipedia.org/wiki/String_(computer_science)) which it will try to compare to the hashed version of the correct answer.* 
 - `Correct hash` *is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct*
-- LevelChecker *Tells you if you have to get check that you done the task correctly.*
+- `levelchecker` *Tells you if you have to get check that you done the task correctly.*
 -- The value is either `YES` or `NO` for each level. If this says `YES`, it means you have to navigate to `/home/pi/teknostart_ctf` and run `./levelchecker` to check that you have completed the task correctly. If you have, you will get the password (flag) to progress to the next level. 
 
 
