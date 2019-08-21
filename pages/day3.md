@@ -32,7 +32,7 @@ Try and type the following command:
 ip address
 ```
 
-This command shows you all the existing IP addresses associated with your Raspberry PI.
+This command shows you all the existing IP addresses associated with your Raspberry Pi.
 These addresses are fundamental for connecting computers and other devices to each other and the Internet.
 Each network card (e.g. wireless card) is called an _interface_ and it may have one or more IP addresses.
 A typical IP(v4) address at NTNU looks something like `129.241.200.112/24.`
@@ -79,8 +79,12 @@ ping www.esa.int
 
 # Remote Access to a Computer
 
-It is possible to remotely access a Linux system, and manage it, using different tools.
-One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as `ssh`.
+It is possible to access a Linux system and manage it **remotely** using different tools.
+One of the most popular ones is the Secure Shell, referred to as `ssh`.
+It is a program (or _service_) that waits for incoming SSH connections and then remotely controls the computer.
+
+:aside: Programs are sometimes calles _services_ to emphasize that they run in the background, are usually always on and are somehow useful for other functions.
+
 
 This service needs to be enabled **in your Raspberry Pi** with the following commands:
 
@@ -89,7 +93,7 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
 
-Now, **from your desktop** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
+Now, **from your desktop PC with Linux** you can access your Raspberry Pi using the IP address you found earlier and the command `ssh` as such:
 
 ```bash
 ssh pi@<your_ip_address>
@@ -98,13 +102,25 @@ ssh pi@<your_ip_address>
 **Note:** a warning message should appear the first time you connect since the certificates being used have never been exchanged before.
 It is okay to say "yes" and then type in your password.
 
-Now that you are remotely controlling your Raspberry IP issue the following command to download a simple *wave* file:
+You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!
+
+Play around with some commands (`pwd`, `cd`, `ls`) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.
+
+
+### Playing a sound... Remotely!
+
+Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:
+
+
+
+Now that you are remotely controlling your Raspberry Pi, issue the following command to download a simple sound file in wav format:
 
 ```bash
 curl https://ttm4175.iik.ntnu.no/onesmall.wav -O
 ```
 
-And play it!
+Connect the speakers to the audio jack on the Raspberry Pi, and see if it requires to be switched on or extra power via USB. 
+Play the file with the following command:
 
 ```bash
 aplay onesmall.wav
@@ -113,20 +129,25 @@ aplay onesmall.wav
 
 # Setting up a web site
 
-The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. What we _can_ do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
+The web server that is hosted by NTNU runs in [*headless mode*](https://whatis.techtarget.com/definition/headless-server), which means that the machine has neither a monitor, mouse or keyboard. What we _can_ do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal-based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is _Vim_, _Emacs_ and _Nano_. Todays focus will be centered around Nano. 
 
 :note-box: It is important to note that today, most servers in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.
 
-## 1.Nano
+
+## Nano
 
 When getting used to the command-line, people who are new to Linux can be put off by other, more advanced text editors such as for instance Vim and emacs. While these two are excellent programs, they do have a bit of a learning curve.
-Enter [Nano](https://www.nano-editor.org/), an easy-to-use text editor that proves itself versatile and simple. Nano is installed by default in Ubuntu and many other Linux distributions, which also means that our server at NTNU also has it installed.
+[Nano](https://www.nano-editor.org/) is an easy-to-use text editor. It's also installed in most Linux distributions, so you can usually rely on that it's there.
 
-#### How to Nano:
+To create a new file in Nano, we simply type `nano` in our terminal. 
+Nano will open in a windows that looks something like this. 
 
-To create a new file in Nano, we simply type `nano`in our terminal. Nano will open in a windows that looks something like this. 
+---
+type: figure
+source: https://home.samfundet.no/~halvogro/ting/bilder/image-45.png
+caption: "The Nano editor"
+---
 
-![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-45.png)
 
 Now we can start typing the contents of the file. 
 
@@ -143,15 +164,20 @@ Check out this list of useful commands used in Nano: [Nano Cheatsheet](https://w
 
 As mentioned, we will use SSH to connect to the NTNU server.
 
+:steps:
 1. Open a terminal window
 2. type `ssh <ntnu_username>@login.stud.ntnu.no` and press enter
 3. Enter you password
 
-If you get a message that looks like this:
-![alt text](https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
-)
-Congratulations, you are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
+You should get a message that looks like this:
+ 
+---
+type: figure
+source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
+---
 
+You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 
+ 
 
 # Step 3: Making a Website
 
@@ -172,9 +198,6 @@ To see the HTML code that lies behind any website, open Firefox and navigate to 
 Although [This](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website) guide explains how to set it up, in simple terms, the steps are as follows
 
 1. In the terminal connected to the server via SSH, navigate to the folder `/web/folk/<ntnu_username>`.
-:hint: use the `cd`command
-
-
 2. Here, create a file with Nano called `index.html`. 
 - The reason we make a file called `index.html`is because the server will automatically look for a file with this name, and publish the website that is written in this file.
 3. Write your HTML code and save the file. 
@@ -182,7 +205,9 @@ Although [This](https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+webs
 
 
 You can find a sample HTML page [**here**](https://home.samfundet.no/~halvogro/komtekintro/sample.txt).
-Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Try copying ['https://nrk.no'](https://www.nrk.no/) for instance. 
+Copy and paste these into your `index.html` or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Have a look at the source of ['https://nrk.no'](https://www.nrk.no/) for instance. 
+
+:aside: Decide for yourself if you want to have a personal homepage or not. You can delete the created HTML files and the homepage will disappear. The NTNU Wiki has [more info about these homepages](https://innsida.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+på+folk-ntnu-no).
 
 
 # Final Steps
