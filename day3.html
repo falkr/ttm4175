@@ -93,6 +93,14 @@
       </div>
   </li>
   
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+    </div>
+  </li>
   
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
@@ -150,9 +158,9 @@
 <h1 id="finding-your-ip-address-and-checking-for-connectivity">Finding your IP address and checking for connectivity</h1>
 <p>In a terminal of your Raspberry Pi you can easily find its IP address by using the command <code>ip</code>. Try and type the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">ip</span> address</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">ip</span> address</a></code></pre></div>
 
-<p>This command shows you all the existing IP addresses associated with your Raspberry PI. These addresses are fundamental for connecting computers and other devices to each other and the Internet. Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24.</code></p>
+<p>This command shows you all the existing IP addresses associated with your Raspberry Pi. These addresses are fundamental for connecting computers and other devices to each other and the Internet. Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24.</code></p>
 <p>Write down the address and mask of the interface <code>eth0</code>.</p>
 
     </section>
@@ -161,7 +169,7 @@
 <p>By default, the Linux distribution we are using has a running service, or daemon, that automatically configures network interfaces whenever a new link is found. This service is called <code>dhcpcd</code> and runs a networking protocol called DHCP. You will learn more about this later in the course.</p>
 <p>DHCP is also used to automatically configure the routes that are used to reach the Internet. You can find any route installed in your Raspberry Pi by typing the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">ip</span> route</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">ip</span> route</a></code></pre></div>
 
 <p>You should see a <em>default route</em> via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet.</p>
 <p>To see if we can send something back and forth between two computers, we can use the command <code>ping</code>. It does exactly what it sounds like… It sends a “ping” message to the other computer, which then answers.</p>
@@ -171,62 +179,81 @@
 </div>
 <p>Try pinging that router with the command <code>ping</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ping</span> 129.241.200.1</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ping</span> 129.241.200.1</a></code></pre></div>
 
 <p>You can also use the same command to <code>ping</code> other online machines such as the server hosting the website from the European Space Agency at <em>www.esa.int</em>. Can you see any significant difference from the previous <code>ping</code> command?</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ping</span> www.esa.int</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ping</span> www.esa.int</a></code></pre></div>
 
     </section>
     <section class="content">
 <h1 id="remote-access-to-a-computer">Remote Access to a Computer</h1>
-<p>It is possible to remotely access a Linux system, and manage it, using different tools. One of the most popular ones, due to its simplicity, security and lightweight is the Secure Shell, typically referred to as <code>ssh</code>.</p>
+<p>It is possible to access a Linux system and manage it <strong>remotely</strong> using different tools. One of the most popular ones is the Secure Shell, referred to as <code>ssh</code>. It is a program (or <em>service</em>) that waits for incoming SSH connections and then remotely controls the computer.</p>
+
+<span name="6654f2"></span><aside name="6654f2"><p>Programs are sometimes calles <em>services</em> to emphasize that they run in the background, are usually always on and are somehow useful for other functions.</p>
+</aside>
 <p>This service needs to be enabled <strong>in your Raspberry Pi</strong> with the following commands:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> systemctl enable ssh</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">sudo</span> systemctl start ssh</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> systemctl enable ssh</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo</span> systemctl start ssh</a></code></pre></div>
 
-<p>Now, <strong>from your desktop</strong> you can access your Raspberry Pi using the IP address you found earlier and the command <code>ssh</code> as such:</p>
+<p>Now, <strong>from your desktop PC with Linux</strong> you can access your Raspberry Pi using the IP address you found earlier and the command <code>ssh</code> as such:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></a></code></pre></div>
 
 <p><strong>Note:</strong> a warning message should appear the first time you connect since the certificates being used have never been exchanged before. It is okay to say “yes” and then type in your password.</p>
-<p>Now that you are remotely controlling your Raspberry IP issue the following command to download a simple <em>wave</em> file:</p>
+<p>You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!</p>
+<p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</span></code></pre></div>
+<h3 id="playing-a-sound-remotely">Playing a sound… Remotely!</h3>
+<p>Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:</p>
 
-<p>And play it!</p>
+<p>Now that you are remotely controlling your Raspberry Pi, issue the following command to download a simple sound file in wav format:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">aplay</span> onesmall.wav</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</a></code></pre></div>
+
+<p>Connect the speakers to the audio jack on the Raspberry Pi, and see if it requires to be switched on or extra power via USB. Play the file with the following command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">aplay</span> onesmall.wav</a></code></pre></div>
 
     </section>
     <section class="content">
 <h1 id="setting-up-a-web-site">Setting up a web site</h1>
-<p>The web server that is hosted by NTNU runs in <a href="https://whatis.techtarget.com/definition/headless-server"><em>headless mode</em></a>, which means that the machine has neither a monitor, mouse or keyboard. What we <em>can</em> do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is <em>Vim</em>, <em>Emacs</em> and <em>Nano</em>. Todays focus will be centered around Nano.</p>
+<p>The web server that is hosted by NTNU runs in <a href="https://whatis.techtarget.com/definition/headless-server"><em>headless mode</em></a>, which means that the machine has neither a monitor, mouse or keyboard. What we <em>can</em> do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal-based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is <em>Vim</em>, <em>Emacs</em> and <em>Nano</em>. Todays focus will be centered around Nano.</p>
 
 <div class="note-box"><p>It is important to note that today, most servers in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.</p>
-<h2 id="nano">1.Nano</h2>
-<p>When getting used to the command-line, people who are new to Linux can be put off by other, more advanced text editors such as for instance Vim and emacs. While these two are excellent programs, they do have a bit of a learning curve. Enter <a href="https://www.nano-editor.org/">Nano</a>, an easy-to-use text editor that proves itself versatile and simple. Nano is installed by default in Ubuntu and many other Linux distributions, which also means that our server at NTNU also has it installed.</p>
-<h4 id="how-to-nano">How to Nano:</h4>
-<p>To create a new file in Nano, we simply type <code>nano</code>in our terminal. Nano will open in a windows that looks something like this.</p>
-<figure>
-<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png" alt="" /><figcaption>alt text</figcaption>
-</figure>
+</div>
+<h2 id="nano">Nano</h2>
+<p>When getting used to the command-line, people who are new to Linux can be put off by other, more advanced text editors such as for instance Vim and emacs. While these two are excellent programs, they do have a bit of a learning curve. <a href="https://www.nano-editor.org/">Nano</a> is an easy-to-use text editor. It’s also installed in most Linux distributions, so you can usually rely on that it’s there.</p>
+<p>To create a new file in Nano, we simply type <code>nano</code> in our terminal. Nano will open in a windows that looks something like this.</p>
+
+<div class="figure">
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png" alt="The Nano editor" width="100%"/>
+<span name="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png">&nbsp;</span>
+<aside name="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png"><p><p>The Nano editor</p>
+</p></aside>
+</div>
 <p>Now we can start typing the contents of the file.</p>
 <h4 id="saving-and-exiting">Saving and exiting</h4>
 <p>If you want to save the changes you’ve made, press <code>Ctrl + O</code>. To exit nano, type <code>Ctrl + X</code>. If you ask nano to exit from a modified file, it will ask you if you want to save it. Just press <code>N</code> in case you don’t, or <code>Y</code> in case you do. It will then ask you for a filename. Just type it in and press Enter.</p>
 <h4 id="open-already-existing-file">Open already existing file</h4>
 <p>To open an already existing file in Nano, we write <code>nano path/to/filename</code> or simply <code>nano filename</code>if you are in the correct folder path. Saving and exiting is the same as above.</p>
 <p>Check out this list of useful commands used in Nano: <a href="https://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/">Nano Cheatsheet</a></p>
-</div>
+
 <h2 id="connecting-to-the-server">2. Connecting to the server</h2>
 <p>As mentioned, we will use SSH to connect to the NTNU server.</p>
-<ol type="1">
+
+<div class="steps"><ol type="1">
 <li>Open a terminal window</li>
 <li>type <code>ssh &lt;ntnu_username&gt;@login.stud.ntnu.no</code> and press enter</li>
 <li>Enter you password</li>
 </ol>
-<p>If you get a message that looks like this: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-46.png" alt="alt text" /> Congratulations, you are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server.</p>
+<p>You should get a message that looks like this:</p>
+</div>
+<div class="figure">
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-46.png" width="100%"/>
+</div>
+<p>You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server.</p>
 
     </section>
     <section class="content">
@@ -241,36 +268,6 @@
 <p>Although <a href="https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website">This</a> guide explains how to set it up, in simple terms, the steps are as follows</p>
 <ol type="1">
 <li>In the terminal connected to the server via SSH, navigate to the folder <code>/web/folk/&lt;ntnu_username&gt;</code>.</li>
-</ol>
-
-</section>
-<section class="content">
-<div class="hint_title">Hint
-<button type="button" class="btn btn-dark btn-sm" style="float: right" data-toggle="modal" data-target="#8042b3Modal">Show</button>
-</div>
-<div class="hint" style="-webkit-filter: blur(5px);" id="8042b3"><p>use the <code>cd</code>command</p>
-
-</div>
-<div class="modal fade" id="8042b3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Hint</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">Are you sure you want to see the hint, or try a bit more on your own?</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('8042b3').style.cssText = ''">Yes, show me!</button>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-<section class="content">
-<ol start="2" type="1">
 <li>Here, create a file with Nano called <code>index.html</code>.</li>
 </ol>
 <ul>
@@ -281,15 +278,17 @@
 <li>Navigate to <code>https://folk.ntnu.no/&lt;ntnu_username&gt;</code>in your browser to view you website.</li>
 </ol>
 
-<p>You can find a sample HTML page <a href="https://home.samfundet.no/~halvogro/komtekintro/sample.txt"><strong>here</strong></a>. Copy and paste these into your <code>index.html</code> or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Try copying <a href="https://www.nrk.no/">‘https://nrk.no’</a> for instance.</p>
+<p>You can find a sample HTML page <a href="https://home.samfundet.no/~halvogro/komtekintro/sample.txt"><strong>here</strong></a>. Copy and paste these into your <code>index.html</code> or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Have a look at the source of <a href="https://www.nrk.no/">‘https://nrk.no’</a> for instance.</p>
 
+<span name="24a26f"></span><aside name="24a26f"><p>Decide for yourself if you want to have a personal homepage or not. You can delete the created HTML files and the homepage will disappear. The NTNU Wiki has <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+på+folk-ntnu-no">more info about these homepages</a>.</p>
+</aside>
     </section>
     <section class="content">
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="790558"></span><aside name="790558"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="cdb0f9"></span><aside name="cdb0f9"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>

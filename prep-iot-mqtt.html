@@ -93,6 +93,14 @@
       </div>
   </li>
   
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+    </div>
+  </li>
   
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
@@ -411,7 +419,7 @@ client.connect(&#39;iot.eclipse.org&#39;, 1883, 60)   </code></pre>
 <img src="figures/iot/mqtt-fx.png" width="100%"/>
 </div>
 <p>MQTT.FX[^3] is a tool useful during development. Using MQTT.FX is really simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Once the system is done, you don’t need MQTT.FX anymore.</p>
-<p>Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. This does not sound like much. However, MQTT.FX has a generic user interface, you can use MQTT.FX while you construct your application to see how the other system components publish messages, and you can also "inject" messages into the system, by publishing to any topic you want.</p>
+<p>Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. This does not sound like much. However, MQTT.FX has a generic user interface, you can use MQTT.FX while you construct your application to see how the other system components publish messages, and you can also &quot;inject&quot; messages into the system, by publishing to any topic you want.</p>
 
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>
