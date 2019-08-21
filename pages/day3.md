@@ -10,6 +10,7 @@ In order to this we will also briefly look into IP addresses and the Secure Shel
 - Understand IP addressing
 - Learn how to use SSH and SCP
 
+
 ### New Linux Commands
 
 - [passwd](commands.html#passwd) --- to change passwords.
