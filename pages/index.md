@@ -29,11 +29,11 @@ Fra uke 35 har vi følgende rom og tider:
 </thead>
 <tbody class="row-hover">
 <tr class="row-2">
-<td class="column-1">35</td><td class="column-2">28.-29. aug.</td><td class="column-3"><a href="prep-networking-1.html">Networking: 1</a></td></tr>
+<td class="column-1">35</td><td class="column-2">28.-29. aug.</td><td class="column-3"><a href="prep-networking-1.html">IPs, Subnets and Routing</a></td></tr>
 <tr class="row-3">
-<td class="column-1">36</td><td class="column-2">4.-5. sep.</td><td class="column-3"><a href="prep-networking-2.html">Networking: 2</a></td></tr>
+<td class="column-1">36</td><td class="column-2">4.-5. sep.</td><td class="column-3"><a href="prep-networking-2.html">DNS and DHCP</a></td></tr>
 <tr class="row-4">
-<td class="column-1">37</td><td class="column-2">11.-12. sep.</td><td class="column-3"><a href="prep-networking-3.html">Networking: 3</a></td></tr>
+<td class="column-1">37</td><td class="column-2">11.-12. sep.</td><td class="column-3"><a href="prep-networking-3.html">NAT and Wi-Fi</a></td></tr>
 <tr class="row-5">
 <td class="column-1">38</td><td class="column-2">18.-19. sep.</td><td class="column-3"><a href="prep-security-1.html">Security: 1</a></td></tr>
 <tr class="row-6">

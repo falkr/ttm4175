@@ -1,11 +1,23 @@
 # Day 5: Recap
 
+Today's objective is to not only review the main concepts and commands you have been using the whole week but also to get some deeper knowledge about them.
 
+:goals: After this lab\. you will be able to remember and execute Linux commands for:
 
-### Learning Goals for Today
+- Performing file operations
+- Finding, viewing and editing files
+- Managing user and group permissions
+- Configuring networking interfaces
+- Remotely accessing other machines
+- Personalising the operating system
 
+# Exercises
 
+You will be given an exercise sheet where you should write your answers. These exercises should be solved by each team.
 
+You must **deliver the exercise sheet** by the end of the Lab\., do not forget to **include your team number**.
+
+For your convenience you may also access the exercises [here](https://www.iik.ntnu.no/ttm4175/wp-content/uploads/2018/10/exercises-linux_basics-woansV3.pdf).
 
 # Final Steps
 
