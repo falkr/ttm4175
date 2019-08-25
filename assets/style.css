@@ -527,3 +527,28 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
   }
   
 }
+
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 18px 32px 18px 32px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #f3f3f3;
+}
