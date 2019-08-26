@@ -139,7 +139,7 @@ static routers=192.168.100.101
 
 ## Introducing IPv6
 
-Change the topology you created in [the previous exercise](#lab--exercises) to use IPv6 addresses and try:
+Change the topology you created in [the previous exercise](#lab.-exercises) to use IPv6 addresses and try:
 
 * the `ping` command
 * remote access with `ssh`
