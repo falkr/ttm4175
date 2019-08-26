@@ -97,6 +97,15 @@ source: figures/net/networking.png
 
 ## Sikkerhet
 
+Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer. 
+Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer. 
+I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.
+
+---
+type: figure
+source: figures/security/overview.png
+---
+
 :aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> elissar.khloussy@ngu.no</p>
 
 
