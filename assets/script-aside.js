@@ -47,14 +47,24 @@ $(document).ready(function() {
     var i;
     
     for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("w3active");
+      coll[i].addEventListener("mousedown", function() {
         var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
+        content.style.filter = "none";
+      });
+      coll[i].addEventListener("mouseup", function() {
+        var content = this.nextElementSibling;
+        content.style.filter = "blur(3px)";
       });
     }
+
+    //For fancy numbered lists starting at start AKA :steps: 
+    $(".steps ol").each(function(idx, el) {
+        var index = parseInt($(el).attr("start"))-1;
+          if (!isNaN(index)) {
+              $(el).css({'counter-reset':'li ' + index});    
+          }
+    });
+
 });
+
+

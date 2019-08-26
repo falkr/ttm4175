@@ -189,7 +189,6 @@ Hint (IP addresses)
 <p>An example of a pair of IP addresses and masks could be “10.100.2.1/30” and “10.100.2.2/30”.</p>
 <p>You need to have “root” privileges in order to change/add an IP address.</p>
 </div>
-
 <h3 id="verifying-your-configurations">Verifying your configurations</h3>
 <p>After configuring the two rPi connect them to each other using a single Ethernet cable. Only one rPi needs to be connected to the keyboard/screen.</p>
 <ol type="1">
@@ -212,6 +211,7 @@ Hint (ssh)
 <div class="w3content">
 <p>The <code>ssh</code> service may not be running, check with <code>sudo systemctl status ssh</code>. If it is not running use the <code>systemctl</code> command with <em>start</em> and with <em>enable</em> if you want <code>ssh</code> to start from boot.</p>
 </div>
+
 <h2 id="experimenting-with-masks">Experimenting with masks</h2>
 <p>The goal of this task is to get more comfortable with subnets and masks. Start by configuring the rPi <strong>not connected</strong> to keyboard/screen:</p>
 <ol type="1">
@@ -224,7 +224,6 @@ Hint (troubleshooting)
 <div class="w3content">
 <p>You may lose connectivity at this point depending on the IP address you have previously set on the rPi connected to the keyboard/screen.</p>
 </div>
-
 <p>Now, using the rPi <strong>connected</strong> to the keyboard/screen try the following:</p>
 <ol type="1">
 <li>Change the IP address to 10.10.10.4 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
@@ -233,6 +232,7 @@ Hint (troubleshooting)
 <li>Check for changes in connectivity between the two rPi</li>
 <li>Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two rPi? Why?</li>
 </ol>
+
 <h2 id="experimenting-with-routes">Experimenting with routes</h2>
 <p>Using the rPi <strong>connected</strong> to the keyboard/screen try the following:</p>
 <ol type="1">

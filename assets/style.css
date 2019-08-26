@@ -354,7 +354,7 @@ div.hint_title {
 }
 
 .steps ol, .steps ul {
-  counter-reset: section;
+  counter-reset: li;
   list-style: none;
   margin-left: 10px
 }
@@ -366,8 +366,8 @@ div.hint_title {
 }
 
 .steps li:before {
-  content: counter(section);
-  counter-increment: section;
+  content: counter(li);
+  counter-increment: li;
   xborder: 2px solid #1481b8;
   xcolor: white;
   xbackground-color: #1481b8;
@@ -531,11 +531,11 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
-  padding: 18px 32px 18px 32px;
+  padding: 15px 32px 15px 32px;
   cursor: pointer;
   width: 100%;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px 10px 0 0;
   text-align: left;
   outline: none;
   font-size: 15px;
@@ -546,9 +546,10 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
 }
 
 .w3content {
+  filter: blur(3px);
   padding: 0 18px;
-  display: none;
+  display: block;
   overflow: hidden;
-  border-radius: 15px;
   background-color: #f3f3f3;
 }
+
