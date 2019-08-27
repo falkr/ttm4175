@@ -13,6 +13,13 @@ This will be achieved using available networking tools in Linux to manage a simp
     - routes and routing tables
 
 
+# Teamwork 2
+
+We do some reflection on teamwork.
+
+[Teamwork 2](teamwork-2.html)
+
+
 # Lab\. Exercises
 
 Please **read each exercise** entirely before starting to solve it.

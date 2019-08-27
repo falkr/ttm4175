@@ -6,43 +6,21 @@ Målet med grupperefleksjonen er å la dere få reflektere over hva som er br
 
 
 
-# Bli-kjent runde
+# Team
 
 :aside: <img src="figures/doubleteam.png" width="30"/>
 
 
-Jobb sammen som dobbel-team for denne oppgaven. 
-Deler av oppgaven gjøres som par. Hvis dere har et ulik antall, la noen jobbe sammen som tre. 
+## Team Navn
 
-
-## Navnerunde (i par)
-
-Snakk med hverandre, og fortell litt om dere selv:
-- hva dere heter
-- hvor gammel dere er
-- hvor dere kommer fra
-- interesser, en hobby
-- Hvorfor valgte dere kommunikasjonsteknologi?
-- Hva vil dere lære i løpet av din tid på NTNU?
-
-Bruk ca. **5 minutter** til det, slik at dere to blir kjent med hverandre.
-
-## Navneskilt
-
-Lag et navneskilt til partneren din.
-
-## Presentasjonsrunde
-
-Nå at dere har lært om deres partner, ta en runde sammen med alle og presenter partneren dere har nettopp lært om. 
-
-> "Dette er Petter, han kommer fra...
-
-Bruk ca 2 minutter per person, altså **12 minutter** tilsammen.
+Finn et godt navn til teamet. Noe dere husker til resten av studiet.
 
 ## Gruppebilde
 
 - Ta et gruppebilde med navneskilt
-- Last opp gruppebildet på MS Teams
+- Last opp gruppebildet på Padlet. Passord får dere i forelesningen.
+
+<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/r4gbgqa7ru3t" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="padding:8px;text-align:right;margin:0;"><a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank"><img src="https://resources.padletcdn.com/assets/made_with_padlet.png" width="86" height="16" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Made with Padlet"></a></div></div>
 
 
 
