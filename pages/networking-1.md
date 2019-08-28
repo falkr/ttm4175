@@ -100,6 +100,8 @@ If it is not running use the `systemctl` command with _start_ and with  _enable_
 
 ## Experimenting with masks
 
+**NEW** Remove any address that looks like 169.254.XXX.XXX/16 in both Raspberry Pis.
+
 The goal of this task is to get more comfortable with subnets and masks.
 Start by configuring the rPi **not connected** to keyboard/screen:
 
