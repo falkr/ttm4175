@@ -100,7 +100,12 @@ If it is not running use the `systemctl` command with _start_ and with  _enable_
 
 ## Experimenting with masks
 
-**NEW** Remove any address that looks like 169.254.XXX.XXX/16 in both Raspberry Pis.
+**NEW**
+
+Let's start by removing any unwanted address or routes on 'eth0'.
+For that purpose use the command `ip addr flush` and `ip route flush` (with the necessary arguments).
+
+**NEW**
 
 The goal of this task is to get more comfortable with subnets and masks.
 Start by configuring the rPi **not connected** to keyboard/screen:
@@ -115,7 +120,7 @@ You may lose connectivity at this point depending on the IP address you have pre
 
 Now, using the rPi **connected** to the keyboard/screen try the following:
 
-1. Change the IP address to 10.10.10.4 using the mask 255.255.255.192 (first add a new address then delete the previous one)
+1. Change the IP address to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one)
 2. Check for changes in connectivity between the two rPi
 3. Using the same IP address change the mask to /30
 4. Check for changes in connectivity between the two rPi
