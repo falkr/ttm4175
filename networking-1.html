@@ -175,12 +175,19 @@
 <li>Connect the keyboard, mouse and screen</li>
 <li>Using the command <code>ip addr show dev eth0</code> find out your current IP address, if any, on ‘eth0’</li>
 <li>Type <code>ip addr help</code> to see all the available options</li>
+</ol>
+<p><strong>NEW</strong></p>
+<ol start="4" type="1">
+<li>Let’s start by removing any unwanted address or routes on ‘eth0’. For that purpose use the command <code>ip addr flush dev eth0</code> and check that no addresses or routes remain (use <code>ip addr</code> and <code>ip route</code>).</li>
+</ol>
+<p><strong>NEW</strong></p>
+<ol start="5" type="1">
 <li>Add an IP address and respective mask to the interface ‘eth0’ using the command:</li>
 </ol>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
 
-<ol start="5" type="1">
+<ol start="6" type="1">
 <li>Using the command <code>ip a s eth0</code> (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.</li>
 </ol>
 <button class="w3collapsible">
@@ -220,9 +227,6 @@ Hint (ssh)
 </div>
 
 <h2 id="experimenting-with-masks">Experimenting with masks</h2>
-<p><strong>NEW</strong></p>
-<p>Remove any address that looks like 169.254.XXX.XXX/16 in both Raspberry Pis.</p>
-<p><strong>NEW</strong></p>
 <p>The goal of this task is to get more comfortable with subnets and masks. Start by configuring the rPi <strong>not connected</strong> to keyboard/screen:</p>
 <ol type="1">
 <li>Change the IP address to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
@@ -236,7 +240,7 @@ Hint (troubleshooting)
 </div>
 <p>Now, using the rPi <strong>connected</strong> to the keyboard/screen try the following:</p>
 <ol type="1">
-<li>Change the IP address to 10.10.10.4 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
+<li>Change the IP address to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
 <li>Check for changes in connectivity between the two rPi</li>
 <li>Using the same IP address change the mask to /30</li>
 <li>Check for changes in connectivity between the two rPi</li>

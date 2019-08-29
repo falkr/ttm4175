@@ -52,13 +52,21 @@ Repeat these steps with each rPi, adjusting their addresses adequately.
 1. Connect the keyboard, mouse and screen
 2. Using the command `ip addr show dev eth0` find out your current IP address, if any, on 'eth0'
 3. Type `ip addr help` to see all the available options
-4. Add an IP address and respective mask to the interface 'eth0' using the command:
+
+**NEW**
+
+4. Let's start by removing any unwanted address or routes on 'eth0'.
+For that purpose use the command `ip addr flush dev eth0` and check that no addresses or routes remain (use `ip addr` and `ip route`).
+
+**NEW**
+
+5. Add an IP address and respective mask to the interface 'eth0' using the command:
 
 ```bash
 ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth0
 ```
 
-5. Using the command `ip a s eth0` (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.
+6. Using the command `ip a s eth0` (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.
 
 <button class="w3collapsible">Hint (IP addresses)</button>
 <div class="w3content">
@@ -99,13 +107,6 @@ If it is not running use the `systemctl` command with _start_ and with  _enable_
 
 
 ## Experimenting with masks
-
-**NEW**
-
-Let's start by removing any unwanted address or routes on 'eth0'.
-For that purpose use the command `ip addr flush` and `ip route flush` (with the necessary arguments).
-
-**NEW**
 
 The goal of this task is to get more comfortable with subnets and masks.
 Start by configuring the rPi **not connected** to keyboard/screen:
