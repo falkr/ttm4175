@@ -1,0 +1,325 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4115">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Design of Communicating Systems">
+<meta property="og:description" content="Design of Communicating Systems">
+
+
+<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+
+<!--<script src="jquery-1.10.1.min.js"></script>-->
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="material/2019-08-15-ikt-intro.pdf">IKT Introduksjon (PDF)</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="day1.html">Dag 1: Raspberry Pi</a>
+      <a class="dropdown-item" href="day2.html">Dag 2: Linux</a>
+      <a class="dropdown-item" href="day3.html">Dag 3: IP, SSH og HTML</a>
+      <a class="dropdown-item" href="day4.html">Dag 4: Webserver</a>
+      <a class="dropdown-item" href="day5.html">Dag 5: Recap</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Networking</strong></a>
+      <a class="dropdown-item" href="prep-networking-1.html">IPs, Subnets and Routing</a>
+      <a class="dropdown-item" href="prep-networking-2.html">DNS and DHCP</a>
+      <a class="dropdown-item" href="prep-networking-3.html">NAT and Wi-Fi</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item" href="prep-security-1.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Networking</strong></a>
+        <a class="dropdown-item" href="networking-1.html">IPs, Subnets and Routing</a>
+        <a class="dropdown-item" href="networking-2.html">DNS and DHCP</a>
+        <a class="dropdown-item" href="networking-3.html">NAT and Wi-Fi
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1.html">Security 1</a>
+        <a class="dropdown-item" href="security-2.html">Security 2</a>
+        <a class="dropdown-item" href="security-3.html">Security 3</a>
+        <a class="dropdown-item" href="security-4.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <a class="dropdown-item" href="virtual-machine.html">Virtual Machine</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1 id="networking-in-linux-dns-and-dhcp">Networking in Linux – DNS and DHCP</h1>
+<p>The overall goal of this lab. is to complement knowledge on IP, subnets and routing with DNS and DHCP. This will be achieved using available tools and software in Linux to manage a simple Raspberry Pi network.</p>
+
+<div class="goals"><p>After this lab you will be able to:</p>
+<ul>
+<li>Understand how DNS works</li>
+<li>Understand how DHCP works</li>
+<li>Use Linux commands and software for:
+<ul>
+<li>retrieving DNS information</li>
+<li>installing/configuring a local DHCP server</li>
+</ul></li>
+</ul>
+</div>
+    </section>
+    <section class="content">
+<h1 id="lab.-exercises">Lab. Exercises</h1>
+<p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
+<p>Remember you should deliver a report by the end of the semester. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
+<p>These exercises should be completed in teams.</p>
+
+<h2 id="preparation">Preparation</h2>
+<ol type="1">
+<li>Select one Raspberry Pi as your <em>router</em>. From now on this rPi will be always referred to as <em>router</em> and the other one as <em>client</em>. You may change their hostnames to avoid confusions.</li>
+</ol>
+<button class="w3collapsible">
+Hint (hostname)
+</button>
+<div class="w3content">
+<p>Among other possibilities, the hostname can be changed by editing the files <em>hostname</em> and <em>hosts</em> in <code>/etc/</code>.</p>
+<p>Do not forget to reboot after the changes.</p>
+</div>
+
+<ol start="2" type="1">
+<li>Connect the <em>router</em> to the Internet (you can just disconnect the <em>client</em>) and install <em>tcpdump</em>, <em>dnsutils</em>, <em>whois</em>, <em>isc-dhcp-server</em>, <em>hostapd</em> and optionally <em>vim</em>. Some of this software will be used next week.</li>
+</ol>
+<h2 id="experimenting-with-dns">Experimenting with DNS</h2>
+<p>DNS can be used for many different purposes. Today we will focus on only a few, using basic commands to retrieve information about NTNU’s domain.</p>
+<h3 id="the-whois-command">The <code>whois</code> command</h3>
+<p>The <code>whois</code> command can be used to search for an object in a WHOIS database. We can use it for example for searching for Domain Name or IP block registrations.</p>
+<p>Try the following commands and reflect on their results:</p>
+<ol type="1">
+<li><code>whois &lt;your_rpi_ip_address&gt;</code></li>
+<li><code>whois ntnu.no</code></li>
+</ol>
+
+<h3 id="the-host-command">The <code>host</code> command</h3>
+<p>The simplest way to find common DNS information is to use the command <code>host</code>. Try the following commands and reflect on their result:</p>
+<ol type="1">
+<li><code>host 8.8.8.8</code></li>
+<li><code>host ntnu.no</code></li>
+<li><code>host -t TXT ntnu.no</code></li>
+<li><code>host -t ANY ntnu.no</code></li>
+</ol>
+
+<h3 id="the-dig-command">The <code>dig</code> command</h3>
+<p>This tool provides more information, and options, than the <code>host</code> command. <strong>Note:</strong> the command <code>nslookup</code> is also very popular (and older), used for the same purpose.</p>
+<p>Using <code>dig</code> the your focus should be on the “ANSWER” section (carefully notice the options on the second step). Try the following commands and reflect on their result:</p>
+<ol type="1">
+<li><code>dig ntnu.no</code></li>
+<li><code>dig ntnu.no +noall +answer</code></li>
+<li><code>dig ntnu.no MX +noall +answer</code></li>
+<li><code>dig ntnu.no ANY +noall +answer</code></li>
+<li><code>dig ntnu.no +short</code></li>
+<li><code>dig -x 129.241.160.102</code></li>
+</ol>
+
+<h2 id="configure-a-dhcp-server">Configure a DHCP server</h2>
+<p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable) and follow these steps:</p>
+<ol type="1">
+<li>Activate DHCP on the interface <em>eth0</em> on the <em>isc-dhcp-server</em> configuration file.</li>
+<li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting:</li>
+</ol>
+<ul>
+<li>to declare this DHCP server as authoritative (the official DHCP server for a LAN);</li>
+<li>to specify a subnet and range;</li>
+<li>to provide the required DNS information;</li>
+<li>to specify the <em>router</em> Pi as the default router;</li>
+<li>to assign a fixed IP address to the <em>client</em>.</li>
+</ul>
+<ol start="3" type="1">
+<li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em>.</li>
+</ol>
+
+<button class="w3collapsible">Hint (config)</button>
+<div class="w3content">
+Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
+These files have different names, locations and purposes.
+
+Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
+</div>
+
+
+
+<button class="w3collapsible">
+Hint (static)
+</button>
+<div class="w3content">
+<p>An hardware address or hardware Ethernet can be easily found with the command <code>ip link</code>. For this exercise you will have to retrieve this information from your <em>client</em>.</p>
+</div>
+
+<button class="w3collapsible">Hint (DNS)</button>
+<div class="w3content">
+To "normally" use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as "ntnu.no".
+Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
+</div>
+
+
+
+<h2 id="using-dhcp-and-seeing-it">Using DHCP (and seeing it)</h2>
+<p>After configuring the <em>router</em> we want it to be able to give a DHCP offer to the client. If everything is correct this will be automatic but we will monitor the process with the following steps:</p>
+<ol type="1">
+<li>On a terminal in the <em>router</em> run the following command (and leave it running):</li>
+</ol>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">tcpdump</span> -i eth0 -vvv -s 1500 <span class="st">&#39;port 67 or port 68&#39;</span></span></code></pre></div>
+
+<ol start="2" type="1">
+<li>Connect the <em>client</em> and the <em>router</em> using a single Ethernet cable.</li>
+</ol>
+<ul>
+<li>Check the messages sent in each direction</li>
+<li>What happened?</li>
+</ul>
+<ol start="3" type="1">
+<li>Verify the network configurations on the <em>client</em> (IP address, mask, DNS, routes). <strong>Note:</strong> you should use <code>ssh</code>.</li>
+</ol>
+<button class="w3collapsible">
+Hint (ssh)
+</button>
+<div class="w3content">
+<p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
+</div>
+<h2 id="more-dhcp">More DHCP</h2>
+
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<p>To test DHCP further join your double team and experiment with each other’s <em>client</em>.</p>
+<ol type="1">
+<li>What address do the <em>clients</em> receive?</li>
+<li>Is the static IP address configuration working? Why or why not?</li>
+</ol>
+
+    </section>
+    <section class="content">
+<h1 id="additional-exercise">Additional Exercise</h1>
+<p>Try the setup above using only IPv6. How does DHCP work? What is different?</p>
+
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
+
+<span name="6b314c"></span><aside name="6b314c"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
+
+<h3 id="the-combination-lock">The Combination Lock</h3>
+<p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
+<ul>
+<li>The locks come opened and with the opening combination set.</li>
+<li>Take a picture of that combination in your phone, so you remember it.</li>
+<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+</ul>
+
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
+    </section>
+</div>
+
+
+<footer></footer>
+</body>
+</html>
