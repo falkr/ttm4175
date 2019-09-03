@@ -101,7 +101,6 @@ Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not**
 4. Make sure the *eth0* interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
 5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
 
-
 <button class="w3collapsible">Hint (config)</button>
 <div class="w3content">
 Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
@@ -113,7 +112,6 @@ Many configuration files include several examples for several different purposes
 
 </div>
 
-
 <button class="w3collapsible">Hint (static)</button>
 <div class="w3content">
 An hardware address or hardware Ethernet can be easily found with the command `ip link`.
@@ -121,7 +119,6 @@ An hardware address or hardware Ethernet can be easily found with the command `i
 For this exercise you will have to retrieve this information from your _client_.
 
 </div>
-
 
 <button class="w3collapsible">Hint (DNS)</button>
 <div class="w3content">

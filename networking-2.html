@@ -217,20 +217,14 @@ Hint (hostname)
 <li>Make sure the <em>eth0</em> interface is <em>UP</em> and configured with an IP address within the subnet specified in the DHCP server;</li>
 <li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em>.</li>
 </ol>
-
-<button class="w3collapsible">Hint (config)</button>
+<button class="w3collapsible">
+Hint (config)
+</button>
 <div class="w3content">
-Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
-These files have different names, locations and purposes.
-
-To find the location of these files, and of the *isc-dhcp-server* file you can use `find`.
-
-Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
-
+<p>Note the difference between <em>dhcpcd.conf</em> and <em>dhcpd.conf</em>. These files have different names, locations and purposes.</p>
+<p>To find the location of these files, and of the <em>isc-dhcp-server</em> file you can use <code>find</code>.</p>
+<p>Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs.</p>
 </div>
-
-
-
 <button class="w3collapsible">
 Hint (static)
 </button>
@@ -238,16 +232,13 @@ Hint (static)
 <p>An hardware address or hardware Ethernet can be easily found with the command <code>ip link</code>.</p>
 <p>For this exercise you will have to retrieve this information from your <em>client</em>.</p>
 </div>
-
-<button class="w3collapsible">Hint (DNS)</button>
+<button class="w3collapsible">
+Hint (DNS)
+</button>
 <div class="w3content">
-To "normally" use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as "ntnu.no".
-
-Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
-
+<p>To “normally” use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as “ntnu.no”.</p>
+<p>Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.</p>
 </div>
-
-
 
 <h2 id="using-dhcp-and-seeing-it">Using DHCP (and seeing it)</h2>
 <p>After configuring the <em>router</em> we want it to be able to give a DHCP offer to the client. If everything is correct this will be automatic but we will monitor the process with the following steps:</p>
