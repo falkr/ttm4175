@@ -164,9 +164,9 @@ Hint (hostname)
 <p>Among other possibilities, the hostname can be changed by editing the files <em>hostname</em> and <em>hosts</em> in <code>/etc/</code>.</p>
 <p>Do not forget to reboot after the changes.</p>
 </div>
-
 <ol start="2" type="1">
-<li>Connect the <em>router</em> to the Internet (you can just disconnect the <em>client</em>) and install <em>tcpdump</em>, <em>dnsutils</em>, <em>whois</em>, <em>isc-dhcp-server</em>, <em>hostapd</em> and optionally <em>vim</em>. Some of this software will be used next week.</li>
+<li><p>Connect the keyboard/screen to the <em>client</em> and remove any static IP address configurations (in case there are any from last week).</p></li>
+<li><p>Connect the keyboard/screen to the <em>router</em> and connect it to the Internet (you can just disconnect the <em>client</em>) and install <em>tcpdump</em>, <em>dnsutils</em>, <em>whois</em>, <em>isc-dhcp-server</em>, <em>hostapd</em> and optionally <em>vim</em>. Some of this software will be used next week.</p></li>
 </ol>
 <h2 id="experimenting-with-dns">Experimenting with DNS</h2>
 <p>DNS can be used for many different purposes. Today we will focus on only a few, using basic commands to retrieve information about NTNU’s domain.</p>
@@ -200,7 +200,7 @@ Hint (hostname)
 </ol>
 
 <h2 id="configure-a-dhcp-server">Configure a DHCP server</h2>
-<p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable) and follow these steps:</p>
+<p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable, do <strong>not</strong> connect it to the client) and follow these steps:</p>
 <ol type="1">
 <li>Activate DHCP on the interface <em>eth0</em> on the <em>isc-dhcp-server</em> configuration file.</li>
 <li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting:</li>
@@ -210,9 +210,11 @@ Hint (hostname)
 <li>to specify a subnet and range;</li>
 <li>to provide the required DNS information;</li>
 <li>to specify the <em>router</em> Pi as the default router;</li>
-<li>to assign a fixed IP address to the <em>client</em>.</li>
+<li>to assign a fixed IP address to the <em>client</em></li>
 </ul>
 <ol start="3" type="1">
+<li><em>stop</em> and <em>disable</em> the service <em>dhcpcd.service</em>;</li>
+<li>Make sure the <em>eth0</em> interface is <em>UP</em> and configured with an IP address within the subnet specified in the DHCP server;</li>
 <li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em>.</li>
 </ol>
 
@@ -221,7 +223,10 @@ Hint (hostname)
 Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
 These files have different names, locations and purposes.
 
+To find the location of these files, and of the *isc-dhcp-server* file you can use `find`.
+
 Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
+
 </div>
 
 
@@ -230,13 +235,16 @@ Many configuration files include several examples for several different purposes
 Hint (static)
 </button>
 <div class="w3content">
-<p>An hardware address or hardware Ethernet can be easily found with the command <code>ip link</code>. For this exercise you will have to retrieve this information from your <em>client</em>.</p>
+<p>An hardware address or hardware Ethernet can be easily found with the command <code>ip link</code>.</p>
+<p>For this exercise you will have to retrieve this information from your <em>client</em>.</p>
 </div>
 
 <button class="w3collapsible">Hint (DNS)</button>
 <div class="w3content">
 To "normally" use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as "ntnu.no".
+
 Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
+
 </div>
 
 
@@ -254,7 +262,7 @@ Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
 </ol>
 <ul>
 <li>Check the messages sent in each direction</li>
-<li>What happened?</li>
+<li>What happens?</li>
 </ul>
 <ol start="3" type="1">
 <li>Verify the network configurations on the <em>client</em> (IP address, mask, DNS, routes). <strong>Note:</strong> you should use <code>ssh</code>.</li>
@@ -264,6 +272,7 @@ Hint (ssh)
 </button>
 <div class="w3content">
 <p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
+<p>You can use the command <code>dhcpcd --dumplease eth0</code>.</p>
 </div>
 <h2 id="more-dhcp">More DHCP</h2>
 

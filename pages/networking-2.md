@@ -37,8 +37,9 @@ Among other possibilities, the hostname can be changed by editing the files _hos
 Do not forget to reboot after the changes.
 </div> 
 
+2. Connect the keyboard/screen to the _client_ and remove any static IP address configurations (in case there are any from last week).
 
-2. Connect the _router_ to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
+3. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
 Some of this software will be used next week. 
 
 ## Experimenting with DNS
@@ -73,7 +74,7 @@ Try the following commands and reflect on their result:
 This tool provides more information, and options, than the `host` command.
 **Note:** the command `nslookup` is also very popular (and older), used for the same purpose.
 
-Using `dig` the your focus should be on the "ANSWER" section (carefully notice the options on the second step).
+Using `dig` your focus should be on the "ANSWER" section (carefully notice the options on the second step).
 Try the following commands and reflect on their result:
 
 1. `dig ntnu.no`
@@ -87,7 +88,7 @@ Try the following commands and reflect on their result:
 
 ## Configure a DHCP server
 
-Disconnect the _router_ from the Internet (remove the Ethernet cable) and follow these steps:
+Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not** connect it to the client) and follow these steps:
 
 1. Activate DHCP on the interface *eth0* on the *isc-dhcp-server* configuration file.
 2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting:
@@ -95,8 +96,10 @@ Disconnect the _router_ from the Internet (remove the Ethernet cable) and follow
 - to specify a subnet and range;
 - to provide the required DNS information;
 - to specify the *router* Pi as the default router;
-- to assign a fixed IP address to the _client_.
-3. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
+- to assign a fixed IP address to the _client_
+3. *stop* and *disable* the service *dhcpcd.service*;
+4. Make sure the *eth0* interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
+5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
 
 
 <button class="w3collapsible">Hint (config)</button>
@@ -104,21 +107,28 @@ Disconnect the _router_ from the Internet (remove the Ethernet cable) and follow
 Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
 These files have different names, locations and purposes.
 
+To find the location of these files, and of the *isc-dhcp-server* file you can use `find`.
+
 Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
+
 </div>
 
 
 <button class="w3collapsible">Hint (static)</button>
 <div class="w3content">
 An hardware address or hardware Ethernet can be easily found with the command `ip link`.
+
 For this exercise you will have to retrieve this information from your _client_.
+
 </div>
 
 
 <button class="w3collapsible">Hint (DNS)</button>
 <div class="w3content">
 To "normally" use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as "ntnu.no".
+
 Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
+
 </div>
 
 
@@ -135,13 +145,16 @@ tcpdump -i eth0 -vvv -s 1500 'port 67 or port 68'
 
 2. Connect the _client_ and the _router_ using a single Ethernet cable.
   - Check the messages sent in each direction
-  - What happened?
+  - What happens?
 3. Verify the network configurations on the _client_ (IP address, mask, DNS, routes).
 **Note:** you should use `ssh`.
 
 <button class="w3collapsible">Hint (ssh)</button>
 <div class="w3content">
 Remember your _client_ should have received the IP address you configured as a static address.
+
+You can use the command `dhcpcd --dumplease eth0`.
+
 </div>
 
 ## More DHCP
