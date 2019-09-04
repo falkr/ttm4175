@@ -90,13 +90,13 @@ Try the following commands and reflect on their result:
 
 Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not** connect it to the client) and follow these steps:
 
-1. Activate DHCP on the interface *eth0* on the *isc-dhcp-server* configuration file.
-2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting:
-- to declare this DHCP server as authoritative (the official DHCP server for a LAN);
-- to specify a subnet and range;
-- to provide the required DNS information;
-- to specify the *router* Pi as the default router;
-- to assign a fixed IP address to the _client_
+1. Activate DHCP on the interface *eth0* by editing the *isc-dhcp-server* configuration file (see hint on config if needed).
+2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting to:
+- declare this DHCP server as authoritative (the official DHCP server for a LAN);
+- specify a subnet and range;
+- provide the required DNS information;
+- specify the *router* Pi as the default router;
+- assign a fixed IP address to the _client_
 3. *stop* and *disable* the service *dhcpcd.service*;
 4. Make sure the *eth0* interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
 5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
@@ -146,11 +146,15 @@ tcpdump -i eth0 -vvv -s 1500 'port 67 or port 68'
 3. Verify the network configurations on the _client_ (IP address, mask, DNS, routes).
 **Note:** you should use `ssh`.
 
-<button class="w3collapsible">Hint (ssh)</button>
+<button class="w3collapsible">Hint (connecting)</button>
 <div class="w3content">
 Remember your _client_ should have received the IP address you configured as a static address.
 
-You can use the command `dhcpcd --dumplease eth0`.
+You can use the command `dhcpcd --dumplease eth0` to get more information on the _client_.
+
+You may force the _client_ to release its lease by using the command `dhcpcd -k eth0`.
+**Note however** that this will de-configure your interface and you will lose connectivity.
+This can be fixed by appending the command `; sudo systemctl restart networking.service` or similar.
 
 </div>
 

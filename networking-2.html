@@ -202,15 +202,15 @@ Hint (hostname)
 <h2 id="configure-a-dhcp-server">Configure a DHCP server</h2>
 <p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable, do <strong>not</strong> connect it to the client) and follow these steps:</p>
 <ol type="1">
-<li>Activate DHCP on the interface <em>eth0</em> on the <em>isc-dhcp-server</em> configuration file.</li>
-<li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting:</li>
+<li>Activate DHCP on the interface <em>eth0</em> by editing the <em>isc-dhcp-server</em> configuration file (see hint on config if needed).</li>
+<li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting to:</li>
 </ol>
 <ul>
-<li>to declare this DHCP server as authoritative (the official DHCP server for a LAN);</li>
-<li>to specify a subnet and range;</li>
-<li>to provide the required DNS information;</li>
-<li>to specify the <em>router</em> Pi as the default router;</li>
-<li>to assign a fixed IP address to the <em>client</em></li>
+<li>declare this DHCP server as authoritative (the official DHCP server for a LAN);</li>
+<li>specify a subnet and range;</li>
+<li>provide the required DNS information;</li>
+<li>specify the <em>router</em> Pi as the default router;</li>
+<li>assign a fixed IP address to the <em>client</em></li>
 </ul>
 <ol start="3" type="1">
 <li><em>stop</em> and <em>disable</em> the service <em>dhcpcd.service</em>;</li>
@@ -259,11 +259,12 @@ Hint (DNS)
 <li>Verify the network configurations on the <em>client</em> (IP address, mask, DNS, routes). <strong>Note:</strong> you should use <code>ssh</code>.</li>
 </ol>
 <button class="w3collapsible">
-Hint (ssh)
+Hint (connecting)
 </button>
 <div class="w3content">
 <p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
-<p>You can use the command <code>dhcpcd --dumplease eth0</code>.</p>
+<p>You can use the command <code>dhcpcd --dumplease eth0</code> to get more information on the <em>client</em>.</p>
+<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart networking.service</code> or similar.</p>
 </div>
 <h2 id="more-dhcp">More DHCP</h2>
 
