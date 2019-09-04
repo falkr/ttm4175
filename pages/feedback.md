@@ -10,11 +10,16 @@ Du kan lese mer om utdanningskvalitet [her](http://www.item.ntnu.no/academics/qu
 
 ## Referansegruppen
 
-Referansegruppen i emnet består av 3-4 studenter som har ansvar for å bringe tilbakemeldinger i emnet til fagpersonell. Du er også velkommen til å gi tilbakemeldinger direkte til fagpersonell. Fagpersonell og referansegruppen vil ha 2-3 møter i løpet av semesteret. 
+Referansegruppen i emnet består av 3-6 studenter som har ansvar for å bringe tilbakemeldinger i emnet til fagpersonell. Du er også velkommen til å gi tilbakemeldinger direkte til fagpersonell. Fagpersonell og referansegruppen vil ha 2-3 møter i løpet av semesteret. 
 
 Følgende studenter er med i referansegruppen:
 
-* (kommer)
+- [Emilie Dybendal Aulie](mailto:emilieau@stud.ntnu.no)
+- [Fredrik Olsen Haraldstad](mailto:fredroha@stud.ntnu.no)
+- [Theodor Signebøen Midtlien](mailto:theodorm@stud.ntnu.no)
+- [Lise Marie Brekke Nilsen](mailto:lmnilsen@stud.ntnu.no)
+- [Emilie Rieber](mailto:emiliri@stud.ntnu.no)
+- [Sindre Følling Sørensen](mailto:sindrefs@stud.ntnu.no)
 
 Gjerne ta kontakt med de.
 
