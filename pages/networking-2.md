@@ -106,7 +106,7 @@ Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not**
 Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
 These files have different names, locations and purposes.
 
-To find the location of these files, and of the *isc-dhcp-server* file you can use `find`.
+To find the location of these files, and of the *isc-dhcp-server* file you can use `find` and they should be inside '/etc'.
 
 Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
 
