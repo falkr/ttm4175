@@ -223,15 +223,50 @@ div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 
-div.tip {
-  background-color: #f5f5f5;
-	border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
+div.definition p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
 }
 
-.tip p {
-  margin: 0px
+div.definition p::before { 
+content: "Definition: ";
+font-weight: bold;
+display: inline;
+}
+
+div.guideline p {
+padding: 10px;
+background-color: #fae7e8;
+border-radius: 5px;
+border-left: 6px solid #e45460
+}
+
+div.guideline p::before { 
+content: "Guideline: ";
+font-weight: bold;
+display: inline;
+}
+
+div.task p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+div.tip p {
+padding: 10px;
+background-color: #d9eaf2;
+border-radius: 5px;
+border-left: 6px solid #1481b8
 }
 
 div.goals ul,
