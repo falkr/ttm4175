@@ -32,14 +32,15 @@ You may change their hostnames to avoid confusions.
 
 <button class="w3collapsible">Hint (hostname)</button>
 <div class="w3content">
-Among other possibilities, the hostname can be changed by editing the files _hostname_ and _hosts_ in `/etc/`.
+Among other possibilities, the hostname can be changed by editing the files _hostname_ **and** _hosts_ in `/etc/`.
 
 Do not forget to reboot after the changes.
 </div> 
 
 2. Connect the keyboard/screen to the _client_ and remove any static IP address configurations (in case there are any from last week).
+3. Still in the _client_ write down the MAC address (link/ether) of the "eth0" network card.
 
-3. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
+4. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
 Some of this software will be used next week. 
 
 ## Experimenting with DNS
@@ -154,7 +155,7 @@ You can use the command `dhcpcd --dumplease eth0` to get more information on the
 
 You may force the _client_ to release its lease by using the command `dhcpcd -k eth0`.
 **Note however** that this will de-configure your interface and you will lose connectivity.
-This can be fixed by appending the command `; sudo systemctl restart networking.service` or similar.
+This can be fixed by appending the command `; sudo systemctl restart dhcpcd.service` or similar (e.g. `; sudo reboot`).
 
 </div>
 

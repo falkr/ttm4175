@@ -161,11 +161,12 @@
 Hint (hostname)
 </button>
 <div class="w3content">
-<p>Among other possibilities, the hostname can be changed by editing the files <em>hostname</em> and <em>hosts</em> in <code>/etc/</code>.</p>
+<p>Among other possibilities, the hostname can be changed by editing the files <em>hostname</em> <strong>and</strong> <em>hosts</em> in <code>/etc/</code>.</p>
 <p>Do not forget to reboot after the changes.</p>
 </div>
 <ol start="2" type="1">
 <li><p>Connect the keyboard/screen to the <em>client</em> and remove any static IP address configurations (in case there are any from last week).</p></li>
+<li><p>Still in the <em>client</em> write down the MAC address (link/ether) of the “eth0” network card.</p></li>
 <li><p>Connect the keyboard/screen to the <em>router</em> and connect it to the Internet (you can just disconnect the <em>client</em>) and install <em>tcpdump</em>, <em>dnsutils</em>, <em>whois</em>, <em>isc-dhcp-server</em>, <em>hostapd</em> and optionally <em>vim</em>. Some of this software will be used next week.</p></li>
 </ol>
 <h2 id="experimenting-with-dns">Experimenting with DNS</h2>
@@ -264,7 +265,7 @@ Hint (connecting)
 <div class="w3content">
 <p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
 <p>You can use the command <code>dhcpcd --dumplease eth0</code> to get more information on the <em>client</em>.</p>
-<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart networking.service</code> or similar.</p>
+<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart dhcpcd.service</code> or similar (e.g. <code>; sudo reboot</code>).</p>
 </div>
 <h2 id="more-dhcp">More DHCP</h2>
 
