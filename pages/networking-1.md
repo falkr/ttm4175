@@ -24,7 +24,7 @@ We do some reflection on teamwork.
 
 Please **read each exercise** entirely before starting to solve it.
 
-Remember you should deliver a report by the end of the semester.
+Remember you should deliver a report after the networking module is finished.
 It should include the main commands and configurations necessary to complete each exercise.
 Do not forget to take notes while solving the exercises so you do not have to repeat them.
 
