@@ -26,9 +26,14 @@ These exercises should be completed in teams.
 
 ## Preparation
 
+:steps:
 1. Select one Raspberry Pi as your _router_. 
 From now on this rPi will be always referred to as _router_ and the other one as _client_.
 You may change their hostnames to avoid confusions.
+2. Connect the keyboard/screen to the _client_ and remove any static IP address configurations (in case there are any from last week).
+3. Still in the _client_ write down the MAC address (_link/ether_) of the "eth0" network card.
+4. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
+Some of this software will be used next week. 
 
 <button class="w3collapsible">Hint (hostname)</button>
 <div class="w3content">
@@ -37,11 +42,11 @@ Among other possibilities, the hostname can be changed by editing the files _hos
 Do not forget to reboot after the changes.
 </div> 
 
-2. Connect the keyboard/screen to the _client_ and remove any static IP address configurations (in case there are any from last week).
-3. Still in the _client_ write down the MAC address (link/ether) of the "eth0" network card.
+<button class="w3collapsible">Hint (MAC addr\.)</button>
+<div class="w3content">
+An hardware address or hardware Ethernet can be easily found with the command `ip link`.
+</div>
 
-4. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
-Some of this software will be used next week. 
 
 ## Experimenting with DNS
 
@@ -55,6 +60,7 @@ We can use it for example for searching for Domain Name or IP block registration
 
 Try the following commands and reflect on their results:
 
+:steps:
 1. `whois <your_rpi_ip_address>`
 2. `whois ntnu.no`
 
@@ -64,6 +70,7 @@ Try the following commands and reflect on their results:
 The simplest way to find common DNS information is to use the command `host`.
 Try the following commands and reflect on their result:
 
+:steps:
 1. `host 8.8.8.8`
 2. `host ntnu.no`
 3. `host -t TXT ntnu.no`
@@ -78,6 +85,7 @@ This tool provides more information, and options, than the `host` command.
 Using `dig` your focus should be on the "ANSWER" section (carefully notice the options on the second step).
 Try the following commands and reflect on their result:
 
+:steps:
 1. `dig ntnu.no`
 2. `dig ntnu.no +noall +answer`
 3. `dig ntnu.no MX +noall +answer`
@@ -86,18 +94,22 @@ Try the following commands and reflect on their result:
 6. `dig -x 129.241.160.102`
 
 
-
 ## Configure a DHCP server
 
 Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not** connect it to the client) and follow these steps:
 
+:steps:
 1. Activate DHCP on the interface *eth0* by editing the *isc-dhcp-server* configuration file (see hint on config if needed).
 2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting to:
-- declare this DHCP server as authoritative (the official DHCP server for a LAN);
-- specify a subnet and range;
-- provide the required DNS information;
-- specify the *router* Pi as the default router;
-- assign a fixed IP address to the _client_
+
+
+  - declare this DHCP server as authoritative (the official DHCP server for a LAN);
+  - specify a subnet and range;
+  - provide the required DNS information;
+  - specify the *router* Pi as the default router;
+  - assign a fixed IP address to the _client_
+
+:steps
 3. *stop* and *disable* the service *dhcpcd.service*;
 4. Make sure the *eth0* interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
 5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
@@ -115,10 +127,7 @@ Many configuration files include several examples for several different purposes
 
 <button class="w3collapsible">Hint (static)</button>
 <div class="w3content">
-An hardware address or hardware Ethernet can be easily found with the command `ip link`.
-
-For this exercise you will have to retrieve this information from your _client_.
-
+For this exercise you will have to retrieve this information from your _client_, as mentioned earlier in the preparation.
 </div>
 
 <button class="w3collapsible">Hint (DNS)</button>
@@ -135,15 +144,20 @@ Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
 After configuring the _router_ we want it to be able to give a DHCP offer to the client.
 If everything is correct this will be automatic but we will monitor the process with the following steps:
 
+:steps:
 1. On a terminal in the _router_ run the following command (and leave it running):
-
 ```bash
 tcpdump -i eth0 -vvv -s 1500 'port 67 or port 68'
 ```
 
+:steps:
 2. Connect the _client_ and the _router_ using a single Ethernet cable.
+
+
   - Check the messages sent in each direction
   - What happens?
+
+:steps:
 3. Verify the network configurations on the _client_ (IP address, mask, DNS, routes).
 **Note:** you should use `ssh`.
 
@@ -159,6 +173,7 @@ This can be fixed by appending the command `; sudo systemctl restart dhcpcd.serv
 
 </div>
 
+
 ## More DHCP
 
 :aside: <img src="figures/doubleteam.png" width="30"/>
@@ -166,6 +181,7 @@ This can be fixed by appending the command `; sudo systemctl restart dhcpcd.serv
 
 To test DHCP further join your double team and experiment with each other's _client_.
 
+:steps:
 1. What address do the _clients_ receive?
 2. Is the static IP address configuration working? Why or why not?
 

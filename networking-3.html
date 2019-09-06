@@ -132,17 +132,17 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="networking-in-linux-dns-and-dhcp">Networking in Linux – DNS and DHCP</h1>
-<p>The overall goal of this lab. is to complement knowledge on IP, subnets and routing with DNS and DHCP. This will be achieved using available tools and software in Linux to manage a simple Raspberry Pi network.</p>
+<h1 id="networking-in-linux-wi-fi-and-nat">Networking in Linux – Wi-Fi and NAT</h1>
+<p>The overall goal of this lab. is to combine the previously acquired networking knowledge on networking with wireless communications and some more sophisticated address management. This will be achieved using available tools and software in Linux to manage a small network.</p>
 
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
-<li>Understand how DNS works</li>
-<li>Understand how DHCP works</li>
+<li>Understand how basic Wi-Fi works</li>
+<li>Understand how IP Masquerading works</li>
 <li>Use Linux commands and software for:
 <ul>
-<li>retrieving DNS information</li>
-<li>installing/configuring a local DHCP server</li>
+<li>creating a Wi-Fi access point</li>
+<li>enabling IP Masquerading and NAT</li>
 </ul></li>
 </ul>
 </div>
@@ -152,152 +152,152 @@
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
 <p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
+<h2 id="wireless-raspberry-pi-router">Wireless Raspberry Pi Router</h2>
 
-<h2 id="preparation">Preparation</h2>
+<div class="figure">
+<img src="figures/net/TTM4175-ex3.png" alt="Diagram of the topology to be created" width="100%"/>
+<span name="figures/net/TTM4175-ex3.png">&nbsp;</span>
+<aside name="figures/net/TTM4175-ex3.png"><p><p>Diagram of the topology to be created</p>
+</p></aside>
+</div>
+<p>This exercise builds on the work that has been done in the previous weeks. Your <em>router</em> rPi should already have all the necessary software but if you have skipped any steps in the previous labs. make sure nothing is missing.</p>
+<p>The <strong>final goal</strong> of this exercise is to create a simple wireless router using only open-source software in your Raspberry Pi (rPi). To reach this goal we will connect the <em>router</em> rPi to the Internet using the Ethernet card and use Wi-Fi to connect the <em>client</em>. As seen in the figure, in the end, you should be able to wirelessly connect multiple devices to your <em>router</em> and they should automatically get all the required network configurations to access the Internet.</p>
 
-<div class="steps"><ol type="1">
-<li>Select one Raspberry Pi as your <em>router</em>. From now on this rPi will be always referred to as <em>router</em> and the other one as <em>client</em>. You may change their hostnames to avoid confusions.</li>
-<li>Connect the keyboard/screen to the <em>client</em> and remove any static IP address configurations (in case there are any from last week).</li>
-<li>Still in the <em>client</em> write down the MAC address (<em>link/ether</em>) of the “eth0” network card.</li>
-<li>Connect the keyboard/screen to the <em>router</em> and connect it to the Internet (you can just disconnect the <em>client</em>) and install <em>tcpdump</em>, <em>dnsutils</em>, <em>whois</em>, <em>isc-dhcp-server</em>, <em>hostapd</em> and optionally <em>vim</em>. Some of this software will be used next week.</li>
-</ol>
-<button class="w3collapsible">
-Hint (hostname)
-</button>
-<div class="w3content">
-<p>Among other possibilities, the hostname can be changed by editing the files <em>hostname</em> <strong>and</strong> <em>hosts</em> in <code>/etc/</code>.</p>
-<p>Do not forget to reboot after the changes.</p>
-</div>
-<button class="w3collapsible">
-Hint (MAC addr.)
-</button>
-<div class="w3content">
-<p>An hardware address or hardware Ethernet can be easily found with the command <code>ip link</code>.</p>
-</div>
-</div>
-<h2 id="experimenting-with-dns">Experimenting with DNS</h2>
-<p>DNS can be used for many different purposes. Today we will focus on only a few, using basic commands to retrieve information about NTNU’s domain.</p>
-<h3 id="the-whois-command">The <code>whois</code> command</h3>
-<p>The <code>whois</code> command can be used to search for an object in a WHOIS database. We can use it for example for searching for Domain Name or IP block registrations.</p>
-<p>Try the following commands and reflect on their results:</p>
+<h2 id="software-checklist">Software Checklist</h2>
+<p>The <em>router</em> must have the following packages installed:</p>
+<ul>
+<li><em>tcpdump</em></li>
+<li><em>isc-dhcp-server</em></li>
+<li><em>hostapd</em></li>
+<li><em>apache2</em> or <em>nginx</em> (for the additional exercise only!)</li>
+</ul>
+<p>The <em>client</em> does not require any specific software.</p>
+
+<h2 id="configuring-a-wireless-router">Configuring a wireless router</h2>
 
 <div class="steps"><ol type="1">
-<li><code>whois &lt;your_rpi_ip_address&gt;</code></li>
-<li><code>whois ntnu.no</code></li>
-</ol>
-</div>
-<h3 id="the-host-command">The <code>host</code> command</h3>
-<p>The simplest way to find common DNS information is to use the command <code>host</code>. Try the following commands and reflect on their result:</p>
-
-<div class="steps"><ol type="1">
-<li><code>host 8.8.8.8</code></li>
-<li><code>host ntnu.no</code></li>
-<li><code>host -t TXT ntnu.no</code></li>
-<li><code>host -t ANY ntnu.no</code></li>
-</ol>
-</div>
-<h3 id="the-dig-command">The <code>dig</code> command</h3>
-<p>This tool provides more information, and options, than the <code>host</code> command. <strong>Note:</strong> the command <code>nslookup</code> is also very popular (and older), used for the same purpose.</p>
-<p>Using <code>dig</code> your focus should be on the “ANSWER” section (carefully notice the options on the second step). Try the following commands and reflect on their result:</p>
-
-<div class="steps"><ol type="1">
-<li><code>dig ntnu.no</code></li>
-<li><code>dig ntnu.no +noall +answer</code></li>
-<li><code>dig ntnu.no MX +noall +answer</code></li>
-<li><code>dig ntnu.no ANY +noall +answer</code></li>
-<li><code>dig ntnu.no +short</code></li>
-<li><code>dig -x 129.241.160.102</code></li>
-</ol>
-</div>
-<h2 id="configure-a-dhcp-server">Configure a DHCP server</h2>
-<p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable, do <strong>not</strong> connect it to the client) and follow these steps:</p>
-
-<div class="steps"><ol type="1">
-<li>Activate DHCP on the interface <em>eth0</em> by editing the <em>isc-dhcp-server</em> configuration file (see hint on config if needed).</li>
-<li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting to:</li>
+<li>Configure a static IP address for the network interface <em>wlan0</em>.</li>
+<li>Configure the <em>hostapd</em> software previously installed in order to create a Linux Wi-Fi access point.</li>
+<li>Activate DHCP on the interface <em>wlan0</em> on the <em>isc-dhcp-server</em> configuration file (and remove <em>eth0</em>).</li>
+<li>Re-configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting:</li>
 </ol>
 </div>
 <ul>
-<li>declare this DHCP server as authoritative (the official DHCP server for a LAN);</li>
-<li>specify a subnet and range;</li>
-<li>provide the required DNS information;</li>
-<li>specify the <em>router</em> Pi as the default router;</li>
-<li>assign a fixed IP address to the <em>client</em></li>
+<li>to declare this DHCP server as authoritative;</li>
+<li>to specify a subnet and range matching the IP/mask of <em>wlan0</em>;</li>
+<li>to provide the required DNS information;</li>
+<li>to specify the <em>router</em> as the default router;</li>
+<li>to assign a fixed IP address to the <em>client</em>.</li>
 </ul>
 
-<div class="steps"><ol start="3" type="1">
-<li><em>stop</em> and <em>disable</em> the service <em>dhcpcd.service</em>;</li>
-<li>Make sure the <em>eth0</em> interface is <em>UP</em> and configured with an IP address within the subnet specified in the DHCP server;</li>
-<li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em>.</li>
+<div class="steps"><ol start="5" type="1">
+<li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em></li>
 </ol>
 <button class="w3collapsible">
-Hint (config)
+Hint (interfaces)
 </button>
 <div class="w3content">
-<p>Note the difference between <em>dhcpcd.conf</em> and <em>dhcpd.conf</em>. These files have different names, locations and purposes.</p>
-<p>To find the location of these files, and of the <em>isc-dhcp-server</em> file you can use <code>find</code> and they should be inside ‘/etc’.</p>
-<p>Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs.</p>
+<p>The interface <em>wlan0</em> may not show an IP address until it is “UP”, which means until it is being used.</p>
+<p>Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the <em>dhcpcd.service</em> or the <em>networking.service</em>), however a reboot is sometimes easier.</p>
 </div>
 <button class="w3collapsible">
-Hint (static)
+Hint (hostapd)
 </button>
 <div class="w3content">
-<p>For this exercise you will have to retrieve this information from your <em>client</em>, as mentioned earlier in the preparation.</p>
+<p>An example on how to configure an access point with <em>hostapd</em> can be found in the file <em>hostapd.conf.gz</em>, which can be extracted with the command <code>gunzip</code>. This includes many options, from which <em>ssid and wpa_passphrase</em> should obviously be edited, but also other less trivial options that should look like this:</p>
+<pre><code>  driver=nl80211
+  country_code=NO
+  auth_algs=1
+  wpa=2
+  rsn_pairwise=CCMP </code></pre>
+<p>Before the <em>start</em>/<em>enable</em> of the <em>hostapd</em> service do not forget to point to its configuration file by editing the service’s default options located at “/etc/default/”.</p>
 </div>
-<button class="w3collapsible">
-Hint (DNS)
-</button>
-<div class="w3content">
-<p>To “normally” use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as “ntnu.no”.</p>
-<p>Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.</p>
 </div>
-</div>
-<h2 id="using-dhcp-and-seeing-it">Using DHCP (and seeing it)</h2>
-<p>After configuring the <em>router</em> we want it to be able to give a DHCP offer to the client. If everything is correct this will be automatic but we will monitor the process with the following steps:</p>
+<h2 id="configuring-the-client">Configuring the <em>client</em></h2>
 
 <div class="steps"><ol type="1">
-<li>On a terminal in the <em>router</em> run the following command (and leave it running):</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">tcpdump</span> -i eth0 -vvv -s 1500 <span class="st">&#39;port 67 or port 68&#39;</span></span></code></pre></div>
-
-<div class="steps"><ol start="2" type="1">
-<li>Connect the <em>client</em> and the <em>router</em> using a single Ethernet cable.</li>
-</ol>
-</div>
-<ul>
-<li>Check the messages sent in each direction</li>
-<li>What happens?</li>
-</ul>
-
-<div class="steps"><ol start="3" type="1">
-<li>Verify the network configurations on the <em>client</em> (IP address, mask, DNS, routes). <strong>Note:</strong> you should use <code>ssh</code>.</li>
+<li>Update the configuration of the <em>dhcpcd.conf</em> file from the <em>client</em> so that it connects to the created wireless network. For this you need to make sure that the interface <em>wlan0</em> is not using any static configuration, so that it uses DHCP and <em>wpa_supplicant</em> (default) to automatically connect to the wireless network.</li>
+<li>Restart the <em>dhcpcd</em> service with <code>systemctl</code> and verify that the <em>wlan0</em> interface has the static IP address you have specified.</li>
+<li>Confirm that you have wireless connectivity between both Pis and disconnect the Ethernet cable if successful.</li>
+<li>Try to connect to the network with your phone or laptop.</li>
 </ol>
 <button class="w3collapsible">
-Hint (connecting)
+Hint (DHCP)
 </button>
 <div class="w3content">
-<p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
-<p>You can use the command <code>dhcpcd --dumplease eth0</code> to get more information on the <em>client</em>.</p>
-<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart dhcpcd.service</code> or similar (e.g. <code>; sudo reboot</code>).</p>
+<p>Remember that if you Ethernet interface has been configured with a static IP address, it will not use DHCP, unless you used a “fallback configuration”. Consider reviewing the <em>dhcpcd.conf</em> file on your client.</p>
+</div>
+<button class="w3collapsible">
+Hint (wpa_supplicant)
+</button>
+<div class="w3content">
+<p>The required configuration of a wireless interface to automatically connect to a network can be done by editing the <em>wpa_supplicant.conf</em>. This file should have a network entry looking like this:</p>
+<pre><code>  network={
+       ssid=&quot;networkname&quot;
+       psk=&quot;networkpassword&quot;
+  }</code></pre>
 </div>
 </div>
-<h2 id="more-dhcp">More DHCP</h2>
-
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
-<p>To test DHCP further join your double team and experiment with each other’s <em>client</em>.</p>
+<h2 id="enable-routing">Enable routing</h2>
+<p>Even though your <em>client</em>/phone/laptop can connect to the wireless network you created, Internet connectivity will still not be available. For this we need to use IP Masquerading.</p>
 
 <div class="steps"><ol type="1">
-<li>What address do the <em>clients</em> receive?</li>
-<li>Is the static IP address configuration working? Why or why not?</li>
+<li>Connect your <em>router</em> to the Internet using the available Ethernet interface, if you have not done it yet, and test for connectivity.</li>
+<li>Enable IP forwarding in the <em>router</em> and activate IP Masquerading with the following commands:</li>
 </ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> sysctl -w net.ipv4.ip_forward=1</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i eth0 -o wlan0 -j DROP</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i wlan0 -o eth0 -j DROP</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">sudo</span> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">sudo</span> iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">sudo</span> iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT</span></code></pre></div>
+
+<div class="steps"><ol start="3" type="1">
+<li>Verify that the <em>client</em> is now able to connect to any Internet server.</li>
+</ol>
+<button class="w3collapsible">
+Hint
+</button>
+<div class="w3content">
+<p>IP forwarding is necessary for a Linux machine to act as a router and forward packets from one interface to another. You can debug/monitor your interfaces using <code>tcpdump</code>.</p>
+<p>IP Masquerading is commonly referred to as NAT (Network Address Translation) but is slightly different because it is mainly used to hide private IP addresses and not remapping IP address spaces.</p>
+</div>
 </div>
     </section>
     <section class="content">
 <h1 id="additional-exercise">Additional Exercise</h1>
-<p>Try the setup above using only IPv6. How does DHCP work? What is different?</p>
+<p>In the previous exercise you have enabled routing between several wireless-capable nodes and even used <em>iptables</em> for enabling IP Masquerading. However, we may not always want to allow access to all the nodes in our network and using <em>iptables</em> is a great way to achieve this. This exercise is <strong>optional</strong> and can be accomplished in several different ways.</p>
+<h2 id="hardened-pi-router">Hardened Pi Router</h2>
 
+<div class="figure">
+<img src="figures/net/TTM4175-ex5.png" alt="Diagram of the topology to be created" width="100%"/>
+<span name="figures/net/TTM4175-ex5.png">&nbsp;</span>
+<aside name="figures/net/TTM4175-ex5.png"><p><p>Diagram of the topology to be created</p>
+</p></aside>
+</div>
+<p>The goal of this exercise is to:</p>
+
+<div class="steps"><ol type="1">
+<li>Block all traffic coming for the range of IPs given by your DHCP server (i.e. only manually configured or fixed IP addresses can access the Internet).</li>
+<li>Instead of blocking the traffic, redirect it to a pre-defined “funny” server such as <a href="http://folk.ntnu.no/davidfp/security" class="uri">http://folk.ntnu.no/davidfp/security</a>.</li>
+<li>In addition to redirecting traffic, modify the URL of an HTTP request to another destination.</li>
+</ol>
+<button class="w3collapsible">
+Hints
+</button>
+<div class="w3content">
+<p>You only need to edit the configurations of your <em>router</em>.</p>
+<p>To redirect traffic you can use <em>iptables</em> DNAT to change the destination of traffic to a predefined server address.</p>
+<p>To modify URLs you can combine DNAT with a locally running webserver such as <em>nginx</em> hosting rules for manipulating HTTP headers.</p>
+</div>
+<h2 id="validation">Validation</h2>
+<p>Ask your double team to test their setup and let them test yours.</p>
+<p>Think and write about the weaknesses of the used approach to a firewall.</p>
+<p><strong>Try to beat it!</strong></p>
+</div>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
     </section>
     <section class="content">
 <h1 id="final-steps">Final Steps</h1>
