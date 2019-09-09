@@ -30,7 +30,7 @@ Wikipedia is also an interesting resource for knowing more about [NAT](https://e
 # Understanding Wi-Fi
 
 Wi-Fi is nowadays present in almost every household, office, public transport, \ldots 
-We use it in our computers, phones, smart-watches, TVs, consoles, \ldots
+We use it in our computers, phones, smart-watches, TVs, consoles, …
 But how does it work?
 Read more about it in:
 
