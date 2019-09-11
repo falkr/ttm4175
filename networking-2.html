@@ -213,7 +213,7 @@ Hint (MAC addr.)
 <p>Disconnect the <em>router</em> from the Internet (remove the Ethernet cable, do <strong>not</strong> connect it to the client) and follow these steps:</p>
 
 <div class="steps"><ol type="1">
-<li>Activate DHCP on the interface <em>eth0</em> by editing the <em>isc-dhcp-server</em> configuration file (see hint on config if needed).</li>
+<li>Activate DHCP on the interface <code>eth0</code> by editing the <em>isc-dhcp-server</em> configuration file (see hint on config if needed).</li>
 <li>Configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting to:</li>
 </ol>
 </div>
@@ -227,7 +227,7 @@ Hint (MAC addr.)
 
 <div class="steps"><ol start="3" type="1">
 <li><em>stop</em> and <em>disable</em> the service <em>dhcpcd.service</em>;</li>
-<li>Make sure the <em>eth0</em> interface is <em>UP</em> and configured with an IP address within the subnet specified in the DHCP server;</li>
+<li>Make sure the <code>eth0</code> interface is <em>UP</em> and configured with an IP address within the subnet specified in the DHCP server;</li>
 <li><em>start</em> (and optionally <em>enable</em>) the <em>isc-dhcp-server.service</em>.</li>
 </ol>
 <button class="w3collapsible">
