@@ -57,8 +57,8 @@ The _client_ does not require any specific software.
 1. Configure a static IP address for the network interface `wlan0`.
 2. Configure the _hostapd_ software previously installed in order to create a Linux Wi-Fi access point.
 3. *start*, and optionally *enable*, the *hostapd.service* 
-3. Activate DHCP on the interface `wlan0` on the *isc-dhcp-server* configuration file (and remove `eth0`).
-4. Re-configure the DHCP server properties in the *dhcpd.conf* file without forgetting:
+4. Activate DHCP on the interface `wlan0` on the *isc-dhcp-server* configuration file (and remove `eth0`).
+5. Re-configure the DHCP server properties in the *dhcpd.conf* file without forgetting:
 
 
 - to declare this DHCP server as authoritative;
@@ -68,12 +68,14 @@ The _client_ does not require any specific software.
 - to assign a fixed IP address to the _client_.
 
 :steps:
-5. *start*, and optionally *enable*, the *isc-dhcp-server.service* 
+6. *start*, and optionally *enable*, the *isc-dhcp-server.service* 
 
 <button class="w3collapsible">Hint (interfaces)</button>
 <div class="w3content">
 The interface `wlan0` may not show an IP address until it is "UP", which means until it is being used.
 In particular, it `wlan0` may only be seen as up after starting _hostapd_
+
+Make sure that the `wlan0` interface is _unblocked_, you can check it with the command `rfkill` and that it is not connected to any wireless network.
 
 Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the _dhcpcd.service_ or the _networking.service_), however a reboot is sometimes easier.
 </div>
@@ -90,11 +92,13 @@ This includes many options, from which *ssid and wpa_passphrase* should obviousl
       rsn_pairwise=CCMP 
 
 Before the _start_/_enable_ of the _hostapd_ service do not forget to point to its configuration file by editing the service's default options located at "/etc/default/".
+
+If the _hostapd_ service is reported as masked you can use `systemctl unmask hostapd` to unmask it.
 </div>
 
 <button class="w3collapsible">Hint (dhcpd)</button>
 <div class="w3content">
-Remember that the _isc-dhcp-server.service_ will not start if the chosen interface is not up and if it does not share a common subnet space.
+Remember that the _isc-dhcp-server.service_ **will not start** if the chosen interface is not up or if it does not share a common subnet space with the specified configurations.
 </div>
 
 ## Configuring the _client_

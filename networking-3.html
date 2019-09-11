@@ -191,7 +191,7 @@
 <li>to assign a fixed IP address to the <em>client</em>.</li>
 </ul>
 
-<div class="steps"><ol start="5" type="1">
+<div class="steps"><ol start="6" type="1">
 <li><em>start</em>, and optionally <em>enable</em>, the <em>isc-dhcp-server.service</em></li>
 </ol>
 <button class="w3collapsible">
@@ -199,6 +199,7 @@ Hint (interfaces)
 </button>
 <div class="w3content">
 <p>The interface <code>wlan0</code> may not show an IP address until it is “UP”, which means until it is being used. In particular, it <code>wlan0</code> may only be seen as up after starting <em>hostapd</em></p>
+<p>Make sure that the <code>wlan0</code> interface is <em>unblocked</em>, you can check it with the command <code>rfkill</code> and that it is not connected to any wireless network.</p>
 <p>Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the <em>dhcpcd.service</em> or the <em>networking.service</em>), however a reboot is sometimes easier.</p>
 </div>
 <button class="w3collapsible">
@@ -212,12 +213,13 @@ Hint (hostapd)
   wpa=2
   rsn_pairwise=CCMP </code></pre>
 <p>Before the <em>start</em>/<em>enable</em> of the <em>hostapd</em> service do not forget to point to its configuration file by editing the service’s default options located at “/etc/default/”.</p>
+<p>If the <em>hostapd</em> service is reported as masked you can use <code>systemctl unmask hostapd</code> to unmask it.</p>
 </div>
 <button class="w3collapsible">
 Hint (dhcpd)
 </button>
 <div class="w3content">
-<p>Remember that the <em>isc-dhcp-server.service</em> will not start if the chosen interface is not up and if it does not share a common subnet space.</p>
+<p>Remember that the <em>isc-dhcp-server.service</em> <strong>will not start</strong> if the chosen interface is not up or if it does not share a common subnet space with the specified configurations.</p>
 </div>
 <h2 id="configuring-the-client">Configuring the <em>client</em></h2>
 </div>
