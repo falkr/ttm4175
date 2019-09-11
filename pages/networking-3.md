@@ -54,31 +54,33 @@ The _client_ does not require any specific software.
 ## Configuring a wireless router
 
 :steps:
-1. Configure a static IP address for the network interface _wlan0_.
+1. Configure a static IP address for the network interface `wlan0`.
 2. Configure the _hostapd_ software previously installed in order to create a Linux Wi-Fi access point.
-3. Activate DHCP on the interface *wlan0* on the *isc-dhcp-server* configuration file (and remove *eth0*).
+3. *start*, and optionally *enable*, the *hostapd.service* 
+3. Activate DHCP on the interface `wlan0` on the *isc-dhcp-server* configuration file (and remove `eth0`).
 4. Re-configure the DHCP server properties in the *dhcpd.conf* file without forgetting:
 
 
 - to declare this DHCP server as authoritative;
-- to specify a subnet and range matching the IP/mask of _wlan0_;
+- to specify a subnet and range matching the IP/mask of `wlan0`;
 - to provide the required DNS information;
 - to specify the *router* as the default router;
 - to assign a fixed IP address to the _client_.
 
 :steps:
-5. *start* (and optionally *enable*) the *isc-dhcp-server.service* 
+5. *start*, and optionally *enable*, the *isc-dhcp-server.service* 
 
 <button class="w3collapsible">Hint (interfaces)</button>
 <div class="w3content">
-The interface *wlan0* may not show an IP address until it is "UP", which means until it is being used.
+The interface `wlan0` may not show an IP address until it is "UP", which means until it is being used.
+In particular, it `wlan0` may only be seen as up after starting _hostapd_
 
 Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the _dhcpcd.service_ or the _networking.service_), however a reboot is sometimes easier.
 </div>
 
 <button class="w3collapsible">Hint (hostapd)</button>
 <div class="w3content">
-An example on how to configure an access point with _hostapd_ can be found in the file _hostapd.conf.gz_, which can be extracted with the command `gunzip`.
+An example on how to configure an access point with _hostapd_ can be found in the file _hostapd.conf_ or  _hostapd.conf.gz_, the latter can be extracted with the command `gunzip`.
 This includes many options, from which *ssid and wpa_passphrase* should obviously be edited, but also other less trivial options that should look like this:
 
       driver=nl80211
@@ -90,14 +92,17 @@ This includes many options, from which *ssid and wpa_passphrase* should obviousl
 Before the _start_/_enable_ of the _hostapd_ service do not forget to point to its configuration file by editing the service's default options located at "/etc/default/".
 </div>
 
-
+<button class="w3collapsible">Hint (dhcpd)</button>
+<div class="w3content">
+Remember that the _isc-dhcp-server.service_ will not start if the chosen interface is not up and if it does not share a common subnet space.
+</div>
 
 ## Configuring the _client_
 
 :steps:
 1. Update the configuration of the *dhcpcd.conf* file from the *client* so that it connects to the created wireless network.
-For this you need to make sure that the interface _wlan0_ is not using any static configuration, so that it uses DHCP and *wpa_supplicant* (default) to automatically connect to the wireless network.
-2. Restart the _dhcpcd_ service with `systemctl` and verify that the *wlan0* interface has the static IP address you have specified.
+For this you need to make sure that the interface `wlan0` is not using any static configuration, so that it uses DHCP and *wpa_supplicant* (default) to automatically connect to the wireless network.
+2. Restart the _dhcpcd_ service with `systemctl` and verify that the `wlan0` interface has the static IP address you have specified.
 3. Confirm that you have wireless connectivity between both Pis and disconnect the Ethernet cable if successful.
 4. Try to connect to the network with your phone or laptop.
 

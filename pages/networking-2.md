@@ -99,7 +99,7 @@ Try the following commands and reflect on their result:
 Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not** connect it to the client) and follow these steps:
 
 :steps:
-1. Activate DHCP on the interface *eth0* by editing the *isc-dhcp-server* configuration file (see hint on config if needed).
+1. Activate DHCP on the interface `eth0` by editing the *isc-dhcp-server* configuration file (see hint on config if needed).
 2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting to:
 
 
@@ -111,7 +111,7 @@ Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not**
 
 :steps
 3. *stop* and *disable* the service *dhcpcd.service*;
-4. Make sure the *eth0* interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
+4. Make sure the `eth0` interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
 5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
 
 <button class="w3collapsible">Hint (config)</button>
