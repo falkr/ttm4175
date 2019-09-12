@@ -25,6 +25,7 @@ Scenario: you have come across a Windows 7 machine that is password protected an
 ` # update-grub`
 
 + Reboot Kali Linux and check that Windows 7 has been added to the bootloader screen.
+
 ## Mounting the Windows 7 partition within Kali
 
 You are now ready to begin bypassing the Windows authentication from within Kali.
@@ -32,16 +33,17 @@ You are now ready to begin bypassing the Windows authentication from within Kali
 + Make sure that Windows 7 is turned off and log in to Kali Linux.
 
 + start up a terminal and verify that the Windows 7 disk is successfully detected as a device from within Kali by using the utility program *fdisk*. *fdisk* lists information about all the disks and partitions attached to your machine.
+
 ` # fdisk -l `% ‘l’ is a lower-case ‘L’
 
 + To access the contents of the Windows disk you need to mount its file system inside Kali.
 Hard drives are normally mounted under "/mnt". Make a folder called /windows under "/mnt" and mount the Windows 7 partition in it with the mount command.
 
-> Hint
+>Hint
 `# mkdir -p /mnt/windows `       % create folder to mount the Windows file system
 `# mount /dev/sdb2 /mnt/windows` % this will incorporate the Windows file system under the "/mnt/windows" folder in Kali
 `# ls /mnt/windows`
->
+
 
 ## Changing the user password
 
@@ -137,7 +139,9 @@ Similarly to what we did in part 1, we first need to mount the Lubuntu partition
 Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself. 
 
 `# mkdir -p /mnt/lubuntu`
+
 `# fdisk -l` 				             % Find out which device contains Lubuntu
+
 `# mount /dev/sda1 /mnt/lubuntu`         % sda1 in our example -- could be different for you!
 
 + With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali. Your task now is to make changes to the Lubuntu partition so that the next time you boot it up you will not be required to enter a password in order to log in. Verify that you have successfully cleared the user’s password by logging in as user **ttm4175**.
