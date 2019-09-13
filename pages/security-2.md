@@ -145,7 +145,7 @@ Similarly to what we did in part 1, we first need to mount the Lubuntu partition
 
 + Inside Kali create a mount point for Lubuntu and mount it. 
 
->Hint
+:tip:
 Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself. 
 
 `# mkdir -p /mnt/lubuntu`
@@ -156,10 +156,12 @@ Since Lubuntu uses the same type of file system as Kali, be careful that you mou
 
 + With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali. Your task now is to make changes to the Lubuntu partition so that the next time you boot it up you will not be required to enter a password in order to log in. Verify that you have successfully cleared the user’s password by logging in as user **ttm4175**.
 
->Hint
->On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the */etc* folder. 
->In order to wipe the user’s password you have to make one small change to one of these files. Find out which one, and what you have to change. 
->
+:tip:
+On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the */etc* folder. 
+In order to wipe the user’s password you have to make one small change to one of these files. 
+
++ Your task now is to find out what to modify and in which file in order to erase the user's password. 
+
 
 
 + After you have bypassed the login screen of Lubuntu, pick a new password using the *passwd* command line utility.
