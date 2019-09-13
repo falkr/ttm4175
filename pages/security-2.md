@@ -39,10 +39,13 @@ You are now ready to begin bypassing the Windows authentication from within Kali
 + To access the contents of the Windows disk you need to mount its file system inside Kali.
 Hard drives are normally mounted under "/mnt". Make a folder called /windows under "/mnt" and mount the Windows 7 partition in it with the mount command.
 
->Hint
-`# mkdir -p /mnt/windows `       % create folder to mount the Windows file system
-`# mount /dev/sdb2 /mnt/windows` % this will incorporate the Windows file system under the "/mnt/windows" folder in Kali
-`# ls /mnt/windows`
+:hint:
+
+* Create folder to mount the Windows file system: `mkdir -p /mnt/windows`
+
+* This will incorporate the Windows file system under the "/mnt/windows" folder in Kali:
+`mount /dev/sdb2 /mnt/windows` <br/>
+`ls /mnt/windows`
 
 
 ## Changing the user password
@@ -86,19 +89,26 @@ happens?
 >
 + Your task is now to change the password of user **Lab2** to a password of your choosing, allowing you to log in as normal.
 
-> Hint: 
+:tip: 
 There is a command line utility for Windows called `net user` which could potentially be useful. 
 To get more information on how to use this command type `net user ?` in the command line window or look it up online.
 
-**Note:** Before you continue to the next section you should revert the change you did to *osk.exe*. That is, delete the current *osk.exe* file and rename the backup file *osk.exe.backup* to *osk.exe* again. However, since **Lab2** does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux. 
 
-+ Reboot the machine; select Kali Linux in the bootloader menu; mount the Windows 7 disk as
-you did previously; then revert the changes.
+### Reverting Changes
 
-> Hint 
-`# mount /dev/sdb2 /mnt/windows`
-`# rm /mnt/windows/Windows/System32/osk.exe`
-`# mv /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe`
+Before you continue to the next section you should revert the change you did to *osk.exe*. That is, delete the current *osk.exe* file and rename the backup file *osk.exe.backup* to *osk.exe* again. Since **Lab2** does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux. 
+
+- Reboot the machine
+- Select _Kali Linux_ in the bootloader menu
+- Mount the Windows 7 disk as you did previously
+- Revert the changes.
+
+```bash
+mount /dev/sdb2 /mnt/windows
+rm /mnt/windows/Windows/System32/osk.exe
+mv /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe
+```
+
 # Part2 - Bypassing Linux authentication
 
 In this section you will learn how to bypass the authentication mechanisms in Linux.
@@ -113,9 +123,9 @@ We have prepared a virtual machine containing a small variant of Linux, called L
 
 In part 1, we assumed that both Windows 7 and Kali Linux were installed on the same system so we could access the contents of the Windows 7 disk through Kali. So what to do when Kali Linux is not installed on the machine? The answer is **live booting**. 
 
->Hint 
-Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. 
+:tip: Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. 
 To do this you simply plug in the CD/USB containing Kali, restart the computer, and select to boot from CD-ROM/USB.
+
 
 We will test the live booting feature by running Kali directly from CD-ROM and use it to bypass the login screen of the Lubuntu machine. 
 

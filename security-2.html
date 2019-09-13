@@ -154,17 +154,32 @@
 </ul>
 </blockquote>
 <ul>
-<li>Reboot Kali Linux and check that Windows 7 has been added to the bootloader screen. ## Mounting the Windows 7 partition within Kali</li>
+<li>Reboot Kali Linux and check that Windows 7 has been added to the bootloader screen.</li>
 </ul>
+<h2 id="mounting-the-windows-7-partition-within-kali">Mounting the Windows 7 partition within Kali</h2>
 <p>You are now ready to begin bypassing the Windows authentication from within Kali.</p>
 <ul>
 <li><p>Make sure that Windows 7 is turned off and log in to Kali Linux.</p></li>
-<li><p>start up a terminal and verify that the Windows 7 disk is successfully detected as a device from within Kali by using the utility program <em>fdisk</em>. <em>fdisk</em> lists information about all the disks and partitions attached to your machine. <code># fdisk -l</code>% ‘l’ is a lower-case ‘L’</p></li>
-<li><p>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under “/mnt”. Make a folder called /windows under “/mnt” and mount the Windows 7 partition in it with the mount command.</p></li>
+<li><p>start up a terminal and verify that the Windows 7 disk is successfully detected as a device from within Kali by using the utility program <em>fdisk</em>. <em>fdisk</em> lists information about all the disks and partitions attached to your machine.</p></li>
 </ul>
-<blockquote>
-<p>Hint <code># mkdir -p /mnt/windows</code> % create folder to mount the Windows file system <code># mount /dev/sdb2 /mnt/windows</code> % this will incorporate the Windows file system under the “/mnt/windows” folder in Kali <code># ls /mnt/windows</code></p>
-</blockquote>
+<p><code># fdisk -l</code>% ‘l’ is a lower-case ‘L’</p>
+<ul>
+<li>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under “/mnt”. Make a folder called /windows under “/mnt” and mount the Windows 7 partition in it with the mount command.</li>
+</ul>
+
+</section>
+<section class="content">
+<div class="hint_title">Hint
+<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('b54556').style.cssText = ''">Show</button>
+</div>
+<div class="hint" style="-webkit-filter: blur(5px);" id="b54556"><ul>
+<li><p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p></li>
+<li><p>This will incorporate the Windows file system under the “/mnt/windows” folder in Kali: <code>mount /dev/sdb2 /mnt/windows</code> <br/> <code>ls /mnt/windows</code></p></li>
+</ul>
+
+</div>
+</section>
+<section class="content">
 <h2 id="changing-the-user-password">Changing the user password</h2>
 <p>Our target here is to run Windows 7 normally. To accomplish this we will need to bypass the Windows log in screen. Since we do not know the users password we will simply have to change it!</p>
 <p>By modifying some crucial system files in Windows from within Kali, we can give ourselves access to a command line prompt with administrator access the next time we boot up Windows 7.</p>
@@ -193,16 +208,21 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Your task is now to change the password of user <strong>Lab2</strong> to a password of your choosing, allowing you to log in as normal.</li>
 </ul>
 </blockquote>
-<blockquote>
-<p>Hint: There is a command line utility for Windows called <code>net user</code> which could potentially be useful. To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p>
-</blockquote>
-<p><strong>Note:</strong> Before you continue to the next section you should revert the change you did to <em>osk.exe</em>. That is, delete the current <em>osk.exe</em> file and rename the backup file <em>osk.exe.backup</em> to <em>osk.exe</em> again. However, since <strong>Lab2</strong> does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux.</p>
+
+<div class="tip"><p>There is a command line utility for Windows called <code>net user</code> which could potentially be useful. To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p>
+</div>
+<h3 id="reverting-changes">Reverting Changes</h3>
+<p>Before you continue to the next section you should revert the change you did to <em>osk.exe</em>. That is, delete the current <em>osk.exe</em> file and rename the backup file <em>osk.exe.backup</em> to <em>osk.exe</em> again. Since <strong>Lab2</strong> does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux.</p>
 <ul>
-<li>Reboot the machine; select Kali Linux in the bootloader menu; mount the Windows 7 disk as you did previously; then revert the changes.</li>
+<li>Reboot the machine</li>
+<li>Select <em>Kali Linux</em> in the bootloader menu</li>
+<li>Mount the Windows 7 disk as you did previously</li>
+<li>Revert the changes.</li>
 </ul>
-<blockquote>
-<p>Hint <code># mount /dev/sdb2 /mnt/windows</code> <code># rm /mnt/windows/Windows/System32/osk.exe</code> <code># mv /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</code></p>
-</blockquote>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -215,9 +235,9 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 </ul>
 <h2 id="running-kali-live">Running Kali Live</h2>
 <p>In part 1, we assumed that both Windows 7 and Kali Linux were installed on the same system so we could access the contents of the Windows 7 disk through Kali. So what to do when Kali Linux is not installed on the machine? The answer is <strong>live booting</strong>.</p>
-<blockquote>
-<p>Hint Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. To do this you simply plug in the CD/USB containing Kali, restart the computer, and select to boot from CD-ROM/USB.</p>
-</blockquote>
+
+<div class="tip"><p>Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. To do this you simply plug in the CD/USB containing Kali, restart the computer, and select to boot from CD-ROM/USB.</p>
+</div>
 <p>We will test the live booting feature by running Kali directly from CD-ROM and use it to bypass the login screen of the Lubuntu machine.</p>
 <ul>
 <li><p>Simulate the CD-ROM in VirtualBox by attaching the Kali Linux ISO file to the virtual CD-ROM tray of the Lubuntu machine.</p></li>
@@ -234,7 +254,9 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <blockquote>
 <p>Hint Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself.</p>
 </blockquote>
-<p><code># mkdir -p /mnt/lubuntu</code> <code># fdisk -l</code> % Find out which device contains Lubuntu <code># mount /dev/sda1 /mnt/lubuntu</code> % sda1 in our example – could be different for you!</p>
+<p><code># mkdir -p /mnt/lubuntu</code></p>
+<p><code># fdisk -l</code> % Find out which device contains Lubuntu</p>
+<p><code># mount /dev/sda1 /mnt/lubuntu</code> % sda1 in our example – could be different for you!</p>
 <ul>
 <li>With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali. Your task now is to make changes to the Lubuntu partition so that the next time you boot it up you will not be required to enter a password in order to log in. Verify that you have successfully cleared the user’s password by logging in as user <strong>ttm4175</strong>.</li>
 </ul>
