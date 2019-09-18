@@ -170,13 +170,30 @@
 </section>
 <section class="content">
 <div class="hint_title">Hint
-<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('b54556').style.cssText = ''">Show</button>
+<button type="button" class="btn btn-dark btn-sm" style="float: right" data-toggle="modal" data-target="#b54556Modal">Show</button>
 </div>
 <div class="hint" style="-webkit-filter: blur(5px);" id="b54556"><ul>
 <li><p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p></li>
 <li><p>This will incorporate the Windows file system under the “/mnt/windows” folder in Kali: <code>mount /dev/sdb2 /mnt/windows</code> <br/> <code>ls /mnt/windows</code></p></li>
 </ul>
 
+</div>
+<div class="modal fade" id="b54556Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">Are you sure you want to see the hint, or try a bit more on your own?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('b54556').style.cssText = ''">Yes, show me!</button>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 <section class="content">
@@ -220,9 +237,9 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Revert the changes.</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -251,19 +268,20 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <ul>
 <li>Inside Kali create a mount point for Lubuntu and mount it.</li>
 </ul>
-<blockquote>
-<p>Hint Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself.</p>
-</blockquote>
+
+<div class="tip"><p>Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself.</p>
 <p><code># mkdir -p /mnt/lubuntu</code></p>
 <p><code># fdisk -l</code> % Find out which device contains Lubuntu</p>
 <p><code># mount /dev/sda1 /mnt/lubuntu</code> % sda1 in our example – could be different for you!</p>
 <ul>
 <li>With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali. Your task now is to make changes to the Lubuntu partition so that the next time you boot it up you will not be required to enter a password in order to log in. Verify that you have successfully cleared the user’s password by logging in as user <strong>ttm4175</strong>.</li>
 </ul>
-<blockquote>
-<p>Hint On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the <em>/etc</em> folder. In order to wipe the user’s password you have to make one small change to one of these files. Find out which one, and what you have to change.</p>
-</blockquote>
-
+</div>
+<div class="tip"><p>On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the <em>/etc</em> folder. In order to wipe the user’s password you have to make one small change to one of these files.</p>
+<ul>
+<li>Your task now is to find out what to modify and in which file in order to erase the user’s password.</li>
+</ul>
+</div>
 <ul>
 <li><p>After you have bypassed the login screen of Lubuntu, pick a new password using the <em>passwd</em> command line utility. That is, open a command line window from inside Lubuntu (click the Lubuntu icon in the bottom-left corner and go “System Tools -&gt; UXTerm”) and issue the following command: &gt;&gt;ttm4175@ttm4175-Lubuntu:<code>~$ passwd ttm4175</code> &gt;&gt;Enter new UNIX password:</p></li>
 <li><p>Then enter your new password.</p></li>
@@ -275,6 +293,34 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <p>Q1. Most modern distributions of Linux use both /etc/passwd and /etc/shadow to store their user credentials. What is the purpose of the shadow file?</p>
 <p>Q2. Many modern operating systems automatically mount a disk or peripheral (like a USB drive) if it detects that it is connected. What could be the reasons for Kali not choosing to do this?</p>
 
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
+
+<span name="51f575"></span><aside name="51f575"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
+
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
     </section>
 </div>
 
