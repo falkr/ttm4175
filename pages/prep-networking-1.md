@@ -54,7 +54,7 @@ type: youtube
 video: AkxqkoxErRk
 ---
 
-If you want to know some more the Internet and network stacks the following video is also very interesting.
+If you want to know some more about the Internet and network stacks the following video is also very interesting.
 
 ---
 type: youtube
