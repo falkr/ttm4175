@@ -3,6 +3,7 @@
 In this lab, you will learn how to clear a password in Windows and how to use ophcrack and John the ripper to crack passwords.
 
 # Clearing the user password in Windows
+
 In the previous lab, you had to swap the system files in order to change the user's password. Another alternative that you will try now is to clear the password. 
 
 ## Updating chntpw
@@ -49,7 +50,7 @@ Start by creating 5 user accounts in Windows for which you will try to crack the
 Use the `net user` command to create a new user    
 
 
-Remember to revert the changes you made on *osk.exe* and *cmd.exe* files.  
++ Remember to revert the changes you made on *osk.exe* and *cmd.exe* files.  
 
 
 
@@ -109,13 +110,15 @@ target hashes are stored in win_pwd_hashes.txt.
 
 If the output of John the Ripper shows 0 guesses, it means the password is not contained in the default dictionary and it could not be cracked.
 
-+ Repeat the same command with the 5 users that you created. Did John the Ripper succeed in guessing all passwords?
++ Repeat the same command for the 5 users that you created. Did John the Ripper succeed in guessing all passwords?
 
 ### Creating new passwords from existing ones
 Instead of using a larger dictionary, John the Ripper can apply a multitude of transformations to a wordlist in order to create new passwords from existing ones. For example, we could make it append numbers to the end of all the words in the dictionary, such that if the word "car" was in the original dictionary, then it would also try *car0* , *car1*, ..., *car 9*, *car00*, *car01*, ..., etc.
 
 These transformations are defined by a set of rules found in the configuration file */etc/john/john.conf*.
+
 + Open the config file by running `leafpad /etc/john/john.conf & ` from the terminal.
+
 + Scroll down to the line containing "[List.Rules:Wordlist]". 
 
 Every line underneath contains a transformation rule which will be applied to every word of the dictionary. First comes zero or more rejection rules, all starting with a hyphen, e.g. -c, -8, -s, etc. These are used to decide whether the rest of the transformation rules on the line should be applied to a word or not. You can just ignore these. 
@@ -132,6 +135,7 @@ For example, if "car" was in the dictionary, then the above rule would make John
 
 :tip:
 use the command "s" to substitute a letter by another. example *so0* substitutes letter "o" with a zero
+
 The description of every possible transformation rule can be found at the John the Ripper web page http://www.openwall.com/john/doc/RULES.shtml
 
 
