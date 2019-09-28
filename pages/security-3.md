@@ -4,6 +4,7 @@ In this lab, you will learn how to clear a password in Windows and how to use op
 
 # Clearing the user password in Windows
 In the previous lab, you had to swap the system files in order to change the user's password. Another alternative that you will try now is to clear the password. 
+
 ## Updating chntpw
 
 Passwords in Windows are stored hashed in the Security Accounts Manager (SAM) database, located in the */Windows/System32/config* folder. We will manipulate the SAM registry in order to clear the hashed password of user **Lab2**.
@@ -11,34 +12,44 @@ SAM file is stored in a binary format and cannot simply be read by a text editor
 
 + Make sure that Windows 7 is mounted within Kali, then go to the following folder containing the SAM file:
 
-`# mount /dev/sdb2 /mnt/windows`
+```bash
+mount /dev/sdb2 /mnt/windows
+cd /mnt/windows/Windows/System32/config
+ls
+```
 
-`# cd /mnt/windows/Windows/System32/config`
-
-`# ls`
 + Start *chntpw* in interactive mode by using *-i* flag option and read in the SAM file
+
 `#chntpw -i sam` (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).
 
 + Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).
+
 + We want to clear the password of user **Lab2**, so enter its RID 
+
 + Choose option 1 again to clear the password of user **Lab2**  
+
 + Write changes to disk by quitting the current context (q) and confirm that you want to save the changes (y). You have now cleared the password of **Lab2** user.
 
 Finally, return to your home folder `# cd ` and unmount the Windows partition from kali Linux `# unmount /mnt/windows`.
+
 Reboot the machine and select Windows 7. You should now be able to login into **Lab2** account without a password.
 
 
 # Cracking the Windows 7 user password
+
 Start by creating 5 user accounts in Windows for which you will try to crack the passwords.
+
 ## Create new users in Windows
+
 + Get administrator access: follow the same steps from part 1 of the previous lab (attach Windows 7 to Kali in virtual box, then mount the Windows 7 partition within Kali and swap *osk.exe* and *cmd.exe*) in order to get administrator access
-+ Create 5 users: **Lab10**, **Lab20**, **Lab30**, **Lab40**, and **Lab50** and assign a different password to each user. For the first two users, assign a commonly-used password (you can search the web for the list of top 10,000 most common passwords). For the remaining users, choose passwords that are considered strong.
 
-:hint:
++ Create 5 users: **Lab10**, **Lab20**, **Lab30**, **Lab40**, and **Lab50** and assign a different password to each user. For the first two users, assign a commonly-used password (you can search the web for the list of top 10,000 most common passwords). For the remaining users, choose passwords that are of different lengths, with and without special characters.
 
+:tip:
 Use the `net user` command to create a new user    
 
-+ Remember to revert the changes you made on *osk.exe* and *cmd.exe* files.  
+
+Remember to revert the changes you made on *osk.exe* and *cmd.exe* files.  
 
 
 
@@ -48,31 +59,41 @@ Your task now is to **obtain** the password hashes stored in the SAM database. W
 
 + Locate the SAM database by changing to the *Windows/System32/config* directory
 
-:hint:
+```bash
+cd /mnt/windows/Windows/System32/config/
+ls
+```
 
-`cd /mnt/windows/Windows/System32/config/`
-
-`ls`
 
 In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable. 
 
-+ Use the tool *samdump2* to extract the content of the SYSTEM file and the SAM file, and write the contents to *win_pwd_hashes.text* `# samdump2 system sam > ~/win_pwd_hashes.txt`
++ Use the tool *samdump2* to extract the content of the SYSTEM file and the SAM file, and write the contents to *win_pwd_hashes.text* 
 
-`# cd ~ ` 
+```bash
+samdump2 system sam > ~/win_pwd_hashes.txt
+cd 
+```
 
 ## Examining the SAM database
 
 + Take a look at the content of the *win_pwd_hashes.text*  `# cat win_pwd_hashes.txt`. Each line entry represents a user account on the system with their respective hashes.
 
+
 ## Examining the SAM database in Ophcrack
 
 Ophcrack is a program that comes with a graphical user interface that allows you to see the format of the passwords in the SAM database.
+
 + Open Ophcrack by running *ophcrack* in the terminal of your Kali Linux machine
+
 + Click on Load ->PWDUMP file
+
 + Find the file *win_pwd_hashes.txt*. It will show you the hashed passwords.
+
 + try the Crack functionality on the available users. Did it succeed in cracking all passwords?
 
+
 ## John the Ripper
+
 John the Ripper is a cracking tool that runs in both *brute-force* and *dictionary attack* modes. It's basic functionality is to repeatedly try different passwords and hash them until it finds a match. However, since the space of all possible passwords is virtually infinite, testing all password in this manner (brute-force search) will not be feasible unless the password was very short.
 Instead, we will try a list of more likely passwords known as *dictionary attack* mode. 
 
@@ -109,14 +130,15 @@ For example, if "car" was in the dictionary, then the above rule would make John
 
 + Your task now is to create a rule that applies to all words that are longer than 1 and less than 7, and replaces all appearances of lowercase "L" with the number "1". For example, if the word "hello" was in the dictionary, then "he11o" would also be added.
 
-:hint:
-
+:tip:
 use the command "s" to substitute a letter by another. example *so0* substitutes letter "o" with a zero
-
 The description of every possible transformation rule can be found at the John the Ripper web page http://www.openwall.com/john/doc/RULES.shtml
 
+
 + To check how the default rules work, create a dictionary file *test.dict* containing the single word "labrador" `# echo "labrador" > test.dict`
+
 + Apply the default John rules to * test.dict * and print the results as follows: `# john --worldlist=test.dict --rules --stdout`
+
 + To find out how many new password did John create from this single-word dictionary, pipe the output above with '|' into *wc*.  
 
 
