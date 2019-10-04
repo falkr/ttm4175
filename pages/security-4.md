@@ -376,11 +376,15 @@ msf exploit(exploit_name) >
 
 2. Use the *show options* command to see the parameters that the module uses: 
 
-`msf exploit(exploit_name) > show options`
+```bash
+msf exploit(exploit_name) > show options
+```
 
 3. With the help of the *set* command, set the *RHOST* parameter to the IP address of the victim: 
 
-`msf exploit(exploit_name) > set RHOST <IP_address_victim_machine>`
+```bash
+msf exploit(exploit_name) > set RHOST <IP_address_victim_machine>
+```
 
 4. type *run* to run the exploit
 
