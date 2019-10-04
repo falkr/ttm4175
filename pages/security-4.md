@@ -361,11 +361,13 @@ For more information about the search command, see https://www.offensive-securit
 
 ## Using an exploit - How it works
 
-We will first explain the steps needed to use an exploit. Once you have found an exploit that looks promising you need to tell Metasploit how it should be executed. 
+We will first explain the steps needed to use an exploit. Then we will apply these steps to gain remote access to the victim machine using backdoored FTP server. 
+
+Once you have found an exploit that looks promising you need to tell Metasploit how it should be executed. 
 
 The steps for using an exploit are the following:
 
-1. The first step is to tell Metasploit which module you want to try with the *use* command:
+1. Tell Metasploit which module you want to try with the *use* command:
 
 ```bash
 msf > use exploit/platform/service/exploit_name
@@ -382,9 +384,9 @@ msf exploit(exploit_name) >
 
 4. type *run* to run the exploit
 
-# Gaining remote access using backdoored FTP server
+# Example: Using backdoored FTP server
 
-Now that we’ve done a vulnerability scan and covered a way to run exploits, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent.
+Having done a vulnerability scan, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent.
 
 Backdoors are methods of bypassing the security of a software program or operating system. They are like normal exploits, but they are deliberately part of the software.
 
@@ -392,7 +394,7 @@ Metasploitable has a backdoored version of vsftpd installed and running. If you 
 
 ## Using the backdoor with metasploit
 
-Metasploit has a module that makes it really easy to take advantage of this backdoor.
+Metasploit has a module that makes it easy to take advantage of this backdoor.
 
 + Use the following command to search for vsftpd: `msf > search vsftpd`
 
@@ -517,7 +519,7 @@ reboot
 
 The second command will ask you to enter a password for the new user.
 
-+ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: `telnet <IP_address_victim_machine>
++ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: `telnet <IP_address_victim_machine>`
 
 + After logging in, test that you still can get root access:
 
