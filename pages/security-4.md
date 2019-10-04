@@ -243,7 +243,7 @@ reboot
 
 The second command will ask you to enter a password for the new user.
 
-+ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: `telnet <IP_address_victim_machine>
++ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: `telnet <IP_address_victim_machine>`
 
 + After logging in, test that you still can get root access:
 
