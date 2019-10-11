@@ -1,20 +1,26 @@
 # Internet of Things
 
+Most of you have heard about the Internet of Things. 
+This is a technological trend which is caused by several developments:
+
+- Embedded computing devices get smaller, cheaper and more energy-efficient. 
+  This makes it feasible to embed computers into all kinds of devices. 
+  
+- Mobile coverage is improving, and new protocols are available that are suitable for energy-efficient machine-to-machine communication. 
+
+- Advances in data analytics and machine learning make it possible to process data and learn from it, so that data gathered by many embedded devices can be transformed into valuable knowledge.
 
 
-We start the second lab with an introduction to the vision of the Internet of Things. 
+Apart from these enablers, there are also considerable challenges:
+
+- **Security and privacy:** See below.
+- **Environmental footprint:** More devices also means more waste. How can this probem be solved?
+- **Energy-efficiency:** Despite improvements, powering IoT devices is still a problem and batteries are often not a good solution. 
+- **Lack of integration:** There are many IoT products, but connecting devices from different vendors or product families is still difficult or impossible.
+
+We start this part of the course by considering security and privacy, with a series of presentations and interviews.
 
 
-## What is the Internet of Things?
-
-Let's start with a talk on the opportunities that the Internet of Things may give us:
-
-<!-- 16:37 -->
-
----
-type: youtube
-video: _AlcRoqS65E
----
 
 
 ## IoT Security, Safety, Privacy
@@ -35,13 +41,15 @@ video: D3yrk4TaIQQ
 
 This is a video from the Computerphile Channel. From the description: "A hacked car that could kill you should be more worrying than a thousand lightbulbs taking Facebook offline. University of Cambridge's Professor Ross Anderson explains why safety should be higher on the agenda than privacy." 
 
+**This is the shortest of the videos. Though you should watch all, focus you attention on this one.**
+
 ---
 type: youtube
 video: PLiE0Nr8VOE
 ---
 
 
-## Discussion with Richard Stallman
+## Privacy in IoT
 
 <!-- 17:37  -->
 
