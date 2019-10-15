@@ -5,7 +5,7 @@ This is the antenna on the roof of the Electrical Building that connects to your
 
 # Start Tutorial
 
-Follow the [LoPy and Managed IoT Cloud Quick Start Guide](https://startiot.telenor.com/learning/quick-start-guide/). This includes to get your account, and upgrading the LoPy fimrware.
+Follow the [LoPy and Managed IoT Cloud Quick Start Guide](https://startiot.telenor.com/learning/quick-start-guide/). This includes to get your account, and upgrading the LoPy firmware.
 
 # Hints and Tips
 
