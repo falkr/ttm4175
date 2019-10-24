@@ -5,6 +5,10 @@ In this week, we will communicate via HTTP and build our own little
 server for that. This server will be able to serve a simple website and
 we will use it to store data from the Raspberry Pi.
 
+You remember that we worked with something similar in the second week, 
+where we created a website on an Apache web server.
+This time, we use the webserver to build a smart home system, and we also program it in Python instead of using Apache.
+
 ## Learning Goals
 
 

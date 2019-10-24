@@ -10,9 +10,9 @@ The LoPy consists of several parts:
 - The expansion board, with LED, button and access to pins, USB, and power supply
 - The antenna
 
-We have version 2.1A of the expansion board and version `XX`of the LoPy.
+We have version `2.1A` of the expansion board and version `1.0` of the LoPy.
 
-Put together the parts carefully as shown in the picture below. Note that the LoPy fits both ways onto the expansion boards. Make sure the pins for `Vin` and `GND` align properly. With the version we have, this looks like this:
+Put together the parts carefully as shown in the picture below. Note that the LoPy fits both ways onto the expansion boards. Make sure the pins for `Vin` and `GND` align properly. With the version we have, the alignment looks like this:
 
 ---
 type: figure
@@ -42,7 +42,7 @@ source: http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-vs-macbook-3
 
 Also, don't activate the LoRaWan radio without the antenna connected.
 
-
+**For the report:** Take a picture of your setup.
 
 # Updating the Firmware
 
@@ -72,13 +72,19 @@ source: figures/iot/lopy-update.png
 ---
 
 5. Unplug the LoPy
-6. Remove the `G23` to `GND` jumper cable.
-7. Reboot the device (button or power off then on).
+6. Remove the `G23` to `GND` jumper cable (see below)
+7. Reboot the device (button or power off then on)
+
+---
+type: figure
+source: figures/iot/lopy-jumper.jpg
+---
 
 :tip: If you are having any issues, make sure the TX and RX jumpers are present on your Expansion Board, as the jumpers sometimes come loose in the box during transport. Without these jumpers, the updater will fail.
 
 :tip: If you succeeded updating the firmware, offer your help to other teams if they struggle, and offer to update their LoPy. (It is not important from which computer the LoPy gets updated.)
 
+**For the report:** Try to describe problems (if you had any) and how you solved them. What is your experience for such firmware updates? Was this easy?
 
 # Programming the LoPy
 
