@@ -337,7 +337,9 @@ following.
 For Python there is a library to convert data structures into JSON and
 back again. This is how you import the library:
 
-    import json
+```bash
+import json
+```
 
 We assume that the data structure is stored as a Python dictionary:
 
@@ -382,8 +384,5 @@ into data again.
 [^3]: These code snippets are taken from
     <https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session_state>
     
-    
-```bash
-pip3 install numpy
-```
+
 
