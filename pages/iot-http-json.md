@@ -1,3 +1,5 @@
+# HTTP and JSON
+
 Today you should realize the system we have already studied in the preparation. A Raspberry Pi with a Sense HAT acts as a temperature sensor in a smart home, which constantly reads the temperature and sends it to a web server with a HTTP **POST** request. The web server makes the temperature readable by offering a website to any clients. 
 
 
@@ -9,7 +11,6 @@ caption: "Sketch of the smart home system."
 
 
 ## Task: Sequence Diagram
-
 
 Create again the sequence diagram from the lecture that shows three lifelines, one for the Raspberry Pi that is the sensor, one for the web server, and one for the browser. Add as many details to the diagram as you already know about, and make sure everyone in the team has the same understanding of the details. **Today, you will implement this sequence diagram!**
 
@@ -25,12 +26,13 @@ You have several options how to work today, that means, on which machines.
 * You can also work on the lab PCs or a private PC and implement most of the lab on it, as long as Python 3 is running on them.
 * In the end, you should use a Pi for the sensor since you should read the real temperature from the Sense HAT.
 
-## Task 1: Basic Webserver
+# Task 1: Basic Webserver
 
 Copy the following code into a file `webserver_1.py`. 
 
 * Read carefully through the code, starting with line 52, and then the class of line 31. 
 * Explain the code lines (especially 32 to ca. 45 to each other). This will be the core of what we do today.
+* Be patient. Ask questions to each other, make sure everyone gets it.
 
 <script src="https://gist.github.com/falkr/6c3025ec5f4278e5847bc469b9ad8b29.js"></script>
 
@@ -39,10 +41,10 @@ Copy the following code into a file `webserver_1.py`.
 
 
 **A detail:** You may see that the `do_GET()` function only has `self` as parameter (from the class), and does not have a return value. 
-This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request, namely via the attribute `self.requestline`. Similarly, the response is created by calling some functions on the parent class, for instance `self.wfile.write(response_in_bytes)`. So therefore the `do_GET()` does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.
+This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute `self.requestline`. Similarly, the response is created by calling some functions on the parent class, for instance `self.wfile.write(response_in_bytes)`. So therefore the `do_GET()` does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.
 
 
-### Task 2.2: Request via Web Browser
+## Task 2.2: Request via Web Browser
 
 * Either on the same machine, or (even better) on a different machine, access the website address that the server prints out in a browser.
 * If you access the browser on the same machine, you can type `http://localhost:8000/` as address. Otherwise, use the IP address.
@@ -53,9 +55,9 @@ This may be surprising, since it should get the request as input and then comput
     * What happens if you send the request to the wrong port, for instance port `8001`?
 
 
-### Task 1.2: Request from Python
+## Task 1.2: Request from Python
 
-A browser is not the only way to send a HTTP request. Another one is to create a HTTP request directly in Python. The following code creates an HTTP request in Python:
+A browser is not the only way to send an HTTP request. Another one is to create a HTTP request directly from Python. The following code creates an HTTP request in Python:
 
 <script src="https://gist.github.com/falkr/a91d1a52173297e2c7a15a4df67320a7.js"></script>
 
@@ -64,13 +66,13 @@ A browser is not the only way to send a HTTP request. Another one is to create a
 
 
 
-## Task 2: Nicer HTML Output
+# Task 2: Nicer HTML Output
 
-Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and created a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:
+Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:
 
 <script src="https://gist.github.com/falkr/d3140ef3386a7606a38ee83b9a7ba4ac.js"></script>
 
-* Obviously, copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)
+* Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)
 * Exchange the simple string in the web server so that it instead returns the HTML page created by this function.
 * To make all correct and tidy, update the line where we set the content type so that it uses `self.send_header("Content-type", "text/html")`.
 
@@ -78,11 +80,11 @@ Now that we can send a simple string as a response, let's make the answer more a
 * Can you set the title of the website?
 
 
-## Task 3: Storing Data in the Server
+# Task 3: Storing Data in the Server
 
-Later the web server should store the temperature and other values that the sensors send in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough. 
+Later the web server should store the temperature and other values that the sensors send in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough.
 
-There are several ways of doing this, but we try to add the code only in the method that processes the GET requests.   Since the method is called for each request, we need to store the data in a central place. For that, we use the context of the server, and declare a variable there. Luckily, we can access the server object using the variable `self.server`. Have a look at the following code:
+There are several ways of doing this, but we try to add the code only in the method that processes the GET requests. Since the method is called for each request, we need to store the data in a central place. For that, we use the context of the server, and declare a variable there. Luckily, we can access the server object using the variable `self.server`. Have a look at the following code:
 
 <script src="https://gist.github.com/falkr/de6d6534bbaebd3d6a4b98ac149c3863.js"></script>
 
@@ -93,14 +95,14 @@ There are several ways of doing this, but we try to add the code only in the met
     * Why is it not working to just use a local variable declared within the `do_GET()` method? Why do we need to access the variable via `self.server.data`?
 
 
-## Task 4: Sending Data to the Server
+# Task 4: Sending Data to the Server
 
 We can send additional data with our request, by appending it into the URL as follows:
 
     http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 54.3}
 
 
-### Task 4.1: Sending Data via the Browser
+## Task 4.1: Sending Data via the Browser
 
 * Copy the URL from above, but adjust it to your IP address (if necessary). 
 * Paste the entire URL with the data part into your browser. 
@@ -109,7 +111,7 @@ We can send additional data with our request, by appending it into the URL as fo
 * Has the data been transformed somehow?
 
 
-### Task 4.2: GET and POST on the Server
+## Task 4.2: GET and POST on the Server
 
 When we use HTTP to both request data and store data, we should use different HTTP commands for these tasks. To read a website, we alread use the **GET** command. To set data, we should use instead the **POST** command. In Task 4.1 above we have "misused" the browser, and let it make a GET request with the data. For making all neat and tidy, we should use a **POST** instead.
 
@@ -118,9 +120,9 @@ When we use HTTP to both request data and store data, we should use different HT
 
 We use from now on the `do_GET()` function to serve the web site that reports the stored values, and the function `do_POST()` to receive data from the temperature sensor. The web server can hence process two different requests: one for storing data, one for serving a website that presents the data.
 
-### Task 4.3: Sending Data via Python Requests
+## Task 4.3: Sending Data via Python Requests
 
-We now want to send data from Python. Later, a sensor should do this automated and at constant intervals, for which we cannot use a browser.
+We now want to send data from Python. Later, a sensor should do this automated and in periodic intervals, for which we cannot use a browser.
 
 <script src="https://gist.github.com/falkr/7959a3380f6835e900c43d374595bb6a.js"></script>
 
@@ -131,26 +133,26 @@ We now want to send data from Python. Later, a sensor should do this automated a
 
 
 
-### Task 4.4: Storing Data in the Server
+## Task 4.4: Storing Data in the Server
 
-* Pay now attention to the method `do_POST()` in the server, and work on the incoming data to decode it. There are helper functions in the server code you can use. Among others, the function `extract_json_string(string)` is useful to extract a JSON string (within curly brackets) from a string.
+* Pay attention to the method `do_POST()` in the server, and work on the incoming data to decode it. There are helper functions in the server code you can use. Among others, the function `extract_json_string(string)` is useful to extract a JSON string (within curly brackets) from a string.
 * Re-create the incoming dictionary that originates at the client.
 * Store it in the data dictionary. 
 
 
-## Task 5: Periodic POSTS from the Raspberry Pi and Sense HAT
+# Task 5: Periodic POSTS from the Raspberry Pi and Sense HAT
 
 Create a client on the Raspberry Pi with the Sense HAT that periodically reads the temperature and humidity from the Sense HAT and sends a **POST** request to the web server. (Running on the same Pi or another one.)
 
-### Task 5.1
+## Task 5.1
 
-* Start with a little program that reads the temperature from the Sense HAT and just prints it to the console. (Make that work, first.)
+* Start with a little program that reads the temperature and humidity from the Sense HAT and just prints it to the console. (Make that work, first.)
 * Find out how to create a task in Python that is repeated (probably a loop?) every 10 seconds (some wait?), and create a program that reads the temperature very 10 seconds. Document the result.
 * In addition to printing out, add the code to send the HTTP POST. Figure out how to include the data using JSON and all necessary serialization. You know all the building blocks for this task, you "just" have to set them together!
 
 
 
-## Task 6: Temperature in the Browser
+# Task 6: Temperature in the Browser
 
 Prepare the `do_GET()` method in the web server so that it sends back an HTML page that displays the temperature (and humidity) that was stored.
 
@@ -158,10 +160,51 @@ Prepare the `do_GET()` method in the web server so that it sends back an HTML pa
 * Try to send some nicer HTML that displays the values in a better readable form.
 * Document the entire system for the report.
 
-## Task 7: Optional Tasks
+
+# Task 7: Optional Tasks
 
 Now that the very basic stuff is running, you can play with it and extend the system further, so it gets more realistic. The following are examples of stuff to add:
 
 * Log more values from the Sense HAT
 * Also log the time
 * Report on the website when the measurement was taken
+
+
+# Final Steps
+
+### Learning Goals
+
+Reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the team. (You should use this text in the individual reflection below.)
+
+
+### Individual Reflection
+
+Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+
+
+### The Combination Lock
+
+Each team gets their own combination lock so you can store the box in the lockers in the lab. 
+
+* The locks come opened and with the opening combination set.
+* Take a picture of that combination in your phone, so you remember it.
+* Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.) 
+
+
+### Cleaning Up
+
+:todo:
+- Put all hardware back into the box.
+- Store the box in one of the lockers in the lab, using the combination lock.
+- Connect all parts of the PC back to it (keyboard, mouse, monitor).
+- Take out any trash. (Even if its not yours... thank you!)
+- Put the chairs back to the table.
+
+### Individual Exercises
+
+We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
+
+- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
+- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
+- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
+
