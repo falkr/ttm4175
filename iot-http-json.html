@@ -167,7 +167,7 @@
 
 <p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value. This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request, namely via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> does not have any input or return parameters. It’s more a question of how the API is designed, the authors have made a decision here.</p>
 
-<h3 id="task-2.2-request-via-web-browser">Task 2.2: Request via Web Browser</h3>
+<h3 id="task-1.1-request-via-web-browser">Task 1.1: Request via Web Browser</h3>
 <ul>
 <li>Either on the same machine, or (even better) on a different machine, access the website address that the server prints out in a browser.</li>
 <li>If you access the browser on the same machine, you can type <code>http://localhost:8000/</code> as address. Otherwise, use the IP address.</li>
@@ -192,7 +192,7 @@
 <p>Now that we can send a simple string as a response, let’s make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and created a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
 <script src="https://gist.github.com/falkr/d3140ef3386a7606a38ee83b9a7ba4ac.js"></script>
 <ul>
-<li>Obviously, copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</li>
+<li>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</li>
 <li>Exchange the simple string in the web server so that it instead returns the HTML page created by this function.</li>
 <li><p>To make all correct and tidy, update the line where we set the content type so that it uses <code>self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)</code>.</p></li>
 <li>Now go back to the browser, and access the website again. What changed?</li>
