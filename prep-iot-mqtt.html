@@ -134,10 +134,10 @@
     </section>
     <section class="content">
 <h1 id="mqtt">MQTT</h1>
-<p>This week, you will learn how to communicate by using a protocol that is called <strong>MQTT</strong>. Like HTTP, it is usually executed on top of TCP/IP, but you will notice that this protocol is very different from HTTP, in many respects. That’s one of the reasons why we look at it. Once you have understood HTTP and MQTT, you have covered a lot of mechanisms, properties, patterns and architectures that are used in communication protocols.</p>
+<p>This week, you will learn how to communicate by using a protocol that is called <strong>MQTT</strong>. Like HTTP, it is usually executed on top of TCP/IP, but you will notice that this protocol is <strong>very different from HTTP</strong>, in many respects. That’s one of the reasons why we look at it. Once you have understood HTTP and MQTT, you have covered a lot of mechanisms, properties, patterns and architectures that are used in communication protocols.</p>
 <h2 id="learning-goals">Learning Goals</h2>
 
-<p>Goals: After this week, you will be able to:</p>
+<div class="goals"><p>After this week, you will be able to:</p>
 <ul>
 <li>Run and operate your own MQTT broker.</li>
 <li>Create an MQTT client in Python.</li>
@@ -145,25 +145,39 @@
 <li>Select proper quality-of-service levels.</li>
 <li>Design MQTT topics for applications.</li>
 </ul>
+</div>
+    </section>
+    <section class="content">
+<h1 id="background-hacking-ferries">Background: Hacking Ferries</h1>
+<p>If you want, have a look at this TEDx Talk by Andy Stanford Clark, who is one of the inventors of MQTT. The talk is not so much about the MQTT protocol itself, but you’ll get some context and background that may help you learn more in the following.</p>
 
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s9nrm8q5eGg?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
     </section>
     <section class="content">
 <h1 id="mqtt">MQTT</h1>
-<p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.[^1]</p>
-<p>MQTT is pretty easy to work with, and the following are my personal top 5 reasons why using MQTT is interesting:</p>
+<p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud services. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.</p>
+
+<span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
+</aside>
+<p>MQTT is simple to work with, and the following are my top 5 reasons for using MQTT:</p>
 <ol type="1">
 <li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
-<li><strong>You only need handle one IP address.</strong> That is the address of the broker. All other addressing happens indirectly via topics.</li>
+<li><strong>You only need to handle a single IP address.</strong> That is the address of the broker. All other addressing happens indirectly via topics.</li>
 <li><strong>Application startup is simple.</strong> You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.</li>
 <li><strong>MQTT works also behind a NAT.</strong> This means you can push a message from any location to a computer that is connected to your router at home. Only the broker needs to be accessible.</li>
 <li><strong>MQTT is bi-directional by default.</strong> Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.</li>
 </ol>
-<h2 id="broker-architecture">Broker Architecture</h2>
-<p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a repetition, remember first the client-server architecture, as we have it for instance in HTTP:</p>
-<p><strong>Client-server:</strong></p>
 
-<div class="   the client knows the address of the server. the server gets to know"><p>the client only after the client makes initial contact. Since only the client knows the address of the server initially, it is only the clients that can make the first contact and take initiative. In the world wide web, servers can host web sites and are contacted by browsers (the clients.) This is an example where there are many clients and only few servers, and where servers are optimized to server many clients. But there are also protocols in which the server is on a tiny sensor device, and “serves” the values of the sensor to any client that is interested in them.</p>
-<p><strong>Example:</strong> Assume again a home automation system, in which a controller adjusts the heater (on/off) based on the temperature reported by several sensors that are distributed in the room. With HTTP, the two communication parts were client and servers, and the client can send data to the server or request data via the request-response pattern. We have hence two possibilities, depending on how we assign the roles of client and server:</p>
+    </section>
+    <section class="content">
+<h1 id="broker-architecture">Broker Architecture</h1>
+<p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a repetition, remember first the client-server architecture, as we have it for instance in HTTP:</p>
+<h2 id="repetition-client-server">Repetition: Client-Server</h2>
+<p><strong>Client-server:</strong> The client knows the address of the server. The server gets to know the client only after the client makes initial contact. Since only the client knows the address of the server initially, it is only the clients that can make the first contact and take initiative. In the world wide web, servers can host web sites and are contacted by browsers (the clients.) This is an example where there are many clients and only few servers, and where servers are optimized to server many clients. But there are also protocols in which the server is on a tiny sensor device, and “serves” the values of the sensor to any client that is interested in them.</p>
+<h3 id="problems-with-client-server">Problems with Client-Server</h3>
+<p>Assume again a home automation system, in which a controller adjusts the heater (on/off) based on the temperature reported by several sensors that are distributed in the room. With HTTP, the two communication parts were client and servers, and the client can send data to the server or request data via the request-response pattern. We have hence two possibilities, depending on how we assign the roles of client and server:</p>
 <ul>
 <li><p><strong>HTTP, sensors act as clients:</strong> The sensors are HTTP clients and repeatedly send their temperature measurements to the heater, which is acts as a HTTP server.</p></li>
 <li><p><strong>HTTP, sensors act as servers:</strong> Vice-versa, we can think of a solution where each temperature sensor is a HTTP server, and the heater acts as a client. The heater makes requests to each sensor and asks for the current temperature, and then adjusts the heater based on all of the responses.</p></li>
@@ -174,13 +188,14 @@
 <li><p>If the sensors act as HTTP servers and we introduce the blind controller, they don’t have to change their code. They just answer now double as many requests; the ones from the heater and the ones from the blind controller. For the battery life this is equally bad as the solution above.</p></li>
 </ul>
 <p>The problem with the above scenario is that we used a direct communication between the sensors and the control units, as shown in the figure below. Each sensor (in red) is connected to each controller.</p>
-</div>
+
 <div class="figure">
 <img src="figures/iot/mqtt-without-broker.svg" alt="This architecture connects each sensor with each client, which is not suitable." width="100%"/>
 <span name="figures/iot/mqtt-without-broker.svg">&nbsp;</span>
 <aside name="figures/iot/mqtt-without-broker.svg"><p><p>This architecture connects each sensor with each client, which is not suitable.</p>
 </p></aside>
 </div>
+<h2 id="new-client-broker">New: Client-Broker</h2>
 <p>Now imagine a system where the components are more separate form each other, and do not communicate directly with each other. We can achieve this by introducing a component that decouples the sensors and the controllers. We call that component a <strong>broker</strong>, shown in the figure below:</p>
 
 <div class="figure">
@@ -189,17 +204,16 @@
 <aside name="figures/iot/mqtt-with-broker.svg"><p><p>This architecture introduces a broker, and sensors only connect to this broker.</p>
 </p></aside>
 </div>
-<p><strong>Client-broker:</strong></p>
+<p><strong>Client-broker:</strong> A message broker is a server that distributes messages. Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
 
-<div class="   a message broker is a server that distributes messages. the message"><p>broker usually does not care about the specific application or the content of the message. Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
-</div>
-<h2 id="mqtt-brokers">MQTT Brokers</h2>
 <p>The broker is a generic component, which means that it is not specific for any application and that you can use the same broker for many different applications. You hence don’t need to write your own broker, but can use an existing one and just configure it. There are several MQTT brokers available. The one we are going to use is called <strong>Mosquitto</strong>.</p>
 
-<h2 id="message-patterns-publish-subscribe">Message Patterns: Publish-Subscribe</h2>
-<p>MQTT uses a <strong>publish-subscribe</strong> message pattern.</p>
+    </section>
+    <section class="content">
+<h1 id="message-pattern-publish-subscribe">Message Pattern: Publish-Subscribe</h1>
+<p>With the new architecture of a broker also comes a new message pattern that is suitable for this architecture. It is called <strong>publish-subscribe</strong>.</p>
 <ul>
-<li><p>The <strong>publish</strong> part is very simple: Whenever a client (here a sensor) makes some obervation, it sends a message to the broker. We also say that the client <em>publishes</em> a message, or that the client acts as a publisher.</p></li>
+<li><p>The <strong>publish</strong> part is very simple: Whenever a client (here a sensor) makes an obervation, it sends a message to the broker. We also say that the client <em>publishes</em> a message, or that the client acts as a publisher.</p></li>
 <li><p>The <strong>subscribe</strong> part works as follows: Clients that are interested in a certain information <em>subscribe</em> to the broker. Whenever another client publishes that information, the broker forwards this message to all clients that have subscribed.</p></li>
 </ul>
 <p>A minimal interaction looks as follows:</p>
@@ -214,14 +228,28 @@
 <div class="figure">
 <img src="figures/iot/mqtt-publish-subscribe.svg" width="100%"/>
 </div>
-<p>#Topics</p>
-<p>Topics are used to define which information a subscriber is interested in, and match it with the information publishers provide. Usually, subscribers are not interested in all messages that all publishers send. Subscribers therefore only subscribe to specific topics, which depend on the application. The topics are organized in a hierarchy, separated by a dash (“/”). The following is an example for topics that an application for home automation can use:</p>
+    </section>
+    <section class="content">
+<h1 id="topics">Topics</h1>
+<p>Topics are used to define which information a subscriber is interested in, and match it with the information publishers provide. Usually, subscribers are not interested in all messages that all publishers send. Subscribers therefore only subscribe to specific topics, which depend on the application. The topics are organized in a hierarchy, separated by a slash (“/”). The following is an example for topics that an application for home automation can use:</p>
 <pre><code>house/garage/lights/l1
 house/garage/lights/l2
 house/garage/sensors/pi1
 house/garage/doors/d1</code></pre>
 <p>The light <em>l1</em> for instance subscribes to the topic <code>house/garage/lights/l1</code> so that it can receive messages that switch it on or off. The passive infrared sensor <em>pi1</em> publishes messages to the topic <code>house/garage/sensors/pi1</code> every time it detects a movement.</p>
-<p>Topics can include wildcards, which make it possible for a subscriber to subscribe to several topics with a single pattern:</p>
+<p>Topics are hence useful to structure the communication of an application. They are a mechanism that combines some aspect of adressing with that of message names. Central to the concept of topics is that several cients can listen to the same topic.</p>
+<h2 id="example-application">Example Application</h2>
+<p>An application to switch on the lights whenever a movement is detected can work like this: (In pseudo code)</p>
+<pre><code>subscribe to house/garage/sensors/pi1
+whenever an MQTT messages arrives at house/garage/sensors/pi1:
+    send a message 
+        to house/garage/lights/l1 with payload &quot;on&quot;
+    
+    after some time, send a message
+        to house/garage/lights/l1 with payload &quot;off&quot;
+        </code></pre>
+<h2 id="topic-subscription-wildcards">Topic Subscription Wildcards</h2>
+<p>When subscribing, topics can include wildcards, which make it possible for a client to subscribe to several topics with a single pattern:</p>
 <ul>
 <li>The “+” is used as a wildcard for a single level</li>
 <li>The “#” is used as a wildcard for several levels. It must only be placed at the end of a topic pattern.</li>
@@ -231,7 +259,8 @@ house/garage/doors/d1</code></pre>
 <li>To receive all messages sent within the house, a subscriber can subscribe to <code>house/#</code></li>
 <li>To receive all messages for lights in any zone (garage or kitchen), a subscriber can subscribe to <code>house/+/lights/+</code></li>
 </ul>
-<p><strong>Exercise:</strong> A publisher sends a message to the topic <code>a/b/c/d</code>. Which of the following 15 subscription topics will receive this message?</p>
+
+<p><strong>Exercise:</strong> A publisher sends a message to the topic <code>a/b/c/d</code>. Which of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscriptioin topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)</p>
 <div>
 <table class="table table-sm">
 <caption style>
@@ -243,6 +272,9 @@ house/garage/doors/d1</code></pre>
 <th>
 Subscription Topic
 </th>
+<th>
+Receive a/b/c/d ?
+</th>
 </tr>
 </thead>
 <tbody class="row-hover">
@@ -251,7 +283,10 @@ Subscription Topic
 1
 </td>
 <td class="column-2">
-<pre>#</pre>
+#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-2">
@@ -259,7 +294,10 @@ Subscription Topic
 2
 </td>
 <td class="column-2">
-<pre>+/+/+</pre>
++/+/+
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-3">
@@ -267,7 +305,10 @@ Subscription Topic
 3
 </td>
 <td class="column-2">
-<pre>+/+/+/+</pre>
++/+/+/+
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-4">
@@ -275,7 +316,10 @@ Subscription Topic
 4
 </td>
 <td class="column-2">
-<pre>+/b/c/#</pre>
++/b/c/#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-5">
@@ -283,7 +327,10 @@ Subscription Topic
 5
 </td>
 <td class="column-2">
-<pre>+/b/c/d</pre>
++/b/c/d
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-6">
@@ -291,7 +338,10 @@ Subscription Topic
 6
 </td>
 <td class="column-2">
-<pre>a/#</pre>
+a/#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-7">
@@ -299,7 +349,10 @@ Subscription Topic
 7
 </td>
 <td class="column-2">
-<pre>a/+/+/d</pre>
+a/+/+/d
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-8">
@@ -307,7 +360,10 @@ Subscription Topic
 8
 </td>
 <td class="column-2">
-<pre>a/+/c/d</pre>
+a/+/c/d
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-9">
@@ -315,7 +371,10 @@ Subscription Topic
 9
 </td>
 <td class="column-2">
-<pre>a/b/#</pre>
+a/b/#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-10">
@@ -323,7 +382,10 @@ Subscription Topic
 10
 </td>
 <td class="column-2">
-<pre>a/b/c</pre>
+a/b/c
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-11">
@@ -331,7 +393,10 @@ Subscription Topic
 11
 </td>
 <td class="column-2">
-<pre>a/b/c/#</pre>
+a/b/c/#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-12">
@@ -339,7 +404,10 @@ Subscription Topic
 12
 </td>
 <td class="column-2">
-<pre>a/b/c/d/#</pre>
+a/b/c/d/#
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-13">
@@ -347,7 +415,10 @@ Subscription Topic
 13
 </td>
 <td class="column-2">
-<pre>a/b/c/d</pre>
+a/b/c/d
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-14">
@@ -355,7 +426,10 @@ Subscription Topic
 14
 </td>
 <td class="column-2">
-<pre>b/+/c/d</pre>
+b/+/c/d
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 <tr class="row-15">
@@ -363,24 +437,19 @@ Subscription Topic
 15
 </td>
 <td class="column-2">
-<pre>a/b/c/d/+</pre>
+a/b/c/d/+
+</td>
+<td>
+<input type="checkbox" class="form-check-input">
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<h2 id="example">Example</h2>
-<p>An application to switch on the lights whenever a movement is detected can work like this: (In pseudo code)</p>
-<pre><code>subscribe to house/garage/sensors/pi1
-whenever an MQTT messages arrives at house/garage/sensors/pi1:
-    send a message 
-        to house/garage/lights/l1 with payload &quot;on&quot;
-    
-    after some time, send a message
-        to house/garage/lights/l1 with payload &quot;off&quot;</code></pre>
-
-<h2 id="quality-of-service">Quality of Service</h2>
+    </section>
+    <section class="content">
+<h1 id="quality-of-service">Quality of Service</h1>
 <p>Messages can be sent with three different quality-of-service (QoS) flags, which determine how much effort the broker and the clients spend on sending them:</p>
 <ul>
 <li><p>QoS=0 is also called <em>At most once</em>. The message can get lost, and there will be no attempts to resend it.</p></li>
@@ -402,16 +471,45 @@ whenever an MQTT messages arrives at house/garage/sensors/pi1:
     </section>
     <section class="content">
 <h1 id="mqtt-clients-in-python">MQTT Clients in Python</h1>
-<p>There are libraries to use MQTT in a variety of programming languages. For Python, there is a library for an MQTT client called <em>Paho</em>. As usual, you install it via pip, using <code>pip install paho-mqtt</code></p>
-<h2 id="mqtt-subscriber-client">MQTT Subscriber Client</h2>
+<p>There are libraries to use MQTT in a variety of programming languages. For Python, there is a library for an MQTT client called <em>Paho</em>. As usual, you install it via pip, using</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">pip</span> install paho-mqtt</a></code></pre></div>
+
 <p>The code for a client that subscribes to a topic looks like this:</p>
-<pre><code>import paho.mqtt.client as mqtt               
-client.connect(&#39;iot.eclipse.org&#39;, 1883, 60)   </code></pre>
-<p>The code above is in its structure similar to the one we used when creating our own HTTP server. Here, we connect to a public MQTT broker of the Eclipse IoT project. The default port is 1883. The argument 60 denotes the number of seconds of maximum silence. If no message is sent within this time, the client sends automatically a ping message, so that the broker still knows that the client is alive.</p>
-<p>The subscription happens in the callback function <code>on_connect()</code>. This has the benefit that the client will subscribe whenever it connects successfully. Paho has a built-in reconnection function, i.e., when the client disconnects it tries to connect again. When the subscription happens in the connect function, the subscription is also restored.[^2]</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">def</span> on_message(mqttc, obj, msg):</a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="kw">def</span> on_publish(mqttc, obj, mid):</a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15">mqttc <span class="op">=</span> mqtt.Client()</a>
+<a class="sourceLine" id="cb1-16" title="16">mqttc.on_message <span class="op">=</span> on_message</a>
+<a class="sourceLine" id="cb1-17" title="17">mqttc.on_connect <span class="op">=</span> on_connect</a>
+<a class="sourceLine" id="cb1-18" title="18">mqttc.on_publish <span class="op">=</span> on_publish</a>
+<a class="sourceLine" id="cb1-19" title="19">mqttc.on_subscribe <span class="op">=</span> on_subscribe</a>
+<a class="sourceLine" id="cb1-20" title="20">mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</a>
+<a class="sourceLine" id="cb1-21" title="21">mqttc.loop_start()</a></code></pre></div>
+
+<p>The code above is in its structure similar to the one we used when creating our own HTTP server. We connect to an MQTT broker using its address (or <code>localhost</code> when its on the same computer). The default port for MQTT is 1883.</p>
+<p>After the client is created in <code>mqttc = mqtt.Client()</code>, we register a number of callback functions. These functions are called by the client whenever one of the event happens, that means, after we are connected, received a message, subscribed to a sopic or published a message. We can use them to trigger other behavior.</p>
+
 <h2 id="mqtt-publisher-client">MQTT Publisher Client</h2>
 <p>The following code is used to publish a message:</p>
-<pre><code>client.publish(topic, payload=None, qos=0, retain=False)</code></pre>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</a></code></pre></div>
+
+<p>We can also specify which qos level we want, and add some payload (content) to the message:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -420,14 +518,15 @@ client.connect(&#39;iot.eclipse.org&#39;, 1883, 60)   </code></pre>
 <div class="figure">
 <img src="figures/iot/mqtt-fx.png" width="100%"/>
 </div>
-<p>MQTT.FX[^3] is a tool useful during development. Using MQTT.FX is really simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Once the system is done, you don’t need MQTT.FX anymore.</p>
-<p>Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. This does not sound like much. However, MQTT.FX has a generic user interface, you can use MQTT.FX while you construct your application to see how the other system components publish messages, and you can also &quot;inject&quot; messages into the system, by publishing to any topic you want.</p>
+<p>MQTT.FX is a tool useful during development. Using MQTT.FX is simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing. Once the system is programmed, you don’t need MQTT.FX anymore.</p>
 
+<span name="12ed46"></span><aside name="12ed46"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
+</aside>
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>
 </div>
 <h2 id="publishing-messages">Publishing Messages</h2>
-<p>Imagine you have created a MQTT client that runs a certain action when it receives a message, but you are not doen with the component that should send the message. To test at least the component that should receive the message, you can use MQTT.FX to publish a message with that content to the topic, and the component under test will behave as if the message was sent in the final system.</p>
+<p>Imagine you created an MQTT client that runs a certain action when it receives a message, but you are not doen with the component that should send the message. To test at least the component that should receive the message, you can use MQTT.FX to publish a message with that content to the topic, and the component under test will behave as if the message was sent in the final system.</p>
 
 <div class="figure">
 <img src="figures/iot/mqtt-fx-subscribe.png" width="100%"/>
@@ -435,6 +534,200 @@ client.connect(&#39;iot.eclipse.org&#39;, 1883, 60)   </code></pre>
 <h2 id="observing-communication">Observing Communication</h2>
 <p>Because MQTT uses the publish-subscribe pattern, it can simply subscribe to any topics that are interesting in your application and you can see which messages are sent to these topics, without disturbing the communication in the system. To achieve the same in HTTP, for instance, you need a tool like Wireshark.</p>
 
+</section>
+<section class="content">
+<div class="hint_title">Hint
+<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('35c89c').style.cssText = ''">Show</button>
+</div>
+<div class="hint" style="-webkit-filter: blur(5px);" id="35c89c"><div>
+<table class="table table-sm">
+<caption style>
+</caption>
+<thead>
+<tr class="row-1">
+<th>
+</th>
+<th>
+Subscription Topic
+</th>
+<th>
+Receive a/b/c/d ?
+</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-1">
+<td class="column-1">
+1
+</td>
+<td class="column-2">
+#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-2">
+<td class="column-1">
+2
+</td>
+<td class="column-2">
++/+/+
+</td>
+<td>
+No! We only subscribe to topics that include 3 levels.
+</td>
+</tr>
+<tr class="row-3">
+<td class="column-1">
+3
+</td>
+<td class="column-2">
++/+/+/+
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-4">
+<td class="column-1">
+4
+</td>
+<td class="column-2">
++/b/c/#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-5">
+<td class="column-1">
+5
+</td>
+<td class="column-2">
++/b/c/d
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-6">
+<td class="column-1">
+6
+</td>
+<td class="column-2">
+a/#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-7">
+<td class="column-1">
+7
+</td>
+<td class="column-2">
+a/+/+/d
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-8">
+<td class="column-1">
+8
+</td>
+<td class="column-2">
+a/+/c/d
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-9">
+<td class="column-1">
+9
+</td>
+<td class="column-2">
+a/b/#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-10">
+<td class="column-1">
+10
+</td>
+<td class="column-2">
+a/b/c
+</td>
+<td>
+No! The publishing topic also includes a ‘d’, which does not match, even at the end.
+</td>
+</tr>
+<tr class="row-11">
+<td class="column-1">
+11
+</td>
+<td class="column-2">
+a/b/c/#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-12">
+<td class="column-1">
+12
+</td>
+<td class="column-2">
+a/b/c/d/#
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-13">
+<td class="column-1">
+13
+</td>
+<td class="column-2">
+a/b/c/d
+</td>
+<td>
+Yes!
+</td>
+</tr>
+<tr class="row-14">
+<td class="column-1">
+14
+</td>
+<td class="column-2">
+b/+/c/d
+</td>
+<td>
+No! The first b of the subscription topic does not match the first a of the publishing topic.
+</td>
+</tr>
+<tr class="row-15">
+<td class="column-1">
+15
+</td>
+<td class="column-2">
+a/b/c/d/+
+</td>
+<td>
+No! The last plus implies that there should be another level for the topic, after the d/.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</section>
+<section class="content">
     </section>
 </div>
 
