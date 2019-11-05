@@ -88,8 +88,8 @@
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
         <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
-        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+		<a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-api.html">API</a>
       </div>
   </li>
@@ -131,14 +131,16 @@
 
 
 <div class="page">
+    </section>
     <section class="content">
+<h1 id="mqtt">MQTT</h1>
 <p>In this lab, we learn how to use a publish-subscribe protocol to send data between devices. In particular, we will be using the Paho-mqtt library for Python and MQTT.fx to connect the two Raspberry Pis to each other, and to a laptop.</p>
 <p>Before we start, just as a repetition, since it’s easy to lose the overview when so many different parts are involved:</p>
 <ul>
 <li><strong>MQTT</strong> is the publish-subscribe protocol that we are using today.</li>
 <li><strong>Mosquitto</strong> is the software to run your own MQTT broker.</li>
-<li><strong>Paho-mqtt</strong> is a library for Pyhton to run an MQTT <em>client</em>, which can publish messages and subscribe to topics.</li>
-<li><strong>MQTT.fx</strong> is a helping program to manually publish messages and subscribe to topic.</li>
+<li><strong>Paho-mqtt</strong> is a library for Pyhton to run an MQTT <em>client</em>, which connects to a broker, and can publish messages and subscribe to topics.</li>
+<li><strong>MQTT.fx</strong> is a helping program to manually publish messages and subscribe to topics.</li>
 </ul>
 <p><strong>For the Report:</strong> Before we used HTTP. Describe in a few words the difference of MQTT and HTTP. Do you see situations where each of them has their strengths? When would you use which protocols?</p>
 
@@ -147,11 +149,11 @@
 <h1 id="mqtt.fx">MQTT.fx</h1>
 <p>The goal in this exercise is to get familiar with MQTT.fx. You should get so familiar with it that you can “trust it”, in the sense that you know what is going on in a system under construction, and can use MQTT.fx to figure out situations.</p>
 <h2 id="installation-and-connection">Installation and Connection</h2>
-<p><a href="https://mqttfx.jensd.de">Install MQTT.FX</a> on your own laptop.</p>
+<p><a href="https://mqttfx.jensd.de">Install MQTT.FX</a> on your own laptop. Ideally, install it on more than one laptop, so you can send messages between them.</p>
 <h2 id="subscribing">Subscribing</h2>
 <ul>
-<li>Connect to the open broker with the address <code>iot.eclipse.org</code> and the port 1883.</li>
-<li>Subscribe to the topic <code>/#</code> and watch what happens.</li>
+<li>Connect to an open broker, one listed on <a href="https://github.com/mqtt/mqtt.github.io/wiki/public_brokers">this list</a>. (Not all are up and running at all times. Last I used <code>test.mosquitto.org</code>.)</li>
+<li>Subscribe to the topic <code>/#</code> and watch what happens. (Not all brokers allow you to do that.)</li>
 <li>Try to catch some of the payloads that are transported, and some of the topics that are used.</li>
 <li>Unsubscribe from the topic <code>/#</code> again and instead subscribe to a specific topic that you have observed in the trace.</li>
 <li>Figure out if there is any meaning in the messages.</li>
@@ -163,6 +165,7 @@
 <ul>
 <li>Find another team.</li>
 <li>Agree together on a (unique) topic that you want to use.</li>
+<li>make sure you are connected to the same broker.</li>
 <li>Use this topic to send messages back and forth using MQTT.FX, like in a chat.</li>
 </ul>
 
@@ -170,10 +173,34 @@
     <section class="content">
 <h1 id="starting-your-own-mqtt-broker">Starting Your Own MQTT Broker</h1>
 <p><strong>Goal:</strong> Install your own broker on a Raspberry Pi, and use MQTT.fx to verify that all is setup correct. Send some messages back and forth.</p>
+
+<h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
+<p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</a></code></pre></div>
+
+<h2 id="testing-your-broker">Testing Your Broker</h2>
+<p>Start Mosquitto:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">mosquitto</span> -v</a></code></pre></div>
+
+<p>The result should look like this:</p>
+
+<div class="figure">
+<img src="figures/iot/mosquitto-running.png" width="100%"/>
+</div>
+<p>You can also check which ports it is connected to:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">netstat</span> –at </a></code></pre></div>
+
+<p><strong>For the report:</strong> Document this output.</p>
+
+<h2 id="playing-with-mosquitto">Playing with Mosquitto</h2>
+
 <p><strong>Tasks:</strong></p>
 
 <div class="steps"><ol type="1">
-<li>Install the MQTT broker called <strong>Mosquitto</strong> on the Raspberry Pi. <small>Find relevant instructions on your own, this is part of the learning experience.</small></li>
 <li>Find which IP address your Pi has, you need this when connecting to your broker.</li>
 <li>Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.</li>
 <li>Use MQTT.fx on another laptop, and also connect to the broker.</li>
@@ -195,10 +222,23 @@
 <li>Use the MQTT broker that you just installed on the Raspberry Pi.</li>
 <li>You can work with Python on the same Pi that runs the broker, or use the other one. (We will later connect both Pis, so it does not matter on which of them the broker runs.)</li>
 </ul>
+
+<h2 id="installing-mqtt-paho-clients-for-python">Installing MQTT Paho Clients for Python</h2>
+<p>Install the Python poackage for MQTT clients:</p>
+
+<pre><code>pip install paho-mqtt</code></pre>
+
+<p>Documentation for the Paho clients is here:</p>
+<ul>
+<li><a href="prep-iot-mqtt.html/#mqtt-clients-in-python">Preparation for this Unit</a></li>
+<li><a href="https://pypi.org/project/paho-mqtt/">Paho MQTT on PyPi</a></li>
+<li><a href="https://www.eclipse.org/paho/clients/python/docs/">Paho MQTT on Eclipse IoT</a></li>
+</ul>
+
 <p><strong>Tasks:</strong></p>
 <ul>
 <li>Install Paho MQTT on the Pi. This is a Python library for an MQTT client that can connect to the broker.</li>
-<li><a href="https://pypi.python.org/pypi/paho-mqtt/">https://pypi.python.org/pypi/paho-mqtt/</a></li>
+<li><a href="https://pypi.python.org/pypi/paho-mqtt/" class="uri">https://pypi.python.org/pypi/paho-mqtt/</a></li>
 <li>Write a simple Python program that subscribes to a topic, and prints out whatever you sent as payload in your message.</li>
 <li>Send something to the chosen topic from your laptop using MQTT.fx. Can you see the output in your Python program?</li>
 <li>Write another simple Python program that publishes a message with some payload to a topic.</li>
@@ -240,14 +280,6 @@
 
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-
-<h3 id="the-combination-lock">The Combination Lock</h3>
-<p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
-<ul>
-<li>The locks come opened and with the opening combination set.</li>
-<li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
-</ul>
 
 <h3 id="cleaning-up">Cleaning Up</h3>
 

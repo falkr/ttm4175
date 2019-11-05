@@ -1,13 +1,16 @@
+# MQTT
+
 In this lab, we learn how to use a publish-subscribe protocol to send data between devices. In particular, we will be using the Paho-mqtt library for Python and MQTT.fx to connect the two Raspberry Pis to each other, and to a laptop.
 
 Before we start, just as a repetition, since it's easy to lose the overview when so many different parts are involved:
 
 * **MQTT** is the publish-subscribe protocol that we are using today.
 * **Mosquitto** is the software to run your own MQTT broker.
-* **Paho-mqtt** is a library for Pyhton to run an MQTT *client*, which can publish messages and subscribe to topics.
-* **MQTT.fx** is a helping program to manually publish messages and subscribe to topic.
+* **Paho-mqtt** is a library for Pyhton to run an MQTT *client*, which connects to a broker, and can publish messages and subscribe to topics.
+* **MQTT.fx** is a helping program to manually publish messages and subscribe to topics.
 
 **For the Report:** Before we used HTTP. Describe in a few words the difference of MQTT and HTTP. Do you see situations where each of them has their strengths? When would you use which protocols?
+
 
 # MQTT.fx
 
@@ -15,12 +18,12 @@ The goal in this exercise is to get familiar with MQTT.fx. You should get so fam
 
 ## Installation and Connection 
 
-[Install MQTT.FX](https://mqttfx.jensd.de) on your own laptop.
+[Install MQTT.FX](https://mqttfx.jensd.de) on your own laptop. Ideally, install it on more than one laptop, so you can send messages between them.
 
 ## Subscribing
 
-* Connect to the open broker with the address `iot.eclipse.org` and the port 1883.
-* Subscribe to the topic `/#` and watch what happens.
+* Connect to an open broker, one listed on [this list](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers). (Not all are up and running at all times. Last I used `test.mosquitto.org`.)
+* Subscribe to the topic `/#` and watch what happens. (Not all brokers allow you to do that.)
 * Try to catch some of the payloads that are transported, and some of the topics that are used.
 * Unsubscribe from the topic `/#` again and instead subscribe to a specific topic that you have observed in the trace.
 * Figure out if there is any meaning in the messages.
@@ -34,21 +37,61 @@ Now let's communicate, only by using MQTT.fx.
 
 * Find another team. 
 * Agree together on a (unique) topic that you want to use.
+* make sure you are connected to the same broker.
 * Use this topic to send messages back and forth using MQTT.FX, like in a chat.
+
+
 
 
 # Starting Your Own MQTT Broker
 
 **Goal:** Install your own broker on a Raspberry Pi, and use MQTT.fx to verify that all is setup correct. Send some messages back and forth.
 
+
+## Install Mosquitto on the Raspberry Pi
+
+Install Mosquitto using `apt`. (We first update apt's index, then install Mosquitto.)
+
+```bash
+sudo apt update
+sudo apt install -y mosquitto mosquitto-clients
+```
+
+
+## Testing Your Broker
+
+Start Mosquitto:
+
+```bash
+mosquitto -v
+```
+
+The result should look like this:
+
+---
+type: figure
+source: figures/iot/mosquitto-running.png
+---
+
+You can also check which ports it is connected to:
+
+```bash
+netstat –at 
+```
+
+**For the report:** Document this output. 
+
+
+## Playing with Mosquitto
+
+
 **Tasks:**
 
 :steps:
-1. Install the MQTT broker called **Mosquitto** on the Raspberry Pi. <small>Find relevant instructions on your own, this is part of the learning experience.</small> 
-2. Find which IP address your Pi has, you need this when connecting to your broker.
-3. Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.
-4. Use MQTT.fx on another laptop, and also connect to the broker.
-5. Send messages from laptop to laptop via the broker. (Select any topic you want.)
+1. Find which IP address your Pi has, you need this when connecting to your broker.
+2. Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.
+3. Use MQTT.fx on another laptop, and also connect to the broker.
+4. Send messages from laptop to laptop via the broker. (Select any topic you want.)
 
 
 **For the Report:**
@@ -67,6 +110,22 @@ Now let's communicate, only by using MQTT.fx.
 * Use the MQTT broker that you just installed on the Raspberry Pi.
 * You can work with Python on the same Pi that runs the broker, or use the other one. (We will later connect both Pis, so it does not matter on which of them the broker runs.)
 
+
+## Installing MQTT Paho Clients for Python
+
+Install the Python poackage for MQTT clients:
+
+```
+pip install paho-mqtt
+```
+
+Documentation for the Paho clients is here:
+
+* [Preparation for this Unit](prep-iot-mqtt.html/#mqtt-clients-in-python)
+* [Paho MQTT on PyPi](https://pypi.org/project/paho-mqtt/)
+* [Paho MQTT on Eclipse IoT](https://www.eclipse.org/paho/clients/python/docs/)
+
+
 **Tasks:**
 
 * Install Paho MQTT on the Pi. This is a Python library for an MQTT client that can connect to the broker.
@@ -79,6 +138,7 @@ Now let's communicate, only by using MQTT.fx.
 **For the Report:**
 
 * Include the (few) lines to publish a message and to subscribe to a topic, and document your work, also using some screenshots of MQTT.fx.
+
 
 # Back to the Sense HAT
 
@@ -101,6 +161,8 @@ Now let's communicate, only by using MQTT.fx.
 * Use MQTT.fx for testing, either by sending messages that should move the pixel, or by checking that the joystick triggers the correct messages.
 * Agree with another team which topics to use. You can use a single MQTT broker, of either team
 
+
+
 # Final Steps
 
 ### Learning Goals
@@ -111,15 +173,6 @@ Reflect about what you learned today. Write a few sentences that capture (in you
 ### Individual Reflection
 
 Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
-
-
-### The Combination Lock
-
-Each team gets their own combination lock so you can store the box in the lockers in the lab. 
-
-* The locks come opened and with the opening combination set.
-* Take a picture of that combination in your phone, so you remember it.
-* Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.) 
 
 
 ### Cleaning Up
