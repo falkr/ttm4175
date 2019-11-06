@@ -1,4 +1,4 @@
-# APIs
+# Application Programming Interfaces: APIs
 
 This week we are going to construct an application that consists of
 several components, some running on the Raspberry Pi, others running on
@@ -59,10 +59,12 @@ depending on the complexity of the component to connect to. The
 following can be a complete API, for a very simple component that
 periodically sends a temperature update:
 
-    TEMPERATURE API:
-    MQTT Broker: \texttt{mqtt.example.com:1883}
-    Subscribe to topic \texttt{api/weather/temperature/json}
-    Result will be messages in JSON, with format {"temp": 21}
+```
+TEMPERATURE API:
+MQTT Broker: mqtt.example.com:1883
+Subscribe to topic api/weather/temperature/json
+Result will be messages in JSON, with format {"temp": 21}
+```
 
 ## Examples for Web-based APIs
 
@@ -93,7 +95,9 @@ example of our very simple temperature API, we can use the API without
 knowing how the details are implemented, for instance how the component
 measures the temperature, or how it processes our request. To use it
 properly, we are just interested in the behavior of the component as a
-"black box."[^1]
+"black box." 
+It is not always obvious which behavior we should hide or not --- maybe 
+we are very much interested how the temperature was measured, but that depends on the entire system.
 
 Abstraction also allows that a component changes over time how it
 provides an API. It can for instance change details of the
@@ -110,8 +114,9 @@ good idea to have a method `add(a, b)` to add two numbers. A method
 possible, but you may wonder if it is useful for an API. That depends of
 course on the problem we build the API for. If the problem we want to
 support needs to add the number two a lot, then we could think of
-offering that as a dedicated method of the API.[^2]. Therefore it
-requires some experience and some attempts to write a "good" API.
+offering that as a dedicated method of the API.
+(It' s a bit like organizing your stuff at home. Should you have an extra drawer for winter jackets? Or put all jackets together?). 
+Therefore it requires some experience and some attempts to write a "good" API.
 
 ## APIs Evolve Over Time
 
@@ -161,9 +166,9 @@ only a few lines of code I can make this code to send a message via
 Slack so that I am notified once the job is done. In the lab for this
 unit we are going to build an alarm system with Slack.
 
-If you like, have a look at the article **Slack Is Overrun With Bots.
-Friendly, Wonderful Bots** on Wired.com.
-<https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots/>
+:aside: If you like, have a look at the article [Slack Is Overrun With Bots.
+Friendly, Wonderful Bots](https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots).
+
 
 Slack does not only use a single API, but several ones:
 
@@ -192,9 +197,7 @@ technologies, it makes more sense. In the lab, we are only going to use
 the Web API, but this selection shows you how many possibilities there
 are for APIs. And there are much more!
 
-Have a look at the article **Which API is right for your Slack app?** on
-Medium.com.
-<https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889>
+:aside: Have a look at the article [Which API is right for your Slack app?](https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889).
 
 # Wrapper Libraries
 
@@ -213,7 +216,7 @@ several ways:
 All of these methods are a bit cumbersome, aren't they? Therefore, there
 is another option:
 
--   Someone may create an extra library on Python that encapsulates all
+-   Someone may create an extra library in Python that encapsulates all
     the HTTP requests in Python with some code. The result can be an API
     in Python that uses internally HTTP to connect to a remote service
     like Slack.
@@ -223,7 +226,15 @@ convenience. The client library can offer additional functions so that
 the HTTP requests are encoded correctly, and data is handled
 consistently. For a programmer, it almost appears as if Slack was
 running locally on the computer, since all the HTTP requests are hidden
-within the library.[^3]
+within the library.
+
+:aside: Remember the *remote procedure calls* from above? These client
+    libraries for web-based APIs achieve basically the same thing. Why
+    technology has gone this way instead of using "real" remote
+    procedure calls is hard to say, and there may not be a single
+    reason. It can have to do with not depending on a specific
+    programming language, or worries of scalability, for example.
+
 
 # REST
 
@@ -237,8 +248,8 @@ while REST is not constrained to HTTP, most APIs that adhere to the REST
 principles are implemented in HTTP. Therefore, it is also okay to think
 of REST as a set of rules how an API can be expressed using HTTP.
 
-The following properties are copied form the article:
-<https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582>
+:aside: The following properties are copied form [this article](https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582)
+
 
 If you don't understand all of these constraints completely, or why they
 are important, don't worry too much for now. REST is an architectural
@@ -329,7 +340,7 @@ The orchestrator keeps control of all the other components and controls when to 
 ---
 type: figure
 source: figures/iot/api-orchestration.svg
-caption: "In orchestration, one compo- nent is in the center of the interaction and manages all communication."
+caption: "In orchestration, one component is in the center of the interaction and manages all communication."
 ---
 
 **Choreography:** There is a global coordination of components, following a decentralized approach. 
@@ -341,17 +352,5 @@ source: figures/iot/api-choreography.svg
 caption: "In a choreography, the interaction emerges from the individual components, but there is no central manager."
 ---
 
-
-[^1]: It is not always obvious which behavior we should hide or not -
-    maybe we are very much interested how the temperature was measured,
-    but that depends on the entire system.
-
-[^2]: It' s a bit like organizing your stuff at home. Should you have an
-    extra drawer for all winter jackets? Or group all jackets together?
-
-[^3]: Remember the *remote procedure calls* from above? These client
-    libraries for web-based APIs achieve basically the same thing. Why
-    technology has gone this way instead of using "real" remote
-    procedure calls is hard to say, and there may not be a single
-    reason. It can have to do with not depending on a specific
-    programming language, or worries of scalability, for example.
+When creating applications with several applications, you will have to decide which kind of coordination pattern you want to follow.
+Sometimes, orchestration or choreographies are necessary or beneficial, sometimes a combination of the two may be most suitable.

@@ -116,7 +116,7 @@ netstat –at
 Install the Python poackage for MQTT clients:
 
 ```
-pip install paho-mqtt
+pip3 install paho-mqtt
 ```
 
 Documentation for the Paho clients is here:
