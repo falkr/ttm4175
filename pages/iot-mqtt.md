@@ -146,7 +146,10 @@ Documentation for the Paho clients is here:
 
 **Tips:**
 
-* The example Python programs for the Sense HAT from week one also contained a Snake-like example. Have a look at it, if it helps. Your solution can be much simpler: Just move a simple pixel around on the LED matrix.
+* Have a look at the [example programs](https://github.com/astro-pi/python-sense-hat/blob/master/examples/README.md)
+* Run some of them, and try to understand how they work
+* Can you build a simple program that just moves a pixel on the LED matrix?
+
 
 # Remote Control of the Sense HAT
 
