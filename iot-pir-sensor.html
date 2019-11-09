@@ -133,76 +133,51 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="apis">APIs</h1>
-<p><strong>Goal:</strong> Let’s create a more advanced alarm system that detects some movement (with the PIR sensor), takes a picture (with the USB webcam) and notifies you via Slack.</p>
+<h1 id="using-the-pir-sensor">Using the PIR Sensor</h1>
+
+<p>Goal: You can connect the PIR sensor to the Pi and detect a movement by checking the signal on the cable via GPIO. You are able to create a minimal program for that.</p>
+
+<p>In this video you see how the Raspberry Pi can connect to external electronics. The GPIO pins are the electrical pins which are directly connected to the processor. GPIO stands for general purpose input output. We will use the same breadboard as in the video.</p>
 
 <div class="figure">
-<img src="figures/iot/alarm-system.png" width="100%"/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IP-szuon2Bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p>For this task, we work again in Python. Altogether, this is a complex task; you need to coordinate many functions and APIs. Each step itself should not be too hard, but you need to put eveything together in the end. Therefore, try to build the application step by step, and try each function in isolation before putting everything together. Below is a list of steps. You don’t have to do them in the given order.</p>
+<p>The following video contains a good description of a passive infrared sensor, which we will use.</p>
 
-<div class="tips"><p>Read first through all steps, and try to make a sequence diagram of the final application. The diagram should show a lifeline for your application, a lifeline for the PIR sensor, the camera, the cloudinary API and the Slack API.</p>
-<p><strong>Task:</strong> Think through if you are using an approach that is more of an orchestration or an choreography. Which approach works here?</p>
-<p><strong>Task:</strong> Once you have the sequence diagram, work on each of the steps.</p>
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQY6hNA53oM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
     <section class="content">
-<h1 id="step-taking-a-picture">Step: Taking a Picture</h1>
-<p>Find a way to capture an image with a USB camera in Python. It’s a standard USB camera, and there should be code out there that does the job.</p>
+<h1 id="connect-the-breadboard">Connect the Breadboard</h1>
+<p>A breadboard is a protoyping board to test out simple electrical circuits. It is sometimes easier to connect components to the Raspberry Pi with a breadboard, especially with an extension cable.</p>
 
+<div class="figure">
+<img src="figures/iot/rpi-breadboard-connection-1.jpg" width="100%"/>
+</div>
+<h2 id="step-1-connect-breadboard-and-connector">Step 1: Connect Breadboard and Connector</h2>
+<p>Push the connector into the breadboard. Try to apply even preassure on the entire connector.</p>
+
+<div class="figure">
+<img src="figures/iot/rpi-breadboard-connection-2.jpg" width="100%"/>
+</div>
+<h2 id="step-2-connect-with-cable">Step 2: Connect with Cable</h2>
+<p>Connect everything as shown below. (It’s important that the cable is placed as shown on the side of the Raspberry, since it may physically fit both ways.)</p>
+
+<div class="figure">
+<img src="figures/iot/rpi-breadboard-connection-3.jpg" width="100%"/>
+</div>
     </section>
     <section class="content">
-<h1 id="step-uploading-an-image-to-slack">Step: Uploading an Image to Slack</h1>
-<p>We created a step-by-step description to <a href="iot-slack.html">send messages and images to Slack</a>.</p>
+<h1 id="detecting-movement-in-python">Detecting Movement in Python</h1>
 
-    </section>
-    <section class="content">
-<h1 id="step-sensing-movement">Step: Sensing Movement</h1>
-<p>We collected some descriptions how to use the <a href="iot-pir-sensor.html">passive infrared sensor to detect movement</a>.</p>
-
-    </section>
-    <section class="content">
-<h1 id="finally-putting-all-together">Finally: Putting all Together</h1>
-<p>Once you have control over all of the individual steps above, put everything together to build the complete alarm system.</p>
-<p><strong>For the Report:</strong> Document how it works in a series of screenshots and photos, for instance like in a comic strip. Also, take a video that shows how your system works. The video can (and should) be short, ca 1 or 2 minutes. You don’t have to do a lot of editing, just show how the system works. We have added a section in Blackboard to deliver the video.</p>
-<p><strong>Well done!</strong></p>
-<h2 id="optionally-add-more-functionality">Optionally: Add More Functionality</h2>
-<p>If you have time and energy left, try to find other APIs on the web and extend your application with some more useful functionality.</p>
-
-    </section>
-    <section class="content">
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
-<p>Reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the team. (You should use this text in the individual reflection below.)</p>
-
-<h3 id="individual-reflection">Individual Reflection</h3>
-<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-
-<h3 id="the-combination-lock">The Combination Lock</h3>
-<p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
-<li>The locks come opened and with the opening combination set.</li>
-<li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+<li>Power down the Pi, and connect the breadboard.</li>
+<li>Connect the PIR (passive infrared) sensor with three cables. Look at the model of your PIR sensor, the cabling may be different between models.</li>
+<li>Write a program that detects when the PIR sensor is activated. You can first let the program write something on the output console. In the end the program shoud make some noise when the PIR sensor is activated, like an alarm system.</li>
+<li>Hint: When you are using <code>GPIO.setmode()</code>, use <code>GPIO.setmode(GPIO.BCM)</code> and not <code>GPIO.setmode(GPIO.BOARD)</code></li>
 </ul>
 
-<h3 id="cleaning-up">Cleaning Up</h3>
-
-<div class="todo"><ul>
-<li>Put all hardware back into the box.</li>
-<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
-<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
-<li>Put the chairs back to the table.</li>
-</ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
-<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
-<ul>
-<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
-<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
-<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul>
-</div>
     </section>
 </div>
 
