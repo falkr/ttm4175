@@ -15,6 +15,11 @@ For this task, we work again in Python. Altogether, this is a complex task; you 
 
 **Task:** Once you have the sequence diagram, work on each of the steps.
 
+# Python 3.6
+
+Unfortunately, the Slack API client needs Python 3.6, but the Raspberry Pi has Python version 3.5 by default. 
+[Follow this description to update Python to version 3.6](rpi-python3-6.html).
+
 
 # Step: Taking a Picture
 
