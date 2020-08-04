@@ -260,7 +260,7 @@ Hint (DNS)
 <li>On a terminal in the <em>router</em> run the following command (and leave it running):</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">tcpdump</span> -i eth0 -vvv -s 1500 <span class="st">&#39;port 67 or port 68&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">tcpdump</span> -i eth0 -vvv -s 1500 <span class="st">&#39;port 67 or port 68&#39;</span></span></code></pre></div>
 
 <div class="steps"><ol start="2" type="1">
 <li>Connect the <em>client</em> and the <em>router</em> using a single Ethernet cable.</li>
@@ -280,7 +280,7 @@ Hint (connecting)
 <div class="w3content">
 <p>Remember your <em>client</em> should have received the IP address you configured as a static address.</p>
 <p>You can use the command <code>dhcpcd --dumplease eth0</code> to get more information on the <em>client</em>.</p>
-<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart dhcpcd.service</code> or similar (e.g. <code>; sudo reboot</code>).</p>
+<p>You may force the <em>client</em> to release its lease by using the command <code>dhcpcd -k eth0</code>. <strong>Note however</strong> that this will de-configure your interface and you will lose connectivity. This can be fixed by appending the command <code>; sudo systemctl restart dhcpcd.service</code> or similar (e.g. <code>; sudo reboot</code>).</p>
 </div>
 </div>
 <h2 id="more-dhcp">More DHCP</h2>

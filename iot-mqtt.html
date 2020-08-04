@@ -177,13 +177,13 @@
 <h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
 <p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</span></code></pre></div>
 
 <h2 id="testing-your-broker">Testing Your Broker</h2>
 <p>Start Mosquitto:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">mosquitto</span> -v</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">mosquitto</span> -v</span></code></pre></div>
 
 <p>The result should look like this:</p>
 
@@ -192,7 +192,7 @@
 </div>
 <p>You can also check which ports it is connected to:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">netstat</span> –at </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">netstat</span> –at </span></code></pre></div>
 
 <p><strong>For the report:</strong> Document this output.</p>
 
@@ -238,7 +238,7 @@
 <p><strong>Tasks:</strong></p>
 <ul>
 <li>Install Paho MQTT on the Pi. This is a Python library for an MQTT client that can connect to the broker.</li>
-<li><a href="https://pypi.python.org/pypi/paho-mqtt/" class="uri">https://pypi.python.org/pypi/paho-mqtt/</a></li>
+<li><a href="https://pypi.python.org/pypi/paho-mqtt/">https://pypi.python.org/pypi/paho-mqtt/</a></li>
 <li>Write a simple Python program that subscribes to a topic, and prints out whatever you sent as payload in your message.</li>
 <li>Send something to the chosen topic from your laptop using MQTT.fx. Can you see the output in your Python program?</li>
 <li>Write another simple Python program that publishes a message with some payload to a topic.</li>
