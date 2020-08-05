@@ -42,9 +42,12 @@ curl https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg
 
 # mkdir
 
+Create a directory.
 
 
 # rm
+
+Delete a file.
 
 # echo
 
@@ -62,4 +65,6 @@ Changes the password
 # systemctl
 
 # touch
+
+Create a file.
 

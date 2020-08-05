@@ -38,13 +38,10 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="material/2019-08-15-ikt-intro.pdf">IKT Introduksjon (PDF)</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="day1.html">Dag 1: Raspberry Pi</a>
-      <a class="dropdown-item" href="day2.html">Dag 2: Linux</a>
-      <a class="dropdown-item" href="day3.html">Dag 3: IP, SSH og HTML</a>
-      <a class="dropdown-item" href="day4.html">Dag 4: Webserver</a>
-      <a class="dropdown-item" href="day5.html">Dag 5: Recap</a>
+      <a class="dropdown-item" href="day0-2020.html">Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">Dag 3: SSH and HTML</a>
     </div>
   </li>
         
@@ -160,17 +157,17 @@
 <li><p>In the adapter properties, set the parameters as follows:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">IPv4</span> address: 10.0.0.1 </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Network</span> mask: 255.255.255.0 </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">IPv4</span> address: 10.0.0.1 </a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">Network</span> mask: 255.255.255.0 </a></code></pre></div>
 
 <ul>
 <li>In the “DHCP server” tab, configure the DHCP server as follows:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">Server</span> address: 10.0.0.100</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Server</span> Mask: 255.255.255.0</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">Lower</span> address bound: 10.0.0.101</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">Upper</span> address bound: 10.0.0.200 </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">Server</span> address: 10.0.0.100</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">Server</span> Mask: 255.255.255.0</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">Lower</span> address bound: 10.0.0.101</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">Upper</span> address bound: 10.0.0.200 </a></code></pre></div>
 
 <p>When the virtual machines attach to this internal network, they will automatically be given IP addresses in the range 10.0.0.101 to 10.0.0.200.</p>
 
@@ -224,9 +221,9 @@
 <li><p>After it has downloaded, open a terminal and run the following commands:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> Downloads</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">dpkg</span> -i Nessus-8.7.1-debian6_amd64.deb</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">/etc/init.d/nessusd</span> start</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> Downloads</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">dpkg</span> -i Nessus-8.7.1-debian6_amd64.deb</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">/etc/init.d/nessusd</span> start</a></code></pre></div>
 
 <p>Nessus will now start its web interface on port 8834. To access it, point your web browser to “https://localhost:8834”. You will get a warning saying that your connection is insecure. This is because Nessus uses HTTPS with what’s called a “Self-signed certificate”. These certificates are not part of the “Chain-of-trust” and thus the browser cannot verify that the server is who they claim they are. In our case, the kali machine is the server and we are just connecting to our own machine, so we can safely ignore the warning. Click “Advanced” -&gt; “Add exception” to add an exception for Nessus and continue connecting.</p>
 <p>Note: If you ever see a similar warning while browsing the Internet normally, be extremely careful. It could mean that someone is tampering with your traffic!</p>
@@ -249,10 +246,10 @@
 <li>To ensure that we have the latest version of Metasploit installed, we first need to update it:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> update                       % update the repository list</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">apt-get</span> install metasploit-framework % update metasploit</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">msfdb</span> init                           % initialize the database</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">apt-get</span> update                       % update the repository list</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">apt-get</span> install metasploit-framework % update metasploit</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">msfdb</span> init                           % initialize the database</a></code></pre></div>
 
 <h2 id="running-metasploit">Running Metasploit</h2>
 <p>Start Metasploit by running <em>msfconsole</em>: <code># msfconsole</code>. You will soon be greeted by an ASCII welcome logo.</p>
@@ -274,20 +271,20 @@
 <li>Tell Metasploit which module you want to try with the <em>use</em> command:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span></a></code></pre></div>
 
 <ol start="2" type="1">
 <li>Use the <em>show options</em> command to see the parameters that the module uses:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="ex">show</span> options</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="ex">show</span> options</a></code></pre></div>
 
 <ol start="3" type="1">
 <li>With the help of the <em>set</em> command, set the <em>RHOST</em> parameter to the IP address of the victim:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="kw">set</span> <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="kw">set</span> <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></a></code></pre></div>
 
 <ol start="4" type="1">
 <li>type <em>run</em> to run the exploit</li>
@@ -320,10 +317,10 @@
 <li>Run the exploit again to get the backdoor shell back, then run the following commands:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">passwd</span> ttm4175 % Set the password for the new user</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">usermod</span> -aG sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">reboot</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">passwd</span> ttm4175 % Set the password for the new user</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">usermod</span> -aG sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">reboot</span></a></code></pre></div>
 
 <p>The second command will ask you to enter a password for the new user.</p>
 <ul>
@@ -331,8 +328,8 @@
 <li><p>After logging in, test that you still can get root access:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>$ <span class="fu">sudo</span> su % Switch to the root user, <span class="st">&#39;su&#39;</span> means substitute user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># whoami</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="fu">sudo</span> su % Switch to the root user, <span class="st">&#39;su&#39;</span> means substitute user</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># whoami</span></a></code></pre></div>
 
 <p>The last command should print “root” if successful.</p>
 
@@ -342,7 +339,7 @@
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="6713df"></span><aside name="6713df"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="3ac448"></span><aside name="3ac448"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
