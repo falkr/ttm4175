@@ -27,9 +27,6 @@ Snakk med hverandre, og fortell litt om dere selv:
 
 Bruk ca. **5 minutter** til det, slik at dere to blir kjent med hverandre.
 
-## Navneskilt
-
-Lag et navneskilt til partneren din.
 
 ## Presentasjonsrunde
 
