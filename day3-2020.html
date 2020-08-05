@@ -198,10 +198,23 @@
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></span></code></pre></div>
 
+<span name="f9abd9"></span><aside name="f9abd9"><p>The tuple “pi@&lt;ip_address&gt;” means that we are logging in the remote machine with the specified IP address using the user “pi”. The username depends on the account you want to use when you login.</p>
+</aside>
 <p><strong>Note:</strong> a warning message should appear the first time you connect since the certificates being used have never been exchanged before. It is okay to say “yes” and then type in your password.</p>
 <p>You now have access to the terminal of the Raspberry Pi, you access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!</p>
 <p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.</p>
 
+<h3 id="copying-files-to-a-remote-computer">Copying Files to a Remote Computer</h3>
+<p>With <code>ssh</code> you can remotely access a computer. However, you may also want to send or retrieve files to and from that computer. To do so you can use the command <code>scp</code> as such:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">scp</span> <span class="op">&lt;</span>path_to_local_file<span class="op">&gt;</span> pi@<span class="op">&lt;</span>remote_ip_address<span class="op">&gt;</span>:<span class="op">&lt;</span>path_to_destination<span class="op">&gt;</span></span></code></pre></div>
+
+<p>In the example below you will copy the file “log.txt” in the current directory (represented by “./”) to the remote machine with the IP address “10.0.22.1”, saving it in the location “/home/pi/Documents/”</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">scp</span> ./log.txt pi@10.0.22.1:/home/pi/Documents/</span></code></pre></div>
+
+<div class="tip"><p>If you replace the destination path with ‘.’ the files will be copied to the user’s home folder.</p>
+</div>
 <h3 id="playing-a-sound-remotely">Playing a sound… Remotely!</h3>
 <p>Now that you are remotely controlling your Raspberry Pi, issue the following command to download a simple sound file in wav format:</p>
 
@@ -232,7 +245,7 @@
 <h4 id="saving-and-exiting">Saving and exiting</h4>
 <p>If you want to save the changes you’ve made, press <code>Ctrl + O</code>. To exit nano, type <code>Ctrl + X</code>. If you ask nano to exit from a modified file, it will ask you if you want to save it. Just press <code>N</code> in case you don’t, or <code>Y</code> in case you do. It will then ask you for a filename. Just type it in and press Enter.</p>
 <h4 id="open-already-existing-file">Open already existing file</h4>
-<p>To open an already existing file in Nano, we write <code>nano path/to/filename</code> or simply <code>nano filename</code>if you are in the correct folder path. Saving and exiting is the same as above.</p>
+<p>To open an already existing file in Nano, we write <code>nano path/to/filename</code> or simply <code>nano filename</code> if you are in the correct folder path. Saving and exiting is the same as above.</p>
 <p>Check out this list of useful commands used in Nano: <a href="https://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/">Nano Cheatsheet</a></p>
 
 <h2 id="connecting-to-the-server">2. Connecting to the server</h2>
@@ -275,15 +288,17 @@
 
 <p>You can find a sample HTML page <a href="https://home.samfundet.no/~halvogro/komtekintro/sample.txt"><strong>here</strong></a>. Copy and paste these into your <code>index.html</code> or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Have a look at the source of <a href="https://www.nrk.no/">‘https://nrk.no’</a> for instance.</p>
 
-<span name="995c34"></span><aside name="995c34"><p>Decide for yourself if you want to have a personal homepage or not. You can delete the created HTML files and the homepage will disappear. The NTNU Wiki has <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+på+folk-ntnu-no">more info about these homepages</a>.</p>
+<span name="1f5fa9"></span><aside name="1f5fa9"><p>Decide for yourself if you want to have a personal homepage or not. You can delete the created HTML files and the homepage will disappear. The NTNU Wiki has <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+på+folk-ntnu-no">more info about these homepages</a>.</p>
 </aside>
+<div class="tip"><p>You can create your webpage locally, in your PC, and simply upload the files to the remote machine using <code>scp</code>.</p>
+</div>
     </section>
     <section class="content">
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="9bbcc2"></span><aside name="9bbcc2"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="06313e"></span><aside name="06313e"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
