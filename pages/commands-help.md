@@ -4,13 +4,13 @@ There are several ways to find out more about commands.
 
 ## Man-Pages
 
-If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (_man_ for _manual_). For instance, to know read more about the `cd` command, type 
+If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (_man_ stands for _manual_). For instance, to learn more about the `passwd` command, type 
 
 ```bash
 man passwd
 ```
 
-reveals this:
+The command reveals this:
 
 ```bash
 PASSWD(1)                 BSD General Commands Manual                PASSWD(1)
@@ -62,7 +62,7 @@ cpio(1)                  - copy files to and from archives
 ...
 ```
 
-From there you can read that `cp` is probably the right command.
+From there you can read that `cp` is probably the right command you were looking for.
 
 
 
