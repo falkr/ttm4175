@@ -180,6 +180,10 @@ p {
   margin: 15px 0 15px 0
 }
 
+table p {
+  margin: 0px 0px 0px 0px  
+}
+
 h1 {
   font: 200 40px "Source Sans Pro", Georgia, serif;
   color: #1481b8;
