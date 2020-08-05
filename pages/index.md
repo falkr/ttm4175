@@ -1,6 +1,6 @@
-# Introduksjon til Kommunikasjonsteknologi
+# Introduksjon til Kommunikasjonsteknologi og digital sikkerhet
 
-Kurset gir deg oversikt over flere emner innen kommunikasjonsteknologi og informasjonssikkerhet.
+Kurset gir deg oversikt over flere emner innen kommunikasjonsteknologi og digital sikkerhet.
 
 <!--
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
@@ -8,55 +8,122 @@ Kurset gir deg oversikt over flere emner innen kommunikasjonsteknologi og inform
 
 ## Timeplan
 
-De to første ukene er emnet integrert i studiestart:
+I løpet av uke 33 er emnet integrert i studiestart. 
 
-* Uke 33 og 34: [Teknostart](https://www.ntnu.no/studier/teknostart/kommunikasjonsteknologi)
 
-Fra uke 35 har vi følgende rom og tider:
+---
+type: table
+class: table table-sm
+---
+{|
+! Tid
+! Tema
+! Sted
+|-
+| Tirsdag, 11. aug. 10:15 - 12:00
+| Orienteringsmøte
+| [http://bit.ly/2YUdUtG S2]
+|-
+| Tirsdag, 11. aug. 13:15 - 15:00
+| Teknostart <a href="day0-2020.html">Dag 0</a>
+| [http://bit.ly/2YUdUtG S2]
+|-
+| Onsdag, 12. aug. 10:15 - 12:00
+| Teknostart <a href="day1-2020.html">Dag 1</a>
+| digital
+|-
+| Onsdag, 12. aug. 13:15 - 15:00
+| Teknostart <a href="day1-2020.html">Dag 1</a>
+| [http://bit.ly/2YUdUtG S2]
+|-
+| Torsdag, 13. aug. 10:15 - 12:00
+| Teknostart <a href="day2-2020.html">Dag 2</a>
+| digital
+|-
+| Torsdag, 13. aug. 13:15 - 15:00
+| Teknostart <a href="day2-2020.html">Dag 2</a>
+| [http://bit.ly/2YUdUtG S2]
+|-
+| Fredag, 14. aug. 10:15 - 12:00
+| Teknostart <a href="day3-2020.html">Dag 3</a>
+| digital
+|-
+| Fredag, 14. aug. 13:15 - 15:00
+| Teknostart <a href="day3-2020.html">Dag 3</a>
+| [http://bit.ly/2YUdUtG S2]
+|}
 
-* onsdag, 08:15-12:00
-  * Forelesning og forberedelse i [GL-VE VE22 (Smash Lab)](smash.html)
-  * Lab, del 1 i [Sahara Lab](http://s.mazemap.com/1MS2Os5)
-* torsdag, 10:15-12:00 Lab, del 2 [Sahara Lab](http://s.mazemap.com/1MS2Os5)
 
-<div>
-<table class="table table-sm">
-<caption style=""></caption>
-<thead>
-<tr class="row-1">
-<th>Week</th><th>Date</th><th>Preparation</th>
-</tr>
-</thead>
-<tbody class="row-hover">
-<tr class="row-2">
-<td class="column-1">35</td><td class="column-2">28.-29. aug.</td><td class="column-3"><a href="prep-networking-1.html">IPs, Subnets and Routing</a></td></tr>
-<tr class="row-3">
-<td class="column-1">36</td><td class="column-2">4.-5. sep.</td><td class="column-3"><a href="prep-networking-2.html">DNS and DHCP</a></td></tr>
-<tr class="row-4">
-<td class="column-1">37</td><td class="column-2">11.-12. sep.</td><td class="column-3"><a href="prep-networking-3.html">NAT and Wi-Fi</a></td></tr>
-<tr class="row-5">
-<td class="column-1">38</td><td class="column-2">18.-19. sep.</td><td class="column-3"><a href="prep-security-1.html">Security: 1</a></td></tr>
-<tr class="row-6">
-<td class="column-1">39</td><td class="column-2">25.-26. sep.</td><td class="column-3"><a href="prep-security-2.html">Security: 2</a></td></tr>
-<tr class="row-7">
-<td class="column-1">40</td><td class="column-2">2.-3. okt.</td><td class="column-3"><a href="prep-security-3.html">Security: 3</a></td></tr>
-<tr class="row-8">
-<td class="column-1">41</td><td class="column-2">9.-10. okt.</td><td class="column-3"><a href="prep-security-4.html">Security: 4</a></td></tr>
-<tr class="row-9">
-<td class="column-1">42</td><td class="column-2">16.-17. okt</td><td class="column-3"><a href="prep-iot-intro.html">IoT: 1 - Introduction</a></td></tr>
-<tr class="row-10">
-<td class="column-1">43</td><td class="column-2">23.-24. okt.</td><td class="column-3">tba</td></tr>
-<tr class="row-11">
-<td class="column-1">44</td><td class="column-2">30.-31. okt.</td><td class="column-3"><a href="prep-iot-http-json.html">IoT: 2 - HTTP and JSON</a></td></tr>
-<tr class="row-12">
-<td class="column-1">45</td><td class="column-2">6.-7. nov</td><td class="column-3"><a href="prep-iot-mqtt.html">IoT: 3 - MQTT</a></td></tr>
-<tr class="row-13">
-<td class="column-1">46</td><td class="column-2">13.-14. nov.</td><td class="column-3"><a href="prep-iot-api.html">IoT: 4 - APIs and Applications</a></td></tr>
-<tr class="row-14">
-<td class="column-1">47</td><td class="column-2">20.-21. nov.</td><td class="column-3">tba</td></tr>
-</tbody>
-</table>
-</div>
+---
+type: table
+class: table table-sm
+---
+{|
+! Uke
+! Tid
+! Tema 
+|-
+| 33
+| se ovenfor
+| Studiestart
+|-
+| 34
+| 
+| <emph>ingen undervisning i emnet</emph>
+|-
+| 35
+|
+| <a href="prep-networking-1.html">IPs, Subnets and Routing</a>
+|-
+| 36
+|
+| <a href="prep-networking-2.html">DNS and DHCP</a>
+|-
+| 37
+|
+| <a href="prep-networking-3.html">NAT and Wi-Fi</a>
+|-
+| 38
+|
+| <a href="prep-security-1.html">Sikkerhet 1</a>
+|-
+| 39
+|
+| <a href="prep-security-2.html">Sikkerhet 2</a>
+|-
+| 40
+|
+| <a href="prep-security-3.html">Sikkerhet 3</a>
+|-
+| 41
+|
+| <a href="prep-security-4.html">Sikkerhet 4</a>
+|-
+| 42
+| 
+| <emph>info kommer</emph>
+|-
+| 43
+|
+| IoT 1
+|-
+| 44
+|
+| IoT 2
+|-
+| 45
+|
+| IoT 3
+|-
+| 46
+|
+| IoT 4
+|-
+| 47
+|
+| <emph>info kommer</emph>
+|}
+
 
 # Innhold
 
@@ -64,7 +131,7 @@ Emnet består av oppstartsuka, etterfølgt av tre deler med litt forskjellig fok
 
 ## Oppstartsuka
 
-I første uken blir du kjent med datamaskiner og nettverk. Vi kommer til å konfigurere og starte vår egen webserver, og du lærer masse ting rundt dette. 
+I første uken blir du kjent med datamaskiner og nettverk, og får ferdigheter som vi trenger i resten av semesteret og hele studiet. Vi kommer til å kjøre en virtualisert datamaskin i deres egen datamaskin, lære om tilgang via kommandolinje og SSH, og lage deres egen webside.
 
 ---
 type: figure
@@ -84,7 +151,7 @@ Til slutt vil du være i stand til å forstå hvordan du kan:
 * håndtere et datanettverk og
 * beskytte et datanettverk.
 
-Vi kommer til å bruke en Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndtere uønsket tilgang med humor!
+Vi kommer til å bruke en (virtuell) Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndterer uønsket tilgang med humor!
 
 ---
 type: figure
