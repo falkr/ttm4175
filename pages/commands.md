@@ -32,6 +32,12 @@ cd ~
 
 # curl
 
+Download a file from the internet. 
+
+```bash
+curl https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg
+```
+
 # grep
 
 # mkdir
