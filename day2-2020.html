@@ -1,0 +1,453 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4115">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Design of Communicating Systems">
+<meta property="og:description" content="Design of Communicating Systems">
+
+
+<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+
+<!--<script src="jquery-1.10.1.min.js"></script>-->
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="material/2019-08-15-ikt-intro.pdf">IKT Introduksjon (PDF)</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="day1.html">Dag 1: Raspberry Pi</a>
+      <a class="dropdown-item" href="day2.html">Dag 2: Linux</a>
+      <a class="dropdown-item" href="day3.html">Dag 3: IP, SSH og HTML</a>
+      <a class="dropdown-item" href="day4.html">Dag 4: Webserver</a>
+      <a class="dropdown-item" href="day5.html">Dag 5: Recap</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Networking</strong></a>
+      <a class="dropdown-item" href="prep-networking-1.html">IPs, Subnets and Routing</a>
+      <a class="dropdown-item" href="prep-networking-2.html">DNS and DHCP</a>
+      <a class="dropdown-item" href="prep-networking-3.html">NAT and Wi-Fi</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item" href="prep-security-1.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Networking</strong></a>
+        <a class="dropdown-item" href="networking-1.html">IPs, Subnets and Routing</a>
+        <a class="dropdown-item" href="networking-2.html">DNS and DHCP</a>
+        <a class="dropdown-item" href="networking-3.html">NAT and Wi-Fi
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1.html">Security 1</a>
+        <a class="dropdown-item" href="security-2.html">Security 2</a>
+        <a class="dropdown-item" href="security-3.html">Security 3</a>
+        <a class="dropdown-item" href="security-4.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+		<a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <a class="dropdown-item" href="virtual-machine.html">Virtual Machine</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1 id="day-2-the-linux-terminal">Day 2: The Linux Terminal</h1>
+<p>Today, many of you will take your first steps with the powerful Linux terminal.</p>
+<h3 id="learning-goals">Learning Goals</h3>
+
+<div class="goals"><ul>
+<li>Become familiar with Linux commands and the terminal</li>
+<li>Feel at home on the Raspberry Pi</li>
+<li>Understand user permissions</li>
+</ul>
+</div>
+<h3 id="new-linux-commands">New Linux Commands</h3>
+<ul>
+<li><a href="commands.html#cat">cat</a> — concatenate files (and lots more)</li>
+<li><a href="commands.html#cd">cd</a> — change into another directory</li>
+<li><a href="commands.html#curl">curl</a> — powerful tool for web requests, among other to download a file</li>
+<li><a href="commands.html#ls">ls</a> — list files and folders</li>
+<li><a href="commands.html#pwd">pwd</a> — show in which directory you are</li>
+<li><a href="commands.html#sudo">sudo</a> — running commands as super user</li>
+<li><a href="commands.html#mkdir">mkdir</a> — create a folder</li>
+<li><a href="commands.html#rmdir">rmdir</a> — remove a folder</li>
+<li><a href="commands.html#sudo">rm</a> — remove a file</li>
+<li><a href="commands.html#sudo">touch</a> — create a file</li>
+<li><a href="commands.html#grep">grep</a> — search for text in a file</li>
+</ul>
+
+<p>At the top of the page with the list of commands, we <a href="commands.html">listed three ways to find more about commands</a>: <code>man</code>, <code>apropos</code> and the <code>--help</code> option.</p>
+
+    </section>
+    <section class="content">
+<h1 id="navigating-folders-and-files">Navigating Folders and Files</h1>
+<p>On Linux, <strong>files</strong> are sorted in <strong>folders</strong>, just like you are used to from other computers. Sometimes, <em>folder</em> are also called <em>directories</em>. Since folders can be other folders, this creates a tree-like hierarchy. Each file and folder therefore has a <strong>path</strong>.</p>
+<p>The path of the home directory, for instance, is in <code>/home/pi</code>, for the default user with the name <code>pi</code>. There are two things about paths you need to remember:</p>
+<ul>
+<li>They start with a <code>/</code> in the beginning, this is the topmost folder. This topmost folder is also called <em>root</em> folder.</li>
+<li>The different folders and files are separated by <code>/</code>.</li>
+</ul>
+
+<h3 id="find-out-where-you-are-with-pwd">Find out where you are with pwd</h3>
+<p>When you are in the terminal, you are always in some folder. When you boot up and just open a terminal, you usually start in the home folder. If you are not sure, where you are currently, type the <code>pwd</code> command, which stands for <em>“<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory”</em>.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">pwd</span></span></code></pre></div>
+
+<p>The output of this command will then be the path of the current folder you are in.</p>
+<h3 id="change-the-folder-with-cd">Change the folder with cd</h3>
+<p>Using the <code>cd</code> command, which stands for <em>“<strong>c</strong>hange <strong>d</strong>irectory”</em>, you can change into any directory, using its path. Type the following to move into your home folder:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /home/pi</span></code></pre></div>
+
+<p>Since the home folder is so so useful, its path has an abbreviation, which is the funny snake <code>~</code> (tilde). You can hence also write the following to change into the home directory:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> ~</span></code></pre></div>
+
+<p>If you want to move just one folder up in the hierarchy, for example, you are in <code>/home/pi</code> but would like to go into <code>/home/</code>, you can do that with the special path <code>..</code>. Here, the <code>..</code> just means “one up”. So, we can type the following:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> ..</span></code></pre></div>
+
+<p>This moves you one folder up. You can check where you are using the <code>pwd</code> command.</p>
+<h3 id="listing-folder-content-with-ls">Listing Folder Content with ls</h3>
+<p>To look at the files and folders inside a folder use the <code>ls</code> command. (Remember it with the word <em>“<strong>l</strong>i<strong>s</strong>t”</em>.) For example, move into the root folder at the top and see which files and folders are listed there:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /</span></code></pre></div>
+
+<p>and then</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+
+<p>will list the following:</p>
+
+<div class="figure">
+<img src="figures/teknostart/rpi-terminal-folders-1.png" width="100%"/>
+</div>
+<p>Note that there are different colors for folders and files.</p>
+<p>If you want some more detailed information about folders and files, you can use the <code>ls -l</code> command, that means, the <code>ls</code> command with an <strong>option</strong> <code>-l</code>. When you invoke it in the root folder, for instance:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span> -l</span></code></pre></div>
+
+<p>now the listing will look as follows:</p>
+
+<div class="figure">
+<img src="figures/teknostart/rpi-terminal-folders-2.png" width="100%"/>
+</div>
+    </section>
+    <section class="content">
+<h1 id="creating-folders-and-files">Creating Folders and Files</h1>
+<h3 id="touch-and-rm">touch and rm</h3>
+<p>You can create a file with the command <code>touch</code>. The created file is empty, but you can then use other programs, for example a text editor, to add content to it.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">touch</span> file.txt</span></code></pre></div>
+
+<p>With the <code>rm</code> <em>(“<strong>r</strong>e<strong>m</strong>ove”)</em>, you can delete a file:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">rm</span> file.txt</span></code></pre></div>
+
+<div class="tip"><p>Be careful with the <strong>rm</strong> command. You can destroy your system when you delete the wrong files. You won’t get them back.</p>
+</div>
+<h3 id="mkdir-and-rmdir">mkdir and rmdir</h3>
+<p>You can create a folder or directory with the <code>mkdir</code> command. <em>(“<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory”)</em></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mkdir</span> mydirectory</span></code></pre></div>
+
+<p>With the <code>rmdir</code> <em>(“<strong>r</strong>e<strong>m</strong>ove <strong>dir</strong>ectory”)</em> command, you can delete a directory</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">rmdir</span> mydirectory</span></code></pre></div>
+
+    </section>
+    <section class="content">
+<h1 id="advanced-file-stuff">Advanced File Stuff</h1>
+<h3 id="grep">grep</h3>
+<p>With the <code>grep</code> command, you can read a file and out put all lines that match a certain criteria. For example, the following command finds all lines that include the string <code>hello</code> in the file <code>log.txt</code>.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">grep</span> hello log.txt</span></code></pre></div>
+
+<h3 id="cat">cat</h3>
+<p>With the <code>cat</code> command, you can simply view the contents of a file. The following will print the contents of the file <code>log.txt</code>.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">cat</span> log.txt</span></code></pre></div>
+
+    </section>
+    <section class="content">
+<h1 id="being-super-user">Being Super User</h1>
+<p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. Sometimes you just add this in front of another command that you want to execute with special rights.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></span></code></pre></div>
+
+<p>Think of it as when your parents told you to say “Please!”</p>
+
+    </section>
+    <section class="content">
+<h1 id="command-memory">Command Memory</h1>
+<p>Go through the command descriptions above. Read together as good as it works, repeat reading this on your own as homework. You can use the commands <a href="commands.html">listed here</a> to get help with the solutions.</p>
+<p>Use the scissors and create a stack of cards.</p>
+
+<h2 id="round-1-commands-and-their-purpose">Round 1: Commands and their Purpose</h2>
+
+<div class="steps"><ul>
+<li>Create one stack of cards, place the command keywords facing up.</li>
+<li>Shuffle them a bit.</li>
+<li>Each of you should draw the top card, read the command keyword, and tell the others (without looking) what the command is used for.</li>
+<li>Turn the card around to see if you were right. If not, put the card to the end of the stack.</li>
+<li>Repeat until you went through all cards.</li>
+</ul>
+</div>
+<div class="figure">
+<img src="figures/teknostart/command-memory-1.jpg" width="100%"/>
+</div>
+<h2 id="round-2-which-command-to-use">Round 2: Which command to use?</h2>
+
+<div class="steps"><ul>
+<li>Place all cards with the command facing upwards on the table.</li>
+<li>Read the list below, and find the proper command.</li>
+<li>Only if you agree in team, turn the card around and see if you were right.</li>
+</ul>
+</div>
+<div class="figure">
+<img src="figures/teknostart/command-memory-2.jpg" width="100%"/>
+</div>
+<p>The commands you should look for:</p>
+<ol type="1">
+<li>change into another directory<br />
+</li>
+<li>create a new empty file<br />
+</li>
+<li>delete a directory</li>
+<li>delete a file<br />
+</li>
+<li>download a file from a web address</li>
+<li>find lines in a file<br />
+</li>
+<li>list the contents of a directory<br />
+</li>
+<li>make a new directory<br />
+</li>
+<li>print the contents of a file<br />
+</li>
+<li>read the help for a command</li>
+<li>run a command as super user</li>
+<li>search in help pages</li>
+</ol>
+
+    </section>
+    <section class="content">
+<h1 id="capture-the-flag">Capture the Flag</h1>
+<p>Capture the Flag (CTF) is a special kind of information security competition. The goal is to collect passwords, or <strong>flags</strong> to progress. There are three common types of CTFs: Jeopardy, Attack-Defence and mixed.</p>
+<ul>
+<li>Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example, Web, Forensic, Crypto, Binary or something else. A team gets some points for every solved task. Generally teams will be awarded more points for more difficult tasks. The next task in the chain will be unlocked after you solve the previous one. The team with the most points when the time is over is the winner. A famous example of this kind of CTF is the DEFCON CTF Qualifier.</li>
+<li>Attack-defence is another interesting kind of competition. Here every team has their own network, with many machines, or a single computer, with vulnerable services. The teams are given an amount of time to patch services and secure the network or system and developing exploits to hack the systems of other teams. So, then organizers connects participants of competition and the wargame starts! You should protect own services for defence points and hack opponents for attack points. Historically this is a first type of CTFs, everybody knows about DEF CON CTF - something like a World Cup of all other competitions.</li>
+</ul>
+<p>Today we are going to do a relatively short Jeopardy-style CTF. The category is Linux, which means that the security aspect of the CTF is not really present. It is more of a way to become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
+
+<h2 id="preparing-the-ctf">Preparing the CTF</h2>
+<h3 id="step-1-move-to-the-home-directory">Step 1: Move to the Home Directory</h3>
+<p>Open the terminal and check in which folder you are. We do that with the command <code>pwd</code> (<em>“print working directory”</em>):</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">pwd</span></span></code></pre></div>
+
+<p>The output shows in which folder or directory you are. Move into your home directory, using the <code>cd</code> (<em>“change directory”</em>) command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /home/pi/</span></code></pre></div>
+
+<div class="tip"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
+</div>
+<h3 id="step-2-download-ctf">Step 2: Download CTF</h3>
+
+<p>We now download the file containing the CTF program.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">curl</span> https://home.samfundet.no/~halvogro/ting/teknostart_ctf.zip -O</span></code></pre></div>
+
+<div class="tip"><p>When you download such a file and then run it, you need to make sure that you know what it contains or trust its origin. The file can run programs that have access to everything on your computer.</p>
+</div>
+<h3 id="step-3-install-and-run">Step 3: Install and run</h3>
+<p>With <code>curl</code>, you downloaded a zip file. All the files needed for the CTF is here.</p>
+<ol type="1">
+<li>Unzip the files by typing <code>unzip teknostart_ctf.zip</code></li>
+</ol>
+<p>To be able to run the program we first need to some files.</p>
+<ol start="2" type="1">
+<li>Type <code>cd teknostart_ctf</code> to change directory to the folder you just unzipped.</li>
+<li>Type <code>pwd</code> and confirm that you are inside the <code>/home/pi/teknostart_ctf</code> folder.</li>
+</ol>
+<p>Here there are three files that are important for the CTF:</p>
+<ul>
+<li><code>teknostart_ctf.py</code>, which is the actual CTF program, it will be demonstrated later how to use it.</li>
+<li>This is a terminal based game and is written in the programming language <a href="(https://www.python.org/)">Python</a></li>
+<li><code>levelcheck</code> is needed for some levels and checks if the tasks has been completed. It prints out the flag if the task has been done correctly. Used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.</li>
+<li><code>install</code> is an executable program that is only going to be run once to set everything up.</li>
+</ul>
+<p>To run an executable file in the folder that you are currently in, we type <code>./</code> followed by the name of the program.</p>
+<ol start="4" type="1">
+<li>Type <code>./install</code> to run the installer.</li>
+</ol>
+<p>Now we are ready to begin the CTF.</p>
+
+    </section>
+    <section class="content">
+<h1 id="example-first-ctf-task">Example: First CTF Task</h1>
+<h3 id="step-1">Step 1</h3>
+<p>Run the program for the first time:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">./teknostart_ctf.py</span></span></code></pre></div>
+
+<p>You should get an output back that looks like this.</p>
+
+<pre><code>CURRENT LEVEL: level 1
+
+----------------------------------------
+
+In which folder are you located when you open the terminal?
+
+Example answer:      /folder/folder      
+Answer given:        None                
+Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
+Correct hash:        1c4d3877bf4fe64f9d55cdbbf10d9b02c329b2a5a162ae3014b83da8c3024a71
+Levelchecker:        NO                  
+
+----------------------------------------
+</code></pre>
+
+<ul>
+<li><code>CURRENT LEVEL</code> <em>is the level that you are currently on, this will increase as you progress</em></li>
+<li><code>Question</code> <em>is the task for this level, read it carefully</em></li>
+<li><code>Example answer</code> <em>is an example answer to give you an idea of what format the answer should be. for instance, when asked about a file name, this example tries to show that we are looking for the full filename, including the file ending <code>.txt</code>.</em></li>
+<li><code>Answer given</code> <em>is the answer you gave, which is “None” by default</em></li>
+<li><code>Hash of answer</code> <em>is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a <a href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> which it will try to compare to the hashed version of the correct answer.</em></li>
+<li><code>Correct hash</code> <em>is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct</em></li>
+<li><code>levelcheck</code> <em>Tells you if you have to get check that you done the task correctly.</em> – The value is either <code>YES</code> or <code>NO</code> for each level. If this says <code>YES</code>, it means you have to navigate to <code>/home/pi/teknostart_ctf</code> and run <code>./levelcheck</code> to check that you have completed the task correctly. If you have, you will get the password (flag) to progress to the next level.</li>
+</ul>
+
+<h3 id="step-2-solve-the-task">Step 2: Solve the task</h3>
+<p>The first you will see is what level you are on, in this case, level 1. As you progress, this will increase. Next is the challenge for this level. This question asks for the folder path that you are in when you each time you launch a new terminal.</p>
+<p>First we open a new terminal: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-47.png" alt="alt text" /></p>
+<p>Now, to check which folder location we are in, we type <code>pwd</code></p>
+<figure>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-48.png" alt="alt text" /><figcaption aria-hidden="true">alt text</figcaption>
+</figure>
+<p>As we can see, we are located in <code>/home/pi</code>.</p>
+<h3 id="step-3-check-if-you-got-the-correct-answer">Step 3: Check if you got the correct answer</h3>
+<p>To test our answer, we run the program again and input our answer <code>/home/pi</code>.</p>
+<p>First we change directory back to where the program <code>teknostart_ctf.py</code> is located.</p>
+<p>Because we are already inside the folder <code>/home/pi</code> we can simply type <code>cd teknostart_ctf</code>, which will put us in <code>/home/pi/teknostart_ctf</code>.</p>
+<p>When we now type <code>ls</code> to list the files in the directory, we se our <code>teknostart_ctf.py</code>file. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-50.png" alt="alt text" /></p>
+<p>We can now run it, and input our answer <code>/home/pi</code>. <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-52.png" alt="alt text" /></p>
+<p>Success! We had the right flag. The next task is given to us, try to solve that and as many of the following tasks as you can.</p>
+
+    </section>
+    <section class="content">
+<h1 id="final-steps">Final Steps</h1>
+<h3 id="learning-goals">Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
+
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
+<h3 id="individual-reflection">Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
+
+<h3 id="cleaning-up">Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3 id="individual-exercises">Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+</div>
+    </section>
+</div>
+
+
+<footer></footer>
+</body>
+</html>
