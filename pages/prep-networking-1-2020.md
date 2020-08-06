@@ -1,4 +1,4 @@
-# IP Addresses, Subnets and Routing
+# Binary and IP Addresses
 
 Last week you have already learned about IP addresses and how to connect your Raspberry Pi to the Internet.
 Now you will learn even more about IP addressing and the fundamental aspects that enable the Internet.
@@ -22,7 +22,7 @@ Each week will focus on specific sections that need to be read and understood.
 - Create and configure Local Area Networks (LANs)
 - Use basic Linux commands for managing:
     - IP addresses (IPv4 and IPv6)
-    - IP subnets
+    - IP subnets and masks
 
 
 # How do computers communicate?

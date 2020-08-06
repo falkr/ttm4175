@@ -73,7 +73,7 @@ class: table table-sm
 |-
 | 35
 |
-| <a href="prep-networking-1-2020.html">IPs and Subnets</a>
+| <a href="prep-networking-1-2020.html">Binary and IP addresses</a>
 |-
 | 36
 |
