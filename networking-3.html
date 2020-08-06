@@ -51,9 +51,9 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
-      <a class="dropdown-item" href="prep-networking-1.html">IPs, Subnets and Routing</a>
-      <a class="dropdown-item" href="prep-networking-2.html">DNS and DHCP</a>
-      <a class="dropdown-item" href="prep-networking-3.html">NAT and Wi-Fi</a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">IPs and Subnets</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Security</strong></a>
       <a class="dropdown-item" href="prep-security-1.html">Security 1: Cyber Security and Ethical Hacking </a>
@@ -74,9 +74,9 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
-        <a class="dropdown-item" href="networking-1.html">IPs, Subnets and Routing</a>
-        <a class="dropdown-item" href="networking-2.html">DNS and DHCP</a>
-        <a class="dropdown-item" href="networking-3.html">NAT and Wi-Fi
+        <a class="dropdown-item" href="networking-1-2020.html">IPs and Subnets</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1.html">Security 1</a>
@@ -253,12 +253,12 @@ Hint (wpa_supplicant)
 <li>Enable IP forwarding in the <em>router</em> and activate IP Masquerading with the following commands:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> sysctl -w net.ipv4.ip_forward=1</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i eth0 -o wlan0 -j DROP</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i wlan0 -o eth0 -j DROP</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="fu">sudo</span> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="fu">sudo</span> iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="fu">sudo</span> iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> sysctl -w net.ipv4.ip_forward=1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i eth0 -o wlan0 -j DROP</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i wlan0 -o eth0 -j DROP</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="fu">sudo</span> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT</span></code></pre></div>
 
 <div class="steps"><ol start="3" type="1">
 <li>Verify that the <em>client</em> is now able to connect to any Internet server.</li>
