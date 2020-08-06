@@ -73,15 +73,15 @@ class: table table-sm
 |-
 | 35
 |
-| <a href="prep-networking-1.html">IPs, Subnets and Routing</a>
+| <a href="prep-networking-1-2020.html">IPs and Subnets</a>
 |-
 | 36
 |
-| <a href="prep-networking-2.html">DNS and DHCP</a>
+| <a href="prep-networking-2-2020.html">Routing and Docker</a>
 |-
 | 37
 |
-| <a href="prep-networking-3.html">NAT and Wi-Fi</a>
+| <a href="prep-networking-3-2020.html">Webservers and DNS</a>
 |-
 | 38
 |
@@ -210,13 +210,13 @@ Til slutt vil du være i stand til å forstå hvordan du kan:
 
 * lage et datanettverk,
 * håndtere et datanettverk og
-* beskytte et datanettverk.
+* bruke Docker _containers_.
 
-Vi kommer til å bruke en (virtuell) Raspberry Pi som en trådløs ruter med en innebygd brannmur og håndterer uønsket tilgang med humor!
+Vi kommer til å bruke en (virtuell) Raspberry Pi som en datamaskin tilknyttet til en "Docker sky".
 
 ---
 type: figure
-source: figures/net/networking.png
+source: figures/net/networking-2020.png
 ---
 
 
