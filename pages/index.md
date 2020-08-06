@@ -69,7 +69,7 @@ class: table table-sm
 |-
 | 34
 | 
-| <emph>ingen undervisning i emnet</emph>
+| ''ingen undervisning i emnet''
 |-
 | 35
 |
@@ -101,7 +101,7 @@ class: table table-sm
 |-
 | 42
 | 
-| <emph>info kommer</emph>
+| ''info kommer''
 |-
 | 43
 |
@@ -121,8 +121,69 @@ class: table table-sm
 |-
 | 47
 |
-| <emph>info kommer</emph>
+| ''info kommer''
 |}
+
+
+Uke 34 er det ingen undervisning i emnet. Fra uke 35 har vi følgende tidene og rom reservert:
+
+
+---
+type: table
+class: table table-sm
+---
+{|
+! Uke
+! Tid
+! Sted
+! Tema 
+|-
+| 35
+| Man. 24. aug. 8:15-10:00
+| digital
+| Networking 1
+|-
+| 
+| Ons. 26. aug. 8:15-10:00
+| S5
+| Networking 1
+|-
+| 
+| Tor. 27. aug. 10:15-14:00
+| digital
+| Networking 1
+|-
+| 36
+| Man. 31. aug. 8:15-10:00
+| digital
+| Networking 2
+|-
+| 
+| Ons. 2. sep. 8:15-10:00
+| S5
+| Networking 2
+|-
+| 
+| Tor. 3. sep. 10:15-14:00
+| digital
+| Networking 2
+|-
+| 37
+| Man. 7. sep. 8:15-10:00
+| digital
+| Networking 3
+|-
+| 
+| Ons. 9. sep. 8:15-10:00
+| S5
+| Networking 3
+|-
+| 
+| Tor. 10. sep. 10:15-14:00
+| digital
+| Networking 3
+|}
+
 
 
 # Innhold
