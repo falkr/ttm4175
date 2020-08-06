@@ -8,6 +8,7 @@ We will be using this book in the upcoming three weeks and in the course TTM4200
 
 :aside: If you get the 8th edition there's no problem, the main contents are similar.
 
+
 Reading the *first chapter is recommended* but not mandatory.
 Each week will focus on specific sections that need to be read and understood.
 *Details about the required readings will be available every week, **in bold**.*
