@@ -5,6 +5,12 @@ Install the file that ends with `.exe` to install virtual box. Most likely, you 
 
 ---
 type: figure
+source: figures/teknostart/vbwin/vb-0.png
+caption: ""
+---
+
+---
+type: figure
 source: figures/teknostart/vbwin/vb-1.png
 caption: ""
 ---
