@@ -1,8 +1,8 @@
 # Grupperefleksjon
 
 Du har nå kommet til et nytt sted og møter nye folk som du skal jobbe med. 
-I kommunikasjonsteknologi kommer det til å være mye gruppearbeid og det er viktig å få en god samarbeidskompetanse for å fungere sammen som et team. 
-Målet med grupperefleksjonen er å la dere få reflektere over hva som er bra og dårlig med å jobbe i en gruppe.
+I kommunikasjonsteknologi og digital sikkerhet kommer det til å være mye gruppearbeid og det er viktig å få en god samarbeidskompetanse for å fungere sammen som et team. 
+Målet med grupperefleksjonen er å la dere få reflektere over hva som er bra eller utfordrende med å jobbe i en gruppe.
 
 
 
@@ -18,12 +18,13 @@ Deler av oppgaven gjøres som par. Hvis dere har et ulik antall, la noen jobbe s
 ## Navnerunde (i par)
 
 Snakk med hverandre, og fortell litt om dere selv:
+
 - hva dere heter
 - hvor gammel dere er
 - hvor dere kommer fra
 - interesser, en hobby
-- Hvorfor valgte dere kommunikasjonsteknologi?
-- Hva vil dere lære i løpet av din tid på NTNU?
+- Hvorfor valgte dere kommunikasjonsteknologi og digital sikkerhet?
+- Hva vil dere lære i løpet av tiden ved NTNU?
 
 Bruk ca. **5 minutter** til det, slik at dere to blir kjent med hverandre.
 
