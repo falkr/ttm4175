@@ -51,7 +51,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
-      <a class="dropdown-item" href="prep-networking-1-2020.html">IPs and Subnets</a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
       <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
       <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
@@ -74,7 +74,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
-        <a class="dropdown-item" href="networking-1-2020.html">IPs and Subnets</a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
         <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
         <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
@@ -177,14 +177,24 @@
     </section>
     <section class="content">
 <h1 id="downloading-the-necessary-software">Downloading the necessary software</h1>
-<p>Before continuing with the tasks for today please download the software below. You can start the downloads and proceed to the next step before they finish.</p>
+<p>Before continuing with the tasks for today, please download the files and software below. You can start the downloads and proceed to the next step before they finish.</p>
+<h2 id="raspbian-virtual-image">Raspbian Virtual Image</h2>
+<p>This file contains an operating system that we will later install into the virtual computer.</p>
+<p><a href="https://filesender.uninett.no/?s=download&amp;token=b5df913b-dd10-49bb-80b4-0301e70e514e">Raspbian Virtual Image on Filesender (1.4 GB)</a></p>
 
-<div class="steps"><ol type="1">
-<li>Raspbian Virtual Image (large download!): <a href="https://filesender.uninett.no/?s=download&amp;token=b5df913b-dd10-49bb-80b4-0301e70e514e">here!</a>,</li>
-<li>Virtual Box: <a href="https://www.virtualbox.org/" class="uri">https://www.virtualbox.org/</a>, and</li>
-<li>Virtual Box Extensions: <a href="https://www.virtualbox.org/" class="uri">https://www.virtualbox.org/</a>.</li>
-</ol>
+<div class="figure">
+<img src="figures/teknostart/filesender.jpg" width="100%"/>
 </div>
+<h2 id="virtual-box">Virtual Box</h2>
+<p>Virtual Box is the program that allows us to run other computers within your own computer. The homepage for Virtual Box is <a href="https://www.virtualbox.org">here</a>.</p>
+
+<div class="steps"><ul>
+<li><strong>Download</strong> Virtual Box 6.1.12 for your operating system from the <a href="https://www.virtualbox.org/wiki/Downloads">download page</a>. Most likely you need <a href="https://download.virtualbox.org/virtualbox/6.1.12/VirtualBox-6.1.12-139181-Win.exe">this version for Windows</a> and <a href="https://download.virtualbox.org/virtualbox/6.1.12/VirtualBox-6.1.12-139181-OSX.dmg">this version for Mac</a>.</li>
+<li><strong>Download</strong> Virtual Box <strong>Extensions</strong> from the download page, most likely <a href="https://download.virtualbox.org/virtualbox/6.1.12/Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack">this file</a>.</li>
+</ul>
+</div>
+<p>While the files download, we proceed to the next task.</p>
+
     </section>
     <section class="content">
 <h1 id="teamwork">Teamwork</h1>
@@ -192,7 +202,7 @@
 <p>The teams are <strong>fixed over the semester</strong> so that you get used to each other and develop a better team dynamic over time.</p>
 <p>During the beginning of the lab, when we do quizzes, for example, we join always two teams of three into a <strong>double-team</strong> of six students. The pairing of the teams is also the same each week. Team 1 is a double team with team 2, and team 3 with team 4, and so on.</p>
 
-<span name="888a2d"></span><aside name="888a2d"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
+<span name="f937e1"></span><aside name="f937e1"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
 </aside>
 <p>We start with a task on teamwork.</p>
 
@@ -344,13 +354,13 @@
 <p>However, since you will be connected to the Internet, you want to prevent others from accessing your machine and creating trouble.</p>
 <p>Therefore we need to change the password before we connect the Pi to the network. For this, we use the command <code>passwd</code>. Type the command in the command line and press the <code>Enter</code> key:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">passwd</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">passwd</span></a></code></pre></div>
 
 <p>Select a strong password and share it with your team members so you can try to remotely access each other’s VM.</p>
 <h2 id="checking-existing-files">Checking existing files</h2>
 <p>In Unix-based file systems everything is organised in a “tree” structure, where “/” is the root. To see the files in your current directory type the <code>ls</code> command and compare the output with the files in the graphical user interface.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span></a></code></pre></div>
 
 <p>To learn more check these links:</p>
 
@@ -365,7 +375,7 @@
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="6ba1e0"></span><aside name="6ba1e0"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="3aba2e"></span><aside name="3aba2e"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
