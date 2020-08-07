@@ -51,7 +51,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
-      <a class="dropdown-item" href="prep-networking-1-2020.html">IPs and Subnets</a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
       <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
       <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
@@ -74,7 +74,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
-        <a class="dropdown-item" href="networking-1-2020.html">IPs and Subnets</a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
         <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
         <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
@@ -107,6 +107,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -197,10 +198,10 @@
 <p>Now that we can send a simple string as a response, let’s make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
 <script src="https://gist.github.com/falkr/d3140ef3386a7606a38ee83b9a7ba4ac.js"></script>
 <ul>
-<li><p>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</p></li>
-<li><p>Exchange the simple string in the web server so that it instead returns the HTML page created by this function.</p></li>
+<li>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</li>
+<li>Exchange the simple string in the web server so that it instead returns the HTML page created by this function.</li>
 <li><p>To make all correct and tidy, update the line where we set the content type so that it uses <code>self.send_header("Content-type", "text/html")</code>.</p></li>
-<li><p>Now go back to the browser, and access the website again. What changed?</p></li>
+<li>Now go back to the browser, and access the website again. What changed?</li>
 <li><p>Can you set the title of the website?</p></li>
 </ul>
 

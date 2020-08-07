@@ -51,7 +51,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
-      <a class="dropdown-item" href="prep-networking-1-2020.html">IPs and Subnets</a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
       <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
       <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
@@ -74,7 +74,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
-        <a class="dropdown-item" href="networking-1-2020.html">IPs and Subnets</a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
         <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
         <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
@@ -107,6 +107,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
       <a class="dropdown-item" href="smash.html">Finding the Smash Lab</a>
     </div>
@@ -186,7 +187,7 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <h1 id="the-slack-api">The Slack API</h1>
 <p>Slack is a messaging application that allows to integrate other platforms to integrate via APIs. It is simple, for instance, to add so-called <em>bots</em> to the service, which can add all kind of functions. For instance, I often run some code on a server for experiments. With only a few lines of code I can make this code to send a message via Slack so that I am notified once the job is done. In the lab for this unit we are going to build an alarm system with Slack.</p>
 
-<span name="2f7088"></span><aside name="2f7088"><p>If you like, have a look at the article <a href="https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots">Slack Is Overrun With Bots. Friendly, Wonderful Bots</a>.</p>
+<span name="43077d"></span><aside name="43077d"><p>If you like, have a look at the article <a href="https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots">Slack Is Overrun With Bots. Friendly, Wonderful Bots</a>.</p>
 </aside>
 <p>Slack does not only use a single API, but several ones:</p>
 <ul>
@@ -196,7 +197,7 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 </ul>
 <p>This may be confusing at first, but when you know about the underlying technologies, it makes more sense. In the lab, we are only going to use the Web API, but this selection shows you how many possibilities there are for APIs. And there are much more!</p>
 
-<span name="572b19"></span><aside name="572b19"><p>Have a look at the article <a href="https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889">Which API is right for your Slack app?</a>.</p>
+<span name="5c421d"></span><aside name="5c421d"><p>Have a look at the article <a href="https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889">Which API is right for your Slack app?</a>.</p>
 </aside>
     </section>
     <section class="content">
@@ -213,14 +214,14 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 </ul>
 <p>The benefit of the client library (for instance in Python) is the convenience. The client library can offer additional functions so that the HTTP requests are encoded correctly, and data is handled consistently. For a programmer, it almost appears as if Slack was running locally on the computer, since all the HTTP requests are hidden within the library.</p>
 
-<span name="f17677"></span><aside name="f17677"><p>Remember the <em>remote procedure calls</em> from above? These client libraries for web-based APIs achieve basically the same thing. Why technology has gone this way instead of using “real” remote procedure calls is hard to say, and there may not be a single reason. It can have to do with not depending on a specific programming language, or worries of scalability, for example.</p>
+<span name="be5cbd"></span><aside name="be5cbd"><p>Remember the <em>remote procedure calls</em> from above? These client libraries for web-based APIs achieve basically the same thing. Why technology has gone this way instead of using “real” remote procedure calls is hard to say, and there may not be a single reason. It can have to do with not depending on a specific programming language, or worries of scalability, for example.</p>
 </aside>
     </section>
     <section class="content">
 <h1 id="rest">REST</h1>
 <p>Some APIs are called REST APIs, because they follow a certain architectural style that makes it easier (or possible at all) that the APIs are offered with some desirable properties. Such properties are for instance performance and scalability, which are important once an API has a lot of users at the same time. The idea is to use similar mechanisms to enable such properties that also make HTTP work. And, while REST is not constrained to HTTP, most APIs that adhere to the REST principles are implemented in HTTP. Therefore, it is also okay to think of REST as a set of rules how an API can be expressed using HTTP.</p>
 
-<span name="90d358"></span><aside name="90d358"><p>The following properties are copied form <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582">this article</a></p>
+<span name="c0124d"></span><aside name="c0124d"><p>The following properties are copied form <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582">this article</a></p>
 </aside>
 <p>If you don’t understand all of these constraints completely, or why they are important, don’t worry too much for now. REST is an architectural style, which encapsulates a lot of experience. Some issues are not so simple to grasp even for developers that have worked for some years. Still—read through them. Many of these concepts and terms will come up often.</p>
 <ul>
