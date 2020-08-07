@@ -1,32 +1,37 @@
-# Tilbakemelding
+# Tilbakemelding og hjelp
 
-Vi er svært interessert å få din tilbakemelding for å kunne forbedre undervisningen. Hvis det er noe du syntes som kan forbedres eller noe du syntes som er veldig bra som vi bør fortsette med, så setter vi stor pris på dine kommentarer. Det er flere måter å gi din tilbakemelding på:
+Vi er svært interessert å få din tilbakemelding for å kunne forbedre undervisningen. Hvis det er noe du synes som kan forbedres eller noe du synes som er veldig bra som vi bør fortsette med, så setter vi stor pris på dine kommentarer. Det er flere måter å gi din tilbakemelding på:
 
-* Direkte tilbakemelding til faglærere, vit.ass og stud.ass.
+* Direkte tilbakemelding til faglærere, vit.ass og stud.ass. Ikke nøl å sende oss epost eller direkte medlinger på Teams.
 * Tilbakemelding til referansegruppen (se under).
-* Tilbakemelding gjennom semesterundersøkelsene arrangert av Studieprogramrådet for KomTek
+* Tilbakemelding gjennom semesterundersøkelsene ved slutten av semesteret.
 
-Du kan lese mer om utdanningskvalitet [her](http://www.item.ntnu.no/academics/quality|her).
+Du kan lese mer om [referansegrupper](https://innsida.ntnu.no/wiki/-/wiki/Norsk/referansegruppe+-+for+studenter).
 
 ## Referansegruppen
 
 Referansegruppen i emnet består av 3-6 studenter som har ansvar for å bringe tilbakemeldinger i emnet til fagpersonell. Du er også velkommen til å gi tilbakemeldinger direkte til fagpersonell. Fagpersonell og referansegruppen vil ha 2-3 møter i løpet av semesteret. 
 
-Følgende studenter er med i referansegruppen:
-
-- [Emilie Dybendal Aulie](mailto:emilieau@stud.ntnu.no)
-- [Fredrik Olsen Haraldstad](mailto:fredroha@stud.ntnu.no)
-- [Theodor Signebøen Midtlien](mailto:theodorm@stud.ntnu.no)
-- [Lise Marie Brekke Nilsen](mailto:lmnilsen@stud.ntnu.no)
-- [Emilie Rieber](mailto:emiliri@stud.ntnu.no)
-- [Sindre Følling Sørensen](mailto:sindrefs@stud.ntnu.no)
-
-Gjerne ta kontakt med de.
+Vi vil etablere referansegruppe tidlig i semesteret og du finner navn til de på Blackboard. 
 
 
+## Studentassistenter
 
-## Referater 2017
 
-* [Referat 18.09.2017](http://folk.ntnu.no/kraemer/ttm4175/ttm4175-2017-reference-group-meeting-1.pdf)
-* [Referat 30.10.2017](http://folk.ntnu.no/kraemer/ttm4175/ttm4175-2017-reference-group-meeting-2.pdf)
-* [Referat 27.11.2017](https://www.dropbox.com/s/47fml9qelj3ul5d/ttm4175-2017-reference-group-meeting-3.pdf?dl=0)
+<p>
+<img src="figures/assistants/emil-telstad.jpg" class="rounded-circle" width="100" height="100">Emil Telstad</p>
+
+<p>
+<img src="figures/assistants/theodor-midtlien.jpg" class="rounded-circle" width="100" height="100">Theodor Midtlien</p>
+
+<p>
+<img src="figures/assistants/evgenia-kazakova.jpg" class="rounded-circle" width="100" height="100">Evgenia Kazakova</p>
+
+<p>
+<img src="figures/assistants/filip-johansen.jpg" class="rounded-circle" width="100" height="100">Filip Johansen</p>
+
+<p>
+<img src="figures/assistants/halvor-groven.jpg" class="rounded-circle" width="100" height="100">Halvor Groven</p>
+
+<p>
+<img src="figures/assistants/mathias-pettersen.jpg" class="rounded-circle" width="100" height="100">Mathias Pettersen</p>

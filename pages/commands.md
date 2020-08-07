@@ -4,6 +4,8 @@ Below you find a list of the commands we used in this course.
 We recommend that you learn these by heart --- it makes your work with computers so much more easy.
 We promise you will use them often.
 
+Apart from this list of useful commands, we also have collected more information about [how to find information on more commands](commands-help.html). 
+
 
 # apt
 
