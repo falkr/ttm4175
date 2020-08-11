@@ -211,7 +211,7 @@
 <p>The teams are <strong>fixed over the semester</strong> so that you get used to each other and develop a better team dynamic over time.</p>
 <p>During the beginning of the lab, when we do quizzes, for example, we join always two teams of three into a <strong>double-team</strong> of six students. The pairing of the teams is also the same each week. Team 1 is a double team with team 2, and team 3 with team 4, and so on.</p>
 
-<span name="4e65e2"></span><aside name="4e65e2"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
+<span name="cf52b3"></span><aside name="cf52b3"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
 </aside>
 <p>We start with a task on teamwork.</p>
 
@@ -317,13 +317,41 @@
 </p></aside>
 </div>
 <div class="steps"><ol start="2" type="1">
-<li>Change network “Adapter 1” to a “Bridged Adapter” connected to the interface your computer uses to connect to the Internet. For example, this can be a Wi-Fi or Ethernet interface. Other connectivity options exist but this is the easiest for our purposes.</li>
+<li>Change network “Adapter 1” so that it is “Attached to:” “NAT”, as seen in the figure below. This will create a local network in your computer (host), through which the virtual machine will connect to the Internet.</li>
 </ol>
 </div>
 <div class="figure">
-<img src="figures/vbox2020/vbox-settings4.png" alt="Configure the correct network interface for your system" width="100%"/>
-<span name="figures/vbox2020/vbox-settings4.png">&nbsp;</span>
-<aside name="figures/vbox2020/vbox-settings4.png"><p><p>Configure the correct network interface for your system</p>
+<img src="figures/vbox2020/vbox-settings3.png" alt="Configure the correct network interface for your system" width="100%"/>
+<span name="figures/vbox2020/vbox-settings3.png">&nbsp;</span>
+<aside name="figures/vbox2020/vbox-settings3.png"><p><p>Configure the correct network interface for your system</p>
+</p></aside>
+</div>
+<div class="steps"><ol start="3" type="1">
+<li>We need one extra configuration to setup our network. Click on <code>Advanced</code>, followed by <code>Port Forwarding</code> and add a new entry by clicking on the green icon on the right side of the window.</li>
+</ol>
+</div>
+<div class="figure">
+<img src="figures/vbox2020/vbox-settings5.png" alt="Enter the port forwarding configurations and add a new rule" width="100%"/>
+<span name="figures/vbox2020/vbox-settings5.png">&nbsp;</span>
+<aside name="figures/vbox2020/vbox-settings5.png"><p><p>Enter the port forwarding configurations and add a new rule</p>
+</p></aside>
+</div>
+<div class="figure">
+<img src="figures/vbox2020/vbox-settings6.png" alt="Enter the port forwarding configurations and add a new rule" width="100%"/>
+<span name="figures/vbox2020/vbox-settings6.png">&nbsp;</span>
+<aside name="figures/vbox2020/vbox-settings6.png"><p><p>Enter the port forwarding configurations and add a new rule</p>
+</p></aside>
+</div>
+<div class="steps"><ol start="4" type="1">
+<li>Because the new virtual network is “hidden” from our host machine, we want to create a rule that allows us to connect to our virtual machine. In particular, we will want data packets sent to port 2222 in our host machine to be forwarded to port 22 in our VM. Create a rule shown below and press <code>OK</code>.</li>
+</ol>
+</div>
+<div class="tip"><p>A <strong>port</strong> is like a door to access different applications. An <strong>IP</strong> is like the address to an apartment block with multiple doors.</p>
+</div>
+<div class="figure">
+<img src="figures/vbox2020/vbox-settings7.png" alt="Port forwarding rule for ssh connectivity " width="100%"/>
+<span name="figures/vbox2020/vbox-settings7.png">&nbsp;</span>
+<aside name="figures/vbox2020/vbox-settings7.png"><p><p>Port forwarding rule for ssh connectivity</p>
 </p></aside>
 </div>
 <h2 id="extra-settings-memory-size">Extra Settings — Memory size</h2>
@@ -369,13 +397,13 @@
 <p>However, since you will be connected to the Internet, you want to prevent others from accessing your machine and creating trouble.</p>
 <p>Therefore we need to change the password before we connect the Pi to the network. For this, we use the command <code>passwd</code>. Type the command in the command line and press the <code>Enter</code> key:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">passwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">passwd</span></span></code></pre></div>
 
 <p>Select a strong password and share it with your team members so you can try to remotely access each other’s VM.</p>
 <h2 id="checking-existing-files">Checking existing files</h2>
 <p>In Unix-based file systems everything is organised in a “tree” structure, where “/” is the root. To see the files in your current directory type the <code>ls</code> command and compare the output with the files in the graphical user interface.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
 
 <p>To learn more check these links:</p>
 

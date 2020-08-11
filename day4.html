@@ -161,7 +161,7 @@
 <h1 id="being-super-user">Being Super User</h1>
 <p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. SOmtimes you just add this in front of another command that you want to execute with special rights.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></span></code></pre></div>
 
 <p>Think of it as when your parents told you to say “Please!”</p>
 
@@ -179,11 +179,11 @@
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us — it’s like an app store, but for Linux.</p>
 <p>First, we need to update the list of available software:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span></code></pre></div>
 
 <p>Then we install Apache:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt install apache2</span></code></pre></div>
 
     </section>
     <section class="content">
@@ -194,7 +194,7 @@
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
 <p>Let’s start the service:</p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">systemctl</span> start apache2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">systemctl</span> start apache2</span></code></pre></div>
 
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
@@ -223,25 +223,25 @@
 <p>We now want to create our new website.</p>
 <p>First, create the file <code>index.html</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">touch</span> index.html</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">touch</span> index.html</span></code></pre></div>
 
 <p>Then, edit the file with leafpad:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">leafpad</span> index.html</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">leafpad</span> index.html</span></code></pre></div>
 
 <p>Write HTML code here to personalize your web page. Start with the template below, or find a template online.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;html&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 
 <span name="211435"></span><aside name="211435"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p>
 </aside>
