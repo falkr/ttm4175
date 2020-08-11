@@ -188,23 +188,23 @@
 <h1 id="python">Python</h1>
 <p>To access the Slack API, we use the <a href="https://slack.dev/python-slackclient/">Python library</a> that wraps the API call into Python.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">pip3</span> install slackclient</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">pip3</span> install slackclient</a></code></pre></div>
 
 <h2 id="sending-a-message">Sending a Message</h2>
 <p>The code below sends a message. Make sure to adjust the token and the channel.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> slack, certifi, ssl</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>ssl_context <span class="op">=</span> ssl.create_default_context(cafile<span class="op">=</span>certifi.where())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>client <span class="op">=</span> slack.WebClient(token<span class="op">=</span><span class="st">&#39;xoxb-14603XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>, ssl<span class="op">=</span>ssl_context)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>response <span class="op">=</span> client.chat_postMessage(channel<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, text<span class="op">=</span><span class="st">&quot;Hello world!&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="bu">print</span>(response)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> slack, certifi, ssl</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">ssl_context <span class="op">=</span> ssl.create_default_context(cafile<span class="op">=</span>certifi.where())</a>
+<a class="sourceLine" id="cb1-4" title="4">client <span class="op">=</span> slack.WebClient(token<span class="op">=</span><span class="st">&#39;xoxb-14603XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>, ssl<span class="op">=</span>ssl_context)</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">response <span class="op">=</span> client.chat_postMessage(channel<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, text<span class="op">=</span><span class="st">&quot;Hello world!&quot;</span>)</a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="bu">print</span>(response)</a></code></pre></div>
 
 <h2 id="sending-an-image">Sending an Image</h2>
 <p>You can also send an image (or any other file), if you use the line below instead of the <code>chat_postMessage</code> call from above. The file argument just has to point to a file on your computer.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>response <span class="op">=</span> client.files_upload(channels<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, <span class="bu">file</span><span class="op">=</span><span class="st">&#39;~/image.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">response <span class="op">=</span> client.files_upload(channels<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, <span class="bu">file</span><span class="op">=</span><span class="st">&#39;~/image.jpg&#39;</span>)</a></code></pre></div>
 
     </section>
 </div>

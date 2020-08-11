@@ -28,7 +28,7 @@ class: table table-sm
 | Teknostart <a href="day0-2020.html">Dag 0</a>
 | [http://bit.ly/2YUdUtG S2]
 |-
-| Onsdag, 12. aug. 10:15 - 12:00
+| Onsdag, 12. aug. 9:15 - 11:00
 | Teknostart <a href="day1-2020.html">Dag 1</a>
 | digital
 |-
@@ -36,7 +36,7 @@ class: table table-sm
 | Teknostart <a href="day1-2020.html">Dag 1</a>
 | [http://bit.ly/2YUdUtG S2]
 |-
-| Torsdag, 13. aug. 10:15 - 12:00
+| Torsdag, 13. aug. 9:15 - 11:00
 | Teknostart <a href="day2-2020.html">Dag 2</a>
 | digital
 |-
@@ -44,7 +44,7 @@ class: table table-sm
 | Teknostart <a href="day2-2020.html">Dag 2</a>
 | [http://bit.ly/2YUdUtG S2]
 |-
-| Fredag, 14. aug. 10:15 - 12:00
+| Fredag, 14. aug. 9:15 - 11:00
 | Teknostart <a href="day3-2020.html">Dag 3</a>
 | digital
 |-

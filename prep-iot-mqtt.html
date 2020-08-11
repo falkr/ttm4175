@@ -166,7 +166,7 @@
 <h1 id="mqtt">MQTT</h1>
 <p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud services. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.</p>
 
-<span name="1bbc40"></span><aside name="1bbc40"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
+<span name="280897"></span><aside name="280897"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
 </aside>
 <p>MQTT is simple to work with, and the following are my top 5 reasons for using MQTT:</p>
 <ol type="1">
@@ -480,31 +480,31 @@ a/b/c/d/+
 <h1 id="mqtt-clients-in-python">MQTT Clients in Python</h1>
 <p>There are libraries to use MQTT in a variety of programming languages. For Python, there is a library for an MQTT client called <em>Paho</em>. As usual, you install it via pip, using</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">pip</span> install paho-mqtt</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">pip</span> install paho-mqtt</a></code></pre></div>
 
 <p>The code for a client that subscribes to a topic looks like this:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="kw">def</span> on_message(mqttc, obj, msg):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="kw">def</span> on_publish(mqttc, obj, mid):</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>mqttc <span class="op">=</span> mqtt.Client()</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>mqttc.on_message <span class="op">=</span> on_message</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>mqttc.on_connect <span class="op">=</span> on_connect</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>mqttc.on_publish <span class="op">=</span> on_publish</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>mqttc.on_subscribe <span class="op">=</span> on_subscribe</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>mqttc.loop_start()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">def</span> on_message(mqttc, obj, msg):</a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="kw">def</span> on_publish(mqttc, obj, mid):</a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15">mqttc <span class="op">=</span> mqtt.Client()</a>
+<a class="sourceLine" id="cb1-16" title="16">mqttc.on_message <span class="op">=</span> on_message</a>
+<a class="sourceLine" id="cb1-17" title="17">mqttc.on_connect <span class="op">=</span> on_connect</a>
+<a class="sourceLine" id="cb1-18" title="18">mqttc.on_publish <span class="op">=</span> on_publish</a>
+<a class="sourceLine" id="cb1-19" title="19">mqttc.on_subscribe <span class="op">=</span> on_subscribe</a>
+<a class="sourceLine" id="cb1-20" title="20">mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</a>
+<a class="sourceLine" id="cb1-21" title="21">mqttc.loop_start()</a></code></pre></div>
 
 <p>The code above is in its structure similar to the one we used when creating our own HTTP server. We connect to an MQTT broker using its address (or <code>localhost</code> when its on the same computer). The default port for MQTT is 1883.</p>
 <p>After the client is created in <code>mqttc = mqtt.Client()</code>, we register a number of callback functions. These functions are called by the client whenever one of the event happens, that means, after we are connected, received a message, subscribed to a sopic or published a message. We can use them to trigger other behavior.</p>
@@ -512,11 +512,11 @@ a/b/c/d/+
 <h2 id="mqtt-publisher-client">MQTT Publisher Client</h2>
 <p>The following code is used to publish a message:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</a></code></pre></div>
 
 <p>We can also specify which qos level we want, and add some payload (content) to the message:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -527,7 +527,7 @@ a/b/c/d/+
 </div>
 <p>MQTT.FX is a tool useful during development. Using MQTT.FX is simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing. Once the system is programmed, you don’t need MQTT.FX anymore.</p>
 
-<span name="ed7ff8"></span><aside name="ed7ff8"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
+<span name="a557cc"></span><aside name="a557cc"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
 </aside>
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>
@@ -544,9 +544,9 @@ a/b/c/d/+
 </section>
 <section class="content">
 <div class="hint_title">Hint
-<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('d5c2c9').style.cssText = ''">Show</button>
+<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('2274f3').style.cssText = ''">Show</button>
 </div>
-<div class="hint" style="-webkit-filter: blur(5px);" id="d5c2c9"><div>
+<div class="hint" style="-webkit-filter: blur(5px);" id="2274f3"><div>
 <table class="table table-sm">
 <caption style>
 </caption>
