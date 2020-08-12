@@ -1,4 +1,4 @@
-# Networking in Linux
+# Binary and IP Addresses
 
 The overall goal of this lab\. is to consolidate knowledge on IP addressing and subnets.
 This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.
@@ -16,9 +16,11 @@ This will be achieved using available networking tools in Linux to manage a simp
 
 # Pre-requisites for today
 
+Before continuing please check these two steps:
+
 :steps:
-1. Make sure you have at least 20GB of disk space
-2. Confirm that you've downloaded the new VM image ([link](TODO))
+1. Make sure you have at least 20GB of disk space.
+2. Confirm that you've downloaded the new VM image ([link](TODO)).
 
 
 # Teamwork 2
@@ -30,9 +32,26 @@ First, we will start with a reflection on teamwork.
 
 # Importing and configuring the Ubuntu VM
 
-TODO
+:steps:
+1. Start by importing the newly downloaded VM just like you did for the RaspberryPI.
+2. After the import is completed (it will take a few minutes), configure the settings of the new VM according to your computer specifications (for example, my laptop has only 8GB RAM so I configured my VM with 4GB).
+You shouldn't use all the resources from your host machine in your VM as it can make things become less responsive.
+3. Inside the VM settings go to `Network->Adapter 2` and configure it to be attached to an "Internal Network" as shown in the figure below.
+4. Add a second adapter to the RaspberryPI VM, attach it to the same "Internal Network".
+
+---
+type: figure
+source: figures/vbox2020/settings-internalnetwork.png
+caption: "The internal network connecting the two VMs"
+---
+
+:tip:
+You can think of an "internal network" as a cable directly connecting VMs. This means they don't connect to the Internet or have any other features such as DHCP or NAT.
+
 
 # Lab\. Exercises
+
+**NOT UP TO DATE**
 
 Please **read each exercise** entirely before starting to solve it.
 

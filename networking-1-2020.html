@@ -140,29 +140,60 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="networking-in-linux">Networking in Linux</h1>
+<h1 id="binary-and-ip-addresses">Binary and IP Addresses</h1>
 <p>The overall goal of this lab. is to consolidate knowledge on IP addressing and subnets. This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.</p>
 
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
+<li>Understand and apply basic binary arithmetic</li>
 <li>Understand IP addresses and their organisation into subnets</li>
 <li>Create and configure Local Area Networks (LANs)</li>
 <li>Use basic Linux commands for managing:
 <ul>
 <li>IP addresses (IPv4 and IPv6)</li>
-<li>routes and routing tables</li>
+<li>IP subnets and masks</li>
 </ul></li>
 </ul>
 </div>
     </section>
     <section class="content">
+<h1 id="pre-requisites-for-today">Pre-requisites for today</h1>
+<p>Before continuing please check these two steps:</p>
+
+<div class="steps"><ol type="1">
+<li>Make sure you have at least 20GB of disk space.</li>
+<li>Confirm that you’ve downloaded the new VM image (<a href="TODO">link</a>).</li>
+</ol>
+</div>
+    </section>
+    <section class="content">
 <h1 id="teamwork-2">Teamwork 2</h1>
-<p>We do some reflection on teamwork.</p>
+<p>First, we will start with a reflection on teamwork.</p>
 <p><a href="teamwork-2.html">Teamwork 2</a></p>
 
     </section>
     <section class="content">
+<h1 id="importing-and-configuring-the-ubuntu-vm">Importing and configuring the Ubuntu VM</h1>
+
+<div class="steps"><ol type="1">
+<li>Start by importing the newly downloaded VM just like you did for the RaspberryPI.</li>
+<li>After the import is completed (it will take a few minutes), configure the settings of the new VM according to your computer specifications (for example, my laptop has only 8GB RAM so I configured my VM with 4GB). You shouldn’t use all the resources from your host machine in your VM as it can make things become less responsive.</li>
+<li>Inside the VM settings go to <code>Network-&gt;Adapter 2</code> and configure it to be attached to an “Internal Network” as shown in the figure below.</li>
+<li>Add a second adapter to the RaspberryPI VM, attach it to the same “Internal Network”.</li>
+</ol>
+</div>
+<div class="figure">
+<img src="figures/vbox2020/settings-internalnetwork.png" alt="The internal network connecting the two VMs" width="100%"/>
+<span name="figures/vbox2020/settings-internalnetwork.png">&nbsp;</span>
+<aside name="figures/vbox2020/settings-internalnetwork.png"><p><p>The internal network connecting the two VMs</p>
+</p></aside>
+</div>
+<div class="tip"><p>You can think of an “internal network” as a cable directly connecting VMs. This means they don’t connect to the Internet or have any other features such as DHCP or NAT.</p>
+</div>
+    </section>
+    <section class="content">
 <h1 id="lab.-exercises">Lab. Exercises</h1>
+<p><strong>NOT UP TO DATE</strong></p>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
 <p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
@@ -315,7 +346,7 @@ Hint (ssh)
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="350c57"></span><aside name="350c57"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
