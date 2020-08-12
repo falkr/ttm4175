@@ -20,6 +20,10 @@ text: Påmelding for studenter
 ---
 
 
+# Velkommen til Komtek
+
+* [Presentasjon fra Sjur og Filip](material/velkommen-til-komtek.pdf)
+
 
 # Links
 
