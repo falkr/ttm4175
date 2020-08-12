@@ -6,19 +6,31 @@ This will be achieved using available networking tools in Linux to manage a simp
 
 :goals: After this lab you will be able to:
 
+- Understand and apply basic binary arithmetic
 - Understand IP addresses and their organisation into subnets
 - Create and configure Local Area Networks (LANs)
 - Use basic Linux commands for managing:
     - IP addresses (IPv4 and IPv6)
-    - routes and routing tables
+    - IP subnets and masks
+
+
+# Pre-requisites for today
+
+:steps:
+1. Make sure you have at least 20GB of disk space
+2. Confirm that you've downloaded the new VM image ([link](TODO))
 
 
 # Teamwork 2
 
-We do some reflection on teamwork.
+First, we will start with a reflection on teamwork.
 
 [Teamwork 2](teamwork-2.html)
 
+
+# Importing and configuring the Ubuntu VM
+
+TODO
 
 # Lab\. Exercises
 

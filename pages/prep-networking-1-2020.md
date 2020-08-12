@@ -79,6 +79,26 @@ video: L6bDA5FK6gs
 Focusing on IP addresses, and to prepare for the lecture's quiz, you need to **read from section 1.1 to 1.2.1 of the book (from page 30 to page 39)**.
 If you already read the first chapter you can check the additional materials below.
 
+:aside: This will also be included in the RAT, don't ignore it!
+
+
+## Setting up a second VM
+
+In the upcoming networking labs\. we will use another VM, this time using the [Ubuntu](https://ubuntu.com/) Linux distro.
+
+This VM is more complex and has additional software installed, which means you'll need more disk space to import it.
+Please make sure you have **at least 20GB** of free disk space for working with this VM.
+
+:tip:
+This same virtual machine is going to be used in TTM4200, next semester. If you keep it you'll save some time later!
+
+Another tip, my laptop is a bit old and has limited disk space. I use an external SSD disk drive to keep my VMs.
+
+
+It's also important that you download the VM image [here](TODO).
+
+Finally, if you wish, you can start importing the downloaded image. The password is "ttm4200" (don't forget to change it!).
+
 
 # Additional materials
 
