@@ -20,7 +20,9 @@ Before continuing please check these two steps:
 
 :steps:
 1. Make sure you have at least 20GB of disk space.
-2. Confirm that you've downloaded the new VM image ([link](TODO)).
+2. Confirm that you've downloaded the new VM image ([link](
+https://filesender.uninett.no/?s=download&token=a0ca6d46-2078-4984-a532-b68e3fd2cbaf)).
+
 
 
 # Teamwork 2

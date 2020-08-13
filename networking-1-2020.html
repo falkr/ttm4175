@@ -162,7 +162,7 @@
 
 <div class="steps"><ol type="1">
 <li>Make sure you have at least 20GB of disk space.</li>
-<li>Confirm that you’ve downloaded the new VM image (<a href="TODO">link</a>).</li>
+<li>Confirm that you’ve downloaded the new VM image (<a href="https://filesender.uninett.no/?s=download&amp;token=a0ca6d46-2078-4984-a532-b68e3fd2cbaf">link</a>).</li>
 </ol>
 </div>
     </section>
@@ -224,7 +224,7 @@
 <li>Add an IP address and respective mask to the interface ‘eth0’ using the command:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
 
 <ol start="6" type="1">
 <li>Using the command <code>ip a s eth0</code> (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.</li>
@@ -255,7 +255,7 @@ Hint (ping)
 <div class="w3content">
 <p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 
 </div>
 <button class="w3collapsible">
@@ -298,9 +298,9 @@ Hint (troubleshooting)
 <p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the “dhcpcd.conf” file in <code>/etc/</code>. Edit this file and reboot to check the networking configurations have remained.</p>
 <p>Example configuration:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">interface</span> eth0</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">static</span> ip_address=192.168.100.102/24</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">static</span> routers=192.168.100.101</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">interface</span> eth0</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
 
     </section>
     <section class="content">
@@ -346,7 +346,7 @@ Hint (ssh)
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="54111b"></span><aside name="54111b"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
