@@ -95,7 +95,8 @@ This same virtual machine is going to be used in TTM4200, next semester. If you 
 Another tip, my laptop is a bit old and has limited disk space. I use an external SSD disk drive to keep my VMs.
 
 
-It's also important that you download the VM image [here](TODO).
+It's also important that you download the VM image [here](
+https://filesender.uninett.no/?s=download&token=a0ca6d46-2078-4984-a532-b68e3fd2cbaf).
 
 Finally, if you wish, you can start importing the downloaded image. The password is "ttm4200" (don't forget to change it!).
 
