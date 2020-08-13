@@ -50,10 +50,11 @@ caption: "The internal network connecting the two VMs"
 :tip:
 You can think of an "internal network" as a cable directly connecting VMs. This means they don't connect to the Internet or have any other features such as DHCP or NAT.
 
+Another tip, if you want to access the Ubuntu VM through `ssh` (recommended) remember to add _port forwarding_ on adapter one and choose a different _Host port_ such as 2223.
+
+
 
 # Lab\. Exercises
-
-**NOT UP TO DATE**
 
 Please **read each exercise** entirely before starting to solve it.
 
@@ -64,42 +65,81 @@ Do not forget to take notes while solving the exercises so you do not have to re
 These exercises should be completed in teams.
 
 
-## Networking two Raspberry Pis
+## Quick overview of IP addresses
+
+By now you've already seen that IP addresses are an important part of the Internet and computer networks in general.
+Before looking into more complicated setups, complete the following tasks and remember to include them in your report.
+
+:steps:
+1. Start by finding the IP address of <ntnu.no>. For this you can use the command `host`.
+2. Convert the found IP address to binary (you can use external tools!).
+3. How many bytes does this IP address contain?
+4. How many bits are there between each point (full stop) in the address 192.168.0.13?
+
+:tip:
+Start your report now and keep updating it as you go! It doesn't have to look pretty but if you keep everything now (screenshots, notes, ...) you don't have to repeat it later. 
+
+
+
+## Networking two computers (VMs)
 
 ---
 type: figure
-source: figures/net/TTM4175-ex1.png
+source: figures/net/TTM4175-ex1-2020.png
 caption: "Diagram of the topology to be created"
 ---
 
+The main goal of this exercise is to create a simple network between the two VMs through a simple network configuration as if they were connected by an Ethernet cable.
 
-The main goal of this exercise is to create a simple network between two Raspberry Pi (rPi) devices through a simple Ethernet cable.
+Remember you can edit configurations by directly using the VMs or, instead by simply using `ssh` from your host machine where you can have one or more terminals per VM.
 
-Initially you will have to connect one rPi at a time to keyboard and screen for configuring the necessary IP addresses and their masks.
-Afterwards you can use `ssh` if you need to change anything.
 
 ### Configuring the network interfaces
 
-Repeat these steps with each rPi, adjusting their addresses adequately.
 
-1. Connect the keyboard, mouse and screen
-2. Using the command `ip addr show dev eth0` find out your current IP address, if any, on 'eth0'
-3. Type `ip addr help` to see all the available options
 
-**NEW**
+**---> On your RPi VM**
 
-4. Let's start by removing any unwanted address or routes on 'eth0'.
-For that purpose use the command `ip addr flush dev eth0` and check that no addresses or routes remain (use `ip addr` and `ip route`).
+Try the following steps:
 
-**NEW**
-
-5. Add an IP address and respective mask to the interface 'eth0' using the command:
-
+:steps:
+1. Using the command `ip addr show dev eth1` find out your current IP address, if any, on 'eth1'
+2. Type `ip addr help` to see all the available options
+3. Let's now remove any unwanted address or routes on 'eth1' with the command:
 ```bash
-ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth0
+ip addr flush dev eth1
 ```
 
-6. Using the command `ip a s eth0` (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.
+:steps:
+4. Add an IP address and respective mask to the interface 'eth1' using the command:
+```bash
+ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth1
+```
+**Note:** you should avoid the subnet 10.0.2.0/24 as it already being used on 'eth0'.
+
+:steps:
+5. Using the command `ip a s eth1` (same as in step 1 but shorter) to verify your IP address, it should be the one you have just set.
+6. Use the command `ip link set up dev eth1` to "turn on" the interface, in case it is down.
+
+
+
+**---> On your Ubuntu VM**
+
+Repeat the configurations above, paying attention to the different interface notation and assigning a new IP address:
+
+:steps:
+1. Remove any address/route on the interface 'enp0s8' (e-n-p-zero-s-eight).
+2. Add a different IP address and mask to the interface 'enp0s8' such that it is in the same subnet as 'eth1' on the RPi.
+3. Use the command `ip l s up dev enp0s8` to set the interface to "UP".
+4. How many addresses does the chosen subnet contain? 
+
+:tip:
+Remember that one IP address can only be used by a single interface in the same network! It should be unique.
+
+The size of the subnet depends on the number of bits used on the corresponding mask.
+
+
+Spoiler alert! Before clicking the box below try to solve the exercise on your own but of course you are free to check it out.
 
 <button class="w3collapsible">Hint (IP addresses)</button>
 <div class="w3content">
@@ -111,32 +151,35 @@ You can use any private IP address in the ranges:
 
 An example of a pair of IP addresses and masks could be "10.100.2.1/30" and "10.100.2.2/30".
 
-You need to have "root" privileges in order to change/add an IP address. 
+**Remember:** you need to have "root" privileges in order to change/add an IP address. 
 </div> 
+
+
 
 ### Verifying your configurations
 
-After configuring the two rPi connect them to each other using a single Ethernet cable.
-Only one rPi needs to be connected to the keyboard/screen.
+After configuring the two VMs continue with the following steps:
 
-1. Use the command `ip route` to see the added route
-2. Verify that both nodes have connectivity with the `ping` command
-3. Make sure you can connect to the rPi without keyboard/screen using `ssh`
+:steps:
+1. On one of the VMs use the command `ip route` to see the added route. Which one is the new entry?
+2. Verify that both nodes have connectivity with the `ping` command. First from the RPi and afterwards from the Ubuntu machine.
+3. Make sure you can connect to the RPi from the Ubuntu machine using `ssh`.
+4. From one of the VMs `ping` <ntnu.no>. What's the main difference in behaviour that you can see?
+
+
+Spoiler ahead...
 
 <button class="w3collapsible">Hint (ping)</button>
 <div class="w3content">
 Use the command `ping` like this to generate only 4 ICMP messages.
-
 ```bash
 ping -c4 <ip_address>
 ```
+And note the round-trip **time** of each message...
 </div>
 
-<button class="w3collapsible">Hint (ssh)</button>
-<div class="w3content">
-The `ssh` service may not be running, check with `sudo systemctl status ssh`.
-If it is not running use the `systemctl` command with _start_ and with  _enable_ if you want `ssh` to start from boot.
-</div>
+
+**NOT UP TO DATE FROM HERE ON**
 
 
 ## Experimenting with masks
