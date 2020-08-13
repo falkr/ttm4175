@@ -392,6 +392,10 @@ div.hint_title {
   padding: 18px 32px 18px 32px
 }
 
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;

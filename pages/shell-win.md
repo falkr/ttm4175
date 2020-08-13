@@ -31,3 +31,8 @@ source: figures/terminal/terminal-win-3.png
 caption: ""
 ---
 
+
+
+# Older Windows Versions
+
+If you are using an older version of Windows, you may have to download additional software such as [Putty](https://putty.org/) to use SSH. 

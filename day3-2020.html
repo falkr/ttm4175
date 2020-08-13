@@ -203,9 +203,14 @@
 
 <span name="728e9c"></span><aside name="728e9c"><p>Have a look at the <a href="https://en.wikipedia.org/wiki/Secure_Shell">Wikipedia article on SSH</a>.</p>
 </aside>
-<p><strong>From your host PC</strong>, using the command line/Terminal you can access your Raspberry Pi too, using the command <code>ssh</code>.</p>
-<p>If you are using Windows you may have to download additional software such as Putty: <a href="https://putty.org/" class="uri">https://putty.org/</a>. However, updated versions of Windows 10 should have <code>ssh</code> already installed.</p>
-<p>The <code>ssh</code> command is used as such:</p>
+<h2 id="terminal-and-shell-on-mac-or-windows">Terminal and Shell on Mac or Windows</h2>
+<p>You should use the terminal and SSH directly from your Mac or Windows laptop. We added descriptions here:</p>
+<ul>
+<li><a href="shell-mac.html">Terminal and SSH on Mac</a></li>
+<li><a href="shell-win.html">Terminal and SSH on Windows</a></li>
+</ul>
+
+<p>The <code>ssh</code> command is used like this:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>remote_ip_address<span class="op">&gt;</span> -p <span class="op">&lt;</span>port<span class="op">&gt;</span></span></code></pre></div>
 
@@ -223,11 +228,11 @@
 <span name="8943e4"></span><aside name="8943e4"><p>This command means that we are using <code>ssh</code> on the localhost and port 2222, which we configured to forward packets to the virtual machine on port 22 (where <code>ssh</code> lives).</p>
 </aside>
 <p><strong>Note:</strong> a warning message should appear the first time you connect since the certificates being used have never been exchanged before. It is okay to say “yes” and then type in your password.</p>
-<p>You now have access to the terminal of the Raspberry Pi, you access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!</p>
-<p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.</p>
+<p>You now have access to the terminal of the Raspberry Pi, you access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, or in a data center far far away!</p>
+<p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is <strong>your</strong> Raspberry Pi and that navigation works as before, just via another computer.</p>
 
 <h3 id="copying-files-to-a-remote-computer">Copying Files to a Remote Computer</h3>
-<p>With <code>ssh</code> you can remotely access a computer. However, you may also want to send or retrieve files to and from that computer. To do so you can use the command <code>scp</code> as such:</p>
+<p>With <code>ssh</code> you can remotely access a computer. However, you may also want to send or retrieve files to and from that computer. To do so you can use the command <code>scp</code>:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">scp</span> -P <span class="op">&lt;</span>port<span class="op">&gt;</span> <span class="op">&lt;</span>path_to_local_file<span class="op">&gt;</span> pi@<span class="op">&lt;</span>remote_address<span class="op">&gt;</span>:<span class="op">&lt;</span>path_to_destination<span class="op">&gt;</span></span></code></pre></div>
 
@@ -260,9 +265,9 @@
 <p>To create a new file in Nano, we simply type <code>nano</code> in our terminal. Nano will open in a windows that looks something like this.</p>
 
 <div class="figure">
-<img src="https://home.samfundet.no/~halvogro/ting2/bilder/image-45.png" alt="The Nano editor" width="100%"/>
-<span name="https://home.samfundet.no/~halvogro/ting2/bilder/image-45.png">&nbsp;</span>
-<aside name="https://home.samfundet.no/~halvogro/ting2/bilder/image-45.png"><p><p>The Nano editor</p>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png" alt="The Nano editor" width="100%"/>
+<span name="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png">&nbsp;</span>
+<aside name="https://home.samfundet.no/~halvogro/ting/bilder/image-45.png"><p><p>The Nano editor</p>
 </p></aside>
 </div>
 <p>Now we can start typing the contents of the file.</p>
@@ -283,7 +288,7 @@
 <p>You should get a message that looks like this:</p>
 </div>
 <div class="figure">
-<img src="https://home.samfundet.no/~halvogro/ting2/bilder/image-46.png" width="100%"/>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-46.png" width="100%"/>
 </div>
 <p>You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server.</p>
 
@@ -316,6 +321,12 @@
 </aside>
 <div class="tip"><p>You can create your webpage locally, in your PC, and simply upload the files to the remote machine using <code>scp</code>.</p>
 </div>
+    </section>
+    <section class="content">
+<h1 id="survey">Survey</h1>
+<p>All technology programs have a startup week like we had, and we ask you to fill out a short survey at the end of the week. Note that some programs call this <em>Teknostart</em>, and some of the questions may not 100% match to what we did this week.</p>
+
+<a class="ntnu-button" href="https://innsida.ntnu.no/forms/view.php?id=274638">Survey about the Startup Week</a>
     </section>
 </div>
 
