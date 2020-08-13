@@ -31,6 +31,8 @@ These are just a few. You can find more by reading the pages for the shell, by t
 
 # cat
 
+Concatenate files, but the command also prints a file's content.
+
 # cd
 
 
@@ -52,6 +54,15 @@ Moving in the home directory:
 cd ~
 ```
 
+
+# cp
+
+Copy files. 
+
+```bash
+cd file.txt file_copy.txt 
+```
+
 # curl
 
 Download a file from the internet. 
@@ -67,6 +78,15 @@ Search for a
 # mkdir
 
 Create a directory.
+
+
+# mv
+
+Move a file
+
+```bash
+mv <from_path> <to_path>
+```
 
 
 # rm
