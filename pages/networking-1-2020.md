@@ -184,24 +184,36 @@ And note the round-trip **time** of each message...
 
 ## Experimenting with masks
 
-The goal of this task is to get more comfortable with subnets and masks.
-Start by configuring the rPi **not connected** to keyboard/screen:
+The goal of this task is to get more comfortable with subnets and masks and see how they work in practice.
+If you have questions about why something happens, or does not happen, feel free to ask!
 
-1. Change the IP address to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one)
+**---> On your RPi VM**
+
+:steps:
+1. Change the IP address of 'eth1' to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one).
 2. Verify if you still have connectivity and discuss why or why not.
+
+
 
 <button class="w3collapsible">Hint (troubleshooting)</button>
 <div class="w3content">
-You may lose connectivity at this point depending on the IP address you have previously set on the rPi connected to the keyboard/screen.
+You may lose connectivity at this point depending on the IP addresses you have previously chosen.
 </div>
 
-Now, using the rPi **connected** to the keyboard/screen try the following:
 
-1. Change the IP address to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one)
-2. Check for changes in connectivity between the two rPi
-3. Using the same IP address change the mask to /30
-4. Check for changes in connectivity between the two rPi
-5. Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two rPi? Why?
+**---> On your Ubuntu VM**
+
+Now, on your Ubuntu VM make the following changes:
+
+:steps:
+1. Change the IP address of 'enp0s8' to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one).
+2. Check for changes in connectivity between the two VMs. Can one VM still `ping` the other?
+3. Using the same IP address change the mask to '/30'.
+4. Check for changes in connectivity between the two VMs.
+5. Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two VMs? Why?
+
+:tip:
+**About the report** You don't have to include all the commands you needed to type, **it is enough to discuss/explain** the changes in connectivity and the choices you made.
 
 
 ## Experimenting with routes

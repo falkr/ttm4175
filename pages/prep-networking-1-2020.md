@@ -101,7 +101,7 @@ https://filesender.uninett.no/?s=download&token=a0ca6d46-2078-4984-a532-b68e3fd2
 Finally, if you wish, you can start importing the downloaded image. The password is "ttm4200" (don't forget to change it!).
 
 
-# Additional materials
+# Optional materials
 
 The materials below won't be tested but will be very important in a near future.
 
