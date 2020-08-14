@@ -179,7 +179,6 @@ And note the round-trip **time** of each message...
 </div>
 
 
-**NOT UP TO DATE FROM HERE ON**
 
 
 ## Experimenting with masks
@@ -216,14 +215,9 @@ Now, on your Ubuntu VM make the following changes:
 **About the report** You don't have to include all the commands you needed to type, **it is enough to discuss/explain** the changes in connectivity and the choices you made.
 
 
-## Experimenting with routes
 
-Using the rPi **connected** to the keyboard/screen try the following:
 
-1. Remove the existing route with `ip route del <ip/mask> dev eth0`
-2. Check for changes in connectivity between the two rPi
-3. Add a new route with the command `ip route add` with a "/30" mask
-
+**NOT UP TO DATE FROM HERE ON**
 
 ## Static IP addresses
 

@@ -1,16 +1,27 @@
-# Networking in Linux -- DNS and DHCP
+# Routing and Docker 
 
-The overall goal of this lab\. is to complement knowledge on IP, subnets and routing with DNS and DHCP.
-This will be achieved using available tools and software in Linux to manage a simple Raspberry Pi network.
+The overall goal of this lab\. is to complement knowledge on IP, subnets with some routing notions.
+This will be achieved using the same VMs as last week and default Linux tools.
+
+Today we will also learn more about Docker. With Docker we will be able to simulate a "mini-cloud" inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.
+
+:aside:
+**Note:** Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There's nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?
+
+<p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a>
+
 
 
 :goals: After this lab you will be able to:
 
-- Understand how DNS works
-- Understand how DHCP works
-- Use Linux commands and software for:
-    - retrieving DNS information
-    - installing/configuring a local DHCP server
+- Check the role of routing in networking
+- Use `ip route` for managing routes
+- Recognise the importance of _ports_ in networking
+- Learn basic Docker principles:
+    - Images and containers
+    - The _Dockerfile_
+    - Basic commands for managing containers
+
 
 
 # Lab\. Exercises
@@ -23,172 +34,30 @@ Do not forget to take notes while solving the exercises so you do not have to re
 
 These exercises should be completed in teams.
 
+**NOT UP TO DATE FROM HERE ON**
 
 ## Preparation
 
 :steps:
-1. Select one Raspberry Pi as your _router_. 
-From now on this rPi will be always referred to as _router_ and the other one as _client_.
-You may change their hostnames to avoid confusions.
-2. Connect the keyboard/screen to the _client_ and remove any static IP address configurations (in case there are any from last week).
-3. Still in the _client_ write down the MAC address (_link/ether_) of the "eth0" network card.
-4. Connect the keyboard/screen to the _router_ and connect it to the Internet (you can just disconnect the _client_) and install _tcpdump_, _dnsutils_, _whois_, _isc-dhcp-server_, _hostapd_ and optionally _vim_.
-Some of this software will be used next week. 
-
-<button class="w3collapsible">Hint (hostname)</button>
-<div class="w3content">
-Among other possibilities, the hostname can be changed by editing the files _hostname_ **and** _hosts_ in `/etc/`.
-
-Do not forget to reboot after the changes.
-</div> 
-
-<button class="w3collapsible">Hint (MAC addr\.)</button>
-<div class="w3content">
-An hardware address or hardware Ethernet can be easily found with the command `ip link`.
-</div>
+1. make sure there's connectivity between both VMs
+2. ...
 
 
-## Experimenting with DNS
+## Experimenting with routes
 
-DNS can be used for many different purposes.
-Today we will focus on only a few, using basic commands to retrieve information about NTNU's domain.
-
-### The `whois` command
-
-The `whois` command can be used to search for an object in a WHOIS database.
-We can use it for example for searching for Domain Name or IP block registrations.
-
-Try the following commands and reflect on their results:
+In your RPi VM try the following:
 
 :steps:
-1. `whois <your_rpi_ip_address>`
-2. `whois ntnu.no`
+1. Remove the existing route with `ip route del <ip/mask> dev eth1`.
+2. Check for changes in connectivity between the two VMs.
+3. Add a new route with the command `ip route add` with a "/30" mask.
 
 
-### The `host` command
-
-The simplest way to find common DNS information is to use the command `host`.
-Try the following commands and reflect on their result:
-
-:steps:
-1. `host 8.8.8.8`
-2. `host ntnu.no`
-3. `host -t TXT ntnu.no`
-4. `host -t ANY ntnu.no`
 
 
-### The `dig` command
-
-This tool provides more information, and options, than the `host` command.
-**Note:** the command `nslookup` is also very popular (and older), used for the same purpose.
-
-Using `dig` your focus should be on the "ANSWER" section (carefully notice the options on the second step).
-Try the following commands and reflect on their result:
-
-:steps:
-1. `dig ntnu.no`
-2. `dig ntnu.no +noall +answer`
-3. `dig ntnu.no MX +noall +answer`
-4. `dig ntnu.no ANY +noall +answer`
-5. `dig ntnu.no +short`
-6. `dig -x 129.241.160.102`
 
 
-## Configure a DHCP server
 
-Disconnect the _router_ from the Internet (remove the Ethernet cable, do **not** connect it to the client) and follow these steps:
-
-:steps:
-1. Activate DHCP on the interface `eth0` by editing the *isc-dhcp-server* configuration file (see hint on config if needed).
-2. Configure the DHCP server properties in the *dhcpd.conf* file without forgetting to:
-
-
-  - declare this DHCP server as authoritative (the official DHCP server for a LAN);
-  - specify a subnet and range;
-  - provide the required DNS information;
-  - specify the *router* Pi as the default router;
-  - assign a fixed IP address to the _client_
-
-:steps
-3. *stop* and *disable* the service *dhcpcd.service*;
-4. Make sure the `eth0` interface is *UP* and configured with an IP address within the subnet specified in the DHCP server;
-5. *start* (and optionally *enable*) the *isc-dhcp-server.service*.
-
-<button class="w3collapsible">Hint (config)</button>
-<div class="w3content">
-Note the difference between *dhcpcd.conf* and *dhcpd.conf*.
-These files have different names, locations and purposes.
-
-To find the location of these files, and of the *isc-dhcp-server* file you can use `find` and they should be inside '/etc'.
-
-Many configuration files include several examples for several different purposes, use/adapt the ones that suit your needs. 
-
-</div>
-
-<button class="w3collapsible">Hint (static)</button>
-<div class="w3content">
-For this exercise you will have to retrieve this information from your _client_, as mentioned earlier in the preparation.
-</div>
-
-<button class="w3collapsible">Hint (DNS)</button>
-<div class="w3content">
-To "normally" use the Internet, in addition to a router for forwarding IP traffic, a client needs a DNS server to resolve names such as "ntnu.no".
-
-Use the DNS servers 129.241.0.200, 129.241.0.201 and 8.8.8.8.
-
-</div>
-
-
-## Using DHCP (and seeing it)
-
-After configuring the _router_ we want it to be able to give a DHCP offer to the client.
-If everything is correct this will be automatic but we will monitor the process with the following steps:
-
-:steps:
-1. On a terminal in the _router_ run the following command (and leave it running):
-```bash
-tcpdump -i eth0 -vvv -s 1500 'port 67 or port 68'
-```
-
-:steps:
-2. Connect the _client_ and the _router_ using a single Ethernet cable.
-
-
-  - Check the messages sent in each direction
-  - What happens?
-
-:steps:
-3. Verify the network configurations on the _client_ (IP address, mask, DNS, routes).
-**Note:** you should use `ssh`.
-
-<button class="w3collapsible">Hint (connecting)</button>
-<div class="w3content">
-Remember your _client_ should have received the IP address you configured as a static address.
-
-You can use the command `dhcpcd --dumplease eth0` to get more information on the _client_.
-
-You may force the _client_ to release its lease by using the command `dhcpcd -k eth0`.
-**Note however** that this will de-configure your interface and you will lose connectivity.
-This can be fixed by appending the command `; sudo systemctl restart dhcpcd.service` or similar (e.g. `; sudo reboot`).
-
-</div>
-
-
-## More DHCP
-
-:aside: <img src="figures/doubleteam.png" width="30"/>
-
-
-To test DHCP further join your double team and experiment with each other's _client_.
-
-:steps:
-1. What address do the _clients_ receive?
-2. Is the static IP address configuration working? Why or why not?
-
-
-# Additional Exercise
-
-Try the setup above using only IPv6. How does DHCP work? What is different?
 
 # Final Steps
 
