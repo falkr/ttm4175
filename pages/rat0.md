@@ -1,4 +1,9 @@
 
+Visit page <https://minedx.site/> and use code **YJFUQ**
+
+**Only one** student in your team should grab a team card, and share the link with the others. 
+
+
 
 ## Question 1
 
