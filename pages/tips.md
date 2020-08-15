@@ -26,7 +26,23 @@ text: Påmelding for studenter
 * [Presentasjon fra Jeanette og Emilie](material/itv-presentasjon.pdf)
 
 
-# Links
+# Study Links
 
 * [Studies at IIK](https://innsida.ntnu.no/wiki/-/wiki/English/Studies+at+IIK) Information for all students studying at the IIK department.
 * [Studyplan](https://innsida.ntnu.no/wiki/-/wiki/English/MTKOM)
+* Delta i Abakus arrangementer <https://abakus.no>
+
+
+# CTF Links
+
+
+
+Her er et par linker til nyttige CTF sider: 
+
+* Lære linux, servere og web, fint sted å starte: <https://overthewire.org/wargames/> 
+
+* Div. nybegynner: <https://picoctf.com/>
+
+* Mer utfordrende og større oppgaver: <https://www.hackthebox.eu/> 
+
+* Leaderboard innen CTF-grupper på verdensbasis, kalender med live konkuranser. <https://ctftime.org/>
