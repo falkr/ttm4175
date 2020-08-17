@@ -216,23 +216,54 @@ Now, on your Ubuntu VM make the following changes:
 
 
 
-
-**NOT UP TO DATE FROM HERE ON**
-
 ## Static IP addresses
 
-In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the "dhcpcd.conf" file in `/etc/`.
+In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it.
+However, this is done differently in different Linux systems.
+Below you'll see how to do it in Raspbian and Ubuntu.
+
+**---> On your RPi VM**
+
+To save your settings you need to edit the "dhcpcd.conf" file in `/etc/` (don't forget to check if you have permissions).
 Edit this file and reboot to check the networking configurations have remained.
 
-Example configuration:
+:aside:
+You don't need to reboot your RPi to apply these setting, it's enough to restart the networking service but you need to type a bit more(e.g. `sudo ip link set eth1 down && sudo ip link set eth1 up` **or** `service networking restart`).
+
+
+
+Example configuration (change accordingly!):
 
 ```bash
-interface eth0
+interface eth1
 static ip_address=192.168.100.102/24
 static routers=192.168.100.101
 ```
 
-# Additional Exercises
+**---> On your Ubuntu VM**
+
+To save your settings you need to edit the "01-network-manager-all.yaml" file in `/etc/netplan`.
+After editing you can apply your changes with the command `sudo netplan apply`:
+
+Example configuration (change accordingly!):
+
+```bash
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        enp0s3:
+            dhcp4: yes
+        enp0s8:
+            dhcp4: no
+            addresses:
+                - 10.0.20.2/24
+```
+
+
+
+
+# Optional Exercises
 
 ## Introducing IPv6
 
@@ -244,25 +275,33 @@ Change the topology you created in [the previous exercise](#lab.-exercises) to u
 
 <button class="w3collapsible">Hint</button>
 <div class="w3content">
-Remember to change the addresses in the remote rPi first or simply add the IPv6 address without modifying the IPv4 addresses you had earlier, instead of replacing.
-
-In addition note that some commands require additional arguments to handle IPv6 (check their documentation).
+Note that some commands require additional arguments to handle IPv6 (check their documentation).
 </div>
+
 
 ## More SSH
 
-After configuring both devices, from the rPi with keyboard and screen, do the following:
+The goal of this exercise is to show you how `ssh` handles sessions.
 
-1. Verify that both nodes have connectivity with the `ping` command
-2. Connect to the other rPi using `ssh` with the option "-o ServerAliveInterval=5" and whatever else may be necessary
-3. In the remote rPi run the "Alive" command
-    * `python -c $'import time\nwhile True: print("Alive!"); time.sleep(5)'`
-4. Before the previous command ends, remove the Ethernet cable from one of the rPi and wait for an error message (it should take less than 1 min.).
-5. After the error message, reconnect the cable, re-establish the `ssh` session and verify if the command is still running using the `ps` command.
-6. Repeat the "Alive" command in the remote rPi making sure it is not interrupted if the connection fails, and execute steps 4 and 5 again.
+:steps:
+1. Using the internal network interface, connect both VMs have connectivity with each other, using the `ping` command.
+2. Connect to the RPi from the Ubuntu VM using `ssh` with the option "-o ServerAliveInterval=5" and the remaining needed parameters.
+3. In the RPi `ssh` session run the "Alive" command:
 
+
+* `python -c $'import time\nwhile True: print("Alive!"); time.sleep(5)'`
+
+:steps
+4. Now, your RPi VM directly (on another terminal window), set the 'eth1' interface down (`ip l s eth1 down`) and wait for an error message on your `ssh` connection (it should take less than 1 min.).
+5. After the error message, set 'eth1' up again, re-establish the `ssh` session and verify if the command is still running using the `ps` command.
+6. Find a way to repeat the "Alive" command in the RPi making sure it is not interrupted if the connection fails (**this will require some research or check the hint below**).
+
+:tip:
 If a command such as `ps` outputs too much information you can use the Unix pipeline principles to manage the output.
 For example `ps aux | grep desired_pattern`.
+
+
+If you couldn't figure out step 6. above you can see a hint below.
 
 <button class="w3collapsible">Hint (ssh)</button>
 <div class="w3content">

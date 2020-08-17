@@ -232,13 +232,13 @@
 <li>Let’s now remove any unwanted address or routes on ‘eth1’ with the command:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr flush dev eth1</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr flush dev eth1</span></code></pre></div>
 
 <div class="steps"><ol start="4" type="1">
 <li>Add an IP address and respective mask to the interface ‘eth1’ using the command:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</span></code></pre></div>
 
 <p><strong>Note:</strong> you should avoid the subnet 10.0.2.0/24 as it already being used on ‘eth0’.</p>
 
@@ -292,7 +292,7 @@ Hint (ping)
 <div class="w3content">
 <p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 
 And note the round-trip <strong>time</strong> of each message…
 </div>
@@ -326,18 +326,37 @@ You may lose connectivity at this point depending on the IP addresses you have p
 </div>
 <div class="tip"><p><strong>About the report</strong> You don’t have to include all the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
 </div>
-<p><strong>NOT UP TO DATE FROM HERE ON</strong></p>
 <h2 id="static-ip-addresses">Static IP addresses</h2>
-<p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the “dhcpcd.conf” file in <code>/etc/</code>. Edit this file and reboot to check the networking configurations have remained.</p>
-<p>Example configuration:</p>
+<p>In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it. However, this is done differently in different Linux systems. Below you’ll see how to do it in Raspbian and Ubuntu.</p>
+<p><strong>—&gt; On your RPi VM</strong></p>
+<p>To save your settings you need to edit the “dhcpcd.conf” file in <code>/etc/</code> (don’t forget to check if you have permissions). Edit this file and reboot to check the networking configurations have remained.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">interface</span> eth0</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">static</span> ip_address=192.168.100.102/24</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">static</span> routers=192.168.100.101</a></code></pre></div>
+<span name="26e526"></span><aside name="26e526"><p>You don’t need to reboot your RPi to apply these setting, it’s enough to restart the networking service but you need to type a bit more(e.g. <code>sudo ip link set eth1 down &amp;&amp; sudo ip link set eth1 up</code> <strong>or</strong> <code>service networking restart</code>).</p>
+</aside>
+<p>Example configuration (change accordingly!):</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">interface</span> eth1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
+
+<p><strong>—&gt; On your Ubuntu VM</strong></p>
+<p>To save your settings you need to edit the “01-network-manager-all.yaml” file in <code>/etc/netplan</code>. After editing you can apply your changes with the command <code>sudo netplan apply</code>:</p>
+<p>Example configuration (change accordingly!):</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">network</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="ex">version</span>: 2</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="ex">renderer</span>: networkd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="ex">ethernets</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="ex">enp0s3</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>            <span class="ex">dhcp4</span>: yes</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="ex">enp0s8</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>            <span class="ex">dhcp4</span>: no</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            <span class="ex">addresses</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>                <span class="ex">-</span> 10.0.20.2/24</span></code></pre></div>
 
     </section>
     <section class="content">
-<h1 id="additional-exercises">Additional Exercises</h1>
+<h1 id="optional-exercises">Optional Exercises</h1>
 <h2 id="introducing-ipv6">Introducing IPv6</h2>
 <p>Change the topology you created in <a href="#lab.-exercises">the previous exercise</a> to use IPv6 addresses and try:</p>
 <ul>
@@ -349,23 +368,31 @@ You may lose connectivity at this point depending on the IP addresses you have p
 Hint
 </button>
 <div class="w3content">
-<p>Remember to change the addresses in the remote rPi first or simply add the IPv6 address without modifying the IPv4 addresses you had earlier, instead of replacing.</p>
-<p>In addition note that some commands require additional arguments to handle IPv6 (check their documentation).</p>
+<p>Note that some commands require additional arguments to handle IPv6 (check their documentation).</p>
 </div>
+
 <h2 id="more-ssh">More SSH</h2>
-<p>After configuring both devices, from the rPi with keyboard and screen, do the following:</p>
-<ol type="1">
-<li>Verify that both nodes have connectivity with the <code>ping</code> command</li>
-<li>Connect to the other rPi using <code>ssh</code> with the option “-o ServerAliveInterval=5” and whatever else may be necessary</li>
-<li>In the remote rPi run the “Alive” command
+<p>The goal of this exercise is to show you how <code>ssh</code> handles sessions.</p>
+
+<div class="steps"><ol type="1">
+<li>Using the internal network interface, connect both VMs have connectivity with each other, using the <code>ping</code> command.</li>
+<li>Connect to the RPi from the Ubuntu VM using <code>ssh</code> with the option “-o ServerAliveInterval=5” and the remaining needed parameters.</li>
+<li>In the RPi <code>ssh</code> session run the “Alive” command:</li>
+</ol>
+</div>
 <ul>
 <li><code>python -c $'import time\nwhile True: print("Alive!"); time.sleep(5)'</code></li>
-</ul></li>
-<li>Before the previous command ends, remove the Ethernet cable from one of the rPi and wait for an error message (it should take less than 1 min.).</li>
-<li>After the error message, reconnect the cable, re-establish the <code>ssh</code> session and verify if the command is still running using the <code>ps</code> command.</li>
-<li>Repeat the “Alive” command in the remote rPi making sure it is not interrupted if the connection fails, and execute steps 4 and 5 again.</li>
+</ul>
+
+<div class="steps"><ol start="4" type="1">
+<li>Now, your RPi VM directly (on another terminal window), set the ‘eth1’ interface down (<code>ip l s eth1 down</code>) and wait for an error message on your <code>ssh</code> connection (it should take less than 1 min.).</li>
+<li>After the error message, set ‘eth1’ up again, re-establish the <code>ssh</code> session and verify if the command is still running using the <code>ps</code> command.</li>
+<li>Find a way to repeat the “Alive” command in the RPi making sure it is not interrupted if the connection fails (<strong>this will require some research or check the hint below</strong>).</li>
 </ol>
-<p>If a command such as <code>ps</code> outputs too much information you can use the Unix pipeline principles to manage the output. For example <code>ps aux | grep desired_pattern</code>.</p>
+</div>
+<div class="tip"><p>If a command such as <code>ps</code> outputs too much information you can use the Unix pipeline principles to manage the output. For example <code>ps aux | grep desired_pattern</code>.</p>
+</div>
+<p>If you couldn’t figure out step 6. above you can see a hint below.</p>
 <button class="w3collapsible">
 Hint (ssh)
 </button>
@@ -379,7 +406,7 @@ Hint (ssh)
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="0c68be"></span><aside name="0c68be"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
