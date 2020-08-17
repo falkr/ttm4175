@@ -52,7 +52,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
-      <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
       <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Security</strong></a>
@@ -75,7 +75,7 @@
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
-        <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
         <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Security</strong></a>
@@ -145,75 +145,75 @@
 <h2 id="man-pages">Man-Pages</h2>
 <p>If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (<em>man</em> stands for <em>manual</em>). For instance, to learn more about the <code>passwd</code> command, type</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">man</span> passwd</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">man</span> passwd</span></code></pre></div>
 
 <p>The command reveals this:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">PASSWD</span>(1)                 <span class="ex">BSD</span> General Commands Manual                PASSWD(1)</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">NAME</span></a>
-<a class="sourceLine" id="cb1-4" title="4">     <span class="fu">passwd</span> -- modify a user<span class="st">&#39;s password</span></a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="st">SYNOPSIS</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="st">     passwd [-i infosystem [-l location]] [-u authname] [user]</span></a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="st">DESCRIPTION</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="st">     The passwd utility changes the user&#39;</span>s password.  If the user is not</a>
-<a class="sourceLine" id="cb1-11" title="11">     <span class="ex">the</span> super-user, passwd first prompts for the current password and will</a>
-<a class="sourceLine" id="cb1-12" title="12">     <span class="ex">not</span> continue unless the correct password is entered.</a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="ex">...</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">PASSWD</span>(1)                 <span class="ex">BSD</span> General Commands Manual                PASSWD(1)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">NAME</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>     <span class="fu">passwd</span> -- modify a user<span class="st">&#39;s password</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="st">SYNOPSIS</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="st">     passwd [-i infosystem [-l location]] [-u authname] [user]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="st">DESCRIPTION</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="st">     The passwd utility changes the user&#39;</span>s password.  If the user is not</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>     <span class="ex">the</span> super-user, passwd first prompts for the current password and will</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>     <span class="ex">not</span> continue unless the correct password is entered.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="ex">...</span></span></code></pre></div>
 
 <p>You can return to the command line by pressing <code>q</code> (for <em>quit</em>). You can also <a href="http://man7.org/linux/man-pages/dir_all_alphabetic.html">browse man-pages online</a>.</p>
 
 <h2 id="apropos-command">apropos Command</h2>
 <p>Let’s say you want to copy a file but are unsure what the proper command is called. You can search in your local man-pages using the apropos command, for instance:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">apropos</span> copy</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">apropos</span> copy</span></code></pre></div>
 
 <p>reveals</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">FcCacheCopySet</span>(3)        <span class="ex">-</span> Returns a copy of the fontset from cache</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">FcCharSetCopy</span>(3)         <span class="ex">-</span> Copy a charset</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">FcLangSetCopy</span>(3)         <span class="ex">-</span> copy a langset object</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="ex">FcMatrixCopy</span>(3)          <span class="ex">-</span> Copy a matrix</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="ex">FcPatternDuplicate</span>(3)    <span class="ex">-</span> Copy a pattern</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="ex">FcRangeCopy</span>(3)           <span class="ex">-</span> Copy a range object</a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="ex">FcStrCopy</span>(3)             <span class="ex">-</span> duplicate a string</a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="ex">FcStrCopyFilename</span>(3)     <span class="ex">-</span> create a complete path from a filename</a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="ex">FcValueSave</span>(3)           <span class="ex">-</span> Copy a value</a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="ex">tiffcp</span>(1)                <span class="ex">-</span> copy (and possibly convert) <span class="ex">a</span> TIFF file</a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="ex">tiffcrop</span>(1)              <span class="ex">-</span> select, copy, crop, convert, extract, and/or process one or more TIFF files</a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="ex">asr</span>(8)                   <span class="ex">-</span> Apple Software Restore<span class="kw">;</span> <span class="ex">copy</span> volumes (e.g. from disk images)</a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="ex">copy</span>(9), <span class="ex">copyin</span>(9), <span class="ex">copyinstr</span>(9), <span class="ex">copyout</span>(9), <span class="ex">copystr</span>(9) <span class="ex">-</span> kernel copy functions</a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="ex">copyops</span>(n), <span class="ex">transfer</span>::copy(n) <span class="ex">-</span> Data transfer foundation</a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="fu">cp</span>(1)                    <span class="ex">-</span> copy files</a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="fu">cpio</span>(1)                  <span class="ex">-</span> copy files to and from archives</a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="ex">...</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">FcCacheCopySet</span>(3)        <span class="ex">-</span> Returns a copy of the fontset from cache</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">FcCharSetCopy</span>(3)         <span class="ex">-</span> Copy a charset</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">FcLangSetCopy</span>(3)         <span class="ex">-</span> copy a langset object</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">FcMatrixCopy</span>(3)          <span class="ex">-</span> Copy a matrix</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="ex">FcPatternDuplicate</span>(3)    <span class="ex">-</span> Copy a pattern</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="ex">FcRangeCopy</span>(3)           <span class="ex">-</span> Copy a range object</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="ex">FcStrCopy</span>(3)             <span class="ex">-</span> duplicate a string</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="ex">FcStrCopyFilename</span>(3)     <span class="ex">-</span> create a complete path from a filename</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="ex">FcValueSave</span>(3)           <span class="ex">-</span> Copy a value</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="ex">tiffcp</span>(1)                <span class="ex">-</span> copy (and possibly convert) <span class="ex">a</span> TIFF file</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="ex">tiffcrop</span>(1)              <span class="ex">-</span> select, copy, crop, convert, extract, and/or process one or more TIFF files</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="ex">asr</span>(8)                   <span class="ex">-</span> Apple Software Restore<span class="kw">;</span> <span class="ex">copy</span> volumes (e.g. from disk images)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="ex">copy</span>(9), <span class="ex">copyin</span>(9), <span class="ex">copyinstr</span>(9), <span class="ex">copyout</span>(9), <span class="ex">copystr</span>(9) <span class="ex">-</span> kernel copy functions</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="ex">copyops</span>(n), <span class="ex">transfer</span>::copy(n) <span class="ex">-</span> Data transfer foundation</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="fu">cp</span>(1)                    <span class="ex">-</span> copy files</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="fu">cpio</span>(1)                  <span class="ex">-</span> copy files to and from archives</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="ex">...</span></span></code></pre></div>
 
 <p>From there you can read that <code>cp</code> is probably the right command you were looking for.</p>
 
 <h2 id="command-help">Command Help</h2>
 <p>The man pages are quite extensive, and sometimes you want to have a shorter description. Then you can use the help text for the command, which is often available when you use the <code>--help</code> flag for the command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> --help</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> --help</span></code></pre></div>
 
 <p>This reveals the following:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">cd</span>: cd [-L<span class="kw">|</span>[<span class="ex">-P</span> [-e]] [-@]] [dir]</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="ex">Change</span> the shell working directory.</a>
-<a class="sourceLine" id="cb1-3" title="3">   </a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="ex">Change</span> the current directory to DIR.  The default DIR is the value of the</a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="ex">HOME</span> shell variable.</a>
-<a class="sourceLine" id="cb1-6" title="6">   </a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="ex">The</span> variable CDPATH defines the search path for the directory containing</a>
-<a class="sourceLine" id="cb1-8" title="8">    <span class="ex">DIR.</span>  Alternative directory names in CDPATH are separated by a colon (:)<span class="ex">.</span></a>
-<a class="sourceLine" id="cb1-9" title="9">    <span class="ex">A</span> null directory name is the same as the current directory.  If DIR begins</a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="ex">with</span> a slash (/), <span class="kw">then</span> <span class="ex">CDPATH</span> is not used.</a>
-<a class="sourceLine" id="cb1-11" title="11">   </a>
-<a class="sourceLine" id="cb1-12" title="12">    <span class="ex">If</span> the directory is not found, and the shell option <span class="kw">`</span><span class="ex">cdable_vars</span><span class="st">&#39; is set,</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="st">    the word is assumed to be  a variable name.  If that variable has a value,</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="st">    its value is used for DIR.</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="st">...</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">cd</span>: cd [-L<span class="kw">|</span>[<span class="ex">-P</span> [-e]] [-@]] [dir]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="ex">Change</span> the shell working directory.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>   </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="ex">Change</span> the current directory to DIR.  The default DIR is the value of the</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="ex">HOME</span> shell variable.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>   </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="ex">The</span> variable CDPATH defines the search path for the directory containing</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="ex">DIR.</span>  Alternative directory names in CDPATH are separated by a colon (:)<span class="ex">.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="ex">A</span> null directory name is the same as the current directory.  If DIR begins</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="ex">with</span> a slash (/), <span class="kw">then</span> <span class="ex">CDPATH</span> is not used.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>   </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>    <span class="ex">If</span> the directory is not found, and the shell option <span class="kw">`</span><span class="ex">cdable_vars</span><span class="st">&#39; is set,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="st">    the word is assumed to be  a variable name.  If that variable has a value,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="st">    its value is used for DIR.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="st">...</span></span></code></pre></div>
 
     </section>
 </div>

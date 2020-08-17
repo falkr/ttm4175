@@ -1,4 +1,4 @@
-# Routing and Docker 
+# Layers and Docker 
 
 The overall goal of this lab\. is to complement knowledge on IP, subnets with some routing notions.
 This will be achieved using the same VMs as last week and default Linux tools.
@@ -11,6 +11,8 @@ Today we will also learn more about Docker. With Docker we will be able to simul
 <p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a>
 
 
+
+## Learning Goals
 
 :goals: After this lab you will be able to:
 

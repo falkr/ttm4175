@@ -112,3 +112,37 @@ Changes the password
 
 Create a file.
 
+# ip
+
+Configure network interfaces and routes
+
+Examples:
+
+Verify address and mask from an interface:
+```bash
+ip address show dev (interface)
+```
+
+Add address to an interface:
+```bash
+ip addr add (ip-address/subnetmask) dev (interface)
+```bash
+
+Delete an address from an interface:
+```bash
+ip addr del (ip-address/subnetmask) dev (interface) 
+```
+
+Similar commands can be used for managing routes.
+
+
+
+# host
+
+DNS lookup utility
+
+```
+host www.ntnu.no
+```
+
+

@@ -52,7 +52,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Networking</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
-      <a class="dropdown-item" href="prep-networking-2-2020.html">Routing and Docker</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
       <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Security</strong></a>
@@ -75,7 +75,7 @@
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
-        <a class="dropdown-item" href="networking-2-2020.html">Routing and Docker</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
         <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Security</strong></a>
@@ -140,36 +140,66 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="dns-and-dhcp">DNS and DHCP</h1>
-<p>Last week we focused on IP addressing and routing, mainly based on manual configurations. However, manually configuring every address and memorising numbers for addresses is not very convenient. Now you will learn about the Domain Name System (DNS) and the Dynamic Host Configuration Protocol (DHCP).</p>
-<p>This week’s readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>. Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
+<h1 id="layers-and-docker">Layers and Docker</h1>
+<p>The overall goal of this lab. is to complement knowledge on IP, subnets with some routing notions. This will be achieved using the same VMs as last week and default Linux tools.</p>
+<p>Today we will also learn more about Docker. With Docker we will be able to simulate a “mini-cloud” inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
+
+<span name="a2cfc8"></span><aside name="a2cfc8"><p><strong>Note:</strong> Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There’s nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?</p>
+<p>
+<p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a></p>
+</aside>
 <h2 id="learning-goals">Learning Goals</h2>
 
-<div class="goals"><p>After this week you will be able to:</p>
+<div class="goals"><p>After this lab you will be able to:</p>
 <ul>
-<li>Understand how DNS works</li>
-<li>Understand how DHCP works</li>
-<li>Use basic Linux commands for:
+<li>Check the role of routing in networking</li>
+<li>Use <code>ip route</code> for managing routes</li>
+<li>Recognise the importance of <em>ports</em> in networking</li>
+<li>Learn basic Docker principles:
 <ul>
-<li>installing and configuring a basic DHCP server</li>
-<li>checking DNS information</li>
+<li>Images and containers</li>
+<li>The <em>Dockerfile</em></li>
+<li>Basic commands for managing containers</li>
 </ul></li>
 </ul>
 </div>
     </section>
     <section class="content">
-<h1 id="understanding-dns">Understanding DNS</h1>
-<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>). If you have read the first chapter of the book this something you already know (otherwise read <strong>section 1.11, page 30</strong>), but there’s more to it and you can read about it in <strong>section 7.8 (from page 204 to 208)</strong>, and you can skip the subsections.</p>
+<h1 id="how-do-computers-communicate-part-2">How do computers communicate (part 2)</h1>
+<h2 id="protocol-layers">Protocol Layers</h2>
+<p>To better understand how computer networking is organised you should <strong>read section 1.5.1 from page 75 to page 81</strong> of the book. Again, if you read the entire first chapter, this is already covered.</p>
+<p>Optionally you can also read section 1.5.2 to get a better overview of how information is handled through different layers (encapsulated).</p>
+
+<h2 id="ports">Ports</h2>
+<p>We saw that IP address are useful for identifying a machine/server’s location, or address. We also mentioned that in each address we can have several services or applications, with their respective ports or doors to reach them. To learn more about this you should <strong>read sections 2.1.1 and 2.1.2, in pages 116 to 121.</strong></p>
 
     </section>
     <section class="content">
-<h1 id="understanding-dhcp">Understanding DHCP</h1>
-<p>The DHCP protocol in another networking tool we use on our daily lives without even noticing. It allows the automatic configuration of not only our IP addresses and subnet masks but also of our default routes and DNS server. Read more about it in <strong>section 7.10 (pages 217 and 218)</strong>.</p>
-<p>A simple but interesting video about DHCP:</p>
+<h1 id="servers">Servers</h1>
+<p>In our next lab you will use the Raspberry Pi VM as a client and the Ubuntu VM (containers) and a server. To better understand what a server is watch the following videos.</p>
+<p>This first video is extremely simple but explains the most basic concept.</p>
 
 <div class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RUZohsAxPxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SwLdKeC8scE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<p>This one goes into significantly more detail. You need only to <strong>watch the first 3 min.</strong> but the rest of the video is also interesting (and provides generally useful information).</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UjCDWCeHCzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+    </section>
+    <section class="content">
+<h1 id="optional-materials">Optional Materials</h1>
+<h2 id="web-servers">Web Servers</h2>
+<p>As an <strong>optional reading</strong> you can check this website about <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">webservers</a></p>
+<h2 id="docker">Docker</h2>
+<p>You already worked with Virtual Machines, which can virtualise the hardware of an entire computer and run multiple operating systems. However, there are other alternatives to fully virtualising an entire machine. Docker is one of these alternatives, that uses containerisation for offering different virtualisation possibilities. Check the video below for an introduction on Docker’s approach.</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TvnZTi_gaNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>To read more about the difference between Virtual Machines and Containers you can read this <a href="https://www.backblaze.com/blog/vm-vs-containers/">blog post</a>.</p>
+
     </section>
 </div>
 

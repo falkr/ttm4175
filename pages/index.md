@@ -77,7 +77,7 @@ class: table table-sm
 |-
 | 36
 |
-| <a href="prep-networking-2-2020.html">Routing and Docker</a>
+| <a href="prep-networking-2-2020.html">Layers and Docker</a>
 |-
 | 37
 |
