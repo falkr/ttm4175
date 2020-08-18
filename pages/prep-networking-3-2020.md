@@ -1,39 +1,35 @@
-# NAT and Wi-Fi
+# Web servers and DNS
 
-At this point, understanding addressing, routing and how to dynamically handle hosts, we can now create our own private network.
-Since a network disconnected from the Internet may not be so interesting you will now learn how one public IP address can be used by several hosts, using IP Masquerading, typically referred to as Network Address Translation (NAT).
-In addition, since the IEEE 802.11 wireless protocol, or Wi-Fi, is so commonly used for connectivity, you will also learn how to create your own Wi-Fi access point using a Raspberry Pi.
-
-This week's readings will still be based on the book [An Introduction To Computer Networks](http://intronetworks.cs.luc.edu/).
-Remember that the *details about the required readings will be available in each section, **in bold**.*
-
-## Learning Goals
+At this point you can already setup simple network configurations.
+This week we will continue exploring some networking commands, namely for routing, and we will setup a basic [Domain Name System (DNS)](https://en.wikipedia.org/wiki/Domain_Name_System) and Webserver.
+In order to do so, you get better acquainted with routing, DNS and web servers.
 
 :goals: After this week you will be able to:
 
-- Understand how IP Masquerading/NAT works
-- Understand how Wi-Fi works
-- Use basic Linux commands for:
-    - configuring IP masquerading
-    - installing and configuring a basic Wi-Fi access point
+- Recognise the role of routing in networking
+- Use `ip route` for managing routes
+- Retrieve basic DNS information
+- Deploy simple network services
 
 
-# Understanding NAT
+# Routing
 
-As you now know there are special types of IP addresses and a lack of public IPv4 addresses.
-Network Address Translation (NAT) allows us to minimise this issue through IP Masquerading and a lot more (e.g. improve security).
-To learn more about NAT read **section 7.7 and its subsections (from page 200 to 204)**.
-In addition, you may also read more IP Masquerading in Linux [here](http://www.tldp.org/HOWTO/IP-Masquerade-HOWTO/ipmasq-background2.0.html).
-Wikipedia is also an interesting resource for knowing more about [NAT](https://en.wikipedia.org/wiki/Network_address_translation).
+This video was previously included as optional material. However, now we want to focus more on routing so you should (re-)watch it.
 
+---
+type: youtube
+video: AkxqkoxErRk
+---
 
-# Understanding Wi-Fi
+# DNS
 
-Wi-Fi is nowadays present in almost every household, office, public transport, \ldots 
-We use it in our computers, phones, smart-watches, TVs, consoles, …
-But how does it work?
-Read more about it in:
+Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. *ntnu.no* or *google.com*).
+DNS enables this and much more!
+To learn more about this **read from section 2.4 to 2.4.2, in pages 160 to 167.**
 
-- **section 3.1.7 (pages 99 and 100)** and
-- **sections 3.7.4 and 3.7.4.1 (from page 107 and 110)**.
+# Web server
+
+[This page](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server) was already an optional reading from last week.
+This week however it's important that you fully understand its contents (you already meet the prerequisites indicated on top of the page but, if not, follow the provided links and read more about the basic principles).
+
 

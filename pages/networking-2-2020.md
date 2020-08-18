@@ -16,8 +16,6 @@ Today we will also learn more about Docker. With Docker we will be able to simul
 
 :goals: After this lab you will be able to:
 
-- Check the role of routing in networking
-- Use `ip route` for managing routes
 - Recognise the importance of _ports_ in networking
 - Learn basic Docker principles:
     - Images and containers
