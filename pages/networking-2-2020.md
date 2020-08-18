@@ -49,11 +49,12 @@ In your RPi VM try the following:
 
 :steps:
 1. Remove the existing route with `ip route del <ip/mask> dev eth1`.
-2. Check for changes in connectivity between the two VMs.
+2. Check for changes in connectivity between the two VMs, first from the RPi and afterwards from Ubuntu. Is there any difference?
 3. Add a new route with the command `ip route add` with a "/30" mask.
+4. Check the connectivity between the two VMs again.
 
 
-
+## Docker
 
 
 

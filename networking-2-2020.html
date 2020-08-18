@@ -144,7 +144,7 @@
 <p>The overall goal of this lab. is to complement knowledge on IP, subnets with some routing notions. This will be achieved using the same VMs as last week and default Linux tools.</p>
 <p>Today we will also learn more about Docker. With Docker we will be able to simulate a “mini-cloud” inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
 
-<span name="36bdb1"></span><aside name="36bdb1"><p><strong>Note:</strong> Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There’s nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?</p>
+<span name="61b931"></span><aside name="61b931"><p><strong>Note:</strong> Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There’s nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?</p>
 <p>
 <p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a></p>
 </aside>
@@ -180,17 +180,20 @@
 
 <div class="steps"><ol type="1">
 <li>Remove the existing route with <code>ip route del &lt;ip/mask&gt; dev eth1</code>.</li>
-<li>Check for changes in connectivity between the two VMs.</li>
+<li>Check for changes in connectivity between the two VMs, first from the RPi and afterwards from Ubuntu. Is there any difference?</li>
 <li>Add a new route with the command <code>ip route add</code> with a “/30” mask.</li>
+<li>Check the connectivity between the two VMs again.</li>
 </ol>
 </div>
+<h2 id="docker">Docker</h2>
+
     </section>
     <section class="content">
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="c07538"></span><aside name="c07538"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="5e119e"></span><aside name="5e119e"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
