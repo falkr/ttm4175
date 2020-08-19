@@ -56,7 +56,7 @@ video: H4BstqvgBow
 
 
 
-# Understanding IP addresses and subnets
+# Understanding IP addresses
 
 The following video gives a short overview how IP addresses are used on our everyday lives whenever we use the Internet (watch the first 2min only).
 
