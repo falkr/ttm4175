@@ -596,3 +596,15 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
   background-color: #f3f3f3;
 }
 
+table.check td {
+    text-align: center;
+}
+
+table.check td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+table.check img {
+color: #1481b8;
+}

@@ -1,13 +1,19 @@
+# Learning Tools
 
 
+We use a lot of tools, but they all have their specific purpose. 
 
-# Install Software 
 
-For many aspects of collaboration, we are going to use Microsoft Teams in this course. It has functions for chat as well as sharing and collaborating on files. 
+---
+type: table
+file: tables/tools.mw
+class: table table-sm check
+---
 
-* Visit the [site about Office 365](https://innsida.ntnu.no/wiki/-/wiki/English/Office+365) and install **Microsoft Teams** on your laptop.
-* Install it on your mobile devices (Android or iOS), too.
-* You will receive an invitation link to the team _TTM4115 (2018)_ later.
 
-Aside: 
-<img width="50px" src="figures/msteams.jpg"/>
+* Announcements are always done via Blackboard and accessible there. They are also forwarded by email. 
+* Most learning material is available directly from this website, so you can access anytime and anywhere it without logging in. Some material may be distributed via Blackboard.
+* Feel free to ask private questions via email, but ask questions that are interesting to everyone on Piazza, so that all can enjoy the answer. If you ask the teachers or student assitants via email something that belongs on Piazza, they may ask you to ask that question there once again. 
+* Deliveries such as the reports and also the individual RATs are done via Blackboard, where you also receive an announcement for the deliveries.
+* For the team RATs and the online lectures, we use ZOOM. The meeting details are available as announcement or note on Blackboard. 
+* Microsoft Teams we use for document sharing, collaboration within your teams and contact with the teaching assistants. 
