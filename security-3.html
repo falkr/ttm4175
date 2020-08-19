@@ -71,7 +71,7 @@
   </li>
   
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
@@ -94,29 +94,23 @@
   </li>
   
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
-      <a class="dropdown-item" href="commands.html">List of Commands</a>
-      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
-    </div>
-  </li>
-  
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
-    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
       <a class="dropdown-item" href="teams.html">Teams</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
-    </div>
-  </li>
-  
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
-    <div class="dropdown-menu">
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
       <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
-      <a class="dropdown-item" href="virtual-box-win.html">VIrtual Box for Windows</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
       <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
     </div>
   </li>
@@ -153,9 +147,9 @@
 <li>Make sure that Windows 7 is mounted within Kali, then go to the following folder containing the SAM file:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> /mnt/windows/Windows/System32/config</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">ls</span></a></code></pre></div>
 
 <ul>
 <li>Start <em>chntpw</em> in interactive mode by using <em>-i</em> flag option and read in the SAM file</li>
@@ -192,16 +186,16 @@
 <li>Locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">ls</span></a></code></pre></div>
 
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> </a></code></pre></div>
 
 <h2 id="examining-the-sam-database">Examining the SAM database</h2>
 <ul>
@@ -261,7 +255,7 @@
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="0c92ca"></span><aside name="0c92ca"><p><img src="figures/doubleteam.png" width="30"/></p>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
 </aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>

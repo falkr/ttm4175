@@ -71,7 +71,7 @@
   </li>
   
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
@@ -94,29 +94,23 @@
   </li>
   
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Material</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
-      <a class="dropdown-item" href="commands.html">List of Commands</a>
-      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
-    </div>
-  </li>
-  
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Learning</a>
-    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
       <a class="dropdown-item" href="teams.html">Teams</a>
       <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
-    </div>
-  </li>
-  
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
-    <div class="dropdown-menu">
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
       <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
-      <a class="dropdown-item" href="virtual-box-win.html">VIrtual Box for Windows</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
       <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
     </div>
   </li>
@@ -184,13 +178,13 @@
 <h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
 <p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</a></code></pre></div>
 
 <h2 id="testing-your-broker">Testing Your Broker</h2>
 <p>Start Mosquitto:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">mosquitto</span> -v</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">mosquitto</span> -v</a></code></pre></div>
 
 <p>The result should look like this:</p>
 
@@ -199,7 +193,7 @@
 </div>
 <p>You can also check which ports it is connected to:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">netstat</span> –at </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">netstat</span> –at </a></code></pre></div>
 
 <p><strong>For the report:</strong> Document this output.</p>
 
