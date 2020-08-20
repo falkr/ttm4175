@@ -139,7 +139,7 @@ class: table table-sm
 ! Tema 
 |-
 | 35
-| Man. 24. aug. 8:15-10:00
+| Man. 24. aug. 9:00-10:00
 | digital
 | Networking 1
 |-
