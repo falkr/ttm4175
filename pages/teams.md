@@ -13,3 +13,12 @@ type: figure
 source: figures/teams.png
 caption: "You belong at the same time to a team of 3 and a team of 6."
 ---
+
+We will use the double teams for:
+
+* activities during the lectures
+* the team RATs
+
+The smaller teams of 3 we use for:
+
+* the labs
