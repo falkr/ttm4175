@@ -145,4 +145,87 @@ DNS lookup utility
 host www.ntnu.no
 ```
 
+# Docker commands
+
+## docker pull <name>
+
+Let's you get an image or repository from a registry (e.g. Docker hub).
+
+## docker ps 
+
+Lists all running containers.
+The option `-a` can be used in addition to the command so that all existing containers are shown, even the stopped ones.
+
+## docker images
+
+Lists all locally available images (created or downloaded).
+
+## docker start <container ID/name>
+
+Start one or more stopped containers.
+
+## docker stop <container ID/name>
+
+Stop one or more running containers.
+
+## docker rm <container ID/name>
+
+Remove one or more containers.
+
+## docker rmi <image ID(s)>
+
+Remove one or more images.
+
+
+## docker build -t <image ID/name>
+
+Build an image from a Dockerfile.
+
+* Docker build vil bygge et docker-image utifra en docker-fil. I docker-filen er det spesifisert et sett med instruksjoner for hvordan imaget skal bli bygget opp. 
+
+* -t er et flagg som sier at vi kan legge til tags til image, her sier vi at docker-image skal hete mittimage. 
+
+* Ved å sette punktum på slutten sier vi at docker-filen ligger i mappen vi allerede er i. Man kan også alternativt spesifisere hele pathen til docker-filen istedenfor punktumet.
+
+
+## docker run -dit --name <name_of_your_choice> --privileged <image_name_you_want_to_use>
+
+Run a command in a **new** container.
+
+* Docker run starter en prosess i en isolert container som og er bygd ut i fra et image. 
+* -dit flagget
+* -i står for interactive. 
+* -t står for terminal
+* -d lar deg kjøre containeren i detached mode. Da kjører den i bakgrunnen av terminalen. 
+* --name setter navn på containeren. 
+* --privileged setter at containeren har tillatelse til å gjøre endringer på innstillinger som er låst bak tillatelser. (hvis det ikke trenges eller at det står i dockerfilen så har du det ikke med)
+
+:warning:
+The privileged flag shouldn't be used unless needed! It opens up the host running Docker to possible attacks from inside the privileged container.
+
+
+## docker exec -it <container ID/name> bash
+
+Run a command in a **running** container.
+
+* Lar deg komme inn i et interaktivt shell av containeren hvor du kan utføre kommandoer som da skjer inne i containeren.
+* Når du går ut av shell, vil containeren stoppe.
+* Når du skal bruke id-en til containeren så trenger du ikke å bruke hele bare nok til at den er unik.
+* Syntaks: `docker exec -it <container ID/Name> /bin/bash`
+    * exec står for execute
+    * i står for interactive
+    * t står for terminal
+    * bash tar deg til mappen bin som ligger under root mappen. Der ligger "programfiler". `bash` er et "program" som ligger i denne mappen og står for Bourne-again shell.
+
+Eksempler:
+
+* `docker exec -it a73450b64455 bash`
+* `docker exec -it min-container bash`
+
+
+## docker run -d --name siteNr2 -p 8081:80 website2
+
+This example shows a `docker run` that exposes port 80 of the container through port 8081 of the host machine using the `-p` option.
+This means that in your host machine (localhost or 127.0.0.1) you can open port 8081 to reach services/applications bound/listening to port 80 inside your container.
+
 
