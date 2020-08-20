@@ -173,11 +173,46 @@ If you try the _exec_ command again it will fail.
 15. Try again the command `docker ps -a`. Did anything change?
 
 :tip:
-To learn more about Docker commands, apart from using `man` and `--help` you can also check [this support document](material/ttm4200-lab1-support-document-2020.pdf), created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).
+To learn more about Docker commands, apart from using `man` and `--help` you can also check our [List of Commands](commands.html#docker-commands) and [this support document](material/ttm4200-lab1-support-document-2020.pdf), created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).
 
 
 
 ### More on Docker
+
+Now we'll use Docker to setup a Web Server in our VM without having to change it.
+This is very useful in many contexts, even for you throughout your degree.
+For example, if you need to use a specific software for a given course, instead of installing in your own machine, you can just create a container with all the necessary software and run it when needed!
+
+Back to the lab\.!
+
+Instead of pulling a generic Docker image, we are going to create our own Docker image, defined using a 'Dockerfile'.
+This file contains a set of instructions, necessary to create a Docker image.
+To do so just follow these steps:
+
+:steps:
+1. Download [this zip file](material/lab2-docker.zip) with a basic container configuration.
+2. Unzip the downloaded file and navigate to folder './lab2/webserver/'.
+3. Inside this folder you will fine a simple 'Dockerfile' with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.
+4. Now you can build your own image based on this 'Dockerfile' with the command:
+
+```bash 
+docker build -t webserver .
+``` 
+
+:steps:
+5. Create a container based on the image you just build and register its ID (you can also retrieve it later).
+6. Enter your new container and find its IP address.
+7. Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.
+
+---
+type: hint
+title: Hint about managing containers
+---
+To create a container you want to use the command `docker run` with the necessary/correct options.
+
+To find container IDs you want to use the command `docker ps` (`-a` optional).
+---
+
 
 **NOT UP TO DATE FROM HERE ON**
 
