@@ -247,13 +247,15 @@ After editing you can apply your changes with the command `sudo netplan apply`:
 
 Example configuration (change accordingly!):
 
-```bash
+```yaml
 network:
     version: 2
     renderer: networkd
     ethernets:
         enp0s3:
             dhcp4: yes
+            nameservers:
+                addresses: [8.8.4.4,8.8.8.8]
         enp0s8:
             dhcp4: no
             addresses:

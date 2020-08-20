@@ -76,7 +76,7 @@
         <a class="dropdown-item disabled"><strong>Networking</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
         <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
-        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1.html">Security 1</a>
@@ -161,25 +161,110 @@
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
 <p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
-<p><strong>NOT UP TO DATE FROM HERE ON</strong></p>
+
 <h2 id="preparation">Preparation</h2>
 
 <div class="steps"><ol type="1">
-<li>make sure there’s connectivity between both VMs</li>
-<li>…</li>
+<li>Make sure there’s connectivity between both VMs (you should have configured static IP address in the previous lab.).</li>
+<li>Test if your Ubuntu VM has Internet connectivity.</li>
+<li>Make sure you’ve got enough free disk space for your VM (at least 5GB).</li>
 </ol>
 </div>
 <h2 id="experimenting-with-routes">Experimenting with routes</h2>
-<p>In your RPi VM try the following:</p>
+<p>Today we won’t see all the network layers in action but we will look into layer-3 routing. Later in this lab. we will move to the application layer, which is higher in the networking stack.</p>
+<p>Now, in your RPi VM try the following:</p>
 
 <div class="steps"><ol type="1">
+<li>Check the current routes associated to ‘eth1’</li>
 <li>Remove the existing route with <code>ip route del &lt;ip/mask&gt; dev eth1</code>.</li>
-<li>Check for changes in connectivity between the two VMs, first from the RPi and afterwards from Ubuntu. Is there any difference?</li>
-<li>Add a new route with the command <code>ip route add</code> with a “/30” mask.</li>
-<li>Check the connectivity between the two VMs again.</li>
+<li>Check for changes in connectivity between the two VMs with the <code>ping</code> command first from the RPi and afterwards from Ubuntu. Is there any difference?</li>
+<li>Now, in your RPi run the command <code>sudo tcpdump -i eth1</code> and try to <code>ping</code> from the Ubuntu VM. Register what happens.</li>
+<li>Repeat step 4 but this time run <code>tcpdump</code> on Ubuntu and for the correct interface connected to the internal network. Is there a difference? If so, why?</li>
+<li>On your RPi, add a new route with the command <code>ip route add</code> with the smallest subnet mask possible (don’t forget to include this in your <strong>report</strong>).</li>
+<li>Make sure you have re-established the connectivity between the two VMs.</li>
 </ol>
 </div>
+<div class="tip"><p><code>tcpdump</code> dumps all the received/sent network traffic (i.e. prints all the traffic)</p>
+</div>
+<button class="w3collapsible">Hint on tcpdump</button>
+<div class="w3content">
+<p>In this exercise it’s important to remember/understand that a <code>ping</code> consists of two messages. One on the way out, and another returning one.</p>
+<p>In our exercise the Ubuntu VM has a route (a path) to reach our RPi, which means that its messages will be sent to their destination. On the other hand, the RPi VM <strong>does not</strong> have a route for reaching Ubuntu (even if the “cable is connected”). This should be visible when using <code>tcpdump</code>, which will get packets on the RPi but not on Ubuntu.</p>
+
+</div>
 <h2 id="docker">Docker</h2>
+<h3 id="introduction">Introduction</h3>
+<p>We will start with a few basic steps, if you have any issues please ask for help! It’s important that you understand well these steps before moving forward.</p>
+
+<div class="steps"><ol type="1">
+<li>In your Ubuntu VM find out what kind of operating system you’re emulating.</li>
+<li>In Docker’s hub <a href="https://hub.docker.com/" class="uri">https://hub.docker.com/</a> search for the same operating system.</li>
+<li>You should have found at least one <em>Docker Official Image</em>, which is important to take into account! Don’t use images you don’t trust.</li>
+<li>Now enter the following in your terminal:</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> pull ubuntu</span></code></pre></div>
+
+<span name="c601cc"></span><aside name="c601cc"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository. This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p>
+</aside>
+<div class="warning"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in “/etc/netplan/01-network-manager-all.yaml” to include nameservers below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="at">    </span><span class="fu">nameservers</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="at">        </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">...</span></span></code></pre></div>
+
+<div class="steps"><ol start="5" type="1">
+<li>You can see all locally available Docker images by typing:</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> images</span></code></pre></div>
+
+<div class="steps"><ol start="6" type="1">
+<li>Now let’s build and run a container from the Ubuntu image using:</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -dit --name my-ubuntu-container ubuntu</span></code></pre></div>
+
+<span name="0c125d"></span><aside name="0c125d"><p>The <code>run</code> command will build an instance of the Ubuntu image. This instance is what we call a container. We can build several containers that originate from the same image. This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the <a href="prep-networking-2-2020.html#optional-materials">optional materials section</a>).</p>
+<p>If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.</p>
+</aside>
+<div class="steps"><ol start="7" type="1">
+<li>Using the generated ID, “enter” the new Ubuntu container using the following command, which will run a shell inside it:</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> exec -it <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
+
+<div class="tip"><p>It’s enough to use only part of the Container ID, as long as it is unique.</p>
+</div>
+<div class="steps"><ol start="8" type="1">
+<li>Compare the version of your container’s Ubuntu with the one from your VM using the command below inside the container and inside the VM:</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">cat</span> /etc/os-release</span></code></pre></div>
+
+<div class="tip"><p>The goal of this last step is to verify the power of using containers. The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.</p>
+</div>
+<div class="steps"><ol start="9" type="1">
+<li>To exit your container you can just enter “exit”, type <code>Ctrl+d</code> or type <code>Ctrl+p Ctrl+q</code> (the latter detaches from a container even if wasn’t started in <em>detach mode</em>).</li>
+<li>To list all running containers you can use the command <code>docker ps</code>. Try it.</li>
+<li>You can stop running containers with <code>docker stop &lt;containerID/name&gt;</code>. Stop your Ubuntu container.</li>
+</ol>
+</div>
+<div class="tip"><p>After stopping the container you will no longer be able to “enter” it. If you try the <em>exec</em> command again it will fail.</p>
+</div>
+<div class="steps"><ol start="12" type="1">
+<li>Now, list all running containers again to see the difference.</li>
+<li>What happens if you try <code>docker ps -a</code>?</li>
+<li>To remove a container you can use the command <code>docker rm &lt;containerID/name&gt;</code>.</li>
+<li>Try again the command <code>docker ps -a</code>. Did anything change?</li>
+</ol>
+</div>
+<div class="tip"><p>To learn more about Docker commands, apart from using <code>man</code> and <code>--help</code> you can also check <a href="material/ttm4200-lab1-support-document-2020.pdf">this support document</a>, created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).</p>
+</div>
+<h3 id="more-on-docker">More on Docker</h3>
+<p><strong>NOT UP TO DATE FROM HERE ON</strong></p>
 
     </section>
     <section class="content">

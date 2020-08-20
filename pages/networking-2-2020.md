@@ -34,27 +34,152 @@ Do not forget to take notes while solving the exercises so you do not have to re
 
 These exercises should be completed in teams.
 
-**NOT UP TO DATE FROM HERE ON**
 
 ## Preparation
 
 :steps:
-1. make sure there's connectivity between both VMs
-2. ...
+1. Make sure there's connectivity between both VMs (you should have configured static IP address in the previous lab.).
+2. Test if your Ubuntu VM has Internet connectivity.
+3. Make sure you've got enough free disk space for your VM (at least 5GB).
 
 
 ## Experimenting with routes
 
-In your RPi VM try the following:
+Today we won't see all the network layers in action but we will look into layer-3 routing.
+Later in this lab\. we will move to the application layer, which is higher in the networking stack.
+
+Now, in your RPi VM try the following:
 
 :steps:
-1. Remove the existing route with `ip route del <ip/mask> dev eth1`.
-2. Check for changes in connectivity between the two VMs, first from the RPi and afterwards from Ubuntu. Is there any difference?
-3. Add a new route with the command `ip route add` with a "/30" mask.
-4. Check the connectivity between the two VMs again.
+1. Check the current routes associated to 'eth1'
+2. Remove the existing route with `ip route del <ip/mask> dev eth1`.
+3. Check for changes in connectivity between the two VMs with the `ping` command first from the RPi and afterwards from Ubuntu. Is there any difference?
+4. Now, in your RPi run the command `sudo tcpdump -i eth1` and try to `ping` from the Ubuntu VM. Register what happens.
+5. Repeat step 4 but this time run `tcpdump` on Ubuntu and for the correct interface connected to the internal network. Is there a difference? If so, why?
+6. On your RPi, add a new route with the command `ip route add` with the smallest subnet mask possible (don't forget to include this in your **report**).
+7. Make sure you have re-established the connectivity between the two VMs.
+
+:tip:
+`tcpdump` dumps all the received/sent network traffic (i.e. prints all the traffic)
+
+
+---
+type: hint
+title: Hint on tcpdump
+---
+In this exercise it's important to remember/understand that a `ping` consists of two messages.
+One on the way out, and another returning one.
+
+In our exercise the Ubuntu VM has a route (a path) to reach our RPi, which means that its messages will be sent to their destination.
+On the other hand, the RPi VM **does not** have a route for reaching Ubuntu (even if the "cable is connected").
+This should be visible when using `tcpdump`, which will get packets on the RPi but not on Ubuntu.
+
+
 
 
 ## Docker
+
+### Introduction
+
+We will start with a few basic steps, if you have any issues please ask for help!
+It's important that you understand well these steps before moving forward.
+
+:steps:
+1. In your Ubuntu VM find out what kind of operating system you're emulating.
+2. In Docker's hub <https://hub.docker.com/> search for the same operating system.
+3. You should have found at least one *Docker Official Image*, which is important to take into account! Don't use images you don't trust.
+4. Now enter the following in your terminal:
+
+```bash
+docker pull ubuntu
+``` 
+
+:aside:
+The `pull` command retrieves the image from Docker Hub into your local repository.
+This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).
+
+
+:warning:
+At this stage, if you get an _Error response from daemon_ edit your network configurations in "/etc/netplan/01-network-manager-all.yaml" to include _nameservers_ below, followed by the command `sudo netplan apply` to apply the changes.
+```yaml
+enp0s3:
+    dhcp4: yes
+    nameservers:
+        addresses: [8.8.4.4,8.8.8.8]
+...
+```
+
+
+:steps:
+5. You can see all locally available Docker images by typing:
+
+```bash
+docker images
+``` 
+
+:steps:
+6. Now let's build and run a container from the Ubuntu image using:
+
+```bash 
+docker run -dit --name my-ubuntu-container ubuntu
+``` 
+:aside:
+The `run` command will build an instance of the Ubuntu image.
+This instance is what we call a container.
+We can build several containers that originate from the same image.
+This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the [optional materials section](prep-networking-2-2020.html#optional-materials)).
+
+If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.
+
+
+:steps:
+7. Using the generated ID, "enter" the new Ubuntu container using the following command, which will run a shell inside it:
+
+```bash
+docker exec -it <containerID> bash
+``` 
+
+:tip:
+It's enough to use only part of the Container ID, as long as it is unique.
+
+
+:steps:
+8. Compare the version of your container's Ubuntu with the one from your VM using the command below inside the container and inside the VM:
+
+```bash
+cat /etc/os-release
+``` 
+
+:tip:
+The goal of this last step is to verify the power of using containers.
+The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.
+
+
+:steps:
+9. To exit your container you can just enter "exit", type `Ctrl+d` or type `Ctrl+p Ctrl+q` (the latter detaches from a container even if wasn't started in _detach mode_).
+10. To list all running containers you can use the command `docker ps`. Try it.
+11. You can stop running containers with `docker stop <containerID/name>`. Stop your Ubuntu container.
+
+
+:tip
+After stopping the container you will no longer be able to "enter" it.
+If you try the _exec_ command again it will fail.
+
+
+:steps:
+12. Now, list all running containers again to see the difference.
+13. What happens if you try `docker ps -a`?
+14. To remove a container you can use the command `docker rm <containerID/name>`.
+15. Try again the command `docker ps -a`. Did anything change?
+
+:tip:
+To learn more about Docker commands, apart from using `man` and `--help` you can also check [this support document](material/ttm4200-lab1-support-document-2020.pdf), created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).
+
+
+
+### More on Docker
+
+**NOT UP TO DATE FROM HERE ON**
 
 
 
