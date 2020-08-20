@@ -265,12 +265,15 @@
 </div>
 <h3 id="more-on-docker">More on Docker</h3>
 <p>Now we’ll use Docker to setup a Web Server in our VM without having to change it. This is very useful in many contexts, even for you throughout your degree. For example, if you need to use a specific software for a given course, instead of installing in your own machine, you can just create a container with all the necessary software and run it when needed!</p>
+
+<span name="a12fd1"></span><aside name="a12fd1"><p>For making things simpler, in this part of the lab. we need to run the Ubuntu VM with graphic support (<em>Normal start</em>). It can be done without but it needs some extra (non-included steps).</p>
+</aside>
 <p>Back to the lab.!</p>
 <p>Instead of pulling a generic Docker image, we are going to create our own Docker image, defined using a ‘Dockerfile’. This file contains a set of instructions, necessary to create a Docker image. To do so just follow these steps:</p>
 
 <div class="steps"><ol type="1">
 <li>Download <a href="material/lab2-docker.zip">this zip file</a> with a basic container configuration.</li>
-<li>Unzip the downloaded file and navigate to folder ‘./lab2/webserver/’.</li>
+<li><code>unzip</code> the downloaded file and navigate to the folder ‘./lab2/webserver/’.</li>
 <li>Inside this folder you will fine a simple ‘Dockerfile’ with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.</li>
 <li>Now you can build your own image based on this ‘Dockerfile’ with the command:</li>
 </ol>
@@ -278,15 +281,17 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> build -t webserver .</span></code></pre></div>
 
 <div class="steps"><ol start="5" type="1">
-<li>Create a container based on the image you just build and register its ID (you can also retrieve it later).</li>
+<li>List all available Docker images to see the new image. How many new images do you see? Why?</li>
+<li>Create a container based on the image you just built and register its ID (you can also retrieve it later).</li>
 <li>Enter your new container and find its IP address.</li>
 <li>Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.</li>
+<li>Stop and remove all running containers (can you find a way of doing it with a single command? Search online!).</li>
 </ol>
 </div>
 <button class="w3collapsible">Hint about managing containers</button>
 <div class="w3content">
 <p>To create a container you want to use the command <code>docker run</code> with the necessary/correct options.</p>
-<h2 id="to-find-container-ids-you-want-to-use-the-command-docker-ps--a-optional.">To find container IDs you want to use the command <code>docker ps</code> (<code>-a</code> optional).</h2>
+<p>To find container IDs you want to use the command <code>docker ps</code> (<code>-a</code> optional).</p>
 
 </div>
 <p><strong>NOT UP TO DATE FROM HERE ON</strong></p>

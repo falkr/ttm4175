@@ -183,6 +183,11 @@ Now we'll use Docker to setup a Web Server in our VM without having to change it
 This is very useful in many contexts, even for you throughout your degree.
 For example, if you need to use a specific software for a given course, instead of installing in your own machine, you can just create a container with all the necessary software and run it when needed!
 
+:aside:
+For making things simpler, in this part of the lab\. we need to run the Ubuntu VM with graphic support (_Normal start_).
+It can be done without but it needs some extra (non-included steps).
+
+
 Back to the lab\.!
 
 Instead of pulling a generic Docker image, we are going to create our own Docker image, defined using a 'Dockerfile'.
@@ -191,7 +196,7 @@ To do so just follow these steps:
 
 :steps:
 1. Download [this zip file](material/lab2-docker.zip) with a basic container configuration.
-2. Unzip the downloaded file and navigate to folder './lab2/webserver/'.
+2. `unzip` the downloaded file and navigate to the folder './lab2/webserver/'.
 3. Inside this folder you will fine a simple 'Dockerfile' with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.
 4. Now you can build your own image based on this 'Dockerfile' with the command:
 
@@ -200,9 +205,11 @@ docker build -t webserver .
 ``` 
 
 :steps:
-5. Create a container based on the image you just build and register its ID (you can also retrieve it later).
-6. Enter your new container and find its IP address.
-7. Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.
+5. List all available Docker images to see the new image. How many new images do you see? Why?
+6. Create a container based on the image you just built and register its ID (you can also retrieve it later).
+7. Enter your new container and find its IP address.
+8. Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.
+9. Stop and remove all running containers (can you find a way of doing it with a single command? Search online!).
 
 ---
 type: hint
@@ -211,7 +218,8 @@ title: Hint about managing containers
 To create a container you want to use the command `docker run` with the necessary/correct options.
 
 To find container IDs you want to use the command `docker ps` (`-a` optional).
----
+
+
 
 
 **NOT UP TO DATE FROM HERE ON**
