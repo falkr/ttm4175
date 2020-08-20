@@ -266,6 +266,20 @@ font-weight: bold;
 display: inline;
 }
 
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+
 div.tip p {
 padding: 10px;
 background-color: #d9eaf2;
