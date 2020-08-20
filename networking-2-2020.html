@@ -207,7 +207,7 @@
 
 <span name="c601cc"></span><aside name="c601cc"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository. This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p>
 </aside>
-<div class="warning"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in “/etc/netplan/01-network-manager-all.yaml” to include nameservers below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
+<div class="warning"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in “/etc/netplan/01-network-manager-all.yaml” to include <em>nameservers</em> below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>

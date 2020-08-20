@@ -329,9 +329,9 @@ You may lose connectivity at this point depending on the IP addresses you have p
 </aside>
 <p>Example configuration (change accordingly!):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">interface</span> eth1</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="at">interface eth1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="at">static ip_address=192.168.100.102/24</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="at">static routers=192.168.100.101</span></span></code></pre></div>
 
 <p><strong>—&gt; On your Ubuntu VM</strong></p>
 <p>To save your settings you need to edit the “01-network-manager-all.yaml” file in <code>/etc/netplan</code>. After editing you can apply your changes with the command <code>sudo netplan apply</code>:</p>

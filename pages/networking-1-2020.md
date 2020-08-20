@@ -234,7 +234,7 @@ You don't need to reboot your RPi to apply these setting, it's enough to restart
 
 Example configuration (change accordingly!):
 
-```bash
+```yaml
 interface eth1
 static ip_address=192.168.100.102/24
 static routers=192.168.100.101

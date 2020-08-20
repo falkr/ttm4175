@@ -274,6 +274,69 @@
 <pre><code>host www.ntnu.no</code></pre>
 
     </section>
+    <section class="content">
+<h1 id="docker-commands">Docker commands</h1>
+<h2 id="docker-pull">docker pull <name></h2>
+<p>Let’s you get an image or repository from a registry (e.g. Docker hub).</p>
+<h2 id="docker-ps">docker ps</h2>
+<p>Lists all running containers. The option <code>-a</code> can be used in addition to the command so that all existing containers are shown, even the stopped ones.</p>
+<h2 id="docker-images">docker images</h2>
+<p>Lists all locally available images (created or downloaded).</p>
+<h2 id="docker-start">docker start <container ID/name></h2>
+<p>Start one or more stopped containers.</p>
+<h2 id="docker-stop">docker stop <container ID/name></h2>
+<p>Stop one or more running containers.</p>
+<h2 id="docker-rm">docker rm <container ID/name></h2>
+<p>Remove one or more containers.</p>
+<h2 id="docker-rmi-image-ids">docker rmi &lt;image ID(s)&gt;</h2>
+<p>Remove one or more images.</p>
+
+<h2 id="docker-build--t">docker build -t <image ID/name></h2>
+<p>Build an image from a Dockerfile.</p>
+<ul>
+<li><p>Docker build vil bygge et docker-image utifra en docker-fil. I docker-filen er det spesifisert et sett med instruksjoner for hvordan imaget skal bli bygget opp.</p></li>
+<li><p>-t er et flagg som sier at vi kan legge til tags til image, her sier vi at docker-image skal hete mittimage.</p></li>
+<li><p>Ved å sette punktum på slutten sier vi at docker-filen ligger i mappen vi allerede er i. Man kan også alternativt spesifisere hele pathen til docker-filen istedenfor punktumet.</p></li>
+</ul>
+
+<h2 id="docker-run--dit-name-privileged">docker run -dit –name <name_of_your_choice> –privileged <image_name_you_want_to_use></h2>
+<p>Run a command in a <strong>new</strong> container.</p>
+<ul>
+<li>Docker run starter en prosess i en isolert container som og er bygd ut i fra et image.</li>
+<li>-dit flagget</li>
+<li>-i står for interactive.</li>
+<li>-t står for terminal</li>
+<li>-d lar deg kjøre containeren i detached mode. Da kjører den i bakgrunnen av terminalen.</li>
+<li>–name setter navn på containeren.</li>
+<li>–privileged setter at containeren har tillatelse til å gjøre endringer på innstillinger som er låst bak tillatelser. (hvis det ikke trenges eller at det står i dockerfilen så har du det ikke med)</li>
+</ul>
+
+<div class="warning"><p>The privileged flag shouldn’t be used unless needed! It opens up the host running Docker to possible attacks from inside the privileged container.</p>
+</div>
+<h2 id="docker-exec--it-bash">docker exec -it <container ID/name> bash</h2>
+<p>Run a command in a <strong>running</strong> container.</p>
+<ul>
+<li>Lar deg komme inn i et interaktivt shell av containeren hvor du kan utføre kommandoer som da skjer inne i containeren.</li>
+<li>Når du går ut av shell, vil containeren stoppe.</li>
+<li>Når du skal bruke id-en til containeren så trenger du ikke å bruke hele bare nok til at den er unik.</li>
+<li>Syntaks: <code>docker exec -it &lt;container ID/Name&gt; /bin/bash</code>
+<ul>
+<li>exec står for execute</li>
+<li>i står for interactive</li>
+<li>t står for terminal</li>
+<li>bash tar deg til mappen bin som ligger under root mappen. Der ligger “programfiler”. <code>bash</code> er et “program” som ligger i denne mappen og står for Bourne-again shell.</li>
+</ul></li>
+</ul>
+<p>Eksempler:</p>
+<ul>
+<li><code>docker exec -it a73450b64455 bash</code></li>
+<li><code>docker exec -it min-container bash</code></li>
+</ul>
+
+<h2 id="docker-run--d-name-sitenr2--p-808180-website2">docker run -d –name siteNr2 -p 8081:80 website2</h2>
+<p>This example shows a <code>docker run</code> that exposes port 80 of the container through port 8081 of the host machine using the <code>-p</code> option. This means that in your host machine (localhost or 127.0.0.1) you can open port 8081 to reach services/applications bound/listening to port 80 inside your container.</p>
+
+    </section>
 </div>
 
 
