@@ -40,7 +40,7 @@ These exercises should be completed in teams.
 :steps:
 1. Make sure there's connectivity between both VMs (you should have configured static IP address in the previous lab.).
 2. Test if your Ubuntu VM has Internet connectivity.
-3. Make sure you've got enough free disk space for your VM (at least 5GB).
+3. Make sure you've got enough free disk space for your VM (at least 3GB).
 
 
 ## Experimenting with routes
@@ -184,8 +184,8 @@ This is very useful in many contexts, even for you throughout your degree.
 For example, if you need to use a specific software for a given course, instead of installing in your own machine, you can just create a container with all the necessary software and run it when needed!
 
 :aside:
-For making things simpler, in this part of the lab\. we need to run the Ubuntu VM with graphic support (_Normal start_).
-It can be done without but it needs some extra (non-included steps).
+For making things simpler, in this part of the lab\. we need to run the Ubuntu VM with graphics support (_Normal start_).
+It can be done without but it needs some extra (non-included) steps.
 
 
 Back to the lab\.!
@@ -220,9 +220,46 @@ To create a container you want to use the command `docker run` with the necessar
 To find container IDs you want to use the command `docker ps` (`-a` optional).
 
 
+## Two servers, same IP address?
+
+*You can run this exercise without graphics support on your Ubuntu VM.*
+
+**Intro:** A Web Server can be run in the same machine to support multiple websites.
+This is typically done by analysing the website's name (DNS) and replying with the correct page.
+However, more than one Web Server in the same machine means we would have to use port 80 or 443 more than once, which we can't!
+In the upcoming tasks you will see how we can get around this limitation.
+
+:aside:
+By convention Web Server bind port 80 for HTTP and port 443 for HTTPS.
+These default ports are used in many networking services, for saving us time in having to specify a port for each standard service.
+For example, SSH uses port 22 by default (that's why we used it when we set port forwarding, remember?).
 
 
-**NOT UP TO DATE FROM HERE ON**
+:steps:
+1. Inside the unzipped folder navigate to './lab2/webserver-1/'.
+2. What is the main difference from the 'Dockerfile' in this folder compared to the one used earlier (in the folder 'webserver')? Discuss this in your report.
+3. Build an image based on the included 'Dockerfile', name this image "webserver-1".
+4. Repeat step 1 and 2 for 'webserver-2' and name the image accordingly.
+5. Run the commands below and look at them carefully. Note the `-p` option. What does it do? 
+
+``` 
+docker run -d --name serverNr1 -p 8080:80 webserver-1
+docker run -d --name serverNr2 -p 8081:80 webserver-2
+``` 
+
+:steps:
+6. In your RPi VM (_Normal start_), open the web browser and type the IP address of your Ubuntu VM followed by ":8080" to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?
+7. Repeat the previous step using port 8081 instead. What's the difference?
+8. In your report make an illustration of what you think happened, including the RPi and Ubuntu VM, the link between them and the containers, as well as some arrows to represent the webpage request (e.g. with IP and port number as labels). You can use the figure below as inspiration.
+9. Stop and remove all the containers.
+10. Remove all Docker images.
+
+---
+type: figure
+source: figures/net/lab3-topo.png
+caption: Simple illustration of the setup we will have in lab 3. Can be used **as inspiration** to illustrate lab 2.
+---
+
 
 
 
