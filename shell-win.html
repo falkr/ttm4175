@@ -97,6 +97,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
     <div class="dropdown-menu">
       <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
       <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
       <a class="dropdown-item" href="reports.html">Rapporter</a>
       <a class="dropdown-item" href="teams.html">Teams</a>
@@ -111,6 +112,7 @@
       <a class="dropdown-item disabled"><strong>Tools</strong></a>
       <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
       <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
       <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
     </div>
   </li>
@@ -154,7 +156,7 @@
 </div>
 <p>Type the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">Get-WindowsCapability</span> -Online <span class="kw">|</span> <span class="ex">?</span> Name -like <span class="st">&#39;OpenSSH*&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">Get-WindowsCapability</span> -Online <span class="kw">|</span> <span class="ex">?</span> Name -like <span class="st">&#39;OpenSSH*&#39;</span></a></code></pre></div>
 
 <p>If SSH is installed, you’ll see something like the following:</p>
 
