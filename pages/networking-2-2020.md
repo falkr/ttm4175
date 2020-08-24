@@ -48,19 +48,23 @@ These exercises should be completed in teams.
 Today we won't see all the network layers in action but we will look into layer-3 routing.
 Later in this lab\. we will move to the application layer, which is higher in the networking stack.
 
-Now, in your RPi VM try the following:
+Now, **on your RPi VM** try the following:
 
 :steps:
 1. Check the current routes associated to 'eth1'
 2. Remove the existing route with `ip route del <ip/mask> dev eth1`.
 3. Check for changes in connectivity between the two VMs with the `ping` command first from the RPi and afterwards from Ubuntu. Is there any difference?
-4. Now, in your RPi run the command `sudo tcpdump -i eth1` and try to `ping` from the Ubuntu VM. Register what happens.
-5. Repeat step 4 but this time run `tcpdump` on Ubuntu and for the correct interface connected to the internal network. Is there a difference? If so, why?
-6. On your RPi, add a new route with the command `ip route add` with the smallest subnet mask possible (don't forget to include this in your **report**).
-7. Make sure you have re-established the connectivity between the two VMs.
+4. Install the program "tcpdump" with the command `sudo apt install tcpdump` (when asked, type Y or yes to install)
 
 :tip:
 `tcpdump` dumps all the received/sent network traffic (i.e. prints all the traffic)
+
+
+:steps:
+5. Now, on your RPi run the command `sudo tcpdump -i eth1` and try to `ping` from the Ubuntu VM. Register what happens.
+6. **Repeat step 4** but this time run `tcpdump` **on Ubuntu** and for the correct interface connected to the internal network. Is there a difference? If so, why?
+7. **On your RPi**, add a new route with the command `ip route add` with the smallest subnet mask possible (don't forget to include this in your **report**).
+8. Make sure you have re-established the connectivity between the two VMs.
 
 
 ---
@@ -84,8 +88,10 @@ This should be visible when using `tcpdump`, which will get packets on the RPi b
 We will start with a few basic steps, if you have any issues please ask for help!
 It's important that you understand well these steps before moving forward.
 
+**---> On your Ubuntu VM**
+
 :steps:
-1. In your Ubuntu VM find out what kind of operating system you're emulating.
+1. On your Ubuntu VM find out what kind of operating system you're emulating.
 2. In Docker's hub <https://hub.docker.com/> search for the same operating system.
 3. You should have found at least one *Docker Official Image*, which is important to take into account! Don't use images you don't trust.
 4. Now enter the following in your terminal:
@@ -181,7 +187,7 @@ To learn more about Docker commands, apart from using `man` and `--help` you can
 
 Now we'll use Docker to setup a Web Server in our VM without having to change it.
 This is very useful in many contexts, even for you throughout your degree.
-For example, if you need to use a specific software for a given course, instead of installing in your own machine, you can just create a container with all the necessary software and run it when needed!
+For example, if you need to use a specific software for a given course, instead of installing on your own machine, you can just create a container with all the necessary software and run it when needed!
 
 :aside:
 For making things simpler, in this part of the lab\. we need to run the Ubuntu VM with graphics support (_Normal start_).
@@ -248,7 +254,7 @@ docker run -d --name serverNr2 -p 8081:80 webserver-2
 ``` 
 
 :steps:
-6. In your RPi VM (_Normal start_), open the web browser and type the IP address of your Ubuntu VM followed by ":8080" to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?
+6. On your RPi VM (_Normal start_), open the web browser and type the IP address of your Ubuntu VM followed by ":8080" to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?
 7. Repeat the previous step using port 8081 instead. What's the difference?
 8. In your report make an illustration of what you think happened, including the RPi and Ubuntu VM, the link between them and the containers, as well as some arrows to represent the webpage request (e.g. with IP and port number as labels). You can use the figure below as inspiration.
 9. Stop and remove all the containers.
@@ -265,42 +271,4 @@ caption: Simple illustration of the setup we will have in lab 3. Can be used **a
 
 
 
-# Final Steps
 
-### Learning Goals
-
-In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
-
-:aside: <img src="figures/doubleteam.png" width="30"/>
-
-
-### Individual Reflection
-
-Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
-
-
-### The Combination Lock
-
-Each team gets their own combination lock so you can store the box in the lockers in the lab. 
-
-* The locks come opened and with the opening combination set.
-* Take a picture of that combination in your phone, so you remember it.
-* Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.) 
-
-
-### Cleaning Up
-
-:todo:
-- Put all hardware back into the box.
-- Store the box in one of the lockers in the lab, using the combination lock.
-- Connect all parts of the PC back to it (keyboard, mouse, monitor).
-- Take out any trash. (Even if its not yours... thank you!)
-- Put the chairs back to the table.
-
-### Individual Exercises
-
-We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
-
-- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
-- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
-- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
