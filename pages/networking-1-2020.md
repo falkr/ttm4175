@@ -25,12 +25,6 @@ https://filesender.uninett.no/?s=download&token=a0ca6d46-2078-4984-a532-b68e3fd2
 
 
 
-# Teamwork 2
-
-First, we will start with a reflection on teamwork.
-
-[Teamwork 2](teamwork-2.html)
-
 
 # Importing and configuring the Ubuntu VM
 
@@ -311,5 +305,12 @@ If you couldn't figure out step 6. above you can see a hint below.
 <div class="w3content">
 To keep programs running even if there's a connection interruption you can use the commands `screen`, `tmux` or simply run them on the background.
 </div> 
+
+
+## Teamwork 2
+
+In case you haven't been in class yesterday continue with a reflection on teamwork.
+
+[Teamwork 2](teamwork-2.html)
 
 
