@@ -143,11 +143,13 @@ Spoiler alert! Before clicking the box below try to solve the exercise on your o
 
 <button class="w3collapsible">Hint (IP addresses)</button>
 <div class="w3content">
-You can use any private IP address in the ranges:
+You can use "any" private IP address in the ranges:
 
 * 10.0.0.0/8
 * 172.16.0.0/12
 * 192.168.0.0/16
+
+**Note:** you can't use the first nor the last IP address of a network/subnet. So, for example, for the network 10.12.1.0/24 you cannot use the addresses 10.12.1.0 nor 10.12.1.255 (remember that /24 corresponds to an 8 bit mask or 255.255.255.0).
 
 An example of a pair of IP addresses and masks could be "10.100.2.1/30" and "10.100.2.2/30".
 

@@ -40,7 +40,8 @@ These exercises should be completed in teams.
 :steps:
 1. Make sure there's connectivity between both VMs (you should have configured static IP address in the previous lab.).
 2. Test if your Ubuntu VM has Internet connectivity.
-3. Make sure you've got enough free disk space for your VM (at least 3GB).
+3. Test if your RPi VM has Internet connectivity.
+4. Make sure you've got enough free disk space for your VM (at least 3GB).
 
 
 ## Experimenting with routes
@@ -216,6 +217,10 @@ docker build -t webserver .
 7. Enter your new container and find its IP address.
 8. Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.
 9. Stop and remove all running containers (can you find a way of doing it with a single command? Search online!).
+
+:tip:
+If you have issues with your browser ask for help from a TA.
+
 
 ---
 type: hint
