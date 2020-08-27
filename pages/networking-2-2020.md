@@ -231,7 +231,11 @@ To create a container you want to use the command `docker run` with the necessar
 To find container IDs you want to use the command `docker ps` (`-a` optional).
 
 
-## Two servers, same IP address? (extra credit! AKA optional)
+
+
+# Optional Exercises
+
+## Two servers, same IP address?
 
 *You can run this exercise without graphics support on your Ubuntu VM.*
 
