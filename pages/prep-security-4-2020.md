@@ -1,6 +1,6 @@
 # Security Vulnerabilities
 
-When it comes to security vulnerabilities, the human factor plays a major role, which makes it important to establish a security culture in each organization. In addition to the human factor, we have the technical vulnerabilities which also must be taken into account.
+When it comes to security vulnerabilities, the human factor plays a major role, which makes it important to establish a security culture in each organization. In addition to the human factor, we have the technical vulnerabilities that must be taken into account.
 
 The above-mentioned issues are the center of this week’s lecture. 
 The most common security vulnerabilities such as SQL Injection, and cross-site scripting will be addressed. You will also learn about vulnerability tests and penetration tests.
