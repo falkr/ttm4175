@@ -29,7 +29,7 @@ To work on this week's lab, start by creating a folder */courses/ttm4175/* on yo
 
 + [Kali Linux virtual image](https://images.kali.org/virtual-images/kali-linux-2020.3-vbox-amd64.ova)
 
-+ Save both files under the folder */courses/ttm4175/*
++ Save the downloaded files under the folder */courses/ttm4175/*
 
 
 ## Introduction to Cyber Security 
