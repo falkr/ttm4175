@@ -45,9 +45,9 @@ In this lab you will learn to:
 
 + Re-enter the password for kali
 
-+ The "keyboard type" on the first screen will likely be correct ("Generic.."). Keep the selected value and press Enter . 
++ The "keyboard type" on the first screen will likely be correct ("Generic.."). Keep the selected value and press Enter. 
 
-+ The other screens will prompt you for language etc. Use arrow keys to scroll up and down between options and "Enter" for OK. When prompted for the keyboard layout, scroll down to "Other", then "Norwegian", then "Norwegian" again.
++ When prompted for the keyboard layout, scroll down (using the arrow key) to "Other", then select "Norwegian", then "Norwegian" again.
 
 + When asked about "Key to function as AltGr", "compose key" and "control+Alt+Backspace", keep the selected values and press Enter.
 
@@ -76,7 +76,7 @@ apt-get clean && apt-get update -y
 apt-get upgrade -y && apt-get dist-upgrade -y
 ```
 
-+ When prompted about restarting services during package upgrades, select Yes 
++ When prompted about restarting services during package upgrades, select Yes. 
 
 # Adding a Windows 7 VM to VirtualBox
 
@@ -84,7 +84,7 @@ Next, we will create a new VM containing Windows 7. This machine will be the “
 
 + Import the file Windows 7.ova into VirtualBox: from the main VirtualBox window click on “Import Appliance..”; select the Windows 7.ova file; then click “Import”. You can just leave all the settings as they are.
 
-+ Boot it up and log in to the user account called **Lab1** to try it out.
++ Boot it up and log in with user **Lab1** to try it out (this account has no password).
 
 # Manage users in Linux
 
