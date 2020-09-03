@@ -4,9 +4,11 @@ The purpose of this lab is to learn about techniques for bypassing authenticatio
 
 # Part1 - Bypassing the Windows log in
 
-Scenario: you have come across a Windows 7 machine that is password protected and you do not know the password. Your task will be to bypass the authentication mechanisms of Windows in order to get access to the machine.
+Scenario: you have come across a Windows 7 machine that is password-protected and you do not know the password. Your task will be to bypass the authentication mechanisms of Windows in order to get access to the machine.
 
-You will perform this task with the help of a technique called dual-booting. In a dual-booting system, two or more operating systems are installed side-by-side on the same physical hard disk, with each OS assigned to its own logical partition on the disk. We will use VirtualBox to simulate that we are running a dual-boot system with Windows 7 and Kali Linux installed on their own separate hard disks, but attached to the same machine. We need therefor to attach Windows 7 disk to the Kali Linux VM.
+You will perform this task with the help of a technique called dual-booting. In a dual-booting system, two or more operating systems are installed side-by-side on the same physical hard disk, with each OS assigned to its own logical partition on the disk. 
+
+We will use VirtualBox to simulate that we are running a dual-boot system with Windows 7 and Kali Linux installed on their own separate hard disks, but attached to the same machine. We need therefore to attach Windows 7 disk to the Kali Linux VM.
 
 ##  Attaching the Windows 7 disk to the Kali machine in VirtualBox
 
@@ -38,14 +40,14 @@ You are now ready to begin bypassing the Windows authentication from within Kali
 
 ` # fdisk -l `% ‘l’ is a lower-case ‘L’
 
-+ To access the contents of the Windows disk you need to mount its file system inside Kali.
-Hard drives are normally mounted under "/mnt". Make a folder called /windows under "/mnt" and mount the Windows 7 partition in it with the mount command.
++ To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under the "/mnt" folder. Make a folder called */windows* under "/mnt" and mount the Windows 7 partition in it with the *mount* command.
 
 :hint:
 
 * Create folder to mount the Windows file system: `mkdir -p /mnt/windows`
 
 * This will incorporate the Windows file system under the "/mnt/windows" folder in Kali:
+
 `mount /dev/sdb2 /mnt/windows` <br/>
 `ls /mnt/windows`
 
