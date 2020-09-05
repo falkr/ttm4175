@@ -257,7 +257,7 @@ For example, SSH uses port 22 by default (that's why we used it when we set port
 4. Repeat step 1 and 2 for 'webserver-2' and name the image accordingly.
 5. Run the commands below and look at them carefully. Note the `-p` option. What does it do? 
 
-``` 
+```bash
 docker run -d --name serverNr1 -p 8080:80 webserver-1
 docker run -d --name serverNr2 -p 8081:80 webserver-2
 ``` 

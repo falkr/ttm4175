@@ -321,8 +321,8 @@
 <li>Run the commands below and look at them carefully. Note the <code>-p</code> option. What does it do?</li>
 </ol>
 </div>
-<pre><code>docker run -d --name serverNr1 -p 8080:80 webserver-1
-docker run -d --name serverNr2 -p 8081:80 webserver-2</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr1 -p 8080:80 webserver-1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr2 -p 8081:80 webserver-2</span></code></pre></div>
 
 <div class="steps"><ol start="6" type="1">
 <li>On your RPi VM (<em>Normal start</em>), open the web browser and type the IP address of your Ubuntu VM followed by “:8080” to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?</li>

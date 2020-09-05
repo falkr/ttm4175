@@ -3,12 +3,16 @@
 The overall goal of this lab\. is to complement knowledge on IP and subnets with some routing notions for setting up our own DNS and Web servers.
 This will be achieved using the same VMs as last week and default Linux tools.
 
+
+## Learning Goals
+
 :goals: After this lab you will be able to:
 
 - Recognise the role of routing in networking
 - Use `ip route` for managing routes
 - Retrieve basic DNS information
 - Deploy simple network services
+
 
 # Lab\. Exercises
 
@@ -20,46 +24,108 @@ Do not forget to take notes while solving the exercises so you do not have to re
 
 These exercises should be completed in teams.
 
-# Under Construction
 
-Containers are about to dock...
+## Preparation
 
-# Final Steps
-
-### Learning Goals
-
-In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)
-
-:aside: <img src="figures/doubleteam.png" width="30"/>
+:steps:
+1. Make sure there's connectivity between both VMs (you should have configured static IP address in the previous labs.).
+2. Test if your Ubuntu VM has Internet connectivity.
+3. Make sure you've got enough free disk space for your VM (at least 3GB).
 
 
-### Individual Reflection
+# A simple network with services
 
-Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.
+---
+type: figure
+source: figures/net/lab3-topo.png
+caption: Network to be created with docker-compose. **TODO needs to be updated with router0 and addresses**
+---
+
+**--> In your Ubuntu VM**
+
+:steps:
+1. Download [this zip file](material/lab3-docker.zip) with the necessary container configuration files.
+2. `unzip` the downloaded file and inside the 'lab3' folder edit the 'docker-compose.yml' file.
+3. Read through the file and see how we configured 3 containers and their networks, matching the figure above.
+4. In the webserver's configuration section edit the IP address to match the topology above (line 51, replace the text "-----Fyll inn her ------" with the correct IP address). Save and exit the file.
+5. Now you can start your topology with the command below. Afterwards list all running containers (discuss what happened in your report).
+
+```bash
+docker-compose up -d --build
+``` 
+
+## Configuring simple routing
+
+In this part of the lab\. your objective is to guarantee you can route packets from your host to the containers.
+Notice that we have a router in our topology that connects two different subnets.
+We will need to configure this router container ('router0') so that packets are correctly forwarded.
+
+**--> In your Ubuntu VM**
+
+:steps:
+1. First, we should check our current routing table in the host machine (use: `ip route list `).
+2. You should see that the host has direct routes to the subnets '10.241.1.0/29' and '10.168.1.0/29', via the devices "br-\*". Include this in your report (a screenshot with a highlight is enough but you can also write each route and the corresponding device).
+3. Since we don't want the host to directly all the containers (it should go via 'router0') run the following command (replace the #### accordingly):
+```bash
+sudo ip route del 10.241.1.0/29 dev br-#### proto kernel scope link src 10.241.1.1
+```
+
+:steps:
+4. Now we need to add a new route such that traffic for the network '10.20.1.0/29' is forwarded via 'router0' (i.e. via '10.168.1.2').
+5. Finally, we need to enable forwarding in our host machine:
+```bash
+sudo iptables --policy FORWARD ACCEPT
+```
+TODO: sysctl instead?
 
 
-### The Combination Lock
-
-Each team gets their own combination lock so you can store the box in the lockers in the lab. 
-
-* The locks come opened and with the opening combination set.
-* Take a picture of that combination in your phone, so you remember it.
-* Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.) 
+:steps:
+6. From your host machine make sure you can `ping` the web server using its address and include a screenshot on your report.
 
 
-### Cleaning Up
+## Using our DNS server (container)
 
-:todo:
-- Put all hardware back into the box.
-- Store the box in one of the lockers in the lab, using the combination lock.
-- Connect all parts of the PC back to it (keyboard, mouse, monitor).
-- Take out any trash. (Even if its not yours... thank you!)
-- Put the chairs back to the table.
+**--> In your Ubuntu VM**
 
-### Individual Exercises
+:steps:
+1. Open a web browser and try to retrieve the web site 'www.ttm4175.com'. What happens and why?
+2. Edit the file '/etc/resolv.conf' and change, or add a new entry, to '10.241.1.2'. This will tell the system to make DNS requests to this address, which corresponds to our DNS container.
+3. Repeat step 1. What happens and why?
+4. Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. 'mail.ttm4175.com' resolves to '10.241.1.3').
 
-We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:
 
-- You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.
-- Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.
-- Some of the Linux-related exercises also work on the Linux-PCs in the lab.
+## Exploring our Web server (container)
+
+**--> In your Ubuntu VM**
+
+:steps:
+1. Go into your web server container ('webserver'). How did you do it?
+2. Navigate to '/etc/nginx/sites-available' and open the file 'default'.
+3. In this file find the *root* directory where the web server pages are stored, namely the 'index.html' file, and include it in your report.
+4. In your host machine, open the web browser and visit the site 'www.ttm4175.com'.
+5. Now, back in your web server container edit the file 'index.html' (be creative!!) and save it when you finish.
+6. Return to your web browser, refresh the page (it should look different), take a screenshot and include it in your report.
+
+---
+type: hint
+title: Working inside your containers
+---
+Remember that you can go inside your running containers with the command `docker exec -it <name> /bin/bash`.
+Alternatively, you can also use `ssh` to enter your container.
+
+And don't forget the [useful commands page](./commands.html).
+
+
+
+# Optional Exercises
+
+## Routing from the RPi to the Docker services
+
+**--> In your RPi VM**
+
+:steps:
+1. Can you `ping` the container 'router0'? Why or why not?
+2. How does your routing table look like? Do you need to add or remove any entry?
+3. **After having IP connectivity**, attempt to open or `ping` the web server using the hostname 'www.ttm4175.com'. What happens? Why? How can you fix it?
+
+
