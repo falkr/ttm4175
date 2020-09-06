@@ -339,6 +339,24 @@
 <p>This example shows a <code>docker run</code> that exposes port 80 of the container through port 8081 of the host machine using the <code>-p</code> option. This means that in your host machine (localhost or 127.0.0.1) you can open port 8081 to reach services/applications bound/listening to port 80 inside your container.</p>
 
     </section>
+    <section class="content">
+<h1 id="docker-compose">Docker Compose</h1>
+<p>Define and run multi-container applications with Docker.</p>
+<h2 id="docker-compose-build">docker-compose build</h2>
+<ul>
+<li>Bygger images angitt av ‘docker-compose.yml’ filen.</li>
+</ul>
+<h2 id="docker-compose-up--d">docker-compose up -d</h2>
+<ul>
+<li>Kjører containerne og nettverkene som er definert i docker-compose.yml filen.</li>
+<li>Syntaks: ‘docker-compose up –build’ –build bygger imagene på nytt dersom Docker oppdager at det har skjedd en endring i noen av imagene som brukes.</li>
+</ul>
+<h2 id="docker-compose-down">docker-compose down</h2>
+<ul>
+<li>Stopper og fjerner containers og nettverkene</li>
+</ul>
+
+    </section>
 </div>
 
 

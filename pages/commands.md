@@ -228,4 +228,21 @@ Eksempler:
 This example shows a `docker run` that exposes port 80 of the container through port 8081 of the host machine using the `-p` option.
 This means that in your host machine (localhost or 127.0.0.1) you can open port 8081 to reach services/applications bound/listening to port 80 inside your container.
 
+# Docker Compose
+
+Define and run multi-container applications with Docker.
+
+## docker-compose build
+
+* Bygger images angitt av 'docker-compose.yml' filen.
+
+## docker-compose up -d
+
+* Kjører containerne og nettverkene som er definert i docker-compose.yml filen.
+* Syntaks: ‘docker-compose up --build’
+ --build bygger imagene på nytt dersom Docker oppdager at det har skjedd en endring i noen av imagene som brukes.
+ 
+## docker-compose down
+
+* Stopper og fjerner containers og nettverkene
 
