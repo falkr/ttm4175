@@ -238,6 +238,11 @@
 <li>Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. ‘mail.ttm4175.com’ resolves to ‘10.241.1.3’).</li>
 </ol>
 </div>
+<button class="w3collapsible">Finding DNS server configurations</button>
+<div class="w3content">
+<p>If you explore the Docker configuration of the DNS container (in the ‘dnsserver/config_files’ folder) you will find all the details you need. You can also check inside the actual container you built, where the configuration files have been placed.</p>
+
+</div>
 <div class="tip"><p>To make nameserver changes permanent use the <em>netplan</em> configuration like you did last week.</p>
 </div>
 <h2 id="exploring-our-web-server-container">Exploring our Web server (container)</h2>

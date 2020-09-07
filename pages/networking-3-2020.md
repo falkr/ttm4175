@@ -117,6 +117,15 @@ Follow the steps below but don't forget to explore the provided configurations t
 3. Repeat step 1. What happens and why?
 4. Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. 'mail.ttm4175.com' resolves to '10.241.1.3').
 
+
+---
+type: hint
+title: Finding DNS server configurations
+---
+If you explore the Docker configuration of the DNS container (in the 'dnsserver/config_files' folder) you will find all the details you need.
+You can also check inside the actual container you built, where the configuration files have been placed.
+
+
 :tip:
 To make nameserver changes permanent use the _netplan_ configuration like you did last week.
 
