@@ -183,4 +183,16 @@ If you want to restart your network but haven't changed the setup you can simply
 2. How does your routing table look like? Do you need to add or remove any entry?
 3. **After having IP connectivity**, attempt to open or `ping` the web server using the hostname 'www.ttm4175.com'. What happens? Why? How can you fix it?
 
+---
+type: hint
+title: Tips for pros
+---
+Forwarding is enabled in Ubuntu but `iptables` doesn't allow forwarding from outside the host to our containers.
+
+You need to allow enable forwarding specifically to the network or interface, e.g.:
+```bash
+sudo iptables -A FORWARD -i enp0s8 -j ACCEPT
+```
+
+
 

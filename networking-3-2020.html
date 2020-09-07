@@ -284,6 +284,13 @@
 <li><strong>After having IP connectivity</strong>, attempt to open or <code>ping</code> the web server using the hostname ‘www.ttm4175.com’. What happens? Why? How can you fix it?</li>
 </ol>
 </div>
+<button class="w3collapsible">Tips for pros</button>
+<div class="w3content">
+<p>Forwarding is enabled in Ubuntu but <code>iptables</code> doesn’t allow forwarding from outside the host to our containers.</p>
+<p>You need to allow enable forwarding specifically to the network or interface, e.g.:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -i enp0s8 -j ACCEPT</span></code></pre></div>
+
+</div>
     </section>
 </div>
 
