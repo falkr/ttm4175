@@ -85,7 +85,7 @@ sudo ip route del 10.241.1.0/29
 
 :steps:
 4. Verify that you have connectivity with '10.168.1.2' and not with '10.241.1.2'. Briefly explain why in your report.
-5. Now we need to add a new route such that traffic for the network '10.20.1.0/29' is forwarded via 'router0' (i.e. via '10.168.1.2').
+5. Now we need to add a new route such that traffic for the network '10.241.1.0/29' is forwarded via 'router0' (i.e. via '10.168.1.2').
 
 ---
 type: hint
