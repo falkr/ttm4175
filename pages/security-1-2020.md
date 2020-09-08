@@ -104,12 +104,13 @@ Username, Encrypted password *(x means that the password is stored in the /etc/s
 
 Using either *awk* or *cut* commands, your task is to print only the first field containing the username.
 
-:hint:
+<button class="w3collapsible">Hint</button>
+<div class="w3content">
 
 `awk -F: '{ print $1}' /etc/passwd`
 
 `cut -d: -f1 /etc/passwd`
-
+</div>
 
 ## Check whether a user exists in the Linux system
 
