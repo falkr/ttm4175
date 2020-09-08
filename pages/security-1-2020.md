@@ -110,6 +110,7 @@ Using either *awk* or *cut* commands, your task is to print only the first field
 
 `cut -d: -f1 /etc/passwd`
 
+
 ## Check whether a user exists in the Linux system
 
 + We can use the command *getent* to get a list of all Linux users: `getent passwd`
