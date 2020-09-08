@@ -181,7 +181,7 @@
 <li><p>Exit the terminal and restart Kali Linux.</p></li>
 </ul>
 <h2 id="create-a-root-user">Create a root user</h2>
-<p>You will now create a <strong>root</strong> superuser that you will use instead of the non-superuser account <strong>kali</strong>. Here are the instructions to do so:</p>
+<p>You will now create a <strong>root</strong> superuser that you will use instead of the standard user account <strong>kali</strong>. Here are the instructions to do so:</p>
 <ul>
 <li><p>Issue command <code>sudo su</code></p></li>
 <li><p>Enter the password for <strong>kali</strong> user account</p></li>
@@ -218,24 +218,27 @@
 <p>Local user information is stored in the /etc/passwd file. Each line in this file represents login information for one user.</p>
 <ul>
 <li><p>Start Kali Linux and log in with <strong>root</strong> username</p></li>
-<li><p>To open the passwd file you can use cat: <code>cat /etc/passwd</code>. You will get all the users that are defined in Kali Linux.</p></li>
+<li><p>Open the passwd file using cat: <code>cat /etc/passwd</code>. You will get all the users that are defined in Kali Linux.</p></li>
 </ul>
-<p>Each line in the file has seven fields delimited by colons that contain the following information: - Username - Encrypted password (x means that the password is stored in the /etc/shadow file). - User ID number (UID). - User’s group ID number (GID). - Full name of the user (GECOS). - User home directory. - Login shell (defaults to /bin/bash).</p>
+<p>Each line in the file has seven fields delimited by colons that contain the following information: Username, Encrypted password <em>(x means that the password is stored in the /etc/shadow file)</em>, User ID number, User’s group ID number, Full name of the user (GECOS), User home directory and Login shell (defaults to /bin/bash).</p>
 
 <h2 id="display-the-username-only">Display the username only</h2>
 <p>Using either <em>awk</em> or <em>cut</em> commands, your task is to print only the first field containing the username.</p>
-
-</section>
-<section class="content">
-<div class="hint_title">Hint
-<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('3a8847').style.cssText = ''">Show</button>
-</div>
-<div class="hint" style="-webkit-filter: blur(5px);" id="3a8847"><p><code>awk -F: '{ print $1}' /etc/passwd</code></p>
+<button class="w3collapsible">
+Hint
+</button>
+<div class="w3content">
+<p><code>awk -F: '{ print $1}' /etc/passwd</code></p>
 <p><code>cut -d: -f1 /etc/passwd</code></p>
+</div>
 <h2 id="check-whether-a-user-exists-in-the-linux-system">Check whether a user exists in the Linux system</h2>
 <ul>
 <li><p>We can use the command <em>getent</em> to get a list of all Linux users: <code>getent passwd</code></p></li>
-<li><p>To check whether a user exists in Linux, you can simply filter the users’ list that we obtained by piping the list to the <em>grep</em> command <code>getent passwd | grep &lt;username&gt;</code>. If the user exists, the command above will print the user’s login information. If there is no output, it means that the user doesn’t exist. Check if the users <strong>kali</strong>, <strong>mysql</strong>, and <strong>lab</strong> exist.</p></li>
+<li><p>To check whether a user exists in Linux, you can simply filter the users’ list that we obtained by piping the list to the <em>grep</em> command <code>getent passwd | grep &lt;username&gt;</code>.</p></li>
+</ul>
+<p>If the user exists, the command above will print the user’s login information. If there is no output, it means that the user doesn’t exist.</p>
+<ul>
+<li>Check if the users <strong>kali</strong>, <strong>mysql</strong>, and <strong>lab</strong> exist.</li>
 </ul>
 <h2 id="create-a-user-and-add-it-to-a-group">Create a user and add it to a group</h2>
 <ul>
@@ -247,9 +250,6 @@
 <li><p>Remove the group <strong>ttm4175</strong> using the command <code>delgroup &lt;groupname&gt;</code></p></li>
 </ul>
 
-</div>
-</section>
-<section class="content">
     </section>
 </div>
 
