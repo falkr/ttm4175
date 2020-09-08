@@ -55,7 +55,7 @@ In this lab you will learn to:
 
 ## Create a root user
 
-You will now create a **root** superuser that you will use instead of the non-superuser account **kali**. Here are the instructions to do so:
+You will now create a **root** superuser that you will use instead of the standard user account **kali**. Here are the instructions to do so:
 
 + Issue command `sudo su`
 
@@ -94,16 +94,10 @@ Local user information is stored in the /etc/passwd file. Each line in this file
 
 + Start Kali Linux and log in with **root** username
 
-+ To open the passwd file you can use cat: `cat /etc/passwd`. You will get all the users that are defined in Kali Linux.
++ Open the passwd file using cat: `cat /etc/passwd`. You will get all the users that are defined in Kali Linux.
 
 Each line in the file has seven fields delimited by colons that contain the following information:
-- Username
-- Encrypted password (x means that the password is stored in the /etc/shadow file).
-- User ID number (UID).
-- User’s group ID number (GID).
-- Full name of the user (GECOS).
-- User home directory.
-- Login shell (defaults to /bin/bash).
+Username, Encrypted password *(x means that the password is stored in the /etc/shadow file)*, User ID number, User’s group ID number, Full name of the user (GECOS), User home directory and Login shell (defaults to /bin/bash).
 
 
 ## Display the username only 
@@ -120,7 +114,11 @@ Using either *awk* or *cut* commands, your task is to print only the first field
 
 + We can use the command *getent* to get a list of all Linux users: `getent passwd`
 
-+ To check whether a user exists in Linux, you can simply filter the users’ list that we obtained by piping the list to the *grep* command `getent passwd | grep <username>`. If the user exists, the command above will print the user’s login information. If there is no output, it means that the user doesn’t exist. Check if the users **kali**, **mysql**, and **lab** exist.
++ To check whether a user exists in Linux, you can simply filter the users’ list that we obtained by piping the list to the *grep* command `getent passwd | grep <username>`. 
+
+If the user exists, the command above will print the user’s login information. If there is no output, it means that the user doesn’t exist. 
+
++ Check if the users **kali**, **mysql**, and **lab** exist.
 
 ## Create a user and add it to a group
 
