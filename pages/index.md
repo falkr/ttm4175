@@ -85,15 +85,15 @@ class: table table-sm
 |-
 | 38
 |
-| <a href="prep-security-1.html">Sikkerhet 1</a>
+| <a href="prep-security-1-2020.html">Sikkerhet 1</a>
 |-
 | 39
 |
-| <a href="prep-security-2.html">Sikkerhet 2</a>
+| <a href="prep-security-2-2020.html">Sikkerhet 2</a>
 |-
 | 40
 |
-| <a href="prep-security-3.html">Sikkerhet 3</a>
+| <a href="prep-security-3-2020.html">Sikkerhet 3</a>
 |-
 | 41
 |
