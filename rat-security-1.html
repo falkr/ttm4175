@@ -1,0 +1,235 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4175">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduction to Communication Technology and Digital Security">
+<meta property="og:description" content="Introduction to Communication Technology and Digital Security">
+
+
+<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+
+<!--<script src="jquery-1.10.1.min.js"></script>-->
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day0-2020.html">Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">Dag 3: SSH and HTML</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="tips.html">Tips</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Networking</strong></a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2020.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2-2020.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3-2020.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4-2020.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Networking</strong></a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
+        <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
+        <a class="dropdown-item" href="security-3.html">Security 3</a>
+        <a class="dropdown-item" href="security-4.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+		<a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
+      <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
+      <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    <section class="content">
+<h2 id="question-1">Question 1</h2>
+
+<div class="rat"><p>What is the generic term for computer programs that can cause damage on your devices?</p>
+<ol type="1">
+<li>Software</li>
+<li>Malware</li>
+<li>Dangerware</li>
+<li>Robots</li>
+</ol>
+<h2 id="question-2">Question 2</h2>
+</div>
+<div class="rat"><p>Working at your desk, you’ve received an email from your bank explaining that your password is out of date, and you must change it. The link within the email will guide you through it. What will you do?</p>
+<ol type="1">
+<li>Follow the link and reset your password</li>
+<li>Reply to the email and ask for details</li>
+<li>Ask a colleague</li>
+<li>Ignore the email and delete it</li>
+</ol>
+<h2 id="question-3">Question 3</h2>
+</div>
+<div class="rat"><p>You are in a café and want to use a public WiFi that requires a password to access, is it generally safe to use that network for sensitive activities such as online banking?</p>
+<ol type="1">
+<li>No, it is not safe</li>
+<li>Yes, It is safe</li>
+<li>A public WiFi is always secure</li>
+<li>I am not sure</li>
+</ol>
+<h2 id="question-4">Question 4</h2>
+</div>
+<div class="rat"><p>When do you need to use anti-virus software?</p>
+<ol type="1">
+<li>All the time, on your laptop only</li>
+<li>When you notice that your computer is running slow</li>
+<li>All the time, on all web-connected devices, and make sure it is always updated</li>
+<li>When you first buy a computer</li>
+</ol>
+<h2 id="question-5">Question 5</h2>
+</div>
+<div class="rat"><p>Which of these security questions might your bank ask you over the phone or via email?</p>
+<ol type="1">
+<li>To give your bank card pin</li>
+<li>To carry out a test transaction online</li>
+<li>To confirm your home address</li>
+<li>To follow a link to a webpage asking for your online banking log-in details</li>
+</ol>
+<h2 id="question-6">Question 6</h2>
+</div>
+<div class="rat"><p>Your favourite band’s new album that you’ve been waiting for will be released today. You receive a message from the online music store you usually buy from, offering you a special deal on it. What should you do?</p>
+<ol type="1">
+<li>Go to the site and check it out</li>
+<li>Decide not to purchase the album</li>
+<li>Click on the link in the message to get the deal</li>
+<li>Forward the message to a friend</li>
+</ol>
+<h2 id="question-7">Question 7</h2>
+</div>
+<div class="rat"><p>While leaving from university, you stumble upon a USB stick on the floor. What do you do?</p>
+<ol type="1">
+<li>Take it home and use it.</li>
+<li>Hand it into reception for them to deal with.</li>
+<li>Pick it up and plug it in to try and find an indication of whom it belongs to, so you can return it.</li>
+<li>Leave it where it is. It’s not your problem.</li>
+</ol>
+<h2 id="question-8">Question 8</h2>
+</div>
+<div class="rat"><p>On your way home, you’ve noticed you’ve left your mobile on the bus. What is the  thing you do?</p>
+<ol type="1">
+<li>Call the phone network to advise them</li>
+<li>Remotely disable it as soon as possible</li>
+<li>Call the bus company to find out if someone has handed it in</li>
+<li>Call your phone to make arrangements to meet the person who found it</li>
+</ol>
+<h2 id="question-9">Question 9</h2>
+</div>
+<div class="rat"><p>When you turn off the GPS function of your smartphone, it prevents any tracking of your phone’s location</p>
+<ol type="1">
+<li>True</li>
+<li>I don’t know</li>
+<li>My phone can never be tracked</li>
+<li>False</li>
+</ol>
+<h2 id="question-10">Question 10</h2>
+</div>
+<div class="rat"><p>In which context(s) does the term Cyber security apply?</p>
+<ol type="1">
+<li>Network security</li>
+<li>Application security</li>
+<li>Information security</li>
+<li>All answers are true</li>
+</ol>
+</div>
+    </section>
+</div>
+
+
+<footer></footer>
+</body>
+</html>
