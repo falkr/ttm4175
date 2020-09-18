@@ -108,7 +108,7 @@ If the output of John the Ripper shows 0 guesses, it means the password is not c
 
 :tip:
 
-Note that in the case where the password is not simple or didn't exist in John's dictionary, then you would need a much bigger dictionary and lot longer time to crack it. You can use your own password lists or download a large one from Internet (there’s lots of dictionary file in terabyte size).
+Note that in the case where the password is not simple or didn't exist in John's dictionary, then you would need a much bigger dictionary and a lot longer time to crack it. You can use your own password lists or download a large one from Internet (there’s lots of dictionary file in terabyte size).
 
 ### Creating new passwords from existing ones
 
@@ -132,6 +132,7 @@ For example, if "car" was in the dictionary, then the above rule would make John
 
 <button class="w3collapsible">Hint</button>
 <div class="w3content">
+
 The rule that you want to define will be: >1 <7 sl1 Q
 </div>
 
