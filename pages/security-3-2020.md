@@ -135,6 +135,7 @@ For example, if "car" was in the dictionary, then the above rule would make John
 The rule that you want to define will be: >1 <7 sl1 Q
 </div>
 
+
 Take a look at the [John the Ripper web page](http://www.openwall.com/john/doc/RULES.shtml). The description of every possible transformation rule is provided.
 
 
