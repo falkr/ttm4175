@@ -17,7 +17,7 @@ In the previous lab, you had to swap the system files in order to change the use
 ## Updating chntpw
 
 Passwords in Windows are stored hashed in the Security Accounts Manager (SAM) database, located in the */Windows/System32/config* folder. We will manipulate the SAM registry in order to clear the hashed password of user **Lab2**.
-SAM file is stored in a binary format and cannot simply be read by a text editor. We will use a program called *chntpw* in order to clear the users password from the SAM file.
+SAM file is stored in a binary format and cannot simply be read by a text editor. We will use a program called *chntpw* in order to clear the user's password from the SAM file.
 
 + Make sure that Windows 7 is mounted within Kali. Log in to Kali with **root** account, and go to the following folder containing the SAM file:
 
@@ -28,9 +28,9 @@ ls
 ```
 
 + Start *chntpw* in interactive mode by using *-i* flag option and read in the SAM file
-
-`#chntpw -i sam` (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).
-
+```bash
+#chntpw -i sam (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).
+```
 + Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).
 
 + We want to clear the password of user **Lab2**, so enter its RID 
@@ -91,13 +91,14 @@ Ophcrack is a program that comes with a graphical user interface that allows you
 John the Ripper is a cracking tool that runs in both *brute-force* and *dictionary attack* modes. It's basic functionality is to repeatedly try different passwords and hash them until it finds a match. However, since the space of all possible passwords is virtually infinite, testing all password in this manner (brute-force search) will not be feasible unless the password was very short.
 Instead, we will try a list of more likely passwords known as *dictionary attack* mode. 
 
-John the Ripper comes with a pre-installed dictionary of some typical passwords located in */usr/share/john/password.lst*.
-
-+ Open the pre-installed dictionary of John the Ripper.
+John the Ripper comes with a pre-installed dictionary of some typical passwords located in */usr/share/john/password.lst*. Open the pre-installed dictionary of John the Ripper and check its content.
 
 ### Default dictionary
 
-+ Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username): ` # john --wordlist --format=NT --user='user1' win_pwd_hashes.txt` 
++ Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username): 
+```bash
+# john --wordlist --format=NT --user='user1' win_pwd_hashes.txt
+```
 
 This command tells John to use a dictionary attack (–-wordlist) with words from the default dictionary */etc/share/john/password.lst*; using the hash function NTLMv2 (–-format=NT); targeting user **user1** (–-user=...); and where the target hashes are stored in win_pwd_hashes.txt. 
 
@@ -127,13 +128,11 @@ This rule applies to words of length less than 5 *( <5 )* ; and if so, it will c
 
 For example, if "car" was in the dictionary, then the above rule would make John the Ripper also try the word *raC*; that is by checking first if the word's length is less than 5, then capitalizing it to get *Car*, and finally reversing it to get the result *raC*. 
 
-+ Your task now is to create a rule that applies to all words that are longer than 1 and less than 7, and replaces all appearances of lowercase "L" with the number "1". For example, if the word "hello" was in the dictionary, then "he11o" would also be added.
++ Your task now is to create a rule that applies to all words that are longer than 1 and less than 7, and replaces all appearances of lowercase "L" with the number "1". For example, if the word "hello" was in the dictionary, then "he11o" would also be added. Use the command "s" to substitute a letter by another (example *so0* substitutes letter "o" with the number 0).
 
 <button class="w3collapsible">Hint</button>
 <div class="w3content">
-use the command "s" to substitute a letter by another. example *sl1* substitutes letter "l" with the number 1
-
-The rule that want to define will look like this: >1 <7 sl1 Q
+The rule that you want to define will be: >1 <7 sl1 Q
 </div>
 
 Take a look at the [John the Ripper web page](http://www.openwall.com/john/doc/RULES.shtml). The description of every possible transformation rule is provided.
@@ -147,7 +146,7 @@ Take a look at the [John the Ripper web page](http://www.openwall.com/john/doc/R
 
 :tip:
 
-The *wc* command without passing any parameter will display the following three numbers: number of lines, number of words and number of bytes of the file.  
+The *wc* command will display the following three numbers: number of lines, number of words and number of bytes of the file.  
 
 
 + Similarly, create a dictionary *test2.dict* containing the word "hello" and apply the default John rules to it. Does the file contains the word "he11o" as a result of the rule that you added earlier? Why hasn't this rule been applied to the word "labrador"?
@@ -156,7 +155,7 @@ The *wc* command without passing any parameter will display the following three 
 
 + In Kali Linux, create a user named **kuser** and assign a simple password to it (choose a password from the common passwords list)
 
-+ Use the *unshadow* command to combine the extries of */etc/passwd* and */etc/shadow* to create 1 file with username and password details. Redirect the output to */root/kuser_passwd*
++ Use the *unshadow* command to combine the entries of */etc/passwd* and */etc/shadow* to create 1 file with username and password details. Redirect the output to */root/kuser_passwd*
 
 ```bash
  unshadow /etc/passwd /etc/shadow > /root/kuser_passwd
