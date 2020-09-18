@@ -137,7 +137,7 @@ The rule that you want to define will be: >1 <7 sl1 Q
 </div>
 
 
-Take a look at the [John the Ripper web page](http://www.openwall.com/john/doc/RULES.shtml). The description of every possible transformation rule is provided.
+Take a look at the [John the Ripper web page](http://www.openwall.com/john/doc/RULES.shtml) in which the description of every possible transformation rule is provided.
 
 
 + To check how the default rules work, create a dictionary file *test1.dict* containing the single word "labrador" `# echo "labrador" > test1.dict`
