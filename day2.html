@@ -81,7 +81,7 @@
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
         <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
-        <a class="dropdown-item" href="security-3.html">Security 3</a>
+        <a class="dropdown-item" href="security-3-2020.html">Security 3</a>
         <a class="dropdown-item" href="security-4.html">Security 4</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
@@ -176,31 +176,31 @@
 <h3 id="find-out-where-you-are-with-pwd">Find out where you are with pwd</h3>
 <p>When you are in the terminal, you are always in some folder. When you boot up and just open a terminal, you usually start in the home folder. If you are not sure, where you are currently, type the <code>pwd</code>command, which stands for <em>“<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory”</em>.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">pwd</span></span></code></pre></div>
 
 <p>The output of this command will then be the path of the current folder you are in.</p>
 <h3 id="change-the-folder-with-cd">Change the folder with cd</h3>
 <p>Using the <code>cd</code> command, which stands for <em>“<strong>c</strong>hange <strong>d</strong>irectory”</em>, you can change into any riectory, using its path. Type the following to move into your home folder:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /home/pi</span></code></pre></div>
 
 <p>Since the home folder is so so useful, its path has an abbreviation, which is the funny snake <code>~</code> (tilde). You can hence also write the following to change into the home directory:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ~</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> ~</span></code></pre></div>
 
 <p>If you want to move just one folder up in the hierarchy, for example, you are in <code>/home/pi</code> but would like to go into <code>/home/</code>, you can do that with the special path <code>..</code>. Here, the <code>..</code> just means “one up”. So, we can type the following:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> ..</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> ..</span></code></pre></div>
 
 <p>This moves you one folder up. You can check where you are using the <code>pwd</code> command.</p>
 <h3 id="listing-folder-content-with-ls">Listing Folder Content with ls</h3>
 <p>To look at the files and folders inside a folder use the <code>ls</code> command. (Remember it with the word <em>“<strong>l</strong>i<strong>s</strong>t”</em>.) For example, move into the root folder at the top and see which files and folders are listed there:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /</span></code></pre></div>
 
 <p>and then</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
 
 <p>will list the following:</p>
 
@@ -210,7 +210,7 @@
 <p>Note that there are different colors for folders and files.</p>
 <p>If you want some more detailed information about folders and files, you can use the <code>ls -l</code> command, that means, the <code>ls</code> command with an <strong>option</strong> <code>-l</code>. When you invoke it in the root folder, for instance:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ls</span> -l</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ls</span> -l</span></code></pre></div>
 
 <p>now the listing will look as follows:</p>
 
@@ -223,22 +223,22 @@
 <h3 id="touch-and-rm">touch and rm</h3>
 <p>You can create a file with the command <code>touch</code>. The created file is empty, but you can then use other programs, for example a text editor, to add content to it.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">touch</span> file.txt</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">touch</span> file.txt</span></code></pre></div>
 
 <p>With the <code>rm</code> <em>(“<strong>r</strong>e<strong>m</strong>ove”)</em>, you can delete a file:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">rm</span> file.txt</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">rm</span> file.txt</span></code></pre></div>
 
 <div class="tip"><p>Be careful with the <strong>rm</strong> command. You can destroy your system when you delete the wrong files. You won’t get them back.</p>
 </div>
 <h3 id="mkdir-and-rmdir">mkdir and rmdir</h3>
 <p>You can create a folder or directory with the <code>mkdir</code> command. <em>(“<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory”)</em></p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mkdir</span> mydirectory</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mkdir</span> mydirectory</span></code></pre></div>
 
 <p>With the <code>rmdir</code> <em>(“<strong>r</strong>e<strong>m</strong>ove <strong>dir</strong>ectory”)</em> command, you can delete a directory</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">rmdir</span> mydirectory</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">rmdir</span> mydirectory</span></code></pre></div>
 
     </section>
     <section class="content">
@@ -246,19 +246,19 @@
 <h3 id="grep">grep</h3>
 <p>With the <code>grep</code> command, you can read a file and out put all lines that match a certain criteria. For example, the following command finds all lines that include the string <code>hello</code> in the file <code>log.txt</code>.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">grep</span> hello log.txt</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">grep</span> hello log.txt</span></code></pre></div>
 
 <h3 id="cat">cat</h3>
 <p>With the <code>cat</code> command, you can simply view the contents of a file. The following will print the contents of the file <code>log.txt</code>.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">cat</span> log.txt</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">cat</span> log.txt</span></code></pre></div>
 
     </section>
     <section class="content">
 <h1 id="being-super-user">Being Super User</h1>
 <p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. Sometimes you just add this in front of another command that you want to execute with special rights.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></span></code></pre></div>
 
 <p>Think of it as when your parents told you to say “Please!”</p>
 
@@ -329,11 +329,11 @@
 <h3 id="step-1-move-to-the-home-directory">Step 1: Move to the Home Directory</h3>
 <p>Open the terminal and check in which folder you are. We do that with the command <code>pwd</code> (<em>“print working directory”</em>):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">pwd</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">pwd</span></span></code></pre></div>
 
 <p>The output shows in which folder or directory you are. Move into your home directory, using the <code>cd</code> (<em>“change directory”</em>) command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /home/pi/</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /home/pi/</span></code></pre></div>
 
 <div class="tip"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
 </div>
@@ -341,7 +341,7 @@
 
 <p>We now download the file containing the CTF program.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> https://home.samfundet.no/~halvogro/ting/teknostart_ctf.zip -O</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">curl</span> https://home.samfundet.no/~halvogro/ting/teknostart_ctf.zip -O</span></code></pre></div>
 
 <div class="tip"><p>When you download such a file and then run it, you need to make sure that you know what it contains or trust its origin. The file can run programs that have access to everything on your computer.</p>
 </div>
@@ -374,7 +374,7 @@
 <h3 id="step-1">Step 1</h3>
 <p>Run the program for the first time:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">./teknostart_ctf.py</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">./teknostart_ctf.py</span></span></code></pre></div>
 
 <p>You should get an output back that looks like this.</p>
 
@@ -408,7 +408,7 @@ Levelchecker:        NO
 <p>First we open a new terminal: <img src="https://home.samfundet.no/~halvogro/ting/bilder/image-47.png" alt="alt text" /></p>
 <p>Now, to check which folder location we are in, we type <code>pwd</code></p>
 <figure>
-<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-48.png" alt="alt text" /><figcaption>alt text</figcaption>
+<img src="https://home.samfundet.no/~halvogro/ting/bilder/image-48.png" alt="" /><figcaption>alt text</figcaption>
 </figure>
 <p>As we can see, we are located in <code>/home/pi</code>.</p>
 <h3 id="step-3-check-if-you-got-the-correct-answer">Step 3: Check if you got the correct answer</h3>
