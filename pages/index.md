@@ -182,6 +182,66 @@ class: table table-sm
 | Tor. 10. sep. 10:15-14:00
 | digital
 | Networking 3
+|-
+| 38
+| Man. 14. sep. 9:00-10:00
+| digital
+| Security 1
+|-
+| 
+| Ons. 16. sep. 8:15-10:00
+| S5
+| Security 1
+|-
+| 
+| Tor. 17. sep. 10:15-14:00
+| digital
+| Security 1
+|-
+| 39
+| Man. 21. sep. 9:00-10:00
+| digital
+| Security 2
+|-
+| 
+| Ons. 23. sep. 8:15-10:00
+| S5
+| Security 2
+|-
+| 
+| Tor. 24. sep. 10:15-14:00
+| digital
+| Security 2
+|-
+| 40
+| Man. 28. sep. 9:00-10:00
+| digital
+| Security 3
+|-
+| 
+| Ons. 30. sep. 8:15-10:00
+| S5
+| Security 3
+|-
+| 
+| Tor. 1. okt. 10:15-14:00
+| digital
+| Security 3
+|-
+| 41
+| Man. 5. okt. 9:00-10:00
+| digital
+| Security 3
+|-
+| 
+| Ons. 7. okt. 8:15-10:00
+| S5
+| Security 3
+|-
+| 
+| Tor. 8. okt. 10:15-14:00
+| digital
+| Security 3
 |}
 
 
