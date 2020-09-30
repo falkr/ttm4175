@@ -245,7 +245,7 @@ any commands you want.
 
 + Check that you are actually running commands on the remote machine (Metasploitable) and not locally by running the command  `hostname`
 
-+ Try putting the Kali and Metasploitable windows side by side, run the “reboot” command.
++ Try putting Kali and Metasploitable side by side and run the `reboot` command. 
 
 You will notice that when you rebooted Metasploitable, the backdoor shell stopped working. To gain access to the machine we would have to run the exploit again which might be problematic. We need therefore to make our access persistent.
 
@@ -278,5 +278,4 @@ The last command should print "root" if successful.
 
 :tip:
 
-If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell by running the expolit again, and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers`
-Now try to connect to Metasploitable with Telnet and check if you can get root access.
+If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell by running the expolit again, and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers` . Now try to connect to Metasploitable with Telnet and check if you can get root access.
