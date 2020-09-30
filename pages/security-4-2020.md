@@ -68,6 +68,8 @@ dhclient eth0
 Run the command *ifconfig* on the Kali machine. If VirtualBox was configured correctly, it should have been assigned an IP-address similar to 10.0.0.1XX. Then run the same command on the Metasploitable machine. Again, the network address should read something like 10.0.0.1XX.
 </div>
 
++ Write down the IP address of the Metasploitable machine as you are going to need it later on in this lab.
+
 # Discovering hosts with Nmap
 
 Consider the scenario where an attacker has just joined the network with no prior knowledge of the other connected machines. The first thing we want to know is how many hosts are connected and what their IP-addresses are. To gather this information we will use Nmap (Network Mapper).
@@ -219,15 +221,14 @@ msf exploit(exploit_name) > set RHOST <IP_address_victim_machine>
 
 # Example: Using backdoored FTP server
 
-Having done a vulnerability scan, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent.
+Having done a vulnerability scan, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent by taking advantage of a "backdoor".
 
-Backdoors are methods of bypassing the security of a software program or operating system. They are like normal exploits, but they are deliberately part of the software.
-
-Metasploitable has a backdoored version of vsftpd installed and running. If you look back at the vulnerability scan you’ll see that Nessus has discovered the backdoor.
+Backdoors are methods of bypassing the security of a software program or operating system. They are like normal exploits, but they are deliberately part of the software. 
+Metasploitable has a backdoored version of **vsftpd** installed and running. If you look back at the vulnerability scan you’ll see that Nessus has discovered the backdoor.
 
 ## Using the backdoor with metasploit
 
-Metasploit has a module that makes it easy to take advantage of this backdoor.
+Metasploit has a module that makes it easy to take advantage of the vsftpd backdoor.
 
 + Use the following command to search for vsftpd: `msf > search vsftpd`
 
