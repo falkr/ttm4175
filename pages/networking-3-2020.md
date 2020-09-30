@@ -101,7 +101,7 @@ sysctl net.ipv4.conf.all.forwarding
 ```
 
 :steps:
-6. From your host machine make sure you can `ping` the web server using its address and include a screenshot on your report.
+7. From your host machine make sure you can `ping` the web server using its address and include a screenshot on your report.
 
 
 ## Using our DNS server (container)

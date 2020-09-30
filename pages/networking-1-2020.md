@@ -224,7 +224,7 @@ To save your settings you need to edit the "dhcpcd.conf" file in `/etc/` (don't 
 Edit this file and reboot to check the networking configurations have remained.
 
 :aside:
-You don't need to reboot your RPi to apply these setting, it's enough to restart the networking service but you need to type a bit more(e.g. `sudo ip link set eth1 down && sudo ip link set eth1 up` **or** `service networking restart`).
+You don't need to reboot your RPi to apply these settings, it's enough to restart the networking service but you need to type a bit more (e.g. `sudo ip link set eth1 down && sudo ip link set eth1 up` **or** `service networking restart`).
 
 
 
