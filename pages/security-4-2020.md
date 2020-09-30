@@ -277,4 +277,6 @@ $ sudo su % Switch to the root user
 The last command should print "root" if successful.
 
 :tip:
-If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers`
+
+If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell by running the expolit again, and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers`
+Now try to connect to Metasploitable with Telnet and check if you can get root access.
