@@ -249,7 +249,6 @@ any commands you want.
 
 As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.
 
-+ Run the exploit again to get the backdoor shell back, then run the following commands:
 
 ```bash
 useradd ttm4175 % Add 'ttm175' as a new user
