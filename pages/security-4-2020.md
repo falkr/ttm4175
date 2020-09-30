@@ -278,4 +278,4 @@ The last command should print "root" if successful.
 
 :tip:
 
-If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it. To do this, re-open the backdoor shell by running the expolit again, and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers` . Now try to connect to Metasploitable with Telnet and check if you can get root access.
+If you get an error saying that "ttm4175 is not in the sudoers group", then you will have to manually add it to the sudoers file. To do this, re-open the backdoor shell by running the exploit again, and type the following command: `echo "ttm4175 ALL=(ALL) ALL" >> /etc/sudoers` . Now try to connect to Metasploitable again with Telnet and verify if you can get root access.
