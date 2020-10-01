@@ -64,7 +64,7 @@ Now, **on your RPi VM** try the following:
 :steps:
 5. Now, on your RPi run the command `sudo tcpdump -i eth1` and try to `ping` from the Ubuntu VM. Register what happens.
 6. **Repeat step 4** but this time run `tcpdump` **on Ubuntu** and for the correct interface connected to the internal network. Is there a difference? If so, why?
-7. **On your RPi**, add a new route with the command `ip route add` with the smallest subnet mask possible (don't forget to include this in your **report**).
+7. **On your RPi**, add a new route with the command `ip route add` with the smallest subnet size possible (don't forget to include this in your **report**).
 8. Make sure you have re-established the connectivity between the two VMs.
 
 

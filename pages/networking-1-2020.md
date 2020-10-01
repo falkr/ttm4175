@@ -258,6 +258,7 @@ network:
                 - 10.0.20.2/24
 ```
 
+:tip: Be careful with the indentation! Use spaces to align or copy-paste exactly as shown (change the addresses as needed).
 
 
 
