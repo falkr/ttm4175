@@ -211,29 +211,29 @@
 <li>Now enter the following in your terminal:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> pull ubuntu</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> pull ubuntu</a></code></pre></div>
 
 <span name="c601cc"></span><aside name="c601cc"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository. This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p>
 </aside>
 <div class="warning"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in “/etc/netplan/01-network-manager-all.yaml” to include <em>nameservers</em> below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="at">    </span><span class="fu">nameservers</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="at">        </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">...</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">enp0s3:</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">yes</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="fu">nameservers:</span></a>
+<a class="sourceLine" id="cb1-4" title="4">        <span class="fu">addresses:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">...</span></a></code></pre></div>
 
 <div class="steps"><ol start="5" type="1">
 <li>You can see all locally available Docker images by typing:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> images</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> images</a></code></pre></div>
 
 <div class="steps"><ol start="6" type="1">
 <li>Now let’s build and run a container from the Ubuntu image using:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -dit --name my-ubuntu-container ubuntu</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> run -dit --name my-ubuntu-container ubuntu</a></code></pre></div>
 
 <span name="0c125d"></span><aside name="0c125d"><p>The <code>run</code> command will build an instance of the Ubuntu image. This instance is what we call a container. We can build several containers that originate from the same image. This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the <a href="prep-networking-2-2020.html#optional-materials">optional materials section</a>).</p>
 <p>If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.</p>
@@ -242,7 +242,7 @@
 <li>Using the generated ID, “enter” the new Ubuntu container using the following command, which will run a shell inside it:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> exec -it <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> exec -it <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</a></code></pre></div>
 
 <div class="tip"><p>It’s enough to use only part of the Container ID, as long as it is unique.</p>
 </div>
@@ -250,7 +250,7 @@
 <li>Compare the version of your container’s Ubuntu with the one from your VM using the command below inside the container and inside the VM:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">cat</span> /etc/os-release</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">cat</span> /etc/os-release</a></code></pre></div>
 
 <div class="tip"><p>The goal of this last step is to verify the power of using containers. The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.</p>
 </div>
@@ -286,7 +286,7 @@
 <li>Now you can build your own image based on this ‘Dockerfile’ with the command:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> build -t webserver .</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> build -t webserver .</a></code></pre></div>
 
 <div class="steps"><ol start="5" type="1">
 <li>List all available Docker images to see the new image. How many new images do you see? Why?</li>
@@ -321,8 +321,8 @@
 <li>Run the commands below and look at them carefully. Note the <code>-p</code> option. What does it do?</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr1 -p 8080:80 webserver-1</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr2 -p 8081:80 webserver-2</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> run -d --name serverNr1 -p 8080:80 webserver-1</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">docker</span> run -d --name serverNr2 -p 8081:80 webserver-2</a></code></pre></div>
 
 <div class="steps"><ol start="6" type="1">
 <li>On your RPi VM (<em>Normal start</em>), open the web browser and type the IP address of your Ubuntu VM followed by “:8080” to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?</li>
