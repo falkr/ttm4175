@@ -230,8 +230,8 @@
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</span></code></pre></div>
 
-<p><strong>Note:</strong> you should avoid the subnet 10.0.2.0/24 as it already being used on ‘eth0’.</p>
-
+<div class="tip"><p><strong>Note:</strong> you should avoid the subnet 10.0.2.0/24 as it already being used on ‘eth0’.</p>
+</div>
 <div class="steps"><ol start="5" type="1">
 <li>Using the command <code>ip a s eth1</code> (same as in step 1 but shorter) to verify your IP address, it should be the one you have just set.</li>
 <li>Use the command <code>ip link set up dev eth1</code> to “turn on” the interface, in case it is down.</li>

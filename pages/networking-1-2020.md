@@ -109,7 +109,9 @@ ip addr flush dev eth1
 ```bash
 ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth1
 ```
-**Note:** you should avoid the subnet 10.0.2.0/24 as it already being used on 'eth0'.
+
+:tip: **Note:** you should avoid the subnet 10.0.2.0/24 as it already being used on 'eth0'.
+
 
 :steps:
 5. Using the command `ip a s eth1` (same as in step 1 but shorter) to verify your IP address, it should be the one you have just set.
