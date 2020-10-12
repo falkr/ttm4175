@@ -138,97 +138,87 @@
 
 
 <div class="page">
+    </section>
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h1 id="start-with-visual-studio-code">Start with Visual Studio Code</h1>
 
-<div class="rat"><p>A hash function has to be collision-resistant. what does that mean?</p>
-<ol type="1">
-<li>It is computationally infeasible to find two inputs that hash to the same output</li>
-<li>The output of the hash function is of fixed length</li>
-<li>The hashing process is irreversible</li>
-<li>The hashes are obtained within short time</li>
-</ol>
-<h2 id="question-2">Question 2</h2>
+<p>Create a folder for this week’s lab, like <code>ttm4175-iot</code>, and open this folder in VS Code.</p>
+
+    </section>
+    <section class="content">
+<h1 id="install-the-device-simulator-express">Install the Device Simulator Express</h1>
+
+<p>Install the device simulator express extension.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-1.png" alt="Installation of the Device Simulator Extension." width="100%"/>
+<span name="figures/iot/dse-1.png">&nbsp;</span>
+<aside name="figures/iot/dse-1.png"><p><p>Installation of the Device Simulator Extension.</p>
+</p></aside>
 </div>
-<div class="rat"><p>Which measure(s) can help us prevent online attacks?</p>
 <ol type="1">
-<li>All answers are true</li>
-<li>The usage of account lockouts by deactivating accounts after the detection of several failed login attempts</li>
-<li>Two-factor authentication</li>
-<li>Monitor server logs</li>
+<li>Click on the side bar for extensions.</li>
+<li>Search for the <em>device simulator</em>.</li>
+<li>Click <em>Install</em>.</li>
 </ol>
-<h2 id="question-3">Question 3</h2>
+<p>This also installs other required Python extensions.</p>
+<p>You can later check out the <a href="https://code.visualstudio.com/docs/">documentation</a>.</p>
+
+    </section>
+    <section class="content">
+<h1 id="device-simulator-commands">Device Simulator Commands</h1>
+<p>VS Code has a <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette">Command Palette</a>, which you can open using the following keyboard shortcuts:</p>
+<ul>
+<li>On Windows: <code>Ctr-Shift-P</code></li>
+<li>On Mac: <code>Cmd-Shift-P</code></li>
+</ul>
+<p>For the device simulator, we will use two commands, one for <strong>creating new files</strong> and for <strong>opening the simulator</strong>.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-2.png" alt="Installation of the Device Simulator Extension." width="100%"/>
+<span name="figures/iot/dse-2.png">&nbsp;</span>
+<aside name="figures/iot/dse-2.png"><p><p>Installation of the Device Simulator Extension.</p>
+</p></aside>
 </div>
-<div class="rat"><p>What are rainbow tables?</p>
-<ol type="1">
-<li>Files that contain configuration parameters</li>
-<li>Files that contain passwords and their pre-computed hashes</li>
-<li>Files that contain a large number of passwords in plain text</li>
-<li>Files that contain the usernames that are logged into the system</li>
-</ol>
-<h2 id="question-4">Question 4</h2>
+<p>When you run one of these commands, the device simulator asks you which device it should simulate. Currently, you can select between three different devices:</p>
+<ul>
+<li>The <strong>BBC micro:bit</strong></li>
+<li>The <strong>CLUE</strong></li>
+<li>The <strong>Circuit Playground Express</strong></li>
+</ul>
+
+<div class="figure">
+<img src="figures/iot/dse-3.png" alt="Commands ask you which device you want to simulate." width="100%"/>
+<span name="figures/iot/dse-3.png">&nbsp;</span>
+<aside name="figures/iot/dse-3.png"><p><p>Commands ask you which device you want to simulate.</p>
+</p></aside>
 </div>
-<div class="rat"><p>Why might offline brute force attacks be a bigger problem than the online ones?</p>
-<ol type="1">
-<li>The only limitation is the computing power available to the attacker</li>
-<li>The attacker has an unlimited amount of time to crack the password</li>
-<li>They are hard to detect, since there is no need to establish a connection to the targeted system</li>
-<li>All answers are true</li>
-</ol>
-<h2 id="question-5">Question 5</h2>
+    </section>
+    <section class="content">
+<h1 id="run-a-test-program">Run a Test Program</h1>
+
+<p>Create a file <code>hei.py</code> with the following content:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> microbit <span class="im">import</span> display</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb1-4" title="4">    display.show(<span class="st">&quot;HEI!&quot;</span>)</a></code></pre></div>
+
+<p>Open the device simulator with the command from above, and select the <strong>micro:bit</strong> as device. You should see the simulator to the right side of the editor, like this:</p>
+
+<div class="figure">
+<img src="figures/iot/dse-4.png" alt="Commands ask you which device you want to simulate." width="100%"/>
+<span name="figures/iot/dse-4.png">&nbsp;</span>
+<aside name="figures/iot/dse-4.png"><p><p>Commands ask you which device you want to simulate.</p>
+</p></aside>
 </div>
-<div class="rat"><p>What is chntpw?</p>
-<ol type="1">
-<li>A program used to extract the content of the SAM file</li>
-<li>A program used to crack passwords</li>
-<li>A program used to clear a user’s password from the “etc/shadow” file</li>
-<li>A program used to clear a user’s password from the SAM file</li>
-</ol>
-<h2 id="question-6">Question 6</h2>
-</div>
-<div class="rat"><p>In addition to a good password policy, what other important measure(s) can make our systems more secure?</p>
-<ol type="1">
-<li>Nothing, a strong password is enough to ensure that the system is secure</li>
-<li>Write down the passwords on a post-it note so we can have easy access to them when needed</li>
-<li>Avoid risky behavior when storing passwords and be aware from social engineering</li>
-<li>Store all passwords in a file in plain text in case we need to access them quickly</li>
-</ol>
-<h2 id="question-7">Question 7</h2>
-</div>
-<div class="rat"><p>What is common for MD5, SHA-1 and SHA-2?</p>
-<ol type="1">
-<li>Algorithms used to reverse hashing</li>
-<li>They are all hashing algorithms</li>
-<li>They have nothing in common</li>
-<li>Algorithms used for password cracking</li>
-</ol>
-<h2 id="question-8">Question 8</h2>
-</div>
-<div class="rat"><p>In addition to its usage in password storage, what can hashing be used for?</p>
-<ol type="1">
-<li>None of the answers are correct</li>
-<li>To store usernames and user info</li>
-<li>To verify the integrity of a file after it has been transferred over insecure channels</li>
-<li>To retrieve the plain text passwords from the hashes</li>
-</ol>
-<h2 id="question-9">Question 9</h2>
-</div>
-<div class="rat"><p>What is SQL injection attack?</p>
-<ol type="1">
-<li>When a hacker tries to attack a database by executing malicious SQL statements</li>
-<li>When a hacker tries to send a malicious URL by email</li>
-<li>When a hacker tries to send a harmful HTML code</li>
-<li>When a hacker sends multiple login attempts</li>
-</ol>
-<h2 id="question-10">Question 10</h2>
-</div>
-<div class="rat"><p>What is Nmap used for?</p>
-<ol type="1">
-<li>To identify what devices are running on the system</li>
-<li>For vulnerability scanning</li>
-<li>For port scanning</li>
-<li>All answers are true</li>
-</ol>
+<p>When you now click the start-button under the device, it should blink like this:</p>
+
+<div class="figure">
+<img src="figures/iot/hei-microbit.gif" alt="The blinking display of the microbit." width="100%"/>
+<span name="figures/iot/hei-microbit.gif">&nbsp;</span>
+<aside name="figures/iot/hei-microbit.gif"><p><p>The blinking display of the microbit.</p>
+</p></aside>
 </div>
     </section>
 </div>

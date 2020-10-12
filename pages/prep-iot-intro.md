@@ -1,14 +1,13 @@
 # Internet of Things
 
-Most of you have heard about the Internet of Things. 
-This is a technological trend which is caused by several developments:
+By now, most of you have heard about the *Internet of Things*. 
+This is a technological trend which is caused by several developments during the last decades:
 
 - Embedded computing devices get smaller, cheaper and more energy-efficient. 
   This makes it feasible to embed computers into all kinds of devices. 
-  
 - Mobile coverage is improving, and new protocols are available that are suitable for energy-efficient machine-to-machine communication. 
-
 - Advances in data analytics and machine learning make it possible to process data and learn from it, so that data gathered by many embedded devices can be transformed into valuable knowledge.
+
 
 
 Apart from these enablers, there are also considerable challenges:
@@ -59,3 +58,5 @@ The following is an interview with [Richard Stallman](https://en.wikipedia.org/w
 type: youtube
 video: AAP4N3KyLmM
 ---
+
+
