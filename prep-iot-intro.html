@@ -141,24 +141,32 @@
     </section>
     <section class="content">
 <h1 id="internet-of-things">Internet of Things</h1>
-<p>By now, most of you have heard about the <em>Internet of Things</em>. This is a technological trend which is caused by several developments during the last decades:</p>
+<p>By now, most of you have heard about the <em>Internet of Things</em>. This is a term describing combination of technological trends during the last decades:</p>
 <ul>
 <li>Embedded computing devices get smaller, cheaper and more energy-efficient. This makes it feasible to embed computers into all kinds of devices.</li>
 <li>Mobile coverage is improving, and new protocols are available that are suitable for energy-efficient machine-to-machine communication.</li>
 <li>Advances in data analytics and machine learning make it possible to process data and learn from it, so that data gathered by many embedded devices can be transformed into valuable knowledge.</li>
 </ul>
-
-<p>Apart from these enablers, there are also considerable challenges:</p>
+<p>These trends make it possible that general things and not only typical computers and phones can gain computational power and be connected to the internet. Examples are often grouped into different domains, many of them referring with the word “smart” to the fact that they are computational and communicating:</p>
 <ul>
-<li><strong>Security and privacy:</strong> See below.</li>
-<li><strong>Environmental footprint:</strong> More devices also means more waste. How can this probem be solved?</li>
-<li><strong>Energy-efficiency:</strong> Despite improvements, powering IoT devices is still a problem and batteries are often not a good solution.</li>
-<li><strong>Lack of integration:</strong> There are many IoT products, but connecting devices from different vendors or product families is still difficult or impossible.</li>
+<li><strong>Smart Home</strong>: Light bulbs can be controlled remotely, and the house can be instrumented with sensors to detect if someone is breaking in, or measuring temperature and humidity in each room.</li>
+<li><strong>Smart Buildings</strong>: In larger buildings, heating and lights can be controlled according to where people are, and facilities such as toilets are cleaned in proportion with their usage.</li>
+<li><strong>Smart City</strong>: Living conditions and usage patterns can be monitored, such as noise or air quality. Examples are also smarter handling of waste, as waste bins can tell how full they are and energy can be saved by not emptying bins that are not yet full.</li>
+<li><strong>Smart Grid</strong>: This is the term for the energy distribution net, which to an increasing degree gets digitalized so that it can be monitored and controlled better.</li>
+<li><strong>Industry 4.0</strong>: Tools and fabrication facilities can be better instrumented to have better control over the production process.</li>
+<li><strong>Precision Agriculture</strong>: Soil moisture can be monitored and controlled in much more fine-grained levels so that water and fertilizer or fungicides can be applied much more targeted.</li>
+<li><strong>Traffic Control</strong>: Monitoring the state of roads with regard to weather, and infrastructure like bridges and tunnels for structural safety.</li>
 </ul>
-<p>We start this part of the course by considering security and privacy, with a series of presentations and interviews.</p>
+<p>These are just a few examples. Most of them have in common that they monitor some phenomena (like the physical properties of something) or observe resources so that we can make better decisions that, in the end, save valuable resources. But apart from these potential benefits, there is also a long list of challenges, problems and dangers that come with this type of system.</p>
+<ul>
+<li><strong>Privacy</strong>: More devices around us that collect more data are also a challenge regarding privacy, when data is used differently than originally intended, or is stolen.</li>
+<li><strong>Security</strong>: More connected devices mean a larger surface for attacks. This is dangerous for the devices or the connected systems, but also for other systems, as IoT devices can be used for distributed denial of service attacks that can render other systems unusable.</li>
+<li><strong>Safety</strong>: When cars or other potentially dangerous devices get connected, we need to focus on the implications for safety.</li>
+<li><strong>Electronic Waste</strong>: We cannot just build more and more electronics with short lifecycle without worrying where the poisonous materials for their production come from or where they end up. Also note that the waste problem does not only mean what is happening with the specific device after its lifetime, but that its production already created a lot of problematic waste.</li>
+</ul>
 
 <h2 id="iot-security-safety-privacy">IoT Security, Safety, Privacy</h2>
-<p>The following are three videos that discuss security, safety and privacy within the IoT. Let’s first have a look at security in general:</p>
+<p>Let’s first have a look at security in general in a video that also provides some context about IoT:</p>
 <!-- 15:15 -->
 
 <div class="figure">
@@ -166,18 +174,40 @@
 </div>
 <h2 id="safety-in-iot">Safety in IoT</h2>
 <!-- 7:48 -->
-<p>This is a video from the Computerphile Channel. From the description: “A hacked car that could kill you should be more worrying than a thousand lightbulbs taking Facebook offline. University of Cambridge’s Professor Ross Anderson explains why safety should be higher on the agenda than privacy.”</p>
-<p><strong>This is the shortest of the videos. Though you should watch all, focus you attention on this one.</strong></p>
+<p>This is a video from the Computerphile Channel, where Ross Anderson explains the challenge with the Internet of things with regard to safety.</p>
 
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PLiE0Nr8VOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<p>One of the main arguments in this video are that IoT creates a new category of device. Before, we had two types of devices:</p>
+<ul>
+<li>Devices with short lifetimes (2-5 years), like computers and mobile phones. During their short lifetimes, they receive monthly updates for security until they are replaced since there are much more powerful devices.</li>
+<li>Devices with long lifetimes (&gt;10-20 years), like cars or fridges, which are engineered once, then tested but do not regularly receive updates.</li>
+</ul>
+<p>The division between these two categories is getting blurry, and suddenly a device may need critical security updates several decades into the future!</p>
+
+<div class="figure">
+<img src="figures/iot/iot-lifetime.png" alt="IoT devices combine functions that have very different lifetimes." width="100%"/>
+<span name="figures/iot/iot-lifetime.png">&nbsp;</span>
+<aside name="figures/iot/iot-lifetime.png"><p><p>IoT devices combine functions that have very different lifetimes.</p>
+</p></aside>
+</div>
+<p>Think about the dilemma with these different life cycles. Is this a reason why a smart fridge is really a bad product idea? Here is a nice article: <a href="https://www.ifixit.com/News/7747/smart-fridges-dumb-idea">Smart Fridges Are Still a Dumb Idea</a></p>
+
 <h2 id="privacy-in-iot">Privacy in IoT</h2>
 <!-- 17:37  -->
 <p>The following is an interview with <a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>, the founder of the Free Software Foundation. The interview starts a bit awkward, but gets into the fundamental privacy issues raised by IoT.</p>
 
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AAP4N3KyLmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2 id="electronic-waste">Electronic Waste</h2>
+
+<p>Electronic waste in a general problem, but it has implications on what we need to consider when we want to understand the impact and challenges with the Internet of Things: On the one side, the IoT devices itself are electronic devices that contribute to waste. As said above, even if devices are small and cheap, we cannot just keep producing them without considering their entire life cycle. On the other side, making devices like fridges that traditionally had a long life span into electronic devices can give them a much shorter life time, and by that indirectly contribute to the problem of electronic waste.</p>
+<p>The video below is a longer one, and viewing it is optional. But have a look at it, just to get an impression of how severe this problem is.</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QTU1F865JJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
 </div>
