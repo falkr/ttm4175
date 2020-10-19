@@ -37,7 +37,7 @@ Don't shortcut the LoPy by putting it on a metallic surface, like a MacBook. Tha
 
 ---
 type: figure
-source: http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-vs-macbook-300x142.jpg
+source: figures/iot/lopy-vs-macbook-300x142.jpg
 ---
 
 Also, don't activate the LoRaWan radio without the antenna connected.

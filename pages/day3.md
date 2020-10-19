@@ -144,7 +144,7 @@ Nano will open in a windows that looks something like this.
 
 ---
 type: figure
-source: https://home.samfundet.no/~halvogro/ting/bilder/image-45.png
+source: figures/teknostart/image-45.png
 caption: "The Nano editor"
 ---
 
@@ -173,7 +173,7 @@ You should get a message that looks like this:
  
 ---
 type: figure
-source: https://home.samfundet.no/~halvogro/ting/bilder/image-46.png
+source: figures/teknostart/image-46.png
 ---
 
 You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server. 

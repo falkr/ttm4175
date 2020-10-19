@@ -57,9 +57,9 @@ sudo apt install apache2
 
 # Step 2: Starting Apache
 
-Now that we have Apache installed, we need to start the *service*, i.e the program.
+Now that we have Apache installed, we need to start the *service*, i.e., the program.
 
-:factobox: *What is a service?* A service is just another word for _application_ or program. However, a service is a program that should run all the time. 
+:factbox: *What is a service?* A service is just another word for _application_ or program. However, a service is a program that should run all the time. 
 
 `systemctl` is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.
 

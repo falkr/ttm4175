@@ -140,6 +140,16 @@
 <div class="page">
     </section>
     <section class="content">
+<h1 id="programming-iot-devices">Programming IoT Devices</h1>
+<p>Goals for this week’s lab:</p>
+<ul>
+<li>Program an IoT device (at least a simulation of it)</li>
+<li>How to use a simple API (interface)</li>
+<li>Create a simple program on a device</li>
+</ul>
+
+    </section>
+    <section class="content">
 <h1 id="start-with-visual-studio-code">Start with Visual Studio Code</h1>
 
 <p>Create a folder for this week’s lab, like <code>ttm4175-iot</code>, and open this folder in VS Code.</p>
@@ -163,7 +173,10 @@
 </ol>
 <p>This also installs other required Python extensions.</p>
 <p>You can later check out the <a href="https://code.visualstudio.com/docs/">documentation</a>.</p>
+<p>There is also a special tutorial for coding Python. https://code.visualstudio.com/docs/python/python-tutorial</p>
 
+<span name="295032"></span><aside name="295032"><p><a href=""><img width="100" src="figures/iot/podcast-python-dse.png"/></a><br/> Device simulator was created by a couple of interns at Microsoft Garage. You can listen to them in a Podcast episode at <a href="https://overcast.fm/+F4RBtyfvE">Talk Python To Me</a>.</p>
+</aside>
     </section>
     <section class="content">
 <h1 id="device-simulator-commands">Device Simulator Commands</h1>
@@ -180,7 +193,7 @@
 <aside name="figures/iot/dse-2.png"><p><p>Installation of the Device Simulator Extension.</p>
 </p></aside>
 </div>
-<p>When you run one of these commands, the device simulator asks you which device it should simulate. Currently, you can select between three different devices:</p>
+<p>When you run one of these commands, the device simulator asks you which device it should simulate. You can select between three different devices:</p>
 <ul>
 <li>The <strong>BBC micro:bit</strong></li>
 <li>The <strong>CLUE</strong></li>
@@ -220,6 +233,178 @@
 <aside name="figures/iot/hei-microbit.gif"><p><p>The blinking display of the microbit.</p>
 </p></aside>
 </div>
+<div class="report"><p>Remove the while-loop, so that <code>show()</code> is only executed once. What happens?</p>
+</div>
+    </section>
+    <section class="content">
+<h1 id="controlling-the-device">Controlling the Device</h1>
+
+<p>The microbit has several electronic components that you can interact with. It’s of course more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)</p>
+<p>To interact with the electronic components, we use a Python library. This is a set of Python code that provides an interface to the microbit. Such an interface is also called an <strong>API</strong>, or application programming interface.</p>
+
+<h3 id="buttons">Buttons</h3>
+<p>The Microbit has two buttons, <code>A</code> and <code>B</code> which can be also pressed at the same time.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-buttons.png" width="100%"/>
+</div>
+<ul>
+<li><a href="https://microbit.org/get-started/user-guide/python/#buttons">Examples from microbit.org</a></li>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/button.html">button</a></li>
+</ul>
+
+<h3 id="display">Display</h3>
+<p>The Mircobit has 9 LEDs that make up its main display. It can show text or simple images.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-leds.png" width="100%"/>
+</div>
+<ul>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.show">display.show(…)</a></li>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.scroll">display.scoll(…)</a></li>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.clear">display.clear()</a></li>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/image.html">Display images</a></li>
+</ul>
+
+<h3 id="temperature">Temperature</h3>
+
+<div class="figure">
+<img src="figures/iot/dse-temperature.png" alt="In the simulator, you imitate the temperature with a slider." width="100%"/>
+<span name="figures/iot/dse-temperature.png">&nbsp;</span>
+<aside name="figures/iot/dse-temperature.png"><p><p>In the simulator, you imitate the temperature with a slider.</p>
+</p></aside>
+</div>
+<ul>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.temperature">temperature()</a></li>
+</ul>
+
+<h3 id="light-sensor">Light Sensor</h3>
+<p>The LEDs of the display may also give you an indication of the amount of light shining onto the device.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-light-sensor.png" alt="In the simulator, you imitate the light level with a slider." width="100%"/>
+<span name="figures/iot/dse-light-sensor.png">&nbsp;</span>
+<aside name="figures/iot/dse-light-sensor.png"><p><p>In the simulator, you imitate the light level with a slider.</p>
+</p></aside>
+</div>
+<ul>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.read_light_level">display.read_light_level()</a></li>
+</ul>
+
+<h3 id="accelerometer">Accelerometer</h3>
+<p>An accelerometer measures the acceleration into different directions. Combined it can also detect movements or gestures.</p>
+
+<div class="figure">
+<img src="figures/iot/dse-accelerometer.png" alt="In the simulator, you imitate the acceleration with sliders in each dimension." width="100%"/>
+<span name="figures/iot/dse-accelerometer.png">&nbsp;</span>
+<aside name="figures/iot/dse-accelerometer.png"><p><p>In the simulator, you imitate the acceleration with sliders in each dimension.</p>
+</p></aside>
+</div>
+<ul>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture">accelerometer.was_gesture(‘shake’)</a> Detect a gesture.</li>
+<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html">other functions</a></li>
+<li><a href="https://microbit.org/get-started/user-guide/python/#accelerometer-readings">Examples from microbit.org</a></li>
+<li><a href="https://microbit.org/get-started/user-guide/python/#gestures">Examples from microbit.org</a></li>
+</ul>
+
+<h3 id="other-functions">Other Functions</h3>
+<ul>
+<li><p><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/random.html#random.randint">random.randint(a, b)</a> Generate a random integer <code>n</code> so that <code>a &lt;= n &lt;= b</code></p></li>
+<li><p><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.sleep">sleep(n)</a> Sleep for n microseconds.</p></li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1 id="focus-exploring-an-api">Focus: Exploring an API</h1>
+<p>In the section above, we show you a couple of functions that you can use to control the Microbit. Whenever you do programming, exploring an API will be an important part of your work. There are several strategies, which you will also mix as you go along.</p>
+<h3 id="question-1-which-functions-do-i-need">Question 1: Which Functions Do I Need?</h3>
+<p>First you need to find out which functions there are at all, and how they are called.</p>
+<ul>
+<li>Look at a tutorial.</li>
+<li>Read a book.</li>
+<li>Take a course.</li>
+<li>Search on the web.</li>
+</ul>
+<h3 id="question-2-how-can-i-use-these-functions">Question 2: How Can I use these functions?</h3>
+<p>Once you first know which function you need to use, you need to figure out how to use it. This means: * How do I use this function? * Which parameters are there? * What do the parameters do?</p>
+<p>These more detailed questions you can figure out in different ways: * Looking at the source code of the library. * Browsing an API documentation * Tool Support <code>Shift-Space</code></p>
+
+<h3 id="experience-experience">Experience, Experience…</h3>
+<p>After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches.</p>
+
+    </section>
+    <section class="content">
+<h1 id="application-pattern">Application Pattern</h1>
+
+<p>Some of the applications of an IoT device follow a very simple programming pattern, in which it waits for a condition to be true, and then does something. This is illustrated in the code skeleton below:</p>
+
+<div class="figure">
+<img src="figures/iot/iot-application-pattern.png" width="100%"/>
+</div>
+<ul>
+<li>The outer while loop keeps the device running. As soon as you reach the end, it starts again at the top of the loop.</li>
+<li>The if-statement checks for one or more conditions. It can for example read the temperature sensor, ask if a button was pressed or a gesture detected.</li>
+<li>Depending on the detected case, the device can react with different actions, like showing something on the display.</li>
+<li>The sleep statement lets the device pause for a bit. It specifies a number of microseconds that the device does nothing and waits before it goes into the next iteration and starts again at the top of the while-loop. The sleep is not necessary for all cases, but can be useful when you show something on the display and keep it visible for some time. In a real device that is powered by a battery, sleeping also helps to preserve energy. (This is usually implemented with a different method than sleep as shown here, but the principle for the code is the same.)</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1 id="import-statements">Import Statements</h1>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> microbit <span class="im">import</span> <span class="op">*</span></a></code></pre></div>
+
+<p>If you select this, then you import all the functions that the Microbit package declares. The benefit is that you don’t need to worry about the import statements in your code. The downside is that someone reading your code does not already see at the top which functions you are going to use.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> microbit <span class="im">import</span> button_a</a></code></pre></div>
+
+<p>You can also explicitly import only those functions that you need.</p>
+
+    </section>
+    <section class="content">
+<h1 id="application-examples">Application Examples</h1>
+<p>Let’s combine the functions from above with the general application pattern to build some examples. In the following, we show you some of the ideas of the <a href="https://microbit.org/get-started/user-guide/python/">Microbit documentation</a>.</p>
+
+<div class="task"><p>Go through each of the application examples. Try to sketch a solution individually first, then together in your team. Try to make it run. Then compare your solution with the one given in the documentation.</p>
+</div>
+<h2 id="nightlight">Nightlight</h2>
+<p>Detect that it is getting dark and turn on the display.</p>
+<ul>
+<li><a href="https://microbit.org/projects/make-it-code-it/nightlight/?editor=python">Tutorial</a></li>
+</ul>
+
+<h2 id="dice">Dice</h2>
+<p>Detect that the device was shaken, and print a random number.</p>
+<ul>
+<li><a href="https://microbit.org/projects/make-it-code-it/dice/?editor=python">Tutorial</a></li>
+</ul>
+
+<h2 id="max-min-thermometer">Max-Min Thermometer</h2>
+<p>Measure the temperature regularly. When you press button A, show the minimum temperature. When you press button B, show the maximum temperature.</p>
+<ul>
+<li><a href="https://microbit.org/projects/make-it-code-it/max-min-thermometer/?editor=python">Tutorial</a></li>
+</ul>
+<p><strong>Idea for an extra function</strong>: Reset the temperatures when both buttons are pressed.</p>
+
+    </section>
+    <section class="content">
+<h1 id="create-your-own-application">Create Your Own Application</h1>
+<p>Inspired by the examples, brainstorm around some ideas you could try out with the simulated device.</p>
+<ul>
+<li>Think individually for a few minutes.</li>
+<li>Present your idea —- no matter how good you think it is – to the others. Collect all ideas, and be positive in this first round.</li>
+<li>Look at the collected suggestions. Which one do you want to build together? Maybe adjust suggestions, or combine ideas.</li>
+</ul>
+
+<div class="task"><p>Build your own application.</p>
+</div>
+<div class="report"><p>Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.</p>
+</div>
+    </section>
+    <section class="content">
+<h1 id="optional-homework">Optional Homework</h1>
+<p>Train with these tutorials also on your own. This is a fun way to learn more programming concepts.</p>
+
     </section>
 </div>
 
