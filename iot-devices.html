@@ -158,25 +158,21 @@
     <section class="content">
 <h1 id="install-the-device-simulator-express">Install the Device Simulator Express</h1>
 
-<p>Install the device simulator express extension.</p>
+<p>Install the device simulator express extension. This also installs other required Python extensions. You can later check out the <a href="https://code.visualstudio.com/docs/">documentation</a>. There is also a special tutorial for <a href="https://code.visualstudio.com/docs/python/python-tutorial">coding Python</a>.</p>
+<ol type="1">
+<li>Click on the side bar for extensions.</li>
+<li>Search for the <em>device simulator</em>.</li>
+<li>Click <em>Install</em>.</li>
+</ol>
 
+<span name="c97a72"></span><aside name="c97a72"><p><a href=""><img width="100" src="figures/iot/podcast-python-dse.png"/></a><br/> Device simulator was created by a couple of interns at Microsoft. You can listen to them in a Podcast episode at <a href="https://overcast.fm/+F4RBtyfvE">Talk Python To Me</a>.</p>
+</aside>
 <div class="figure">
 <img src="figures/iot/dse-1.png" alt="Installation of the Device Simulator Extension." width="100%"/>
 <span name="figures/iot/dse-1.png">&nbsp;</span>
 <aside name="figures/iot/dse-1.png"><p><p>Installation of the Device Simulator Extension.</p>
 </p></aside>
 </div>
-<ol type="1">
-<li>Click on the side bar for extensions.</li>
-<li>Search for the <em>device simulator</em>.</li>
-<li>Click <em>Install</em>.</li>
-</ol>
-<p>This also installs other required Python extensions.</p>
-<p>You can later check out the <a href="https://code.visualstudio.com/docs/">documentation</a>.</p>
-<p>There is also a special tutorial for coding Python. https://code.visualstudio.com/docs/python/python-tutorial</p>
-
-<span name="295032"></span><aside name="295032"><p><a href=""><img width="100" src="figures/iot/podcast-python-dse.png"/></a><br/> Device simulator was created by a couple of interns at Microsoft Garage. You can listen to them in a Podcast episode at <a href="https://overcast.fm/+F4RBtyfvE">Talk Python To Me</a>.</p>
-</aside>
     </section>
     <section class="content">
 <h1 id="device-simulator-commands">Device Simulator Commands</h1>
@@ -201,9 +197,9 @@
 </ul>
 
 <div class="figure">
-<img src="figures/iot/dse-3.png" alt="Commands ask you which device you want to simulate." width="100%"/>
+<img src="figures/iot/dse-3.png" alt="The commands ask you which device you want to simulate." width="100%"/>
 <span name="figures/iot/dse-3.png">&nbsp;</span>
-<aside name="figures/iot/dse-3.png"><p><p>Commands ask you which device you want to simulate.</p>
+<aside name="figures/iot/dse-3.png"><p><p>The commands ask you which device you want to simulate.</p>
 </p></aside>
 </div>
     </section>
@@ -254,7 +250,7 @@
 </ul>
 
 <h3 id="display">Display</h3>
-<p>The Mircobit has 9 LEDs that make up its main display. It can show text or simple images.</p>
+<p>The Mircobit has 25 LEDs that make up its main display. It can show text or simple images.</p>
 
 <div class="figure">
 <img src="figures/iot/dse-leds.png" width="100%"/>
@@ -300,6 +296,12 @@
 <aside name="figures/iot/dse-accelerometer.png"><p><p>In the simulator, you imitate the acceleration with sliders in each dimension.</p>
 </p></aside>
 </div>
+<div class="figure">
+<img src="figures/iot/dse-gestures.png" alt="Simulate gestures directly." width="100%"/>
+<span name="figures/iot/dse-gestures.png">&nbsp;</span>
+<aside name="figures/iot/dse-gestures.png"><p><p>Simulate gestures directly.</p>
+</p></aside>
+</div>
 <ul>
 <li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture">accelerometer.was_gesture(‘shake’)</a> Detect a gesture.</li>
 <li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html">other functions</a></li>
@@ -320,15 +322,20 @@
 <h3 id="question-1-which-functions-do-i-need">Question 1: Which Functions Do I Need?</h3>
 <p>First you need to find out which functions there are at all, and how they are called.</p>
 <ul>
-<li>Look at a tutorial.</li>
-<li>Read a book.</li>
-<li>Take a course.</li>
+<li>Look at a tutorial or read a book, which present you a couple of functions and how to call with some examples.</li>
+<li>Read the code documentation, which sometimes provides also examples and overview explanations.</li>
 <li>Search on the web.</li>
 </ul>
 <h3 id="question-2-how-can-i-use-these-functions">Question 2: How Can I use these functions?</h3>
-<p>Once you first know which function you need to use, you need to figure out how to use it. This means: * How do I use this function? * Which parameters are there? * What do the parameters do?</p>
-<p>These more detailed questions you can figure out in different ways: * Looking at the source code of the library. * Browsing an API documentation * Tool Support <code>Shift-Space</code></p>
+<p>Once you first know which function you need to use, you need to figure out how to use it. This means, which parameters are there and what do they do. You can figure out these more detailed questions in different ways:</p>
+<ul>
+<li>Browsing an API documentation, like when you follow the links to the functions above. Such API documentation is often generated by extracting the comments in the source code, and for good libraries they should give you a complete picture.</li>
+<li>Tool Support as offered in Visual Studio offers auto-completion. Just place your cursor after the dot of a variable. If the tool can infer which type the variable as, and if it find the source code for the library where that type is defined it can show you a popup window that explains the function call. You can trigger the popup window by pressing <code>Shift-Space</code>.</li>
+</ul>
 
+<div class="figure">
+<img src="figures/iot/dse-auto-completion.png" width="100%"/>
+</div>
 <h3 id="experience-experience">Experience, Experience…</h3>
 <p>After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches.</p>
 

@@ -18,31 +18,21 @@ Create a folder for this week's lab, like `ttm4175-iot`, and open this folder in
 # Install the Device Simulator Express
 
 
-Install the device simulator express extension.
+Install the device simulator express extension. This also installs other required Python extensions. You can later check out the [documentation](https://code.visualstudio.com/docs/). There is also a special tutorial for [coding Python](https://code.visualstudio.com/docs/python/python-tutorial).
+
+1. Click on the side bar for extensions.
+2. Search for the *device simulator*.
+3. Click *Install*.
+
+:aside: <a href=""><img width="100" src="figures/iot/podcast-python-dse.png"/></a><br/>
+Device simulator was created by a couple of interns at Microsoft. 
+You can listen to them in a Podcast episode at [Talk Python To Me](https://overcast.fm/+F4RBtyfvE).
 
 ---
 type: figure
 source: figures/iot/dse-1.png
 caption: "Installation of the Device Simulator Extension."
 ---
-
-1. Click on the side bar for extensions.
-2. Search for the *device simulator*.
-3. Click *Install*.
-
-This also installs other required Python extensions.
-
-You can later check out the [documentation](https://code.visualstudio.com/docs/).
-
-There is also a special tutorial for coding Python.
-https://code.visualstudio.com/docs/python/python-tutorial
-
-
-:aside: <a href=""><img width="100" src="figures/iot/podcast-python-dse.png"/></a><br/>
-Device simulator was created by a couple of interns at Microsoft Garage. 
-You can listen to them in a Podcast episode at [Talk Python To Me](https://overcast.fm/+F4RBtyfvE).
-
-
 
 
 # Device Simulator Commands
@@ -70,7 +60,7 @@ You can select between three different devices:
 ---
 type: figure
 source: figures/iot/dse-3.png
-caption: "Commands ask you which device you want to simulate."
+caption: "The commands ask you which device you want to simulate."
 ---
 
 
@@ -112,14 +102,14 @@ caption: "The blinking display of the microbit."
 # Controlling the Device
 
 
-The microbit has several electronic components that you can interact with. It's of course more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)
+The microbit has several electronic components that you can interact with. It's, of course, more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)
 
 To interact with the electronic components, we use a Python library. This is a set of Python code that provides an interface to the microbit. Such an interface is also called an **API**, or application programming interface.
 
 
 ### Buttons
 
-The Microbit has two buttons, `A` and `B` which can be also pressed at the same time.
+The Microbit has two buttons, `A` and `B` which can also be pressed at the same time.
 
 ---
 type: figure
@@ -132,7 +122,7 @@ source: figures/iot/dse-buttons.png
 
 ### Display
 
-The Mircobit has 9 LEDs that make up its main display. It can show text or simple images.
+The Mircobit has 25 LEDs that make up its main display. It can show text or simple images.
 
 ---
 type: figure
@@ -180,6 +170,12 @@ source: figures/iot/dse-accelerometer.png
 caption: "In the simulator, you imitate the acceleration with sliders in each dimension."
 ---
 
+---
+type: figure
+source: figures/iot/dse-gestures.png
+caption: "Simulate gestures directly."
+---
+
 * [accelerometer.was_gesture('shake')](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture) Detect a gesture.
 * [other functions](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html)
 * [Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#accelerometer-readings)
@@ -204,23 +200,23 @@ There are several strategies, which you will also mix as you go along.
 
 First you need to find out which functions there are at all, and how they are called. 
 
-* Look at a tutorial. 
-* Read a book.
-* Take a course.
+* Look at a tutorial or read a book, which presents you a couple of functions and how to call with some examples.
+* Read the code documentation, which sometimes also provides examples and overview explanations.
 * Search on the web.
 
 ### Question 2: How Can I use these functions?
 
-Once you first know which function you need to use, you need to figure out how to use it. This means:
-* How do I use this function?
-* Which parameters are there?
-* What do the parameters do? 
+Once you first know which function you need to use, you need to figure out how to use it. This means, which parameters are there and what do they do.
+You can figure out these more detailed questions in different ways:
 
-These more detailed questions you can figure out in different ways:
-* Looking at the source code of the library.
-* Browsing an API documentation
-* Tool Support `Shift-Space`
+* Browsing an API documentation, like when you follow the links to the functions above. Such API documentation is often generated by extracting the comments in the source code, and for good libraries they should give you a complete picture.
+* Tool Support as offered in Visual Studio offers auto-completion. Just place your cursor after the dot of a variable. If the tool can infer which type the variable as, and if it finds the source code for the library where that type is defined it can show you a popup window that explains the function call. You can trigger the popup window by pressing `Shift-Space`.
 
+
+---
+type: figure
+source: figures/iot/dse-auto-completion.png
+---
 
 ### Experience, Experience...
 
@@ -266,8 +262,6 @@ You can also explicitly import only those functions that you need.
 
 Let's combine the functions from above with the general application pattern to build some examples. In the following, we show you some of the ideas of the [Microbit documentation](https://microbit.org/get-started/user-guide/python/).
 
-:task: Go through each of the application examples. Try to sketch a solution individually first, then together in your team. Try to make it run. Then compare your solution with the one given in the documentation.
-
 
 ## Nightlight
 
@@ -290,6 +284,11 @@ Measure the temperature regularly. When you press button A, show the minimum tem
 * [Tutorial](https://microbit.org/projects/make-it-code-it/max-min-thermometer/?editor=python)
 
 **Idea for an extra function**: Reset the temperatures when both buttons are pressed.
+
+
+:task: Go through each of the application examples. Try to sketch a solution individually first, then together in your team. Try to make it run. Then compare your solution with the one given in the documentation.
+
+:report: Show how the applications work with a short sequence of screenshots. Describe what the code does.
 
 
 # Create Your Own Application
