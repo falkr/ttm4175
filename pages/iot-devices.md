@@ -209,7 +209,7 @@ In the section above, we showed you a couple of functions that you can use to co
 Whenever you do programming, exploring an API will be an important part of your work. 
 There are several strategies to explore an API, which you will also mix as you go along.
 
-### Question 1: Which Functions Do I Need?
+### Step 1: Find out which functions you need
 
 First you need to find out which functions there are at all, and how they are called. For that, you have several options:
 
@@ -217,7 +217,7 @@ First you need to find out which functions there are at all, and how they are ca
 * Read the code documentation, which sometimes also provides examples and overview explanations.
 * Search on the web.
 
-### Question 2: How Can I use these functions?
+### Step 2: Find out how to use the function
 
 Once you first know which function you need to use, you need to figure out how to use it. This means, which parameters are there and what do they do.
 You can figure out these more detailed questions in different ways:

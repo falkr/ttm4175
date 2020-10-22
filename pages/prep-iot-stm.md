@@ -112,7 +112,9 @@ type: figure
 source: figures/statemachines/tunnel.jpg
 ---
 
-From our experience with the more complex traffic light, this should be an easy state machine to write down. It has two states, `left`and `right`, corresponding to one of the lamps being switched on. We also added labels to some of the transitions. They describe that the state machine switches from state `left` to state `right` triggered by an event `t1`. This is a timer. It switches back with a timer `t2`. The detailed timer operations are not yet visible, we come later to that. In this blinking light we also show how to switch it off. This happens by an event called `off`, and it can happen in any of the two states. 
+From our experience with the more complex traffic light, this should be an easy state machine to write down. It has two states, `left`and `right`, corresponding to one of the lamps being switched on. We also added labels to some of the transitions. They describe that the state machine switches from state `left` to state `right` triggered by an event `t1`. This is a timer. It switches back with a timer `t2`. The detailed timer operations are not yet visible, we come later to that. 
+
+In this blinking light we also show how to switch it off. This happens by an event called `off`, and it can happen in any of the two states. If it happens, we switch into a final state, which is shown as a circle with an extra frame. 
 
 ---
 type: figure
@@ -323,50 +325,5 @@ class StateMachineA(StateMachine):
 ```
 
 We are going to 
-
-
-# RAT
-
-1
-Which labels are correct?
-
-* (a) initial state, (b) state, (c) final state
-* (b) state, (c) (a) 
-* (c) (a) (b)
-* (a) (c) (b
-
-2
-Which of the state machines have an equivalent behavior?
-This means they may look different, but in the end have the same behavior.
-
-
-3
-What is problematic with this state machine?
-
-(same outgoing trigger) 
-- it is not clear what happens in state a
-- state a is not reachable
-- state a is in a deadlock
-
-4
-Which of the figures corresponds to this Python code?
-
-
-5. which of the python code corresponds to these figures?
-
-
-6.
-
-What are examples for events that can trigger a transition?
-
-- pressing a button
-- blinking a light
-- switci off the device
-
-What are examples for actions or effect in a state machine for the microbit?
-
-- switching on a light
-- pressing a button
-- 
 
 
