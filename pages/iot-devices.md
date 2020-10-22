@@ -11,8 +11,8 @@
 
 ### Start with Visual Studio Code
 
-
-Create a folder for this week's lab, like `ttm4175-iot-1`, and open this folder in VS Code.
+* Make sure you have installed [Python and Visual Studio Code](prep-iot-devices.html).
+* Create a folder for this week's lab, like `ttm4175-iot-1`, and open this folder in VS Code.
 
 
 ### Install the Device Simulator Express
@@ -228,11 +228,6 @@ You can figure out these more detailed questions in different ways:
 
 ---
 type: figure
-source: figures/iot/dse-auto-completion.png
----
-
----
-type: figure
 source: figures/iot/vs-auto-complete.gif
 ---
 
@@ -241,6 +236,8 @@ source: figures/iot/vs-auto-complete.gif
 
 After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches. 
 
+
+:task: After you finished the other tasks below, reflect on how you manage to use the API for using the components of the Microbit. What was easy? What is challenging? What helped?
 
 
 # Application Examples
@@ -316,6 +313,7 @@ Inspired by the examples, brainstorm around some ideas you could try out with th
 
 :report: Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.
 
+:task: Remember to go back to the reflection task above about how to use a new API.
 
 # Optional Homework
 

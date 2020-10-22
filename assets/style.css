@@ -176,7 +176,7 @@ span.minor {
   color: grey
 }
 
-p {
+p, ul, ol {
   margin: 15px 0 15px 0
 }
 
