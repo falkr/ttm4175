@@ -1,21 +1,21 @@
 
 # Programming IoT Devices
 
-Goals for this week's lab:
+:goals: Goals for this week's lab:
 
-- Program an IoT device (at least a simulation of it)
-- How to use a simple API (interface)
+- Program an IoT device
+- Get familiar with using a simple API (interface)
 - Create a simple program on a device
 
 
 
-# Start with Visual Studio Code
+### Start with Visual Studio Code
 
 
-Create a folder for this week's lab, like `ttm4175-iot`, and open this folder in VS Code.
+Create a folder for this week's lab, like `ttm4175-iot-1`, and open this folder in VS Code.
 
 
-# Install the Device Simulator Express
+### Install the Device Simulator Express
 
 
 Install the device simulator express extension. This also installs other required Python extensions. You can later check out the [documentation](https://code.visualstudio.com/docs/). There is also a special tutorial for [coding Python](https://code.visualstudio.com/docs/python/python-tutorial).
@@ -35,7 +35,7 @@ caption: "Installation of the Device Simulator Extension."
 ---
 
 
-# Device Simulator Commands
+### Device Simulator Commands
 
 VS Code has a [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), which you can open using the following keyboard shortcuts:
 
@@ -96,7 +96,10 @@ source: figures/iot/hei-microbit.gif
 caption: "The blinking display of the microbit."
 ---
 
-:report: Remove the while-loop, so that `show()` is only executed once. What happens?
+:task: Get the program to run on the simulator.
+
+
+:task: Remove the while-loop, so that only `show()` remains. (Adjust the indentation.) What happens?
 
 
 # Controlling the Device
@@ -104,7 +107,15 @@ caption: "The blinking display of the microbit."
 
 The microbit has several electronic components that you can interact with. It's, of course, more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)
 
-To interact with the electronic components, we use a Python library. This is a set of Python code that provides an interface to the microbit. Such an interface is also called an **API**, or application programming interface.
+To interact with the electronic components, we use a code **library**, also called a Python **package** This is a set of Python code that provides an interface to the Microbit. Such an interface is also called an **API**, or _application programming interface_.
+
+
+:task: Go through the description of the components below, step by step. 
+
+* For each component (like button,...) make yourself familiar with the user interface of the simulator.
+* Have a look at the API description by following the link and explore some of the examples.
+* Feel free to try out some of the examples. (We will do three of them later.)
+* In the end, you should "feel home" with the API.
 
 
 ### Buttons
@@ -117,7 +128,7 @@ source: figures/iot/dse-buttons.png
 ---
  
 - [Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#buttons)
-- [button](https://microbit-micropython.readthedocs.io/en/v1.0.1/button.html)
+- API: [button](https://microbit-micropython.readthedocs.io/en/v1.0.1/button.html)
 
 
 ### Display
@@ -129,10 +140,10 @@ type: figure
 source: figures/iot/dse-leds.png
 ---
 
-* [display.show(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.show)
-* [display.scoll(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.scroll)
-* [display.clear()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.clear)
-* [Display images](https://microbit-micropython.readthedocs.io/en/v1.0.1/image.html)
+* API: [display.show(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.show)
+* API: [display.scoll(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.scroll)
+* API: [display.clear()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.clear)
+* API: [Display images](https://microbit-micropython.readthedocs.io/en/v1.0.1/image.html)
 
 
 ### Temperature
@@ -156,7 +167,7 @@ source: figures/iot/dse-light-sensor.png
 caption: "In the simulator, you imitate the light level with a slider."
 ---
 
-* [display.read_light_level()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.read_light_level) 
+* API: [display.read_light_level()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.read_light_level) 
 
 
 ### Accelerometer
@@ -176,13 +187,15 @@ source: figures/iot/dse-gestures.png
 caption: "Simulate gestures directly."
 ---
 
-* [accelerometer.was_gesture('shake')](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture) Detect a gesture.
-* [other functions](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html)
-* [Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#accelerometer-readings)
-* [Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#gestures)
+* API: [accelerometer.was_gesture('shake')](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture) Detect a gesture.
+* API: [other accelerometer functions](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html)
+* [Accelerometer Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#accelerometer-readings)
+* [Gesture Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#gestures)
 
 
 ### Other Functions
+
+In the tasks below, also some other functions will be useful:
 
 * [random.randint(a, b)](https://microbit-micropython.readthedocs.io/en/v1.0.1/random.html#random.randint) Generate a random integer `n` so that `a <= n <= b`
 
@@ -190,17 +203,17 @@ caption: "Simulate gestures directly."
 
 
 
-# Focus: Exploring an API
+# Reflection: Exploring an API
 
-In the section above, we show you a couple of functions that you can use to control the Microbit. 
+In the section above, we showed you a couple of functions that you can use to control the Microbit. 
 Whenever you do programming, exploring an API will be an important part of your work. 
-There are several strategies, which you will also mix as you go along.
+There are several strategies to explore an API, which you will also mix as you go along.
 
 ### Question 1: Which Functions Do I Need?
 
-First you need to find out which functions there are at all, and how they are called. 
+First you need to find out which functions there are at all, and how they are called. For that, you have several options:
 
-* Look at a tutorial or read a book, which presents you a couple of functions and how to call with some examples.
+* Look at a tutorial or read a book, which presents you a couple of functions and how to call with some examples, like we did above.
 * Read the code documentation, which sometimes also provides examples and overview explanations.
 * Search on the web.
 
@@ -210,7 +223,7 @@ Once you first know which function you need to use, you need to figure out how t
 You can figure out these more detailed questions in different ways:
 
 * Browsing an API documentation, like when you follow the links to the functions above. Such API documentation is often generated by extracting the comments in the source code, and for good libraries they should give you a complete picture.
-* Tool Support as offered in Visual Studio offers auto-completion. Just place your cursor after the dot of a variable. If the tool can infer which type the variable as, and if it finds the source code for the library where that type is defined it can show you a popup window that explains the function call. You can trigger the popup window by pressing `Shift-Space`.
+* Tool Support as offered in Visual Studio offers auto-completion. Just place your cursor after the dot of a variable. If the tool can infer which type the variable has, and if it finds the source code for the library where that type is defined, it can show you a popup window that explains the function call. You can also trigger the popup window by pressing `Shift-Space`.
 
 
 ---
@@ -218,13 +231,19 @@ type: figure
 source: figures/iot/dse-auto-completion.png
 ---
 
-### Experience, Experience...
+---
+type: figure
+source: figures/iot/vs-auto-complete.gif
+---
+
+
+### Experience Helps...
 
 After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches. 
 
 
 
-# Application Pattern
+# Application Examples
 
 
 Some of the applications of an IoT device follow a very simple programming pattern, in which it waits for a condition to be true, and then does something. This is illustrated in the code skeleton below:
@@ -242,25 +261,16 @@ source: figures/iot/iot-application-pattern.png
 * The sleep statement lets the device pause for a bit. It specifies a number of microseconds that the device does nothing and waits before it goes into the next iteration and starts again at the top of the while-loop. The sleep is not necessary for all cases, but can be useful when you show something on the display and keep it visible for some time. In a real device that is powered by a battery, sleeping also helps to preserve energy. (This is usually implemented with a different method than sleep as shown here, but the principle for the code is the same.)
 
 
-# Import Statements
+Let's use this application pattern in some examples. In the following, we show you some of the ideas of the [Microbit documentation](https://microbit.org/get-started/user-guide/python/).
+Go through these examples step by step. For each example, do the following:
 
-```python
-from microbit import *
-```
-
-If you select this, then you import all the functions that the Microbit package declares. The benefit is that you don't need to worry about the import statements in your code. 
-The downside is that someone reading your code does not already see at the top which functions you are going to use.
-
-```python
-from microbit import button_a
-```
-
-You can also explicitly import only those functions that you need.
+* Sketch a solution individually first, then together in your team.
+* Make it run. 
+* Compare your solution with the one given in the documentation.
 
 
-# Application Examples
+:report: Show how the applications work with a short sequence of screenshots. Describe what the code does.
 
-Let's combine the functions from above with the general application pattern to build some examples. In the following, we show you some of the ideas of the [Microbit documentation](https://microbit.org/get-started/user-guide/python/).
 
 
 ## Nightlight
@@ -269,12 +279,16 @@ Detect that it is getting dark and turn on the display.
 
 * [Tutorial](https://microbit.org/projects/make-it-code-it/nightlight/?editor=python)
 
+:task: Build the example as described above.
 
-## Dice
 
-Detect that the device was shaken, and print a random number.
+## Cast a Dice
+
+Detect that the device was shaken, and print a random number between 1 and 6.
 
 * [Tutorial](https://microbit.org/projects/make-it-code-it/dice/?editor=python)
+
+:task: Build the example as described above.
 
 
 ## Max-Min Thermometer
@@ -283,12 +297,11 @@ Measure the temperature regularly. When you press button A, show the minimum tem
 
 * [Tutorial](https://microbit.org/projects/make-it-code-it/max-min-thermometer/?editor=python)
 
-**Idea for an extra function**: Reset the temperatures when both buttons are pressed.
+:task: Build the example as described above.
 
 
-:task: Go through each of the application examples. Try to sketch a solution individually first, then together in your team. Try to make it run. Then compare your solution with the one given in the documentation.
+:task: (Extra) Think about how to add an extra function, so that you can reset the temperatures when both buttons are pressed. Build it.
 
-:report: Show how the applications work with a short sequence of screenshots. Describe what the code does.
 
 
 # Create Your Own Application
@@ -296,7 +309,7 @@ Measure the temperature regularly. When you press button A, show the minimum tem
 Inspired by the examples, brainstorm around some ideas you could try out with the simulated device.
 
 * Think individually for a few minutes.
-* Present your idea —- no matter how good you think it is -- to the others. Collect all ideas, and be positive in this first round.
+* Present your idea -- no matter how good you think it is -- to the others. Collect all ideas. (Be positive in this first round.)
 * Look at the collected suggestions. Which one do you want to build together? Maybe adjust suggestions, or combine ideas.
 
 :task: Build your own application.

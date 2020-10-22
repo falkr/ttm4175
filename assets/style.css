@@ -282,14 +282,14 @@ display: inline;
 
 div.report p {
 padding: 10px;
-xbackground-color: #ffd9ab;
+background-color: #D6E5F0;
 border-radius: 5px;
 border-left: 6px solid #1481b8 
 }
 
 div.report p::before {
-    content: '\f4ff ';
-    font-family: 'Font Awesome 5 Free'; 
+    content: 'For the Report: ';
+    font-weight: bold; 
     color: #1481b8;
 display: inline;
 }

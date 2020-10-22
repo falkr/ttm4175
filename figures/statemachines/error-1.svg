@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="753.4331 233.2756 406.5197 110.29922" width="406.5197" height="110.29922">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="712.7811" y="222.24567">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation=".872"/>
+      <feOffset in="blur" result="offset" dx="1.4173228" dy="1.4173228"/>
+      <feFlood flood-color="black" flood-opacity=".25" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <font-face font-family="Helvetica" font-size="12" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195" descent="-229.98047" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 8 8" markerWidth="8" markerHeight="8" color="black">
+      <g>
+        <path d="M 5.6 0 L 0 0 M 0 -2.1 L 5.6 0 L 0 2.1" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.17.5\n2020-10-21 18:22:52 +0000</metadata>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" stroke="none" fill="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_11818" filter="url(#Shadow)">
+        <rect x="754.0158" y="233.85827" width="192.7559" height="106.29922" fill="#fcfaf8"/>
+      </g>
+      <g id="Graphic_11766">
+        <path d="M 794.1969 284.7953 L 832.8898 284.7953 C 837.8604 284.7953 841.8898 288.82472 841.8898 293.7953 L 841.8898 304.14174 C 841.8898 309.1123 837.8604 313.14174 832.8898 313.14174 L 794.1969 313.14174 C 789.2263 313.14174 785.1969 309.1123 785.1969 304.14174 L 785.1969 293.7953 C 785.1969 288.82472 789.2263 284.7953 794.1969 284.7953 Z" fill="white"/>
+        <path d="M 794.1969 284.7953 L 832.8898 284.7953 C 837.8604 284.7953 841.8898 288.82472 841.8898 293.7953 L 841.8898 304.14174 C 841.8898 309.1123 837.8604 313.14174 832.8898 313.14174 L 794.1969 313.14174 C 789.2263 313.14174 785.1969 309.1123 785.1969 304.14174 L 785.1969 293.7953 C 785.1969 288.82472 789.2263 284.7953 794.1969 284.7953 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(790.1969 291.9685)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11767">
+        <path d="M 879.2362 284.7953 L 917.9292 284.7953 C 922.8997 284.7953 926.9292 288.82472 926.9292 293.7953 L 926.9292 304.14174 C 926.9292 309.1123 922.8997 313.14174 917.9292 313.14174 L 879.2362 313.14174 C 874.2657 313.14174 870.2362 309.1123 870.2362 304.14174 L 870.2362 293.7953 C 870.2362 288.82472 874.2657 284.7953 879.2362 284.7953 Z" fill="white"/>
+        <path d="M 879.2362 284.7953 L 917.9292 284.7953 C 922.8997 284.7953 926.9292 288.82472 926.9292 293.7953 L 926.9292 304.14174 C 926.9292 309.1123 922.8997 313.14174 917.9292 313.14174 L 879.2362 313.14174 C 874.2657 313.14174 870.2362 309.1123 870.2362 304.14174 L 870.2362 293.7953 C 870.2362 288.82472 874.2657 284.7953 879.2362 284.7953 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(875.2362 291.9685)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_2</tspan>
+        </text>
+      </g>
+      <g id="Line_11768">
+        <line x1="842.3898" y1="298.9685" x2="862.2362" y2="298.9685" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11769">
+        <text transform="translate(851.2181 283.46457)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">A</tspan>
+        </text>
+      </g>
+      <g id="Line_11770">
+        <path d="M 898.5827 313.64174 L 898.5827 332.98426 L 813.5433 332.98426 L 813.5433 321.14174" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11771">
+        <text transform="translate(852.0611 316.3109)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">B</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11772">
+        <path d="M 879.2362 242.2756 L 917.9292 242.2756 C 922.8997 242.2756 926.9292 246.30503 926.9292 251.2756 L 926.9292 261.62205 C 926.9292 266.59262 922.8997 270.62205 917.9292 270.62205 L 879.2362 270.62205 C 874.2657 270.62205 870.2362 266.59262 870.2362 261.62205 L 870.2362 251.2756 C 870.2362 246.30503 874.2657 242.2756 879.2362 242.2756 Z" fill="white"/>
+        <path d="M 879.2362 242.2756 L 917.9292 242.2756 C 922.8997 242.2756 926.9292 246.30503 926.9292 251.2756 L 926.9292 261.62205 C 926.9292 266.59262 922.8997 270.62205 917.9292 270.62205 L 879.2362 270.62205 C 874.2657 270.62205 870.2362 266.59262 870.2362 261.62205 L 870.2362 251.2756 C 870.2362 246.30503 874.2657 242.2756 879.2362 242.2756 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(875.2362 249.44883)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_3</tspan>
+        </text>
+      </g>
+      <g id="Line_11773">
+        <path d="M 813.5433 284.2953 L 813.5433 256.44883 L 862.2362 256.44883" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11774">
+        <text transform="translate(850.2379 240.9449)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">C</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11822" filter="url(#Shadow)">
+        <rect x="963.7796" y="233.85827" width="192.7559" height="106.29922" fill="#fcfaf8"/>
+      </g>
+      <g id="Graphic_11823">
+        <path d="M 1003.9607 284.7953 L 1042.6536 284.7953 C 1047.6241 284.7953 1051.6536 288.82472 1051.6536 293.7953 L 1051.6536 304.14174 C 1051.6536 309.1123 1047.6241 313.14174 1042.6536 313.14174 L 1003.9607 313.14174 C 998.9901 313.14174 994.9607 309.1123 994.9607 304.14174 L 994.9607 293.7953 C 994.9607 288.82472 998.9901 284.7953 1003.9607 284.7953 Z" fill="white"/>
+        <path d="M 1003.9607 284.7953 L 1042.6536 284.7953 C 1047.6241 284.7953 1051.6536 288.82472 1051.6536 293.7953 L 1051.6536 304.14174 C 1051.6536 309.1123 1047.6241 313.14174 1042.6536 313.14174 L 1003.9607 313.14174 C 998.9901 313.14174 994.9607 309.1123 994.9607 304.14174 L 994.9607 293.7953 C 994.9607 288.82472 998.9901 284.7953 1003.9607 284.7953 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(999.9607 291.9685)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11824">
+        <path d="M 1089 284.7953 L 1127.693 284.7953 C 1132.6635 284.7953 1136.693 288.82472 1136.693 293.7953 L 1136.693 304.14174 C 1136.693 309.1123 1132.6635 313.14174 1127.693 313.14174 L 1089 313.14174 C 1084.0295 313.14174 1080 309.1123 1080 304.14174 L 1080 293.7953 C 1080 288.82472 1084.0295 284.7953 1089 284.7953 Z" fill="white"/>
+        <path d="M 1089 284.7953 L 1127.693 284.7953 C 1132.6635 284.7953 1136.693 288.82472 1136.693 293.7953 L 1136.693 304.14174 C 1136.693 309.1123 1132.6635 313.14174 1127.693 313.14174 L 1089 313.14174 C 1084.0295 313.14174 1080 309.1123 1080 304.14174 L 1080 293.7953 C 1080 288.82472 1084.0295 284.7953 1089 284.7953 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(1085 291.9685)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_2</tspan>
+        </text>
+      </g>
+      <g id="Line_11825">
+        <line x1="1052.1536" y1="298.9685" x2="1072" y2="298.9685" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11826">
+        <text transform="translate(1060.9818 283.46457)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">A</tspan>
+        </text>
+      </g>
+      <g id="Line_11827">
+        <path d="M 1108.3465 313.64174 L 1108.3465 332.98426 L 1023.3071 332.98426 L 1023.3071 321.14174" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11828">
+        <text transform="translate(1061.8248 316.3109)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">B</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11829">
+        <path d="M 1089 242.2756 L 1127.693 242.2756 C 1132.6635 242.2756 1136.693 246.30503 1136.693 251.2756 L 1136.693 261.62205 C 1136.693 266.59262 1132.6635 270.62205 1127.693 270.62205 L 1089 270.62205 C 1084.0295 270.62205 1080 266.59262 1080 261.62205 L 1080 251.2756 C 1080 246.30503 1084.0295 242.2756 1089 242.2756 Z" fill="white"/>
+        <path d="M 1089 242.2756 L 1127.693 242.2756 C 1132.6635 242.2756 1136.693 246.30503 1136.693 251.2756 L 1136.693 261.62205 C 1136.693 266.59262 1132.6635 270.62205 1127.693 270.62205 L 1089 270.62205 C 1084.0295 270.62205 1080 266.59262 1080 261.62205 L 1080 251.2756 C 1080 246.30503 1084.0295 242.2756 1089 242.2756 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(1085 249.44883)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="13.67263" y="11">s_3</tspan>
+        </text>
+      </g>
+      <g id="Line_11830">
+        <path d="M 1023.3071 284.2953 L 1023.3071 256.44883 L 1072 256.44883" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11831">
+        <text transform="translate(1060.0017 240.9449)" fill="black">
+          <tspan font-family="Helvetica" font-size="12" font-weight="400" fill="black" x="0" y="11">C</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11877">
+        <circle cx="974.2008" cy="299.05513" r="4.2519754164363" fill="black"/>
+      </g>
+      <g id="Line_11878">
+        <line x1="978.4528" y1="299.0477" x2="987.4607" y2="299.03197" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_11892">
+        <g id="Graphic_11894">
+          <circle cx="976.5355" cy="248.0315" r="9.92127597168488" stroke="#008f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_11893">
+          <path d="M 971.2119 249.6483 L 974.9481 253.5874 L 981.836 242.2015" stroke="#008f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Group_11910">
+        <g id="Graphic_11914">
+          <circle cx="766.7717" cy="248.0315" r="9.92127597168485" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Group_11911">
+          <g id="Line_11913">
+            <line x1="761.2158" y1="253.5874" x2="772.7244" y2="242.07875" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_11912">
+            <line x1="772.7244" y1="253.5874" x2="761.2158" y2="242.07875" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
