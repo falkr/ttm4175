@@ -64,6 +64,7 @@
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
       <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <!--
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
       <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
@@ -169,17 +170,17 @@
 <li><p>In the adapter properties, the parameters must be as follows:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">IPv4</span> address: 10.0.0.1 </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Network</span> mask: 255.255.255.0 </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">IPv4</span> address: 10.0.0.1 </a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">Network</span> mask: 255.255.255.0 </a></code></pre></div>
 
 <ul>
 <li>In the “DHCP server” tab, configure the DHCP server as follows:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">Server</span> address: 10.0.0.100</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Server</span> Mask: 255.255.255.0</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">Lower</span> address bound: 10.0.0.101</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">Upper</span> address bound: 10.0.0.200 </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">Server</span> address: 10.0.0.100</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">Server</span> Mask: 255.255.255.0</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">Lower</span> address bound: 10.0.0.101</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">Upper</span> address bound: 10.0.0.200 </a></code></pre></div>
 
 <p>When the virtual machines attach to this internal network, they will automatically be given IP addresses in the range 10.0.0.101 to 10.0.0.200.</p>
 
@@ -191,8 +192,8 @@
 <li><p>Boot up the Kali Linux machine and run the following commands to release the old IP address and request a new one from the DHCP server:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">dhclient</span> eth0 -r</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">dhclient</span> eth0</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">dhclient</span> eth0 -r</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">dhclient</span> eth0</a></code></pre></div>
 
 <ul>
 <li>Verify that both machines are on the same LAN</li>
@@ -253,8 +254,8 @@ Hint
 <li><p>While still in the “Downloads” directory, run the following commands to depackage and start the Nessus service:</p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">dpkg</span> -i Nessus-8.11.1-debian6_amd64.deb</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">/bin/systemctl</span> start nessusd.service</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">dpkg</span> -i Nessus-8.11.1-debian6_amd64.deb</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">/bin/systemctl</span> start nessusd.service</a></code></pre></div>
 
 <p>Nessus will now start its web interface on port 8834. To access it, point your web browser to “https://localhost:8834”. You will get a warning saying that your connection is insecure. This is because Nessus uses HTTPS with what’s called a “Self-signed certificate”. These certificates are not part of the “Chain-of-trust” and thus the browser cannot verify that the server is who they claim they are. In our case, the kali machine is the server and we are just connecting to our own machine, so we can safely ignore the warning.</p>
 <p>Note: If you ever see a similar warning while browsing the Internet normally, be extremely careful. It could mean that someone is tampering with your traffic!</p>
@@ -282,10 +283,10 @@ Hint
 <li>To ensure that we have the latest version of Metasploit installed, we first need to update it:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> update                       % update the repository list</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">apt-get</span> install metasploit-framework % update metasploit</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">msfdb</span> init                           % initialize the database</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">apt-get</span> update                       % update the repository list</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">apt-get</span> install metasploit-framework % update metasploit</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">msfdb</span> init                           % initialize the database</a></code></pre></div>
 
 <h2 id="running-metasploit">Running Metasploit</h2>
 <p>Start Metasploit by running <em>msfconsole</em>: <code># msfconsole</code>. You will soon be greeted by an ASCII welcome logo.</p>
@@ -306,20 +307,20 @@ Hint
 <li>Tell Metasploit which module you want to try with the <em>use</em> command:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span></a></code></pre></div>
 
 <ol start="2" type="1">
 <li>Use the <em>show options</em> command to see the parameters that the module uses:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="ex">show</span> options</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="ex">show</span> options</a></code></pre></div>
 
 <ol start="3" type="1">
 <li>With the help of the <em>set</em> command, set the <em>RHOST</em> parameter to the IP address of the victim:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="kw">set</span> <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="kw">set</span> <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></a></code></pre></div>
 
 <ol start="4" type="1">
 <li>Finally, we run the exploit</li>
@@ -348,24 +349,24 @@ Hint
 <h2 id="making-our-access-persistent">Making our access persistent</h2>
 <p>As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">passwd</span> ttm4175 % Set the password for the new user</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">usermod</span> -aG sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">reboot</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">passwd</span> ttm4175 % Set the password for the new user</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">usermod</span> -aG sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">reboot</span></a></code></pre></div>
 
 <ul>
 <li>After running the reboot command, wait until Metasploitable has rebooted and then try to login with telnet:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> install telnet</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">telnet</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">apt-get</span> install telnet</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">telnet</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></a></code></pre></div>
 
 <ul>
 <li>After logging in, test that you still can get root access:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>$ <span class="fu">sudo</span> su % Switch to the root user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># whoami</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="fu">sudo</span> su % Switch to the root user</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># whoami</span></a></code></pre></div>
 
 <p>The last command should print “root” if successful.</p>
 

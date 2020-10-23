@@ -64,6 +64,7 @@
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
       <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <!--
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
       <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
@@ -141,7 +142,8 @@
     </section>
     <section class="content">
 <h1 id="state-machines">State Machines</h1>
-<p>So far, you have learned how to use Python to program a device. You may remember that we were using a simple application pattern, in which we had a main while-loop. For simple applications, this is sufficient and works well. But this way of programming can quickly get very complicated, if you want to build more complex applications and solve a bit more difficult issues.</p>
+<p>So far, you have learned how to use Python to program a device. We have used functions to control the components of the devices, like the LEDs, to find out if buttons have been pressed or read sensor values. We used a simple application pattern, in which we had a main while-loop. For simple applications, this is sufficient and works well. But this way of programming can quickly get very complicated, if you want to build more complex applications and solve a bit more difficult issues. This single while loop would very quickly get very complex.</p>
+<p><em>“I can handle complicated code!”</em> you could say. But even if that <em>would</em> be true, we need to be careful. When designing a system, the goal is not only to get some code that works. We also need to <strong>document</strong> how the system works, so that it can be as simple as possible for <strong>others</strong> to understand as well. Some code may be extremely relevant for the safety of a system, or critical in other ways.</p>
 <p>This week we will learn a way to express more complicated behavior using the concept of state machines. This is a concept that you will meet again in other courses, because state machines are a useful tool to describe behavior, and especially behavior where several things are going on at the same time. Communication protocols can be described and built with state machines, and systems can express how they synchronize their behavior using state machines.</p>
 <p>For IoT, state machines can be useful to describe how a device controls its behavior, and we will use it to create some more complex examples.</p>
 <h2 id="learning-goals">Learning Goals</h2>
@@ -167,7 +169,7 @@
 <div class="figure">
 <img src="figures/statemachines/traffic-light-2.jpg" width="100%"/>
 </div>
-<p>Of course, the picture above is a simplification. Some trafic lights are switched off at night and just blink yellow. The same happens as a default state in case there is an error in the controller. We can show this blinking with the two additional photos <em>blink-off</em> and <em>blink-on</em>. The two arrows between them show how the blinking is created by two phases, one with the yellow light on and one with all lights off. We also show that blinking can be started from any of the other phases, because an error can always happen, and the lights may be switched off at any time. When we get out of the blinking sequence, we go towards the phase <em>red</em> for safety.</p>
+<p>Of course, the picture above is a simplification. Some traffic lights are switched off at night and just blink yellow. The same happens as a default state in case there is an error in the controller. We can show this blinking with the two additional photos <em>blink-off</em> and <em>blink-on</em>. The two arrows between them show how the blinking is created by two phases, one with the yellow light on and one with all lights off. We also show that blinking can be started from any of the other phases, because an error can always happen, and the lights may be switched off at any time. When we get out of the blinking sequence, we go towards the phase <em>red</em> for safety.</p>
 
 <div class="figure">
 <img src="figures/statemachines/traffic-light-3.jpg" width="100%"/>
@@ -187,9 +189,10 @@
 <ul>
 <li>The states are shown as rounded rectangles. The state names are shown in bold text. As a naming convention, we only use lowercase letters, numbers, and underscores for state machine names, similar to rules for variable names in programming languages.</li>
 <li>The start of the state machine is shown by a compact black dot. This is also a state, called the <em>initial state</em>. Once the state machine is activated, it starts at this initial state.</li>
+<li>We assume that a traffic light only can be turned off from the state <em>blink_off</em>. This is shown by the final state, which is the circle with the extra border.</li>
 </ul>
-
 <h2 id="states">States</h2>
+
 <p>State symbols with the same name refer to the same state. This means, we can use a copy of the state symbol to make our layout easier, without changing what we actually mean by the diagram. For instance, we can remove the long arrow from state <code>yellow</code> to state <code>red</code> just by having another copy of the symbol for state <code>red</code>:</p>
 
 <div class="figure">
@@ -200,7 +203,14 @@
 <p><strong>State Names:</strong> Selecting good names for states can help making state machine easier to understand, especially when the states map to phases of the thing we want to model, like <em>on</em> and <em>off</em> for a lamp, or <em>open</em> and <em>close</em> for a lock. But sometimes there is no obvious good name. In such cases, I recommend to use state names like <code>s0</code>, <code>s1</code>. You always have the possibility to attach a note to a state and explain what it means.</p>
 
 <h2 id="transitions">Transitions</h2>
-<p>The arrows between the states are called <strong>transitions</strong>. We have said above that the state machine is at any point in time in exactly one of its states. It is not in two or more of them at the same time, and it is never somewhere in between. Conceptually, this means that a state machine switches from one state to another <strong>within no time at all</strong>, meaning that <strong>transitions take no time</strong>. This sounds magical, but we will come back to this.</p>
+<p>The arrows between the states are called <strong>transitions</strong>. We have said above that the state machine is at any point in time in exactly one of its states. It is not in two or more of them at the same time, and it is never somewhere in between. Conceptually, this means that a state machine switches from one state to another <strong>within no time at all</strong>, meaning that <strong>transitions take no time</strong>.</p>
+<p>To understand this property, think of a state machine as a board game, where you move a token from one place to another. A token can only rest on the board, in one of the designated places. When you throw a dice and move forward, you need to pick up the token and move it into the next place. Of course, during that process, the token is briefly in the air. But nothing else is allowed to happen during that time. The other players will just look at what you are doing and not move their own tokens. So practically, the token moved from one place to another in no time. In the same way, a state machine is moving between its states by executing a transition, and nothing else happens while they execute.</p>
+
+<a title="Isai Symens, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Mens_Erger_Je_Niet_Bordspel_1.jpg"><img width="512" alt="Mens Erger Je Niet Bordspel 1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Mens_Erger_Je_Niet_Bordspel_1.jpg/512px-Mens_Erger_Je_Niet_Bordspel_1.jpg"></a>
+
+
+
+<h2 id="triggers">Triggers</h2>
 <p>So far, we have not yet talked about <em>when</em> a transition happens, this means, what <strong>triggers</strong> a transition. We have, for example, not described <em>when</em> the traffic light switches from <code>red</code> to <code>red_yellow</code>. There are three types of events that can trigger transitions in a state machine:</p>
 <ul>
 <li>The state machine is started, then its <strong>transition from the initial state</strong> is triggered. This happens when the component or code surrounding the machine is started and then starts up the machine, for instance when we boot our firmware and the software starts running.</li>
@@ -217,7 +227,6 @@
 <img src="figures/statemachines/tunnel.jpg" width="100%"/>
 </div>
 <p>From our experience with the more complex traffic light, this should be an easy state machine to write down. It has two states, <code>left</code>and <code>right</code>, corresponding to one of the lamps being switched on. We also added labels to some of the transitions. They describe that the state machine switches from state <code>left</code> to state <code>right</code> triggered by an event <code>t1</code>. This is a timer. It switches back with a timer <code>t2</code>. The detailed timer operations are not yet visible, we come later to that.</p>
-<p>In this blinking light we also show how to switch it off. This happens by an event called <code>off</code>, and it can happen in any of the two states. If it happens, we switch into a final state, which is shown as a circle with an extra frame.</p>
 
 <div class="figure">
 <img src="figures/statemachines/tunnel-1.svg" width="100%"/>
@@ -269,31 +278,6 @@
 <p>Don’t worry too much about what to write into the guard for now. This will get clearer once we implement state machines in Python.</p>
 <p>A decision can have many outgoing branches. One of them must have a guard that is true, otherwise the state machine would be blocked. I therefore recommend to have an else-branch, which is true whenever none of the other branches is true.</p>
 
-<h2 id="transitions-revisited">Transitions, Revisited</h2>
-<p>Now you have seen many kinds of transitions, and we can summarize all the different terms for them. Knowing these terms makes talking about state machines much easier when you design one together with other engineers. So we have the following transitions:</p>
-<ul>
-<li>An <strong>initial transition</strong> originates at an initial state. It does not declare a trigger, since it is executed immediately when the state machine starts.</li>
-<li>A <strong>self-transition</strong> is simply a transition that starts and ends in the same state.</li>
-</ul>
-
-<h3 id="transition-labels">Transition Labels</h3>
-<p>We have seen now all the types of elements that we can add into the label of a transition. This summarizes information from above, and you can read it as a repetition:</p>
-<ul>
-<li><strong>Guards:</strong> Transitions originating in a choice state must have them.</li>
-<li><strong>Triggers:</strong> All transitions originating in a normal state must declare a trigger, which is either the reception of a message or the expiration of a timer. Pseudostates like initial states or choice states are transient, and the outgoing transitions therefore do not declare a trigger.</li>
-<li><strong>Effects:</strong> Any transition can declare any number of action that it executes. Several actions are separated by a semicolon.</li>
-<li><strong>Slash (/):</strong> The slash separates triggers from actions</li>
-</ul>
-
-<h2 id="states-revisited">States, Revisited</h2>
-<p>Let’s also have a look at all the different states we have seen until now, and repeat some properties:</p>
-<ul>
-<li>Initial states and choice states are called <strong>pseudo states</strong>, because they are not really states in the sense that we wait in them. They are transient states, meaning that the state machine is only going through them, but never waits in them. For that reason, transition originating at initial or choice states do not declare a trigger.</li>
-<li>At any time, a state machine is in exactly one of its states. We assume that transitions execute in no time, so we never find a state machine like “waiting” within a transition. Waiting only happens within states.</li>
-<li>State symbols with the same name refer to the same state.</li>
-<li>State symbols are a compact rounded rectangle, and optionally contain a compartment where we can declare entry actions, exit actions and internal transitions.</li>
-</ul>
-
     </section>
     <section class="content">
 <h1 id="errors-in-state-machines">Errors in State Machines</h1>
@@ -314,18 +298,18 @@
 <p>Every transition out of an ordinary state needs a trigger, otherwise there is no way it will ever be executed. Only the initial transition has no trigger attached, because it is implicitly triggered by the start of the machine.</p>
 
 <div class="figure">
-<img src="figures/statemachines/error-2.svg" alt="Missing initial states." width="100%"/>
+<img src="figures/statemachines/error-2.svg" alt="Missing triggers." width="100%"/>
 <span name="figures/statemachines/error-2.svg">&nbsp;</span>
-<aside name="figures/statemachines/error-2.svg"><p><p>Missing initial states.</p>
+<aside name="figures/statemachines/error-2.svg"><p><p>Missing triggers.</p>
 </p></aside>
 </div>
 <h3 id="same-outgoing-triggers">Same Outgoing Triggers</h3>
 <p>Look at the example below: Imagine we are in state <code>s1</code> and event <code>e1</code> happens. In this state machine it is not clear if we are moving into state <code>s2</code> or <code>s3</code>, since both transitions are labeled with the same event.</p>
 
 <div class="figure">
-<img src="figures/statemachines/error-3.svg" alt="Missing initial states." width="100%"/>
+<img src="figures/statemachines/error-3.svg" alt="Double triggers." width="100%"/>
 <span name="figures/statemachines/error-3.svg">&nbsp;</span>
-<aside name="figures/statemachines/error-3.svg"><p><p>Missing initial states.</p>
+<aside name="figures/statemachines/error-3.svg"><p><p>Double triggers.</p>
 </p></aside>
 </div>
 <h3 id="timer-is-never-started">Timer is Never Started</h3>
@@ -337,51 +321,8 @@
 <aside name="figures/statemachines/error-4.svg"><p><p>Missing initial states.</p>
 </p></aside>
 </div>
-    </section>
-    <section class="content">
-<h1 id="state-machines-in-micro-python">State Machines in Micro Python</h1>
-<p>The Microbit we are going to program does not run all Python code, but a reduced set of it that is called MicroPython. To run state machines on it, we will provide you with some code that serves as a template or a skeletton.</p>
-<p>The state machines were so far expressed as diagrams, that is visual pictures.</p>
-<p>We create the state machines by manually translating a diagram step for step into a Python function that executes transitions.</p>
-
-<p>The method receives 4 parameters;</p>
-<ul>
-<li><code>self</code></li>
-<li><code>state</code></li>
-<li><code>event</code></li>
-<li><code>timers</code></li>
-</ul>
-<p>Within the method, we place first an if-statement which distinguishes the different states of the machine. It has one branch for each state.</p>
-<p>Within each state branch, ther is another, if-statement, which distinguishes the different events.</p>
-<p>Within these branches, we then do actions;</p>
-<ul>
-<li>start a timer</li>
-<li>stop a timer</li>
-<li>call a function to do something in the microbit, like switching on an LED</li>
-<li>change a variable (use self)</li>
-</ul>
-
-<p>The possible</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> StateMachineA(StateMachine):</a>
-<a class="sourceLine" id="cb1-2" title="2">    </a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">def</span> step(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-4" title="4">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;initial&quot;</span>:</a>
-<a class="sourceLine" id="cb1-5" title="5">            state <span class="op">=</span> <span class="st">&quot;s1&quot;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;s1&quot;</span>:</a>
-<a class="sourceLine" id="cb1-7" title="7">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
-<a class="sourceLine" id="cb1-8" title="8">                <span class="va">self</span>.start_timer(<span class="st">&quot;t2&quot;</span>, <span class="dv">3000</span>)</a>
-<a class="sourceLine" id="cb1-9" title="9">                display.show(event)</a>
-<a class="sourceLine" id="cb1-10" title="10">                <span class="va">self</span>.state <span class="op">=</span> <span class="st">&quot;s2&quot;</span></a>
-<a class="sourceLine" id="cb1-11" title="11">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;C&quot;</span>:</a>
-<a class="sourceLine" id="cb1-12" title="12">                <span class="va">self</span>.start_timer(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">elif</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;s2&quot;</span>:</a>
-<a class="sourceLine" id="cb1-14" title="14">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t2&quot;</span>:</a>
-<a class="sourceLine" id="cb1-15" title="15">                <span class="va">self</span>.start_timer(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb1-16" title="16">                display.show(event)</a>
-<a class="sourceLine" id="cb1-17" title="17">                <span class="va">self</span>.state <span class="op">=</span> <span class="st">&quot;s1&quot;</span></a></code></pre></div>
-
-<p>We are going to</p>
+<h3 id="state-is-a-deadlock">State is a Deadlock</h3>
+<p>A deadlock is a state with no way out of it, that means, a state without any outgoing transition. This can be a sign for a missing or forgotten transition. If that is desired, you can consider to use a final state to make it clear that the state machine should be terminated. In the examples above, states <code>s_2</code> and <code>s_3</code> are all deadlock states, because the machine never moves out of them.</p>
 
     </section>
 </div>

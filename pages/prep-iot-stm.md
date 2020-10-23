@@ -1,9 +1,16 @@
 # State Machines
 
-So far, you have learned how to use Python to program a device. 
-You may remember that we were using a simple application pattern, in which we had a main while-loop.
+So far, you have learned how to use Python to program a device.
+We have used functions to control the components of the devices, like the LEDs, to find out if buttons have been pressed or read sensor values.
+We used a simple application pattern, in which we had a main while-loop.
 For simple applications, this is sufficient and works well.
-But this way of programming can quickly get very complicated, if you want to build more complex applications and solve a bit more difficult issues. 
+But this way of programming can quickly get very complicated, if you want to build more complex applications and solve a bit more difficult issues.
+This single while loop would very quickly get very complex.
+
+_"I can handle complicated code!"_ you could say. But even if that _would_ be true, we need to be careful. 
+When designing a system, the goal is not only to get some code that works. 
+We also need to **document** how the system works, so that it can be as simple as possible for **others** to understand as well.
+Some code may be extremely relevant for the safety of a system, or critical in other ways. 
 
 This week we will learn a way to express more complicated behavior using the concept of state machines. 
 This is a concept that you will meet again in other courses, because state machines are a useful tool to describe behavior, and especially behavior where several things are going on at the same time. 
@@ -42,7 +49,7 @@ type: figure
 source: figures/statemachines/traffic-light-2.jpg
 ---
 
-Of course, the picture above is a simplification. Some trafic lights are switched off at night and just blink yellow. The same happens as a default state in case there is an error in the controller. We can show this blinking with the two additional photos _blink-off_ and _blink-on_. The two arrows between them show how the blinking is created by two phases, one with the yellow light on and one with all lights off. We also show that blinking can be started from any of the other phases, because an error can always happen, and the lights may be switched off at any time. When we get out of the blinking sequence, we go towards the phase _red_ for safety. 
+Of course, the picture above is a simplification. Some traffic lights are switched off at night and just blink yellow. The same happens as a default state in case there is an error in the controller. We can show this blinking with the two additional photos _blink-off_ and _blink-on_. The two arrows between them show how the blinking is created by two phases, one with the yellow light on and one with all lights off. We also show that blinking can be started from any of the other phases, because an error can always happen, and the lights may be switched off at any time. When we get out of the blinking sequence, we go towards the phase _red_ for safety. 
 
 
 ---
@@ -67,9 +74,10 @@ Notice the detailed elements in this diagram:
 
 - The states are shown as rounded rectangles. The state names are shown in bold text. As a naming convention, we only use lowercase letters, numbers, and underscores for state machine names, similar to rules for variable names in programming languages.
 - The start of the state machine is shown by a compact black dot. This is also a state, called the _initial state_. Once the state machine is activated, it starts at this initial state.
-
+- We assume that a traffic light only can be turned off from the state _blink_off_. This is shown by the final state, which is the circle with the extra border.
 
 ## States
+
 
 State symbols with the same name refer to the same state. This means, we can use a copy of the state symbol to make our layout easier, without changing what we actually mean by the diagram. For instance, we can remove the long arrow from state `yellow` to state `red` just by having another copy of the symbol for state `red`:
 
@@ -88,7 +96,22 @@ The diagram describes exactly the same behavior. Both state symbols for the stat
  
 ## Transitions
 
-The arrows between the states are called **transitions**. We have said above that the state machine is at any point in time in exactly one of its states. It is not in two or more of them at the same time, and it is never somewhere in between. Conceptually, this means that a state machine switches from one state to another **within no time at all**,  meaning that **transitions take no time**. This sounds magical, but we will come back to this. 
+The arrows between the states are called **transitions**. We have said above that the state machine is at any point in time in exactly one of its states. It is not in two or more of them at the same time, and it is never somewhere in between. Conceptually, this means that a state machine switches from one state to another **within no time at all**,  meaning that **transitions take no time**. 
+
+To understand this property, think of a state machine as a board game, where you move a token from one place to another.
+A token can only rest on the board, in one of the designated places. 
+When you throw a dice and move forward, you need to pick up the token and move it into the next place. 
+Of course, during that process, the token is briefly in the air. 
+But nothing else is allowed to happen during that time.
+The other players will just look at what you are doing and not move their own tokens.
+So practically, the token moved from one place to another in no time.
+In the same way, a state machine is moving between its states by executing a transition, and nothing else happens while they execute.
+
+
+<a title="Isai Symens, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Mens_Erger_Je_Niet_Bordspel_1.jpg"><img width="512" alt="Mens Erger Je Niet Bordspel 1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Mens_Erger_Je_Niet_Bordspel_1.jpg/512px-Mens_Erger_Je_Niet_Bordspel_1.jpg"></a>
+
+
+## Triggers
 
 So far, we have not yet talked about _when_ a transition happens, this means, what **triggers** a transition. We have, for example, not described _when_ the traffic light switches from `red` to `red_yellow`. There are three types of events that can trigger transitions in a state machine:
 
@@ -114,7 +137,6 @@ source: figures/statemachines/tunnel.jpg
 
 From our experience with the more complex traffic light, this should be an easy state machine to write down. It has two states, `left`and `right`, corresponding to one of the lamps being switched on. We also added labels to some of the transitions. They describe that the state machine switches from state `left` to state `right` triggered by an event `t1`. This is a timer. It switches back with a timer `t2`. The detailed timer operations are not yet visible, we come later to that. 
 
-In this blinking light we also show how to switch it off. This happens by an event called `off`, and it can happen in any of the two states. If it happens, we switch into a final state, which is shown as a circle with an extra frame. 
 
 ---
 type: figure
@@ -184,34 +206,6 @@ Don't worry too much about what to write into the guard for now. This will get c
 A decision can have many outgoing branches. One of them must have a guard that is true, otherwise the state machine would be blocked. I therefore recommend to have an else-branch, which is true whenever none of the other branches is true. 
 
 
-## Transitions, Revisited
-
-Now you have seen many kinds of transitions, and we can summarize all the different terms for them. Knowing these terms makes talking about state machines much easier when you design one together with other engineers. So we have the following transitions:
-
-* An **initial transition** originates at an initial state. It does not declare a trigger, since it is executed immediately when the state machine starts.
-* A **self-transition** is simply a transition that starts and ends in the same state.
-
-
-### Transition Labels
-
-We have seen now all the types of elements that we can add into the label of a transition. This summarizes information from above, and you can read it as a repetition: 
-
-* **Guards:** Transitions originating in a choice state must have them.
-* **Triggers:** All transitions originating in a normal state must declare a trigger, which is either the reception of a message or the expiration of a timer. Pseudostates like initial states or choice states are transient, and the outgoing transitions therefore do not declare a trigger.
-* **Effects:** Any transition can declare any number of action that it executes. Several actions are separated by a semicolon. 
-* **Slash (/):** The slash separates triggers from actions
- 
-
-## States, Revisited
-
-Let's also have a look at all the different states we have seen until now, and repeat some properties:
-
-* Initial states and choice states are called **pseudo states**, because they are not really states in the sense that we wait in them. They are transient states, meaning that the state machine is only going through them, but never waits in them. For that reason, transition originating at initial or choice states do not declare a trigger.
-* At any time, a state machine is in exactly one of its states. We assume that transitions execute in no time, so we never find a state machine like "waiting" within a transition. Waiting only happens within states. 
-* State symbols with the same name refer to the same state. 
-* State symbols are a compact rounded rectangle, and optionally contain a compartment where we can declare entry actions, exit actions and internal transitions.
-
-
 
 # Errors in State Machines
 
@@ -241,7 +235,7 @@ Only the initial transition has no trigger attached, because it is implicitly tr
 ---
 type: figure
 source: figures/statemachines/error-2.svg
-caption: "Missing initial states."
+caption: "Missing triggers."
 ---  
 
 ### Same Outgoing Triggers
@@ -252,7 +246,7 @@ In this state machine it is not clear if we are moving into state `s2` or `s3`, 
 ---
 type: figure
 source: figures/statemachines/error-3.svg
-caption: "Missing initial states."
+caption: "Double triggers."
 ---  
 
 ### Timer is Never Started
@@ -268,62 +262,9 @@ source: figures/statemachines/error-4.svg
 caption: "Missing initial states."
 ---  
 
+### State is a Deadlock
 
-# State Machines in Micro Python
-
-The Microbit we are going to program does not run all Python code, but a reduced set of it that is called MicroPython. 
-To run state machines on it, we will provide you with some code that serves as a template or a skeletton.
-
-The state machines were so far expressed as diagrams, that is visual pictures.
-
-We create the state machines by manually translating a diagram step for step into a Python function that executes transitions. 
-
-
-The method receives 4 parameters; 
-
-* `self`
-* `state`
-* `event`
-* `timers`
-
-Within the method, we place first an if-statement which distinguishes the different states of the machine.
-It has one branch for each state.
-
-Within each state branch, ther is another, if-statement, which distinguishes the different events. 
-
-Within these branches, we then do actions; 
-
-* start a timer
-* stop a timer
-* call a function to do something in the microbit, like switching on an LED
-* change a variable (use self)
-
-
-
-The possible 
-
-
-
-```python
-class StateMachineA(StateMachine):
-    
-    def step(self, state, event, timers):
-        if state == "initial":
-            state = "s1"
-        elif state == "s1":
-            if event == "t1":
-                self.start_timer("t2", 3000)
-                display.show(event)
-                self.state = "s2"
-            elif event == "C":
-                self.start_timer("t1", 1000)
-        elif self.state == "s2":
-            if event == "t2":
-                self.start_timer("t1", 1000)
-                display.show(event)
-                self.state = "s1"
-```
-
-We are going to 
-
-
+A deadlock is a state with no way out of it, that means, a state without any outgoing transition. 
+This can be a sign for a missing or forgotten transition.
+If that is desired, you can consider to use a final state to make it clear that the state machine should be terminated. 
+In the examples above, states `s_2` and `s_3` are all deadlock states, because the machine never moves out of them.

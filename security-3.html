@@ -64,6 +64,7 @@
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
       <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <!--
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
       <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
@@ -153,9 +154,9 @@
 <li>Make sure that Windows 7 is mounted within Kali, then go to the following folder containing the SAM file:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> /mnt/windows/Windows/System32/config</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">ls</span></a></code></pre></div>
 
 <ul>
 <li>Start <em>chntpw</em> in interactive mode by using <em>-i</em> flag option and read in the SAM file</li>
@@ -192,16 +193,16 @@
 <li>Locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">ls</span></a></code></pre></div>
 
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> </a></code></pre></div>
 
 <h2 id="examining-the-sam-database">Examining the SAM database</h2>
 <ul>
@@ -257,12 +258,12 @@
 
     </section>
     <section class="content">
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
 
