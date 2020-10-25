@@ -74,7 +74,7 @@ Notice the detailed elements in this diagram:
 
 - The states are shown as rounded rectangles. The state names are shown in bold text. As a naming convention, we only use lowercase letters, numbers, and underscores for state machine names, similar to rules for variable names in programming languages.
 - The start of the state machine is shown by a compact black dot. This is also a state, called the _initial state_. Once the state machine is activated, it starts at this initial state.
-- We assume that a traffic light only can be turned off from the state _blink_off_. This is shown by the final state, which is the circle with the extra border.
+- We assume that a traffic light only can be turned off from the state _blink_on_. This is shown by the final state, which is the circle with the extra border.
 
 ## States
 
