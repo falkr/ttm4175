@@ -75,6 +75,8 @@ class StateMachine:
             if self.state == "initial":
                 next_state = self.initial_transition(self)
                 if next_state:
+                    if next_state == "final":
+                        self.active = False
                     self.state = next_state
             event = self._detect_event()
             if event is not None:
@@ -106,12 +108,12 @@ class ShakeLight(StateMachine):
         return "off"
 
     def transition(self, state, event, timers):
-        if self.state == "off":
+        if state == "off":
             if event == "shake":
                 display.show(ON)
                 timers.start("t1", 2000)
                 return "on"
-        elif self.state == "on":
+        elif state == "on":
             if event == "t1":
                 display.show(OFF)
                 return "off"
@@ -142,7 +144,7 @@ class NightLight(StateMachine):
         return "off"
 
     def transition(self, state, event, timers):
-        if self.state == "off":
+        if state == "off":
             if event == "t1":
                 if display.read_light_level() > 100:
                     display.show(ON)
@@ -192,7 +194,7 @@ class SwitchLight(StateMachine):
         return "off"
 
     def transition(self, state, event, timers):
-        if self.state == "off":
+        if state == "off":
             if event == "button_a":
                 display.show(Image.ARROW_N)
                 timers.start("t1", 300)
@@ -204,7 +206,7 @@ class SwitchLight(StateMachine):
             elif event == "t1":
                 display.show(OFF)
                 return "off"
-        elif self.state == "on":
+        elif state == "on":
             if event == "button_a":
                 display.show(Image.ARROW_S)
                 timers.start("t2", 300)

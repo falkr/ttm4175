@@ -65,6 +65,7 @@
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
       <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <!--
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 2: HTTP and JSON</a>
       <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
@@ -214,13 +215,15 @@
 <a class="sourceLine" id="cb1-68" title="68">            <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;initial&quot;</span>:</a>
 <a class="sourceLine" id="cb1-69" title="69">                next_state <span class="op">=</span> <span class="va">self</span>.initial_transition(<span class="va">self</span>)</a>
 <a class="sourceLine" id="cb1-70" title="70">                <span class="cf">if</span> next_state:</a>
-<a class="sourceLine" id="cb1-71" title="71">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
-<a class="sourceLine" id="cb1-72" title="72">            event <span class="op">=</span> <span class="va">self</span>._detect_event()</a>
-<a class="sourceLine" id="cb1-73" title="73">            <span class="cf">if</span> event <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb1-74" title="74">                next_state <span class="op">=</span> <span class="va">self</span>.transition(<span class="va">self</span>.state, event, <span class="va">self</span>)</a>
-<a class="sourceLine" id="cb1-75" title="75">                <span class="cf">if</span> next_state:</a>
-<a class="sourceLine" id="cb1-76" title="76">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
-<a class="sourceLine" id="cb1-77" title="77">            sleep(<span class="dv">100</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-71" title="71">                    <span class="cf">if</span> next_state <span class="op">==</span> <span class="st">&quot;final&quot;</span>:</a>
+<a class="sourceLine" id="cb1-72" title="72">                        <span class="va">self</span>.active <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb1-73" title="73">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
+<a class="sourceLine" id="cb1-74" title="74">            event <span class="op">=</span> <span class="va">self</span>._detect_event()</a>
+<a class="sourceLine" id="cb1-75" title="75">            <span class="cf">if</span> event <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb1-76" title="76">                next_state <span class="op">=</span> <span class="va">self</span>.transition(<span class="va">self</span>.state, event, <span class="va">self</span>)</a>
+<a class="sourceLine" id="cb1-77" title="77">                <span class="cf">if</span> next_state:</a>
+<a class="sourceLine" id="cb1-78" title="78">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
+<a class="sourceLine" id="cb1-79" title="79">            sleep(<span class="dv">100</span>)</a></code></pre></div>
 
     </section>
     <section class="content">
@@ -239,12 +242,12 @@
 <a class="sourceLine" id="cb1-8" title="8">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
 <a class="sourceLine" id="cb1-9" title="9"></a>
 <a class="sourceLine" id="cb1-10" title="10">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-11" title="11">        <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
 <a class="sourceLine" id="cb1-12" title="12">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</a>
 <a class="sourceLine" id="cb1-13" title="13">                display.show(ON)</a>
 <a class="sourceLine" id="cb1-14" title="14">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</a>
 <a class="sourceLine" id="cb1-15" title="15">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
-<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">elif</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
 <a class="sourceLine" id="cb1-17" title="17">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
 <a class="sourceLine" id="cb1-18" title="18">                display.show(OFF)</a>
 <a class="sourceLine" id="cb1-19" title="19">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
@@ -271,7 +274,7 @@
 <a class="sourceLine" id="cb1-10" title="10">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
 <a class="sourceLine" id="cb1-11" title="11"></a>
 <a class="sourceLine" id="cb1-12" title="12">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
 <a class="sourceLine" id="cb1-14" title="14">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
 <a class="sourceLine" id="cb1-15" title="15">                <span class="cf">if</span> display.read_light_level() <span class="op">&gt;</span> <span class="dv">100</span>:</a>
 <a class="sourceLine" id="cb1-16" title="16">                    display.show(ON)</a>
@@ -318,7 +321,7 @@
 <a class="sourceLine" id="cb1-16" title="16">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
 <a class="sourceLine" id="cb1-17" title="17"></a>
 <a class="sourceLine" id="cb1-18" title="18">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-19" title="19">        <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-19" title="19">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
 <a class="sourceLine" id="cb1-20" title="20">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
 <a class="sourceLine" id="cb1-21" title="21">                display.show(Image.ARROW_N)</a>
 <a class="sourceLine" id="cb1-22" title="22">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">300</span>)</a>
@@ -330,7 +333,7 @@
 <a class="sourceLine" id="cb1-28" title="28">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
 <a class="sourceLine" id="cb1-29" title="29">                display.show(OFF)</a>
 <a class="sourceLine" id="cb1-30" title="30">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
-<a class="sourceLine" id="cb1-31" title="31">        <span class="cf">elif</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-31" title="31">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
 <a class="sourceLine" id="cb1-32" title="32">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
 <a class="sourceLine" id="cb1-33" title="33">                display.show(Image.ARROW_S)</a>
 <a class="sourceLine" id="cb1-34" title="34">                timers.start(<span class="st">&quot;t2&quot;</span>, <span class="dv">300</span>)</a>
