@@ -143,49 +143,140 @@
 <div class="page">
     </section>
     <section class="content">
-<h1 id="virtual-box-on-mac">Virtual Box on Mac</h1>
-<p>Double-click on the file that ends with <code>.dmg</code> to install virtual box.</p>
+<h1 id="lab-state-machines-in-iot">Lab: State Machines in IoT</h1>
+
+<h3 id="overview-of-tasks">Overview of Tasks</h3>
+<p>We have created 5 tasks which all let you solve a slightly different problem related to state machines. The tasks are independent of each other, but the first one is the easiest to get started and the last one is maybe a bit challenging.</p>
+<p>Here’s an overview:</p>
+<ol type="1">
+<li><strong>Counter</strong>: You run the example, just to check that all works, and explain the behavior in words.</li>
+<li><strong>Shake Light</strong>: Create a state machine diagram from code.</li>
+<li><strong>Night Light</strong>: Extend a state machine diagram, and extend its code.</li>
+<li><strong>Switch Light</strong>: You get the state machine diagram, but build all code on your own.</li>
+<li><strong>Hand Sanitizer Station</strong>: You create state machine diagram and code by yourself from a textual description.</li>
+</ol>
+
+    </section>
+    <section class="content">
+<h1 id="counter">Counter</h1>
+<p>Goal: Get the state machine code running, to check that all works.</p>
+
+<span name="7d48c5"></span><aside name="7d48c5"><p><a href="https://git-scm.com">Git</a> is a version control system. Usually you would clone a repository so you could make changes to it and send them back to me, but for this exercise you only need the files once, which is why you only download the repository as a simple zip-file.</p>
+</aside>
+<p>We have created the files for today’s tasks, and you can download them from a Git repository as a zip-file.</p>
+<ul>
+<li>Download the file <a href="https://github.com/falkr/ttm4175-microbit-stms/archive/main.zip" class="uri">https://github.com/falkr/ttm4175-microbit-stms/archive/main.zip</a>.</li>
+<li>Unzip it, usually by double-clicking on it.</li>
+<li>Open the folder in VS Code.</li>
+</ul>
+
+<p>You should see the following files:</p>
+<ul>
+<li>counter.py</li>
+<li>night.py</li>
+<li>sanitizer.py</li>
+<li>shake.py</li>
+<li>switch.py</li>
+</ul>
+
+<p>All files are self-contained and can run independently of each other, that means, all contain the base state machine.</p>
+
+<h3 id="diagram-for-the-counter">Diagram for the Counter</h3>
 
 <div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-1.png" alt="Double click on the VirtualBox.pkg icon." width="100%"/>
-<span name="figures/teknostart/virtual-box-installation-mac-1.png">&nbsp;</span>
-<aside name="figures/teknostart/virtual-box-installation-mac-1.png"><p><p>Double click on the VirtualBox.pkg icon.</p>
-</p></aside>
+<img src="figures/statemachines/counter.svg" width="100%"/>
 </div>
-<div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-2.png" alt="MacOS may block the installation. Click on 'Open Security Preferences.'" width="100%"/>
-<span name="figures/teknostart/virtual-box-installation-mac-2.png">&nbsp;</span>
-<aside name="figures/teknostart/virtual-box-installation-mac-2.png"><p><p>MacOS may block the installation. Click on ‘Open Security Preferences.’</p>
-</p></aside>
+<p>The counter is an electronic version of a hand counter, like the one they use on airplanes to count how many passengers are on board. Ours is made for very small planes — it can only count to 10.</p>
+
+<div class="task"><p>Describe in words how you expect, by looking at the diagram, the counter will work. Include this description in your report.</p>
 </div>
-<div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-3.png" alt="Click on the lock in the lock in the lower left corner to allow changes.'" width="100%"/>
-<span name="figures/teknostart/virtual-box-installation-mac-3.png">&nbsp;</span>
-<aside name="figures/teknostart/virtual-box-installation-mac-3.png"><p><p>Click on the lock in the lock in the lower left corner to allow changes.’</p>
-</p></aside>
+<h3 id="run-the-counter">Run the Counter</h3>
+<p>Using the same commands as last week, run the file <code>counter.py</code> in the device simulator, and try out if the counter works as you have described.</p>
+
+    </section>
+    <section class="content">
+<h1 id="shake-light">Shake Light</h1>
+<p>Goal: Create a state machine diagram from given code.</p>
+
+<p>Have a look at the code in file <code>shake.py</code>, and run it. (The code of the state machine is also included below.)</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> ShakeLight(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    and turn it off again after 2 seconds.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-7" title="7">        display.show(Image.SQUARE_SMALL)</a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-12" title="12">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</a>
+<a class="sourceLine" id="cb1-13" title="13">                display.show(Image.SQUARE)</a>
+<a class="sourceLine" id="cb1-14" title="14">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-17" title="17">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-18" title="18">                display.show(Image.SQUARE_SMALL)</a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a></code></pre></div>
+
+<div class="task"><p>Describe the behavior of the shake light in a few sentences.</p>
 </div>
-<div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-4.png" alt="Click on 'Allow.'" width="100%"/>
-<span name="figures/teknostart/virtual-box-installation-mac-4.png">&nbsp;</span>
-<aside name="figures/teknostart/virtual-box-installation-mac-4.png"><p><p>Click on ‘Allow.’</p>
-</p></aside>
-</div>
-<div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-5.png" width="100%"/>
+<div class="task"><p>Draw a state machine that corresponds to the code. Make sure to include all necessary elements.</p>
 </div>
     </section>
     <section class="content">
-<h1 id="virtual-box-extension">Virtual Box Extension</h1>
-<p>Double click on the file ending on <code>.vbox-extpack</code>. Virtual Box should open:</p>
+<h1 id="night-light">Night Light</h1>
+<p>Goal: Extend a given diagram to extends its functionality, and extend the corresponding code.</p>
 
 <div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-6.png" alt="Click on the 'Install.'" width="100%"/>
-<span name="figures/teknostart/virtual-box-installation-mac-6.png">&nbsp;</span>
-<aside name="figures/teknostart/virtual-box-installation-mac-6.png"><p><p>Click on the ‘Install.’</p>
-</p></aside>
+<img src="figures/statemachines/stm-night-light-1.svg" width="100%"/>
 </div>
+<p>Above you see the partial state machine of a night light, which depends on the light level, and switches on when it reaches &gt; 100.</p>
+<p>Extend the state machine so that it also switches the light off again after the level goes under 80.</p>
+<p>Add the code for the added functionality.</p>
+
+    </section>
+    <section class="content">
+<h1 id="switch-light">Switch Light</h1>
+<p>Goal: Get the diagram, but build all code on your own.</p>
+
 <div class="figure">
-<img src="figures/teknostart/virtual-box-installation-mac-7.png" width="100%"/>
+<img src="figures/statemachines/stm-switch-light.svg" width="100%"/>
+</div>
+<p>Above is the diagram for a light that can be switched on and off.</p>
+
+<div class="task"><p>Have a close look at the diagram, and describe what it does in words.</p>
+</div>
+<div class="task"><p>Build the entire code for the state machine. Use the code given in file <code>switch.py</code> as starter. (You only have to fill the content of the both transition functions.)</p>
+</div>
+    </section>
+    <section class="content">
+<h1 id="hand-sanitizer-station">Hand Sanitizer Station</h1>
+<p>Goal: Create diagram and code by yourself.</p>
+
+<div class="figure">
+<img src="figures/statemachines/dispenser.png" width="100%"/>
+</div>
+<p>Create the state machine for a hand santizer. These machines, as you know, detect that someone puts their hand under the dispenser, then run a motor for 800 milliseconds to dispense some sanitizer.</p>
+<p>To avoid double-dispensing, the machine ignores a repeated dispensing for about 2 seconds, that means, you need to wait for 2 seconds before it dispenses another load. (Sometimes irritating if you want a double dose…)</p>
+<p>Create such a state machine!</p>
+<ul>
+<li>Try to sketch one on your own, each one individually for a few minutes.</li>
+<li>Compare your solutions.</li>
+<li>Use the state machines to understand the function better. Do you all agree on what the system should <em>exactly</em> do?</li>
+</ul>
+<p>Some hints:</p>
+<ul>
+<li>Assume that a detected hand is signalled by event <code>shake</code>. That means, if the shale event is detected, the dispenser should dispense a dose by switching on its motor.</li>
+<li>Instead of switching on a motor, just show an arrow pointing downwards (<code>Image.ARROW_S</code>) on the display.</li>
+<li>Make sure it does activate the dispenser (by showing the arrow) for the 800 milliseconds.</li>
+<li>Make sure it does not double dispense within 2 seconds after the first detected shake.</li>
+</ul>
+
+<div class="tip"><p>The state machine we came up with has three control states, which we called for <code>ready</code>, <code>dispensing</code> and <code>blocked</code>. The names do not matter, but may indicate what happens in them.</p>
+</div>
+<div class="task"><p>Document the solution of your dispenser as detailed as possible, to explain to the reader how it works. Include a comic-like sequence of screenshots, too.</p>
 </div>
     </section>
 </div>

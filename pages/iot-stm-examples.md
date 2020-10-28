@@ -87,6 +87,52 @@ class StateMachine:
 ```
 
 
+# Example 0: Counter
+
+
+---
+type: figure
+source: figures/statemachines/counter.svg
+---
+
+
+```python
+class Counter(StateMachine):
+    """Counting the number of clicks on button A.
+    If 10 is reached, an "alarm" is shown by switching all LEDs on.
+    The counter can be reset at any time with button B.
+    """
+
+    def initial_transition(self, timers):
+        self.counter = 0
+        display.show(self.counter)
+        return "count"
+
+    def transition(self, state, event, timers):
+        if state == "count":
+            if event == "button_a":
+                if self.counter < 9:
+                    self.counter = self.counter + 1
+                    display.show(self.counter)
+                    return "count"
+                else:
+                    display.show(ON)
+                    timers.start("t1", 1000)
+                    return "alarm"
+            elif event == "button_b":
+                self.counter = 0
+                display.show(self.counter)
+                return "count"
+        elif state == "alarm":
+            if event == "t1":
+                self.counter = 0
+                display.show(self.counter)
+                return "count"
+
+stm = Counter()
+stm.run()
+```
+
 
 
 # Example 1: Shake Light
@@ -222,4 +268,5 @@ class SwitchLight(StateMachine):
 stm = SwitchLight()
 stm.run()
 ```
+
 

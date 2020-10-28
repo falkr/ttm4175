@@ -90,6 +90,7 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
         <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
@@ -224,6 +225,48 @@
 <a class="sourceLine" id="cb1-77" title="77">                <span class="cf">if</span> next_state:</a>
 <a class="sourceLine" id="cb1-78" title="78">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
 <a class="sourceLine" id="cb1-79" title="79">            sleep(<span class="dv">100</span>)</a></code></pre></div>
+
+    </section>
+    <section class="content">
+<h1 id="example-0-counter">Example 0: Counter</h1>
+
+<div class="figure">
+<img src="figures/statemachines/counter.svg" width="100%"/>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> Counter(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Counting the number of clicks on button A.</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    If 10 is reached, an &quot;alarm&quot; is shown by switching all LEDs on.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    The counter can be reset at any time with button B.</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-10" title="10">        <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;count&quot;</span>:</a>
+<a class="sourceLine" id="cb1-14" title="14">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">if</span> <span class="va">self</span>.counter <span class="op">&lt;</span> <span class="dv">9</span>:</a>
+<a class="sourceLine" id="cb1-16" title="16">                    <span class="va">self</span>.counter <span class="op">=</span> <span class="va">self</span>.counter <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-17" title="17">                    display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-18" title="18">                    <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-20" title="20">                    display.show(ON)</a>
+<a class="sourceLine" id="cb1-21" title="21">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-22" title="22">                    <span class="cf">return</span> <span class="st">&quot;alarm&quot;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;button_b&quot;</span>:</a>
+<a class="sourceLine" id="cb1-24" title="24">                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-25" title="25">                display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-26" title="26">                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-27" title="27">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;alarm&quot;</span>:</a>
+<a class="sourceLine" id="cb1-28" title="28">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-29" title="29">                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-30" title="30">                display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-31" title="31">                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-32" title="32"></a>
+<a class="sourceLine" id="cb1-33" title="33">stm <span class="op">=</span> Counter()</a>
+<a class="sourceLine" id="cb1-34" title="34">stm.run()</a></code></pre></div>
 
     </section>
     <section class="content">
