@@ -91,9 +91,9 @@
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
-        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
         <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-api.html">API</a>-->
@@ -178,11 +178,19 @@
 <li>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under “/mnt”. Make a folder called /windows under “/mnt” and mount the Windows 7 partition in it with the mount command.</li>
 </ul>
 
-<div class="hint"><ul>
+</section>
+<section class="content">
+<div class="hint_title">Hint
+<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('b54556').style.cssText = ''">Show</button>
+</div>
+<div class="hint" style="-webkit-filter: blur(5px);" id="b54556"><ul>
 <li><p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p></li>
 <li><p>This will incorporate the Windows file system under the “/mnt/windows” folder in Kali: <code>mount /dev/sdb2 /mnt/windows</code> <br/> <code>ls /mnt/windows</code></p></li>
 </ul>
+
 </div>
+</section>
+<section class="content">
 <h2 id="changing-the-user-password">Changing the user password</h2>
 <p>Our target here is to run Windows 7 normally. To accomplish this we will need to bypass the Windows log in screen. Since we do not know the users password we will simply have to change it!</p>
 <p>By modifying some crucial system files in Windows from within Kali, we can give ourselves access to a command line prompt with administrator access the next time we boot up Windows 7.</p>
@@ -281,12 +289,12 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
 

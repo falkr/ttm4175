@@ -91,9 +91,9 @@
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
-        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
         <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-api.html">API</a>-->
@@ -324,13 +324,13 @@ You may lose connectivity at this point depending on the IP addresses you have p
 </div>
 <div class="tip"><p><strong>About the report</strong> You don’t have to include all the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
 </div>
-<span name="9039a8"></span><aside name="9039a8"><p>You don’t need to reboot your RPi to apply these settings, it’s enough to restart the networking service but you need to type a bit more (e.g. <code>sudo ip link set eth1 down &amp;&amp; sudo ip link set eth1 up</code> <strong>or</strong> <code>service networking restart</code>).</p>
-</aside>
 <h2 id="static-ip-addresses">Static IP addresses</h2>
 <p>In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it. However, this is done differently in different Linux systems. Below you’ll see how to do it in Raspbian and Ubuntu.</p>
 <p><strong>—&gt; On your RPi VM</strong></p>
 <p>To save your settings you need to edit the “dhcpcd.conf” file in <code>/etc/</code> (don’t forget to check if you have permissions). Edit this file and reboot to check the networking configurations have remained.</p>
 
+<span name="9039a8"></span><aside name="9039a8"><p>You don’t need to reboot your RPi to apply these settings, it’s enough to restart the networking service but you need to type a bit more (e.g. <code>sudo ip link set eth1 down &amp;&amp; sudo ip link set eth1 up</code> <strong>or</strong> <code>service networking restart</code>).</p>
+</aside>
 <p>Example configuration (change accordingly!):</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1">interface eth1</a>

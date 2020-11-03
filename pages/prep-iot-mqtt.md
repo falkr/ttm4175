@@ -57,7 +57,7 @@ MQTT is a protocol that is based on the **client-broker** topology. As a
 repetition, remember first the client-server architecture, as we have it
 for instance in HTTP:
 
-## Repetition: Client-Server
+## Client-Server
 
 **Client-server:** The client knows the address of the server. The server gets to know
 the client only after the client makes initial contact. Since only

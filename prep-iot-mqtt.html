@@ -91,9 +91,9 @@
         <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
-        <a class="dropdown-item" href="iot-http-json.html">HTTP and JSON</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
         <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
         <a class="dropdown-item" href="iot-api.html">API</a>-->
@@ -166,11 +166,11 @@
 </div>
     </section>
     <section class="content">
-<span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
-</aside>
 <h1 id="mqtt">MQTT</h1>
 <p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud services. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.</p>
 
+<span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
+</aside>
 <p>MQTT is simple to work with, and the following are my top 5 reasons for using MQTT:</p>
 <ol type="1">
 <li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
@@ -184,7 +184,7 @@
     <section class="content">
 <h1 id="broker-architecture">Broker Architecture</h1>
 <p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a repetition, remember first the client-server architecture, as we have it for instance in HTTP:</p>
-<h2 id="repetition-client-server">Repetition: Client-Server</h2>
+<h2 id="client-server">Client-Server</h2>
 <p><strong>Client-server:</strong> The client knows the address of the server. The server gets to know the client only after the client makes initial contact. Since only the client knows the address of the server initially, it is only the clients that can make the first contact and take initiative. In the world wide web, servers can host web sites and are contacted by browsers (the clients.) This is an example where there are many clients and only few servers, and where servers are optimized to server many clients. But there are also protocols in which the server is on a tiny sensor device, and “serves” the values of the sensor to any client that is interested in them.</p>
 <h3 id="problems-with-client-server">Problems with Client-Server</h3>
 <p>Assume again a home automation system, in which a controller adjusts the heater (on/off) based on the temperature reported by several sensors that are distributed in the room. With HTTP, the two communication parts were client and servers, and the client can send data to the server or request data via the request-response pattern. We have hence two possibilities, depending on how we assign the roles of client and server:</p>
@@ -528,10 +528,10 @@ a/b/c/d/+
 <div class="figure">
 <img src="figures/iot/mqtt-fx.png" width="100%"/>
 </div>
-<span name="a8dfe4"></span><aside name="a8dfe4"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
-</aside>
 <p>MQTT.FX is a tool useful during development. Using MQTT.FX is simple, but because we have now talked about brokers, clients, publishers and subscribers, you may loose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing. Once the system is programmed, you don’t need MQTT.FX anymore.</p>
 
+<span name="a8dfe4"></span><aside name="a8dfe4"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
+</aside>
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>
 </div>
@@ -544,7 +544,12 @@ a/b/c/d/+
 <h2 id="observing-communication">Observing Communication</h2>
 <p>Because MQTT uses the publish-subscribe pattern, it can simply subscribe to any topics that are interesting in your application and you can see which messages are sent to these topics, without disturbing the communication in the system. To achieve the same in HTTP, for instance, you need a tool like Wireshark.</p>
 
-<div class="hint"><div>
+</section>
+<section class="content">
+<div class="hint_title">Hint
+<button type="button" class="btn btn-dark btn-sm" style="float: right" onclick="document.getElementById('d2a223').style.cssText = ''">Show</button>
+</div>
+<div class="hint" style="-webkit-filter: blur(5px);" id="d2a223"><div>
 <table class="table table-sm">
 <caption style>
 </caption>
@@ -729,7 +734,10 @@ No! The last plus implies that there should be another level for the topic, afte
 </tbody>
 </table>
 </div>
+
 </div>
+</section>
+<section class="content">
     </section>
 </div>
 
