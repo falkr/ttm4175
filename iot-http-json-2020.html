@@ -144,7 +144,7 @@
     </section>
     <section class="content">
 <h1 id="http-and-json">HTTP and JSON</h1>
-<p>Today we are using HTTP as communication protocol and use JSON as serialization format to send data, both from a client to a server and from a server to a client.</p>
+<p>Today we will use HTTP as communication protocol and JSON as serialization format to send data, from a client to a server and from a server to a client.</p>
 
     </section>
     <section class="content">
@@ -161,11 +161,12 @@
 </div>
 <h3 id="checking-the-news-via-python">Checking the News via Python</h3>
 <p>You can make requests also programmatically, that means, as part of a program running in Python. For that, a dedicated package <code>requests</code> exists that lets you make requests and parse the response in a simple way.</p>
-
 <p>Install the requests package:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">python</span> -m pip install requests</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">python3</span> -m pip install requests</a></code></pre></div>
 
+<span name="e3c025"></span><aside name="e3c025"><p>Using <code>pip</code> with the <code>python3 -m</code> prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the <code>pip</code> installation that also matches your <code>python3</code>. You also don’t need to worry about <code>pip3</code> or <code>pip</code>.</p>
+</aside>
 <p>With this package installed, the program to make a request to a website looks like this:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> requests</a>
@@ -176,45 +177,65 @@
 
 <p>The request returns a data structure of the type <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">Response</a> which contains the answer as a text field, which we simply print out.</p>
 
-<div class="task"><p>Check the output, it should be the same as the one obtained with curl.</p>
+<div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
 </div>
     </section>
     <section class="content">
 <h1 id="http-client-requests-checking-the-weather">HTTP Client Requests: Checking the Weather</h1>
-<p>So these were requests to get the content of a website. But HTTP can also be used in a different way. &lt;Yr.no&gt; provides weather information, which most people access either via the website or the mobile app. Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.</p>
-<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here</a>.</p>
+<p>So these were requests to get the content of a website. But HTTP can also be used in a different way. <a href="Yr.no">Yr.no</a> provides weather information, which most people access either via the website or the mobile app. Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.</p>
+<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here in detail.</a>. Select the box that says <code>GET/compact</code>, as shown in the figure below. This box lets you try out a request, directly from the website. The required input data are latitude and longitude. For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
 
+<div class="task"><p>Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.</p>
+</div>
 <div class="figure">
 <img src="figures/http/yr-1.png" width="100%"/>
 </div>
-<p>Select the box that says <code>GET / compact</code>, as shown in the figure above. This box lets you try out a request. The required input data are latitude and longitude. For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>. Click <strong>Try it out!</strong> and browse through the response you get. Check if you can recignize some of the values and if they are more or less what you expect.</p>
-
 <h3 id="weather-via-curl">Weather via Curl</h3>
 <p>We can also do the same HTTP request from our command line using <code>curl</code>:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> <span class="st">&#39;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&#39;</span></a></code></pre></div>
 
 <h3 id="weather-via-python">Weather via Python</h3>
-<p>Let us use Python again for making the same request:</p>
+<p>Let us use Python again for making the same request, with the requests module as done above. Find the correct URL from the API website.</p>
 
+<button class="w3collapsible">Hint for the code</button>
+<div class="w3content">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> requests</a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3">url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;</span></a>
 <a class="sourceLine" id="cb1-4" title="4">response <span class="op">=</span> requests.get(url)</a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="bu">print</span>(response.text)</a></code></pre></div>
 
-<p>The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON, as done in the program below. (Note that <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.text">text</a> is a field or variable in the requests object, but <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.json">json()</a> is a function we call on it, therefore we use the braces.)</p>
+</div>
+<div class="task"><p>Run the code, document the result.</p>
+</div>
+<p>The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON via the function <code>response.json()</code> which you can also print via <code>print(response.json())</code>.</p>
 
+<span name="9418ba"></span><aside name="9418ba"><p>Note that <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.text">text</a> is a field or variable in the requests object, but <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.json">json()</a> is a function we call on it, therefore we use the braces.</p>
+</aside>
+<button class="w3collapsible">Hint for the code</button>
+<div class="w3content">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> requests</a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3">url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;</span></a>
 <a class="sourceLine" id="cb1-4" title="4">response <span class="op">=</span> requests.get(url)</a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="bu">print</span>(response.json())</a></code></pre></div>
 
-<p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists.</p>
+</div>
+<p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal <code>print()</code> function, the data structure doesn’t look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:</p>
 
-<p>To better read the returned data structure, we can print it in a pretty way, using these additional lines of code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> pprint <span class="im">import</span> pprint</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># your code...</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">pprint(response.json())</a></code></pre></div>
 
+<p>Notice that we use now the function <code>pprint()</code> instead of <code>print()</code> to print things <em>pretty</em>. Pretty good, huh?</p>
+
+<div class="task"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p>
+</div>
+<button class="w3collapsible">Hint for the code</button>
+<div class="w3content">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> pprint <span class="im">import</span> pprint</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> requests</a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
@@ -222,18 +243,19 @@
 <a class="sourceLine" id="cb1-5" title="5">response <span class="op">=</span> requests.get(url)</a>
 <a class="sourceLine" id="cb1-6" title="6">pprint(response.json())</a></code></pre></div>
 
-<p>Notice that we use now the function <code>pprint()</code> instead of <code>print()</code> to print things <em>pretty</em>. Pretty good, huh?</p>
-
+</div>
 <h3 id="finding-the-temperature">Finding the Temperature</h3>
-<p>The API provided the current forecast for a location, that means, several hours and even days ahead. It also contains meta-data, explaining formats and fields, which are all useful but of course a bit complex. For now, we are just interested in the temperature.</p>
+<p>The response provides the current forecast for a location, that means, several hours and even days ahead. It also contains so-called meta-data which explains details <em>about</em> the data. These are all useful, but make the structure of the response a bit complex. For now, we are just interested in the air temperature.</p>
 
 <div class="task"><p>Can you find the data field <code>air_temperature</code>?</p>
-<p>When we want to use the temperature in our program, we need to extract it out of this complex structure.</p>
 </div>
+<p>When we want to use the temperature in our program, we need to extract it out of this complex structure.</p>
+
 <div class="task"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p>
 </div>
 <div class="tips"><ul>
-<li>Pretty print the structure.</li>
+<li>Work step by step.</li>
+<li>Pretty print the structure after each step.</li>
 <li>Print the keys of a dictionary using its <code>keys()</code> function, for example <code>response.json().keys()</code>.</li>
 <li>Access a field in a dictionary with the square brackets, for instance <code>response.json()['geometry']</code>.</li>
 <li>If you find a list, access its first element with <code>list[0]</code> or its last with <code>list[-1]</code>.</li>
@@ -472,9 +494,11 @@
 <a class="sourceLine" id="cb1-9" title="9">            <span class="cf">return</span> <span class="va">self</span>.server.data[name]</a>
 <a class="sourceLine" id="cb1-10" title="10">    <span class="cf">return</span> <span class="va">None</span></a></code></pre></div>
 
-<p>As you see, these functions use the <code>self.server</code> attribute, which provides us access to the actual server instance. From there, we can access a variable <code>data</code> that is a dictionary so that we can store variables by name. I this way we can store data also between different calls of the <code>do_GET()</code> and <code>do_POST()</code> functions.</p>
-
-<p>Use these functions to store the temperature data in the server when they are sent via the sensor application and <code>do_GET()</code>, and to retrieve the temperature data when you want to answer a request done via <code>do_POST()</code>.</p>
+<p>As you see, these functions use the <code>self.server</code> attribute, which provides access to the actual server instance. From there, we can access a variable <code>data</code> that is a dictionary so that we can store variables by name. I this way we can store data also between different calls of the <code>do_GET()</code> and <code>do_POST()</code> functions. To repeat and clarify:</p>
+<ul>
+<li><code>do_POST()</code> stores the temperature data submitted by the temperature sensor application,</li>
+<li><code>do_GET()</code> provides the website with the the data from the sensor and the air temperature obtained from the forecast.</li>
+</ul>
 
 <h3 id="adding-the-yr-forecast">Adding the Yr Forecast</h3>
 

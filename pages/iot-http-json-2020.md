@@ -1,6 +1,6 @@
 # HTTP and JSON
 
-Today we are using HTTP as communication protocol and use JSON as serialization format to send data, both from a client to a server and from a server to a client. 
+Today we will use HTTP as communication protocol and JSON as serialization format to send data, from a client to a server and from a server to a client. 
 
 
 # HTTP Client Requests: Checking the News
@@ -26,12 +26,14 @@ curl --verbose https://www.nrk.no/
 
 You can make requests also programmatically, that means, as part of a program running in Python. For that, a dedicated package `requests` exists that lets you make requests and parse the response in a simple way. 
 
-
 Install the requests package:
 
 ```bash
-python -m pip install requests
+python3 -m pip install requests
 ```
+
+:aside: Using `pip` with the `python3 -m` prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the `pip` installation that also matches your `python3`. You also don't need to worry about `pip3` or `pip`. 
+
 
 With this package installed, the program to make a request to a website looks like this:
 
@@ -45,28 +47,28 @@ print(response.text)
 
 The request returns a data structure of the type [Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) which contains the answer as a text field, which we simply print out. 
 
-:task: Check the output, it should be the same as the one obtained with curl. 
-
-
+:task: Have a look at the output, it should be the same as the one obtained with curl. 
 
 
 # HTTP Client Requests: Checking the Weather
 
 So these were requests to get the content of a website. 
-But HTTP can also be used in a different way. <Yr.no> provides weather information, which most people access either via the website or the mobile app. 
+But HTTP can also be used in a different way. [Yr.no](Yr.no) provides weather information, which most people access either via the website or the mobile app. 
 Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.
 
-The API of Yr [is explained here](https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact).
+The API of Yr [is explained here in detail.](https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact).
+Select the box that says `GET/compact`, as shown in the figure below.
+This box lets you try out a request, directly from the website.
+The required input data are latitude and longitude. 
+For Trondheim, those are `lat=63.43` and `lon=10.39`.
+
+:task: Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.
+
 
 ---
 type: figure
 source: figures/http/yr-1.png
 ---
-
-Select the box that says `GET / compact`, as shown in the figure above. This box lets you try out a request. The required input data are latitude and longitude. 
-For Trondheim, those are `lat=63.43` and `lon=10.39`.
-Click **Try it out!** and browse through the response you get. Check if you can recignize some of the values and if they are more or less what you expect.
-
 
 ### Weather via Curl
 
@@ -79,8 +81,13 @@ curl 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&lon=1
 
 ### Weather via Python
 
-Let us use Python again for making the same request:
+Let us use Python again for making the same request, with the requests module as done above. 
+Find the correct URL from the API website. 
 
+---
+type: hint
+title: "Hint for the code"
+---
 ```python
 import requests
 
@@ -90,10 +97,18 @@ print(response.text)
 ```
 
 
-The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON, as done in the program below. (Note that [text](https://requests.readthedocs.io/en/latest/api/#requests.Response.text) is a field or variable in the requests object, but [json()](https://requests.readthedocs.io/en/latest/api/#requests.Response.json) is a function we call on it, therefore we use the braces.)
+:task: Run the code, document the result.
 
 
+The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON via the function `response.json()` which you can also print via `print(response.json())`.
 
+:aside: Note that [text](https://requests.readthedocs.io/en/latest/api/#requests.Response.text) is a field or variable in the requests object, but [json()](https://requests.readthedocs.io/en/latest/api/#requests.Response.json) is a function we call on it, therefore we use the braces.
+
+
+---
+type: hint
+title: "Hint for the code"
+---
 ```python
 import requests
 
@@ -102,11 +117,26 @@ response = requests.get(url)
 print(response.json())
 ```
 
-The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists.
+
+The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal `print()` function, the data structure doesn't look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:
+
+```python
+from pprint import pprint
+
+# your code...
+
+pprint(response.json())
+```
+
+Notice that we use now the function `pprint()` instead of `print()` to print things _pretty_. Pretty good, huh?
+
+:task: Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.
 
 
-To better read the returned data structure, we can print it in a pretty way, using these additional lines of code:
-
+---
+type: hint
+title: "Hint for the code"
+---
 ```python
 from pprint import pprint
 import requests
@@ -116,15 +146,17 @@ response = requests.get(url)
 pprint(response.json())
 ```
 
-Notice that we use now the function `pprint()` instead of `print()` to print things _pretty_. Pretty good, huh?
-
 
 
 ### Finding the Temperature
 
-The API provided the current forecast for a location, that means, several hours and even days ahead. It also contains meta-data, explaining formats and fields, which are all useful but of course a bit complex. For now, we are just interested in the temperature.
+The response provides the current forecast for a location, that means, several hours and even days ahead.
+It also contains so-called meta-data which explains details _about_ the data.
+These are all useful, but make the structure of the response a bit complex. 
+For now, we are just interested in the air temperature.
 
 :task: Can you find the data field `air_temperature`?
+
 
 When we want to use the temperature in our program, we need to extract it out of this complex structure. 
 
@@ -134,7 +166,8 @@ When we want to use the temperature in our program, we need to extract it out of
 
 :tips:
 
-* Pretty print the structure.
+* Work step by step.
+* Pretty print the structure after each step.
 * Print the keys of a dictionary using its `keys()` function, for example `response.json().keys()`.
 * Access a field in a dictionary with the square brackets, for instance `response.json()['geometry']`.
 * If you find a list, access its first element with `list[0]` or its last with `list[-1]`.
@@ -201,7 +234,7 @@ source: figures/http/smart-home.png
 ## Code for the Web Server
 
 Above we have **initiated HTTP requests as clients** to get news and weather, and combined two weather requests to a little program. 
-Now we want to also build a web server so that we can **accept HTTP requests and answer them**. As you have learned in the preparation, HTTP is not a symmetric protocol; the client and server work very differently. 
+Now we want to also build a web server so that we can **accept HTTP requests and answer them**. As you have learned in the preparation, HTTP is not a symmetric protocol; client and server work very differently. 
 The code for the server handling a requests therefore also works very differently from the one making a request. 
 
 Copy the following code into a file `webserver.py`. The code declares some functions, and then a class `RequestHandler`, which defines a web server. It then configures and starts this web server, which is then active and waits for GET requests.
@@ -303,7 +336,7 @@ Note: Whenever you are going to change the code of the web server, you will need
 
 ## Request via Web Browser
 
-* Either on the same machine, or (even better) on a different machine, access the website address that the server prints out in a browser.
+* Either on the same machine, or (even better) on a different machine in case you are in the same network, access the website address that the server prints out in a browser.
 * If you access the browser on the same machine, you can type `http://localhost:8023/` as address. Otherwise, use the IP address.
 * What happens in the browser, and what happens in the command where the server program runs?
 * Create a sequence diagram of what you have just observed, and annotate it with details that you find relevant.
@@ -374,6 +407,7 @@ print_response(response)
 
 * Create a new client program with the code above. 
 * Add the necessary lines to convert the data to send, use the included functions. 
+* Document what these functions actually do.
 * With the server from before running, execute the client code.
 * Document what happens.
 
@@ -405,10 +439,13 @@ def load_data(self, name):
     return None
 ```
 
-As you see, these functions use the `self.server` attribute, which provides us access to the actual server instance. From there, we can access a variable `data` that is a dictionary so that we can store variables by name. I this way we can store data also between different calls of the `do_GET()` and `do_POST()` functions.
+As you see, these functions use the `self.server` attribute, which provides access to the actual server instance.
+From there, we can access a variable `data` that is a dictionary so that we can store variables by name.
+I this way we can store data also between different calls of the `do_GET()` and `do_POST()` functions.
+To repeat and clarify:
 
-
-Use these functions to store the temperature data in the server when they are sent via the sensor application and `do_GET()`, and to retrieve the temperature data when you want to answer a request done via `do_POST()`.
+* `do_POST()` stores the temperature data submitted by the temperature sensor application,
+* `do_GET()` provides the website with the the data from the sensor and the air temperature obtained from the forecast.
 
 
 
