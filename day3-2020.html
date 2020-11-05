@@ -67,8 +67,8 @@
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
       <!--
-      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
       <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
       <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
     </div>
@@ -170,7 +170,7 @@
 <h1 id="finding-your-ip-address-and-checking-for-connectivity">Finding your IP address and checking for connectivity</h1>
 <p>In a terminal of your Raspberry Pi you can easily find its IP address by using the command <code>ip</code>. Try and type the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> address</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> address</span></code></pre></div>
 
 <p>This command shows you all the existing IP addresses associated with your Raspberry Pi. These addresses are fundamental for connecting computers and other devices to each other and the Internet. Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24</code>, while at home you’ll probably get something like <code>10.0.2.15/24</code> or <code>192.168.0.1/24</code>, which are private addresses (not directly reachable through the Internet).</p>
 <p>Write down the address and mask of the interface <code>eth0</code>.</p>
@@ -183,7 +183,7 @@
 <p>By default, the Linux distribution we are using has a running service, or daemon, that automatically configures network interfaces whenever a new link is found. This service is called <code>dhcpcd</code> and runs a networking protocol called DHCP. You will learn more about this later in the course.</p>
 <p>DHCP is also used to automatically configure the routes that are used to reach the Internet. You can find any route installed in your Raspberry Pi by typing the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> route</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> route</span></code></pre></div>
 
 <p>You should see a <em>default route</em> via the IP address 10.0.2.2 (will vary depending on your network), which corresponds to a router responsible for forwarding our packets to and from the Internet.</p>
 <p>To see if we can send something back and forth between two computers, we can use the command <code>ping</code>. It does exactly what it sounds like… It sends a “ping” message to the other computer, which then answers.</p>
@@ -193,11 +193,11 @@
 </div>
 <p>Try pinging the router with the IP address found above by using the command <code>ping</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> 10.0.2.2</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> 10.0.2.2</span></code></pre></div>
 
 <p>You can also use the same command to <code>ping</code> other online machines such as the server hosting the website from the European Space Agency at <em>www.esa.int</em>. Can you see any significant difference from the previous <code>ping</code> command?</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> www.esa.int</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> www.esa.int</span></code></pre></div>
 
     </section>
     <section class="content">
@@ -215,7 +215,7 @@
 
 <p>The <code>ssh</code> command is used like this:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ssh</span> pi@<span class="op">&lt;</span>remote_ip_address<span class="op">&gt;</span> -p <span class="op">&lt;</span>port<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>remote_ip_address<span class="op">&gt;</span> -p <span class="op">&lt;</span>port<span class="op">&gt;</span></span></code></pre></div>
 
 <span name="eaec20"></span><aside name="eaec20"><p>The tuple “pi@&lt;remote_address&gt;” means that we are logging in the remote machine with the specified IP address using the user “pi”. The username depends on the account you want to use when you login.</p>
 </aside>
@@ -226,7 +226,7 @@
 </aside>
 <p>So, to remotely access our Raspberry PI, <strong>in your host PC</strong>, issue the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ssh</span> pi@127.0.0.1 -p 2222</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ssh</span> pi@127.0.0.1 -p 2222</span></code></pre></div>
 
 <span name="df7f2d"></span><aside name="df7f2d"><p>This command means that we are using <code>ssh</code> on the localhost and port 2222, which we configured to forward packets to the virtual machine on port 22 (where <code>ssh</code> lives).</p>
 </aside>
@@ -237,11 +237,11 @@
 <h3 id="copying-files-to-a-remote-computer">Copying Files to a Remote Computer</h3>
 <p>With <code>ssh</code> you can remotely access a computer. However, you may also want to send or retrieve files to and from that computer. To do so you can use the command <code>scp</code>:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">scp</span> -P <span class="op">&lt;</span>port<span class="op">&gt;</span> <span class="op">&lt;</span>path_to_local_file<span class="op">&gt;</span> pi@<span class="op">&lt;</span>remote_address<span class="op">&gt;</span>:<span class="op">&lt;</span>path_to_destination<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">scp</span> -P <span class="op">&lt;</span>port<span class="op">&gt;</span> <span class="op">&lt;</span>path_to_local_file<span class="op">&gt;</span> pi@<span class="op">&lt;</span>remote_address<span class="op">&gt;</span>:<span class="op">&lt;</span>path_to_destination<span class="op">&gt;</span></span></code></pre></div>
 
 <p>In the example below you will copy the file “log.txt” in the current directory (represented by “./”) to the remote machine with the IP address “10.0.22.1” (port 1234), saving it in the location “/home/pi/Documents/”.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">scp</span> -P 1234 ./log.txt pi@10.0.22.1:/home/pi/Documents/</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">scp</span> -P 1234 ./log.txt pi@10.0.22.1:/home/pi/Documents/</span></code></pre></div>
 
 <div class="tip"><p>If you replace the destination path with ‘.’ the files will be copied to the user’s home folder.</p>
 </div>
@@ -250,11 +250,11 @@
 <h3 id="playing-a-sound-remotely">Playing a sound… Remotely!</h3>
 <p>Now that you are remotely controlling your Raspberry Pi (through an <code>ssh</code> session), issue the following command to download a simple sound file in wav format:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</span></code></pre></div>
 
 <p>The file should be saved on your Raspberry Pi. Now, still through <code>ssh</code>, try to play the file with the following command:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">aplay</span> onesmall.wav</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">aplay</span> onesmall.wav</span></code></pre></div>
 
     </section>
     <section class="content">
@@ -304,30 +304,30 @@
 <p>Websites on the internet are written in HTML. Each HTML file is just a plain text file, but with a <em>.html</em> file extension instead of <em>.txt</em>. To see the HTML code that lies behind any website, open Firefox and navigate to any website that you like. Then, right click on the page and choose <code>View Page Source</code>. This will take you to the underlying HTML code for this site that your browser uses to present the site in a viewable way.</p>
 <p>This is a minimal HTML document:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">en</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">utf-8</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;title&gt;</span>Title<span class="kw">&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">&lt;p&gt;</span>This is a pragraph of text.<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">  <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">en</span><span class="kw">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">utf-8</span><span class="kw">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">&lt;title&gt;</span>Title<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">&lt;p&gt;</span>This is a pragraph of text.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 
 <p>You can see that HTML contains tags, which are opened and closed, like the <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> tags. See how they are nested within each other, just like boxes within boxes. You can also add more advances tags, like the <code>&lt;a&gt;</code> that adds links, and <code>&lt;img&gt;</code>for images.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">en</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">utf-8</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;title&gt;</span>Title<span class="kw">&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">&lt;p&gt;</span>This is a pragraph of text. With a <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://ntnu.no&quot;</span><span class="kw">&gt;</span>link to NTNU<span class="kw">&lt;/a&gt;</span>.<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">    <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;bilde.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;text for bilde&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">en</span><span class="kw">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">utf-8</span><span class="kw">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">&lt;title&gt;</span>Title<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">&lt;p&gt;</span>This is a pragraph of text. With a <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://ntnu.no&quot;</span><span class="kw">&gt;</span>link to NTNU<span class="kw">&lt;/a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;bilde.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;text for bilde&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 
 <p>To develop HTML, you can also work on your Mac or PC, and edit a file with an *.html ending in a text editor. You can then just double-click the file and open it with a web browser to see how it looks.</p>
 <p>You can also check a HTML page by pasting it into an online <a href="https://validator.w3.org/nu/#textarea">HTML validator, like this one</a>.</p>

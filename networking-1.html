@@ -67,8 +67,8 @@
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
       <!--
-      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
       <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
       <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
     </div>
@@ -196,7 +196,7 @@
 <li>Add an IP address and respective mask to the interface ‘eth0’ using the command:</li>
 </ol>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
 
 <ol start="6" type="1">
 <li>Using the command <code>ip a s eth0</code> (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.</li>
@@ -227,7 +227,7 @@ Hint (ping)
 <div class="w3content">
 <p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 
 </div>
 <button class="w3collapsible">
@@ -270,9 +270,9 @@ Hint (troubleshooting)
 <p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the “dhcpcd.conf” file in <code>/etc/</code>. Edit this file and reboot to check the networking configurations have remained.</p>
 <p>Example configuration:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">interface</span> eth0</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">static</span> ip_address=192.168.100.102/24</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">static</span> routers=192.168.100.101</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">interface</span> eth0</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
 
     </section>
     <section class="content">

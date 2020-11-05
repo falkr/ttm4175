@@ -67,8 +67,8 @@
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
       <!--
-      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 3: MQTT</a>
       <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
       <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
     </div>
@@ -207,7 +207,7 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <p><code># mv osk.exe osk.exe.backup</code> % rename the file osk.exe to osk.exe.backup</p></li>
 <li><p>Copy <em>cmd.exe</em> to <em>osk.exe</em> so that enabling the on-screen-keyboard will actually give us a command prompt instead:</p>
 <p><code># cp cmd.exe osk.exe</code> % overwrite the osk.exe binary with the cmd.exe binary</p></li>
-<li>Now restart your machine and select Windows 7 in the boot menu.</li>
+<li><p>Now restart your machine and select Windows 7 in the boot menu.</p></li>
 <li><p>Choose to log in as user <strong>Lab2</strong>. Verify that you cannot log in without the password.</p></li>
 <li><p>Now enable the on-screen-keyboard by clicking the little symbol in the bottom left corner. What happens? <strong>The on-screen-keyboard tricked into giving us a command line prompt – with administrator access!</strong></p></li>
 <li><p>In the command prompt type:</p>
@@ -231,9 +231,9 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Revert the changes.</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</span></code></pre></div>
 
     </section>
     <section class="content">
