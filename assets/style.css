@@ -4,6 +4,12 @@
 	box-sizing: content-box;
 }
 
+.anchorjs-link:hover {
+opacity: 1;
+text-decoration: none;
+color: #1481b8;
+}
+
 body {
   line-height: 24px;
   color: #222;

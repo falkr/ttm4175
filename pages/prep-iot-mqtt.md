@@ -68,7 +68,7 @@ browsers (the clients.) This is an example where there are many
 clients and only few servers, and where servers are optimized to
 server many clients. But there are also protocols in which the
 server is on a tiny sensor device, and "serves" the values of the
-sensor to any client that is interested in them.
+sensor to any client that are interested in them.
 
 ### Problems with Client-Server
 
@@ -82,7 +82,7 @@ client and server:
 
 -   **HTTP, sensors act as clients:** The sensors are HTTP clients and
     repeatedly send their temperature measurements to the heater, which
-    is acts as a HTTP server.
+    is acts as an HTTP server.
 
 -   **HTTP, sensors act as servers:** Vice-versa, we can think of a
     solution where each temperature sensor is a HTTP server, and the
@@ -93,7 +93,7 @@ client and server:
 Assume now that not only the heater module is interested in the
 temperature, but also the controller for the window blinds. (If it gets
 very warm during the summer, it could move down the blinds to keep the
-sun down.) With the above solutions, how would that look like?
+sun down.) With the above solutions, what would that look like?
 
 -   If the sensors should be the clients, then we now have to update all
     the sensor logic so that they not only send their measurements to
@@ -105,7 +105,7 @@ sun down.) With the above solutions, how would that look like?
 -   If the sensors act as HTTP servers and we introduce the blind
     controller, they don't have to change their code. They just answer
     now double as many requests; the ones from the heater and the ones
-    from the blind controller. For the battery life this is equally bad
+    from the blind controller. For the battery life, this is equally bad
     as the solution above.
 
 The problem with the above scenario is that we used a direct
@@ -120,7 +120,7 @@ caption: "This architecture connects each sensor with each client, which is not 
 
 ## New: Client-Broker
 
-Now imagine a system where the components are more separate form each other, and do not communicate directly with
+Now imagine a system where the components are more separate from each other, and do not communicate directly with
 each other. We can achieve this by introducing a component that
 decouples the sensors and the controllers. We call that component a
 **broker**, shown in the figure below:
@@ -149,7 +149,7 @@ MQTT brokers available. The one we are going to use is called
 With the new architecture of a broker also comes a new message pattern that is suitable for this architecture. It is called **publish-subscribe**.
 
 -   The **publish** part is very simple: Whenever a client (here a
-    sensor) makes an obervation, it sends a message to the broker. We
+    sensor) makes an observation, it sends a message to the broker. We
     also say that the client *publishes* a message, or that the client
     acts as a publisher.
 
@@ -182,7 +182,7 @@ subscribes to the broker, but the communication and the behavior of the
 sensors does not change. Also, each sensor sends every measurement only
 once (to the broker), which helps to save energy.
 
-Below you seen an example with two subscribers. Only subscriber 2
+Below you see an example with two subscribers. Only subscriber 2
 receives the first published message. Subscriber 1 only receives it
 after it also subscribes.
 
@@ -212,7 +212,7 @@ The light *l1* for instance subscribes to the topic
 on or off. The passive infrared sensor *pi1* publishes messages to the
 topic `house/garage/sensors/pi1` every time it detects a movement.
 
-Topics are hence useful to structure the communication of an application. They are a mechanism that combines some aspect of adressing with that of message names. Central to the concept of topics is that several cients can listen to the same topic.
+Topics are hence useful to structure the communication of an application. They are a mechanism that combines some aspect of addressing with that of message names. Central to the concept of topics is that several clients can listen to the same topic.
 
 ## Example Application
 
@@ -220,7 +220,7 @@ An application to switch on the lights whenever a movement is detected
 can work like this: (In pseudo code)
 
     subscribe to house/garage/sensors/pi1
-    whenever an MQTT messages arrives at house/garage/sensors/pi1:
+    whenever an MQTT message arrives at house/garage/sensors/pi1:
         send a message 
             to house/garage/lights/l1 with payload "on"
         
@@ -245,7 +245,7 @@ Examples:
 	
 
 **Exercise:** A publisher sends a message to the topic `a/b/c/d`. Which
-of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscriptioin topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)
+of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscription topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)
 
 <div>
 <table class="table table-sm">
@@ -380,11 +380,11 @@ mqttc.loop_start()
 
 
 The code above is in its structure similar to the one we used when
-creating our own HTTP server. We connect to an MQTT broker using its address (or `localhost` when its on the same computer). 
+creating our own HTTP server. We connect to an MQTT broker using its address (or `localhost` when it’s on the same computer). 
 The default port for MQTT is 1883.
 
 After the client is created in `mqttc = mqtt.Client()`, we register a number of callback functions. 
-These functions are called by the client whenever one of the event happens, that means, after we are connected, received a message, subscribed to a sopic  or published a message. We can use them to trigger other behavior.
+These functions are called by the client whenever one of the events happens, that means, after we are connected, received a message, subscribed to a topic  or published a message. We can use them to trigger other behavior.
 
 
 ## MQTT Publisher Client
@@ -412,7 +412,7 @@ source: figures/iot/mqtt-fx.png
 
 MQTT.FX is a tool useful during development. Using MQTT.FX is
 simple, but because we have now talked about brokers, clients,
-publishers and subscribers, you may loose track and wonder what this
+publishers and subscribers, you may lose track and wonder what this
 MQTT.FX does: Think of it as a debugger for MQTT, and you can use it
 like Wireshark. Essentially, MQTT.FX is a MQTT client, and can as such connect to an
 MQTT broker, subscribe to topics and send messages to topics.
@@ -431,7 +431,7 @@ source: figures/iot/mqtt-fx-publish.png
 ## Publishing Messages
 
 Imagine you created an MQTT client that runs a certain action when
-it receives a message, but you are not doen with the component that
+it receives a message, but you are not done with the component that
 should send the message. To test at least the component that should
 receive the message, you can use MQTT.FX to publish a message with that
 content to the topic, and the component under test will behave as if the
