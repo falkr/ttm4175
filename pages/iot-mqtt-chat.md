@@ -206,6 +206,8 @@ Let's test them.
 
 # Connecting Chat GUI and MQTT, Step 1
 
+Now we connect the chat UI with the MQTT client, so that we can send and receive chat messages. (We will not yet send receipts or typing indications.)
+
 
 
 ### Messages
