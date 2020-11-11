@@ -8,13 +8,20 @@
 * Sends **typing hints**, so that chat partners see when the other side is starting to type a message.
 
 
+
+## The Chat User Interface
+
+The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages. 
+We interact with it in two ways:
+
+* By function calls, when we want to change something in the UI. That means, we want to do something, and we cause an effect in the user interface.
+* By callbacks, when the UI wants to inform us about something, like that the user clicked the "Send" button and wants to send a chat message.
+
+
 ## Chat UI Function Calls
 
-The Chat UI is a Python class. We interact with it in two ways:
-
-* By function calls, when we want to change something in the UI.
-* By callbacks, when the UI wants to inform us about something.
-
+Here a list of things that we want the user interface do when we ask it to.
+This is done by function calls.
 
 ### Receiving Messages
 
@@ -24,7 +31,9 @@ When we receive a message, we tell the UI by calling the following function:
 gui.receive(sender, message, uuid)
 ```
 
-Each message is associated with a [UUID, a universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier). This is a unique name, so that we later can associate delivery and read receipts with each message.
+The sender is the originator of the chat message, and message is the content of a message as a string. 
+Each message is associated with a [UUID, a universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+This is a unique name, so that we later can associate delivery and read receipts with each message.
 
 
 ### Receiving Delivery Receipts
@@ -35,6 +44,8 @@ We can tell the UI that we received a delivery receipt by calling the following 
 gui.receipt_delivered(sender, uuid)
 ```
 
+The user interface will then add the suffix _(delivered)_ behind the message.
+
 
 ### Receiving Read Receipts
 
@@ -43,6 +54,8 @@ We can tell the UI that we received a read receipt by calling the following func
 ```python
 gui.receipt_read(sender, uuid)
 ```
+
+The user interface will then add the suffix _(read)_ behind the message.
 
 
 ### Receiving Typing Hints
@@ -53,12 +66,17 @@ We can tell the UI that we received a typing indication with the following call:
 gui.typing(sender)
 ```
 
+The user interface will then show _Team 1 is typing..._ right under the conversation list with that contact.
+
+
 ## Chat UI Callbacks
+
+But what about actions that originate at the user interface? Like when the user clicked the _Send_ button --- then the user interface wants to call us, so that we can forward that chat message.
 
 
 ### Sending Messages
 
-Messages are sent when the sender writes a message in the message field and clicks `Send`. 
+Messages are sent when the sender writes a message in the message field and clicks _Send_. 
 The UI lets us know about this by calling the following function:
 
 ```python
@@ -76,24 +94,18 @@ def on_read(sender, receiver, uuid):
     # publish read receipt via MQTT
 ```
 
-In this function, we send the read receipt to the originator of the message:
-
-
-
-The originator of the message the forwards the read receipt into the UI so that it can add the read receipt to the message.
 
 
 
 ### Typing Hints
 
-Whenever we start typing, we send a typing hint to the chat partner. The UI informs us about typing with the following function:
+Whenever we start typing, we send a typing hint to the chat contacts. 
+The UI informs us about typing with the following function:
 
 ```python
 def on_type(sender, receiver):
     # publish typing hint via MQTT
 ```
-
-We forward this typing hint by publishing the following MQTT message:
 
 
 
@@ -172,7 +184,8 @@ gui = ChatGui(my_id, on_send=on_send, on_type=on_type, on_read=on_read)
 gui.show()
 ```
 
-:task: Change the value of the variable `my_id` to match your team name.
+:task: Change the value of the variable `my_id` to match your team name. The team names have the form `team1a`, 'team1b', ... `team12b`. The ids `x1` to `x6` are for testing and the student assistants.
+
 
 
 ### Testing Sending of Messages and Outgoing Typing Indicators
@@ -210,16 +223,19 @@ Now we connect the chat UI with the MQTT client, so that we can send and receive
 
 
 
-### Messages
+### Sending and Receiving Chat Messages
 
-topic: `ttm4175/chat/<receiver>/message`
+We publish messages that carry a chat message to the topic `ttm4175/chat/<receiver>/message`. The `<receiver>` is the name of the contact we want to send the message to. So, if we want to send a chat message to team2a, that topic is `ttm4175/chat/team2a/message`
 
 ```json
-{"sender": "team1",
- "receiver": "team2",
+{"sender": "team1a",
+ "receiver": "team2a",
  "message": "Hei!",
  "uuid": "16fd2706"}
 ```
+
+
+### Code
 
 ```python
 from chat_gui import ChatGui
@@ -255,7 +271,7 @@ mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 mqttc.connect("mqtt.item.ntnu.no", 1883)
 mqttc.loop_start()
-mqttc.subscribe("ttm4175/chat/{}/#".format("team1a"))
+mqttc.subscribe("ttm4175/chat/{}/#".format(my_id))
 
 
 # Called by the Chat UI when we want to send a message
@@ -286,6 +302,15 @@ gui.show()
 ```
 
 
+Let's look at some details here:
+
+The following line defines a string for a topic. The `format()` function replaces the contained pair of curly braces `{}` with the value of variable `my_id`.  
+
+```python
+"ttm4175/chat/{}/#".format(my_id)
+```
+
+
 
 # Connecting Chat GUI and MQTT, Step 2
 
@@ -296,9 +321,7 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 ### Delivery Receipts
 
 
-When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message:
-
-topic: `ttm4175/chat/<receiver>/delivered`
+When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message to the topic: `ttm4175/chat/<receiver>/delivered`
 
 ```json
 {"sender": "team1",
@@ -313,7 +336,7 @@ The original sender receives this delivery receipt and feed is back to the UI, s
 
 ### Read Receipts
 
-topic: `ttm4175/chat/<receiver>/read`
+Read receipts are sent to topic `ttm4175/chat/<receiver>/read`.
 
 ```json
 {"sender": "team1",
@@ -324,7 +347,7 @@ topic: `ttm4175/chat/<receiver>/read`
 
 ### Typing Indications
 
-topic: `ttm4175/chat/<receiver>/typing`
+Typing indications are sent to topic `ttm4175/chat/<receiver>/typing`.
 
 ```json
 {"sender": "team1",
@@ -333,12 +356,12 @@ topic: `ttm4175/chat/<receiver>/typing`
 ```
 
 
-To which topic do we need to subscribe?
+:task: Check from the code to which topic we subscribe. Why can we manage by just subscribing to a single topic?
+What would be an alternative?
 
 
-### Adjust your ID
 
-### Send a Message via MQTT.Fx
+# Send a Message via MQTT.Fx
 
 
 
