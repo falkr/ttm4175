@@ -83,6 +83,7 @@
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
         <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 4: MQTT Chat</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
@@ -216,25 +217,25 @@
 </div>
 <p>Have a look at the code in file <code>shake.py</code>, and run it. (The code of the state machine is also included below.)</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>                display.show(Image.SQUARE)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>                display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> ShakeLight(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    and turn it off again after 2 seconds.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-7" title="7">        display.show(Image.SQUARE_SMALL)</a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-12" title="12">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</a>
+<a class="sourceLine" id="cb1-13" title="13">                display.show(Image.SQUARE)</a>
+<a class="sourceLine" id="cb1-14" title="14">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-17" title="17">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-18" title="18">                display.show(Image.SQUARE_SMALL)</a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a></code></pre></div>
 
 <p><strong>Task:</strong> Describe the behavior of the shake light in a few sentences.</p>
 

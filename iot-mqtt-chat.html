@@ -1,0 +1,420 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4175">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduction to Communication Technology and Digital Security">
+<meta property="og:description" content="Introduction to Communication Technology and Digital Security">
+
+
+<link rel="stylesheet" href="assets/bootstrap.min.css">
+<script src="assets/jquery-3.5.1.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<script src="assets/anchor.js"></script>
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day0-2020.html">Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">Dag 3: SSH and HTML</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="tips.html">Tips</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Networking</strong></a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2020.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2-2020.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3-2020.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4-2020.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <!--
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Networking</strong></a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
+        <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
+        <a class="dropdown-item" href="security-3-2020.html">Security 3</a>
+        <a class="dropdown-item" href="security-4-2020.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+        <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 4: MQTT Chat</a>
+        <!--
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>-->
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
+      <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
+      <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1 id="chatting-via-mqtt">Chatting via MQTT</h1>
+<p><strong>Goal:</strong> We want to use a simple Chat UI to create a chat system so that all teams can chat together. Our chat should then have the following features:</p>
+<ul>
+<li>Sends <strong>messages</strong>.</li>
+<li>Sends <strong>delivery receipts</strong>, so that the sender sees that a message has reached the device of the receiver.</li>
+<li>Sends <strong>read receipts</strong>, so that the sender knows when the message was visible in the user interface.</li>
+<li>Sends <strong>typing hints</strong>, so that chat partners see when the other side is starting to type a message.</li>
+</ul>
+
+<h2 id="chat-ui-function-calls">Chat UI Function Calls</h2>
+<p>The Chat UI is a Python class. We interact with it in two ways:</p>
+<ul>
+<li>By function calls, when we want to change something in the UI.</li>
+<li>By callbacks, when the UI wants to inform us about something.</li>
+</ul>
+
+<h3 id="receiving-messages">Receiving Messages</h3>
+<p>When we receive a message, we tell the UI by calling the following function:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">gui.receive(sender, message, uuid)</a></code></pre></div>
+
+<p>Each message is associated with a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID, a universally unique identifier</a>. This is a unique name, so that we later can associate delivery and read receipts with each message.</p>
+
+<h3 id="receiving-delivery-receipts">Receiving Delivery Receipts</h3>
+<p>We can tell the UI that we received a delivery receipt by calling the following function:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">gui.receipt_delivered(sender, uuid)</a></code></pre></div>
+
+<h3 id="receiving-read-receipts">Receiving Read Receipts</h3>
+<p>We can tell the UI that we received a read receipt by calling the following function:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">gui.receipt_read(sender, uuid)</a></code></pre></div>
+
+<h3 id="receiving-typing-hints">Receiving Typing Hints</h3>
+<p>We can tell the UI that we received a typing indication with the following call:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">gui.typing(sender)</a></code></pre></div>
+
+<h2 id="chat-ui-callbacks">Chat UI Callbacks</h2>
+
+<h3 id="sending-messages">Sending Messages</h3>
+<p>Messages are sent when the sender writes a message in the message field and clicks <code>Send</code>. The UI lets us know about this by calling the following function:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> on_send(sender, receiver, message, uuid):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># publish message via MQTT</span></a></code></pre></div>
+
+<h3 id="read-receipts">Read Receipts</h3>
+<p>When a message is read, the UI calls the following function. This happens whenever the chat history gets visible to the user.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> on_read(sender, receiver, uuid):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># publish read receipt via MQTT</span></a></code></pre></div>
+
+<p>In this function, we send the read receipt to the originator of the message:</p>
+
+<p>The originator of the message the forwards the read receipt into the UI so that it can add the read receipt to the message.</p>
+
+<h3 id="typing-hints">Typing Hints</h3>
+<p>Whenever we start typing, we send a typing hint to the chat partner. The UI informs us about typing with the following function:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> on_type(sender, receiver):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># publish typing hint via MQTT</span></a></code></pre></div>
+
+<p>We forward this typing hint by publishing the following MQTT message:</p>
+
+    </section>
+    <section class="content">
+<h1 id="install-the-chat-ui">Install the Chat UI</h1>
+
+<p>The UI is written with a libray that is called DearPyUI. You can install it as usual:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">python</span> -m pip install dearpyui</a></code></pre></div>
+
+<p>On windows, you may receive the following error message when you start the program:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="ex">import</span> dearpygui.*</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="ex">File</span> <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ex">ImportError</span>: DLL load failed: The specified module could not be found.</a></code></pre></div>
+
+<p>This is a known issue, <a href="https://github.com/hoffstadt/DearPyGui/issues/298">discussed here</a>. The solution is simple:</p>
+<ul>
+<li>Install <strong>vc_redist.x64.exe</strong> from <a href="https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads" class="uri">https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads</a>. Then the program should run.</li>
+</ul>
+
+<h3 id="chat-ui-code">Chat UI Code</h3>
+<p>You can download a zip file with all source code for today’s lab here: <a href="https://github.com/falkr/ttm4175-chat/archive/main.zip" class="uri">https://github.com/falkr/ttm4175-chat/archive/main.zip</a></p>
+<p>Unzip it and open it in Visual Studio Code.</p>
+
+    </section>
+    <section class="content">
+<h1 id="test-the-ui">Test the UI</h1>
+<p>In this part, we only test how the user interface works, we are not yet sending any real messages between each other. Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.</p>
+<p>This is the code to test the user interface. Place it in a file <code>test_chat_gui.py</code> in the same folder that you downloaded above, where also the file <code>chat_gui.py</code> is located.</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Change this to match your team!</span></a>
+<a class="sourceLine" id="cb1-4" title="4">my_id <span class="op">=</span> <span class="st">&quot;team1a&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">def</span> on_send(sender, receiver, message, uuid):</a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="bu">print</span>(<span class="st">&quot;Sending </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver, message[:<span class="dv">5</span>] <span class="op">+</span> <span class="st">&quot;...&quot;</span>))</a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="kw">def</span> on_type(sender, receiver):</a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="bu">print</span>(<span class="st">&quot;Typing: </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver))</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="kw">def</span> on_read(sender, receiver, uuid):</a>
+<a class="sourceLine" id="cb1-16" title="16">    <span class="bu">print</span>(<span class="st">&quot;Read: </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver, uuid[:<span class="dv">5</span>] <span class="op">+</span> <span class="st">&quot;...&quot;</span>))</a>
+<a class="sourceLine" id="cb1-17" title="17"></a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19">gui <span class="op">=</span> ChatGui(my_id, on_send<span class="op">=</span>on_send, on_type<span class="op">=</span>on_type, on_read<span class="op">=</span>on_read)</a>
+<a class="sourceLine" id="cb1-20" title="20"></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co"># We send in a fake message:</span></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="co"># gui.receive(&quot;x6&quot;, &quot;Dette er en fake medling!&quot;, &quot;absgdeff&quot;)</span></a>
+<a class="sourceLine" id="cb1-23" title="23"></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="co"># We fake that chat partner x5 starts typing:</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="co"># gui.typing(&quot;x5&quot;)</span></a>
+<a class="sourceLine" id="cb1-26" title="26"></a>
+<a class="sourceLine" id="cb1-27" title="27">gui.show()</a></code></pre></div>
+
+<div class="task"><p>Change the value of the variable <code>my_id</code> to match your team name.</p>
+</div>
+<h3 id="testing-sending-of-messages-and-outgoing-typing-indicators">Testing Sending of Messages and Outgoing Typing Indicators</h3>
+<ul>
+<li>Start writing a text, and have a look at the terminal in which you started the Python program. Which debug output do you get?</li>
+<li>Pause typing for 5 seconds, then type again. What happens?</li>
+<li>With some message in the message field, press the <code>Send</code> button. What happens in the UI and in the console?</li>
+<li>Type again some text, and press <code>Send To All</code> this time. What happens?</li>
+</ul>
+
+<h3 id="testing-receiving-and-read-receipts">Testing Receiving and Read Receipts</h3>
+<p>For this test, we need to fake that we receive a message, we do that by using the method <code>gui.receive()</code>, where we send in a message. <strong>Activate this by uncommenting the line of code that sends a fake message.</strong></p>
+<ul>
+<li>Start the program. The UI window should show as before the conversation with the first team selected.</li>
+<li>Observe the terminal again for any output messages.</li>
+<li>In the UI, switch to the conversation with <code>x6</code>. What happens in the output?</li>
+</ul>
+
+<h3 id="testing-incoming-typing-indicators">Testing Incoming Typing Indicators</h3>
+<p>Our typing indicators behave a little bit different from other chat application, to make things a bit simpler for now. Let’s test them. <strong>Activate this by uncommenting the line of code that sends a fake typing indication.</strong></p>
+<ul>
+<li>Switch to the conversation with <code>x5</code>. What do you see in the user interface?</li>
+<li>Now switch to another conversation, then back to <code>x5</code>. What do you observe?</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1 id="connecting-chat-gui-and-mqtt-step-1">Connecting Chat GUI and MQTT, Step 1</h1>
+
+<h3 id="messages">Messages</h3>
+<p>topic: <code>ttm4175/chat/&lt;receiver&gt;/message</code></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span><span class="dt">&quot;sender&quot;</span><span class="fu">:</span> <span class="st">&quot;team1&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-2" title="2"> <span class="dt">&quot;receiver&quot;</span><span class="fu">:</span> <span class="st">&quot;team2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3"> <span class="dt">&quot;message&quot;</span><span class="fu">:</span> <span class="st">&quot;Hei!&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-4" title="4"> <span class="dt">&quot;uuid&quot;</span><span class="fu">:</span> <span class="st">&quot;16fd2706&quot;</span><span class="fu">}</span></a></code></pre></div>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="im">import</span> json</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"># </span><span class="al">TODO</span><span class="co"> change this to your ID</span></a>
+<a class="sourceLine" id="cb1-6" title="6">my_id <span class="op">=</span> <span class="st">&quot;team1a&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># Called by MQTT client when we are connected</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co"># Called by the MQTT client for every message we receive</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="kw">def</span> on_message(mqttc, obj, msg):</a>
+<a class="sourceLine" id="cb1-16" title="16">    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</a>
+<a class="sourceLine" id="cb1-17" title="17">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb1-18" title="18">        data <span class="op">=</span> json.loads(msg.payload)</a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="cf">except</span> json.JSONDecodeError <span class="im">as</span> e:</a>
+<a class="sourceLine" id="cb1-20" title="20">        <span class="bu">print</span>(<span class="st">&quot;The payload is not valid json!&quot;</span>)</a>
+<a class="sourceLine" id="cb1-21" title="21">        <span class="bu">print</span>(e)</a>
+<a class="sourceLine" id="cb1-22" title="22">        <span class="cf">return</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="cf">if</span> msg.topic.endswith(<span class="st">&quot;message&quot;</span>):</a>
+<a class="sourceLine" id="cb1-24" title="24">        gui.receive(data[<span class="st">&quot;sender&quot;</span>], data[<span class="st">&quot;message&quot;</span>], data[<span class="st">&quot;uuid&quot;</span>])</a>
+<a class="sourceLine" id="cb1-25" title="25">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-26" title="26">        <span class="bu">print</span>(<span class="st">&quot;Unknown topic: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(msg.topic))</a>
+<a class="sourceLine" id="cb1-27" title="27"></a>
+<a class="sourceLine" id="cb1-28" title="28"></a>
+<a class="sourceLine" id="cb1-29" title="29">mqttc <span class="op">=</span> mqtt.Client()</a>
+<a class="sourceLine" id="cb1-30" title="30">mqttc.on_message <span class="op">=</span> on_message</a>
+<a class="sourceLine" id="cb1-31" title="31">mqttc.on_connect <span class="op">=</span> on_connect</a>
+<a class="sourceLine" id="cb1-32" title="32">mqttc.<span class="ex">connect</span>(<span class="st">&quot;mqtt.item.ntnu.no&quot;</span>, <span class="dv">1883</span>)</a>
+<a class="sourceLine" id="cb1-33" title="33">mqttc.loop_start()</a>
+<a class="sourceLine" id="cb1-34" title="34">mqttc.subscribe(<span class="st">&quot;ttm4175/chat/</span><span class="sc">{}</span><span class="st">/#&quot;</span>.<span class="bu">format</span>(<span class="st">&quot;team1a&quot;</span>))</a>
+<a class="sourceLine" id="cb1-35" title="35"></a>
+<a class="sourceLine" id="cb1-36" title="36"></a>
+<a class="sourceLine" id="cb1-37" title="37"><span class="co"># Called by the Chat UI when we want to send a message</span></a>
+<a class="sourceLine" id="cb1-38" title="38"><span class="kw">def</span> on_send(sender, receiver, message, uuid):</a>
+<a class="sourceLine" id="cb1-39" title="39">    <span class="bu">print</span>(<span class="st">&quot;Sending </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver, message[:<span class="dv">5</span>] <span class="op">+</span> <span class="st">&quot;...&quot;</span>))</a>
+<a class="sourceLine" id="cb1-40" title="40">    payload_dict <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb1-41" title="41">        <span class="st">&quot;sender&quot;</span>: sender,</a>
+<a class="sourceLine" id="cb1-42" title="42">        <span class="st">&quot;receiver&quot;</span>: receiver,</a>
+<a class="sourceLine" id="cb1-43" title="43">        <span class="st">&quot;message&quot;</span>: message,</a>
+<a class="sourceLine" id="cb1-44" title="44">        <span class="st">&quot;uuid&quot;</span>: uuid,</a>
+<a class="sourceLine" id="cb1-45" title="45">    }</a>
+<a class="sourceLine" id="cb1-46" title="46">    payload_json <span class="op">=</span> json.dumps(payload_dict)</a>
+<a class="sourceLine" id="cb1-47" title="47">    mqttc.publish(<span class="st">&quot;ttm4175/chat/</span><span class="sc">{}</span><span class="st">/message&quot;</span>.<span class="bu">format</span>(receiver), payload<span class="op">=</span>payload_json)</a>
+<a class="sourceLine" id="cb1-48" title="48"></a>
+<a class="sourceLine" id="cb1-49" title="49"></a>
+<a class="sourceLine" id="cb1-50" title="50"><span class="co"># Called by the Chat UI when we start typing to somebody</span></a>
+<a class="sourceLine" id="cb1-51" title="51"><span class="kw">def</span> on_type(sender, receiver):</a>
+<a class="sourceLine" id="cb1-52" title="52">    <span class="bu">print</span>(<span class="st">&quot;Typing: </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver))</a>
+<a class="sourceLine" id="cb1-53" title="53"></a>
+<a class="sourceLine" id="cb1-54" title="54"></a>
+<a class="sourceLine" id="cb1-55" title="55"><span class="co"># Called by the Chat UI when we have read a message</span></a>
+<a class="sourceLine" id="cb1-56" title="56"><span class="kw">def</span> on_read(sender, receiver, uuid):</a>
+<a class="sourceLine" id="cb1-57" title="57">    <span class="bu">print</span>(<span class="st">&quot;Read: </span><span class="sc">{}</span><span class="st"> --&gt; </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(sender, receiver, uuid[:<span class="dv">5</span>] <span class="op">+</span> <span class="st">&quot;...&quot;</span>))</a>
+<a class="sourceLine" id="cb1-58" title="58"></a>
+<a class="sourceLine" id="cb1-59" title="59"></a>
+<a class="sourceLine" id="cb1-60" title="60">gui <span class="op">=</span> ChatGui(my_id, on_send<span class="op">=</span>on_send, on_type<span class="op">=</span>on_type, on_read<span class="op">=</span>on_read)</a>
+<a class="sourceLine" id="cb1-61" title="61">gui.show()</a></code></pre></div>
+
+    </section>
+    <section class="content">
+<h1 id="connecting-chat-gui-and-mqtt-step-2">Connecting Chat GUI and MQTT, Step 2</h1>
+<p>By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, typing indications. Let’s look at the MQTT message payloads and topics that we are going to use for those:</p>
+
+<h3 id="delivery-receipts">Delivery Receipts</h3>
+
+<p>When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message:</p>
+<p>topic: <code>ttm4175/chat/&lt;receiver&gt;/delivered</code></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span><span class="dt">&quot;sender&quot;</span><span class="fu">:</span> <span class="st">&quot;team1&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-2" title="2"> <span class="dt">&quot;receiver&quot;</span><span class="fu">:</span> <span class="st">&quot;team2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3"> <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;delivered&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-4" title="4"> <span class="dt">&quot;uuid&quot;</span><span class="fu">:</span> <span class="st">&quot;16fd2706&quot;</span><span class="fu">}</span></a></code></pre></div>
+
+<p>The original sender receives this delivery receipt and feed is back to the UI, so that it can add a delivery receipt to the message. Note that the sender field is here the sender of the delivery receipt.</p>
+
+<h3 id="read-receipts">Read Receipts</h3>
+<p>topic: <code>ttm4175/chat/&lt;receiver&gt;/read</code></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span><span class="dt">&quot;sender&quot;</span><span class="fu">:</span> <span class="st">&quot;team1&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-2" title="2"> <span class="dt">&quot;receiver&quot;</span><span class="fu">:</span> <span class="st">&quot;team2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3"> <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;read&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-4" title="4"> <span class="dt">&quot;uuid&quot;</span><span class="fu">:</span> <span class="st">&quot;16fd2706&quot;</span><span class="fu">}</span></a></code></pre></div>
+
+<h3 id="typing-indications">Typing Indications</h3>
+<p>topic: <code>ttm4175/chat/&lt;receiver&gt;/typing</code></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span><span class="dt">&quot;sender&quot;</span><span class="fu">:</span> <span class="st">&quot;team1&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-2" title="2"> <span class="dt">&quot;receiver&quot;</span><span class="fu">:</span> <span class="st">&quot;team2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3"> <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;typing&quot;</span><span class="fu">}</span></a></code></pre></div>
+
+<p>To which topic do we need to subscribe?</p>
+
+<h3 id="adjust-your-id">Adjust your ID</h3>
+<h3 id="send-a-message-via-mqtt.fx">Send a Message via MQTT.Fx</h3>
+
+    </section>
+    <section class="content">
+<h1 id="chatting-together">Chatting Together</h1>
+
+    </section>
+    <section class="content">
+<h1 id="task">Task</h1>
+<p>Create a sequence diagram between</p>
+<ul>
+<li>The sender starts typing, and takes 20 seconds to type a message.</li>
+<li>The sender sends the message, which then arrives at the receiver.</li>
+<li>The user on the receiver side eventually reads the message.</li>
+</ul>
+
+    </section>
+</div>
+
+
+<footer></footer>
+<script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+</script>
+</body>
+</html>

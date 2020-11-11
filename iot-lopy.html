@@ -83,6 +83,7 @@
         <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
         <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 4: MQTT Chat</a>
         <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
@@ -225,18 +226,18 @@
 <li>Create a new file <code>main.py</code>, and copy in the following code:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>import pycom</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>import time</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>pycom.heartbeat(<span class="va">False</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>while True:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    pycom.rgbled(<span class="bn">0xFF0000</span>)  <span class="co"># Red</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    pycom.rgbled(<span class="bn">0x00FF00</span>)  <span class="co"># Green</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    pycom.rgbled(<span class="bn">0x0000FF</span>)  <span class="co"># Blue</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>    time.sleep(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">import pycom</a>
+<a class="sourceLine" id="cb1-2" title="2">import time</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4">pycom.heartbeat(<span class="va">False</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">while True:</a>
+<a class="sourceLine" id="cb1-7" title="7">    pycom.rgbled(<span class="bn">0xFF0000</span>)  <span class="co"># Red</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    time.sleep(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-9" title="9">    pycom.rgbled(<span class="bn">0x00FF00</span>)  <span class="co"># Green</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    time.sleep(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-11" title="11">    pycom.rgbled(<span class="bn">0x0000FF</span>)  <span class="co"># Blue</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    time.sleep(<span class="dv">1</span>)</a></code></pre></div>
 
 <ul>
 <li>Go through the code line-by-line</li>
@@ -278,49 +279,49 @@ print(binascii.hexlify(lora.mac()).upper().decode(&#39;utf-8&#39;))</code></pre>
 <li>If you connect successfully, mark it with <code>ok</code> in the last column of the table on Teams</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">from</span> network <span class="im">import</span> LoRa</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="im">import</span> socket</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="im">import</span> time</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="im">import</span> ubinascii</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co"># Initialise LoRa in LORAWAN mode.</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co"># Europe = LoRa.EU868</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>lora <span class="op">=</span> LoRa(mode<span class="op">=</span>LoRa.LORAWAN, region<span class="op">=</span>LoRa.EU868)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co"># create an OTAA authentication parameters</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>app_eui <span class="op">=</span> ubinascii.unhexlify(<span class="st">&#39;70B3D57ED00XXXXXXX&#39;</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>app_key <span class="op">=</span> ubinascii.unhexlify(<span class="st">&#39;D822576F285B93AC10F87B4FXXXXXXXX&#39;</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="co"># join a network using OTAA (Over the Air Activation)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>lora.join(activation<span class="op">=</span>LoRa.OTAA, auth<span class="op">=</span>(app_eui, app_key), timeout<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="co"># wait until the module has joined the network</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="cf">while</span> <span class="kw">not</span> lora.has_joined():</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>    time.sleep(<span class="fl">2.5</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&#39;Not yet joined...&#39;</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a><span class="co"># create a LoRa socket</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>s <span class="op">=</span> socket.socket(socket.AF_LORA, socket.SOCK_RAW)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="co"># set the LoRaWAN data rate</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>s.setsockopt(socket.SOL_LORA, socket.SO_DR, <span class="dv">5</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a><span class="co"># make the socket blocking</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a><span class="co"># (waits for the data to be sent and for the 2 receive windows to expire)</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>s.setblocking(<span class="va">True</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a><span class="co"># send some data</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>s.send(<span class="bu">bytes</span>([<span class="bn">0x01</span>, <span class="bn">0x02</span>, <span class="bn">0x03</span>]))</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a><span class="co"># make the socket non-blocking</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a><span class="co"># (because if there&#39;s no data received it will block forever...)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>s.setblocking(<span class="va">False</span>)</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a><span class="co"># get any data received (if any...)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>data <span class="op">=</span> s.recv(<span class="dv">64</span>)</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a><span class="bu">print</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> network <span class="im">import</span> LoRa</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> socket</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="im">import</span> ubinascii</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># Initialise LoRa in LORAWAN mode.</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Europe = LoRa.EU868</span></a>
+<a class="sourceLine" id="cb1-8" title="8">lora <span class="op">=</span> LoRa(mode<span class="op">=</span>LoRa.LORAWAN, region<span class="op">=</span>LoRa.EU868)</a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co"># create an OTAA authentication parameters</span></a>
+<a class="sourceLine" id="cb1-11" title="11">app_eui <span class="op">=</span> ubinascii.unhexlify(<span class="st">&#39;70B3D57ED00XXXXXXX&#39;</span>)</a>
+<a class="sourceLine" id="cb1-12" title="12">app_key <span class="op">=</span> ubinascii.unhexlify(<span class="st">&#39;D822576F285B93AC10F87B4FXXXXXXXX&#39;</span>)</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co"># join a network using OTAA (Over the Air Activation)</span></a>
+<a class="sourceLine" id="cb1-15" title="15">lora.join(activation<span class="op">=</span>LoRa.OTAA, auth<span class="op">=</span>(app_eui, app_key), timeout<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co"># wait until the module has joined the network</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="cf">while</span> <span class="kw">not</span> lora.has_joined():</a>
+<a class="sourceLine" id="cb1-19" title="19">    time.sleep(<span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb1-20" title="20">    <span class="bu">print</span>(<span class="st">&#39;Not yet joined...&#39;</span>)</a>
+<a class="sourceLine" id="cb1-21" title="21"></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="co"># create a LoRa socket</span></a>
+<a class="sourceLine" id="cb1-23" title="23">s <span class="op">=</span> socket.socket(socket.AF_LORA, socket.SOCK_RAW)</a>
+<a class="sourceLine" id="cb1-24" title="24"></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="co"># set the LoRaWAN data rate</span></a>
+<a class="sourceLine" id="cb1-26" title="26">s.setsockopt(socket.SOL_LORA, socket.SO_DR, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-27" title="27"></a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="co"># make the socket blocking</span></a>
+<a class="sourceLine" id="cb1-29" title="29"><span class="co"># (waits for the data to be sent and for the 2 receive windows to expire)</span></a>
+<a class="sourceLine" id="cb1-30" title="30">s.setblocking(<span class="va">True</span>)</a>
+<a class="sourceLine" id="cb1-31" title="31"></a>
+<a class="sourceLine" id="cb1-32" title="32"><span class="co"># send some data</span></a>
+<a class="sourceLine" id="cb1-33" title="33">s.send(<span class="bu">bytes</span>([<span class="bn">0x01</span>, <span class="bn">0x02</span>, <span class="bn">0x03</span>]))</a>
+<a class="sourceLine" id="cb1-34" title="34"></a>
+<a class="sourceLine" id="cb1-35" title="35"><span class="co"># make the socket non-blocking</span></a>
+<a class="sourceLine" id="cb1-36" title="36"><span class="co"># (because if there&#39;s no data received it will block forever...)</span></a>
+<a class="sourceLine" id="cb1-37" title="37">s.setblocking(<span class="va">False</span>)</a>
+<a class="sourceLine" id="cb1-38" title="38"></a>
+<a class="sourceLine" id="cb1-39" title="39"></a>
+<a class="sourceLine" id="cb1-40" title="40"></a>
+<a class="sourceLine" id="cb1-41" title="41"><span class="co"># get any data received (if any...)</span></a>
+<a class="sourceLine" id="cb1-42" title="42">data <span class="op">=</span> s.recv(<span class="dv">64</span>)</a>
+<a class="sourceLine" id="cb1-43" title="43"><span class="bu">print</span>(data)</a></code></pre></div>
 
     </section>
 </div>

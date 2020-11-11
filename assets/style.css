@@ -468,16 +468,17 @@ div.rat ol {
 }
 
 code {
-  font-size: 100%
+  font-size: 100%;
+  line-height: 1.5em;
 }
 
 pre.bash {
-    color: lightgrey;
-    background-color: #263238;
-    text-shadow: 0 0 1px white;
-    font-size: 100%
-    border-radius: 5px;
-    border-left: 6px solid #444444 
+  color: lightgrey;
+  background-color: #444444;
+  text-shadow: 0 0 0.5px white;
+  font-size: 100%
+  border-radius: 5px;
+  border-left: 6px solid #263238 
 }
 
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
@@ -609,15 +610,15 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
 
 .w3collapsible {
   background-color:#f0e9db;
+  font: 14px/20px "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
   color: #868279; 
-  padding: 15px 32px 15px 32px;
+  padding: 8px 16px 8px 16px;
   cursor: pointer;
   width: 100%;
   border: none;
-  border-radius: 10px 10px 0 0;
+  border-radius: 4px 4px 0 0;
   text-align: left;
   outline: none;
-  font-size: 15px;
 }
 
 .w3active, .w3collapsible:hover {
@@ -626,7 +627,7 @@ code.bash span.fu { color: #a5bdfc; } /* Function */
 
 .w3content {
   filter: blur(3px);
-  padding: 0 18px;
+  padding: 0 8px;
   display: block;
   overflow: hidden;
   background-color: #f3f3f3;
