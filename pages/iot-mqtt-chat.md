@@ -7,6 +7,12 @@
 * Sends **read receipts**, so that the sender knows when the message was visible in the user interface.
 * Sends **typing hints**, so that chat partners see when the other side is starting to type a message.
 
+Today's sub-goals:
+
+* In Step 1, we will have a look at the chat user interface to get familiar with it, but do not send any messages between each other. 
+* In Step 2, we use MQTT and MQTT.Fx to send messages between each other, in some raw way, but without a proper chat user interface.
+* In Step 3, we connect Chat User Interface with MQTT to send and receive messages.
+* In Step 4, we add delivery receipts, read receipts and typing indications.
 
 
 ## The Chat User Interface
@@ -17,6 +23,11 @@ We interact with it in two ways:
 * By function calls, when we want to change something in the UI. That means, we want to do something, and we cause an effect in the user interface. These are events that are **initiated outside** of our specific user interface instance.
 * By callbacks, when the UI wants to inform us about something, like that the user clicked the "Send" button and wants to send a chat message. These are events that are initiated by our user working with the user interface, that means, **initiated inside** of the user interface.
 
+---
+type: figure
+source: figures/mqtt/chat-ui.png
+caption: "The two ways of interacting with the chat user interface."
+---
 
 ## Chat UI Function Calls
 
@@ -150,14 +161,15 @@ Unzip it and open it in Visual Studio Code.
 In this part, we only test how the user interface works, we are not yet sending any real messages between each other.
 Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.
 
-This is the code to test the user interface. Place it in a file `test_chat_gui.py` in the same folder that you downloaded above, where also the file `chat_gui.py` is located.
+This is the code to test the user interface. 
+You can find it in file `test_chat_gui.py`.
 
 
 
 ```python
 from chat_gui import ChatGui
 
-# Change this to match your team!
+# TODO change to fit your team
 my_id = "team1a"
 
 
@@ -253,6 +265,8 @@ source: figures/mqtt/mqtt-fx-broker-1.png
 caption: "Open the broker configurations and add our MQTT broker."
 ---
 
+Click the gear icon to add a new broker configuration.
+
 ---
 type: figure
 source: figures/mqtt/mqtt-fx-broker-2.png
@@ -260,7 +274,7 @@ caption: "Configuration for the broker."
 ---
 
 
-In MQTT.Fx, connect to the broker. 
+Connect to the broker. 
 
 
 ---
@@ -277,16 +291,16 @@ source: figures/mqtt/mqtt-fx-broker-4.png
 caption: "For each subscription you get an entry in the list to the left."
 ---
 
-:task: Work together with another team. Make sure both teams have the correct topics, and send messages between each other. 
-
-You can publish messages on the _Publish_ tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the _Subscribe_ tab.
-
 ---
 type: figure
 source: figures/mqtt/mqtt-fx-broker-5.png
 caption: "On the publish tab, you can send chat messages."
 ---
 
+:task: Work together with another team. Make sure both teams have the correct topics, and send messages between each other. 
+
+
+You can publish messages on the _Publish_ tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the _Subscribe_ tab.
 
 
 # Step 3: Connecting Chat GUI and MQTT
@@ -298,11 +312,15 @@ So far, this happened:
 
 Now we want to connect the chat user interface with MQTT, so that we can send and receive messages. We will not yet send receipts or typing indications.
 
+:tip: From now on, you don't need MQTT.Fx anymore, but it can be useful in case you need to debug.
+When you stay subscribed to some topics, you can see if you actually receive messages in case not everything immediately works as you think.
+
 
 
 ### Code
 
-The following code connects MQTT with that of the Chat UI:
+The following code connects MQTT with that of the Chat UI.
+You can find it in file `chat_with_mqtt_step_1.py`.
 
 ```python
 from chat_gui import ChatGui
@@ -338,7 +356,7 @@ mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 mqttc.connect("mqtt.item.ntnu.no", 1883)
 mqttc.loop_start()
-mqttc.subscribe("ttm4175/chat/{}/#".format(my_id))
+mqttc.subscribe("ttm4175/chat/{}/message".format(my_id))
 
 
 # Called by the Chat UI when we want to send a message
@@ -371,25 +389,36 @@ gui.show()
 
 Let's look at some details here:
 
-The following line defines a string for a topic. The `format()` function replaces the contained pair of curly braces `{}` with the value of variable `my_id`.  
+* The expression `"ttm4175/chat/{}/#".format(my_id)` defines a string for a topic. The `format()` function replaces the contained pair of curly braces `{}` with the value of variable `my_id`.  
 
-```python
-"ttm4175/chat/{}/#".format(my_id)
-```
+* The function call `json.loads()`  parses a JSON string and creates a Python dictionary.
 
-### Send a Message via MQTT.Fx
+* The function call `json.loads()` is surrounded by a `try` `except` block. This block handles the case that the JSON string is somehow not valid, and in that case abort the whole function and prints some output.
 
 
+:task: Exchange again the value of variable `my_id` to your team.
 
 
-# Connecting Chat GUI and MQTT, Step 2
+:task: Examine the six lines of code starting with `mqttc = mqtt.Client()`. What happens here?
 
-By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, typing indications.
+
+:task: How does our code tell the MQTT client to use the callbacks `on_message()` and `on_connect()`?
+
+
+:task: How does our code tell the chat ui to use the callbacks `on_type()`, `on_send()` and `on_read()`?
+
+
+:task: Send chat messages to another team, and check that you can also receive messages. 
+
+
+
+# Step 4: Receipts and Typing Indications
+
+By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, or typing indications.
 Let's look at the MQTT message payloads and topics that we are going to use for those:
 
 
 ### Delivery Receipts
-
 
 When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message to the topic: `ttm4175/chat/<receiver>/delivered`
 
@@ -403,7 +432,6 @@ When a message is delivered to a client, that means, received via MQTT, we ackno
 The original sender receives this delivery receipt and feed is back to the UI, so that it can add a delivery receipt to the message. Note that the sender field is here the sender of the delivery receipt.
 
 
-
 ### Read Receipts
 
 Read receipts are sent to topic `ttm4175/chat/<receiver>/read`.
@@ -414,6 +442,7 @@ Read receipts are sent to topic `ttm4175/chat/<receiver>/read`.
  "status": "read",
  "uuid": "16fd2706"}
 ```
+
 
 ### Typing Indications
 
@@ -426,26 +455,49 @@ Typing indications are sent to topic `ttm4175/chat/<receiver>/typing`.
 ```
 
 
-:task: Check from the code to which topic we subscribe. Why can we manage by just subscribing to a single topic?
-What would be an alternative?
+Inspect the code of the file `chat_with_mqtt_final.py`. Answer the following question in the report:
+
+* Look at function `on_message()`. Compared to the version in `chat_with_mqtt_step_1.py`, how did it change?
+* Look at functions `on_type()` and `on_read()`. What is happening here?
+
+
+This final version of the chat program should receive also send receipts and typing indications. How do you need to expand the topic subscription after you connected to the MQTT broker, so that you also receive these messages?
+
+
+:task: Change the line with the topic subscription so that you can also receive receipts and typing indications. 
+
+
+Note: There is a one-line solution to do this, but you can also use a solution that uses several lines.
 
 
 
+:task: Coordinate with another team, and explore the delivery and read receipts and the typing indications. Does all work?
 
 
-
-
-# Chatting Together
-
-
-
+:task: Try to figure out from the code how we send the delivery receipts. Is the user interface involved in this? 
 
 
 # Task
 
-Create a sequence diagram between 
+Create a sequence diagram between two chat clients and the MQTT broker in between. 
 
-* The sender starts typing, and takes 20 seconds to type a message.
+* Both client startup, connect to the broker and subscribe to their topics.
+* The sender starts typing, and takes more than 10 seconds to type a message.
 * The sender sends the message, which then arrives at the receiver.
 * The user on the receiver side eventually reads the message.
 
+
+The headers of the sequence diagram should look like this:
+
+---
+type: figure
+source: figures/mqtt/sd.png
+---
+
+Use messages of type:
+
+ * `connect and disconnect` (client to broker)
+ * `subscribe(topic)` (client to broker)
+ * `send(topic, data)` (client to broker, and broker to client)
+
+You can illustrate the data, or add a comment.

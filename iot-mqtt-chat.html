@@ -143,6 +143,13 @@
 <li>Sends <strong>read receipts</strong>, so that the sender knows when the message was visible in the user interface.</li>
 <li>Sends <strong>typing hints</strong>, so that chat partners see when the other side is starting to type a message.</li>
 </ul>
+<p>Today’s sub-goals:</p>
+<ul>
+<li>In Step 1, we will have a look at the chat user interface to get familiar with it, but do not send any messages between each other.</li>
+<li>In Step 2, we use MQTT and MQTT.Fx to send messages between each other, in some raw way, but without a proper chat user interface.</li>
+<li>In Step 3, we connect Chat User Interface with MQTT to send and receive messages.</li>
+<li>In Step 4, we add delivery receipts, read receipts and typing indications.</li>
+</ul>
 
 <h2 id="the-chat-user-interface">The Chat User Interface</h2>
 <p>The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages. We interact with it in two ways:</p>
@@ -151,6 +158,12 @@
 <li>By callbacks, when the UI wants to inform us about something, like that the user clicked the “Send” button and wants to send a chat message. These are events that are initiated by our user working with the user interface, that means, <strong>initiated inside</strong> of the user interface.</li>
 </ul>
 
+<div class="figure">
+<img src="figures/mqtt/chat-ui.png" alt="The two ways of interacting with the chat user interface." width="100%"/>
+<span name="figures/mqtt/chat-ui.png">&nbsp;</span>
+<aside name="figures/mqtt/chat-ui.png"><p><p>The two ways of interacting with the chat user interface.</p>
+</p></aside>
+</div>
 <h2 id="chat-ui-function-calls">Chat UI Function Calls</h2>
 <p>Here a list of things that we want the user interface do when we ask it to. This is done by function calls.</p>
 <h3 id="receiving-messages">Receiving Messages</h3>
@@ -230,11 +243,11 @@
     <section class="content">
 <h1 id="step-1-test-the-ui">Step 1: Test the UI</h1>
 <p>In this part, we only test how the user interface works, we are not yet sending any real messages between each other. Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.</p>
-<p>This is the code to test the user interface. Place it in a file <code>test_chat_gui.py</code> in the same folder that you downloaded above, where also the file <code>chat_gui.py</code> is located.</p>
+<p>This is the code to test the user interface. You can find it in file <code>test_chat_gui.py</code>.</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Change this to match your team!</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># </span><span class="al">TODO</span><span class="co"> change to fit your team</span></a>
 <a class="sourceLine" id="cb1-4" title="4">my_id <span class="op">=</span> <span class="st">&quot;team1a&quot;</span></a>
 <a class="sourceLine" id="cb1-5" title="5"></a>
 <a class="sourceLine" id="cb1-6" title="6"></a>
@@ -311,13 +324,15 @@
 <aside name="figures/mqtt/mqtt-fx-broker-1.png"><p><p>Open the broker configurations and add our MQTT broker.</p>
 </p></aside>
 </div>
+<p>Click the gear icon to add a new broker configuration.</p>
+
 <div class="figure">
 <img src="figures/mqtt/mqtt-fx-broker-2.png" alt="Configuration for the broker." width="100%"/>
 <span name="figures/mqtt/mqtt-fx-broker-2.png">&nbsp;</span>
 <aside name="figures/mqtt/mqtt-fx-broker-2.png"><p><p>Configuration for the broker.</p>
 </p></aside>
 </div>
-<p>In MQTT.Fx, connect to the broker.</p>
+<p>Connect to the broker.</p>
 
 <div class="figure">
 <img src="figures/mqtt/mqtt-fx-broker-3.png" alt="The green light indicates that you are connected to the broker." width="100%"/>
@@ -333,15 +348,16 @@
 <aside name="figures/mqtt/mqtt-fx-broker-4.png"><p><p>For each subscription you get an entry in the list to the left.</p>
 </p></aside>
 </div>
-<div class="task"><p>Work together with another team. Make sure both teams have the correct topics, and send messages between each other.</p>
-<p>You can publish messages on the <em>Publish</em> tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the <em>Subscribe</em> tab.</p>
-</div>
 <div class="figure">
 <img src="figures/mqtt/mqtt-fx-broker-5.png" alt="On the publish tab, you can send chat messages." width="100%"/>
 <span name="figures/mqtt/mqtt-fx-broker-5.png">&nbsp;</span>
 <aside name="figures/mqtt/mqtt-fx-broker-5.png"><p><p>On the publish tab, you can send chat messages.</p>
 </p></aside>
 </div>
+<div class="task"><p>Work together with another team. Make sure both teams have the correct topics, and send messages between each other.</p>
+</div>
+<p>You can publish messages on the <em>Publish</em> tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the <em>Subscribe</em> tab.</p>
+
     </section>
     <section class="content">
 <h1 id="step-3-connecting-chat-gui-and-mqtt">Step 3: Connecting Chat GUI and MQTT</h1>
@@ -352,8 +368,10 @@
 </ul>
 <p>Now we want to connect the chat user interface with MQTT, so that we can send and receive messages. We will not yet send receipts or typing indications.</p>
 
+<div class="tip"><p>From now on, you don’t need MQTT.Fx anymore, but it can be useful in case you need to debug. When you stay subscribed to some topics, you can see if you actually receive messages in case not everything immediately works as you think.</p>
+</div>
 <h3 id="code">Code</h3>
-<p>The following code connects MQTT with that of the Chat UI:</p>
+<p>The following code connects MQTT with that of the Chat UI. You can find it in file <code>chat_with_mqtt_step_1.py</code>.</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</a>
@@ -388,7 +406,7 @@
 <a class="sourceLine" id="cb1-31" title="31">mqttc.on_connect <span class="op">=</span> on_connect</a>
 <a class="sourceLine" id="cb1-32" title="32">mqttc.<span class="ex">connect</span>(<span class="st">&quot;mqtt.item.ntnu.no&quot;</span>, <span class="dv">1883</span>)</a>
 <a class="sourceLine" id="cb1-33" title="33">mqttc.loop_start()</a>
-<a class="sourceLine" id="cb1-34" title="34">mqttc.subscribe(<span class="st">&quot;ttm4175/chat/</span><span class="sc">{}</span><span class="st">/#&quot;</span>.<span class="bu">format</span>(my_id))</a>
+<a class="sourceLine" id="cb1-34" title="34">mqttc.subscribe(<span class="st">&quot;ttm4175/chat/</span><span class="sc">{}</span><span class="st">/message&quot;</span>.<span class="bu">format</span>(my_id))</a>
 <a class="sourceLine" id="cb1-35" title="35"></a>
 <a class="sourceLine" id="cb1-36" title="36"></a>
 <a class="sourceLine" id="cb1-37" title="37"><span class="co"># Called by the Chat UI when we want to send a message</span></a>
@@ -418,19 +436,28 @@
 <a class="sourceLine" id="cb1-61" title="61">gui.show()</a></code></pre></div>
 
 <p>Let’s look at some details here:</p>
-<p>The following line defines a string for a topic. The <code>format()</code> function replaces the contained pair of curly braces <code>{}</code> with the value of variable <code>my_id</code>.</p>
+<ul>
+<li><p>The expression <code>"ttm4175/chat/{}/#".format(my_id)</code> defines a string for a topic. The <code>format()</code> function replaces the contained pair of curly braces <code>{}</code> with the value of variable <code>my_id</code>.</p></li>
+<li><p>The function call <code>json.loads()</code> parses a JSON string and creates a Python dictionary.</p></li>
+<li><p>The function call <code>json.loads()</code> is surrounded by a <code>try</code> <code>except</code> block. This block handles the case that the JSON string is somehow not valid, and in that case abort the whole function and prints some output.</p></li>
+</ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&quot;ttm4175/chat/{}/#&quot;</span>.<span class="bu">format</span>(my_id)</a></code></pre></div>
-
-<h3 id="send-a-message-via-mqtt.fx">Send a Message via MQTT.Fx</h3>
-
+<div class="task"><p>Exchange again the value of variable <code>my_id</code> to your team.</p>
+</div>
+<div class="task"><p>Examine the six lines of code starting with <code>mqttc = mqtt.Client()</code>. What happens here?</p>
+</div>
+<div class="task"><p>How does our code tell the MQTT client to use the callbacks <code>on_message()</code> and <code>on_connect()</code>?</p>
+</div>
+<div class="task"><p>How does our code tell the chat ui to use the callbacks <code>on_type()</code>, <code>on_send()</code> and <code>on_read()</code>?</p>
+</div>
+<div class="task"><p>Send chat messages to another team, and check that you can also receive messages.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="connecting-chat-gui-and-mqtt-step-2">Connecting Chat GUI and MQTT, Step 2</h1>
-<p>By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, typing indications. Let’s look at the MQTT message payloads and topics that we are going to use for those:</p>
+<h1 id="step-4-receipts-and-typing-indications">Step 4: Receipts and Typing Indications</h1>
+<p>By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, or typing indications. Let’s look at the MQTT message payloads and topics that we are going to use for those:</p>
 
 <h3 id="delivery-receipts">Delivery Receipts</h3>
-
 <p>When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message to the topic: <code>ttm4175/chat/&lt;receiver&gt;/delivered</code></p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span><span class="dt">&quot;sender&quot;</span><span class="fu">:</span> <span class="st">&quot;team1&quot;</span><span class="fu">,</span></a>
@@ -455,21 +482,45 @@
 <a class="sourceLine" id="cb1-2" title="2"> <span class="dt">&quot;receiver&quot;</span><span class="fu">:</span> <span class="st">&quot;team2&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb1-3" title="3"> <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;typing&quot;</span><span class="fu">}</span></a></code></pre></div>
 
-<div class="task"><p>Check from the code to which topic we subscribe. Why can we manage by just subscribing to a single topic? What would be an alternative?</p>
+<p>Inspect the code of the file <code>chat_with_mqtt_final.py</code>. Answer the following question in the report:</p>
+<ul>
+<li>Look at function <code>on_message()</code>. Compared to the version in <code>chat_with_mqtt_step_1.py</code>, how did it change?</li>
+<li>Look at functions <code>on_type()</code> and <code>on_read()</code>. What is happening here?</li>
+</ul>
+
+<p>This final version of the chat program should receive also send receipts and typing indications. How do you need to expand the topic subscription after you connected to the MQTT broker, so that you also receive these messages?</p>
+
+<div class="task"><p>Change the line with the topic subscription so that you can also receive receipts and typing indications.</p>
+</div>
+<p>Note: There is a one-line solution to do this, but you can also use a solution that uses several lines.</p>
+
+<div class="task"><p>Coordinate with another team, and explore the delivery and read receipts and the typing indications. Does all work?</p>
+</div>
+<div class="task"><p>Try to figure out from the code how we send the delivery receipts. Is the user interface involved in this?</p>
 </div>
     </section>
     <section class="content">
-<h1 id="chatting-together">Chatting Together</h1>
-
-    </section>
-    <section class="content">
 <h1 id="task">Task</h1>
-<p>Create a sequence diagram between</p>
+<p>Create a sequence diagram between two chat clients and the MQTT broker in between.</p>
 <ul>
-<li>The sender starts typing, and takes 20 seconds to type a message.</li>
+<li>Both client startup, connect to the broker and subscribe to their topics.</li>
+<li>The sender starts typing, and takes more than 10 seconds to type a message.</li>
 <li>The sender sends the message, which then arrives at the receiver.</li>
 <li>The user on the receiver side eventually reads the message.</li>
 </ul>
+
+<p>The headers of the sequence diagram should look like this:</p>
+
+<div class="figure">
+<img src="figures/mqtt/sd.png" width="100%"/>
+</div>
+<p>Use messages of type:</p>
+<ul>
+<li><code>connect and disconnect</code> (client to broker)</li>
+<li><code>subscribe(topic)</code> (client to broker)</li>
+<li><code>send(topic, data)</code> (client to broker, and broker to client)</li>
+</ul>
+<p>You can illustrate the data, or add a comment.</p>
 
     </section>
 </div>
