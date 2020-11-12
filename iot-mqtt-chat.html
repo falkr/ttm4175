@@ -275,7 +275,7 @@
 <a class="sourceLine" id="cb1-26" title="26"></a>
 <a class="sourceLine" id="cb1-27" title="27">gui.show()</a></code></pre></div>
 
-<div class="task"><p>Change the value of the variable <code>my_id</code> to match your team name. The team names have the form <code>team1a</code>, ‘team1b’, … <code>team12b</code>. The ids <code>x1</code> to <code>x6</code> are for testing and the student assistants.</p>
+<div class="task"><p>Change the value of the variable <code>my_id</code> to match your team name. The team names have the form <code>team1a</code>, <code>team1b</code>, … <code>team12b</code>. The ids <code>x1</code> to <code>x6</code> are for testing and the student assistants.</p>
 </div>
 <h3 id="testing-sending-of-messages-and-outgoing-typing-indicators">Testing Sending of Messages and Outgoing Typing Indicators</h3>
 <ul>
@@ -374,6 +374,11 @@
 </div>
 <h3 id="code">Code</h3>
 <p>The following code connects MQTT with that of the Chat UI. You can find it in file <code>chat_with_mqtt_step_1.py</code>.</p>
+<p>This code uses the paho-mqtt package, which you need to install via</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">python <span class="op">-</span>m pip install paho<span class="op">-</span>mqtt</a></code></pre></div>
+
+<p>Here is the code:</p>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</a>

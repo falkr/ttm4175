@@ -200,7 +200,7 @@ gui = ChatGui(my_id, on_send=on_send, on_type=on_type, on_read=on_read)
 gui.show()
 ```
 
-:task: Change the value of the variable `my_id` to match your team name. The team names have the form `team1a`, 'team1b', ... `team12b`. The ids `x1` to `x6` are for testing and the student assistants.
+:task: Change the value of the variable `my_id` to match your team name. The team names have the form `team1a`, `team1b`, ... `team12b`. The ids `x1` to `x6` are for testing and the student assistants.
 
 
 
@@ -325,6 +325,14 @@ When you stay subscribed to some topics, you can see if you actually receive mes
 
 The following code connects MQTT with that of the Chat UI.
 You can find it in file `chat_with_mqtt_step_1.py`.
+
+This code uses the paho-mqtt package, which you need to install via
+
+```python 
+python -m pip install paho-mqtt
+```
+
+Here is the code:
 
 ```python
 from chat_gui import ChatGui
