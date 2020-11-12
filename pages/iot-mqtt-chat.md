@@ -133,7 +133,7 @@ def on_type(sender, receiver):
 The UI is written with a libray that is called DearPyUI. You can install it as usual:
 
 ```bash
-python -m pip install dearpyui
+python3 -m pip install dearpygui
 ```
 
 On windows, you may receive the following error message when you start the program:
@@ -329,7 +329,7 @@ You can find it in file `chat_with_mqtt_step_1.py`.
 This code uses the paho-mqtt package, which you need to install via
 
 ```bash 
-python -m pip install paho-mqtt
+python3 -m pip install paho-mqtt
 ```
 
 Here is the code:
