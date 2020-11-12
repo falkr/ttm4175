@@ -14,8 +14,8 @@
 The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages. 
 We interact with it in two ways:
 
-* By function calls, when we want to change something in the UI. That means, we want to do something, and we cause an effect in the user interface.
-* By callbacks, when the UI wants to inform us about something, like that the user clicked the "Send" button and wants to send a chat message.
+* By function calls, when we want to change something in the UI. That means, we want to do something, and we cause an effect in the user interface. These are events that are **initiated outside** of our specific user interface instance.
+* By callbacks, when the UI wants to inform us about something, like that the user clicked the "Send" button and wants to send a chat message. These are events that are initiated by our user working with the user interface, that means, **initiated inside** of the user interface.
 
 
 ## Chat UI Function Calls
@@ -145,7 +145,7 @@ Unzip it and open it in Visual Studio Code.
 
 
 
-# Test the UI
+# Step 1: Test the UI
 
 In this part, we only test how the user interface works, we are not yet sending any real messages between each other.
 Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.
@@ -217,15 +217,15 @@ Let's test them.
 
 
 
-# Connecting Chat GUI and MQTT, Step 1
 
-Now we connect the chat UI with the MQTT client, so that we can send and receive chat messages. (We will not yet send receipts or typing indications.)
-
+# Step 2: Chat Messages via MQTT
 
 
-### Sending and Receiving Chat Messages
+To send chat messages via MQTT between contacts, we need to agree on the content of the MQTT message and how we use our topics for publishing and subscribing.
 
-We publish messages that carry a chat message to the topic `ttm4175/chat/<receiver>/message`. The `<receiver>` is the name of the contact we want to send the message to. So, if we want to send a chat message to team2a, that topic is `ttm4175/chat/team2a/message`
+**Topic:** We publish messages that carry a chat message to the topic `ttm4175/chat/<receiver>/message`. The `<receiver>` is the name of the contact we want to send the message to. So, if we want to send a chat message to team2a, that topic is `ttm4175/chat/team2a/message`
+
+**Payload:** The payload should be a json-formatted string, with the following fields:
 
 ```json
 {"sender": "team1a",
@@ -234,8 +234,75 @@ We publish messages that carry a chat message to the topic `ttm4175/chat/<receiv
  "uuid": "16fd2706"}
 ```
 
+:task: Check carefully to which topic you should subscribe so that you can **receive** messages for your team name.
+
+
+
+### Chatting via MQTT.Fx
+
+Let us first chat by MQTT only, that means, without the Chat UI from above. 
+We only want to use MQTT.Fx, and send and receive "raw" chat messages.
+
+Install MQTT.Fx, as [explained in the preparation](prep-iot-mqtt.html#debugging-with-mqtt.fx).
+
+Add our broker that runs on campus. It has the address `mqtt.item.ntnu.no` and uses the default port `1883`.
+
+---
+type: figure
+source: figures/mqtt/mqtt-fx-broker-1.png
+caption: "Open the broker configurations and add our MQTT broker."
+---
+
+---
+type: figure
+source: figures/mqtt/mqtt-fx-broker-2.png
+caption: "Configuration for the broker."
+---
+
+
+In MQTT.Fx, connect to the broker. 
+
+
+---
+type: figure
+source: figures/mqtt/mqtt-fx-broker-3.png
+caption: "The green light indicates that you are connected to the broker."
+---
+
+On the _Subscribe_ tab, enter the topic you need to subscribe to (from the task above).
+
+---
+type: figure
+source: figures/mqtt/mqtt-fx-broker-4.png
+caption: "For each subscription you get an entry in the list to the left."
+---
+
+:task: Work together with another team. Make sure both teams have the correct topics, and send messages between each other. 
+
+You can publish messages on the _Publish_ tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the _Subscribe_ tab.
+
+---
+type: figure
+source: figures/mqtt/mqtt-fx-broker-5.png
+caption: "On the publish tab, you can send chat messages."
+---
+
+
+
+# Step 3: Connecting Chat GUI and MQTT
+
+So far, this happened:
+
+* In Step 1, we had a look at the chat user interface to get familiar with it, but we did not send any chat messages.
+* In Step 2, we used MQTT and MQTT.Fx to send messages between each other, in some raw way, without a proper chat user interface.
+
+Now we want to connect the chat user interface with MQTT, so that we can send and receive messages. We will not yet send receipts or typing indications.
+
+
 
 ### Code
+
+The following code connects MQTT with that of the Chat UI:
 
 ```python
 from chat_gui import ChatGui
@@ -310,6 +377,9 @@ The following line defines a string for a topic. The `format()` function replace
 "ttm4175/chat/{}/#".format(my_id)
 ```
 
+### Send a Message via MQTT.Fx
+
+
 
 
 # Connecting Chat GUI and MQTT, Step 2
@@ -361,7 +431,7 @@ What would be an alternative?
 
 
 
-# Send a Message via MQTT.Fx
+
 
 
 
