@@ -262,6 +262,7 @@ We only want to use MQTT.Fx, and send and receive "raw" chat messages.
 Install MQTT.Fx, as [explained in the preparation](prep-iot-mqtt.html#debugging-with-mqtt.fx).
 
 Add our broker that runs on campus. It has the address `mqtt.item.ntnu.no` and uses the default port `1883`.
+You may need to generate a random client ID.
 
 ---
 type: figure
