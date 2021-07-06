@@ -1,6 +1,6 @@
 # Introduksjon til Kommunikasjonsteknologi og digital sikkerhet
 
-Kurset gir deg oversikt over flere emner innen kommunikasjonsteknologi og digital sikkerhet.
+Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digital sikkerhet](https://www.ntnu.no/studier/mtkom) og gir deg oversikt over flere emner og tema i studiet.
 
 <!--
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
@@ -20,37 +20,25 @@ class: table table-sm
 ! Tema
 ! Sted
 |-
-| Tirsdag, 11. aug. 10:15 - 12:00
-| Orienteringsmøte
-| [http://bit.ly/2YUdUtG S2]
+| Mandag, 16. aug. 2021, 12:00 - 14:00
+| Immatrikulering og orientering
+| [https://link.mazemap.com/QqBVasau EL-3]
 |-
-| Tirsdag, 11. aug. 13:15 - 15:00
-| Teknostart <a href="day0-2020.html">Dag 0</a>
-| [http://bit.ly/2YUdUtG S2]
+| Tirsdag, 17. aug.
+| -
+| -
 |-
-| Onsdag, 12. aug. 9:15 - 11:00
+| Onsdag, 17. aug. 2021, 9:15 - 15:00
 | Teknostart <a href="day1-2020.html">Dag 1</a>
-| digital
+| [https://link.mazemap.com/QqBVasau EL-3]
 |-
-| Onsdag, 12. aug. 13:15 - 15:00
-| Teknostart <a href="day1-2020.html">Dag 1</a>
-| [http://bit.ly/2YUdUtG S2]
+| Torsdag, 18. aug. 2021, 9:15 - 15:00
+| Teknostart <a href="day1-2020.html">Dag 2</a>
+| [https://link.mazemap.com/QqBVasau EL-3]
 |-
-| Torsdag, 13. aug. 9:15 - 11:00
-| Teknostart <a href="day2-2020.html">Dag 2</a>
-| digital
-|-
-| Torsdag, 13. aug. 13:15 - 15:00
-| Teknostart <a href="day2-2020.html">Dag 2</a>
-| [http://bit.ly/2YUdUtG S2]
-|-
-| Fredag, 14. aug. 9:15 - 11:00
-| Teknostart <a href="day3-2020.html">Dag 3</a>
-| digital
-|-
-| Fredag, 14. aug. 13:15 - 15:00
-| Teknostart <a href="day3-2020.html">Dag 3</a>
-| [http://bit.ly/2YUdUtG S2]
+| Fredag, 19. aug. 2021, 9:15 - 15:00
+| Teknostart <a href="day1-2020.html">Dag 2</a>
+| [https://link.mazemap.com/QqBVasau EL-3]
 |}
 
 
@@ -69,35 +57,35 @@ class: table table-sm
 |-
 | 34
 | 
-| ''ingen undervisning i emnet''
+| Etisk hacking, uke 1
 |-
 | 35
 |
-| <a href="prep-networking-1-2020.html">Binary and IP addresses</a>
+| Etisk hacking, uke 2
 |-
 | 36
 |
-| <a href="prep-networking-2-2020.html">Layers and Docker</a>
+| Etisk hacking, uke 3
 |-
 | 37
 |
-| <a href="prep-networking-3-2020.html">Webservers and DNS</a>
+| Etisk hacking, uke 4
 |-
 | 38
 |
-| <a href="prep-security-1-2020.html">Sikkerhet 1</a>
+| Etisk hacking, uke 5
 |-
 | 39
 |
-| <a href="prep-security-2-2020.html">Sikkerhet 2</a>
+| ''info kommer''
 |-
 | 40
 |
-| <a href="prep-security-3-2020.html">Sikkerhet 3</a>
+| ''info kommer''
 |-
 | 41
 |
-| <a href="prep-security-4.html">Sikkerhet 4</a>
+| ''info kommer''
 |-
 | 42
 | 
@@ -125,130 +113,10 @@ class: table table-sm
 |}
 
 
-Uke 34 er det ingen undervisning i emnet. Fra uke 35 har vi følgende tidene og rom reservert:
-
-
----
-type: table
-class: table table-sm
----
-{|
-! Uke
-! Tid
-! Sted
-! Tema 
-|-
-| 35
-| Man. 24. aug. 9:00-10:00
-| digital
-| Networking 1
-|-
-| 
-| Ons. 26. aug. 8:15-10:00
-| S5
-| Networking 1
-|-
-| 
-| Tor. 27. aug. 10:15-14:00
-| digital
-| Networking 1
-|-
-| 36
-| Man. 31. aug. 8:15-10:00
-| digital
-| Networking 2
-|-
-| 
-| Ons. 2. sep. 8:15-10:00
-| S5
-| Networking 2
-|-
-| 
-| Tor. 3. sep. 10:15-14:00
-| digital
-| Networking 2
-|-
-| 37
-| Man. 7. sep. 8:15-10:00
-| digital
-| Networking 3
-|-
-| 
-| Ons. 9. sep. 8:15-10:00
-| S5
-| Networking 3
-|-
-| 
-| Tor. 10. sep. 10:15-14:00
-| digital
-| Networking 3
-|-
-| 38
-| Man. 14. sep. 9:00-10:00
-| digital
-| Security 1
-|-
-| 
-| Ons. 16. sep. 8:15-10:00
-| S5
-| Security 1
-|-
-| 
-| Tor. 17. sep. 10:15-14:00
-| digital
-| Security 1
-|-
-| 39
-| Man. 21. sep. 9:00-10:00
-| digital
-| Security 2
-|-
-| 
-| Ons. 23. sep. 8:15-10:00
-| S5
-| Security 2
-|-
-| 
-| Tor. 24. sep. 10:15-14:00
-| digital
-| Security 2
-|-
-| 40
-| Man. 28. sep. 9:00-10:00
-| digital
-| Security 3
-|-
-| 
-| Ons. 30. sep. 8:15-10:00
-| S5
-| Security 3
-|-
-| 
-| Tor. 1. okt. 10:15-14:00
-| digital
-| Security 3
-|-
-| 41
-| Man. 5. okt. 9:00-10:00
-| digital
-| Security 3
-|-
-| 
-| Ons. 7. okt. 8:15-10:00
-| S5
-| Security 3
-|-
-| 
-| Tor. 8. okt. 10:15-14:00
-| digital
-| Security 3
-|}
-
-
 
 # Innhold
 
-Emnet består av oppstartsuka, etterfølgt av tre deler med litt forskjellig fokus:
+Emnet består av oppstartsuka, etterfølgt av labarbeid med litt forskjellig fokus:
 
 ## Oppstartsuka
 
@@ -259,28 +127,6 @@ type: figure
 source: figures/teknostart/goals.png
 caption: "Each day we try to reach a new goal. The final goal is to run our own website."
 ---
-
-
-## Nettverk
-
-Du studerer grunnlegende elementer av nettverk ved hjelp av praktiske øvelser. 
-Du skal blant annet konfigurere ditt eget nettverk og lærer om viktig nettet tjenestere.
-
-Til slutt vil du være i stand til å forstå hvordan du kan:
-
-* lage et datanettverk,
-* håndtere et datanettverk og
-* bruke Docker _containers_.
-
-Vi kommer til å bruke en (virtuell) Raspberry Pi som en datamaskin tilknyttet til en "Docker sky".
-
----
-type: figure
-source: figures/net/networking-2020.png
----
-
-
-:aside: <img src="figures/david.jpg" width="100px"><p><a href="https://www.ntnu.no/ansatte/david.palma">David Palma</a><br/><i class="far fa-envelope"></i> david.palma@ntnu.no</p>
 
 
 ## Sikkerhet
@@ -294,7 +140,7 @@ type: figure
 source: figures/security/overview.png
 ---
 
-:aside: <img src="figures/elissar.jpg" width="100px"><p><a href="">Elissar Khloussy</a><br/><i class="far fa-envelope"></i> elissar.khloussy@ngu.no</p>
+:aside: <img src="figures/laszlo.jpg" width="100px"><p><a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no</p>
 
 
 ## Tingenes Internet

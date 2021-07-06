@@ -467,6 +467,10 @@ div.rat ol {
   margin-bottom:-20px;
 }
 
+.code-legend * {
+  font-family: "Source Sans Pro", Georgia, serif;
+}
+
 code {
   font-size: 100%;
   line-height: 1.5em;
