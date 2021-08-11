@@ -276,12 +276,12 @@ Hint (wpa_supplicant)
 <li>Enable IP forwarding in the <em>router</em> and activate IP Masquerading with the following commands:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> sysctl -w net.ipv4.ip_forward=1</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i eth0 -o wlan0 -j DROP</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">sudo</span> iptables -A FORWARD -d 255.255.255.255/32 -i wlan0 -o eth0 -j DROP</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="fu">sudo</span> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="fu">sudo</span> iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="fu">sudo</span> iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sysctl <span class="at">-w</span> net.ipv4.ip_forward=1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-d</span> 255.255.255.255/32 <span class="at">-i</span> eth0 <span class="at">-o</span> wlan0 <span class="at">-j</span> DROP</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-d</span> 255.255.255.255/32 <span class="at">-i</span> wlan0 <span class="at">-o</span> eth0 <span class="at">-j</span> DROP</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-t</span> nat <span class="at">-A</span> POSTROUTING <span class="at">-o</span> eth0 <span class="at">-j</span> MASQUERADE</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-i</span> eth0 <span class="at">-o</span> wlan0 <span class="at">-m</span> state <span class="at">--state</span> RELATED,ESTABLISHED <span class="at">-j</span> ACCEPT</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-i</span> wlan0 <span class="at">-o</span> eth0 <span class="at">-j</span> ACCEPT</span></code></pre></div>
 
 <div class="steps"><ol start="3" type="1">
 <li>Verify that the <em>client</em> is now able to connect to any Internet server.</li>
@@ -308,6 +308,8 @@ Hint
 </div>
 <p>The goal of this exercise is to:</p>
 
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
 <div class="steps"><ol type="1">
 <li>Block all traffic coming for the range of IPs given by your DHCP server (i.e. only manually configured or fixed IP addresses can access the Internet).</li>
 <li>Instead of blocking the traffic, redirect it to a pre-defined “funny” server such as <a href="http://folk.ntnu.no/davidfp/security" class="uri">http://folk.ntnu.no/davidfp/security</a>.</li>
@@ -326,16 +328,14 @@ Hints
 <p>Think and write about the weaknesses of the used approach to a firewall.</p>
 <p><strong>Try to beat it!</strong></p>
 </div>
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
     </section>
     <section class="content">
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
+</aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
 
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
 

@@ -198,13 +198,13 @@
 <h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
 <p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> mosquitto mosquitto-clients</span></code></pre></div>
 
 <h2 id="testing-your-broker">Testing Your Broker</h2>
 <p>Start Mosquitto:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">mosquitto</span> -v</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mosquitto</span> <span class="at">-v</span></span></code></pre></div>
 
 <p>The result should look like this:</p>
 
@@ -213,7 +213,7 @@
 </div>
 <p>You can also check which ports it is connected to:</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">netstat</span> –at </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">netstat</span> –at </span></code></pre></div>
 
 <p><strong>For the report:</strong> Document this output.</p>
 

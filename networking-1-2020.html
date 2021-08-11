@@ -240,13 +240,13 @@
 <li>Let’s now remove any unwanted address or routes on ‘eth1’ with the command:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr flush dev eth1</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr flush dev eth1</span></code></pre></div>
 
 <div class="steps"><ol start="4" type="1">
 <li>Add an IP address and respective mask to the interface ‘eth1’ using the command:</li>
 </ol>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</span></code></pre></div>
 
 <div class="tip"><p><strong>Note:</strong> you should avoid the subnet 10.0.2.0/24 as it already being used on ‘eth0’.</p>
 </div>
@@ -301,7 +301,7 @@ Hint (ping)
 <div class="w3content">
 <p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ping</span> <span class="at">-c4</span> <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 
 And note the round-trip <strong>time</strong> of each message…
 </div>
@@ -335,35 +335,35 @@ You may lose connectivity at this point depending on the IP addresses you have p
 </div>
 <div class="tip"><p><strong>About the report</strong> You don’t have to include all the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
 </div>
+<span name="9039a8"></span><aside name="9039a8"><p>You don’t need to reboot your RPi to apply these settings, it’s enough to restart the networking service but you need to type a bit more (e.g. <code>sudo ip link set eth1 down &amp;&amp; sudo ip link set eth1 up</code> <strong>or</strong> <code>service networking restart</code>).</p>
+</aside>
 <h2 id="static-ip-addresses">Static IP addresses</h2>
 <p>In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it. However, this is done differently in different Linux systems. Below you’ll see how to do it in Raspbian and Ubuntu.</p>
 <p><strong>—&gt; On your RPi VM</strong></p>
 <p>To save your settings you need to edit the “dhcpcd.conf” file in <code>/etc/</code> (don’t forget to check if you have permissions). Edit this file and reboot to check the networking configurations have remained.</p>
 
-<span name="9039a8"></span><aside name="9039a8"><p>You don’t need to reboot your RPi to apply these settings, it’s enough to restart the networking service but you need to type a bit more (e.g. <code>sudo ip link set eth1 down &amp;&amp; sudo ip link set eth1 up</code> <strong>or</strong> <code>service networking restart</code>).</p>
-</aside>
 <p>Example configuration (change accordingly!):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1">interface eth1</a>
-<a class="sourceLine" id="cb1-2" title="2">static ip_address=192.168.100.102/24</a>
-<a class="sourceLine" id="cb1-3" title="3">static routers=192.168.100.101</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">interface eth1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">static ip_address=192.168.100.102/24</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">static routers=192.168.100.101</span></span></code></pre></div>
 
 <p><strong>—&gt; On your Ubuntu VM</strong></p>
 <p>To save your settings you need to edit the “01-network-manager-all.yaml” file in <code>/etc/netplan</code>. After editing you can apply your changes with the command <code>sudo netplan apply</code>:</p>
 <p>Example configuration (change accordingly!):</p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">network:</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="fu">version:</span><span class="at"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="fu">renderer:</span><span class="at"> networkd</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="fu">ethernets:</span></a>
-<a class="sourceLine" id="cb1-5" title="5">        <span class="fu">enp0s3:</span></a>
-<a class="sourceLine" id="cb1-6" title="6">            <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">yes</span></a>
-<a class="sourceLine" id="cb1-7" title="7">            <span class="fu">nameservers:</span></a>
-<a class="sourceLine" id="cb1-8" title="8">                <span class="fu">addresses:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="fu">enp0s8:</span></a>
-<a class="sourceLine" id="cb1-10" title="10">            <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">no</span></a>
-<a class="sourceLine" id="cb1-11" title="11">            <span class="fu">addresses:</span></a>
-<a class="sourceLine" id="cb1-12" title="12">                <span class="kw">-</span> 10.0.20.2/24</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">network</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">renderer</span><span class="kw">:</span><span class="at"> networkd</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ethernets</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">enp0s3</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">nameservers</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">enp0s8</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">addresses</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="kw">-</span><span class="at"> 10.0.20.2/24</span></span></code></pre></div>
 
 <div class="tip"><p>Be careful with the indentation! Use spaces to align or copy-paste exactly as shown (change the addresses as needed).</p>
 </div>

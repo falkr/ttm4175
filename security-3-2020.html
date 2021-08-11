@@ -176,15 +176,15 @@
 <li>Make sure that Windows 7 is mounted within Kali. Log in to Kali with <strong>root</strong> account, and go to the following folder containing the SAM file:</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> /mnt/windows/Windows/System32/config</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 
 <ul>
 <li>Start <em>chntpw</em> in interactive mode by using <em>-i</em> flag option and read in the SAM file</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#chntpw -i sam (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#chntpw -i sam (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).</span></span></code></pre></div>
 
 <ul>
 <li><p>Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).</p></li>
@@ -204,17 +204,17 @@
 <li>Mount Windows 7 into Kali and locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">mount</span> /dev/sdb2 /mnt/windows</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> /mnt/windows/Windows/System32/config</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="bu">cd</span> </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> </span></code></pre></div>
 
 <h2 id="examining-the-sam-database">Examining the SAM database</h2>
 <ul>
@@ -238,7 +238,7 @@
 <li>Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username):</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># john --wordlist --format=NT --user=&#39;user1&#39; win_pwd_hashes.txt</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># john --wordlist --format=NT --user=&#39;user1&#39; win_pwd_hashes.txt</span></span></code></pre></div>
 
 <p>This command tells John to use a dictionary attack (–-wordlist) with words from the default dictionary <em>/etc/share/john/password.lst</em>; using the hash function NTLMv2 (–-format=NT); targeting user <strong>user1</strong> (–-user=…); and where the target hashes are stored in win_pwd_hashes.txt.</p>
 <p>If the output of John the Ripper shows 0 guesses, it means the password is not contained in the default dictionary and it could not be cracked.</p>
@@ -287,19 +287,19 @@ Hint
 <li><p>Use the <em>unshadow</em> command to combine the entries of <em>/etc/passwd</em> and <em>/etc/shadow</em> to create 1 file with username and password details. Redirect the output to <em>/root/kuser_passwd</em></p></li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"> <span class="ex">unshadow</span> /etc/passwd /etc/shadow <span class="op">&gt;</span> /root/kuser_passwd</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">unshadow</span> /etc/passwd /etc/shadow <span class="op">&gt;</span> /root/kuser_passwd</span></code></pre></div>
 
 <ul>
 <li>Run John the Ripper on the obtained file</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">john</span> --wordlist=/usr/share/john/password.lst /root/kuser_passwd </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">john</span> <span class="at">--wordlist</span><span class="op">=</span>/usr/share/john/password.lst /root/kuser_passwd </span></code></pre></div>
 
 <ul>
 <li>If the password was cracked, we can now use john –show option to list cracked passwords</li>
 </ul>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">john</span> --show /root/kuser_passwd </a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">john</span> <span class="at">--show</span> /root/kuser_passwd </span></code></pre></div>
 
     </section>
 </div>
