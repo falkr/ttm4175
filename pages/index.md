@@ -28,16 +28,16 @@ class: table table-sm
 | -
 | -
 |-
-| Onsdag, 17. aug. 2021, 9:15 - 15:00
-| Teknostart <a href="day1-2020.html">Dag 1</a>
+| Onsdag, 17. aug. 2021, 9:15 - ca. 16:30
+| Teknostart Dag 1
 | [https://link.mazemap.com/QqBVasau EL-3]
 |-
 | Torsdag, 18. aug. 2021, 9:15 - 15:00
-| Teknostart <a href="day1-2020.html">Dag 2</a>
+| Teknostart Dag 2
 | [https://link.mazemap.com/QqBVasau EL-3]
 |-
-| Fredag, 19. aug. 2021, 9:15 - 15:00
-| Teknostart <a href="day1-2020.html">Dag 2</a>
+| Fredag, 19. aug. 2021, 9:15 - ca. 15:00
+| Teknostart Dag 3
 | [https://link.mazemap.com/QqBVasau EL-3]
 |}
 
