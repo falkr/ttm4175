@@ -57,27 +57,27 @@ class: table table-sm
 |-
 | 34
 | 
-| Etisk hacking, uke 1
+| ''info kommer''
 |-
 | 35
 |
-| Etisk hacking, uke 2
+| Etisk hacking, uke 1
 |-
 | 36
 |
-| Etisk hacking, uke 3
+| Etisk hacking, uke 2
 |-
 | 37
 |
-| Etisk hacking, uke 4
+| Etisk hacking, uke 3
 |-
 | 38
 |
-| Etisk hacking, uke 5
+| Etisk hacking, uke 4
 |-
 | 39
 |
-| ''info kommer''
+| Etisk hacking, uke 5
 |-
 | 40
 |
