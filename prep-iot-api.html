@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -158,15 +159,13 @@
 <h1 id="application-programming-interfaces-apis">Application Programming Interfaces: APIs</h1>
 <p>This week we are going to construct an application that consists of several components, some running on the Raspberry Pi, others running on a server that we don’t even have control over. In particular, we are going to build an alarm application, which consists of a movement sensor, a webcam, and the Sense HAT to display an alarm. In addition, we want the alarm system to send a message via Slack, and also upload a picture to it. For that, we need to use the Slack API, so that we can integrate it into our application.</p>
 <h2 id="learning-goals">Learning Goals</h2>
-
 <div class="goals"><p>After this week, you will be able to:</p>
 <ul>
 <li>Read the documentation of an API and understand elements of it.</li>
 <li>Understand <em>some</em> of the mechanisms of APIs.</li>
 <li>Create simple applications from APIs.</li>
 <li>Understand some of the principles of REST API.</li>
-</ul>
-</div>
+</ul></div>
     </section>
     <section class="content">
 <h1 id="apis">APIs</h1>
@@ -175,12 +174,10 @@
 <p><em>So, systems are made from components. But how can we ensure that they work together properly?</em> This is where we use application programming interfaces (APIs).</p>
 <p>An API is a description and sometimes some additional code to ensure that we use a software component correctly. Depending on how the component is implemented an offers its API, i.e., in which language, which underlying protocol and in which context, the description of APIs vary a lot. The API describes how to invoke a function, what kind of parameters to provide, and what to expect as a result. In Python, an API is given as a set of functions, but there are many other possibilities how an API can be built. A distributed API can be built from a set of requests (HTTP requests, for instance), or remote functions. Some programming languages or libraries offer support for <strong>remote procedure calls</strong>. This is a technique for calling a method or function on another computer as if the method was local, on the same computer.</p>
 <p>Some APIs have only very few functions, while others may have thousands, depending on the complexity of the component to connect to. The following can be a complete API, for a very simple component that periodically sends a temperature update:</p>
-
 <pre><code>TEMPERATURE API:
 MQTT Broker: mqtt.example.com:1883
 Subscribe to topic api/weather/temperature/json
 Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
-
 <h2 id="examples-for-web-based-apis">Examples for Web-based APIs</h2>
 <p>There are many APIs available on the internet. Here are just three examples:</p>
 <ul>
@@ -204,16 +201,12 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <li><p>A language for the API. How do we want to describe the API? When we use Python, we show the signatures of the functions, together with some documentation code. When it is a distributed API, we need some other technology. There also exist frameworks that generate nice web pages as documentation, for instance by parsing programming code and its documentation.</p></li>
 <li><p>Examples. To get the use cases right, we often need a lot of examples for possible uses so we don’t forget anything. Once a programmer is familiar with the technology behind an API, these examples can be the hardest thing to get, and understanding of them may evolve over time, which is why there can come a new version of an API.</p></li>
 </ul>
-
     </section>
     <section class="content">
-<span name="8c24d9"></span><aside name="8c24d9"><p>If you like, have a look at the article <a href="https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots">Slack Is Overrun With Bots. Friendly, Wonderful Bots</a>.</p>
-</aside>
+<span name="8c24d9"></span><aside name="8c24d9"><p>If you like, have a look at the article <a href="https://www.wired.com/2015/08/slack-overrun-bots-friendly-wonderful-bots">Slack Is Overrun With Bots. Friendly, Wonderful Bots</a>.</p></aside>
 <h1 id="the-slack-api">The Slack API</h1>
 <p>Slack is a messaging application that allows to integrate other platforms to integrate via APIs. It is simple, for instance, to add so-called <em>bots</em> to the service, which can add all kind of functions. For instance, I often run some code on a server for experiments. With only a few lines of code I can make this code to send a message via Slack so that I am notified once the job is done. In the lab for this unit we are going to build an alarm system with Slack.</p>
-
-<span name="19dc05"></span><aside name="19dc05"><p>Have a look at the article <a href="https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889">Which API is right for your Slack app?</a>.</p>
-</aside>
+<span name="19dc05"></span><aside name="19dc05"><p>Have a look at the article <a href="https://medium.com/slack-developer-blog/getting-started-with-slacks-apis-f930c73fc889">Which API is right for your Slack app?</a>.</p></aside>
 <p>Slack does not only use a single API, but several ones:</p>
 <ul>
 <li><p>The <strong>Web API</strong> offers access to channels and messages via HTTP resources. It works similar to our lab with HTTP. Client applications use HTTP requests, and Slack runs an HTTP server that accepts these requests. The content of the request is given as JSON, and can for instance send a message to a given channel. As usual in HTTP in this direction, all requests must originate from the client. Therefore, you cannot receive messages via this API, for example.</p></li>
@@ -221,11 +214,9 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <li><p>The <strong>Real-Time Messaging API</strong> uses Websockets as underlying technology. We haven’t treated Websockets in the course, but this is some bi-directional alternative to HTTP, so that also the server can send messages to the client. Slack offers this API, but with some limitations.</p></li>
 </ul>
 <p>This may be confusing at first, but when you know about the underlying technologies, it makes more sense. In the lab, we are only going to use the Web API, but this selection shows you how many possibilities there are for APIs. And there are much more!</p>
-
     </section>
     <section class="content">
-<span name="5f1d89"></span><aside name="5f1d89"><p>Remember the <em>remote procedure calls</em> from above? These client libraries for web-based APIs achieve basically the same thing. Why technology has gone this way instead of using “real” remote procedure calls is hard to say, and there may not be a single reason. It can have to do with not depending on a specific programming language, or worries of scalability, for example.</p>
-</aside>
+<span name="5f1d89"></span><aside name="5f1d89"><p>Remember the <em>remote procedure calls</em> from above? These client libraries for web-based APIs achieve basically the same thing. Why technology has gone this way instead of using “real” remote procedure calls is hard to say, and there may not be a single reason. It can have to do with not depending on a specific programming language, or worries of scalability, for example.</p></aside>
 <h1 id="wrapper-libraries">Wrapper Libraries</h1>
 <p>Assume that a service (such as Slack) offers an API via HTTP. You can use this API in some “raw” form, and creating the right HTTP requests in several ways:</p>
 <ul>
@@ -238,14 +229,11 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <li>Someone may create an extra library in Python that encapsulates all the HTTP requests in Python with some code. The result can be an API in Python that uses internally HTTP to connect to a remote service like Slack.</li>
 </ul>
 <p>The benefit of the client library (for instance in Python) is the convenience. The client library can offer additional functions so that the HTTP requests are encoded correctly, and data is handled consistently. For a programmer, it almost appears as if Slack was running locally on the computer, since all the HTTP requests are hidden within the library.</p>
-
     </section>
     <section class="content">
-<span name="904e82"></span><aside name="904e82"><p>The following properties are copied form <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582">this article</a></p>
-</aside>
+<span name="904e82"></span><aside name="904e82"><p>The following properties are copied form <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582">this article</a></p></aside>
 <h1 id="rest">REST</h1>
 <p>Some APIs are called REST APIs, because they follow a certain architectural style that makes it easier (or possible at all) that the APIs are offered with some desirable properties. Such properties are for instance performance and scalability, which are important once an API has a lot of users at the same time. The idea is to use similar mechanisms to enable such properties that also make HTTP work. And, while REST is not constrained to HTTP, most APIs that adhere to the REST principles are implemented in HTTP. Therefore, it is also okay to think of REST as a set of rules how an API can be expressed using HTTP.</p>
-
 <p>If you don’t understand all of these constraints completely, or why they are important, don’t worry too much for now. REST is an architectural style, which encapsulates a lot of experience. Some issues are not so simple to grasp even for developers that have worked for some years. Still—read through them. Many of these concepts and terms will come up often.</p>
 <ul>
 <li><p><strong>Client–server separation</strong> <em>The client and the server act independently, each on its own, and the interaction between them is only in the form of requests, initiated by the client only, and responses, which the server send to the client only as a reaction to a request. The server just sits there waiting for requests from the client to come. The server doesn’t start sending away information about the state of some resources on its own.</em></p></li>
@@ -254,7 +242,6 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <li><p><strong>Cacheable</strong> <em>This means that the data the server sends contain information about whether or not the data is cacheable. If the data is cacheable, it might contain some sort of a version number. The version number is what makes caching possible: since the client knows which version of the data it already has (from a previous response), the client can avoid requesting the same data again and again. The client should also know if the current version of the data is expired, in which case the client will know it should send another request to the server to get the most updated data about the state of a resource.</em></p></li>
 </ul>
 <p>In other words, this makes an API behave much like an HTTP server otherwise serving websites to many browsers.</p>
-
     </section>
     <section class="content">
 <h1 id="orchestration-vs.-choreography">Orchestration vs. Choreography</h1>
@@ -267,23 +254,18 @@ Result will be messages in JSON, with format {&quot;temp&quot;: 21}</code></pre>
 <p>The orchestration solution is probably the most controllable from your point of view, since you keep overview of the entire process and you have control over who has answered and so on, but it also requires you to coordinate everything. On the other hand, the choreography solution may end up in an argument like “Okay I thought we agreed on this movie and now you want to watch Halloween anyway?” However, choreographies can work quite nicely if everyone behaves as expected, and it does not depend on you as an orchestrator in the middle.</p>
 <p>The same kind of behavior is possible for systems that consist of several components.</p>
 <p><strong>Orchestration:</strong> A centralized program (the orchestrator) takes care of coordinating all requests to other components. The orchestrator keeps control of all the other components and controls when to call them, and processes their results.</p>
-
 <div class="figure">
 <img src="figures/iot/api-orchestration.svg" alt="In orchestration, one component is in the center of the interaction and manages all communication." width="100%"/>
 <span name="figures/iot/api-orchestration.svg">&nbsp;</span>
-<aside name="figures/iot/api-orchestration.svg"><p><p>In orchestration, one component is in the center of the interaction and manages all communication.</p>
-</p></aside>
+<aside name="figures/iot/api-orchestration.svg"><p><p>In orchestration, one component is in the center of the interaction and manages all communication.</p></p></aside>
 </div>
 <p><strong>Choreography:</strong> There is a global coordination of components, following a decentralized approach. This usually requires that you need to have control over more than one component.</p>
-
 <div class="figure">
 <img src="figures/iot/api-choreography.svg" alt="In a choreography, the interaction emerges from the individual components, but there is no central manager." width="100%"/>
 <span name="figures/iot/api-choreography.svg">&nbsp;</span>
-<aside name="figures/iot/api-choreography.svg"><p><p>In a choreography, the interaction emerges from the individual components, but there is no central manager.</p>
-</p></aside>
+<aside name="figures/iot/api-choreography.svg"><p><p>In a choreography, the interaction emerges from the individual components, but there is no central manager.</p></p></aside>
 </div>
 <p>When creating applications with several applications, you will have to decide which kind of coordination pattern you want to follow. Sometimes, orchestration or choreographies are necessary or beneficial, sometimes a combination of the two may be most suitable.</p>
-
     </section>
 </div>
 

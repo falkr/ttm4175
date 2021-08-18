@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -159,186 +160,149 @@
 <p>This step-by-step tutorial is intended to give a quick overview on how to “have” a Raspberry Pi in your personal computer. It uses Oracle’s <a href="https://www.virtualbox.org/">Virtual Box</a> as a basis for virtualisation but many other solutions <a href="https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software">exist</a>.</p>
 <p>After following these steps you should have a basic setup very similar to what we use in the labs., with connectivity only to your PC. The idea is to use this virtual machine (VM) in headless mode and use <code>ssh</code> to test commands and configurations. There are many options to configure your VM but they will not be covered here.</p>
 <p>A final note, you may experiment with more than one VM and create networks to test different networking tools and configuration we will talk about. You may also try other Linux distributions if you are considering changing your operating system or having a dual boot setup in your PC.</p>
-
     </section>
     <section class="content">
 <h1 id="downloading-the-software">Downloading the software</h1>
 <h2 id="download-virtualbox">Download VirtualBox</h2>
 <p>Simply navigate to <a href="https://www.virtualbox.org/">virtualbox.org</a> on your browser and download it. Afterwards install it as you would install any other software in your computer.</p>
-
 <div class="figure">
 <img src="figures/vbox/01-download_vbox.png" alt="Download VirtualBox from the website." width="100%"/>
 <span name="figures/vbox/01-download_vbox.png">&nbsp;</span>
-<aside name="figures/vbox/01-download_vbox.png"><p><p>Download VirtualBox from the website.</p>
-</p></aside>
+<aside name="figures/vbox/01-download_vbox.png"><p><p>Download VirtualBox from the website.</p></p></aside>
 </div>
 <h2 id="download-raspbian-image">Download Raspbian image</h2>
 <p>You can download the necessary image from <a href="https://www.raspberrypi.org/downloads/raspberry-pi-desktop/" class="uri">https://www.raspberrypi.org/downloads/raspberry-pi-desktop/</a>. Save it until the installation is complete and you can delete it afterwards (you can duplicate VMs even without this image file). We will use this image in the <a href="#creating-your-virtual-machine">next section</a>.</p>
-
 <div class="figure">
 <img src="figures/vbox/02-download_image.png" alt="Download Raspbian image from the website." width="100%"/>
 <span name="figures/vbox/02-download_image.png">&nbsp;</span>
-<aside name="figures/vbox/02-download_image.png"><p><p>Download Raspbian image from the website.</p>
-</p></aside>
+<aside name="figures/vbox/02-download_image.png"><p><p>Download Raspbian image from the website.</p></p></aside>
 </div>
     </section>
     <section class="content">
 <h1 id="creating-your-virtual-machine">Creating your virtual machine</h1>
 <h2 id="new-vm">New VM</h2>
-
 <div class="steps"><ol type="1">
 <li>Start by pressing the “New” button as seen in the figure below. This will open a dialog where you will setup the initial configurations of your VM.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/03.1-virtualbox.png" alt="Create a new VM." width="100%"/>
 <span name="figures/vbox/03.1-virtualbox.png">&nbsp;</span>
-<aside name="figures/vbox/03.1-virtualbox.png"><p><p>Create a new VM.</p>
-</p></aside>
+<aside name="figures/vbox/03.1-virtualbox.png"><p><p>Create a new VM.</p></p></aside>
 </div>
 <div class="steps"><ol start="2" type="1">
 <li>Now you need to choose a name for your VM.</li>
 <li>The field <em>Machine Folder:</em> corresponds to the folder where your VM will be stored.</li>
 <li>For the <em>Type</em> and <em>Version</em> of your VM you should select “Linux” and “Debian (64-bit)” even though other options are also possible. It should look something like the image below.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/04-nameit.png" alt="First dialog for VM creation." width="100%"/>
 <span name="figures/vbox/04-nameit.png">&nbsp;</span>
-<aside name="figures/vbox/04-nameit.png"><p><p>First dialog for VM creation.</p>
-</p></aside>
+<aside name="figures/vbox/04-nameit.png"><p><p>First dialog for VM creation.</p></p></aside>
 </div>
 <div class="steps"><ol start="5" type="1">
 <li>After pressing <em>Continue</em> you need to select how much RAM your VM is allowed to use. <span class="math inline">512 <em>M</em><em>B</em></span> is the minimum amount of recommended memory but using <span class="math inline">1024 <em>M</em><em>B</em></span> may be better.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/05-ram.png" alt="Select amount of available RAM." width="100%"/>
 <span name="figures/vbox/05-ram.png">&nbsp;</span>
-<aside name="figures/vbox/05-ram.png"><p><p>Select amount of available RAM.</p>
-</p></aside>
+<aside name="figures/vbox/05-ram.png"><p><p>Select amount of available RAM.</p></p></aside>
 </div>
 <div class="steps"><ol start="6" type="1">
 <li>Now, after pressing <em>Continue</em> again, you need to create your virtual hard disk. Just press <em>Create</em>.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/06-vdisk.png" alt="Create a virtual disk." width="100%"/>
 <span name="figures/vbox/06-vdisk.png">&nbsp;</span>
-<aside name="figures/vbox/06-vdisk.png"><p><p>Create a virtual disk.</p>
-</p></aside>
+<aside name="figures/vbox/06-vdisk.png"><p><p>Create a virtual disk.</p></p></aside>
 </div>
 <div class="steps"><ol start="7" type="1">
 <li>Afterwards press <em>Continue</em> to select a common disk format (VDI)</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/07-diskimage.png" alt="Select Virtual Disk Image type." width="100%"/>
 <span name="figures/vbox/07-diskimage.png">&nbsp;</span>
-<aside name="figures/vbox/07-diskimage.png"><p><p>Select Virtual Disk Image type.</p>
-</p></aside>
+<aside name="figures/vbox/07-diskimage.png"><p><p>Select Virtual Disk Image type.</p></p></aside>
 </div>
 <div class="steps"><ol start="8" type="1">
 <li>Press <em>Continue</em> again for selecting a dynamically allocated disk file (fixed size is also okay).</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/08-dynamic.png" alt="Select storage approach on the physical hard disk." width="100%"/>
 <span name="figures/vbox/08-dynamic.png">&nbsp;</span>
-<aside name="figures/vbox/08-dynamic.png"><p><p>Select storage approach on the physical hard disk.</p>
-</p></aside>
+<aside name="figures/vbox/08-dynamic.png"><p><p>Select storage approach on the physical hard disk.</p></p></aside>
 </div>
 <div class="steps"><ol start="9" type="1">
 <li>Finally, select the folder where you would like to save your hard disk and how large this file should be, followed by <em>Create</em>. <strong>Note:</strong> make sure you choose a virtual disk with enough space (at least <span class="math inline">8 <em>G</em><em>B</em></span>) and that the folder you selected is located in a physical disk with enough storage space.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/09-disksize.png" alt="Select the virtual disk's location and size. Create the VM." width="100%"/>
 <span name="figures/vbox/09-disksize.png">&nbsp;</span>
-<aside name="figures/vbox/09-disksize.png"><p><p>Select the virtual disk’s location and size. Create the VM.</p>
-</p></aside>
+<aside name="figures/vbox/09-disksize.png"><p><p>Select the virtual disk’s location and size. Create the VM.</p></p></aside>
 </div>
 <p>At this stage you should see a new virtual machine in VirtualBox.</p>
-
 <div class="figure">
 <img src="figures/vbox/10-newvm.png" alt="A new VM called myrasp can now be seen" width="100%"/>
 <span name="figures/vbox/10-newvm.png">&nbsp;</span>
-<aside name="figures/vbox/10-newvm.png"><p><p>A new VM called myrasp can now be seen</p>
-</p></aside>
+<aside name="figures/vbox/10-newvm.png"><p><p>A new VM called myrasp can now be seen</p></p></aside>
 </div>
 <h2 id="installation-boot">Installation boot</h2>
 <p>Before we start our new VM we need to add the installation medium (the Raspbian image file you downloaded earlier) and perform the installation. The following steps will guide you through this process.</p>
-
 <div class="steps"><ol type="1">
 <li>Start by selecting the new VM and then click on the settings button.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/10.1-newvm.png" alt="Edit the settings for the new VM." width="100%"/>
 <span name="figures/vbox/10.1-newvm.png">&nbsp;</span>
-<aside name="figures/vbox/10.1-newvm.png"><p><p>Edit the settings for the new VM.</p>
-</p></aside>
+<aside name="figures/vbox/10.1-newvm.png"><p><p>Edit the settings for the new VM.</p></p></aside>
 </div>
 <div class="steps"><ol start="2" type="1">
 <li>In the dialog that opens click on the storage tab.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/11.1-settings.png" alt="Click on the storage tab to select the installation medium." width="100%"/>
 <span name="figures/vbox/11.1-settings.png">&nbsp;</span>
-<aside name="figures/vbox/11.1-settings.png"><p><p>Click on the storage tab to select the installation medium.</p>
-</p></aside>
+<aside name="figures/vbox/11.1-settings.png"><p><p>Click on the storage tab to select the installation medium.</p></p></aside>
 </div>
 <div class="steps"><ol start="3" type="1">
 <li>Now in the controller IDE tree select the “Empty” line and click on the CD image highlighted in the figure below. This will allow you to select the downloaded Raspbian image (named something like <em>2019-04-11-rpd-x86-stretch.iso</em>).</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/12.1-storage.png" alt="Click on CD button and select the downloaded Rasbpian image." width="100%"/>
 <span name="figures/vbox/12.1-storage.png">&nbsp;</span>
-<aside name="figures/vbox/12.1-storage.png"><p><p>Click on CD button and select the downloaded Rasbpian image.</p>
-</p></aside>
+<aside name="figures/vbox/12.1-storage.png"><p><p>Click on CD button and select the downloaded Rasbpian image.</p></p></aside>
 </div>
 <div class="steps"><ol start="4" type="1">
 <li>Still inside the settings menu you may want to select the display pane and scale the screen (it is typically quite small so scaling to 150% can be helpful). Note however that the screen resolution can be configured directly in Linux (e.g. during boot) but this way is easier.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/13-display.png" alt="Option to scale the VM screen." width="100%"/>
 <span name="figures/vbox/13-display.png">&nbsp;</span>
-<aside name="figures/vbox/13-display.png"><p><p>Option to scale the VM screen.</p>
-</p></aside>
+<aside name="figures/vbox/13-display.png"><p><p>Option to scale the VM screen.</p></p></aside>
 </div>
 <div class="steps"><ol start="5" type="1">
 <li>After pressing <em>OK</em> you should see the selected <em>iso</em> file as an optical drive of your VM.</li>
 <li>Press the start button to initiate the boot process.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/14.1-vmwiso-note.png" alt="The downloaded image should be included as an optical drive for the first boot." width="100%"/>
 <span name="figures/vbox/14.1-vmwiso-note.png">&nbsp;</span>
-<aside name="figures/vbox/14.1-vmwiso-note.png"><p><p>The downloaded image should be included as an optical drive for the first boot.</p>
-</p></aside>
+<aside name="figures/vbox/14.1-vmwiso-note.png"><p><p>The downloaded image should be included as an optical drive for the first boot.</p></p></aside>
 </div>
 <div class="steps"><ol start="7" type="1">
 <li>After starting the VM you will see a boot menu as shown below. Select the <em>Install</em> option with the arrow keys and press ENTER.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/15-install.png" alt="In this boot menu there are several options, the simplest is to just select _Install_." width="100%"/>
 <span name="figures/vbox/15-install.png">&nbsp;</span>
-<aside name="figures/vbox/15-install.png"><p><p>In this boot menu there are several options, the simplest is to just select <em>Install</em>.</p>
-</p></aside>
+<aside name="figures/vbox/15-install.png"><p><p>In this boot menu there are several options, the simplest is to just select <em>Install</em>.</p></p></aside>
 </div>
 <div class="steps"><ol start="8" type="1">
 <li>At this point you can select your keyboard (press ‘n’) for quickly moving into the Norwegian keyboard. Note that you can proceed with the default keyboard as long as you remember some keys are in slightly different places.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/16-keyboard.png" alt="An English keyboard layout is great for keys such as [, ], {, }, /, #, ~ and others but you can also just use a Norwegian layout." width="100%"/>
 <span name="figures/vbox/16-keyboard.png">&nbsp;</span>
-<aside name="figures/vbox/16-keyboard.png"><p><p>An English keyboard layout is great for keys such as [, ], {, }, /, #, ~ and others but you can also just use a Norwegian layout.</p>
-</p></aside>
+<aside name="figures/vbox/16-keyboard.png"><p><p>An English keyboard layout is great for keys such as [, ], {, }, /, #, ~ and others but you can also just use a Norwegian layout.</p></p></aside>
 </div>
 <div class="steps"><ol start="9" type="1">
 <li>At this stage the disk needs to be partitioned to create the file system. Note that it <strong>corresponds to the virtual disk</strong> it will not affect your computer. Select <em>Guided - use entire disk</em> and press Enter.</li>
@@ -346,94 +310,77 @@
 <li>Even though several partitions can be used, to separate files/folders with different purposes, using only one partition is simpler.</li>
 <li>Confirm the created partitions (1 partition for your files and 1 partition for <em>swaping</em> when you run out of RAM).</li>
 <li>Finally select <em>Yes</em> and press Enter to confirm the partition setup.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/17-partitions.png" alt="Use the entire disk for simplicity but feel free to try other settings." width="100%"/>
 <span name="figures/vbox/17-partitions.png">&nbsp;</span>
-<aside name="figures/vbox/17-partitions.png"><p><p>Use the entire disk for simplicity but feel free to try other settings.</p>
-</p></aside>
+<aside name="figures/vbox/17-partitions.png"><p><p>Use the entire disk for simplicity but feel free to try other settings.</p></p></aside>
 </div>
 <div class="figure">
 <img src="figures/vbox/18-partitions2.png" alt="There is only one disk to select." width="100%"/>
 <span name="figures/vbox/18-partitions2.png">&nbsp;</span>
-<aside name="figures/vbox/18-partitions2.png"><p><p>There is only one disk to select.</p>
-</p></aside>
+<aside name="figures/vbox/18-partitions2.png"><p><p>There is only one disk to select.</p></p></aside>
 </div>
 <div class="figure">
 <img src="figures/vbox/19-partitions3.png" alt="It is simpler to have only one partition for your files." width="100%"/>
 <span name="figures/vbox/19-partitions3.png">&nbsp;</span>
-<aside name="figures/vbox/19-partitions3.png"><p><p>It is simpler to have only one partition for your files.</p>
-</p></aside>
+<aside name="figures/vbox/19-partitions3.png"><p><p>It is simpler to have only one partition for your files.</p></p></aside>
 </div>
 <div class="figure">
 <img src="figures/vbox/20-partitions4.png" alt="Confirm that the configured partitions are correct (note: the mount point '/' corresponding to the root of the file system tree)." width="100%"/>
 <span name="figures/vbox/20-partitions4.png">&nbsp;</span>
-<aside name="figures/vbox/20-partitions4.png"><p><p>Confirm that the configured partitions are correct (note: the mount point ‘/’ corresponding to the root of the file system tree).</p>
-</p></aside>
+<aside name="figures/vbox/20-partitions4.png"><p><p>Confirm that the configured partitions are correct (note: the mount point ‘/’ corresponding to the root of the file system tree).</p></p></aside>
 </div>
 <div class="figure">
 <img src="figures/vbox/21-partitions5.png" alt="Final confirmation before writing the partitions on the disk." width="100%"/>
 <span name="figures/vbox/21-partitions5.png">&nbsp;</span>
-<aside name="figures/vbox/21-partitions5.png"><p><p>Final confirmation before writing the partitions on the disk.</p>
-</p></aside>
+<aside name="figures/vbox/21-partitions5.png"><p><p>Final confirmation before writing the partitions on the disk.</p></p></aside>
 </div>
 <div class="steps"><ol start="14" type="1">
 <li>After some time installing the necessary components you will have to complete the installation by installing a boot loader (GRUB). Select <em>Yes</em> and press Enter.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/22-installgrub.png" alt="GRUB is one of the most commonly used boot loaders in Linux." width="100%"/>
 <span name="figures/vbox/22-installgrub.png">&nbsp;</span>
-<aside name="figures/vbox/22-installgrub.png"><p><p>GRUB is one of the most commonly used boot loaders in Linux.</p>
-</p></aside>
+<aside name="figures/vbox/22-installgrub.png"><p><p>GRUB is one of the most commonly used boot loaders in Linux.</p></p></aside>
 </div>
 <div class="steps"><ol start="15" type="1">
 <li>Now select where the boot loader should be installed (in our case it should be <em>/dev/sda</em>).</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/23-grublocation.png" alt="sda corresponds to the virtual disk's location and many more can be found in other machines. This is similar to drive letters (e.g. C:, D:) in Windows." width="100%"/>
 <span name="figures/vbox/23-grublocation.png">&nbsp;</span>
-<aside name="figures/vbox/23-grublocation.png"><p><p>sda corresponds to the virtual disk’s location and many more can be found in other machines. This is similar to drive letters (e.g. C:, D:) in Windows.</p>
-</p></aside>
+<aside name="figures/vbox/23-grublocation.png"><p><p>sda corresponds to the virtual disk’s location and many more can be found in other machines. This is similar to drive letters (e.g. C:, D:) in Windows.</p></p></aside>
 </div>
 <div class="steps"><ol start="16" type="1">
 <li>This is the final step of the installation. Just press <em>Continue</em> and you don’t need to worry about removing the installation media (VirtualBox does that for us)</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/24-finish.png" alt="The installation is complete and the VM will reboot into a freshly installed system." width="100%"/>
 <span name="figures/vbox/24-finish.png">&nbsp;</span>
-<aside name="figures/vbox/24-finish.png"><p><p>The installation is complete and the VM will reboot into a freshly installed system.</p>
-</p></aside>
+<aside name="figures/vbox/24-finish.png"><p><p>The installation is complete and the VM will reboot into a freshly installed system.</p></p></aside>
 </div>
     </section>
     <section class="content">
 <h1 id="first-boot">First boot</h1>
-
 <div class="steps"><ol type="1">
 <li>After the reboot you will something like the image below. You may notice the name <em>Debian</em> which a very famous distribution upon which the Raspbian distribution is based.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/25-grub.png" width="100%"/>
 </div>
 <div class="steps"><ol start="2" type="1">
 <li>The first time you start your machine you will have the opportunity to go through a quick set up but may also skip it by pressing <em>Cancel</em>. However, if you want to change your keyboard press <em>Next</em> and skip only the check for updates (it is faster in the command line).</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/26.1-firstboot.png" alt="Follow the set up only if you want to change keyboard/location." width="100%"/>
 <span name="figures/vbox/26.1-firstboot.png">&nbsp;</span>
-<aside name="figures/vbox/26.1-firstboot.png"><p><p>Follow the set up only if you want to change keyboard/location.</p>
-</p></aside>
+<aside name="figures/vbox/26.1-firstboot.png"><p><p>Follow the set up only if you want to change keyboard/location.</p></p></aside>
 </div>
 <div class="steps"><ol start="3" type="1">
 <li>Before anything else, open a terminal and change your password with <code>passwd</code>.</li>
 <li>Now we should update our system. In a terminal type <code>sudo apt update</code> followed by <code>sudo apt upgrade</code>.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/27-aptupdate.png" width="100%"/>
 </div>
@@ -442,44 +389,36 @@
 </div>
 <div class="steps"><ol start="5" type="1">
 <li>To finalise the process and prepare the VM for TTM4175 shut it down and enter the VM settings.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/29-shutdown.png" width="100%"/>
 </div>
 <div class="steps"><ol start="6" type="1">
 <li>In the <em>Network</em> pane change your network adapter to be connected to you PC only. This will create a local area network between your PC and your VM, which will be perfect for our experiments and labs. Notice that this will also prevent access to the Internet.</li>
-</ol>
-</div>
+</ol></div>
 <div class="figure">
 <img src="figures/vbox/30.1-hostonly.png" alt="With host-only we isolate the VM from the Internet but can still access it through `ssh`" width="100%"/>
 <span name="figures/vbox/30.1-hostonly.png">&nbsp;</span>
-<aside name="figures/vbox/30.1-hostonly.png"><p><p>With host-only we isolate the VM from the Internet but can still access it through <code>ssh</code></p>
-</p></aside>
+<aside name="figures/vbox/30.1-hostonly.png"><p><p>With host-only we isolate the VM from the Internet but can still access it through <code>ssh</code></p></p></aside>
 </div>
 <div class="steps"><ol start="7" type="1">
 <li>Start again your VM, check its IP address and from now on you can start using it in headless mode and save computing resources. Using <code>ssh</code> to access your VM will the easiest way to test some commands and will allow a straightforward copy+paste between your PC and the VM.</li>
-</ol>
-</div>
+</ol></div>
     </section>
     <section class="content">
 <h1 id="additional-steps">Additional Steps</h1>
 <h2 id="headless-start">Headless Start</h2>
 <p>To start in headless mode you need only to press the start button arrow to select other options as seen below.</p>
-
 <div class="figure">
 <img src="figures/vbox/31.1-headless.png" alt="This option is perfect when using the VM only through `ssh`." width="100%"/>
 <span name="figures/vbox/31.1-headless.png">&nbsp;</span>
-<aside name="figures/vbox/31.1-headless.png"><p><p>This option is perfect when using the VM only through <code>ssh</code>.</p>
-</p></aside>
+<aside name="figures/vbox/31.1-headless.png"><p><p>This option is perfect when using the VM only through <code>ssh</code>.</p></p></aside>
 </div>
 <h2 id="save-disk-space">Save Disk Space</h2>
 <p>To save some disk space you may remove some of the many applications bundled with Raspbian and which we will not need. A suggestion is:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get remove <span class="at">--purge</span> libreoffice<span class="pp">*</span> scratch<span class="pp">*</span> sonic-pi sense-emu-tools bluej geany geany-common greenfoot</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get clean</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get autoremove</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt-get remove --purge libreoffice* scratch* sonic-pi sense-emu-tools bluej geany geany-common greenfoot</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt-get clean</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">sudo</span> apt-get autoremove</span></code></pre></div>
     </section>
 </div>
 

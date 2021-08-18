@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -157,7 +158,6 @@
     <section class="content">
 <h1 id="linux-security-basics">Linux Security – basics</h1>
 <p>In previous classes, you have already learned about IP addresses, subnetting, DHCP, NAT, DNS, and Wi-Fi. Now you will learn and understand about cybersecurity. The main aim of this lab is to make you understand basic security concepts. To demonstrate the ideas we will use the Raspberry Pi, the Linux operating system, and available networking tools.</p>
-
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
 <li>Understand how to create and manage a user account</li>
@@ -168,22 +168,19 @@
 <li>Connect through SSH through a dynamic port</li>
 </ul></li>
 <li>Use sniffing tools to see traffic (elemental analysis)</li>
-</ul>
-</div>
+</ul></div>
     </section>
     <section class="content">
 <h1 id="lab.-exercises">Lab. Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
 <p>Remember you should deliver a report after the security module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
-
 <h2 id="preparation">Preparation</h2>
 <ol type="1">
 <li>Make sure both the Raspberry Pis are up and connected.</li>
 <li>Connect keyboard/screen to the Raspberry Pi.</li>
 <li>Based on previous class knowledge, configure an IP address on each device.</li>
 </ol>
-
 <h2 id="creating-and-managing-user-accounts">Creating and managing user accounts</h2>
 <ol type="1">
 <li>To see all the available users’ list type <code>users</code> and see if the username “api” exists</li>
@@ -201,7 +198,6 @@ Hint
 <li>Use <code>groups</code> command to change the group of the username you created into sudo group</li>
 <li>Remove the user account you created by typing <code>sudo deluser &lt;username&gt;</code></li>
 </ol>
-
 <h2 id="creating-a-strong-password">Creating a strong password</h2>
 <ol type="1">
 <li>Change your current password by using a command passwd</li>
@@ -212,7 +208,6 @@ Hint
 <div class="w3content">
 <p>Stronger passwords contain upper and lower case letters, digits, special characters, and a minimum length of 8.</p>
 </div>
-
 <h2 id="remote-access">Remote Access</h2>
 <h3 id="part-1">Part 1</h3>
 <ol type="1">
@@ -232,15 +227,11 @@ Hint
 Hint
 </button>
 <div class="w3content">
-
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tcpdump</span> <span class="at">-i</span> eth0 <span class="at">-A</span> src <span class="op">&lt;</span>ipaddress<span class="op">&gt;</span> or dst <span class="op">&lt;</span>ipaddress<span class="op">&gt;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">tcpdump</span> -i eth0 -A src <span class="op">&lt;</span>ipaddress<span class="op">&gt;</span> or dst <span class="op">&lt;</span>ipaddress<span class="op">&gt;</span></span></code></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Relate the concept of security based on <code>tcpdump</code> results</li>
 </ol>
-
 <h3 id="part-2">Part 2</h3>
 <ol type="1">
 <li>In the previous class you have learned how to configure <code>ssh</code> but now try to change the port 22 to 220</li>
@@ -248,23 +239,18 @@ Hint
 <li>Apply the same sniff mechanisms and check if you can see your password</li>
 <li>Compare the difference between telnet and ssh. Which one is more secure? Justify your answers.</li>
 </ol>
-
     </section>
     <section class="content">
 <h1 id="homework">Homework</h1>
 <p>Create two different user accounts and allow remote access only for a single user per machine. The permitted user only accesses the system through SSH in port number 220.</p>
-
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-
 <h3 id="the-combination-lock">The Combination Lock</h3>
 <p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
@@ -272,9 +258,7 @@ Hint
 <li>Take a picture of that combination in your phone, so you remember it.</li>
 <li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
 </ul>
-
 <h3 id="cleaning-up">Cleaning Up</h3>
-
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
@@ -288,8 +272,7 @@ Hint
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul>
-</div>
+</ul></div>
     </section>
 </div>
 

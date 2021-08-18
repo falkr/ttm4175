@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -157,7 +158,6 @@
     <section class="content">
 <h1 id="password-clearing-and-cracking">Password clearing and cracking</h1>
 <p>In this lab, you will learn how to clear a password in Windows and how to use ophcrack and John the ripper to crack passwords.</p>
-
     </section>
     <section class="content">
 <h1 id="create-user-accounts-in-windows-7">Create user accounts in Windows 7</h1>
@@ -166,7 +166,6 @@
 <li><p>Go to “Control Panel” and create four standard user accounts <strong>user1</strong>, <strong>user2</strong>, <strong>user3</strong>, and <strong>user4</strong>. Assign a different password to each of the users. For the first two users, choose one of the commonly-used password. Here you can find a <a href="https://en.wikipedia.org/wiki/List_of_the_most_common_passwords">list of the most common passwords</a>. For the remaining users, choose stronger passwords that are of different lengths, with and without special characters.</p></li>
 <li><p>Shut down the Windows VM</p></li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="clearing-the-user-password-in-windows">Clearing the user password in Windows</h1>
@@ -176,17 +175,13 @@
 <ul>
 <li>Make sure that Windows 7 is mounted within Kali. Log in to Kali with <strong>root</strong> account, and go to the following folder containing the SAM file:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
 <ul>
 <li>Start <em>chntpw</em> in interactive mode by using <em>-i</em> flag option and read in the SAM file</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#chntpw -i sam (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#chntpw -i sam (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).</span></span></code></pre></div>
 <ul>
 <li><p>Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).</p></li>
 <li><p>We want to clear the password of user <strong>Lab2</strong>, so enter its RID</p></li>
@@ -195,7 +190,6 @@
 </ul>
 <p>Finally, return to your home folder <code># cd</code> and unmount the Windows partition from kali Linux <code># umount /mnt/windows</code>.</p>
 <p>Reboot the machine and select Windows 7. You should now be able to login into <strong>Lab2</strong> account without a password.</p>
-
     </section>
     <section class="content">
 <h1 id="cracking-the-windows-7-user-password">Cracking the Windows 7 user password</h1>
@@ -204,24 +198,19 @@
 <ul>
 <li>Mount Windows 7 into Kali and locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> </span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> </span></code></pre></div>
 <h2 id="examining-the-sam-database">Examining the SAM database</h2>
 <ul>
 <li>Take a look at the content of the <em>win_pwd_hashes.text</em> <code># cat win_pwd_hashes.txt</code>. Each line entry represents a user account on the system with their respective hashes.</li>
 </ul>
-
 <h2 id="examining-the-sam-database-in-ophcrack">Examining the SAM database in Ophcrack</h2>
 <p>Ophcrack is a program that comes with a graphical user interface that allows you to see the format of the passwords in the SAM database.</p>
 <ul>
@@ -230,7 +219,6 @@
 <li><p>Find the file <em>win_pwd_hashes.txt</em>. It will show you the hashed passwords.</p></li>
 <li><p>try the Crack functionality on the available users. Did it succeed in cracking any of the passwords?</p></li>
 </ul>
-
 <h2 id="john-the-ripper">John the Ripper</h2>
 <p>John the Ripper is a cracking tool that runs in both <em>brute-force</em> and <em>dictionary attack</em> modes. It’s basic functionality is to repeatedly try different passwords and hash them until it finds a match. However, since the space of all possible passwords is virtually infinite, testing all password in this manner (brute-force search) will not be feasible unless the password was very short. Instead, we will try a list of more likely passwords known as <em>dictionary attack</em> mode.</p>
 <p>John the Ripper comes with a pre-installed dictionary of some typical passwords located in <em>/usr/share/john/password.lst</em>. Open the pre-installed dictionary of John the Ripper and check its content.</p>
@@ -238,15 +226,12 @@
 <ul>
 <li>Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username):</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># john --wordlist --format=NT --user=&#39;user1&#39; win_pwd_hashes.txt</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># john --wordlist --format=NT --user=&#39;user1&#39; win_pwd_hashes.txt</span></span></code></pre></div>
 <p>This command tells John to use a dictionary attack (–-wordlist) with words from the default dictionary <em>/etc/share/john/password.lst</em>; using the hash function NTLMv2 (–-format=NT); targeting user <strong>user1</strong> (–-user=…); and where the target hashes are stored in win_pwd_hashes.txt.</p>
 <p>If the output of John the Ripper shows 0 guesses, it means the password is not contained in the default dictionary and it could not be cracked.</p>
 <ul>
 <li>Repeat the same command for the 3 other users that you created. Did John the Ripper succeed in guessing all passwords?</li>
 </ul>
-
 <div class="tip"><p>Note that in the case where the password is not simple or didn’t exist in John’s dictionary, then you would need a much bigger dictionary and a lot longer time to crack it. You can use your own password lists or download a large one from Internet (there’s lots of dictionary file in terabyte size).</p>
 <h3 id="creating-new-passwords-from-existing-ones">Creating new passwords from existing ones</h3>
 <p>Instead of using a larger dictionary, John the Ripper can apply a multitude of transformations to a wordlist in order to create new passwords from existing ones. For example, we could make it append numbers to the end of all the words in the dictionary, such that if the word “car” was in the original dictionary, then it would also try <em>car0</em> , <em>car1</em>, …, <em>car 9</em>, <em>car00</em>, <em>car01</em>, …, etc.</p>
@@ -267,18 +252,14 @@ Hint
 </button>
 <div class="w3content">
 <p>The rule that you want to define will be: &gt;1 &lt;7 sl1 Q</p>
-</div>
-</div>
+</div></div>
 <p>Take a look at the <a href="http://www.openwall.com/john/doc/RULES.shtml">John the Ripper web page</a> in which the description of every possible transformation rule is provided.</p>
-
 <ul>
 <li><p>To check how the default rules work, create a dictionary file <em>test1.dict</em> containing the single word “labrador” <code># echo "labrador" &gt; test1.dict</code></p></li>
 <li><p>Apply the default John rules to <em>tes1t.dict</em> and print the results as follows: <code># john --wordlist=test1.dict --rules --stdout</code></p></li>
 <li><p>How many new passwords did John create from this single-word dictionary? find out by piping the output above with ‘|’ into <em>wc</em>.</p></li>
 </ul>
-
-<div class="tip"><p>The <em>wc</em> command will display the following three numbers: number of lines, number of words and number of bytes of the file.</p>
-</div>
+<div class="tip"><p>The <em>wc</em> command will display the following three numbers: number of lines, number of words and number of bytes of the file.</p></div>
 <ul>
 <li>Similarly, create a dictionary <em>test2.dict</em> containing the word “hello” and apply the default John rules to it. Does the file contains the word “he11o” as a result of the rule that you added earlier? Why hasn’t this rule been applied to the word “labrador”?</li>
 </ul>
@@ -287,21 +268,15 @@ Hint
 <li><p>In Kali Linux, create a user named <strong>kuser</strong> and assign a simple password to it (choose a password from the common passwords list)</p></li>
 <li><p>Use the <em>unshadow</em> command to combine the entries of <em>/etc/passwd</em> and <em>/etc/shadow</em> to create 1 file with username and password details. Redirect the output to <em>/root/kuser_passwd</em></p></li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">unshadow</span> /etc/passwd /etc/shadow <span class="op">&gt;</span> /root/kuser_passwd</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a> <span class="ex">unshadow</span> /etc/passwd /etc/shadow <span class="op">&gt;</span> /root/kuser_passwd</span></code></pre></div>
 <ul>
 <li>Run John the Ripper on the obtained file</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">john</span> <span class="at">--wordlist</span><span class="op">=</span>/usr/share/john/password.lst /root/kuser_passwd </span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">john</span> --wordlist=/usr/share/john/password.lst /root/kuser_passwd </span></code></pre></div>
 <ul>
 <li>If the password was cracked, we can now use john –show option to list cracked passwords</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">john</span> <span class="at">--show</span> /root/kuser_passwd </span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">john</span> --show /root/kuser_passwd </span></code></pre></div>
     </section>
 </div>
 

@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -156,12 +157,10 @@
     </section>
     <section class="content">
 <h1 id="security-4">Security 4</h1>
-
     </section>
     <section class="content">
 <h1 id="vulnerability-scanning">Vulnerability Scanning</h1>
 <p>In this lab you will gain remote access to a machine, scan it for vulnerable services, and then exploit those services.</p>
-
     </section>
     <section class="content">
 <h1 id="installing-metasploitable">Installing Metasploitable</h1>
@@ -169,7 +168,6 @@
 <ul>
 <li>Download <a href="https://www.iik.ntnu.no/fag/felles/ova/">Metasploitable VM</a>, and import it into VirtualBox.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="configuring-a-virtual-network">Configuring a virtual network</h1>
@@ -183,21 +181,16 @@
 <li><p>If you don’t have an adapter with the IPv4 address mentioned above, click on “Create” symbol to create a new adapter, and select <strong>Enable DHCP server</strong> for the created adapter.</p></li>
 <li><p>In the adapter properties, the parameters must be as follows:</p></li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">IPv4</span> address: 10.0.0.1 </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Network</span> mask: 255.255.255.0 </span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">IPv4</span> address: 10.0.0.1 </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Network</span> mask: 255.255.255.0 </span></code></pre></div>
 <ul>
 <li>In the “DHCP server” tab, configure the DHCP server as follows:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Server</span> address: 10.0.0.100</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Server</span> Mask: 255.255.255.0</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Lower</span> address bound: 10.0.0.101</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Upper</span> address bound: 10.0.0.200 </span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">Server</span> address: 10.0.0.100</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">Server</span> Mask: 255.255.255.0</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">Lower</span> address bound: 10.0.0.101</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">Upper</span> address bound: 10.0.0.200 </span></code></pre></div>
 <p>When the virtual machines attach to this internal network, they will automatically be given IP addresses in the range 10.0.0.101 to 10.0.0.200.</p>
-
 <h3 id="attach-metasploitable-machine-and-kali-to-the-lan">Attach Metasploitable machine and Kali to the LAN</h3>
 <ul>
 <li><p>With the Metasploitable machine selected, go to “Settings -&gt; Network” and select “Host-only Adapter” from the first drop-down menu, and select the name of the adapter that you configured above in the second drop down menu. Check the other “adapter” tabs and make sure no other network adapters are attached. This way the Metasploitable will only be able to access the LAN and not the Internet.</p></li>
@@ -205,10 +198,8 @@
 <li><p>Now boot up the Metasploitable VM. The default username/password combination is <em>msfadmin/msfadmin</em>.</p></li>
 <li><p>Boot up the Kali Linux machine and run the following commands to release the old IP address and request a new one from the DHCP server:</p></li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dhclient</span> eth0 <span class="at">-r</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dhclient</span> eth0</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">dhclient</span> eth0 -r</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">dhclient</span> eth0</span></code></pre></div>
 <ul>
 <li>Verify that both machines are on the same LAN</li>
 </ul>
@@ -221,7 +212,6 @@ Hint
 <ul>
 <li>Write down the IP address of the Metasploitable machine as you are going to need it later on in this lab.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="discovering-hosts-with-nmap">Discovering hosts with Nmap</h1>
@@ -234,7 +224,6 @@ Hint
 <ul>
 <li>Check the output of Nmap. The scan will return the running hosts with their IP-addresses. In our case, there are 4 hosts up. The first two are the default gateway and the DHCP server provided by VirtualBox. The next two are Kali and the victim machine.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="gathering-information">Gathering information</h1>
@@ -251,7 +240,6 @@ Hint
 <p>Kali has several tools for port scanning, but we will use Nmap. By default, Nmap only scans the top 1000 most popular ports. We want as much information as possible, so we tell Nmap to scan all TCP-ports:</p>
 <p><code># nmap -p 0-65535 -sV &lt;IP_address_victim_machine&gt;</code></p>
 <p>This scan is quite comprehensive, so it will take <strong>a few minutes</strong> to complete. The obtained results will show the running services and their versions (the “-sV” flag makes Nmap try to figure out the version of the services it has discovered).</p>
-
     </section>
     <section class="content">
 <h1 id="finding-vulnerabilities">Finding vulnerabilities</h1>
@@ -267,10 +255,8 @@ Hint
 <li><p>After the file has downloaded, open a terminal and change to the “Downloads” directory. Find the MD5 checksum of the downloaded file with the help of the command <code>md5sum &lt;filename&gt;</code>. Now control that the obtained checksum is the same as the one displayed next to the file name on the Nessus website.</p></li>
 <li><p>While still in the “Downloads” directory, run the following commands to depackage and start the Nessus service:</p></li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg</span> <span class="at">-i</span> Nessus-8.11.1-debian6_amd64.deb</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/systemctl</span> start nessusd.service</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">dpkg</span> -i Nessus-8.11.1-debian6_amd64.deb</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">/bin/systemctl</span> start nessusd.service</span></code></pre></div>
 <p>Nessus will now start its web interface on port 8834. To access it, point your web browser to “https://localhost:8834”. You will get a warning saying that your connection is insecure. This is because Nessus uses HTTPS with what’s called a “Self-signed certificate”. These certificates are not part of the “Chain-of-trust” and thus the browser cannot verify that the server is who they claim they are. In our case, the kali machine is the server and we are just connecting to our own machine, so we can safely ignore the warning.</p>
 <p>Note: If you ever see a similar warning while browsing the Internet normally, be extremely careful. It could mean that someone is tampering with your traffic!</p>
 <ul>
@@ -287,7 +273,6 @@ Hint
 <h2 id="analyzing-the-results">Analyzing the results</h2>
 <p>Once the scan has finished, a breakdown of the discovered vulnerabilities will be displayed. Vulnerabilities are grouped by how serious they are. Red means critical, orange means high and so on. Click on a vulnerability to show more information about that specific vulnerability, including suggested remedies and sometimes which tools can be used to exploit the vulnerability.</p>
 <p>Keep the results open so you can view them later when looking for appropriate exploits.</p>
-
     </section>
     <section class="content">
 <h1 id="metasploit">Metasploit</h1>
@@ -296,12 +281,10 @@ Hint
 <ul>
 <li>To ensure that we have the latest version of Metasploit installed, we first need to update it:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update                       % update the repository list</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install metasploit-framework % update metasploit</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">msfdb</span> init                           % initialize the database</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> update                       % update the repository list</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">apt-get</span> install metasploit-framework % update metasploit</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">service</span> postgresql start             % metasploit uses a postresql database</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">msfdb</span> init                           % initialize the database</span></code></pre></div>
 <h2 id="running-metasploit">Running Metasploit</h2>
 <p>Start Metasploit by running <em>msfconsole</em>: <code># msfconsole</code>. You will soon be greeted by an ASCII welcome logo.</p>
 <p>You are now in the Metasploit command console. At any point you can type help or ? to get a list of all available commands. The console functions pretty much like normal Linux terminal.</p>
@@ -320,26 +303,19 @@ Hint
 <ol type="1">
 <li>Tell Metasploit which module you want to try with the <em>use</em> command:</li>
 </ol>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>Use the <em>show options</em> command to see the parameters that the module uses:</li>
 </ol>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span> show <span class="ex">options</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="ex">show</span> options</span></code></pre></div>
 <ol start="3" type="1">
 <li>With the help of the <em>set</em> command, set the <em>RHOST</em> parameter to the IP address of the victim:</li>
 </ol>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span> set <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">msf</span> exploit(exploit_name) <span class="op">&gt;</span> <span class="kw">set</span> <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
 <ol start="4" type="1">
 <li>Finally, we run the exploit</li>
 </ol>
-
     </section>
     <section class="content">
 <h1 id="example-using-backdoored-ftp-server">Example: Using backdoored FTP server</h1>
@@ -362,30 +338,22 @@ Hint
 <p>You will notice that when you rebooted Metasploitable, the backdoor shell stopped working. To gain access to the machine we would have to run the exploit again which might be problematic. We need therefore to make our access persistent.</p>
 <h2 id="making-our-access-persistent">Making our access persistent</h2>
 <p>As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">passwd</span> ttm4175 % Set the password for the new user</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">reboot</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">passwd</span> ttm4175 % Set the password for the new user</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">usermod</span> -aG sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">reboot</span></span></code></pre></div>
 <ul>
 <li>After running the reboot command, wait until Metasploitable has rebooted and then try to login with telnet:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install telnet</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">telnet</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> install telnet</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">telnet</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
 <ul>
 <li>After logging in, test that you still can get root access:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo su % Switch to the root user</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># whoami</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>$ <span class="fu">sudo</span> su % Switch to the root user</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># whoami</span></span></code></pre></div>
 <p>The last command should print “root” if successful.</p>
-
-<div class="tip"><p>If you get an error saying that “ttm4175 is not in the sudoers group”, then you will have to manually add it to the sudoers file. To do this, re-open the backdoor shell by running the exploit again, and type the following command: <code>echo "ttm4175 ALL=(ALL) ALL" &gt;&gt; /etc/sudoers</code> . Now try to connect to Metasploitable again with Telnet and verify if you can get root access.</p>
-</div>
+<div class="tip"><p>If you get an error saying that “ttm4175 is not in the sudoers group”, then you will have to manually add it to the sudoers file. To do this, re-open the backdoor shell by running the exploit again, and type the following command: <code>echo "ttm4175 ALL=(ALL) ALL" &gt;&gt; /etc/sudoers</code> . Now try to connect to Metasploitable again with Telnet and verify if you can get root access.</p></div>
     </section>
 </div>
 

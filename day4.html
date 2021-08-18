@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -158,59 +159,43 @@
 <h1 id="day-4-apache-web-server">Day 4: Apache Web Server</h1>
 <p>These last two days we are going to create our own web site and set up a web server on the Raspberry Pi. The web server we will use is called <em>Apache</em>.</p>
 <h3 id="learning-goals-for-today">Learning Goals for Today</h3>
-
 <div class="goals"><ul>
 <li>Install a new program (Apache) on Linux</li>
 <li>Get an overview of how a webserver can be used to host your own websites.</li>
-</ul>
-</div>
+</ul></div>
 <h3 id="new-linux-commands">New Linux Commands</h3>
 <ul>
 <li><a href="commands.html#sudo">sudo</a> — execute a program as super user.</li>
 <li><a href="commands.html#apt">apt</a> — install new programs.</li>
 <li><a href="commands.html#systemctl">systemctl</a> — control system services.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="being-super-user">Being Super User</h1>
 <p>Some commands or programs require special permissions to run, usually because they affect more than one user or handle critical resources, or are related to the security of the system. As the user <code>pi</code>, you <em>have</em> all these permissions, but to protect you from doing something stupid, you need to prove to the system that you are allowed to execute these specific commands or programs. For that, the command <code>sudo</code> exists, which stands for <em>“<strong>s</strong>uper <strong>u</strong>ser <strong>do</strong>”</em>. SOmtimes you just add this in front of another command that you want to execute with special rights.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> <span class="op">&lt;</span>important command...<span class="op">&gt;</span></span></code></pre></div>
 <p>Think of it as when your parents told you to say “Please!”</p>
-
     </section>
     <section class="content">
 <h1 id="apache-and-webserver">Apache and Webserver</h1>
-
-<div class="factbox"><p><em>Web Server:</em> A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.</p>
-</div>
-<div class="factbox"><p><em>Apache:</em> Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.</p>
-</div>
+<div class="factbox"><p><em>Web Server:</em> A web server is like a restaurant host. When you arrive in a restaurant, the host greets you, checks your booking information and takes you to your table. Similar to the restaurant host, the web server checks for the web page you have requested and fetches it for your viewing pleasure. However, A web server is not just your host but also your server. Once it has found the web page you requested, it also serves you the web page.</p></div>
+<div class="factbox"><p><em>Apache:</em> Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules.</p></div>
     </section>
     <section class="content">
 <h1 id="step-1-installing-apache">Step 1: Installing Apache</h1>
 <p>Our operating system on the Raspberry Pi does not come with Apache built into it, so we will have to download and install Apache. The <code>apt</code> packet manager makes this easy for us — it’s like an app store, but for Linux.</p>
 <p>First, we need to update the list of available software:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span></code></pre></div>
 <p>Then we install Apache:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install apache2</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt install apache2</span></code></pre></div>
     </section>
     <section class="content">
 <h1 id="step-2-starting-apache">Step 2: Starting Apache</h1>
 <p>Now that we have Apache installed, we need to start the <em>service</em>, i.e., the program.</p>
-
 <div class="factbox"><p><em>What is a service?</em> A service is just another word for <em>application</em> or program. However, a service is a program that should run all the time.</p>
 <p><code>systemctl</code> is a piece of software that can be used to start, stop and check the current status of any service running on a Linux system.</p>
-<p>Let’s start the service:</p>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> start apache2</span></code></pre></div>
-
+<p>Let’s start the service:</p></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">systemctl</span> start apache2</span></code></pre></div>
 <p>List of useful <code>systemctl</code> commands:</p>
 <ul>
 <li><code>systemctl status apache2</code> — <em>checks the current status of apache2</em></li>
@@ -218,14 +203,12 @@
 <li><code>systemctl stop apache2</code> — <em>stops the service</em></li>
 <li><code>systemctl restart apache2</code> — <em>restarts the service</em></li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="step-3-testing-the-server">Step 3: Testing the Server</h1>
 <p>Apache is set up and is running. This means we go ahead and check if the service works and edit our home page.</p>
 <p>First, we would like to check wether our Apache server is working as expected. The Apache server runs on port 80 by default, so in order to check whether the service is running, we have to check this port specifically.</p>
 <p><strong>Check that Apache works as expected:</strong> 1. Find your IP-address 2. Type the IP-address in your browser, and specify port number 80. i.e <em>http://192.168.10.19:80</em> 3. If the Apache test-page pops up, the server is running as expected. (link to apache test-page)</p>
-
     </section>
     <section class="content">
 <h1 id="step-4-our-own-website">Step 4: Our own Website</h1>
@@ -237,45 +220,33 @@
 <h2 id="creating-a-new-site">Creating a new site</h2>
 <p>We now want to create our new website.</p>
 <p>First, create the file <code>index.html</code>:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> index.html</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">touch</span> index.html</span></code></pre></div>
 <p>Then, edit the file with leafpad:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">leafpad</span> index.html</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">leafpad</span> index.html</span></code></pre></div>
 <p>Write HTML code here to personalize your web page. Start with the template below, or find a template online.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-
-<span name="00c10b"></span><aside name="00c10b"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p>
-</aside>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="kw">&lt;h1&gt;</span> This my webpage <span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="kw">&lt;h3&gt;</span>Quote of the day:<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>Never trust a computer you can&#39;t throw out the window<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="kw">&lt;p&gt;&lt;i&gt;</span>- Steve Wozniak<span class="kw">&lt;/i&gt;&lt;/p&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span name="00c10b"></span><aside name="00c10b"><p><i class="fas fa-language"></i> <em>Template</em> betyr <em>mal</em> på norsk.</p></aside>
 <h2 id="editing-your-website">Editing Your Website</h2>
 <p>You can now edit the website as you want. Try to go to each others webpages by typing in their IP-address and port in the URL on the same format as earlier.</p>
-
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-
 <h3 id="cleaning-up">Cleaning Up</h3>
-
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
@@ -289,8 +260,7 @@
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul>
-</div>
+</ul></div>
     </section>
 </div>
 

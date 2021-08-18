@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -156,7 +157,6 @@
     </section>
     <section class="content">
 <h1 id="lab-state-machines-in-iot">Lab: State Machines in IoT</h1>
-
 <h3 id="overview-of-tasks">Overview of Tasks</h3>
 <p>We have created 5 tasks which all let you solve a slightly different problem related to state machines. The tasks are independent of each other, but the first one is the easiest to get started and the last one is maybe a bit challenging.</p>
 <p>Here’s an overview:</p>
@@ -168,7 +168,6 @@
 <li><strong>Hand Sanitizer Station</strong>: You create state machine diagram and code by yourself from a textual description.</li>
 </ol>
 <p>All background theory for the tasks is covered in this page about <a href="prep-iot-stm.html">State machines</a> in general and <a href="prep-iot-stmpy.html">State machines in Micro Python</a>.</p>
-
 <h3 id="drawing-state-machine-diagrams">Drawing State Machine Diagrams</h3>
 <p>You will need to draw some diagrams in this lab.</p>
 <ul>
@@ -176,31 +175,25 @@
 <li><strong>Whiteboards or blackboards</strong> have the benefit that you can work in groups, if you are physically at the same place.</li>
 <li><strong>Drawing applications</strong> are often easy to access and use, but do not know that you want to create a special diagram style. Though this is probably your best option. You can create simple state machine diagrams in a shared PowerPoint, to which you have access in Teams. Another option is <a href="draw.io">Draw.io</a>, but it requires you to login with a Google account.</li>
 </ul>
-
 <h3 id="working-style">Working Style</h3>
 <p>There is not a lot to program today in counting the lines of code. The goal is rather to train an approach to system development and problem exploration — the state machines and Python code are just tools to get there. Therefore:</p>
 <ul>
 <li>Make sure at each one in your team follows. In this lab, make sure you are familiar with all the details, and can follow everything. If not all points are clear to everyone, ask your team mates, or vice-versa, explain it to them.</li>
 <li>For each task, give everyone a few minutes to think individually. You can only have valuable team discussions if everyone had the chance to think on their own first.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="counter">Counter</h1>
-
 <div class="goals"><ul>
 <li><strong>Goal:</strong> Get the state machine code running, to check that all works.</li>
-</ul>
-</div>
-<span name="7d48c5"></span><aside name="7d48c5"><p><a href="https://git-scm.com">Git</a> is a version control system. Usually you would clone a repository so you could make changes to it and send them back to me, but for this exercise you only need the files once, which is why you only download the repository as a simple zip-file.</p>
-</aside>
+</ul></div>
+<span name="7d48c5"></span><aside name="7d48c5"><p><a href="https://git-scm.com">Git</a> is a version control system. Usually you would clone a repository so you could make changes to it and send them back to me, but for this exercise you only need the files once, which is why you only download the repository as a simple zip-file.</p></aside>
 <p>We have created the files for today’s tasks, and you can download them from a Git repository as a zip-file.</p>
 <ul>
 <li>Download the file <a href="https://github.com/falkr/ttm4175-microbit-stms/archive/main.zip" class="uri">https://github.com/falkr/ttm4175-microbit-stms/archive/main.zip</a>.</li>
 <li>Unzip it, usually by double-clicking on it.</li>
 <li>Open the folder in VS Code.</li>
 </ul>
-
 <p>You should see the following files:</p>
 <ul>
 <li>counter.py</li>
@@ -209,11 +202,8 @@
 <li>shake.py</li>
 <li>switch.py</li>
 </ul>
-
 <p>All files are self-contained and can run independently of each other, that means, all contain the base state machine.</p>
-
 <h3 id="diagram-for-the-counter">Diagram for the Counter</h3>
-
 <div class="figure">
 <img src="figures/statemachines/counter.svg" width="100%"/>
 </div>
@@ -226,49 +216,40 @@
 <li>What is the function of <code>button_b</code>?</li>
 <li>In addition to the textual description, illustrate the functions of the coutner using a series of small screenshots.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="shake-light">Shake Light</h1>
-
 <div class="goals"><ul>
 <li><strong>Goal:</strong> Create a state machine diagram from given code.</li>
-</ul>
-</div>
+</ul></div>
 <p>Have a look at the code in file <code>shake.py</code>, and run it. (The code of the state machine is also included below.)</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                display.show(Image.SQUARE)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        display.show(Image.SQUARE_SMALL)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>                display.show(Image.SQUARE)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>                display.show(Image.SQUARE_SMALL)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
 <p><strong>Task:</strong> Describe the behavior of the shake light in a few sentences.</p>
-
 <p><strong>Task:</strong> Draw a state machine that corresponds to the code. Make sure to include all necessary elements.</p>
-
     </section>
     <section class="content">
 <h1 id="night-light">Night Light</h1>
-
 <div class="goals"><ul>
 <li><strong>Goal:</strong> Extend a given diagram to extends its functionality, and extend the corresponding code.</li>
-</ul>
-</div>
+</ul></div>
 <div class="figure">
 <img src="figures/statemachines/stm-night-light-1.svg" width="100%"/>
 </div>
@@ -276,15 +257,12 @@
 <p><strong>Task:</strong> Describe the behavior of the shake light in a few sentences.</p>
 <p><strong>Task:</strong> Extend the state machine diagram so that it also switches the light off again after the level goes under 80.</p>
 <p><strong>Task:</strong> Add the code for the added functionality and check that it works. Include a series of small screenshots in your report.</p>
-
     </section>
     <section class="content">
 <h1 id="switch-light">Switch Light</h1>
-
 <div class="goals"><ul>
 <li><strong>Goal:</strong> Build all code on your own from a given state machine diagram.</li>
-</ul>
-</div>
+</ul></div>
 <div class="figure">
 <img src="figures/statemachines/stm-switch-light.svg" width="100%"/>
 </div>
@@ -295,15 +273,12 @@
 <li>Use the code given in file <code>switch.py</code> as starter.</li>
 <li>You only have to fill the content of the functions <code>initial_transition</code> and <code>transition</code>.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="hand-sanitizer-station">Hand Sanitizer Station</h1>
-
 <div class="goals"><ul>
 <li><strong>Goal:</strong> Create diagram and code by yourself.</li>
-</ul>
-</div>
+</ul></div>
 <div class="figure">
 <img src="figures/statemachines/dispenser.png" width="100%"/>
 </div>
@@ -322,16 +297,12 @@
 <li>Make sure it does activate the dispenser (by showing the arrow) for the 800 milliseconds.</li>
 <li>Make sure it does not double dispense within 2 seconds after the first detected shake.</li>
 </ul>
-
 <button class="w3collapsible">Hint about the states. (Click only when you need it.)</button>
 <div class="w3content">
 <p>The state machine we came up with has three control states, which we called for <code>ready</code>, <code>dispensing</code> and <code>blocked</code>. The names do not matter, but may indicate what happens in them.</p>
-
 </div>
 <p><strong>Task:</strong> Create the code for the machines. Use file <code>dispenser.py</code> as starting point.</p>
-
 <p><strong>Task:</strong> Document the solution of your dispenser as detailed as possible, to explain to the reader how it works. Include a comic-like sequence of screenshots, too.</p>
-
     </section>
 </div>
 

@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -158,7 +159,6 @@
 <h1 id="mqtt">MQTT</h1>
 <p>This week, you will learn how to communicate by using a protocol that is called <strong>MQTT</strong>. Like HTTP, it is usually executed on top of TCP/IP, but you will notice that this protocol is <strong>very different from HTTP</strong>, in many respects. That’s one of the reasons why we look at it. Once you have understood HTTP and MQTT, you have covered a lot of mechanisms, properties, patterns and architectures that are used in communication protocols.</p>
 <h2 id="learning-goals">Learning Goals</h2>
-
 <div class="goals"><p>After this week, you will be able to:</p>
 <ul>
 <li>Run and operate your own MQTT broker.</li>
@@ -166,23 +166,19 @@
 <li>Publish and receive messages, including data payload.</li>
 <li>Select proper quality-of-service levels.</li>
 <li>Design MQTT topics for applications.</li>
-</ul>
-</div>
+</ul></div>
     </section>
     <section class="content">
 <h1 id="background-hacking-ferries">Background: Hacking Ferries</h1>
 <p>If you want, have a look at this TEDx Talk by Andy Stanford Clark, who is one of the inventors of MQTT. The talk is not so much about the MQTT protocol itself, but you’ll get some context and background that may help you learn more in the following.</p>
-
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s9nrm8q5eGg?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
     <section class="content">
-<span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
-</aside>
+<span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p></aside>
 <h1 id="mqtt">MQTT</h1>
 <p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud services. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.</p>
-
 <p>MQTT is simple to work with, and the following are my top 5 reasons for using MQTT:</p>
 <ol type="1">
 <li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
@@ -191,7 +187,6 @@
 <li><strong>MQTT works also behind a NAT.</strong> This means you can push a message from any location to a computer that is connected to your router at home. Only the broker needs to be accessible.</li>
 <li><strong>MQTT is bi-directional by default.</strong> Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.</li>
 </ol>
-
     </section>
     <section class="content">
 <h1 id="broker-architecture">Broker Architecture</h1>
@@ -210,26 +205,20 @@
 <li><p>If the sensors act as HTTP servers and we introduce the blind controller, they don’t have to change their code. They just answer now double as many requests; the ones from the heater and the ones from the blind controller. For the battery life, this is equally bad as the solution above.</p></li>
 </ul>
 <p>The problem with the above scenario is that we used a direct communication between the sensors and the control units, as shown in the figure below. Each sensor (in red) is connected to each controller.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-without-broker.svg" alt="This architecture connects each sensor with each client, which is not suitable." width="100%"/>
 <span name="figures/iot/mqtt-without-broker.svg">&nbsp;</span>
-<aside name="figures/iot/mqtt-without-broker.svg"><p><p>This architecture connects each sensor with each client, which is not suitable.</p>
-</p></aside>
+<aside name="figures/iot/mqtt-without-broker.svg"><p><p>This architecture connects each sensor with each client, which is not suitable.</p></p></aside>
 </div>
 <h2 id="new-client-broker">New: Client-Broker</h2>
 <p>Now imagine a system where the components are more separate from each other, and do not communicate directly with each other. We can achieve this by introducing a component that decouples the sensors and the controllers. We call that component a <strong>broker</strong>, shown in the figure below:</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-with-broker.svg" alt="This architecture introduces a broker, and sensors only connect to this broker." width="100%"/>
 <span name="figures/iot/mqtt-with-broker.svg">&nbsp;</span>
-<aside name="figures/iot/mqtt-with-broker.svg"><p><p>This architecture introduces a broker, and sensors only connect to this broker.</p>
-</p></aside>
+<aside name="figures/iot/mqtt-with-broker.svg"><p><p>This architecture introduces a broker, and sensors only connect to this broker.</p></p></aside>
 </div>
 <p><strong>Client-broker:</strong> A message broker is a server that distributes messages. Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
-
 <p>The broker is a generic component, which means that it is not specific for any application and that you can use the same broker for many different applications. You hence don’t need to write your own broker, but can use an existing one and just configure it. There are several MQTT brokers available. The one we are going to use is called <strong>Mosquitto</strong>.</p>
-
     </section>
     <section class="content">
 <h1 id="message-pattern-publish-subscribe">Message Pattern: Publish-Subscribe</h1>
@@ -239,14 +228,12 @@
 <li><p>The <strong>subscribe</strong> part works as follows: Clients that are interested in a certain information <em>subscribe</em> to the broker. Whenever another client publishes that information, the broker forwards this message to all clients that have subscribed.</p></li>
 </ul>
 <p>A minimal interaction looks as follows:</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-basic.svg" width="100%"/>
 </div>
 <p>In MQTT, clients can be publishers or subscribers, or both. There can be any number of subscribers and any number of publishers in a system. Because of the publish-subscribe pattern, the subscribers do not have to know about the publishers, and the publishers do not have to know of the subscribers. They only have to know the address of the MQTT broker and connect to it.</p>
 <p>For our home automation system, this enables an elegant and efficient solution: The sensors at as publishing clients that send their measurements to the broker. The controllers act as subscriber clients that subscribe to the broker for temperature updates. Once the broker receives the temperature updates, it forwards them to the controllers. When adding a new controller, it can just be a new subscriber that subscribes to the broker, but the communication and the behavior of the sensors does not change. Also, each sensor sends every measurement only once (to the broker), which helps to save energy.</p>
 <p>Below you see an example with two subscribers. Only subscriber 2 receives the first published message. Subscriber 1 only receives it after it also subscribes.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-publish-subscribe.svg" width="100%"/>
 </div>
@@ -281,7 +268,6 @@ whenever an MQTT message arrives at house/garage/sensors/pi1:
 <li>To receive all messages sent within the house, a subscriber can subscribe to <code>house/#</code></li>
 <li>To receive all messages for lights in any zone (garage or kitchen), a subscriber can subscribe to <code>house/+/lights/+</code></li>
 </ul>
-
 <p><strong>Exercise:</strong> A publisher sends a message to the topic <code>a/b/c/d</code>. Which of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscription topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)</p>
 <div>
 <table class="table table-sm">
@@ -468,7 +454,6 @@ a/b/c/d/+
 </tbody>
 </table>
 </div>
-
     </section>
     <section class="content">
 <h1 id="quality-of-service">Quality of Service</h1>
@@ -481,12 +466,10 @@ a/b/c/d/+
 <p><strong>You may ask:</strong> <em>If QoS=2 is available, why would one ever use any of the lower QoS levels?</em></p>
 <p>The answer is that the highest quality of service is also more expensive with regards to transmission effort. To send a single QoS=2 message, several messages on the underlying channel are necessary. Therefore, an application should always choose the lowest QoS level it can work with.</p>
 <p>Below you see the diagrams that show how many control packages are involved to just send a single MQTT message, using QoS = 0.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-qos-0.svg" width="100%"/>
 </div>
 <p>For QoS=2, the protocol uses more control messages to transport a single MQTT message. This shows that there are more control messages involved the higher the QoS level is. This also means that it is more expensive for the network to transport MQTT messages with higher QoS level, as it uses more resources.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-qos-2.svg" width="100%"/>
 </div>
@@ -494,68 +477,54 @@ a/b/c/d/+
     <section class="content">
 <h1 id="mqtt-clients-in-python">MQTT Clients in Python</h1>
 <p>There are libraries to use MQTT in a variety of programming languages. For Python, there is a library for an MQTT client called <em>Paho</em>. As usual, you install it via pip, using</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install paho-mqtt</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">pip</span> install paho-mqtt</span></code></pre></div>
 <p>The code for a client that subscribes to a topic looks like this:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_message(mqttc, obj, msg):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_publish(mqttc, obj, mid):</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>mqttc <span class="op">=</span> mqtt.Client()</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>mqttc.on_message <span class="op">=</span> on_message</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>mqttc.on_connect <span class="op">=</span> on_connect</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>mqttc.on_publish <span class="op">=</span> on_publish</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>mqttc.on_subscribe <span class="op">=</span> on_subscribe</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>mqttc.loop_start()</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="kw">def</span> on_message(mqttc, obj, msg):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="kw">def</span> on_publish(mqttc, obj, mid):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>mqttc <span class="op">=</span> mqtt.Client()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>mqttc.on_message <span class="op">=</span> on_message</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>mqttc.on_connect <span class="op">=</span> on_connect</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>mqttc.on_publish <span class="op">=</span> on_publish</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>mqttc.on_subscribe <span class="op">=</span> on_subscribe</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>mqttc.loop_start()</span></code></pre></div>
 <p>The code above is in its structure similar to the one we used when creating our own HTTP server. We connect to an MQTT broker using its address (or <code>localhost</code> when it’s on the same computer). The default port for MQTT is 1883.</p>
 <p>After the client is created in <code>mqttc = mqtt.Client()</code>, we register a number of callback functions. These functions are called by the client whenever one of the events happens, that means, after we are connected, received a message, subscribed to a topic or published a message. We can use them to trigger other behavior.</p>
-
 <h2 id="mqtt-publisher-client">MQTT Publisher Client</h2>
 <p>The following code is used to publish a message:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</span></code></pre></div>
 <p>We can also specify which qos level we want, and add some payload (content) to the message:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
     </section>
     <section class="content">
 <h1 id="debugging-with-mqtt.fx">Debugging With MQTT.Fx</h1>
-
 <div class="figure">
 <img src="figures/iot/mqtt-fx.png" width="100%"/>
 </div>
-<span name="a8dfe4"></span><aside name="a8dfe4"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p>
-</aside>
+<span name="a8dfe4"></span><aside name="a8dfe4"><p>You can save some time during the lab if you <a href="https://mqttfx.jensd.de">install MQTT.FX</a> on your own laptop already now.</p></aside>
 <p>MQTT.FX is a tool useful during development. Using MQTT.FX is simple, but because we have now talked about brokers, clients, publishers and subscribers, you may lose track and wonder what this MQTT.FX does: Think of it as a debugger for MQTT, and you can use it like Wireshark. Essentially, MQTT.FX is a MQTT client, and can as such connect to an MQTT broker, subscribe to topics and send messages to topics. You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing. Once the system is programmed, you don’t need MQTT.FX anymore.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-fx-publish.png" width="100%"/>
 </div>
 <h2 id="publishing-messages">Publishing Messages</h2>
 <p>Imagine you created an MQTT client that runs a certain action when it receives a message, but you are not done with the component that should send the message. To test at least the component that should receive the message, you can use MQTT.FX to publish a message with that content to the topic, and the component under test will behave as if the message was sent in the final system.</p>
-
 <div class="figure">
 <img src="figures/iot/mqtt-fx-subscribe.png" width="100%"/>
 </div>
 <h2 id="observing-communication">Observing Communication</h2>
 <p>Because MQTT uses the publish-subscribe pattern, it can simply subscribe to any topics that are interesting in your application and you can see which messages are sent to these topics, without disturbing the communication in the system. To achieve the same in HTTP, for instance, you need a tool like Wireshark.</p>
-
 <div class="hint"><div>
 <table class="table table-sm">
 <caption style>
@@ -740,8 +709,7 @@ No! The last plus implies that there should be another level for the topic, afte
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
     </section>
 </div>
 

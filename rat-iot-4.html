@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -155,7 +156,6 @@
 <div class="page">
     <section class="content">
 <h2 id="question-1">Question 1</h2>
-
 <div class="rat"><p>Which message pattern describes the communication in MQTT best?</p>
 <ol type="1">
 <li>Publish-subscribe</li>
@@ -163,8 +163,7 @@
 <li>Request-response</li>
 <li>Observer</li>
 </ol>
-<h2 id="question-2">Question 2</h2>
-</div>
+<h2 id="question-2">Question 2</h2></div>
 <div class="rat"><p>To receive a message, a client has to:</p>
 <ol type="1">
 <li>connect to a server and make a request</li>
@@ -172,8 +171,7 @@
 <li>connect to a broker, subscribe to a topic</li>
 <li>connect to a broker, publish a message</li>
 </ol>
-<h2 id="question-3">Question 3</h2>
-</div>
+<h2 id="question-3">Question 3</h2></div>
 <div class="rat"><p>Which statement is true?</p>
 <ol type="1">
 <li>Clients can subscribe to messages or publish topics.</li>
@@ -181,8 +179,7 @@
 <li>Clients send responses directly to other clients.</li>
 <li>Any client can publish messages.</li>
 </ol>
-<h2 id="question-4">Question 4</h2>
-</div>
+<h2 id="question-4">Question 4</h2></div>
 <div class="rat"><p>Assume a message with a topic “T” and QoS=0 is sent to the broker. What happens next?</p>
 <ol type="1">
 <li>Nothing, because of Qos=0.</li>
@@ -190,8 +187,7 @@
 <li>The broker forwards the message to at most one client that subscribed to topic “T”.</li>
 <li>The broker forwards the message to the client that most recently subscribed to topic “T”.</li>
 </ol>
-<h2 id="question-5">Question 5</h2>
-</div>
+<h2 id="question-5">Question 5</h2></div>
 <div class="rat"><p>The terms “at most once”, “at least once”, “exactly once” refer to…</p>
 <ol type="1">
 <li>…the number of clients that will receive a message when several subscribe to the same topic.</li>
@@ -199,8 +195,7 @@
 <li>…how often a client can send a message with the same payload.</li>
 <li>…to the delivery of the messages - how hard will the clients and broker try to deliver a message.</li>
 </ol>
-<h2 id="question-6">Question 6</h2>
-</div>
+<h2 id="question-6">Question 6</h2></div>
 <div class="rat"><p>Which roles does the programm MQTT.Fx have?</p>
 <ol type="1">
 <li>It is a efficient MQTT server.</li>
@@ -208,8 +203,7 @@
 <li>It is a normal MQTT client, but with a general user interface.</li>
 <li>It is just a powerful MQTT broker.</li>
 </ol>
-<h2 id="question-7">Question 7</h2>
-</div>
+<h2 id="question-7">Question 7</h2></div>
 <div class="rat"><p>What do HTTP and MQTT in common?</p>
 <ol type="1">
 <li>Both protocols use client-server architecture.</li>
@@ -217,16 +211,14 @@
 <li>Both protocols can run on top of TCP.</li>
 <li>Both protocols are based on the request-response pattern.</li>
 </ol>
-<h2 id="question-8">Question 8</h2>
-</div>
+<h2 id="question-8">Question 8</h2></div>
 <div class="rat"><p>Why is is a good idea to place the code for a subscription into the function that is called when the connection was established successfully?</p>
 <ol type="1">
 <li>We automatically subscribe to the topic again in case of a reconnection.</li>
 <li>We subscribe immediately after a connect, without using a timeout.</li>
 <li>It is the only way to subscribe to several topics at once.</li>
 <li>The above statement is false, there is no such callback function.</li>
-</ol>
-</div>
+</ol></div>
     </section>
 </div>
 

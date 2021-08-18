@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -158,24 +159,20 @@
 <h1 id="state-machines-in-micro-python">State Machines in Micro Python</h1>
 <p>The state machines were so far expressed as diagrams, that means <strong>pictures</strong>. In this part we are going to explore how we can implement the state machines as Python <strong>code</strong>.</p>
 <p>The Microbit we are going to program does not run all Python code, but only a reduced set of it. This subset is called MicroPython. To run state machines on it, we will provide you with some code that serves as a template or a skeleton. We create the state machines by manually translating a diagram step for step into a Python function that executes transitions.</p>
-
 <h3 id="idea-1-storing-the-state">Idea 1: Storing the State</h3>
 <p>In a “normally coded” program, the progress of an application is stored indirectly in the form of the program counter. Simplified said, the program remembers <strong>in which line</strong> it currently is, and then proceeds, statement for statement, including loops and branches.</p>
 <p>To execute a state machine, we use an <strong>extra variable that explicitly stores the current state</strong> of the program, and which corresponds to the state in the state machine. For simplicity, we store the variable as a string, which corresponds to the name of the state from the diagram.</p>
 <p>A state machine reacts on events based on its state. For example, a simple blinking light that switches between <code>on</code> and <code>off</code> reacts differently on each timeout that happens. If the lamp is currently on, it is switched off, and if the lamp is currently off, it is switched on. This is the state machine:</p>
-
 <div class="figure">
 <img src="figures/statemachines/stm-blink-1.svg" width="100%"/>
 </div>
 <p>We can encode this in Python as an if-statement that takes the current state as condition:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># switch light off</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change into state &quot;off&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># switch light on</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change into state &quot;on&quot;</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># switch light off</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co"># change into state &quot;off&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="co"># switch light on</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="co"># change into state &quot;on&quot;</span></span></code></pre></div>
 <h3 id="idea-2-a-transition-function">Idea 2: A Transition Function</h3>
 <p>Now that we have taken care of the control state by an explicit variable, we need to think how to implement the transitions. Let’s think again what a transition actually does:</p>
 <ul>
@@ -189,22 +186,17 @@
 <li><code>event</code> - the event that triggered the machine</li>
 <li><code>timers</code> - a variable to start and stop timers</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># logic to execute the transitions</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># logic to execute the transitions</span></span></code></pre></div>
 <p>In the if-statement above, we change what we do only based on the current state. This was okay because every state of the blinking light only had a single outgoing transition. But if we consider now that we can also switch off the blinking light by pressing a button, we need to distinguish if the event was a timer expiration <code>t1</code> or a click on a button <code>button_a</code>. We do this with a nested if-statement.</p>
 <p>The listing below shows the transition function for a simple example. (Ignore the parameter <code>self</code> for now.) Within the method, we place first an if-statement which distinguishes the different states of the machine. It has one branch for each state. Within each state branch, there is another if-statement, which distinguishes the different events.</p>
-
 <div class="figure">
 <img src="figures/statemachines/transition-and-code.png" alt="State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections." width="100%"/>
 <span name="figures/statemachines/transition-and-code.png">&nbsp;</span>
-<aside name="figures/statemachines/transition-and-code.png"><p><p>State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections.</p>
-</p></aside>
+<aside name="figures/statemachines/transition-and-code.png"><p><p>State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections.</p></p></aside>
 </div>
 <h3 id="next-state">Next State</h3>
 <p>You can see in the code above that the transition function returns a string which is the target state of the transition. The blue code, for example, triggered by <code>t1</code> in state <code>off</code> returns <code>on</code>, which is the next state for that transition.</p>
-
 <h3 id="events">Events</h3>
 <p>The events are fed into the transition function also as strings.</p>
 <ul>
@@ -212,9 +204,7 @@
 <li>Button events <code>button_a</code> and <code>button_b</code>.</li>
 <li>Gestures <code>shake</code>.</li>
 </ul>
-
 <h3 id="actions">Actions</h3>
-
 <p>Within these branches, we then do actions:</p>
 <ul>
 <li><strong>Starting timers:</strong> Using the passed variable <code>timers</code>, you can call <code>timers.start("t1", 300)</code> to start a timer with name <code>t1</code> and 300 milliseconds timeout.</li>
@@ -229,25 +219,20 @@
 </ul>
 <h3 id="initial-transitions">Initial Transitions</h3>
 <p>To handle the initial transition, we just declare an extra transition function. It is similar to the other transition function, but does not have the <code>event</code> parameter, since an initial transition is started always when a state machine starts.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
 <h3 id="final-state">Final state</h3>
 <p>To make a transition into the final state, just return the special name <code>"final"</code> as next state, and the state machine will terminate.</p>
-
 <h3 id="decisions">Decisions</h3>
 <p>Transitions can also contain decisions, which means that they can branch into different target states depending on the value of variables or results of functions. We can encode such decisions simply by yet another if-statement in our transition function.</p>
 <p>In the example below, we change our blinking light so that is automatically stops to blink when the surrounding light level goes above 100. (Not sure if that is useful, but it’s just an example.)</p>
-
 <div class="figure">
 <img src="figures/statemachines/transition-and-code-decision.png" alt="State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections." width="100%"/>
 <span name="figures/statemachines/transition-and-code-decision.png">&nbsp;</span>
-<aside name="figures/statemachines/transition-and-code-decision.png"><p><p>State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections.</p>
-</p></aside>
+<aside name="figures/statemachines/transition-and-code-decision.png"><p><p>State machine diagram and the corresponding transition function. Colors in the diagram correspond to the colored code sections.</p></p></aside>
 </div>
 <p>In the blue part of the code above, you see now three nested if statements,</p>
 <ul>
@@ -256,11 +241,9 @@
 <li>the third one to implement the decision in the transition</li>
 </ul>
 <p>(In each state we currently only accept a single event, so the second if statement in this example is strictly speaking not necessary, but you get the idea: A more complex machine can have more than one outgoing transition in each state.)</p>
-
     </section>
     <section class="content">
 <h1 id="running-your-state-machine">Running Your State Machine</h1>
-
 <p>So far, we have only considered the transition functions. We have not told you about the logic that makes the entire state machine work. That means, the logic that</p>
 <ul>
 <li>keeps track of the state,</li>
@@ -269,44 +252,36 @@
 <li>calls the transition functions.</li>
 </ul>
 <p>We have put all this logic into a Python structure called a <strong>class</strong>. This is a concept from object-oriented programming, which will come later in your programming courses. It makes the definition of your own state machines much easier, and you don’t have to understand object-orientation and classes completely to use it. There is only a few things to take care of:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
 <ul>
 <li>You declare your code inside a class. Use a new name for each example, here we have used <code>MyStateMachine1</code> as name.</li>
 <li>You <strong>extend</strong> the base state machine by declaring it in the parentheses behind your class name, in <code>class MyStateMachine1(StateMachine)</code>.</li>
 <li>The two transition methods that you declare have the parameter <code>self</code>.</li>
 </ul>
-
 <p>This has the following effect: Your state machine <em>MyStateMachine1</em> “inherits” all functionalities that the base state machine <em>StateMachine</em> has already implemented. We just <em>add</em> our transition methods, which is enough to make the state machine do what we want.</p>
-
 <h3 id="running-the-machine">Running The Machine</h3>
 <p>To run your state machine, you need then to declare a variable of it and call the <code>run()</code> function it inherited from the base state machine:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> MyStateMachine1()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>stm <span class="op">=</span> MyStateMachine1()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>stm.run()</span></code></pre></div>
 <h3 id="variables">Variables</h3>
 <p>This also explains how we handle variables: The variable is not a part of the global context, but tied to our state machine. We therefore always use the prefix <code>self.</code> before the variable.</p>
 <p>In the listing below we initialize a variable <code>x</code> when we start the machine in the initial transition and assign a new value in the transition function. The prefix <code>self</code> refers to the parameter we get from both of these functions.</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">### init a variable x</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="co">### init a variable x</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
     </section>
 </div>
 

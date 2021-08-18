@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -163,21 +164,18 @@
 <li><p>Host machine: The physical machine that runs on the actual hardware of the machine, and on which the VirtualBox program is installed. In your case, the host machine would be whatever operating system you have installed on your PC/laptop. We will generally not be using the host machine for anything other than launching VirtualBox.</p></li>
 <li><p>Virtual machine (VM): the machine(s) that run within the VirtualBox program. They do not run directly on the physical hardware of your machine, but rather on the simulated machine that VirtualBox provides for them.</p></li>
 </ul>
-
 <div class="goals"><p>In this lab you will learn to:</p>
 <ul>
 <li>Add and update Kali Linux VM</li>
 <li>Add Windows VM</li>
 <li>Use some commands for user management in Linux</li>
-</ul>
-</div>
+</ul></div>
     </section>
     <section class="content">
 <h1 id="virtualbox-configuration">VirtualBox configuration</h1>
 <ul>
 <li>Open VirtualBox. Under File -&gt; Preferences, Change the “Default Machine Folder” to <em>/courses/ttm4175/</em>, which ensures that your virtual machines will be created in the <em>/courses/ttm4175/</em> folder.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="adding-a-kali-linux-vm-to-virtualbox">Adding a Kali Linux VM to VirtualBox</h1>
@@ -212,15 +210,12 @@
 <ul>
 <li>In the terminal window, run the following commands:</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> clean <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> update <span class="at">-y</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> dist-upgrade <span class="at">-y</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> clean <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> update -y</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">apt-get</span> upgrade -y <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> dist-upgrade -y</span></code></pre></div>
 <ul>
 <li>When prompted about restarting services during package upgrades, select Yes.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="adding-a-windows-7-vm-to-virtualbox">Adding a Windows 7 VM to VirtualBox</h1>
@@ -229,7 +224,6 @@
 <li><p>Import the file Windows 7.ova into VirtualBox: from the main VirtualBox window click on “Import Appliance..”; select the Windows 7.ova file; then click “Import”. You can just leave all the settings as they are.</p></li>
 <li><p>Boot it up and log in with user <strong>Lab1</strong> to try it out (this account has no password).</p></li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="manage-users-in-linux">Manage users in Linux</h1>
@@ -240,7 +234,6 @@
 <li><p>Open the passwd file using cat: <code>cat /etc/passwd</code>. You will get all the users that are defined in Kali Linux.</p></li>
 </ul>
 <p>Each line in the file has seven fields delimited by colons that contain the following information: Username, Encrypted password <em>(x means that the password is stored in the /etc/shadow file)</em>, User ID number, User’s group ID number, Full name of the user (GECOS), User home directory and Login shell (defaults to /bin/bash).</p>
-
 <h2 id="display-the-username-only">Display the username only</h2>
 <p>Using either <em>awk</em> or <em>cut</em> commands, your task is to print only the first field containing the username.</p>
 <button class="w3collapsible">
@@ -268,7 +261,6 @@ Hint
 <li><p>Remove the account <strong>user1</strong> using the command <code>deluser &lt;username&gt;</code></p></li>
 <li><p>Remove the group <strong>ttm4175</strong> using the command <code>delgroup &lt;groupname&gt;</code></p></li>
 </ul>
-
     </section>
 </div>
 

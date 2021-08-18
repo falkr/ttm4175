@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -156,11 +157,9 @@
     </section>
     <section class="content">
 <h1 id="http-and-json">HTTP and JSON</h1>
-
 <p>In this week, we will communicate via HTTP and build our own little server for that. This server will be able to serve a simple website and we will use it to store data from the Raspberry Pi.</p>
 <p>You remember that we worked with something similar in the second week, where we created a website on an Apache web server. This time, we use the webserver to build a smart home system, and we also program it in Python instead of using Apache.</p>
 <h2 id="learning-goals">Learning Goals</h2>
-
 <p>Goals: After this week, you will be able to:</p>
 <ul>
 <li>Create your own webserver in Python.</li>
@@ -169,17 +168,14 @@
 <li>Assemble an overall system.</li>
 <li>Know more about HTTP, JSON, client-server, request-response.</li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="example-a-smart-home-system">Example: A Smart Home System</h1>
 <p>Let’s first look at an example system. Two weeks ago you learned how to connect the Sense HAT and the Raspberry Pi to a Python program, so that you could read values from the Sense HAT and also turn on its LEDs. Imagine now that this Raspberry Pi is part of a system you want to install at home, for instance to check the temperature while you are away, and maybe switch on the heater before you arrive home. The sensors report their values to a server. Since this server is somewhere in a data center, we say that it’s running <em>in the cloud.</em> The sensors report their values periodically to the server, and the server keeps track of the values sent. When we want to know the temperature at home, we can simply ask the web server with a browser to present us the last measured temperature value.</p>
-
 <div class="figure">
 <img src="figures/iot/smart-home.png" alt="An example system with a temperature sensor that sends its measurements to a server. Users can check the temperature by accessing a website published by the server" width="100%"/>
 <span name="figures/iot/smart-home.png">&nbsp;</span>
-<aside name="figures/iot/smart-home.png"><p><p>An example system with a temperature sensor that sends its measurements to a server. Users can check the temperature by accessing a website published by the server</p>
-</p></aside>
+<aside name="figures/iot/smart-home.png"><p><p>An example system with a temperature sensor that sends its measurements to a server. Users can check the temperature by accessing a website published by the server</p></p></aside>
 </div>
 <p>During this week, we want to implement such a system, with the Raspberry Pi and Sense HAT as our sensor, and another Raspberry Pi as the web server. For this, we need several elements:</p>
 <ul>
@@ -188,25 +184,20 @@
 <li>We need to build a web server in Python.</li>
 </ul>
 <p><strong>Think a bit:</strong> What can be some benefits of using HTTP, a web server and a browser as elements in this system?</p>
-
     </section>
     <section class="content">
 <h1 id="sequence-diagrams-and-message-patterns">Sequence Diagrams and Message Patterns</h1>
 <p>From today on we start to think a bit more about the patterns of interactions between computers, that is, in which sequence they send messages between each other. For that, we use a special type of diagram, called <strong>sequence diagram</strong>. Below you see a very simple one. The vertical lines (top to bottom) are called <em>lifelines</em> and define a computer or any other communicating element. The box at the start of the lifeline describes what the lifeline represents. Here, we just apply role names, and call one of them <em>sender</em> and the other one <em>receiver</em>. The horizontal arrow represents a message that travels between the computers.</p>
-
 <div class="figure">
 <img src="figures/iot/single-message.svg" width="100%"/>
 </div>
 <p>Messages can be lost, for instance when somebody plugs out a cable, disturbs the wireless signal or when some part of the network in between fails. We can show that a message is lost by letting it run into a big cross:</p>
-
 <div class="figure">
 <img src="figures/iot/single-message.svg" width="100%"/>
 </div>
 <p>The above interaction follows a simple patternthat we call <strong>single message.</strong> As you can see, a problem with this message pattern is that messages can get lost, and neither the sender nor the receiver detect it. For that reason, we often use other message patterns or build applications so that they can handle message losses. The next pattern we are going to look at is already an improvement.</p>
-
 <h2 id="the-request-response-message-pattern">The Request-Response Message Pattern</h2>
 <p>Another message pattern is <strong>request-response</strong>, shown in the diagram below. It is used when one computer (the <em>requestor</em>) wants to get some information from another one (the <em>responder</em>).</p>
-
 <div class="figure">
 <img src="figures/iot/request-response.svg" width="100%"/>
 </div>
@@ -215,22 +206,17 @@
 <li><p>When the requestor needs some data from the responder, i.e., when the requestor wants to know something.</p></li>
 <li><p>When the requestor only wants to tell something to the responder, but wants to know of the responder actually received the data.</p></li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="www-the-world-wide-web">WWW – The World Wide Web</h1>
-
 <p>Many people do not distinguish between the <em>Internet</em> and the <em>World Wide Web</em>.[^1] The two are, however, quite different: The <em>Internet</em>, as you have learned by now, is a system of interconnected computer networks that communicate via IP and enable services like email, video streaming, or internet telephony. It also enables the World Wide Web, which is a collection of documents that you can access from specific servers.</p>
-
 <h2 id="the-client-server-model">The Client-Server Model</h2>
 <p>When you access a website, this involves an interaction between two computers: The web server that stores the website, and your computer with a web browser that acts as a client.</p>
-
 <div class="figure">
 <img src="figures/iot/client-server.svg" width="100%"/>
 </div>
 <p>Both the client and the server are computers, but within this interaction model they behave quite different: The server doesn’t know anything about the clients before they connect, and just waits for clients. Once a client makes a request, it answers this request with a response. The server <em>serves</em> the request. In the basic case of serving a website, the server only reacts on the requests. All interactions are initiated (started) by the client.</p>
 <p>Often, servers are powerful machines, running in a data center and serving many clients. But that is not always the case. A server can also be a tiny computer, serving only a single or a few other clients. The term <em>client-server</em> only refers to the roles they have in the interactions: the client takes initiative and the server responds.</p>
-
 <h2 id="http">HTTP</h2>
 <p>Once two computers communicate, we have to ensure that they understand each other. This is where protocols come in. They define a set of rules that all partners have to follow. You already know something about the <em>Internet Protocol</em>, IP. This protocol defines how we can send data packages between computers connected networks that together make up the Internet. TCP is a protocol that is used to control IP packets, so that they arrive in a particular order and are resubmitted when they get lost.[^2]</p>
 <p>Sending data packets does not yet ensure that computers can actually understand the data. This is why there are protocols defined on top of TCP and IP, for the different types of applications that we want to use on the internet. For accessing websites, this protocol is HTTP, or <em>Hypertext Transfer Protocol</em>. HTTP is based on a pattern that is called request-response, meaning that all interactions consist of a request message, sent by the client, and a corresponding response, sent by the server. To get a website, the request looks as follows:</p>
@@ -256,12 +242,10 @@ Connection: close
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>The answer indicates the HTTP version, followed by the token <code>200 OK</code>, which means that the response actually contains the requested information. When a site is not accessible, the code is a <code>404 Not Found</code>, which you may have seen when browsing the web. Following the header information is the actual content of the document we want to access. Here, it is a HTML site, beginning with the <code>&lt;html&gt;</code> tag. This language describes websites with some markup, so that you can have tables and arrange all sorts of elements and render them in a browser. So when you request a website, it’s basically these two messages that are exchanged between your browser (the client) and the web server.</p>
-
     </section>
     <section class="content">
 <h1 id="web-server-in-python">Web Server in Python</h1>
 <p>It’s simple to create a web server in Python.</p>
-
 <div class="figure">
 <img src="figures/iot/python-server.svg" width="100%"/>
 </div>
@@ -272,12 +256,10 @@ Connection: close
 <li><p>These lines start the actual server. We create an instance of the class <code>HTTPServer</code> and then tell it to start.</p></li>
 </ol>
 <p>Don’t worry too much about some of the code here, but focus on the <code>do_GET()</code> method, which gets called once the request arrives and then computes an answer.</p>
-
     </section>
     <section class="content">
 <h1 id="serialization-of-data">Serialization of Data</h1>
 <p>When two computers communicate, they send their data as a sequence of bits or bytes, which in turn are transformed into electrical or optical signals that then travel via cables or fibers. But how do we get such a sequence of bits from the data? Somehow we must ensure that data that is translated into a sequence of bits also can be translated back again once we receive them. For this, we need serialization methods.</p>
-
 <div class="figure">
 <img src="figures/iot/serialization.png" width="100%"/>
 </div>
@@ -286,7 +268,6 @@ Connection: close
 <p>Now imagine we want to transfer more structured data, for instance the measurements of a sensor in a house. We would like to send the current time, the temperature and the humidity. To do that, we could of course send a string that just lists the different data items in a sequence, for instance:</p>
 <pre><code>12:05  20.0  54.3</code></pre>
 <p>When we then deserialize the data, i.e., construct the measurement values at the receiver side, we need to know in which sequence these values were and put everything correct back together. For a simple problem, this is possible, but you can imagine how many mistakes may happen here!</p>
-
 <h2 id="serialization-with-json">Serialization With JSON</h2>
 <p>Instead of inventing our method of putting data into a data sequence each time, we use a more robust and standardized way of packing the data together. Have a look at the following:</p>
 <pre><code>{&quot;time&quot;: &quot;12:05&quot;, &quot;temperature&quot;: 20.0, &quot;humidity&quot;: 54.3}</code></pre>
@@ -307,9 +288,7 @@ Connection: close
 <p>XML looks a lot more like the HTML that is used to encode a website. Since JSON is a bit simpler to use, we will stick with it in the following.</p>
 <h2 id="json-in-python">JSON in Python</h2>
 <p>For Python there is a library to convert data structures into JSON and back again. This is how you import the library:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> json</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">import</span> json</span></code></pre></div>
 <p>We assume that the data structure is stored as a Python dictionary:</p>
 <pre><code>measurement = {&#39;time&#39;: &#39;12:05&#39;, &#39;temperature&#39;: 20.0, &#39;humidity&#39;: 54.3}</code></pre>
 <p>There is an operation <code>json.dumps()</code> to create the JSON-serialized string out of a data structure.</p>
@@ -322,7 +301,6 @@ print(string)</code></pre>
 <pre><code>measurement = json.loads(&#39;{&quot;time&quot;: &quot;12:05&quot;, &quot;humidity&quot;: 54.3, &quot;temperature&quot;: 20.0}&#39;)</code></pre>
 <p>The result is that the variable <code>measurement</code> now has data of type <code>dict</code>. Now we can work on the data like with any other Python data type, and integrate it in our application.</p>
 <p>So, simplified said, with JSON we can convert any Python data type into a string that follows the JSON specification. It is then easy to store or transmit this string (as a series of bytes), and transform it back into data again.</p>
-
     </section>
 </div>
 

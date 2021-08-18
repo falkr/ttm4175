@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -157,7 +158,6 @@
     <section class="content">
 <h1 id="bypassing-authentication-in-windows-and-linux">Bypassing authentication in Windows and Linux</h1>
 <p>The purpose of this lab is to learn about techniques for bypassing authentication. This will be performed in both Windows and Linux. After this lab, you will also become familiar with importing virtual machines into virtualBox.</p>
-
     </section>
     <section class="content">
 <h1 id="part1---bypassing-the-windows-log-in">Part1 - Bypassing the Windows log in</h1>
@@ -189,12 +189,10 @@
 <ul>
 <li>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under “/mnt”. Make a folder called /windows under “/mnt” and mount the Windows 7 partition in it with the mount command.</li>
 </ul>
-
 <div class="hint"><ul>
 <li><p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p></li>
 <li><p>This will incorporate the Windows file system under the “/mnt/windows” folder in Kali: <code>mount /dev/sdb2 /mnt/windows</code> <br/> <code>ls /mnt/windows</code></p></li>
-</ul>
-</div>
+</ul></div>
 <h2 id="changing-the-user-password">Changing the user password</h2>
 <p>Our target here is to run Windows 7 normally. To accomplish this we will need to bypass the Windows log in screen. Since we do not know the users password we will simply have to change it!</p>
 <p>By modifying some crucial system files in Windows from within Kali, we can give ourselves access to a command line prompt with administrator access the next time we boot up Windows 7.</p>
@@ -223,9 +221,7 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Your task is now to change the password of user <strong>Lab2</strong> to a password of your choosing, allowing you to log in as normal.</li>
 </ul>
 </blockquote>
-
-<div class="tip"><p>There is a command line utility for Windows called <code>net user</code> which could potentially be useful. To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p>
-</div>
+<div class="tip"><p>There is a command line utility for Windows called <code>net user</code> which could potentially be useful. To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p></div>
 <h3 id="reverting-changes">Reverting Changes</h3>
 <p>Before you continue to the next section you should revert the change you did to <em>osk.exe</em>. That is, delete the current <em>osk.exe</em> file and rename the backup file <em>osk.exe.backup</em> to <em>osk.exe</em> again. Since <strong>Lab2</strong> does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux.</p>
 <ul>
@@ -234,11 +230,9 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Mount the Windows 7 disk as you did previously</li>
 <li>Revert the changes.</li>
 </ul>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</span></code></pre></div>
     </section>
     <section class="content">
 <h1 id="part2---bypassing-linux-authentication">Part2 - Bypassing Linux authentication</h1>
@@ -250,9 +244,7 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 </ul>
 <h2 id="running-kali-live">Running Kali Live</h2>
 <p>In part 1, we assumed that both Windows 7 and Kali Linux were installed on the same system so we could access the contents of the Windows 7 disk through Kali. So what to do when Kali Linux is not installed on the machine? The answer is <strong>live booting</strong>.</p>
-
-<div class="tip"><p>Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. To do this you simply plug in the CD/USB containing Kali, restart the computer, and select to boot from CD-ROM/USB.</p>
-</div>
+<div class="tip"><p>Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk. To do this you simply plug in the CD/USB containing Kali, restart the computer, and select to boot from CD-ROM/USB.</p></div>
 <p>We will test the live booting feature by running Kali directly from CD-ROM and use it to bypass the login screen of the Lubuntu machine.</p>
 <ul>
 <li><p>Simulate the CD-ROM in VirtualBox by attaching the Kali Linux ISO file to the virtual CD-ROM tray of the Lubuntu machine.</p></li>
@@ -266,44 +258,35 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <ul>
 <li>Inside Kali create a mount point for Lubuntu and mount it.</li>
 </ul>
-
 <div class="tip"><p>Since Lubuntu uses the same type of file system as Kali, be careful that you mount the right partition and not accidentally mount the Kali partition within itself.</p>
 <p><code># mkdir -p /mnt/lubuntu</code></p>
 <p><code># fdisk -l</code> % Find out which device contains Lubuntu</p>
 <p><code># mount /dev/sda1 /mnt/lubuntu</code> % sda1 in our example – could be different for you!</p>
 <ul>
 <li>With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali. Your task now is to make changes to the Lubuntu partition so that the next time you boot it up you will not be required to enter a password in order to log in. Verify that you have successfully cleared the user’s password by logging in as user <strong>ttm4175</strong>.</li>
-</ul>
-</div>
+</ul></div>
 <div class="tip"><p>On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the <em>/etc</em> folder. In order to wipe the user’s password you have to make one small change to one of these files.</p>
 <ul>
 <li>Your task now is to find out what to modify and in which file in order to erase the user’s password.</li>
-</ul>
-</div>
+</ul></div>
 <ul>
 <li><p>After you have bypassed the login screen of Lubuntu, pick a new password using the <em>passwd</em> command line utility. That is, open a command line window from inside Lubuntu (click the Lubuntu icon in the bottom-left corner and go “System Tools -&gt; UXTerm”) and issue the following command: &gt;&gt;ttm4175@ttm4175-Lubuntu:<code>~$ passwd ttm4175</code> &gt;&gt;Enter new UNIX password:</p></li>
 <li><p>Then enter your new password.</p></li>
 </ul>
-
     </section>
     <section class="content">
 <h1 id="homework">Homework</h1>
 <p>Q1. Most modern distributions of Linux use both /etc/passwd and /etc/shadow to store their user credentials. What is the purpose of the shadow file?</p>
 <p>Q2. Many modern operating systems automatically mount a disk or peripheral (like a USB drive) if it detects that it is connected. What could be the reasons for Kali not choosing to do this?</p>
-
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p>
-</aside>
+<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
 <h1 id="final-steps">Final Steps</h1>
 <h3 id="learning-goals">Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-
 <h3 id="individual-reflection">Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-
 <h3 id="cleaning-up">Cleaning Up</h3>
-
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
@@ -317,8 +300,7 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul>
-</div>
+</ul></div>
     </section>
 </div>
 

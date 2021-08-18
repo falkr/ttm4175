@@ -31,6 +31,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -156,46 +157,33 @@
     </section>
     <section class="content">
 <h1 id="updating-to-python-3.6">Updating to Python 3.6</h1>
-
 <h2 id="step-1">Step 1:</h2>
 <p>Install some dependencies for python3.6 :</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev</span></code></pre></div>
 <h2 id="step-2">Step 2:</h2>
 <p>Download python 3.6 and install it (this might take some time):</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> tar zxf Python-3.6.8.tgz</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Python-3.6.8</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./configure</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make <span class="at">-j</span> 4</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make altinstall</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">wget</span> https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> tar zxf Python-3.6.8.tgz</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="bu">cd</span> Python-3.6.8</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="fu">sudo</span> ./configure</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="fu">sudo</span> make -j 4</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">sudo</span> make altinstall</span></code></pre></div>
 <p>Check that python3.6 is installed:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.6</span> <span class="at">-V</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">python3.6</span> -V</span></code></pre></div>
 <h2 id="step-3">Step 3:</h2>
 <p>Setting python 3.6 as the default :</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> echo <span class="st">&quot;alias python3=&#39;/usr/local/bin/python3.6&#39; &quot;</span><span class="op">&gt;&gt;</span>~/.bashrc </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> echo <span class="st">&quot;alias python3=&#39;/usr/local/bin/python3.6&#39; &quot;</span><span class="op">&gt;&gt;</span>~/.bashrc </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div>
 <p>Check python3 version:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span>  <span class="at">-V</span></span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">python3</span>  -V</span></code></pre></div>
 <h2 id="step-4">Step 4:</h2>
 <p>Using ‘pip3.6’ to install other packages with their dependencies in python3.6:</p>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev   libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libsdl1.2-dev</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3.6 install slackclient</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3.6 install  RPi.GPIO</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3.6 install pygame</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3.6 install certifi</span></code></pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt-get install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev   libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libsdl1.2-dev</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> pip3.6 install slackclient</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">sudo</span> pip3.6 install  RPi.GPIO</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="fu">sudo</span> pip3.6 install pygame</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="fu">sudo</span> pip3.6 install certifi</span></code></pre></div>
     </section>
 </div>
 
