@@ -13,8 +13,6 @@ I løpet av uke 33 er emnet integrert i studiestart.
 
 ---
 type: table
-class: table table-sm
-format: md
 ---
 {|
 ! Tid
@@ -23,7 +21,7 @@ format: md
 |-
 | Mandag, 16. aug. 2021, 12:00 - 14:00
 | Immatrikulering og orientering
-| [https://link.mazemap.com/QqBVasau EL-3]
+| [EL-3](https://link.mazemap.com/QqBVasau)
 |-
 | Tirsdag, 17. aug.
 | _ingenting_
@@ -31,21 +29,20 @@ format: md
 |-
 | Onsdag, 18. aug. 2021, 9:15 - ca. 16:30
 | Teknostart Dag 1
-| [https://link.mazemap.com/QqBVasau EL-3]
+| [EL-3](https://link.mazemap.com/QqBVasau)
 |-
 | Torsdag, 19. aug. 2021, 9:15 - 15:00
 | Teknostart Dag 2
-| [https://link.mazemap.com/QqBVasau EL-3]
+| [EL-3](https://link.mazemap.com/QqBVasau)
 |-
 | Fredag, 20. aug. 2021, 9:15 - ca. 15:00
 | Teknostart Dag 3
-| [https://link.mazemap.com/QqBVasau EL-3]
+| [EL-3](https://link.mazemap.com/QqBVasau)
 |}
 
 
 ---
 type: table
-class: table table-sm
 ---
 {|
 ! Uke
@@ -118,7 +115,6 @@ class: table table-sm
 ---
 type: table
 class: weekplan table-sm table-bordered
-format: html
 ---
 {|
 ! Time
@@ -130,7 +126,7 @@ format: html
 
 |-
 | 08:15
-| rowspan="4" | Digital
+| rowspan="4" | [Zoom](tools.html) (RAT og forelesning)
 |  
 |
 |
@@ -145,7 +141,7 @@ format: html
 | 10:15
 | 
 |
-| rowspan="2" | Kjel 4
+| rowspan="4" | [Zoom](tools.html) (Felles oppstart av lab)
 | 
 |-
 | 11:15
@@ -157,16 +153,16 @@ format: html
 |
 |
 |
-| rowspan="4" | Lab
 |
 |-
 | 13:15
 |
-| Digital
+|
 |
 | 
 |-
 | 14:15
+|
 |
 |
 |

@@ -22,8 +22,8 @@ text: Påmelding for studenter
 
 # Velkommen til Komtek
 
-* [Presentasjon fra Sjur og Filip](material/velkommen-til-komtek.pdf)
-* [Presentasjon fra Jeanette og Emilie](material/itv-presentasjon.pdf)
+* [Presentasjon fra Sjur og Filip](material/2021-velkommen-til-komtek.pdf)
+* [Presentasjon fra Sander og Emilie](material/2021-itv.pdf)
 
 
 # Study Links
@@ -31,6 +31,7 @@ text: Påmelding for studenter
 * [Studies at IIK](https://innsida.ntnu.no/wiki/-/wiki/English/Studies+at+IIK) Information for all students studying at the IIK department.
 * [Studyplan](https://innsida.ntnu.no/wiki/-/wiki/English/MTKOM)
 * Delta i Abakus arrangementer <https://abakus.no>
+* Delta i Itemize <https://itemize.no>
 
 
 # CTF Links

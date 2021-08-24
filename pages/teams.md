@@ -19,6 +19,7 @@ We will use the double teams for:
 * activities during the lectures
 * the team RATs
 
-The smaller teams of 3 we use for:
+The smaller core teams of 3 we use for:
 
 * the labs
+* the reports

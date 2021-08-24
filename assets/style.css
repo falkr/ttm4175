@@ -676,3 +676,9 @@ table.weekplan td:first-child {
   background-color: white;
   color: grey;
 }
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
