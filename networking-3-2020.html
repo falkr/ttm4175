@@ -15,6 +15,228 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -200,7 +422,7 @@
 <li>In the webserver’s configuration section edit the IP address to match the topology above (line 51, replace the text “—–Fyll inn her ——” with the correct IP address). Save and exit the file.</li>
 <li>Now you can start your topology with the command below. Afterwards list all running containers (discuss what happened in your report).</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker-compose</span> up -d --build</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker-compose</span> up -d --build</a></code></pre></div>
 <div class="tip"><p>The first time you run <code>docker-compose</code> it will take a few minutes to build the images (approx. 5 min. or less). Use that time to carefully read the next steps.</p></div>
 <h2 id="configuring-simple-routing">Configuring simple routing</h2>
 <p>In this part of the lab. your objective is to guarantee you can route packets from your host to the containers. Notice that we have a router in our topology that connects two different subnets. We will need to configure this router container (‘router0’) so that packets are correctly forwarded.</p>
@@ -210,7 +432,7 @@
 <li>You should see that the host has direct routes to the subnets ‘10.241.1.0/29’ and ‘10.168.1.0/29’, via the devices “br-*”. Include this in your report (a screenshot with a highlight is enough).</li>
 <li>Since we don’t want the host to directly access all the containers — it should go via ‘router0’ — run the following command:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> ip route del 10.241.1.0/29</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> ip route del 10.241.1.0/29</a></code></pre></div>
 <div class="steps"><ol start="4" type="1">
 <li>Verify that you have connectivity with ‘10.168.1.2’ and not with ‘10.241.1.2’. Briefly explain why in your report.</li>
 <li>Now we need to add a new route such that traffic for the network ‘10.241.1.0/29’ is forwarded via ‘router0’ (i.e. via ‘10.168.1.2’).</li>
@@ -222,7 +444,7 @@
 <div class="steps"><ol start="6" type="1">
 <li>Now verify that packet forwarding is enabled (i.e. “= 1”) with the command:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">sysctl</span> net.ipv4.conf.all.forwarding</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">sysctl</span> net.ipv4.conf.all.forwarding</a></code></pre></div>
 <div class="steps"><ol start="7" type="1">
 <li>From your host machine make sure you can <code>ping</code> the web server using its address and include a screenshot on your report.</li>
 </ol></div>
@@ -259,7 +481,7 @@
 <p>In your report describe what happens in the network when you open the page ‘www.ttm4175.com’. You can just explain, step by step, the requests and answers from the browser to the servers and back. This should include the IP addresses of each server (don’t forget DNS).</p>
 <p>If you want, you can also include screenshots (e.g. <code>tcpdump</code>) and you can also start/stop containers by hand to see how they affect the overall process (e.g. stop the DNS server).</p>
 <p>Finally, you can stop all the containers and remove the networks with the command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker-compose</span> down</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker-compose</span> down</a></code></pre></div>
 <div class="tip"><p>If you want to restart your network but haven’t changed the setup you can simply run <code>docker-compose up -d</code>, without the <code>--build</code> flag, and it will be much faster than the first time!</p></div>
     </section>
     <section class="content">
@@ -275,7 +497,7 @@
 <div class="w3content">
 <p>Forwarding is enabled in Ubuntu but <code>iptables</code> doesn’t allow forwarding from outside the host to our containers.</p>
 <p>You need to allow enable forwarding specifically to the network or interface, e.g.:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> iptables -A FORWARD -i enp0s8 -j ACCEPT</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> iptables -A FORWARD -i enp0s8 -j ACCEPT</a></code></pre></div>
 </div>
     </section>
 </div>

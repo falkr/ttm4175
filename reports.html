@@ -15,6 +15,116 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -212,17 +322,17 @@
 <p>Dere får godkjent faget på grunnlag av rapporten dere skriver. Det betyr også at rapporten er minst like viktig som å løse oppgaven. Faktisk så går det an å skrive en veldig god rapport selv om man ikke løser alle oppgaver! Det handler om å reflektere over eget arbeid, hva som fungerte og hva som ikke fungerte. Derfor er det indirekte også plikt til å møte opp. Om dere ikke møter opp, har dere ikke grunnlag til å bidra til rapporten. <strong>Når du blir syk eller er forhindret til å delta, skriv en mail til <a href="kraemer@ntnu.no">kraemer@ntnu.no</a>.</strong></p>
 <h3 id="bruk-kun-egne-ord">Bruk kun egne ord</h3>
 <p>Det er veldig viktig at dere skriver rapporten selv, og ikke kopierer større eller mindre deler fra andre, hverken andre rapporter eller hvilken som helst annen kilde. Å kopiere fra andre kalles <em>plagiat</em>. Det er ikke bare urettferdig mot de som skriver selv, men det ødelegger (i det store bilde) en ordentlig vitenskapelig prosess, der resultater er målt og rapportert oppriktig, og kilder er sitert sikkelig slik at det er tydelig hvor resultatene kommer fra.</p>
-<p>Plagiater oppdages overraskende enkelt, og vil bli behandlet som fusk etter regler fra NTNU.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Det er egentlig den eneste måten å virkelig få stryk på kurset. Det har så langt ikke skjedd, men vi må si ifra på forhånd.</p>
+<p>Plagiater oppdages overraskende enkelt, og vil bli behandlet som fusk etter regler fra NTNU.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Det er egentlig den eneste måten å virkelig få stryk på kurset. Det har så langt ikke skjedd, men vi må si ifra på forhånd.</p>
 <p>Hvordan man siterer riktig krever noe kunnskap, og er noe å bli vant med. Sjekk Viko (<a href="http://www.ntnu.no/viko" class="uri">http://www.ntnu.no/viko</a>), og gjerne spør faglæreren om du lurer på noe.</p>
 <h3 id="et-siste-godt-råd">Et siste godt råd</h3>
 <p>Tilbakemelding fra en student fra 2012:</p>
 <blockquote>
 <p>Kan dere gi et tips til alle studenter for neste år: ikke skriv rapporten bare til slutt, skriv logg underveis.</p>
 </blockquote>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="http://www.ntnu.no/studieavd/dok/retningslinjer_fusk.pdf" class="uri">http://www.ntnu.no/studieavd/dok/retningslinjer_fusk.pdf</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="http://www.ntnu.no/studieavd/dok/retningslinjer_fusk.pdf" class="uri">http://www.ntnu.no/studieavd/dok/retningslinjer_fusk.pdf</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
     </section>

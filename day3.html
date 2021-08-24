@@ -15,6 +15,227 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -179,7 +400,7 @@
     <section class="content">
 <h1 id="finding-your-ip-address-and-checking-for-connectivity">Finding your IP address and checking for connectivity</h1>
 <p>In a terminal of your Raspberry Pi you can easily find its IP address by using the command <code>ip</code>. Try and type the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> address</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> address</a></code></pre></div>
 <p>This command shows you all the existing IP addresses associated with your Raspberry Pi. These addresses are fundamental for connecting computers and other devices to each other and the Internet. Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses. A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24.</code></p>
 <p>Write down the address and mask of the interface <code>eth0</code>.</p>
     </section>
@@ -187,35 +408,35 @@
 <h1 id="testing-internet-connectivity">Testing Internet Connectivity</h1>
 <p>By default, the Linux distribution we are using has a running service, or daemon, that automatically configures network interfaces whenever a new link is found. This service is called <code>dhcpcd</code> and runs a networking protocol called DHCP. You will learn more about this later in the course.</p>
 <p>DHCP is also used to automatically configure the routes that are used to reach the Internet. You can find any route installed in your Raspberry Pi by typing the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> route</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ip</span> route</a></code></pre></div>
 <p>You should see a <em>default route</em> via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet.</p>
 <p>To see if we can send something back and forth between two computers, we can use the command <code>ping</code>. It does exactly what it sounds like… It sends a “ping” message to the other computer, which then answers.</p>
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jr0JaXfKj68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>Try pinging that router with the command <code>ping</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> 129.241.200.1</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> 129.241.200.1</a></code></pre></div>
 <p>You can also use the same command to <code>ping</code> other online machines such as the server hosting the website from the European Space Agency at <em>www.esa.int</em>. Can you see any significant difference from the previous <code>ping</code> command?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> www.esa.int</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ping</span> www.esa.int</a></code></pre></div>
     </section>
     <section class="content">
 <span name="4d537d"></span><aside name="4d537d"><p>Programs are sometimes calles <em>services</em> to emphasize that they run in the background, are usually always on and are somehow useful for other functions.</p></aside>
 <h1 id="remote-access-to-a-computer">Remote Access to a Computer</h1>
 <p>It is possible to access a Linux system and manage it <strong>remotely</strong> using different tools. One of the most popular ones is the Secure Shell, referred to as <code>ssh</code>. It is a program (or <em>service</em>) that waits for incoming SSH connections and then remotely controls the computer.</p>
 <p>This service needs to be enabled <strong>in your Raspberry Pi</strong> with the following commands:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> systemctl enable ssh</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> systemctl start ssh</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> systemctl enable ssh</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> systemctl start ssh</a></code></pre></div>
 <p>Now, <strong>from your desktop PC with Linux</strong> you can access your Raspberry Pi using the IP address you found earlier and the command <code>ssh</code> as such:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Note:</strong> a warning message should appear the first time you connect since the certificates being used have never been exchanged before. It is okay to say “yes” and then type in your password.</p>
 <p>You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!</p>
 <p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.</p>
 <h3 id="playing-a-sound-remotely">Playing a sound… Remotely!</h3>
 <p>Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:</p>
 <p>Now that you are remotely controlling your Raspberry Pi, issue the following command to download a simple sound file in wav format:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav -O</a></code></pre></div>
 <p>Connect the speakers to the audio jack on the Raspberry Pi, and see if it requires to be switched on or extra power via USB. Play the file with the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">aplay</span> onesmall.wav</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">aplay</span> onesmall.wav</a></code></pre></div>
     </section>
     <section class="content">
 <h1 id="setting-up-a-web-site">Setting up a web site</h1>

@@ -15,6 +15,228 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -217,33 +439,33 @@
 <li>You should have found at least one <em>Docker Official Image</em>, which is important to take into account! Don’t use images you don’t trust.</li>
 <li>Now enter the following in your terminal:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> pull ubuntu</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> pull ubuntu</a></code></pre></div>
 <span name="c601cc"></span><aside name="c601cc"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository. This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p></aside>
 <div class="warning"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in “/etc/netplan/01-network-manager-all.yaml” to include <em>nameservers</em> below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="at">    </span><span class="fu">nameservers</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="at">        </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">...</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">enp0s3:</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">yes</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="fu">nameservers:</span></a>
+<a class="sourceLine" id="cb1-4" title="4">        <span class="fu">addresses:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">...</span></a></code></pre></div>
 <div class="steps"><ol start="5" type="1">
 <li>You can see all locally available Docker images by typing:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> images</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> images</a></code></pre></div>
 <div class="steps"><ol start="6" type="1">
 <li>Now let’s build and run a container from the Ubuntu image using:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -dit --name my-ubuntu-container ubuntu</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> run -dit --name my-ubuntu-container ubuntu</a></code></pre></div>
 <span name="0c125d"></span><aside name="0c125d"><p>The <code>run</code> command will build an instance of the Ubuntu image. This instance is what we call a container. We can build several containers that originate from the same image. This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the <a href="prep-networking-2-2020.html#optional-materials">optional materials section</a>).</p>
 <p>If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.</p></aside>
 <div class="steps"><ol start="7" type="1">
 <li>Using the generated ID, “enter” the new Ubuntu container using the following command, which will run a shell inside it:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> exec -it <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> exec -it <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</a></code></pre></div>
 <div class="tip"><p>It’s enough to use only part of the Container ID, as long as it is unique.</p></div>
 <div class="steps"><ol start="8" type="1">
 <li>Compare the version of your container’s Ubuntu with the one from your VM using the command below inside the container and inside the VM:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">cat</span> /etc/os-release</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">cat</span> /etc/os-release</a></code></pre></div>
 <div class="tip"><p>The goal of this last step is to verify the power of using containers. The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.</p></div>
 <div class="steps"><ol start="9" type="1">
 <li>To exit your container you can just enter “exit”, type <code>Ctrl+d</code> or type <code>Ctrl+p Ctrl+q</code> (the latter detaches from a container even if wasn’t started in <em>detach mode</em>).</li>
@@ -269,7 +491,7 @@
 <li>Inside this folder you will fine a simple ‘Dockerfile’ with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.</li>
 <li>Now you can build your own image based on this ‘Dockerfile’ with the command:</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> build -t webserver .</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> build -t webserver .</a></code></pre></div>
 <div class="steps"><ol start="5" type="1">
 <li>List all available Docker images to see the new image. How many new images do you see? Why?</li>
 <li>Create a container based on the image you just built and register its ID (you can also retrieve it later).</li>
@@ -297,8 +519,8 @@
 <li>Repeat step 1 and 2 for ‘webserver-2’ and name the image accordingly.</li>
 <li>Run the commands below and look at them carefully. Note the <code>-p</code> option. What does it do?</li>
 </ol></div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr1 -p 8080:80 webserver-1</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">docker</span> run -d --name serverNr2 -p 8081:80 webserver-2</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">docker</span> run -d --name serverNr1 -p 8080:80 webserver-1</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">docker</span> run -d --name serverNr2 -p 8081:80 webserver-2</a></code></pre></div>
 <div class="steps"><ol start="6" type="1">
 <li>On your RPi VM (<em>Normal start</em>), open the web browser and type the IP address of your Ubuntu VM followed by “:8080” to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?</li>
 <li>Repeat the previous step using port 8081 instead. What’s the difference?</li>

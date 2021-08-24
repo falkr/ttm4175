@@ -14,6 +14,7 @@ I løpet av uke 33 er emnet integrert i studiestart.
 ---
 type: table
 class: table table-sm
+format: md
 ---
 {|
 ! Tid
@@ -25,8 +26,8 @@ class: table table-sm
 | [https://link.mazemap.com/QqBVasau EL-3]
 |-
 | Tirsdag, 17. aug.
-| -
-| -
+| _ingenting_
+|
 |-
 | Onsdag, 18. aug. 2021, 9:15 - ca. 16:30
 | Teknostart Dag 1
@@ -57,7 +58,7 @@ class: table table-sm
 |-
 | 34
 | 
-| ''info kommer''
+| _ingen forelesning_
 |-
 | 35
 |
@@ -81,15 +82,15 @@ class: table table-sm
 |-
 | 40
 |
-| ''info kommer''
+| _info kommer_
 |-
 | 41
 |
-| ''info kommer''
+| _info kommer_
 |-
 | 42
 | 
-| ''info kommer''
+| _info kommer_
 |-
 | 43
 |
@@ -109,7 +110,80 @@ class: table table-sm
 |-
 | 47
 |
-| ''info kommer''
+| _info kommer_
+|}
+
+
+
+---
+type: table
+class: weekplan table-sm table-bordered
+format: html
+---
+{|
+! Time
+! Mon
+! Tue
+! Wed
+! Thu
+! Fri
+
+|-
+| 08:15
+| rowspan="4" | Digital
+|  
+|
+|
+|
+|-
+| 09:15
+| 
+|
+|
+|
+|-
+| 10:15
+| 
+|
+| rowspan="2" | Kjel 4
+| 
+|-
+| 11:15
+|
+|
+|
+|-
+| 12:15
+|
+|
+|
+| rowspan="4" | Lab
+|
+|-
+| 13:15
+|
+| Digital
+|
+| 
+|-
+| 14:15
+|
+|
+|
+|
+|-
+| 15:15
+|
+|
+|
+|
+|-
+| 16:15
+|
+|
+|
+|
+|
 |}
 
 
