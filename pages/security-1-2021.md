@@ -1,3 +1,13 @@
+
+
+Bruk kanal "Hjelp fra studentassistentene" for å chatte med læringassistentene, og kanalen som tilsvarer ditt team for å ha video og skjermdeling med ditt team.
+
+---
+type: figure
+source: figures/team-channels.jpg
+---
+
+
 # Team
 
 
@@ -21,8 +31,27 @@ source: figures/teamphoto.png
 caption: "A realistic rendering of a team photo."
 ---
 
+Vi har også samlet en del tipps om teamarbeid, som dere kan lese gjennom etterpå, fram til neste gang.
+
+---
+type: button
+url: working-in-teams.html
+text: Om Teamarbeid
+---
 
 
+# Rapportskriving
+
+For å få godkjent emnet, må dere levere inn en rapport for hver lab (én for sikkerhet / etisk hacking, og én for tingenes internett). Dere leverer én per team av 3 studenter.
+
+
+Her har vi samlet en del tips om rapportskriving:
+
+---
+type: button
+url: reports.html
+text: Om Rapportskriving
+---
 
 
 # Technical Information Gathering
