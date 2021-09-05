@@ -15,43 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -87,9 +51,6 @@ div.rat ol {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -114,19 +75,6 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 div.warning p {
 padding: 10px;
 background-color: #ffd9ab;
@@ -139,6 +87,16 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.rat ol {
+  list-style-type: upper-alpha;
 }
 div.check ul,
 div.check ul li {
@@ -198,44 +156,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -425,7 +345,7 @@ display: inline;
 <ol start="5" type="1">
 <li>Add an IP address and respective mask to the interface ‘eth0’ using the command:</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
 <ol start="6" type="1">
 <li>Using the command <code>ip a s eth0</code> (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.</li>
 </ol>
@@ -454,7 +374,7 @@ Hint (ping)
 </button>
 <div class="w3content">
 <p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">ping</span> -c4 <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ping</span> <span class="at">-c4</span> <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 </div>
 <button class="w3collapsible">
 Hint (ssh)
@@ -492,9 +412,9 @@ Hint (troubleshooting)
 <h2 id="static-ip-addresses">Static IP addresses</h2>
 <p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the “dhcpcd.conf” file in <code>/etc/</code>. Edit this file and reboot to check the networking configurations have remained.</p>
 <p>Example configuration:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">interface</span> eth0</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">interface</span> eth0</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
     </section>
     <section class="content">
 <h1 id="additional-exercises">Additional Exercises</h1>

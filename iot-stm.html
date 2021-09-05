@@ -15,18 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -62,9 +51,6 @@ div.rat ol {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -89,7 +75,65 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
 
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -100,6 +144,30 @@ div.figurefullwitdth {
   margin-left: -33px;
   margin-right: -33px;
   width: 100%;
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
 }
 .w3collapsible {
   background-color:#f0e9db;
@@ -335,25 +403,25 @@ div.figurefullwitdth {
 <li><strong>Goal:</strong> Create a state machine diagram from given code.</li>
 </ul></div>
 <p>Have a look at the code in file <code>shake.py</code>, and run it. (The code of the state machine is also included below.)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>                display.show(Image.SQUARE)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>                display.show(Image.SQUARE_SMALL)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        display.show(Image.SQUARE_SMALL)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                display.show(Image.SQUARE)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                display.show(Image.SQUARE_SMALL)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
 <p><strong>Task:</strong> Describe the behavior of the shake light in a few sentences.</p>
 <p><strong>Task:</strong> Draw a state machine that corresponds to the code. Make sure to include all necessary elements.</p>
     </section>

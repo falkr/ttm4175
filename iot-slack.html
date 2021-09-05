@@ -15,43 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -87,9 +51,6 @@ div.rat ol {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -114,19 +75,7 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
 
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 div.warning p {
 padding: 10px;
 background-color: #ffd9ab;
@@ -139,6 +88,28 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+div.rat ol {
+  list-style-type: upper-alpha;
 }
 div.check ul,
 div.check ul li {
@@ -198,19 +169,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
 }
 .w3collapsible {
   background-color:#f0e9db;
@@ -417,19 +375,19 @@ display: inline;
     <section class="content">
 <h1 id="python">Python</h1>
 <p>To access the Slack API, we use the <a href="https://slack.dev/python-slackclient/">Python library</a> that wraps the API call into Python.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">pip3</span> install slackclient</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install slackclient</span></code></pre></div>
 <h2 id="sending-a-message">Sending a Message</h2>
 <p>The code below sends a message. Make sure to adjust the token and the channel.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> slack, certifi, ssl</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>ssl_context <span class="op">=</span> ssl.create_default_context(cafile<span class="op">=</span>certifi.where())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>client <span class="op">=</span> slack.WebClient(token<span class="op">=</span><span class="st">&#39;xoxb-14603XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>, ssl<span class="op">=</span>ssl_context)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>response <span class="op">=</span> client.chat_postMessage(channel<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, text<span class="op">=</span><span class="st">&quot;Hello world!&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="bu">print</span>(response)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> slack, certifi, ssl</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ssl_context <span class="op">=</span> ssl.create_default_context(cafile<span class="op">=</span>certifi.where())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> slack.WebClient(token<span class="op">=</span><span class="st">&#39;xoxb-14603XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>, ssl<span class="op">=</span>ssl_context)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.chat_postMessage(channel<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, text<span class="op">=</span><span class="st">&quot;Hello world!&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code></pre></div>
 <h2 id="sending-an-image">Sending an Image</h2>
 <p>You can also send an image (or any other file), if you use the line below instead of the <code>chat_postMessage</code> call from above. The file argument just has to point to a file on your computer.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>response <span class="op">=</span> client.files_upload(channels<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, <span class="bu">file</span><span class="op">=</span><span class="st">&#39;~/image.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.files_upload(channels<span class="op">=</span><span class="st">&#39;#apitest&#39;</span>, <span class="bu">file</span><span class="op">=</span><span class="st">&#39;~/image.jpg&#39;</span>)</span></code></pre></div>
     </section>
 </div>
 

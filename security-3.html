@@ -15,43 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -87,9 +51,6 @@ div.rat ol {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -113,6 +74,41 @@ div.goals ul li:before {
   float: left;
   margin-left: -1.5em;
   color: #1481b8;
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+div.rat ol {
+  list-style-type: upper-alpha;
 }
 div.check ul,
 div.check ul li {
@@ -138,7 +134,6 @@ div.check ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -352,9 +347,9 @@ a.ntnu-button:hover {
 <ul>
 <li>Make sure that Windows 7 is mounted within Kali, then go to the following folder containing the SAM file:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <ul>
 <li>Start <em>chntpw</em> in interactive mode by using <em>-i</em> flag option and read in the SAM file</li>
 </ul>
@@ -385,14 +380,14 @@ a.ntnu-button:hover {
 <ul>
 <li>Locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">cd</span> </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> </span></code></pre></div>
 <h2 id="examining-the-sam-database">Examining the SAM database</h2>
 <ul>
 <li>Take a look at the content of the <em>win_pwd_hashes.text</em> <code># cat win_pwd_hashes.txt</code>. Each line entry represents a user account on the system with their respective hashes.</li>
