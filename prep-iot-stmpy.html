@@ -15,23 +15,43 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+<style type="text/css">div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
 }
-div.warning p {
-padding: 10px;
-background-color: #ffd9ab;
-border-radius: 5px;
-border-left: 6px solid #fc8c03 
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
 
-div.warning p::before {
-    content: '\f071 ';
-    font-family: 'Font Awesome 5 Free'; 
-    color: #fc8c03;
-display: inline;
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
 }
-.steps ol, .steps ul {
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -67,9 +87,59 @@ display: inline;
   margin-top:-20px;
   margin-bottom:-20px;
 }
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
 
-div.rat ol {
-  list-style-type: upper-alpha;
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
 }
 div.check ul,
 div.check ul li {
@@ -95,43 +165,16 @@ div.check ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
+div.figure {
+  padding: 20px 0 20px 0;
   width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
 }
 
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
 }
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
@@ -157,36 +200,7 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -199,7 +213,6 @@ content: "Task: ";
 font-weight: bold;
 display: inline;
 }
-
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -224,17 +237,6 @@ display: inline;
   overflow: hidden;
   background-color: #f3f3f3;
   margin-bottom: 15px;
-}
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -389,12 +391,12 @@ div.figurefullwitdth {
 <img src="figures/statemachines/stm-blink-1.svg" width="100%"/>
 </div>
 <p>We can encode this in Python as an if-statement that takes the current state as condition:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># switch light off</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="co"># change into state &quot;off&quot;</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="co"># switch light on</span></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="co"># change into state &quot;on&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># switch light off</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co"># change into state &quot;off&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="co"># switch light on</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="co"># change into state &quot;on&quot;</span></span></code></pre></div>
 <h3 id="idea-2-a-transition-function">Idea 2: A Transition Function</h3>
 <p>Now that we have taken care of the control state by an explicit variable, we need to think how to implement the transitions. Let’s think again what a transition actually does:</p>
 <ul>
@@ -408,8 +410,8 @@ div.figurefullwitdth {
 <li><code>event</code> - the event that triggered the machine</li>
 <li><code>timers</code> - a variable to start and stop timers</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># logic to execute the transitions</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># logic to execute the transitions</span></span></code></pre></div>
 <p>In the if-statement above, we change what we do only based on the current state. This was okay because every state of the blinking light only had a single outgoing transition. But if we consider now that we can also switch off the blinking light by pressing a button, we need to distinguish if the event was a timer expiration <code>t1</code> or a click on a button <code>button_a</code>. We do this with a nested if-statement.</p>
 <p>The listing below shows the transition function for a simple example. (Ignore the parameter <code>self</code> for now.) Within the method, we place first an if-statement which distinguishes the different states of the machine. It has one branch for each state. Within each state branch, there is another if-statement, which distinguishes the different events.</p>
 <div class="figure">
@@ -441,11 +443,11 @@ div.figurefullwitdth {
 </ul>
 <h3 id="initial-transitions">Initial Transitions</h3>
 <p>To handle the initial transition, we just declare an extra transition function. It is similar to the other transition function, but does not have the <code>event</code> parameter, since an initial transition is started always when a state machine starts.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
-<a class="sourceLine" id="cb1-2" title="2">        <span class="co">### the initial transition</span></a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-5" title="5">        <span class="co">### the remaining transitions</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
 <h3 id="final-state">Final state</h3>
 <p>To make a transition into the final state, just return the special name <code>"final"</code> as next state, and the state machine will terminate.</p>
 <h3 id="decisions">Decisions</h3>
@@ -474,13 +476,13 @@ div.figurefullwitdth {
 <li>calls the transition functions.</li>
 </ul>
 <p>We have put all this logic into a Python structure called a <strong>class</strong>. This is a concept from object-oriented programming, which will come later in your programming courses. It makes the definition of your own state machines much easier, and you don’t have to understand object-orientation and classes completely to use it. There is only a few things to take care of:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> MyStateMachine1(StateMachine):</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
-<a class="sourceLine" id="cb1-4" title="4">        <span class="co">### the initial transition</span></a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-7" title="7">        <span class="co">### the remaining transitions</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
 <ul>
 <li>You declare your code inside a class. Use a new name for each example, here we have used <code>MyStateMachine1</code> as name.</li>
 <li>You <strong>extend</strong> the base state machine by declaring it in the parentheses behind your class name, in <code>class MyStateMachine1(StateMachine)</code>.</li>
@@ -489,21 +491,21 @@ div.figurefullwitdth {
 <p>This has the following effect: Your state machine <em>MyStateMachine1</em> “inherits” all functionalities that the base state machine <em>StateMachine</em> has already implemented. We just <em>add</em> our transition methods, which is enough to make the state machine do what we want.</p>
 <h3 id="running-the-machine">Running The Machine</h3>
 <p>To run your state machine, you need then to declare a variable of it and call the <code>run()</code> function it inherited from the base state machine:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">stm <span class="op">=</span> MyStateMachine1()</a>
-<a class="sourceLine" id="cb1-2" title="2">stm.run()</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>stm <span class="op">=</span> MyStateMachine1()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>stm.run()</span></code></pre></div>
 <h3 id="variables">Variables</h3>
 <p>This also explains how we handle variables: The variable is not a part of the global context, but tied to our state machine. We therefore always use the prefix <code>self.</code> before the variable.</p>
 <p>In the listing below we initialize a variable <code>x</code> when we start the machine in the initial transition and assign a new value in the transition function. The prefix <code>self</code> refers to the parameter we get from both of these functions.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> MyStateMachine1(StateMachine):</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
-<a class="sourceLine" id="cb1-4" title="4">        <span class="co">### the initial transition</span></a>
-<a class="sourceLine" id="cb1-5" title="5">        <span class="co">### init a variable x</span></a>
-<a class="sourceLine" id="cb1-6" title="6">        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="co">### the remaining transitions</span></a>
-<a class="sourceLine" id="cb1-10" title="10">        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="co">### the initial transition</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="co">### init a variable x</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="co">### the remaining transitions</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
     </section>
 </div>
 
