@@ -15,43 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -87,10 +51,6 @@ div.rat ol {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
-
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -115,19 +75,6 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 div.warning p {
 padding: 10px;
 background-color: #ffd9ab;
@@ -140,6 +87,28 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+
+div.rat ol {
+  list-style-type: upper-alpha;
 }
 div.check ul,
 div.check ul li {
@@ -199,19 +168,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
 }
 .w3collapsible {
   background-color:#f0e9db;
@@ -419,17 +375,17 @@ display: inline;
 <p><strong>Goal:</strong> Install your own broker on a Raspberry Pi, and use MQTT.fx to verify that all is setup correct. Send some messages back and forth.</p>
 <h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
 <p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt install -y mosquitto mosquitto-clients</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> mosquitto mosquitto-clients</span></code></pre></div>
 <h2 id="testing-your-broker">Testing Your Broker</h2>
 <p>Start Mosquitto:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">mosquitto</span> -v</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mosquitto</span> <span class="at">-v</span></span></code></pre></div>
 <p>The result should look like this:</p>
 <div class="figure">
 <img src="figures/iot/mosquitto-running.png" width="100%"/>
 </div>
 <p>You can also check which ports it is connected to:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">netstat</span> –at </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">netstat</span> –at </span></code></pre></div>
 <p><strong>For the report:</strong> Document this output.</p>
 <h2 id="playing-with-mosquitto">Playing with Mosquitto</h2>
 <p><strong>Tasks:</strong></p>
