@@ -15,6 +15,111 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -31,6 +136,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -153,6 +259,17 @@
 
 
 <div class="page">
+    </section>
+    <section class="content">
+<h1 id="security-week-3">Security Week 3</h1>
+<p>Our next topic is about web hacking. Web is the most popular protocol on the Internet, it works in a client-server architecture.</p>
+<p>Here you find a summary about what is on the client side and what happens on the server side:</p>
+<p><a href="https://medium.com/young-coder/an-illustrated-beginners-guide-to-server-side-and-client-side-code-723cbb1db9ea">An Illustrated Guide to Server-Side and Client-Side Code</a></p>
+<p>The web communication is based on the HyperText Transfer Protocol (HTTP), here you can read a short description about it:</p>
+<p><a href="http://www.steves-internet-guide.com/http-basics/">Understanding HTTP Basics</a></p>
+<p>On the client side the web browser processes and presents the data for the users based on the HyperText Markup Language.</p>
+<p>Here you can find a short introduction for HTML:</p>
+<p><a href="https://www.tutorialspoint.com/html/html_overview.htm">HTML Overview</a></p>
     </section>
 </div>
 
