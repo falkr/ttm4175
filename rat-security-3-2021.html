@@ -15,7 +15,31 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.rat ol {
+<style type="text/css">div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.rat ol {
   list-style-type: upper-alpha;
 }
 div.figure {
@@ -28,6 +52,73 @@ div.figurefullwitdth {
   margin-left: -33px;
   margin-right: -33px;
   width: 100%;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -171,75 +262,84 @@ div.figurefullwitdth {
 <div class="page">
     <section class="content">
 <h2 id="question-1">Question 1</h2>
-<div class="figure">
-<img src="figures/statemachines/rat/rat-1.png" width="100%"/>
-</div>
-<div class="rat"><p>Which labels are correct?</p>
+<div class="rat"><p>Which of the following is a characteristics of a static webpage?</p>
 <ol type="1">
-<li><span>(1)</span> state, (2) final state, (3) start state</li>
-<li><span>(1)</span> state, (2) final state, (3) initial state</li>
-<li><span>(1)</span> final state, (2) state, (3) start state</li>
-<li><span>(1)</span> state, (2) initial state,(3) end state</li>
-</ol></div>
-<h2 id="question-2">Question 2</h2>
-<div class="rat"><p>Having a trigger on an initial transition…</p>
+<li>There is no client side code execution</li>
+<li>Everything that is running outside of Amazon</li>
+<li>The php code is executed only on the client side</li>
+<li>There is no server side code execution</li>
+</ol>
+<h2 id="question-2">Question 2</h2></div>
+<div class="rat"><p>Which of the following is not a characteristics of a dynamic webpage?</p>
 <ol type="1">
-<li>…is necessary, otherwise the transition is not triggered.</li>
-<li>…is optional for initial transitions.</li>
-<li>…is wrong because it can cause ambiguities.</li>
-<li>…is wrong because it this transition is triggered by the start of the state machine.</li>
-</ol></div>
-<h2 id="question-3">Question 3</h2>
-<div class="figure">
-<img src="figures/statemachines/rat/rat-2.png" width="100%"/>
-</div>
-<div class="rat"><p>What kind of element is “e1”?</p>
+<li>Also known as server side web applications</li>
+<li>It creates HTML pages on the server side</li>
+<li>Often establishes database requests on the server side</li>
+<li>The ruby on rails code is executed on both sides</li>
+</ol>
+<h2 id="question-3">Question 3</h2></div>
+<div class="rat"><p>Which filetype cannot be downloaded from the webserver to the browser?</p>
 <ol type="1">
-<li>An action</li>
-<li>An effect</li>
-<li>A trigger</li>
-<li>A transition</li>
-</ol></div>
-<h2 id="question-4">Question 4</h2>
-<div class="figure">
-<img src="figures/statemachines/rat/rat-3.png" width="100%"/>
-</div>
-<div class="rat"><p>Which of the state machines STM1, STM2, STM3 is equivalent to STM0? This means they may look different, but have the same behavior.</p>
+<li>html files</li>
+<li>png files</li>
+<li>php files</li>
+<li>stylesheets (css files)</li>
+</ol>
+<h2 id="question-4">Question 4</h2></div>
+<div class="rat"><p>What is true for XMLHttpRequest?</p>
 <ol type="1">
-<li>STM3</li>
-<li>None of them are equivalent.</li>
-<li>STM1</li>
-<li>STM2</li>
-</ol></div>
-<h2 id="question-5">Question 5</h2>
-<div class="figure">
-<img src="figures/statemachines/rat/rat-5.png" width="100%"/>
-</div>
-<div class="rat"><p>What is problematic with this state machine?</p>
+<li>running on the client and server side</li>
+<li>running only on the client side</li>
+<li>running only on the server side</li>
+<li>it updates the webpage only when the users ask for it</li>
+</ol>
+<h2 id="question-5">Question 5</h2></div>
+<div class="rat"><p>Which of the following is not part of a web request?</p>
 <ol type="1">
-<li>It’s unclear what happens when C is triggered in state s1.</li>
-<li>State s2 is not reachable</li>
-<li>State s1 is in a deadlock</li>
-<li>C is will be triggered twice.</li>
-</ol></div>
-<h2 id="question-6">Question 6</h2>
-<div class="figure">
-<img src="figures/statemachines/rat/rat-4.png" width="100%"/>
-</div>
-<div class="rat"><p>Which of the states are in a deadlock?</p>
+<li>body</li>
+<li>status code</li>
+<li>command</li>
+<li>header</li>
+</ol>
+<h2 id="question-6">Question 6</h2></div>
+<div class="rat"><p>What type of error is indicated with the 404 File not Found status code?</p>
 <ol type="1">
-<li>s1</li>
-<li>s0</li>
-<li>s2</li>
-<li>s1 and s2</li>
-</ol></div>
-<h2 id="question-7">Question 7</h2>
-<div class="rat"><p>Which of the following statements is wrong?</p>
+<li>redirection error</li>
+<li>client error</li>
+<li>server error</li>
+<li>informational error</li>
+</ol>
+<h2 id="question-7">Question 7</h2></div>
+<div class="rat"><p>Which of the following cannot be part of the request header?</p>
 <ol type="1">
-<li>Executing a transitions takes no time.</li>
-<li>A state machine is always in exactly one state.</li>
-<li>Only one transition happens at any time.</li>
-<li>Resting in a state takes no time.</li>
+<li>browser type</li>
+<li>encoding</li>
+<li>accepted language</li>
+<li>last modified timestamp</li>
+</ol>
+<h2 id="question-8">Question 8</h2></div>
+<div class="rat"><p>Which of these is a valid html tag?</p>
+<ol type="1">
+<li><body></li>
+<li><http></li>
+<li>(head)</li>
+<li></php></li>
+</ol>
+<h2 id="question-9">Question 9</h2></div>
+<div class="rat"><p>Which html element changes the look of the fonts with the size?</p>
+<ol type="1">
+<li><p></li>
+<li><fontsize></li>
+<li><h1></li>
+<li><title></li>
+</ol>
+<h2 id="question-10">Question 10</h2></div>
+<div class="rat"><p>Which is true?</p>
+<ol type="1">
+<li>Hypertext in HTML refers to client side code languages such as javascript</li>
+<li>HTML tags can be embedded in each other</li>
+<li>HTML was developed by DARPA</li>
+<li>The latest HTML version in use is HTML4</li>
 </ol></div>
     </section>
 </div>
