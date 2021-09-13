@@ -15,10 +15,7 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">div.rat ol {
-  list-style-type: upper-alpha;
-}
-div.figure {
+<style type="text/css">div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -152,6 +149,13 @@ div.warning p::before {
     color: #fc8c03;
 display: inline;
 }
+
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -164,13 +168,6 @@ content: "Task: ";
 font-weight: bold;
 display: inline;
 }
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -194,6 +191,9 @@ div.check ul li:before {
   float: left;
   margin-left: -1.5em;
   color: #1481b8;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
 }
 </style>
 <script src="assets/anchor.js"></script>
