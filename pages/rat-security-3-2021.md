@@ -65,19 +65,19 @@
 
 :rat:Which of these is a valid html tag?
 
-1. <body>
-2. <http>
-3. (head)
-4. </php>
+1. `<body>`
+2. `<http>`
+3. `(head)`
+4. `</php>`
 
 ## Question 9
 
 :rat:Which html element changes the look of the fonts with the size?
 
-1. <p>
-2. <fontsize>
-3. <h1>
-4. <title>
+1. `<p>`
+2. `<fontsize>`
+3. `<h1>`
+4. `<title>`
 
 ## Question 10
 
