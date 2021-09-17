@@ -32,23 +32,24 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
-div.check ul,
-div.check ul li {
+
+div.goals ul,
+div.goals ul li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-div.check ul {
+div.goals ul {
   margin: 2em 0;
 }
 
-div.check ul li {
+div.goals ul li {
   margin: 1em;
   margin-left: 3em;
 }
 
-div.check ul li:before {
+div.goals ul li:before {
   content: '\f26a';
   font-family: bootstrap-icons !important;
   font-size:20;
@@ -92,32 +93,17 @@ div.check ul li:before {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
 }
 
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
 }
 </style>
 <script src="assets/anchor.js"></script>
