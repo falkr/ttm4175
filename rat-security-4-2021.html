@@ -40,6 +40,19 @@
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -74,6 +87,19 @@ div.goals ul li:before {
   float: left;
   margin-left: -1.5em;
   color: #1481b8;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
 }
 
 div.task p {
@@ -112,6 +138,7 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
+
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -138,6 +165,31 @@ div.check ul li:before {
 }
 div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 .steps ol, .steps ul {
   counter-reset: li;
@@ -324,34 +376,87 @@ div.rat ol {
 
 
 <div class="page">
-    </section>
     <section class="content">
-<h1 id="dns-and-dhcp">DNS and DHCP</h1>
-<p>Last week we focused on IP addressing and routing, mainly based on manual configurations. However, manually configuring every address and memorising numbers for addresses is not very convenient. Now you will learn about the Domain Name System (DNS) and the Dynamic Host Configuration Protocol (DHCP).</p>
-<p>This week’s readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>. Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
-<h2 id="learning-goals">Learning Goals</h2>
-<div class="goals"><p>After this week you will be able to:</p>
-<ul>
-<li>Understand how DNS works</li>
-<li>Understand how DHCP works</li>
-<li>Use basic Linux commands for:
-<ul>
-<li>installing and configuring a basic DHCP server</li>
-<li>checking DNS information</li>
-</ul></li>
-</ul></div>
-    </section>
-    <section class="content">
-<h1 id="understanding-dns">Understanding DNS</h1>
-<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>). If you have read the first chapter of the book this something you already know (otherwise read <strong>section 1.11, page 30</strong>), but there’s more to it and you can read about it in <strong>section 7.8 (from page 204 to 208)</strong>, and you can skip the subsections.</p>
-    </section>
-    <section class="content">
-<h1 id="understanding-dhcp">Understanding DHCP</h1>
-<p>The DHCP protocol in another networking tool we use on our daily lives without even noticing. It allows the automatic configuration of not only our IP addresses and subnet masks but also of our default routes and DNS server. Read more about it in <strong>section 7.10 (pages 217 and 218)</strong>.</p>
-<p>A simple but interesting video about DHCP:</p>
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RUZohsAxPxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<h2 id="question-1">Question 1</h2>
+<div class="rat"><p>Which language is used for Cross Site Scripting?</p>
+<ol type="1">
+<li>Java</li>
+<li>Http</li>
+<li>Php</li>
+<li>Javascript</li>
+</ol>
+<h2 id="question-2">Question 2</h2></div>
+<div class="rat"><p>Which attack type is not possible with Cross Site Scripting</p>
+<ol type="1">
+<li>Overwriting the webpage content on the server side</li>
+<li>Overwriting the webpage content on the client side</li>
+<li>Sending attacker controlled requests to the server</li>
+<li>Stealing sessions of logged in users</li>
+</ol>
+<h2 id="question-3">Question 3</h2></div>
+<div class="rat"><p>Which of the following looks like an XSS attack?</p>
+<ol type="1">
+<li><code>http://innsida.ntnu.no/blackboard|nc xss.evildomain.com 8080</code></li>
+<li><code>http://innsida.ntnu.no/blackboard&lt;script&gt;document.location='http://innsida.ntnuu.no/blackboard'&lt;/script&gt;</code></li>
+<li><code>http://innsida.ntnu.no/blackboard&lt;?php print('http://innsida.ntnuu.no/blackboard') ?&gt;</code></li>
+<li><code>http://innsida.ntnu.no/blackboard|cat /etc/passwd</code></li>
+</ol>
+<h2 id="question-4">Question 4</h2></div>
+<div class="rat"><p>Which of these does not prevent Cross Site Scripting?</p>
+<ol type="1">
+<li>encode all output coming from input data</li>
+<li>disable client side scripts</li>
+<li>filtering for the <code>&lt;script&gt;</code> keyword with firewall</li>
+<li>validate all user input on the server side</li>
+</ol>
+<h2 id="question-5">Question 5</h2></div>
+<div class="rat"><p>Which SQL statement can be used to retrieve data from the database?</p>
+<ol type="1">
+<li>select</li>
+<li>update</li>
+<li>insert</li>
+<li>drop</li>
+</ol>
+<h2 id="question-6">Question 6</h2></div>
+<div class="rat"><p>What is the meaning of * in an SQL query?</p>
+<ol type="1">
+<li>all columns</li>
+<li>all rows</li>
+<li>all tables</li>
+<li><code>*</code> is not used in SQL</li>
+</ol>
+<h2 id="question-7">Question 7</h2></div>
+<div class="rat"><p>Which SQL keyword is used to filter the result?</p>
+<ol type="1">
+<li>Union</li>
+<li>Where</li>
+<li>Filter</li>
+<li>If</li>
+</ol>
+<h2 id="question-8">Question 8</h2></div>
+<div class="rat"><p>What is manipulated with SQL injection?</p>
+<ol type="1">
+<li>the browser sandboxing</li>
+<li>the database query</li>
+<li>the http protocol</li>
+<li>the javascript</li>
+</ol>
+<h2 id="question-9">Question 9</h2></div>
+<div class="rat"><p>What is possible with SQL injection?</p>
+<ol type="1">
+<li>only overwriting data in the database</li>
+<li>only login bypass</li>
+<li>both reading data and overwriting data in the database</li>
+<li>only reading data from the database</li>
+</ol>
+<h2 id="question-10">Question 10</h2></div>
+<div class="rat"><p>Which of the following link looks like an SQL injection attack attempt?</p>
+<ol type="1">
+<li><code>http://innsida.ntnu.no/blackboard?teacher=&lt;script&gt;alert('SQL injection')&lt;/script&gt;</code></li>
+<li><code>http://innsida.ntnu.no/blackboard?teacher=Drop table students;#</code></li>
+<li><code>http://innsida.ntnu.no/blackboard?teacher=sqlmap --wizard</code></li>
+<li><code>http://innsida.ntnu.no/blackboard?teacher=Laszlo'+OR+5=5--</code></li>
+</ol></div>
     </section>
 </div>
 
