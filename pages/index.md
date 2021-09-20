@@ -75,11 +75,11 @@ type: table
 |-
 | 39
 |
-| Etisk hacking, uke 5
+| _ingen undervisning i emnet_
 |-
 | 40
 |
-| _info kommer_
+| Etisk hacking, uke 5
 |-
 | 41
 |
