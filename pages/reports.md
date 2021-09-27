@@ -59,8 +59,6 @@ På slutten av hver rapport, skriv hva du syntes om labben.
 
 Vi anbefaler at dere bruker **Word** til å skrive rapporten. Dere kan dele dokumenter med herandre og skrive samtidig. 
 
-På Teams ligger det også et mal til rapporten. Hvis dere bruker den er dere sikkre på at alt som skal være med er på plass. Gjør en kopi av malen for hver rapport og del med hverandre i team.
-
 
 
 # Flere tipps
