@@ -26,11 +26,48 @@ div.figurefullwitdth {
   margin-right: -33px;
   width: 100%;
 }
+
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
 }
 .steps ol, .steps ul {
   counter-reset: li;
@@ -67,43 +104,6 @@ div.tip p {
   margin-left:-20px;
   margin-top:-20px;
   margin-bottom:-20px;
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -174,9 +174,10 @@ div.goals ul li:before {
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1-2021.html">Security 1</a>
-        <a class="dropdown-item" href="security-2-2021.html">Security 2</a>
-        <a class="dropdown-item" href="security-3-2021.html">Security 3</a>
-        <a class="dropdown-item" href="security-4-2021.html">Security 4</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L02-Technical_information_gathering.pdf">Security 2: Technical Information gathering</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L03-Network_mapping.pdf">Security 3: Network mapping</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking1.pdf">Security 4: Web Hacking 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
         <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
