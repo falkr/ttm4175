@@ -15,6 +15,176 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
+<style type="text/css">a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
+</style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -31,6 +201,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
       <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
       <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
       <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
       <div class="dropdown-divider"></div>
@@ -82,9 +253,10 @@
     <div class="dropdown-menu">
         <a class="dropdown-item disabled"><strong>Security</strong></a>
         <a class="dropdown-item" href="security-1-2021.html">Security 1</a>
-        <a class="dropdown-item" href="security-2-2021.html">Security 2</a>
-        <a class="dropdown-item" href="security-3-2021.html">Security 3</a>
-        <a class="dropdown-item" href="security-4-2021.html">Security 4</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L02-Technical_information_gathering.pdf">Security 2: Technical Information gathering</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L03-Network_mapping.pdf">Security 3: Network mapping</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking1.pdf">Security 4: Web Hacking 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
         <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
@@ -153,6 +325,14 @@
 
 
 <div class="page">
+    </section>
+    <section class="content">
+<h1 id="security-5">Security 5</h1>
+<p>The last week of ethical hacking will consist of two topics. On Monday we will talk about password security by cracking password hashes. The aim is to understand how the passwords are stored and what the attacker can do with it. Please read this tutorial about it:</p>
+<p><a href="https://auth0.com/blog/hashing-passwords-one-way-road-to-security/">Hashing Passwords: One-Way Road to Security</a></p>
+<p>On Thursday we discuss social engineering. Social engineering is the art of manipulating people so they give up confidential information. Please read this article about it:</p>
+<p><a href="https://www.webroot.com/us/en/resources/tips-articles/what-is-social-engineering">What is Social Engineering? Examples &amp; Prevention Tips</a></p>
+<p>As we already discussed, on the Thursday lab the task will be to send me a social engineering email and obtain my Gmail password (only the Gmail, not NTNU :) ). You can already think about a good story.</p>
     </section>
 </div>
 
