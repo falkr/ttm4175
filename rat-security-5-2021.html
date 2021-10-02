@@ -39,63 +39,11 @@ div.check ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -107,31 +55,6 @@ div.figurefullwitdth {
   margin-left: -33px;
   margin-right: -33px;
   width: 100%;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
 }
 div.goals ul,
 div.goals ul li {
@@ -208,7 +131,6 @@ content: "Task: ";
 font-weight: bold;
 display: inline;
 }
-
 
 </style>
 <script src="assets/anchor.js"></script>
@@ -353,84 +275,84 @@ display: inline;
 <div class="page">
     <section class="content">
 <h2 id="question-1">Question 1</h2>
-<div class="rat"><p>Q: In IP addresses, when we consider an octet (8 bits) what is the highest number we can represent?</p>
+<div class="rat"><p>Which statement is not true regarding storing the password in cleartext in the database?</p>
 <ol type="1">
-<li>255</li>
-<li>256</li>
-<li>255.255.255.255</li>
-<li>256.256.256.256</li>
+<li>If the attacker manages to obtain the data in the database he/she has access to the passwords immediately</li>
+<li>The length of the passwords does not strengthen the security</li>
+<li>The administrator of the database can see everyone’s password</li>
+<li>It makes the webpage vulnerable</li>
 </ol>
 <h2 id="question-2">Question 2</h2></div>
-<div class="rat"><p>Q: IP addresses are used:</p>
+<div class="rat"><p>Which statement is not correct regarding hashing?</p>
 <ol type="1">
-<li>only on the Intranet behind NAT.</li>
-<li>in routing tables for determining the path a packet takes.</li>
-<li>only on the Internet.</li>
-<li>only by hosts such as computers and other IoT devices.</li>
+<li>The hash is generated using rainbow tables</li>
+<li>The length of the input does not influence the length of the hash</li>
+<li>We cannot get back the cleartext from the hash with mathematical algorithm</li>
+<li>It is also called as message digest</li>
 </ol>
 <h2 id="question-3">Question 3</h2></div>
-<div class="rat"><p>Q: In decimal notation, the IP address 00001001 00001001 00001001 00001001 is:</p>
+<div class="rat"><p>Which of the following is not a hash algorithm?</p>
 <ol type="1">
-<li>9.9.9.9</li>
-<li>8.8.8.8</li>
-<li>7.7.7.7</li>
-<li>17.17.17.17</li>
+<li>3HES</li>
+<li>MD5</li>
+<li>SHA-1</li>
+<li>SHA-256</li>
 </ol>
 <h2 id="question-4">Question 4</h2></div>
-<div class="rat"><p>Q: If we need to give an address 32 machines, what is the minimum number of bits would we need?</p>
+<div class="rat"><p>Which logical definitation writes the best hashing?</p>
 <ol type="1">
-<li>16 bits</li>
-<li>5 bits</li>
-<li>6 bits</li>
-<li>none of the other options is correct.</li>
+<li>Reversible and non-deterministic</li>
+<li>Irreversible and deterministic</li>
+<li>Irreversible and non-deterministic</li>
+<li>Reversible and deterministic</li>
 </ol>
 <h2 id="question-5">Question 5</h2></div>
-<div class="rat"><p>Q: If we need to give an address to 48 machines, what is the minimum number of bits would we need?</p>
+<div class="rat"><p>What is a salt in hash generation?</p>
 <ol type="1">
-<li>5 bits</li>
-<li>none of the other options is correct.</li>
-<li>16 bits</li>
-<li>6 bits</li>
+<li>a secret method that makes algorithms able to recreate the cleartext from the hash</li>
+<li>A component that guarantees to avoid hash collision</li>
+<li>A value to verify the correctness of the hash calculation</li>
+<li>a random text that is added to the cleartext for the hash generation</li>
 </ol>
 <h2 id="question-6">Question 6</h2></div>
-<div class="rat"><p>Q: What is the main difference between IPv4 and IPv6?</p>
+<div class="rat"><p>Which of the followings is an example of hash collision?</p>
 <ol type="1">
-<li>IPv4 addresses have 128 bits instead of 32 bits</li>
-<li>IPv6 addresses have 256 bits instead of 32 bits</li>
-<li>IPv4 addresses have 256 bits instead of 32 bits</li>
-<li>IPv6 addresses have 128 bits instead of 32 bits</li>
+<li>two cleartext has the same salt value</li>
+<li>the attacker brute-forces the hash and find a collision with a cleartext</li>
+<li>two cleartexts result in the same hash value</li>
+<li>a cleartext has multiple hash values with the same algorithm</li>
 </ol>
 <h2 id="question-7">Question 7</h2></div>
-<div class="rat"><p>Q: A protocol:</p>
+<div class="rat"><p>Which of the followings is not social engineering?</p>
 <ol type="1">
-<li>defines the actions taken on the transmission and/or receipt of a message or other event, but not the format and the order of messages exchanged between two or more communicating entities.</li>
-<li>defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.</li>
-<li>defines the format and the order of messages exchanged between two or more communicating entities, but not the actions taken on the transmission and/or receipt of a message or other event.</li>
-<li>defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken based only on timer events.</li>
+<li>Sending an email on behalf of someone to obtain information</li>
+<li>Persuading someone to download and install a tool that contains all answers for the TTM4175 RAT questions</li>
+<li>Claiming that you cannot login to blackboard and asking someone to try to login on your computer while a keylogger is running</li>
+<li>Hacking blackboard and exposing all social information about people</li>
 </ol>
 <h2 id="question-8">Question 8</h2></div>
-<div class="rat"><p>Q: Following the book’s definition, what is the difference between a host and an end-system?</p>
+<div class="rat"><p>Who or what is the target of social engineering?</p>
 <ol type="1">
-<li>There is no difference.</li>
-<li>A host is typically a PC or Laptop.</li>
-<li>A host is typically a client.</li>
-<li>An end-system is typically a Server.</li>
+<li>system administrators</li>
+<li>web sites with login pages</li>
+<li>all services</li>
+<li>all people</li>
 </ol>
 <h2 id="question-9">Question 9</h2></div>
-<div class="rat"><p>Q: In the upcoming networking labs we will use:</p>
+<div class="rat"><p>What is phishing?</p>
 <ol type="1">
-<li>the VM based on a Raspbian image I’ve already used earlier.</li>
-<li>NTNU’s computers with everything already installed.</li>
-<li>an additional VM based on an Ubuntu image I’ve already downloaded.</li>
-<li>an additional VM based on a Raspbian image I’ve already cloned.</li>
+<li>downloading something from a peer-to-peer site (torrent phishing)</li>
+<li>bypassing physical security (asking someone to open a protected door for us, because we carry e.g. a heavy fishing rod)</li>
+<li>Masquerading as a trusted entity, dupes a victim into clicking on a malicious link</li>
+<li>asking someone about his/her password while doing a relaxing activity like fishing or sun bathing</li>
 </ol>
 <h2 id="question-10">Question 10</h2></div>
-<div class="rat"><p>Q: Why are networking protocols important?</p>
+<div class="rat"><p>Which advice is not useful to avoid phishing?</p>
 <ol type="1">
-<li>They are important to guarantee the same level of quality between applications.</li>
-<li>They are important to prevent illegal Internet activities.</li>
-<li>They are important to guarantee the same level of quality between users.</li>
-<li>They are important to guarantee that systems can interoperate correctly.</li>
+<li>Use strong passwords</li>
+<li>Use spamfilter and check the email header if it looks suspicious</li>
+<li>Never give your password in email even if a trusted person asks you</li>
+<li>Beware of any download from untrested sources</li>
 </ol></div>
     </section>
 </div>
