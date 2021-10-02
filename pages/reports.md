@@ -3,6 +3,7 @@
 Det er ingen eksamen i emnet, men hvert team må levere inn en rapport
 for hver lab. 
 
+
 ## Hvorfor rapporter?
 
 Å skrive rapporter har flere hensikter:
