@@ -15,7 +15,64 @@
 <script src="assets/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
-<style type="text/css">.steps ol, .steps ul {
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
+<style type="text/css">div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -51,11 +108,49 @@
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -68,18 +163,80 @@ div.figurefullwitdth {
   margin-right: -33px;
   width: 100%;
 }
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
+div.goals ul {
+  margin: 2em 0;
 }
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -113,13 +270,16 @@ display: inline;
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item disabled"><strong>Security</strong></a>
+      <a class="dropdown-item disabled"><strong>Security and Ethical Hacking</strong></a>
       <a class="dropdown-item" href="prep-security-1-2021.html">Security 1</a>
       <a class="dropdown-item" href="prep-security-2-2021.html">Security 2</a>
       <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
       <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
       <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
       <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <!--
       <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
       <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
@@ -138,7 +298,6 @@ display: inline;
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
       <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
-      <!--
       <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
       <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
     </div>
@@ -155,6 +314,9 @@ display: inline;
         <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
         <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
         <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
+        <!--
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
         <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
@@ -172,7 +334,6 @@ display: inline;
         <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
         <a class="dropdown-item" href="iot-http-json-2020-solution.html">IoT 3: HTTP and JSON (Solution and Revised Tasks)</a>
         <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
-        <!--
         <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
         <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
         <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
