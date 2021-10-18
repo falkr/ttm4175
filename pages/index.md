@@ -91,7 +91,7 @@ type: table
 |-
 | 43
 |
-| IoT 1
+| IoT 1, Introduction to IoT and the Microbit
 |-
 | 44
 |
@@ -126,7 +126,7 @@ class: weekplan table-sm table-bordered
 
 |-
 | 08:15
-| rowspan="4" | [Zoom](tools.html) (RAT og forelesning)
+| 
 |  
 |
 |
@@ -137,16 +137,20 @@ class: weekplan table-sm table-bordered
 |
 |
 |
+|
 |-
 | 10:15
 | 
 |
-| rowspan="4" | [Zoom](tools.html) (Felles oppstart av lab)
+|
+| rowspan="2" | [Kjel 4](https://link.mazemap.com/QO2zpqJ0) (Forelesning)
 | 
 |-
 | 11:15
 |
 |
+|
+| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
 |
 |-
 | 12:15
@@ -162,7 +166,6 @@ class: weekplan table-sm table-bordered
 | 
 |-
 | 14:15
-|
 |
 |
 |
