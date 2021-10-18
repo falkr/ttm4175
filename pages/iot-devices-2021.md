@@ -10,7 +10,7 @@
 
 # Setup
 
-- Install Chrome, or a Chrome-based browser. These browser support an interface called *Web USB*, so that you can connect directly to your Microbit.
+- **Install Chrome, or a Chrome-based browser.** These browser support an interface called *Web USB*, so that you can directly connect to your Microbit from the browser.
 
 
 
@@ -54,104 +54,7 @@ while True:
 
 
 
-# Controlling the Device
 
-
-The Microbit has several electronic components that you can interact with. It's, of course, more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)
-
-To interact with the electronic components, we use a code **library**, also called a Python **package** This is a set of Python code that provides an interface to the Microbit. Such an interface is also called an **API**, or _application programming interface_.
-
-
-:task: Go through the description of the components below, step by step. 
-
-* For each component (like button,...) make yourself familiar with the user interface of the simulator.
-* Have a look at the API description by following the link and explore some of the examples.
-* Feel free to try out some of the examples. (We will do three of them later.)
-* In the end, you should "feel home" with the API.
-
-
-### Buttons
-
-The Microbit has two buttons, `A` and `B` which can also be pressed at the same time.
-
----
-type: figure
-source: figures/iot/dse-buttons.png
----
- 
-- [Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#buttons)
-- API: [button](https://microbit-micropython.readthedocs.io/en/v1.0.1/button.html)
-
-
-### Display
-
-The Mircobit has 25 LEDs that make up its main display. It can show text or simple images.
-
----
-type: figure
-source: figures/iot/dse-leds.png
----
-
-* API: [display.show(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.show)
-* API: [display.scoll(...)](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.scroll)
-* API: [display.clear()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.clear)
-* API: [Display images](https://microbit-micropython.readthedocs.io/en/v1.0.1/image.html)
-
-
-### Temperature
-
----
-type: figure
-source: figures/iot/dse-temperature.png
-caption: "In the simulator, you imitate the temperature with a slider."
----
-
-* [temperature()](https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.temperature)
-
-
-### Light Sensor
-
-The LEDs of the display may also give you an indication of the amount of light shining onto the device.
-
----
-type: figure
-source: figures/iot/dse-light-sensor.png
-caption: "In the simulator, you imitate the light level with a slider."
----
-
-* API: [display.read_light_level()](https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.read_light_level) 
-
-
-### Accelerometer
-
-An accelerometer measures the acceleration into different directions.
-Combined it can also detect movements or gestures.
-
----
-type: figure
-source: figures/iot/dse-accelerometer.png
-caption: "In the simulator, you imitate the acceleration with sliders in each dimension."
----
-
----
-type: figure
-source: figures/iot/dse-gestures.png
-caption: "Simulate gestures directly."
----
-
-* API: [accelerometer.was_gesture('shake')](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture) Detect a gesture.
-* API: [other accelerometer functions](https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html)
-* [Accelerometer Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#accelerometer-readings)
-* [Gesture Examples from microbit.org](https://microbit.org/get-started/user-guide/python/#gestures)
-
-
-### Other Functions
-
-In the tasks below, also some other functions will be useful:
-
-* [random.randint(a, b)](https://microbit-micropython.readthedocs.io/en/v1.0.1/random.html#random.randint) Generate a random integer `n` so that `a <= n <= b`
-
-* [sleep(n)](https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.sleep) Sleep for n microseconds.
 
 
 
@@ -182,6 +85,8 @@ You can figure out these more detailed questions in different ways:
 type: figure
 source: figures/iot/vs-auto-complete.gif
 ---
+
+(For programming the Microbit, we are using the browser as editor, since it compiles the code into MicroPython and is simple to install. Unfortunately, it does not offer auto completion like other editors.)
 
 
 ### Experience Helps...
