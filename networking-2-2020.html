@@ -99,6 +99,42 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  xline-height: 40px;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  xborder: 2px solid #1481b8;
+  xcolor: white;
+  xbackground-color: #1481b8;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right:-10px;
+  margin-left:-20px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+}
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -147,42 +183,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  xline-height: 40px;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
-  text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
 }
 
 div.check ul,
