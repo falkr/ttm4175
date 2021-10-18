@@ -16,7 +16,35 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.check ul,
+<style type="text/css">div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+
+div.check ul,
 div.check ul li {
   padding: 0;
   margin: 0;
@@ -57,7 +85,6 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
-
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -93,33 +120,6 @@ div.tip p {
   margin-left:-20px;
   margin-top:-20px;
   margin-bottom:-20px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
 }
 </style>
 <script src="assets/anchor.js"></script>
