@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
+<style type="text/css">
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -61,6 +59,12 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -86,9 +90,6 @@ div.tip p {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-div.rat ol {
-  list-style-type: upper-alpha;
-}
 div.report p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -102,7 +103,17 @@ div.report p::before {
     color: #1481b8;
 display: inline;
 }
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
 
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
@@ -127,17 +138,7 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
 
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -163,7 +164,6 @@ div.figurefullwitdth {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -382,7 +382,7 @@ div.goals ul li:before {
     <section class="content">
 <h1 id="setup">Setup</h1>
 <ul>
-<li>Install Chrome, or a Chrome-based browser. These browser support an interface called <em>Web USB</em>, so that you can connect directly to your Microbit.</li>
+<li><strong>Install Chrome, or a Chrome-based browser.</strong> These browser support an interface called <em>Web USB</em>, so that you can directly connect to your Microbit from the browser.</li>
 </ul>
     </section>
     <section class="content">
@@ -406,81 +406,6 @@ div.goals ul li:before {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    display.show(<span class="st">&quot;HEI!&quot;</span>)</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="controlling-the-device">Controlling the Device</h1>
-<p>The Microbit has several electronic components that you can interact with. It’s, of course, more fun to interact with the real device, but the simulator is doing a good job at providing access to most of the electronic components. (And the Python code is the same.)</p>
-<p>To interact with the electronic components, we use a code <strong>library</strong>, also called a Python <strong>package</strong> This is a set of Python code that provides an interface to the Microbit. Such an interface is also called an <strong>API</strong>, or <em>application programming interface</em>.</p>
-<div class="task"><p>Go through the description of the components below, step by step.</p>
-<ul>
-<li>For each component (like button,…) make yourself familiar with the user interface of the simulator.</li>
-<li>Have a look at the API description by following the link and explore some of the examples.</li>
-<li>Feel free to try out some of the examples. (We will do three of them later.)</li>
-<li>In the end, you should “feel home” with the API.</li>
-</ul></div>
-<h3 id="buttons">Buttons</h3>
-<p>The Microbit has two buttons, <code>A</code> and <code>B</code> which can also be pressed at the same time.</p>
-<div class="figure">
-<img src="figures/iot/dse-buttons.png" width="100%"/>
-</div>
-<ul>
-<li><a href="https://microbit.org/get-started/user-guide/python/#buttons">Examples from microbit.org</a></li>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/button.html">button</a></li>
-</ul>
-<h3 id="display">Display</h3>
-<p>The Mircobit has 25 LEDs that make up its main display. It can show text or simple images.</p>
-<div class="figure">
-<img src="figures/iot/dse-leds.png" width="100%"/>
-</div>
-<ul>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.show">display.show(…)</a></li>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.scroll">display.scoll(…)</a></li>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.clear">display.clear()</a></li>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/image.html">Display images</a></li>
-</ul>
-<h3 id="temperature">Temperature</h3>
-<div class="figure">
-<img src="figures/iot/dse-temperature.png" alt="In the simulator, you imitate the temperature with a slider." width="100%"/>
-<span name="figures/iot/dse-temperature.png">&nbsp;</span>
-<aside name="figures/iot/dse-temperature.png"><p><p>In the simulator, you imitate the temperature with a slider.</p></p></aside>
-</div>
-<ul>
-<li><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.temperature">temperature()</a></li>
-</ul>
-<h3 id="light-sensor">Light Sensor</h3>
-<p>The LEDs of the display may also give you an indication of the amount of light shining onto the device.</p>
-<div class="figure">
-<img src="figures/iot/dse-light-sensor.png" alt="In the simulator, you imitate the light level with a slider." width="100%"/>
-<span name="figures/iot/dse-light-sensor.png">&nbsp;</span>
-<aside name="figures/iot/dse-light-sensor.png"><p><p>In the simulator, you imitate the light level with a slider.</p></p></aside>
-</div>
-<ul>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/display.html#microbit.display.read_light_level">display.read_light_level()</a></li>
-</ul>
-<h3 id="accelerometer">Accelerometer</h3>
-<p>An accelerometer measures the acceleration into different directions. Combined it can also detect movements or gestures.</p>
-<div class="figure">
-<img src="figures/iot/dse-accelerometer.png" alt="In the simulator, you imitate the acceleration with sliders in each dimension." width="100%"/>
-<span name="figures/iot/dse-accelerometer.png">&nbsp;</span>
-<aside name="figures/iot/dse-accelerometer.png"><p><p>In the simulator, you imitate the acceleration with sliders in each dimension.</p></p></aside>
-</div>
-<div class="figure">
-<img src="figures/iot/dse-gestures.png" alt="Simulate gestures directly." width="100%"/>
-<span name="figures/iot/dse-gestures.png">&nbsp;</span>
-<aside name="figures/iot/dse-gestures.png"><p><p>Simulate gestures directly.</p></p></aside>
-</div>
-<ul>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html#microbit.accelerometer.was_gesture">accelerometer.was_gesture(‘shake’)</a> Detect a gesture.</li>
-<li>API: <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/accelerometer.html">other accelerometer functions</a></li>
-<li><a href="https://microbit.org/get-started/user-guide/python/#accelerometer-readings">Accelerometer Examples from microbit.org</a></li>
-<li><a href="https://microbit.org/get-started/user-guide/python/#gestures">Gesture Examples from microbit.org</a></li>
-</ul>
-<h3 id="other-functions">Other Functions</h3>
-<p>In the tasks below, also some other functions will be useful:</p>
-<ul>
-<li><p><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/random.html#random.randint">random.randint(a, b)</a> Generate a random integer <code>n</code> so that <code>a &lt;= n &lt;= b</code></p></li>
-<li><p><a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit.html?highlight=temperature#microbit.sleep">sleep(n)</a> Sleep for n microseconds.</p></li>
-</ul>
-    </section>
-    <section class="content">
 <h1 id="reflection-exploring-an-api">Reflection: Exploring an API</h1>
 <p>In the section above, we showed you a couple of functions that you can use to control the Microbit. Whenever you do programming, exploring an API will be an important part of your work. There are several strategies to explore an API, which you will also mix as you go along.</p>
 <h3 id="step-1-find-out-which-functions-you-need">Step 1: Find out which functions you need</h3>
@@ -499,6 +424,7 @@ div.goals ul li:before {
 <div class="figure">
 <img src="figures/iot/vs-auto-complete.gif" width="100%"/>
 </div>
+<p>(For programming the Microbit, we are using the browser as editor, since it compiles the code into MicroPython and is simple to install. Unfortunately, it does not offer auto completion like other editors.)</p>
 <h3 id="experience-helps">Experience Helps…</h3>
 <p>After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches.</p>
 <div class="task"><p>After you finished the other tasks below, reflect on how you manage to use the API for using the components of the Microbit. What was easy? What is challenging? What helped?</p></div>

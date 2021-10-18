@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
+<style type="text/css">
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -61,6 +59,12 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -86,9 +90,6 @@ div.tip p {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-div.rat ol {
-  list-style-type: upper-alpha;
-}
 div.report p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -102,7 +103,17 @@ div.report p::before {
     color: #1481b8;
 display: inline;
 }
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
 
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
@@ -127,17 +138,7 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
 
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -163,7 +164,6 @@ div.figurefullwitdth {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
