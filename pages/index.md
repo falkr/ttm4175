@@ -149,14 +149,14 @@ class: weekplan table-sm table-bordered
 | 11:15
 |
 |
-|
-| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
+| 
 |
 |-
 | 12:15
 |
 |
 |
+| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
 |
 |-
 | 13:15
