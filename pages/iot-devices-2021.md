@@ -16,7 +16,7 @@
 
 # The Microbit
 
-In today's lab we use many of the existing resources about the Microbit that already exist online. 
+In today's lab we use many of the existing resources about the Microbit that you can find online. 
 
 
 ## The Microbit Hardware
@@ -123,7 +123,7 @@ Go through these examples step by step. For each example, do the following:
 * Compare your solution with the one given in the documentation.
 
 
-:report: Show how the applications work with a short sequence of screenshots. Describe what the code does.
+:report: Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.
 
 
 
@@ -158,7 +158,7 @@ Measure the temperature regularly. When you press button A, show the minimum tem
 
 
 
-# Create Your Own Application
+# (Extra) Create Your Own Application
 
 Inspired by the examples, brainstorm around some ideas you could try out with the simulated device.
 
