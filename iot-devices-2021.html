@@ -16,8 +16,45 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.rat ol {
-  list-style-type: upper-alpha;
+<style type="text/css">div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+
+div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 div.report p {
 padding: 10px;
@@ -32,45 +69,29 @@ div.report p::before {
     color: #1481b8;
 display: inline;
 }
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+div.check ul {
+  margin: 2em 0;
 }
 
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
 }
 
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 .steps ol, .steps ul {
   counter-reset: li;
@@ -108,6 +129,52 @@ div.factbox {
   margin-top:-20px;
   margin-bottom:-20px;
 }
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
 .w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
@@ -156,73 +223,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -387,7 +387,7 @@ div.tip p {
     </section>
     <section class="content">
 <h1 id="the-microbit">The Microbit</h1>
-<p>In today’s lab we use many of the existing resources about the Microbit that already exist online.</p>
+<p>In today’s lab we use many of the existing resources about the Microbit that you can find online.</p>
 <h2 id="the-microbit-hardware">The Microbit Hardware</h2>
 <p>Start by learning about all the sensors and actuators on the Microbit:</p>
 <p><a href="https://microbit.org/get-started/user-guide/overview/">Overview of the Microbit</a></p>
@@ -447,7 +447,7 @@ div.tip p {
 <li>Make it run.</li>
 <li>Compare your solution with the one given in the documentation.</li>
 </ul>
-<div class="report"><p>Show how the applications work with a short sequence of screenshots. Describe what the code does.</p></div>
+<div class="report"><p>Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.</p></div>
 <h2 id="nightlight">Nightlight</h2>
 <p>Detect that it is getting dark and turn on the display.</p>
 <ul>
@@ -469,7 +469,7 @@ div.tip p {
 <div class="task"><p>(Extra) Think about how to add an extra function, so that you can reset the temperatures when both buttons are pressed. Build it.</p></div>
     </section>
     <section class="content">
-<h1 id="create-your-own-application">Create Your Own Application</h1>
+<h1 id="extra-create-your-own-application">(Extra) Create Your Own Application</h1>
 <p>Inspired by the examples, brainstorm around some ideas you could try out with the simulated device.</p>
 <ul>
 <li>Think individually for a few minutes.</li>
