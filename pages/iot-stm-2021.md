@@ -187,7 +187,7 @@ The counter is an electronic version of a hand counter, like the one they use on
 
 ### Run the Counter
 
-[Using the same commands as last week for the device simulator](iot-devices.html), run the file `counter.py` in the device simulator, and try out if the counter works as you have described.
+Run the counter on the Microbit, and try out if the counter works as you have described.
 
 **Task:** Inspect the diagram closely, and describe in words how you expect, the counter will work. 
 
