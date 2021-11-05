@@ -16,31 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-.steps ol, .steps ul {
+<style type="text/css">.steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
   margin-left: 10px
@@ -76,9 +52,6 @@ div.goals ul li:before {
   margin-top:-20px;
   margin-bottom:-20px;
 }
-div.rat ol {
-  list-style-type: upper-alpha;
-}
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -89,43 +62,6 @@ border-left: 6px solid #1481b8
 div.task p::before { 
 content: "Task: ";
 font-weight: bold;
-display: inline;
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.warning p {
-padding: 10px;
-background-color: #ffd9ab;
-border-radius: 5px;
-border-left: 6px solid #fc8c03 
-}
-
-div.warning p::before {
-    content: '\f071 ';
-    font-family: 'Font Awesome 5 Free'; 
-    color: #fc8c03;
 display: inline;
 }
 .w3collapsible {
@@ -211,6 +147,8 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
+
+
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
@@ -235,8 +173,70 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
 
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -281,6 +281,7 @@ a.ntnu-button:hover {
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
       <!--
       <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
@@ -319,6 +320,7 @@ a.ntnu-button:hover {
         <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
         <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
         <!--
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
