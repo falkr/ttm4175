@@ -367,6 +367,11 @@ http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 5
 Look again at the figure. Form the task above, we have already the **GET** command in place (by function `do_GET()`). With this command, we offer the browser (here shown as phone) a website so we can read the temperature. 
 To let the sensor inform the server about the temperature, it uses instead the **POST** command. 
 
+---
+type: figure
+source: figures/http/smart-home.png
+---
+
 So, to repeat: 
 
 * Here, the `do_GET()` function processes the requests from browsers that want to know the temperature, and it works pretty much like the **GET** for any other website; we return a complete webstie to the browser that shows the temperature.
@@ -375,20 +380,18 @@ So, to repeat:
 
 The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.) 
 
----
-type: figure
-source: figures/http/smart-home.png
----
 
+:task: 
+Add a function `do_POST():` **in addition** to the already existing `do_GET()` function.
 
-* Add a function `do_POST():` **in addition** to the already existing `do_GET()` function.
 
 We use from now on the `do_GET()` function to serve the web site that reports the temperature, and the function `do_POST()` to receive data from the temperature sensor. The web server can hence process two different requests: one for storing data, one for serving a website that presents the data.
 
 ## Sending Data via Python Requests
 
-We now want to send data from Python. In a real system, a sensor should do this automated and in periodic intervals.
+We now want to send data to the web server from Python. In a real system, a sensor should do this automated and in periodic intervals.
 (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.)
+This code sends the data to the web server, using a **POST** request:
 
 ```python
 import requests
