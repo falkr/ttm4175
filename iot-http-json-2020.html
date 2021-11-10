@@ -16,11 +16,90 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
+<style type="text/css">div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 .steps ol, .steps ul {
   counter-reset: li;
@@ -58,7 +137,6 @@
   margin-top:-20px;
   margin-bottom:-20px;
 }
-
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -71,90 +149,11 @@ content: "Task: ";
 font-weight: bold;
 display: inline;
 }
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -513,13 +512,13 @@ div.figurefullwitdth {
 <li>Pay special attention to the function <code>do_GET()</code>. This will be the core of what we do today.</li>
 <li>Be patient. Ask questions to each other, make sure everyone gets it.</li>
 </ul>
-<p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value. This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> does not have any input or return parameters. It’s more a question of how the API is designed, the authors have made a decision here.</p>
+<p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value. This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> function does not have any input or return parameters. It’s more a question of how the API is designed, the authors have made a decision here.</p>
 <div class="task"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p></div>
 <p>Note: Whenever you are going to change the code of the web server, you will need to terminate it via <code>Ctrl-C</code> and then restart it.</p>
 <h2 id="request-via-web-browser">Request via Web Browser</h2>
 <ul>
 <li>Either on the same machine, or (even better) on a different machine in case you are in the same network, access the website address that the server prints out in a browser.</li>
-<li>If you access the browser on the same machine, you can type <code>http://localhost:8023/</code> as address. Otherwise, use the IP address.</li>
+<li>If you access the browser on the same machine, you can type <code>http://localhost:8023/</code> as address. Otherwise, use the IP address instead of `localhost.</li>
 <li>What happens in the browser, and what happens in the command where the server program runs?</li>
 <li>Create a sequence diagram of what you have just observed, and annotate it with details that you find relevant.</li>
 <li>Answer the following questions:
@@ -542,7 +541,16 @@ div.figurefullwitdth {
 <li>Has the data been transformed somehow?</li>
 </ul>
 <h2 id="get-and-post-on-the-server">GET and POST on the Server</h2>
-<p>When we use HTTP to both request data and store data, we should use different HTTP commands for these tasks. To <strong>read</strong> a website, we already use the <strong>GET</strong> command. To <strong>write</strong> data, we should use instead the <strong>POST</strong> command. In the task above, we have “misused” the browser, and let it make a GET request with the data. For making all neat and tidy, we should use a <strong>POST</strong> instead.</p>
+<p>Look again at the figure. Form the task above, we have already the <strong>GET</strong> command in place (by function <code>do_GET()</code>). With this command, we offer the browser (here shown as phone) a website so we can read the temperature. To let the sensor inform the server about the temperature, it uses instead the <strong>POST</strong> command.</p>
+<p>So, to repeat:</p>
+<ul>
+<li><p>Here, the <code>do_GET()</code> function processes the requests from browsers that want to know the temperature, and it works pretty much like the <strong>GET</strong> for any other website; we return a complete webstie to the browser that shows the temperature.</p></li>
+<li><p>With the <code>do_POST()</code> function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured.</p></li>
+</ul>
+<p>The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.)</p>
+<div class="figure">
+<img src="figures/http/smart-home.png" width="100%"/>
+</div>
 <ul>
 <li>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function.</li>
 </ul>
