@@ -327,7 +327,7 @@ httpd.serve_forever()
 * Be patient. Ask questions to each other, make sure everyone gets it.
 
 **A detail:** You may see that the `do_GET()` function only has `self` as parameter (from the class), and does not have a return value. 
-This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute `self.requestline`. Similarly, the response is created by calling some functions on the parent class, for instance `self.wfile.write(response_in_bytes)`. So therefore the `do_GET()` does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.
+This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute `self.requestline`. Similarly, the response is created by calling some functions on the parent class, for instance `self.wfile.write(response_in_bytes)`. So therefore the `do_GET()` function does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.
 
 :task: Run the code, like any Python program via `python webserver.py`.
 
@@ -337,7 +337,7 @@ Note: Whenever you are going to change the code of the web server, you will need
 ## Request via Web Browser
 
 * Either on the same machine, or (even better) on a different machine in case you are in the same network, access the website address that the server prints out in a browser.
-* If you access the browser on the same machine, you can type `http://localhost:8023/` as address. Otherwise, use the IP address.
+* If you access the browser on the same machine, you can type `http://localhost:8023/` as address. Otherwise, use the IP address instead of `localhost.
 * What happens in the browser, and what happens in the command where the server program runs?
 * Create a sequence diagram of what you have just observed, and annotate it with details that you find relevant.
 * Answer the following questions:
@@ -364,7 +364,22 @@ http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 5
 
 ## GET and POST on the Server
 
-When we use HTTP to both request data and store data, we should use different HTTP commands for these tasks. To **read** a website, we already use the **GET** command. To **write** data, we should use instead the **POST** command. In the task above, we have "misused" the browser, and let it make a GET request with the data. For making all neat and tidy, we should use a **POST** instead.
+Look again at the figure. Form the task above, we have already the **GET** command in place (by function `do_GET()`). With this command, we offer the browser (here shown as phone) a website so we can read the temperature. 
+To let the sensor inform the server about the temperature, it uses instead the **POST** command. 
+
+So, to repeat: 
+
+* Here, the `do_GET()` function processes the requests from browsers that want to know the temperature, and it works pretty much like the **GET** for any other website; we return a complete webstie to the browser that shows the temperature.
+
+* With the `do_POST()` function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured. 
+
+The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.) 
+
+---
+type: figure
+source: figures/http/smart-home.png
+---
+
 
 * Add a function `do_POST():` **in addition** to the already existing `do_GET()` function.
 
