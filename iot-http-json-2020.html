@@ -155,6 +155,7 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
+
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -542,21 +543,19 @@ div.tip p {
 </ul>
 <h2 id="get-and-post-on-the-server">GET and POST on the Server</h2>
 <p>Look again at the figure. Form the task above, we have already the <strong>GET</strong> command in place (by function <code>do_GET()</code>). With this command, we offer the browser (here shown as phone) a website so we can read the temperature. To let the sensor inform the server about the temperature, it uses instead the <strong>POST</strong> command.</p>
+<div class="figure">
+<img src="figures/http/smart-home.png" width="100%"/>
+</div>
 <p>So, to repeat:</p>
 <ul>
 <li><p>Here, the <code>do_GET()</code> function processes the requests from browsers that want to know the temperature, and it works pretty much like the <strong>GET</strong> for any other website; we return a complete webstie to the browser that shows the temperature.</p></li>
 <li><p>With the <code>do_POST()</code> function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured.</p></li>
 </ul>
 <p>The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.)</p>
-<div class="figure">
-<img src="figures/http/smart-home.png" width="100%"/>
-</div>
-<ul>
-<li>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function.</li>
-</ul>
+<div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function.</p></div>
 <p>We use from now on the <code>do_GET()</code> function to serve the web site that reports the temperature, and the function <code>do_POST()</code> to receive data from the temperature sensor. The web server can hence process two different requests: one for storing data, one for serving a website that presents the data.</p>
 <h2 id="sending-data-via-python-requests">Sending Data via Python Requests</h2>
-<p>We now want to send data from Python. In a real system, a sensor should do this automated and in periodic intervals. (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.)</p>
+<p>We now want to send data to the web server from Python. In a real system, a sensor should do this automated and in periodic intervals. (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.) This code sends the data to the web server, using a <strong>POST</strong> request:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
