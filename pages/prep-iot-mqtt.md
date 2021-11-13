@@ -12,7 +12,6 @@ protocols.
 
 :goals: After this week, you will be able to:
 
-- Run and operate your own MQTT broker.
 - Create an MQTT client in Python.
 - Publish and receive messages, including data payload.
 - Select proper quality-of-service levels.
@@ -42,13 +41,13 @@ also relied on MQTT to push messages to the clients.
 :aside: Read the article [Building Facebook Messenger](https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920)
 
 
-MQTT is simple to work with, and the following are my top
+MQTT is simple to work with, and the following are "my favourite"
 5 reasons for using MQTT:
 
 1. **MQTT is simple to debug.** You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.
 2. **You only need to handle a single IP address.** That is the address of the broker. All other addressing happens indirectly via topics.
 3. **Application startup is simple.** You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.
-4. **MQTT works also behind a NAT.** This means you can push a message from any location to a computer that is connected to your router at home. Only the broker needs to be accessible.
+4. **MQTT works also behind NAT.** NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to "push" messages into a subscribed computer in the prvate network. Only the broker needs to be accessible.
 5. **MQTT is bi-directional by default.** Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.
 
 # Broker Architecture
