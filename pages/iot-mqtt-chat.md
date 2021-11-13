@@ -19,7 +19,7 @@ Today's sub-goals:
 
 
 
-## The Chat User Interface
+# Step 1: The Chat User Interface
 
 The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages. 
 We interact with it in two ways:
@@ -126,11 +126,11 @@ def on_type(sender, receiver):
 
 
 
-# Install the Chat UI
+## Install the Chat UI
 
 
 
-The UI is written with a libray that is called DearPyUI. You can install it as usual:
+The UI is written with a library that is called DearPyGui. You can install it as usual:
 
 ```bash
 python3 -m pip install dearpygui
@@ -160,7 +160,7 @@ Unzip it and open it in Visual Studio Code.
 
 
 
-# Step 1: Test the UI
+## Testing the UI
 
 In this part, we only test how the user interface works, we are not yet sending any real messages between each other.
 Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.
