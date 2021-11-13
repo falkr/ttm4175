@@ -282,6 +282,7 @@ display: inline;
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
       <!--
       <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
@@ -321,6 +322,7 @@ display: inline;
         <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
         <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
         <!--
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
@@ -405,7 +407,9 @@ display: inline;
 <li>In Step 4, we add delivery receipts, read receipts and typing indications.</li>
 </ul>
 <div class="tip"><p>Please visit the table on Teams / General / Files / Progress MQTT Chat.xlsx and mark which tasks you have done.</p></div>
-<h2 id="the-chat-user-interface">The Chat User Interface</h2>
+    </section>
+    <section class="content">
+<h1 id="step-1-the-chat-user-interface">Step 1: The Chat User Interface</h1>
 <p>The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages. We interact with it in two ways:</p>
 <ul>
 <li>By function calls, when we want to change something in the UI. That means, we want to do something, and we cause an effect in the user interface. These are events that are <strong>initiated outside</strong> of our specific user interface instance.</li>
@@ -448,10 +452,8 @@ display: inline;
 <p>Whenever we start typing, we send a typing hint to the chat contacts. The UI informs us about typing with the following function:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_type(sender, receiver):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># publish typing hint via MQTT</span></span></code></pre></div>
-    </section>
-    <section class="content">
-<h1 id="install-the-chat-ui">Install the Chat UI</h1>
-<p>The UI is written with a libray that is called DearPyUI. You can install it as usual:</p>
+<h2 id="install-the-chat-ui">Install the Chat UI</h2>
+<p>The UI is written with a library that is called DearPyGui. You can install it as usual:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install dearpygui</span></code></pre></div>
 <p>On windows, you may receive the following error message when you start the program:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">dearpygui.*</span></span>
@@ -465,9 +467,7 @@ display: inline;
 <h3 id="chat-ui-code">Chat UI Code</h3>
 <p>You can download a zip file with all source code for today’s lab here: <a href="https://github.com/falkr/ttm4175-chat/archive/main.zip" class="uri">https://github.com/falkr/ttm4175-chat/archive/main.zip</a></p>
 <p>Unzip it and open it in Visual Studio Code.</p>
-    </section>
-    <section class="content">
-<h1 id="step-1-test-the-ui">Step 1: Test the UI</h1>
+<h2 id="testing-the-ui">Testing the UI</h2>
 <p>In this part, we only test how the user interface works, we are not yet sending any real messages between each other. Your task will only be to test the user interface and describe how it works, so that you get an understanding for it.</p>
 <p>This is the code to test the user interface. You can find it in file <code>test_chat_gui.py</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> chat_gui <span class="im">import</span> ChatGui</span>

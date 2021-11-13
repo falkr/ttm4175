@@ -189,6 +189,7 @@ div.tip p {
       <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
       <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
       <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
       <!--
       <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
       <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
@@ -228,6 +229,7 @@ div.tip p {
         <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
         <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
         <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
         <!--
         <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
         <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
@@ -301,7 +303,6 @@ div.tip p {
 <h2 id="learning-goals">Learning Goals</h2>
 <div class="goals"><p>After this week, you will be able to:</p>
 <ul>
-<li>Run and operate your own MQTT broker.</li>
 <li>Create an MQTT client in Python.</li>
 <li>Publish and receive messages, including data payload.</li>
 <li>Select proper quality-of-service levels.</li>
@@ -319,12 +320,12 @@ div.tip p {
 <span name="b32115"></span><aside name="b32115"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p></aside>
 <h1 id="mqtt">MQTT</h1>
 <p>MQTT is often used in situations where events should be sent from many sensors and broadcast to several applications. IBM and others for instance use MQTT so that IoT devices can send updates into their cloud services. When Facebook introduced their standalone Messenger application, they also relied on MQTT to push messages to the clients.</p>
-<p>MQTT is simple to work with, and the following are my top 5 reasons for using MQTT:</p>
+<p>MQTT is simple to work with, and the following are “my favourite” 5 reasons for using MQTT:</p>
 <ol type="1">
 <li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
 <li><strong>You only need to handle a single IP address.</strong> That is the address of the broker. All other addressing happens indirectly via topics.</li>
 <li><strong>Application startup is simple.</strong> You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.</li>
-<li><strong>MQTT works also behind a NAT.</strong> This means you can push a message from any location to a computer that is connected to your router at home. Only the broker needs to be accessible.</li>
+<li><strong>MQTT works also behind NAT.</strong> NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to “push” messages into a subscribed computer in the prvate network. Only the broker needs to be accessible.</li>
 <li><strong>MQTT is bi-directional by default.</strong> Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.</li>
 </ol>
     </section>
