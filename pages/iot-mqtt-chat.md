@@ -15,9 +15,6 @@ Today's sub-goals:
 * In Step 4, we add delivery receipts, read receipts and typing indications.
 
 
-:tip: Please visit the table on Teams / General / Files / Progress MQTT Chat.xlsx and mark which tasks you have done. 
-
-
 
 # Step 1: The Chat User Interface
 

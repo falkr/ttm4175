@@ -16,55 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.figure {
+<style type="text/css">div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -75,151 +27,34 @@ div.figurefullwitdth {
   margin-right: -33px;
   width: 100%;
 }
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
+table.weekplan {
   width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+  table-layout: fixed;
 }
 
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
 }
 
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  xline-height: 40px;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
+table.weekplan td, table.weekplan th {
   text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+table.weekplan td:empty {
+  background-color: white;
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
 }
 
-div.warning p {
-padding: 10px;
-background-color: #ffd9ab;
-border-radius: 5px;
-border-left: 6px solid #fc8c03 
-}
-
-div.warning p::before {
-    content: '\f071 ';
-    font-family: 'Font Awesome 5 Free'; 
-    color: #fc8c03;
-display: inline;
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -375,198 +210,266 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="introduksjon-til-kommunikasjonsteknologi-og-digital-sikkerhet">Introduksjon til Kommunikasjonsteknologi og digital sikkerhet</h1>
+<h1>Introduksjon til Kommunikasjonsteknologi og digital sikkerhet</h1>
 <p>Kurset er introduksjonsemnet til studieprogram <a href="https://www.ntnu.no/studier/mtkom">Kommunikasjonsteknologi og digital sikkerhet</a> og gir deg oversikt over flere emner og tema i studiet.</p>
 <!--
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
 -->
-<h2 id="timeplan">Timeplan</h2>
+<h2>Timeplan</h2>
 <p>I løpet av uke 33 er emnet integrert i studiestart.</p>
+
 <table class="table table-sm">
 <tr>
-<th><p>Tid</p></th>
-<th><p>Tema</p></th>
-<th><p>Sted</p></th>
+<th><p>Tid</p>
+</th>
+<th><p>Tema</p>
+</th>
+<th><p>Sted</p>
+</th>
 </tr>
 <tr>
-<td><p>Mandag, 16. aug. 2021, 12:00 - 14:00</p></td>
-<td><p>Immatrikulering og orientering</p></td>
-<td><p><a href="https://link.mazemap.com/QqBVasau">EL-3</a></p></td>
+<td><p>Mandag, 15. aug. 2022, 13:00 - 15:00</p>
+</td>
+<td><p>Immatrikulering og orientering</p>
+</td>
+<td><p><a href="https://link.mazemap.com/kolUEtCs">EL-6</a></p>
+</td>
 </tr>
 <tr>
-<td><p>Tirsdag, 17. aug.</p></td>
-<td><p><em>ingenting</em></p></td>
+<td><p>Tirsdag, 16. aug.</p>
+</td>
+<td><p><em>ingenting</em></p>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><p>Onsdag, 18. aug. 2021, 9:15 - ca. 16:30</p></td>
-<td><p>Teknostart Dag 1</p></td>
-<td><p><a href="https://link.mazemap.com/QqBVasau">EL-3</a></p></td>
+<td><p>Onsdag, 17. aug. 2022, 9:00 - ca. 16:30</p>
+</td>
+<td><p>Teknostart Dag 1</p>
+</td>
+<td><p><a href="https://link.mazemap.com/kolUEtCs">EL-6</a></p>
+</td>
 </tr>
 <tr>
-<td><p>Torsdag, 19. aug. 2021, 9:15 - 15:00</p></td>
-<td><p>Teknostart Dag 2</p></td>
-<td><p><a href="https://link.mazemap.com/QqBVasau">EL-3</a></p></td>
+<td><p>Torsdag, 18. aug. 2022, 9:00 - 15:00</p>
+</td>
+<td><p>Teknostart Dag 2</p>
+</td>
+<td><p><a href="https://link.mazemap.com/QqBVasau">EL-3</a></p>
+</td>
 </tr>
 <tr>
-<td><p>Fredag, 20. aug. 2021, 9:15 - ca. 15:00</p></td>
-<td><p>Teknostart Dag 3</p></td>
-<td><p><a href="https://link.mazemap.com/QqBVasau">EL-3</a></p></td>
+<td><p>Fredag, 19. aug. 2022, 9:00 - ca. 15:00</p>
+</td>
+<td><p>Teknostart Dag 3</p>
+</td>
+<td><p><a href="https://link.mazemap.com/kolUEtCs">EL-6</a></p>
+</td>
 </tr>
 </table>
 <table class="table table-sm">
 <tr>
-<th><p>Uke</p></th>
-<th><p>Tid</p></th>
-<th><p>Tema</p></th>
+<th><p>Uke</p>
+</th>
+<th><p>Tid</p>
+</th>
+<th><p>Tema</p>
+</th>
 </tr>
 <tr>
-<td><p>33</p></td>
-<td><p>se ovenfor</p></td>
-<td><p>Studiestart</p></td>
+<td><p>33</p>
+</td>
+<td><p>se ovenfor</p>
+</td>
+<td><p>Studiestart</p>
+</td>
 </tr>
 <tr>
-<td><p>34</p></td>
+<td><p>34</p>
+</td>
 <td></td>
-<td><p><em>ingen forelesning</em></p></td>
+<td><p>Laszlo</p>
+</td>
 </tr>
 <tr>
-<td><p>35</p></td>
+<td><p>35</p>
+</td>
 <td></td>
-<td><p>Etisk hacking, uke 1</p></td>
+<td><p>Amir</p>
+</td>
 </tr>
 <tr>
-<td><p>36</p></td>
+<td><p>36</p>
+</td>
 <td></td>
-<td><p>Etisk hacking, uke 2</p></td>
+<td><p>Amir</p>
+</td>
 </tr>
 <tr>
-<td><p>37</p></td>
+<td><p>37</p>
+</td>
 <td></td>
-<td><p>Etisk hacking, uke 3</p></td>
+<td></td>
 </tr>
 <tr>
-<td><p>38</p></td>
+<td><p>38</p>
+</td>
 <td></td>
-<td><p>Etisk hacking, uke 4</p></td>
+<td><p>Laszlo: Etisk hacking</p>
+</td>
 </tr>
 <tr>
-<td><p>39</p></td>
+<td><p>39</p>
+</td>
 <td></td>
-<td><p><em>ingen undervisning i emnet</em></p></td>
+<td><p>Laszlo: Etisk hacking</p>
+</td>
 </tr>
 <tr>
-<td><p>40</p></td>
+<td><p>40</p>
+</td>
 <td></td>
-<td><p>Etisk hacking, uke 5</p></td>
+<td><p>Laszlo: Etisk hacking</p>
+</td>
 </tr>
 <tr>
-<td><p>41</p></td>
+<td><p>41</p>
+</td>
 <td></td>
-<td><p><em>info kommer</em></p></td>
+<td><p>Laszlo: Etisk hacking</p>
+</td>
 </tr>
 <tr>
-<td><p>42</p></td>
+<td><p>42</p>
+</td>
 <td></td>
-<td><p><em>info kommer</em></p></td>
+<td><p><em>info kommer</em></p>
+</td>
 </tr>
 <tr>
-<td><p>43</p></td>
+<td><p>43</p>
+</td>
 <td></td>
-<td><p>IoT 1, Introduction to IoT and the Microbit</p></td>
+<td><p>IoT 1, Introduction to IoT and the Microbit</p>
+</td>
 </tr>
 <tr>
-<td><p>44</p></td>
+<td><p>44</p>
+</td>
 <td></td>
-<td><p>IoT 2</p></td>
+<td><p>IoT 2</p>
+</td>
 </tr>
 <tr>
-<td><p>45</p></td>
+<td><p>45</p>
+</td>
 <td></td>
-<td><p>IoT 3</p></td>
+<td><p>IoT 3</p>
+</td>
 </tr>
 <tr>
-<td><p>46</p></td>
+<td><p>46</p>
+</td>
 <td></td>
-<td><p>IoT 4</p></td>
+<td><p>IoT 4</p>
+</td>
 </tr>
 <tr>
-<td><p>47</p></td>
+<td><p>47</p>
+</td>
 <td></td>
-<td><p><em>info kommer</em></p></td>
+<td><p><em>info kommer</em></p>
+</td>
 </tr>
 </table>
 <table class="weekplan table table-sm">
 <tr>
-<th><p>Time</p></th>
-<th><p>Mon</p></th>
-<th><p>Tue</p></th>
-<th><p>Wed</p></th>
-<th><p>Thu</p></th>
-<th><p>Fri</p></th>
+<th><p>Time</p>
+</th>
+<th><p>Mon</p>
+</th>
+<th><p>Tue</p>
+</th>
+<th><p>Wed</p>
+</th>
+<th><p>Thu</p>
+</th>
+<th><p>Fri</p>
+</th>
 </tr>
 <tr>
-<td><p>08:15</p></td>
+<td><p>08:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>09:15</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>10:15</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td rowspan="2"><p><a href="https://link.mazemap.com/QO2zpqJ0">Kjel 4</a> (Forelesning)</p></td>
+<td rowspan="2"><p><a href="https://link.mazemap.com/QO2zpqJ0">Kjel 4</a> (Forelesning)</p>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><p>11:15</p></td>
+<td><p>09:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><p>12:15</p></td>
+<td><p>10:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
-<td rowspan="4"><p><a href="https://link.mazemap.com/pR24A3cf">Sahara Lab</a> (Lab)</p></td>
-<td></td>
-</tr>
-<tr>
-<td><p>13:15</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td rowspan="4"><p><a href="https://link.mazemap.com/pR24A3cf">Sahara Lab</a> (Lab)</p>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><p>14:15</p></td>
+<td><p>11:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><p>15:15</p></td>
+<td><p>12:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><p>16:15</p></td>
+<td><p>13:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>14:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>15:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>16:15</p>
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -576,37 +479,39 @@ display: inline;
 </table>
     </section>
     <section class="content">
-<h1 id="innhold">Innhold</h1>
+<h1>Innhold</h1>
 <p>Emnet består av oppstartsuka, etterfølgt av labarbeid med litt forskjellig fokus:</p>
-<h2 id="oppstartsuka">Oppstartsuka</h2>
+<h2>Oppstartsuka</h2>
 <p>I første uken blir du kjent med datamaskiner og nettverk, og får ferdigheter som vi trenger i resten av semesteret og hele studiet. Vi kommer til å kjøre en virtualisert datamaskin i deres egen datamaskin, lære om tilgang via kommandolinje og SSH, og lage deres egen webside.</p>
+
 <div class="figure">
 <img src="figures/teknostart/goals.png" alt="Each day we try to reach a new goal. The final goal is to run our own website." width="100%"/>
 <span name="figures/teknostart/goals.png">&nbsp;</span>
-<aside name="figures/teknostart/goals.png"><p><p>Each day we try to reach a new goal. The final goal is to run our own website.</p></p></aside>
+<aside name="figures/teknostart/goals.png"><p><p>Each day we try to reach a new goal. The final goal is to run our own website.</p>
+</p></aside>
 </div>
-<h2 id="sikkerhet">Sikkerhet</h2>
-<p>Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer. Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer. I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.</p>
+<h2>Sikkerhet</h2>
+<p>Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer.
+Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer.
+I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.</p>
+
 <div class="figure">
 <img src="figures/security/overview.png" width="100%"/>
 </div>
-<span name="84c669"></span><aside name="84c669"><img src="figures/laszlo.jpg" width="100px">
-<p>
-<a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no
-</p></aside>
-<h2 id="tingenes-internet">Tingenes Internet</h2>
+<span name="84c669"></span><aside name="84c669"><p><img src="figures/laszlo.jpg" width="100px"><p><a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no</p></p>
+</aside>
+<h2>Tingenes Internet</h2>
 <p>Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.</p>
+
 <div class="figure">
 <img src="figures/iot/overview.png" width="100%"/>
 </div>
-<span name="c7c2f9"></span><aside name="c7c2f9"><img src="figures/frank.jpg" width="100px">
-<p>
-<a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no
-</p></aside>
+<span name="c7c2f9"></span><aside name="c7c2f9"><p><img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p></p>
+</aside>
     </section>
     <section class="content">
-<h1 id="om-emnet">Om Emnet</h1>
-<h2 id="forventninger-til-deg-som-student">Forventninger til deg som student</h2>
+<h1>Om Emnet</h1>
+<h2>Forventninger til deg som student</h2>
 <p>Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.</p>
 <p>Vi forventer at du:</p>
 <ul>
@@ -615,9 +520,10 @@ display: inline;
 <li>Bidrar til positivt og konstruktivt gruppearbeid.</li>
 <li>Bidrar i å skrive avsluttende rapport fra hver lab.</li>
 </ul>
-<h2 id="vurdering">Vurdering</h2>
+<h2>Vurdering</h2>
 <p>Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.</p>
 <p>Det er ingen eksamen i emnet.</p>
+
     </section>
 </div>
 

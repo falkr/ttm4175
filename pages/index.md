@@ -19,25 +19,25 @@ type: table
 ! Tema
 ! Sted
 |-
-| Mandag, 16. aug. 2021, 12:00 - 14:00
+| Mandag, 15. aug. 2022, 13:00 - 15:00
 | Immatrikulering og orientering
-| [EL-3](https://link.mazemap.com/QqBVasau)
+| [EL-6](https://link.mazemap.com/kolUEtCs)
 |-
-| Tirsdag, 17. aug.
+| Tirsdag, 16. aug.
 | _ingenting_
 |
 |-
-| Onsdag, 18. aug. 2021, 9:15 - ca. 16:30
+| Onsdag, 17. aug. 2022, 9:00 - ca. 16:30
 | Teknostart Dag 1
-| [EL-3](https://link.mazemap.com/QqBVasau)
+| [EL-6](https://link.mazemap.com/kolUEtCs)
 |-
-| Torsdag, 19. aug. 2021, 9:15 - 15:00
+| Torsdag, 18. aug. 2022, 9:00 - 15:00
 | Teknostart Dag 2
 | [EL-3](https://link.mazemap.com/QqBVasau)
 |-
-| Fredag, 20. aug. 2021, 9:15 - ca. 15:00
+| Fredag, 19. aug. 2022, 9:00 - ca. 15:00
 | Teknostart Dag 3
-| [EL-3](https://link.mazemap.com/QqBVasau)
+| [EL-6](https://link.mazemap.com/kolUEtCs)
 |}
 
 
@@ -55,35 +55,35 @@ type: table
 |-
 | 34
 | 
-| _ingen forelesning_
+| Laszlo
 |-
 | 35
 |
-| Etisk hacking, uke 1
+| Amir
 |-
 | 36
 |
-| Etisk hacking, uke 2
+| Amir
 |-
 | 37
 |
-| Etisk hacking, uke 3
+| 
 |-
 | 38
 |
-| Etisk hacking, uke 4
+| Laszlo: Etisk hacking
 |-
 | 39
 |
-| _ingen undervisning i emnet_
+| Laszlo: Etisk hacking
 |-
 | 40
 |
-| Etisk hacking, uke 5
+| Laszlo: Etisk hacking
 |-
 | 41
 |
-| _info kommer_
+| Laszlo: Etisk hacking
 |-
 | 42
 | 
@@ -129,12 +129,11 @@ class: weekplan table-sm table-bordered
 | 
 |  
 |
-|
+| rowspan="2" | [Kjel 4](https://link.mazemap.com/QO2zpqJ0) (Forelesning)
 |
 |-
 | 09:15
 | 
-|
 |
 |
 |
@@ -143,7 +142,7 @@ class: weekplan table-sm table-bordered
 | 
 |
 |
-| rowspan="2" | [Kjel 4](https://link.mazemap.com/QO2zpqJ0) (Forelesning)
+| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
 | 
 |-
 | 11:15
@@ -156,7 +155,6 @@ class: weekplan table-sm table-bordered
 |
 |
 |
-| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
 |
 |-
 | 13:15
@@ -170,8 +168,10 @@ class: weekplan table-sm table-bordered
 |
 |
 |
+|
 |-
 | 15:15
+|
 |
 |
 |
