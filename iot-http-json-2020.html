@@ -16,7 +16,58 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -101,6 +152,22 @@ div.goals ul li:before {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -109,16 +176,12 @@ div.goals ul li:before {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -132,11 +195,9 @@ div.goals ul li:before {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -156,6 +217,19 @@ div.tip p {
   border-left: 6px solid #1481b8
 }
 
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -310,85 +384,124 @@ div.tip p {
 <div class="page">
     </section>
     <section class="content">
-<h1 id="http-and-json">HTTP and JSON</h1>
+<h1>HTTP and JSON</h1>
 <p>Today we will use HTTP as communication protocol and JSON as serialization format to send data, from a client to a server and from a server to a client.</p>
+
     </section>
     <section class="content">
-<h1 id="http-client-requests-checking-the-news">HTTP Client Requests: Checking the News</h1>
-<p>Let us first make a HTTP request for the most common job: requesting the content of a website. Of course, you know what happens when you make a request to <a href="https://www.nrk.no/" class="uri">https://www.nrk.no/</a> via your browser. But there are other ways you can make such a request.</p>
-<h3 id="checking-the-news-via-curl">Checking the News via Curl</h3>
+<h1>HTTP Client Requests: Checking the News</h1>
+<p>Let us first make a HTTP request for the most common job: requesting the content of a website. Of course, you know what happens when you make a request to <a href="https://www.nrk.no/">https://www.nrk.no/</a> via your browser. But there are other ways you can make such a request.</p>
+<h3>Checking the News via Curl</h3>
 <p>Use the command line tool curl to request the website:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--verbose</span> https://www.nrk.no/</span></code></pre></div>
-<div class="task"><p>Can you read some of the headlines?</p></div>
-<div class="task"><p>What happens if you try to use the URL <code>http://www.nrk.no/</code> instead? What does the response say? Can you find out what this response means?</p></div>
-<h3 id="checking-the-news-via-python">Checking the News via Python</h3>
+<div class="task"><p>Can you read some of the headlines?</p>
+</div>
+<div class="task"><p>What happens if you try to use the URL <code>http://www.nrk.no/</code> instead? What does the response say? Can you find out what this response means?</p>
+</div>
+<h3>Checking the News via Python</h3>
 <p>You can make requests also programmatically, that means, as part of a program running in Python. For that, a dedicated package <code>requests</code> exists that lets you make requests and parse the response in a simple way.</p>
 <p>Install the requests package:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install requests</span></code></pre></div>
-<span name="e3c025"></span><aside name="e3c025"><p>Using <code>pip</code> with the <code>python3 -m</code> prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the <code>pip</code> installation that also matches your <code>python3</code>. You also don’t need to worry about <code>pip3</code> or <code>pip</code>.</p></aside>
+<span name="e3c025"></span><aside name="e3c025"><p>Using <code>pip</code> with the <code>python3 -m</code> prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the <code>pip</code> installation that also matches your <code>python3</code>. You also don't need to worry about <code>pip3</code> or <code>pip</code>.</p>
+</aside>
 <p>With this package installed, the program to make a request to a website looks like this:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://nrk.no/&quot;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div>
 <p>The request returns a data structure of the type <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">Response</a> which contains the answer as a text field, which we simply print out.</p>
-<div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p></div>
+
+<div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="http-client-requests-checking-the-weather">HTTP Client Requests: Checking the Weather</h1>
-<p>So these were requests to get the content of a website. But HTTP can also be used in a different way. <a href="Yr.no">Yr.no</a> provides weather information, which most people access either via the website or the mobile app. Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.</p>
-<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here in detail.</a>. Select the box that says <code>GET/compact</code>, as shown in the figure below. This box lets you try out a request, directly from the website. The required input data are latitude and longitude. For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
-<div class="task"><p>Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.</p></div>
+<h1>HTTP Client Requests: Checking the Weather</h1>
+<p>So these were requests to get the content of a website.
+But HTTP can also be used in a different way. <a href="Yr.no">Yr.no</a> provides weather information, which most people access either via the website or the mobile app.
+Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.</p>
+<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here in detail.</a>.
+Select the box that says <code>GET/compact</code>, as shown in the figure below.
+This box lets you try out a request, directly from the website.
+The required input data are latitude and longitude.
+For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
+
+<div class="task"><p>Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.</p>
+</div>
 <div class="figure">
 <img src="figures/http/yr-1.png" width="100%"/>
 </div>
-<h3 id="weather-via-curl">Weather via Curl</h3>
+<h3>Weather via Curl</h3>
 <p>We can also do the same HTTP request from our command line using <code>curl</code>:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="st">&#39;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&#39;</span></span></code></pre></div>
-<h3 id="weather-via-python">Weather via Python</h3>
-<p>Let us use Python again for making the same request, with the requests module as done above. Find the correct URL from the API website.</p>
+<h3>Weather via Python</h3>
+<p>Let us use Python again for making the same request, with the requests module as done above.
+Find the correct URL from the API website.</p>
+
 <button class="w3collapsible">Hint for the code</button>
 <div class="w3content">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div>
+<pre><code class="language-python">import requests
+
+url = &quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;
+response = requests.get(url)
+print(response.text)
+</code></pre>
+
 </div>
-<div class="task"><p>Run the code, document the result.</p></div>
-<span name="9418ba"></span><aside name="9418ba"><p>Note that <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.text">text</a> is a field or variable in the requests object, but <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.json">json()</a> is a function we call on it, therefore we use the braces.</p></aside>
+<div class="task"><p>Run the code, document the result.</p>
+</div>
+<span name="9418ba"></span><aside name="9418ba"><p>Note that <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.text">text</a> is a field or variable in the requests object, but <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.json">json()</a> is a function we call on it, therefore we use the braces.</p>
+</aside>
 <p>The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON via the function <code>response.json()</code> which you can also print via <code>print(response.json())</code>.</p>
+
 <button class="w3collapsible">Hint for the code</button>
 <div class="w3content">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())</span></code></pre></div>
+<pre><code class="language-python">import requests
+
+url = &quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;
+response = requests.get(url)
+print(response.json())
+</code></pre>
+
 </div>
-<p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal <code>print()</code> function, the data structure doesn’t look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:</p>
+<p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal <code>print()</code> function, the data structure doesn't look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># your code...</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pprint(response.json())</span></code></pre></div>
 <p>Notice that we use now the function <code>pprint()</code> instead of <code>print()</code> to print things <em>pretty</em>. Pretty good, huh?</p>
-<div class="task"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p></div>
+
+<div class="task"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p>
+</div>
 <button class="w3collapsible">Hint for the code</button>
 <div class="w3content">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>pprint(response.json())</span></code></pre></div>
+<pre><code class="language-python">from pprint import pprint
+import requests
+
+url = &quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&quot;
+response = requests.get(url)
+pprint(response.json())
+</code></pre>
+
 </div>
-<h3 id="finding-the-temperature">Finding the Temperature</h3>
-<p>The response provides the current forecast for a location, that means, several hours and even days ahead. It also contains so-called meta-data which explains details <em>about</em> the data. These are all useful, but make the structure of the response a bit complex. For now, we are just interested in the air temperature.</p>
-<div class="task"><p>Can you find the data field <code>air_temperature</code>?</p></div>
+<h3>Finding the Temperature</h3>
+<p>The response provides the current forecast for a location, that means, several hours and even days ahead.
+It also contains so-called meta-data which explains details <em>about</em> the data.
+These are all useful, but make the structure of the response a bit complex.
+For now, we are just interested in the air temperature.</p>
+
+<div class="task"><p>Can you find the data field <code>air_temperature</code>?</p>
+</div>
 <p>When we want to use the temperature in our program, we need to extract it out of this complex structure.</p>
-<div class="task"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p></div>
+
+<div class="task"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p>
+</div>
 <div class="tips"><ul>
 <li>Work step by step.</li>
 <li>Pretty print the structure after each step.</li>
@@ -396,15 +509,20 @@ div.tip p {
 <li>Access a field in a dictionary with the square brackets, for instance <code>response.json()['geometry']</code>.</li>
 <li>If you find a list, access its first element with <code>list[0]</code> or its last with <code>list[-1]</code>.</li>
 </ul>
-<p>This can be a bit of a puzzle, but should be no problem in the end.</p></div>
-<h3 id="function-for-the-temperature">Function for the Temperature</h3>
+<p>This can be a bit of a puzzle, but should be no problem in the end.</p>
+</div>
+<h3>Function for the Temperature</h3>
 <p>Using the code above, create a function that takes the latitude and longitude as input arguments and that returns the air temperature at that location. This is how the function should look like:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_air_temp(lat, lon):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co"> make a request</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co"> return only the value of the air temperature only</span></span></code></pre></div>
 <p>Remember that Python lets you create a string that includes variables with the <code>format()</code> function:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=</span><span class="sc">{}</span><span class="st">&amp;lon=</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(lat, lon)</span></code></pre></div>
-<p>Let’s make this a bit more compact for later, so that we store the coordinates of a few places and only have to provide place names. We can for instance simply code them in a nested dictionary:</p>
+<p>Let's make this a bit more compact for later, so that we store the coordinates of a few places and only have to provide place names.
+We can for instance simply code them in a nested dictionary:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>places <span class="op">=</span> {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Trondheim&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">63.43</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">10.39</span>},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oslo&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">59.91</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">10.75</span>},</span>
@@ -413,13 +531,18 @@ div.tip p {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tromsø&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">69.64</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">18.95</span>},</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>With this dictionary declared globally in the file (above any function definitions), create a new version of the function to compare the air temperature:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_air_temp_2(place):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create the function</span></span></code></pre></div>
-<p>Fantastic—we now have a compact function that gets the temperature forecast from Yr so we can use it later in our application. We’ll come back to it.</p>
+<p>Fantastic---we now have a compact function that gets the temperature forecast from Yr so we can use it later in our application. We'll come back to it.</p>
+
     </section>
     <section class="content">
-<h1 id="smart-temperature-sensor">Smart Temperature Sensor</h1>
-<p>We now want to create a system that combines HTTP requests to create a more advanced temperature display. Instead of just showing the local temperature of a sensor, it should also show the predicted temperature. Below is a figure of the setup:</p>
+<h1>Smart Temperature Sensor</h1>
+<p>We now want to create a system that combines HTTP requests to create a more advanced temperature display.
+Instead of just showing the local temperature of a sensor, it should also show the predicted temperature.
+Below is a figure of the setup:</p>
+
 <div class="figure">
 <img src="figures/http/smart-home.png" width="100%"/>
 </div>
@@ -428,9 +551,13 @@ div.tip p {
 <li>The server stores the temperature of the temperature sensor, and periodically requests the temperature forecast from the API from yr.no via HTTP GET requests.</li>
 <li>The server also answers GET requests from clients to present both the sensor temperature and the prediction from &lt;yr.no&gt; in a single page.</li>
 </ul>
-<h2 id="code-for-the-web-server">Code for the Web Server</h2>
-<p>Above we have <strong>initiated HTTP requests as clients</strong> to get news and weather, and combined two weather requests to a little program. Now we want to also build a web server so that we can <strong>accept HTTP requests and answer them</strong>. As you have learned in the preparation, HTTP is not a symmetric protocol; client and server work very differently. The code for the server handling a requests therefore also works very differently from the one making a request.</p>
+
+<h2>Code for the Web Server</h2>
+<p>Above we have <strong>initiated HTTP requests as clients</strong> to get news and weather, and combined two weather requests to a little program.
+Now we want to also build a web server so that we can <strong>accept HTTP requests and answer them</strong>. As you have learned in the preparation, HTTP is not a symmetric protocol; client and server work very differently.
+The code for the server handling a requests therefore also works very differently from the one making a request.</p>
 <p>Copy the following code into a file <code>webserver.py</code>. The code declares some functions, and then a class <code>RequestHandler</code>, which defines a web server. It then configures and starts this web server, which is then active and waits for GET requests.</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> http.server <span class="im">import</span> HTTPServer, BaseHTTPRequestHandler</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
@@ -515,10 +642,13 @@ div.tip p {
 <li>Pay special attention to the function <code>do_GET()</code>. This will be the core of what we do today.</li>
 <li>Be patient. Ask questions to each other, make sure everyone gets it.</li>
 </ul>
-<p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value. This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> function does not have any input or return parameters. It’s more a question of how the API is designed, the authors have made a decision here.</p>
-<div class="task"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p></div>
+<p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value.
+This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> function does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.</p>
+
+<div class="task"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p>
+</div>
 <p>Note: Whenever you are going to change the code of the web server, you will need to terminate it via <code>Ctrl-C</code> and then restart it.</p>
-<h2 id="request-via-web-browser">Request via Web Browser</h2>
+<h2>Request via Web Browser</h2>
 <ul>
 <li>Either on the same machine, or (even better) on a different machine in case you are in the same network, access the website address that the server prints out in a browser.</li>
 <li>If you access the browser on the same machine, you can type <code>http://localhost:8023/</code> as address. Otherwise, use the IP address instead of `localhost.</li>
@@ -528,14 +658,17 @@ div.tip p {
 <ul>
 <li>In which format is the answer sent from the webserver to the client? Which steps are involved to convert the data for the response?</li>
 <li>What happens if you send the request to the wrong port, for instance port <code>8001</code>?</li>
-</ul></li>
 </ul>
+</li>
+</ul>
+
     </section>
     <section class="content">
-<h1 id="sending-data-to-the-server">Sending Data to the Server</h1>
+<h1>Sending Data to the Server</h1>
 <p>We can send additional data with our request, by appending it into the URL as follows:</p>
+
 <pre><code>http://localhost:8000/?data={&quot;time&quot;: &quot;12:05&quot;, &quot;temperature&quot;: 20.0, &quot;humidity&quot;: 54.3}</code></pre>
-<h2 id="sending-data-via-the-browser">Sending Data via the Browser</h2>
+<h2>Sending Data via the Browser</h2>
 <ul>
 <li>Copy the URL from above, but adjust it to your IP address (if necessary).</li>
 <li>Paste the entire URL with the data part into your browser.</li>
@@ -543,21 +676,33 @@ div.tip p {
 <li>Check which information was received by the server.</li>
 <li>Has the data been transformed somehow?</li>
 </ul>
-<h2 id="get-and-post-on-the-server">GET and POST on the Server</h2>
-<p>Look again at the figure. Form the task above, we have already the <strong>GET</strong> command in place (by function <code>do_GET()</code>). With this command, we offer the browser (here shown as phone) a website so we can read the temperature. To let the sensor inform the server about the temperature, it uses instead the <strong>POST</strong> command.</p>
+
+<h2>GET and POST on the Server</h2>
+<p>Look again at the figure. Form the task above, we have already the <strong>GET</strong> command in place (by function <code>do_GET()</code>). With this command, we offer the browser (here shown as phone) a website so we can read the temperature.
+To let the sensor inform the server about the temperature, it uses instead the <strong>POST</strong> command.</p>
+
 <div class="figure">
 <img src="figures/http/smart-home.png" width="100%"/>
 </div>
 <p>So, to repeat:</p>
 <ul>
-<li><p>Here, the <code>do_GET()</code> function processes the requests from browsers that want to know the temperature, and it works pretty much like the <strong>GET</strong> for any other website; we return a complete webstie to the browser that shows the temperature.</p></li>
-<li><p>With the <code>do_POST()</code> function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured.</p></li>
+<li>
+<p>Here, the <code>do_GET()</code> function processes the requests from browsers that want to know the temperature, and it works pretty much like the <strong>GET</strong> for any other website; we return a complete webstie to the browser that shows the temperature.</p>
+</li>
+<li>
+<p>With the <code>do_POST()</code> function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured.</p>
+</li>
 </ul>
 <p>The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.)</p>
-<div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function.</p></div>
+
+<div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function.</p>
+</div>
 <p>We use from now on the <code>do_GET()</code> function to serve the web site that reports the temperature, and the function <code>do_POST()</code> to receive data from the temperature sensor. The web server can hence process two different requests: one for storing data, one for serving a website that presents the data.</p>
-<h2 id="sending-data-via-python-requests">Sending Data via Python Requests</h2>
-<p>We now want to send data to the web server from Python. In a real system, a sensor should do this automated and in periodic intervals. (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.) This code sends the data to the web server, using a <strong>POST</strong> request:</p>
+<h2>Sending Data via Python Requests</h2>
+<p>We now want to send data to the web server from Python. In a real system, a sensor should do this automated and in periodic intervals.
+(As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.)
+This code sends the data to the web server, using a <strong>POST</strong> request:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
@@ -592,16 +737,20 @@ div.tip p {
 <li>With the server from before running, execute the client code.</li>
 <li>Document what happens.</li>
 </ul>
-<h2 id="decoding-data-in-the-server">Decoding Data in the Server</h2>
+
+<h2>Decoding Data in the Server</h2>
 <ul>
 <li>Pay attention to the method <code>do_POST()</code> in the server, and work on the incoming data to decode it. There are helper functions in the server code you can use. Among others, the function <code>extract_json_string(string)</code> is useful to extract a JSON string (within curly brackets) from a string.</li>
 <li>Re-create the incoming dictionary that originates at the client.</li>
 <li>Extract the temperature sent by the client, and store it in the data dictionary of the server.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="storing-temperature-data-in-the-server">Storing Temperature Data in the Server</h1>
-<p>The web server should store the temperature that the sensor sends in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough. We use the two functions <code>store_data()</code> and <code>load_data()</code> shown below to store or load data.</p>
+<h1>Storing Temperature Data in the Server</h1>
+<p>The web server should store the temperature that the sensor sends in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough.
+We use the two functions <code>store_data()</code> and <code>load_data()</code> shown below to store or load data.</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> store_data(<span class="va">self</span>, name, data):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">hasattr</span>(<span class="va">self</span>.server, <span class="st">&quot;data&quot;</span>):</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.server.data <span class="op">=</span> {}</span>
@@ -612,22 +761,31 @@ div.tip p {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> name <span class="kw">in</span> <span class="va">self</span>.server.data:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.server.data[name]</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div>
-<p>As you see, these functions use the <code>self.server</code> attribute, which provides access to the actual server instance. From there, we can access a variable <code>data</code> that is a dictionary so that we can store variables by name. I this way we can store data also between different calls of the <code>do_GET()</code> and <code>do_POST()</code> functions. To repeat and clarify:</p>
+<p>As you see, these functions use the <code>self.server</code> attribute, which provides access to the actual server instance.
+From there, we can access a variable <code>data</code> that is a dictionary so that we can store variables by name.
+I this way we can store data also between different calls of the <code>do_GET()</code> and <code>do_POST()</code> functions.
+To repeat and clarify:</p>
 <ul>
 <li><code>do_POST()</code> stores the temperature data submitted by the temperature sensor application,</li>
 <li><code>do_GET()</code> provides the website with the the data from the sensor and the air temperature obtained from the forecast.</li>
 </ul>
-<h3 id="adding-the-yr-forecast">Adding the Yr Forecast</h3>
+
+<h3>Adding the Yr Forecast</h3>
+
 <p>Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together.</p>
 <p>Use the function for getting the forecast you have developed above.</p>
-<h3 id="optional-task-storing-the-forecast">Optional Task: Storing the Forecast</h3>
+
+<h3>Optional Task: Storing the Forecast</h3>
 <p>Your solution will probably make a new request for a forecast with yr.no each time your server should answer a request via <code>do_get()</code>.</p>
 <p>Create a solution where the server stores the forecast temperature, and re-uses it for the different requests.</p>
-<p>What are benefits and drawbacks of this solution? How would you even further improve it?</p>
+<p>What are benefits and drawbacks of this solution?
+How would you even further improve it?</p>
+
     </section>
     <section class="content">
-<h1 id="optional-task-nice-html-output">Optional Task: Nice HTML Output</h1>
-<p>Now that we can send a simple string as a response, let’s make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
+<h1>Optional Task: Nice HTML Output</h1>
+<p>Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_basic_html_page(title<span class="op">=</span><span class="st">&#39;Default Title&#39;</span>):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> []</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">&#39;&lt;html&gt;&#39;</span>)</span>
@@ -639,20 +797,34 @@ div.tip p {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">&#39;&lt;/html&gt;&#39;</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>.join(lines)</span></code></pre></div>
 <ul>
-<li><p>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</p></li>
-<li><p>Exchange the simple string in the web server so that it instead returns the HTML page created by this function.</p></li>
-<li><p>To make all correct and tidy, update the line where we set the content type so that it uses <code>self.send_header("Content-type", "text/html")</code>.</p></li>
-<li><p>Now go back to the browser, and access the website again. What changed?</p></li>
-<li><p>Can you set the title of the website?</p></li>
-<li><p>Let the function receive the temperature from the sensor and the one from the forecast, and format the information in HTML to include these values.</p></li>
+<li>
+<p>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</p>
+</li>
+<li>
+<p>Exchange the simple string in the web server so that it instead returns the HTML page created by this function.</p>
+</li>
+<li>
+<p>To make all correct and tidy, update the line where we set the content type so that it uses <code>self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)</code>.</p>
+</li>
+<li>
+<p>Now go back to the browser, and access the website again. What changed?</p>
+</li>
+<li>
+<p>Can you set the title of the website?</p>
+</li>
+<li>
+<p>Let the function receive the temperature from the sensor and the one from the forecast, and format the information in HTML to include these values.</p>
+</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="things-to-remember">Things to Remember</h1>
+<h1>Things to Remember</h1>
 <ul>
 <li>HTTP can be used for more than just websites, it can also be used to let applications in general transport any type of data.</li>
 <li>JSON can be used as a convention how to serialize data types, and then serve as format to send over HTTP.</li>
 </ul>
+
     </section>
 </div>
 

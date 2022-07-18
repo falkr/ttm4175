@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -39,6 +42,30 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -128,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -136,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -159,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -195,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -350,23 +412,37 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="temperature-sensor-system">Temperature Sensor System</h1>
-<p>In this (a little bit artificial) example, we want to create a temperature sensor that delivers its measurements tp a web server, so we can check the temperature from a web browser. In addition, the web site should also show the air temperature forecast for the location from Yr. This is what our system looks like:</p>
+<h1>Temperature Sensor System</h1>
+
+<p>In this (a little bit artificial) example, we want to create a temperature sensor that delivers its measurements tp a web server, so we can check the temperature from a web browser.
+In addition, the web site should also show the air temperature forecast for the location from Yr.
+This is what our system looks like:</p>
+
 <div class="figure">
 <img src="figures/http/smart-home.png" width="100%"/>
 </div>
 <p>It should work in the following steps:</p>
-<ol type="1">
-<li><p>The temperature sensor sends its measured temperature with a HTTP <code>POST</code> request to the server. In our example, we do this only once, but in a real system the sensor would measure the temperature from a real sensor and then periodically send the temperature.</p></li>
-<li><p>A web browser makes an HTTP <code>GET</code> request to the server, because we want to read the temperature.</p></li>
-<li><p>To answer the request from the browser, the web server makes itself a request to Yr.no to figure out the air temperature.</p></li>
-<li><p>The web server then combines the temperature sent before from the sensor (via the <code>POST</code> request), combines it with the result of the request to Yr.no, and answer the browser with a HTML page that shows both temperatures.</p></li>
+<ol>
+<li>
+<p>The temperature sensor sends its measured temperature with a HTTP <code>POST</code> request to the server. In our example, we do this only once, but in a real system the sensor would measure the temperature from a real sensor and then periodically send the temperature.</p>
+</li>
+<li>
+<p>A web browser makes an HTTP <code>GET</code> request to the server, because we want to read the temperature.</p>
+</li>
+<li>
+<p>To answer the request from the browser, the web server makes itself a request to Yr.no to figure out the air temperature.</p>
+</li>
+<li>
+<p>The web server then combines the temperature sent before from the sensor (via the <code>POST</code> request), combines it with the result of the request to Yr.no, and answer the browser with a HTML page that shows both temperatures.</p>
+</li>
 </ol>
+
     </section>
     <section class="content">
-<h1 id="code-for-the-sensor">Code for the Sensor</h1>
+<h1>Code for the Sensor</h1>
 <p>As said, our program for the sensor just imitates how a real sensor would work. Here we just write the temperature fixed, and only send a single update instead of doing it periodically.</p>
 <p>Store the following file in a file <code>sensor.py</code>.</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
@@ -402,9 +478,10 @@ display: inline;
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>print_response(response)</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="code-for-the-server">Code for the Server</h1>
+<h1>Code for the Server</h1>
 <p>The code for the server is longer, because it handles the <code>POST</code> request from the sensor, makes a <code>GET</code> request to Yr.no, and answers a <code>GET</code> request from a browser.</p>
 <p>Stor it in a file called <code>webserver.py</code>.</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> http.server <span class="im">import</span> HTTPServer, BaseHTTPRequestHandler</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
@@ -568,28 +645,40 @@ display: inline;
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot; ************************************* &quot;</span>)</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;&quot;</span>)</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>httpd.serve_forever()</span></code></pre></div>
-<div class="task"><p>Go through the code of the server, and try to understand what each function achieves. It is maybe not necessary to understand all details, but the coarse task of each line and function.</p></div>
+<div class="task"><p>Go through the code of the server, and try to understand what each function achieves. It is maybe not necessary to understand all details, but the coarse task of each line and function.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="running-it">Running it</h1>
+<h1>Running it</h1>
+
 <p><strong>Step 1: Start the Server</strong></p>
 <p>In a terminal window, start the server:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> webserver.py</span></code></pre></div>
 <p><strong>Step 2: Start the Sensor</strong></p>
 <p>In another terminal window, start the sensor:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> sensor.py</span></code></pre></div>
 <p>Observe what happens in the terminal of the server.</p>
+
 <p><strong>Step 3: Request from the Browser</strong></p>
 <p>In a web browser, make the following request in the address field:</p>
+
 <pre><code>http://localhost:8023/?data={&quot;place&quot;: &quot;Trondheim&quot;}</code></pre>
     </section>
     <section class="content">
-<h1 id="tasks">Tasks</h1>
-<div class="task"><p>Run the system as explained above, and document what happens in the terminal and the browser. Show screenshots. Does all work as expected?</p></div>
+<h1>Tasks</h1>
+
+<div class="task"><p>Run the system as explained above, and document what happens in the terminal and the browser. Show screenshots. Does all work as expected?</p>
+</div>
 <p>(The code above should be complete, no changes are necessary.)</p>
-<div class="task"><p>Can you get the air temperature for any of the other cities? How?</p></div>
-<div class="task"><p>Observe how the address line in the browser changes after you press Enter and request the page. What happens here probably? How does the server take care of this?</p></div>
-<div class="task"><p>Look at the functions <code>do_POST()</code> and <code>do_GET()</code> in the server. What do they have in common, and what is different?</p></div>
+
+<div class="task"><p>Can you get the air temperature for any of the other cities? How?</p>
+</div>
+<div class="task"><p>Observe how the address line in the browser changes after you press Enter and request the page. What happens here probably? How does the server take care of this?</p>
+</div>
+<div class="task"><p>Look at the functions <code>do_POST()</code> and <code>do_GET()</code> in the server. What do they have in common, and what is different?</p>
+</div>
     </section>
 </div>
 

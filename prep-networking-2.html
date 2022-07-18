@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,10 +335,14 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="dns-and-dhcp">DNS and DHCP</h1>
-<p>Last week we focused on IP addressing and routing, mainly based on manual configurations. However, manually configuring every address and memorising numbers for addresses is not very convenient. Now you will learn about the Domain Name System (DNS) and the Dynamic Host Configuration Protocol (DHCP).</p>
-<p>This week’s readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>. Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
-<h2 id="learning-goals">Learning Goals</h2>
+<h1>DNS and DHCP</h1>
+<p>Last week we focused on IP addressing and routing, mainly based on manual configurations.
+However, manually configuring every address and memorising numbers for addresses is not very convenient.
+Now you will learn about the Domain Name System (DNS) and the Dynamic Host Configuration Protocol (DHCP).</p>
+<p>This week's readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>.
+Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
+<h2>Learning Goals</h2>
+
 <div class="goals"><p>After this week you will be able to:</p>
 <ul>
 <li>Understand how DNS works</li>
@@ -403,17 +351,24 @@ display: inline;
 <ul>
 <li>installing and configuring a basic DHCP server</li>
 <li>checking DNS information</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="understanding-dns">Understanding DNS</h1>
-<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>). If you have read the first chapter of the book this something you already know (otherwise read <strong>section 1.11, page 30</strong>), but there’s more to it and you can read about it in <strong>section 7.8 (from page 204 to 208)</strong>, and you can skip the subsections.</p>
+<h1>Understanding DNS</h1>
+<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>).
+If you have read the first chapter of the book this something you already know (otherwise read <strong>section 1.11, page 30</strong>), but there's more to it and you can read about it in <strong>section 7.8 (from page 204 to 208)</strong>, and you can skip the subsections.</p>
+
     </section>
     <section class="content">
-<h1 id="understanding-dhcp">Understanding DHCP</h1>
-<p>The DHCP protocol in another networking tool we use on our daily lives without even noticing. It allows the automatic configuration of not only our IP addresses and subnet masks but also of our default routes and DNS server. Read more about it in <strong>section 7.10 (pages 217 and 218)</strong>.</p>
+<h1>Understanding DHCP</h1>
+<p>The DHCP protocol in another networking tool we use on our daily lives without even noticing.
+It allows the automatic configuration of not only our IP addresses and subnet masks but also of our default routes and DNS server.
+Read more about it in <strong>section 7.10 (pages 217 and 218)</strong>.</p>
 <p>A simple but interesting video about DHCP:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RUZohsAxPxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

@@ -16,7 +16,34 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -112,16 +139,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -135,23 +158,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -326,42 +335,51 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="using-the-pir-sensor">Using the PIR Sensor</h1>
+<h1>Using the PIR Sensor</h1>
+
 <p>Goal: You can connect the PIR sensor to the Pi and detect a movement by checking the signal on the cable via GPIO. You are able to create a minimal program for that.</p>
+
 <p>In this video you see how the Raspberry Pi can connect to external electronics. The GPIO pins are the electrical pins which are directly connected to the processor. GPIO stands for general purpose input output. We will use the same breadboard as in the video.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IP-szuon2Bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>The following video contains a good description of a passive infrared sensor, which we will use.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQY6hNA53oM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
     <section class="content">
-<h1 id="connect-the-breadboard">Connect the Breadboard</h1>
+<h1>Connect the Breadboard</h1>
 <p>A breadboard is a protoyping board to test out simple electrical circuits. It is sometimes easier to connect components to the Raspberry Pi with a breadboard, especially with an extension cable.</p>
+
 <div class="figure">
 <img src="figures/iot/rpi-breadboard-connection-1.jpg" width="100%"/>
 </div>
-<h2 id="step-1-connect-breadboard-and-connector">Step 1: Connect Breadboard and Connector</h2>
+<h2>Step 1: Connect Breadboard and Connector</h2>
 <p>Push the connector into the breadboard. Try to apply even preassure on the entire connector.</p>
+
 <div class="figure">
 <img src="figures/iot/rpi-breadboard-connection-2.jpg" width="100%"/>
 </div>
-<h2 id="step-2-connect-with-cable">Step 2: Connect with Cable</h2>
+<h2>Step 2: Connect with Cable</h2>
 <p>Connect everything as shown below. (It’s important that the cable is placed as shown on the side of the Raspberry, since it may physically fit both ways.)</p>
+
 <div class="figure">
 <img src="figures/iot/rpi-breadboard-connection-3.jpg" width="100%"/>
 </div>
     </section>
     <section class="content">
-<h1 id="detecting-movement-in-python">Detecting Movement in Python</h1>
+<h1>Detecting Movement in Python</h1>
+
 <ul>
 <li>Power down the Pi, and connect the breadboard.</li>
 <li>Connect the PIR (passive infrared) sensor with three cables. Look at the model of your PIR sensor, the cabling may be different between models.</li>
 <li>Write a program that detects when the PIR sensor is activated. You can first let the program write something on the output console. In the end the program shoud make some noise when the PIR sensor is activated, like an alarm system.</li>
 <li>Hint: When you are using <code>GPIO.setmode()</code>, use <code>GPIO.setmode(GPIO.BCM)</code> and not <code>GPIO.setmode(GPIO.BOARD)</code></li>
 </ul>
+
     </section>
 </div>
 

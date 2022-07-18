@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,9 +335,9 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="mqtt">MQTT</h1>
+<h1>MQTT</h1>
 <p>In this lab, we learn how to use a publish-subscribe protocol to send data between devices. In particular, we will be using the Paho-mqtt library for Python and MQTT.fx to connect the two Raspberry Pis to each other, and to a laptop.</p>
-<p>Before we start, just as a repetition, since it’s easy to lose the overview when so many different parts are involved:</p>
+<p>Before we start, just as a repetition, since it's easy to lose the overview when so many different parts are involved:</p>
 <ul>
 <li><strong>MQTT</strong> is the publish-subscribe protocol that we are using today.</li>
 <li><strong>Mosquitto</strong> is the software to run your own MQTT broker.</li>
@@ -401,13 +345,14 @@ display: inline;
 <li><strong>MQTT.fx</strong> is a helping program to manually publish messages and subscribe to topics.</li>
 </ul>
 <p><strong>For the Report:</strong> Before we used HTTP. Describe in a few words the difference of MQTT and HTTP. Do you see situations where each of them has their strengths? When would you use which protocols?</p>
+
     </section>
     <section class="content">
-<h1 id="mqtt.fx">MQTT.fx</h1>
-<p>The goal in this exercise is to get familiar with MQTT.fx. You should get so familiar with it that you can “trust it”, in the sense that you know what is going on in a system under construction, and can use MQTT.fx to figure out situations.</p>
-<h2 id="installation-and-connection">Installation and Connection</h2>
+<h1>MQTT.fx</h1>
+<p>The goal in this exercise is to get familiar with MQTT.fx. You should get so familiar with it that you can &quot;trust it&quot;, in the sense that you know what is going on in a system under construction, and can use MQTT.fx to figure out situations.</p>
+<h2>Installation and Connection</h2>
 <p><a href="https://mqttfx.jensd.de">Install MQTT.FX</a> on your own laptop. Ideally, install it on more than one laptop, so you can send messages between them.</p>
-<h2 id="subscribing">Subscribing</h2>
+<h2>Subscribing</h2>
 <ul>
 <li>Connect to an open broker, one listed on <a href="https://github.com/mqtt/mqtt.github.io/wiki/public_brokers">this list</a>. (Not all are up and running at all times. Last I used <code>test.mosquitto.org</code>.)</li>
 <li>Subscribe to the topic <code>/#</code> and watch what happens. (Not all brokers allow you to do that.)</li>
@@ -416,56 +361,70 @@ display: inline;
 <li>Figure out if there is any meaning in the messages.</li>
 </ul>
 <p><strong>Tip:</strong> You can also use the <em>Topics Collector</em> in the lower left corner of the Subscribe Tab in MQTT.fx. With that function, you can list all the topics that are currently used on the broker.</p>
-<h2 id="publish-and-subscribe">Publish and Subscribe</h2>
-<p>Now let’s communicate, only by using MQTT.fx.</p>
+
+<h2>Publish and Subscribe</h2>
+<p>Now let's communicate, only by using MQTT.fx.</p>
 <ul>
 <li>Find another team.</li>
 <li>Agree together on a (unique) topic that you want to use.</li>
 <li>make sure you are connected to the same broker.</li>
 <li>Use this topic to send messages back and forth using MQTT.FX, like in a chat.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="starting-your-own-mqtt-broker">Starting Your Own MQTT Broker</h1>
+<h1>Starting Your Own MQTT Broker</h1>
 <p><strong>Goal:</strong> Install your own broker on a Raspberry Pi, and use MQTT.fx to verify that all is setup correct. Send some messages back and forth.</p>
-<h2 id="install-mosquitto-on-the-raspberry-pi">Install Mosquitto on the Raspberry Pi</h2>
-<p>Install Mosquitto using <code>apt</code>. (We first update apt’s index, then install Mosquitto.)</p>
+
+<h2>Install Mosquitto on the Raspberry Pi</h2>
+<p>Install Mosquitto using <code>apt</code>. (We first update apt's index, then install Mosquitto.)</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> mosquitto mosquitto-clients</span></code></pre></div>
-<h2 id="testing-your-broker">Testing Your Broker</h2>
+<h2>Testing Your Broker</h2>
 <p>Start Mosquitto:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mosquitto</span> <span class="at">-v</span></span></code></pre></div>
 <p>The result should look like this:</p>
+
 <div class="figure">
 <img src="figures/iot/mosquitto-running.png" width="100%"/>
 </div>
 <p>You can also check which ports it is connected to:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">netstat</span> –at </span></code></pre></div>
 <p><strong>For the report:</strong> Document this output.</p>
-<h2 id="playing-with-mosquitto">Playing with Mosquitto</h2>
+
+<h2>Playing with Mosquitto</h2>
+
 <p><strong>Tasks:</strong></p>
-<div class="steps"><ol type="1">
+
+<div class="steps"><ol>
 <li>Find which IP address your Pi has, you need this when connecting to your broker.</li>
 <li>Use MQTT.fx (on your laptop) and connect to the Raspberry Pi. Use the IP address of the Pi, and usually Port 1883.</li>
 <li>Use MQTT.fx on another laptop, and also connect to the broker.</li>
 <li>Send messages from laptop to laptop via the broker. (Select any topic you want.)</li>
-</ol></div>
+</ol>
+</div>
 <p><strong>For the Report:</strong></p>
 <ul>
 <li>Show a sequence diagram of a message exchange between laptop 1, broker, laptop 2 when you send a few messages back and forth.</li>
 <li>Include a screenshot of MQTT.fx.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="mqtt-in-python">MQTT in Python</h1>
+<h1>MQTT in Python</h1>
 <p><strong>Goal:</strong> You can publish a message to an MQTT broker from Python, and you can subscribe to an MQTT topic from Python.</p>
 <p><strong>Tips:</strong></p>
 <ul>
 <li>Use the MQTT broker that you just installed on the Raspberry Pi.</li>
 <li>You can work with Python on the same Pi that runs the broker, or use the other one. (We will later connect both Pis, so it does not matter on which of them the broker runs.)</li>
 </ul>
-<h2 id="installing-mqtt-paho-clients-for-python">Installing MQTT Paho Clients for Python</h2>
+
+<h2>Installing MQTT Paho Clients for Python</h2>
 <p>Install the Python poackage for MQTT clients:</p>
+
 <pre><code>pip3 install paho-mqtt</code></pre>
 <p>Documentation for the Paho clients is here:</p>
 <ul>
@@ -473,6 +432,7 @@ display: inline;
 <li><a href="https://pypi.org/project/paho-mqtt/">Paho MQTT on PyPi</a></li>
 <li><a href="https://www.eclipse.org/paho/clients/python/docs/">Paho MQTT on Eclipse IoT</a></li>
 </ul>
+
 <p><strong>Tasks:</strong></p>
 <ul>
 <li>Install Paho MQTT on the Pi. This is a Python library for an MQTT client that can connect to the broker.</li>
@@ -486,9 +446,10 @@ display: inline;
 <ul>
 <li>Include the (few) lines to publish a message and to subscribe to a topic, and document your work, also using some screenshots of MQTT.fx.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="back-to-the-sense-hat">Back to the Sense HAT</h1>
+<h1>Back to the Sense HAT</h1>
 <p><strong>Goal:</strong> Create a program on the Sense HAT that uses the joystick and the LED. We will use this program later for some remote communication.</p>
 <p><strong>Tips:</strong></p>
 <ul>
@@ -496,9 +457,10 @@ display: inline;
 <li>Run some of them, and try to understand how they work</li>
 <li>Can you build a simple program that just moves a pixel on the LED matrix?</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="remote-control-of-the-sense-hat">Remote Control of the Sense HAT</h1>
+<h1>Remote Control of the Sense HAT</h1>
 <p><strong>Goal:</strong> You can remotely control the moving Pixel of the Pi of another team with the joystick on your Pi, and the other team can control the pixel on your screen with their joystick.</p>
 <p><strong>Tips:</strong></p>
 <ul>
@@ -509,28 +471,33 @@ display: inline;
 <li>Use MQTT.fx for testing, either by sending messages that should move the pixel, or by checking that the joystick triggers the correct messages.</li>
 <li>Agree with another team which topics to use. You can use a single MQTT broker, of either team</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>Reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

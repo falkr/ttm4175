@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,10 +195,7 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -220,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -375,10 +412,13 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="cyber-security-and-ethical-hacking">Cyber Security and Ethical Hacking</h1>
-<p>Our main focus this week will be on learning about cyber security and ethical hacking. We also talk briefly about the need for cybersecurity analysts and why a career in this domain is much in demand.</p>
-<h2 id="learning-goals-for-this-week">Learning Goals for this Week</h2>
+<h1>Cyber Security and Ethical Hacking</h1>
+<p>Our main focus this week will be on learning about cyber security and ethical hacking.
+We also talk briefly about the need for cybersecurity analysts and why a career in this domain is much in demand.</p>
+
+<h2>Learning Goals for this Week</h2>
 <p>By the end of this week, you will:</p>
+
 <div class="goals"><ul>
 <li>Learn about cyber security.</li>
 <li>Understand what ethical hacking is and why it is needed.</li>
@@ -387,33 +427,48 @@ display: inline;
 <ul>
 <li>Get familiar with Virtualization, VirtualBox and Kali Linux.</li>
 <li>Install Kali Linux in Virtualbox.</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="preparation">Preparation</h1>
-<h2 id="files-to-download">Files to download</h2>
-<p>To work on this week’s lab, start by creating a folder <em>/courses/ttm4175/</em> on your machine. This will be your home folder for the security lab. Download the following files prior to the lab session as this might take a while (depending on the speed of your Internet connection).</p>
+<h1>Preparation</h1>
+
+<h2>Files to download</h2>
+<p>To work on this week's lab, start by creating a folder <em>/courses/ttm4175/</em> on your machine. This will be your home folder for the security lab. Download the following files prior to the lab session as this might take a while (depending on the speed of your Internet connection).</p>
 <ul>
-<li><p><a href="https://www.iik.ntnu.no/fag/felles/ova/">Windows 7 and Lubuntu virtual machines</a></p></li>
-<li><p><a href="https://images.kali.org/virtual-images/kali-linux-2020.3-vbox-amd64.ova">Kali Linux virtual image</a></p></li>
-<li><p>Save the downloaded files under the folder <em>/courses/ttm4175/</em></p></li>
+<li>
+<p><a href="https://www.iik.ntnu.no/fag/felles/ova/">Windows 7 and Lubuntu virtual machines</a></p>
+</li>
+<li>
+<p><a href="https://images.kali.org/virtual-images/kali-linux-2020.3-vbox-amd64.ova">Kali Linux virtual image</a></p>
+</li>
+<li>
+<p>Save the downloaded files under the folder <em>/courses/ttm4175/</em></p>
+</li>
 </ul>
-<h2 id="introduction-to-cyber-security">Introduction to Cyber Security</h2>
-<p>This video gives you a simplified introduction to our main topic. We sample the most basic of safety and security when seen from a general overview.</p>
+
+<h2>Introduction to Cyber Security</h2>
+<p>This video gives you a simplified introduction to our main topic.
+We sample the most basic of safety and security when seen from a general overview.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ULGILG-ZhO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2 id="cyber-security-challenges">Cyber Security Challenges</h2>
+<h2>Cyber Security Challenges</h2>
 <p>And here is another video that summarizes the top 5 cyber security challenges</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ylxd_UwgvJU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2 id="tesla-hacking-competition">Tesla Hacking Competition</h2>
+<h2>Tesla Hacking Competition</h2>
+
 <p>How far can a hacker go? Hack a Tesla perhaps? This short article shows us how dedicated a car manufacturer is to safeguard their flagship car in order to try and keep their products at a high safety level. Nobody wants a self-driving car that is easily compromised.</p>
 <p><a href="https://electrek.co/2019/03/23/tesla-model-3-hacker-competition-crack">Hackers crack Tesla Model 3 in competition, Tesla gives them the car</a></p>
-<h2 id="cyber-security-challenges-and-trends">Cyber Security Challenges and Trends</h2>
+
+<h2>Cyber Security Challenges and Trends</h2>
 <p>I also encourage you to read the following article that represents a study of cyber security challenges and its emerging trends on latest technologies</p>
 <p><a href="https://pdfs.semanticscholar.org/3312/c2646194d8e45961ff71b7bf48c7f264c123.pdf">A Study of Cyber Security Challenges and its Emerging Trends on Latest Technologies</a></p>
+
     </section>
 </div>
 

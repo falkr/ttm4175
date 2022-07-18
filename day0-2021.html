@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,41 +335,50 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="getting-started">Getting Started</h1>
+<h1>Getting Started</h1>
 <p>Go through the steps on <a href="https://innsida.ntnu.no/ny-student">page for new students</a>. We highlight below some steps that are important for this course.</p>
-<h2 id="get-your-ntnu-account">Get Your NTNU Account</h2>
+
+<h2>Get Your NTNU Account</h2>
 <p><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Aktiver+brukerkonto">Activate your NTNU user account</a>.</p>
-<h2 id="connect-to-eduroam-wifi">Connect to Eduroam (WiFi)</h2>
-<p>You can get basic internet access via the network NTNU guest, but for most other tasks you need to <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Trådløst+nett">connect to WiFi via Eduroam</a>.</p>
-<h2 id="blackboard">Blackboard</h2>
+
+<h2>Connect to Eduroam (WiFi)</h2>
+<p>You can get basic internet access via the network NTNU guest, but for most other tasks you need to <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Tr%C3%A5dl%C3%B8st+nett">connect to WiFi via Eduroam</a>.</p>
+
+<h2>Blackboard</h2>
 <p><a href="http://innsida.ntnu.no/bb-student">Join Blackboard</a> and make sure you are registered in the course <strong>TTM4175</strong>.</p>
 <p>Every course at NTNU has its own page in Blackboard. You receive all notifications about the course via Blackboard, and many courses make material available or demand deliveries via Blackboard.</p>
 <p>You can also install the Blackboard App on your mobile devices.</p>
 <p>Blackboard also contains a meeting tool, Blackboard Collaborate, which is used in some courses.</p>
-<h2 id="piazza">Piazza</h2>
+
+<h2>Piazza</h2>
 <p>Visit <strong>Piazza</strong> from within the Blackboard Page for this course. Piazza is a forum to ask questions about a course.</p>
+
 <div class="figure">
 <img src="figures/teknostart/piazza.jpeg" alt="Access to Piazza from Blackboard." width="100%"/>
 <span name="figures/teknostart/piazza.jpeg">&nbsp;</span>
-<aside name="figures/teknostart/piazza.jpeg"><p><p>Access to Piazza from Blackboard.</p></p></aside>
+<aside name="figures/teknostart/piazza.jpeg"><p><p>Access to Piazza from Blackboard.</p>
+</p></aside>
 </div>
-<h2 id="install-microsoft-office-and-teams">Install Microsoft Office and Teams</h2>
+<h2>Install Microsoft Office and Teams</h2>
 <p>Install Office 365, and especially Microsoft Teams.</p>
 <ul>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+–%20Installere+på%20PC">Installation on PC</a></li>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+–%20Installere+på%20OSX">Installation on Mac OSX</a></li>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+-+Installere+på%20mobil+og+nettbrett">Installation on mobile devices</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+%E2%80%93%20Installere+p%C3%A5%20PC">Installation on PC</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+%E2%80%93%20Installere+p%C3%A5%20OSX">Installation on Mac OSX</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+-+Installere+p%C3%A5%20mobil+og+nettbrett">Installation on mobile devices</a></li>
 </ul>
 <p><strong>Teams</strong> is a collaboration tools that includes Office documents, calendar, and the possibilities for online meetings.</p>
 <p>Join the team for this course. It is named <strong>TTM4175 2020</strong>. We send you a course code which you can use to join the team directly.</p>
+
 <div class="figure">
 <img src="figures/teknostart/teams-join.jpeg" alt="We'll send you a code to join the team for this course." width="100%"/>
 <span name="figures/teknostart/teams-join.jpeg">&nbsp;</span>
-<aside name="figures/teknostart/teams-join.jpeg"><p><p>We’ll send you a code to join the team for this course.</p></p></aside>
+<aside name="figures/teknostart/teams-join.jpeg"><p><p>We'll send you a code to join the team for this course.</p>
+</p></aside>
 </div>
-<h2 id="zoom">Zoom</h2>
+<h2>Zoom</h2>
 <p><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/zoom+-+last+ned+og+installer">Install Zoom</a>.</p>
-<p>Zoom is for online lectures. You’ll find the Zoom link in Blackboard.</p>
+<p>Zoom is for online lectures. You'll find the Zoom link in Blackboard.</p>
+
     </section>
 </div>
 

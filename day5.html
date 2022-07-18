@@ -16,29 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 div.check ul,
 div.check ul li {
@@ -152,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -173,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -196,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -388,8 +335,9 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="day-5-recap">Day 5: Recap</h1>
-<p>Today’s objective is to not only review the main concepts and commands you have been using the whole week but also to get some deeper knowledge about them.</p>
+<h1>Day 5: Recap</h1>
+<p>Today's objective is to not only review the main concepts and commands you have been using the whole week but also to get some deeper knowledge about them.</p>
+
 <div class="goals"><p>After this lab. you will be able to remember and execute Linux commands for:</p>
 <ul>
 <li>Performing file operations</li>
@@ -398,36 +346,42 @@ display: inline;
 <li>Configuring networking interfaces</li>
 <li>Remotely accessing other machines</li>
 <li>Personalising the operating system</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="exercises">Exercises</h1>
+<h1>Exercises</h1>
 <p>You will be given an exercise sheet where you should write your answers. These exercises should be solved by each team.</p>
 <p>You must <strong>deliver the exercise sheet</strong> by the end of the Lab., do not forget to <strong>include your team number</strong>.</p>
 <p>For your convenience you may also access the exercises <a href="https://www.iik.ntnu.no/ttm4175/wp-content/uploads/2018/10/exercises-linux_basics-woansV3.pdf">here</a>.</p>
+
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

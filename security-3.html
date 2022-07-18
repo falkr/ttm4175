@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,17 +412,20 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="password-clearing-and-cracking">Password clearing and cracking</h1>
+<h1>Password clearing and cracking</h1>
 <p>In this lab, you will learn how to clear a password in Windows and how to use ophcrack and John the ripper to crack passwords.</p>
+
     </section>
     <section class="content">
-<h1 id="clearing-the-user-password-in-windows">Clearing the user password in Windows</h1>
-<p>In the previous lab, you had to swap the system files in order to change the user’s password. Another alternative that you will try now is to clear the password.</p>
-<h2 id="updating-chntpw">Updating chntpw</h2>
-<p>Passwords in Windows are stored hashed in the Security Accounts Manager (SAM) database, located in the <em>/Windows/System32/config</em> folder. We will manipulate the SAM registry in order to clear the hashed password of user <strong>Lab2</strong>. SAM file is stored in a binary format and cannot simply be read by a text editor. We will use a program called <em>chntpw</em> in order to clear the users password from the SAM file.</p>
+<h1>Clearing the user password in Windows</h1>
+<p>In the previous lab, you had to swap the system files in order to change the user's password. Another alternative that you will try now is to clear the password.</p>
+<h2>Updating chntpw</h2>
+<p>Passwords in Windows are stored hashed in the Security Accounts Manager (SAM) database, located in the <em>/Windows/System32/config</em> folder. We will manipulate the SAM registry in order to clear the hashed password of user <strong>Lab2</strong>.
+SAM file is stored in a binary format and cannot simply be read by a text editor. We will use a program called <em>chntpw</em> in order to clear the users password from the SAM file.</p>
 <ul>
 <li>Make sure that Windows 7 is mounted within Kali, then go to the following folder containing the SAM file:</li>
 </ul>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
@@ -410,108 +434,156 @@ display: inline;
 </ul>
 <p><code>#chntpw -i sam</code> (The SAM file is stored either in uppercase or in lowercase so choose the name that is used on your system).</p>
 <ul>
-<li><p>Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).</p></li>
-<li><p>We want to clear the password of user <strong>Lab2</strong>, so enter its RID</p></li>
-<li><p>Choose option 1 again to clear the password of user <strong>Lab2</strong></p></li>
-<li><p>Write changes to disk by quitting the current context (q) and confirm that you want to save the changes (y). You have now cleared the password of <strong>Lab2</strong> user.</p></li>
+<li>
+<p>Follow the on-screen instructions. Select option 1 to begin clearing a user password (the number in square brackets denotes the default).</p>
+</li>
+<li>
+<p>We want to clear the password of user <strong>Lab2</strong>, so enter its RID</p>
+</li>
+<li>
+<p>Choose option 1 again to clear the password of user <strong>Lab2</strong></p>
+</li>
+<li>
+<p>Write changes to disk by quitting the current context (q) and confirm that you want to save the changes (y). You have now cleared the password of <strong>Lab2</strong> user.</p>
+</li>
 </ul>
-<p>Finally, return to your home folder <code># cd</code> and unmount the Windows partition from kali Linux <code># unmount /mnt/windows</code>.</p>
+<p>Finally, return to your home folder <code># cd </code> and unmount the Windows partition from kali Linux <code># unmount /mnt/windows</code>.</p>
 <p>Reboot the machine and select Windows 7. You should now be able to login into <strong>Lab2</strong> account without a password.</p>
+
     </section>
     <section class="content">
-<h1 id="cracking-the-windows-7-user-password">Cracking the Windows 7 user password</h1>
+<h1>Cracking the Windows 7 user password</h1>
 <p>Start by creating 5 user accounts in Windows for which you will try to crack the passwords.</p>
-<h2 id="create-new-users-in-windows">Create new users in Windows</h2>
+<h2>Create new users in Windows</h2>
 <ul>
-<li><p>Get administrator access: follow the same steps from part 1 of the previous lab (attach Windows 7 to Kali in virtual box, then mount the Windows 7 partition within Kali and swap <em>osk.exe</em> and <em>cmd.exe</em>) in order to get administrator access</p></li>
-<li><p>Create 5 users: <strong>Lab10</strong>, <strong>Lab20</strong>, <strong>Lab30</strong>, <strong>Lab40</strong>, and <strong>Lab50</strong> and assign a different password to each user. For the first two users, assign a commonly-used password (you can search the web for the list of top 10,000 most common passwords). For the remaining users, choose passwords that are of different lengths, with and without special characters.</p></li>
+<li>
+<p>Get administrator access: follow the same steps from part 1 of the previous lab (attach Windows 7 to Kali in virtual box, then mount the Windows 7 partition within Kali and swap <em>osk.exe</em> and <em>cmd.exe</em>) in order to get administrator access</p>
+</li>
+<li>
+<p>Create 5 users: <strong>Lab10</strong>, <strong>Lab20</strong>, <strong>Lab30</strong>, <strong>Lab40</strong>, and <strong>Lab50</strong> and assign a different password to each user. For the first two users, assign a commonly-used password (you can search the web for the list of top 10,000 most common passwords). For the remaining users, choose passwords that are of different lengths, with and without special characters.</p>
+</li>
 </ul>
-<div class="tip"><p>Use the <code>net user</code> command to create a new user</p></div>
+
+<div class="tip"><p>Use the <code>net user</code> command to create a new user</p>
+</div>
 <ul>
 <li>Remember to revert the changes you made on <em>osk.exe</em> and <em>cmd.exe</em> files.</li>
 </ul>
-<h2 id="obtaining-the-password-hashes">Obtaining the password hashes</h2>
+
+<h2>Obtaining the password hashes</h2>
 <p>Your task now is to <strong>obtain</strong> the password hashes stored in the SAM database. We need to use Kali with the Windows 7 partition mounted. Make sure that you have the Windows 7 disk attached to your Kali Linux virtual machine.</p>
 <ul>
 <li>Locate the SAM database by changing to the <em>Windows/System32/config</em> directory</li>
 </ul>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/windows/Windows/System32/config/</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <p>In order to enhance the security of the SAM database against off-line attacks, Microsoft introduced the Syskey function, which partially encrypts the SAM database based on a key stored in another registry file called SYSTEM. Hence you need to extract the contents of both the SYSTEM file and the SAM file. Both are stored in a binary format and are not readily readable.</p>
 <ul>
 <li>Use the tool <em>samdump2</em> to extract the content of the SYSTEM file and the SAM file, and write the contents to <em>win_pwd_hashes.text</em></li>
 </ul>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samdump2</span> system sam <span class="op">&gt;</span> ~/win_pwd_hashes.txt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> </span></code></pre></div>
-<h2 id="examining-the-sam-database">Examining the SAM database</h2>
+<h2>Examining the SAM database</h2>
 <ul>
-<li>Take a look at the content of the <em>win_pwd_hashes.text</em> <code># cat win_pwd_hashes.txt</code>. Each line entry represents a user account on the system with their respective hashes.</li>
+<li>Take a look at the content of the <em>win_pwd_hashes.text</em>  <code># cat win_pwd_hashes.txt</code>. Each line entry represents a user account on the system with their respective hashes.</li>
 </ul>
-<h2 id="examining-the-sam-database-in-ophcrack">Examining the SAM database in Ophcrack</h2>
+
+<h2>Examining the SAM database in Ophcrack</h2>
 <p>Ophcrack is a program that comes with a graphical user interface that allows you to see the format of the passwords in the SAM database.</p>
 <ul>
-<li><p>Open Ophcrack by running <em>ophcrack</em> in the terminal of your Kali Linux machine</p></li>
-<li><p>Click on Load -&gt;PWDUMP file</p></li>
-<li><p>Find the file <em>win_pwd_hashes.txt</em>. It will show you the hashed passwords.</p></li>
-<li><p>try the Crack functionality on the available users. Did it succeed in cracking all passwords?</p></li>
+<li>
+<p>Open Ophcrack by running <em>ophcrack</em> in the terminal of your Kali Linux machine</p>
+</li>
+<li>
+<p>Click on Load -&gt;PWDUMP file</p>
+</li>
+<li>
+<p>Find the file <em>win_pwd_hashes.txt</em>. It will show you the hashed passwords.</p>
+</li>
+<li>
+<p>try the Crack functionality on the available users. Did it succeed in cracking all passwords?</p>
+</li>
 </ul>
-<h2 id="john-the-ripper">John the Ripper</h2>
-<p>John the Ripper is a cracking tool that runs in both <em>brute-force</em> and <em>dictionary attack</em> modes. It’s basic functionality is to repeatedly try different passwords and hash them until it finds a match. However, since the space of all possible passwords is virtually infinite, testing all password in this manner (brute-force search) will not be feasible unless the password was very short. Instead, we will try a list of more likely passwords known as <em>dictionary attack</em> mode.</p>
+
+<h2>John the Ripper</h2>
+<p>John the Ripper is a cracking tool that runs in both <em>brute-force</em> and <em>dictionary attack</em> modes. It's basic functionality is to repeatedly try different passwords and hash them until it finds a match. However, since the space of all possible passwords is virtually infinite, testing all password in this manner (brute-force search) will not be feasible unless the password was very short.
+Instead, we will try a list of more likely passwords known as <em>dictionary attack</em> mode.</p>
 <p>John the Ripper comes with a pre-installed dictionary of some typical passwords located in <em>/usr/share/john/password.lst</em>.</p>
-<h3 id="default-dictionary">Default dictionary</h3>
+
+<h3>Default dictionary</h3>
 <ul>
-<li>Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username): <code># john --wordlist --format=NT --user='Lab 3 - DO NOT WIPE!' win_pwd_hashes.txt</code></li>
+<li>Start by running John the Ripper on our obtained Windows 7 hash file with the default dictionary, using the following command (note the use of single quotes around the username): <code> # john --wordlist --format=NT --user='Lab 3 - DO NOT WIPE!' win_pwd_hashes.txt</code></li>
 </ul>
-<p>This command tells John to use a dictionary attack (–-wordlist) with words from the default dictionary <em>/etc/share/john/password.lst</em>; using the hash function NTLMv2 (–-format=NT); targeting user Lab 3 - DO NOT WIPE! (–-user=…); and where the target hashes are stored in win_pwd_hashes.txt.</p>
+<p>This command tells John to use a dictionary attack (–-wordlist) with words from the default dictionary <em>/etc/share/john/password.lst</em>; using the hash function NTLMv2 (–-format=NT); targeting user Lab 3 - DO NOT WIPE! (–-user=...); and where the
+target hashes are stored in win_pwd_hashes.txt.</p>
 <p>If the output of John the Ripper shows 0 guesses, it means the password is not contained in the default dictionary and it could not be cracked.</p>
 <ul>
 <li>Repeat the same command for the 5 users that you created. Did John the Ripper succeed in guessing all passwords?</li>
 </ul>
-<h3 id="creating-new-passwords-from-existing-ones">Creating new passwords from existing ones</h3>
-<p>Instead of using a larger dictionary, John the Ripper can apply a multitude of transformations to a wordlist in order to create new passwords from existing ones. For example, we could make it append numbers to the end of all the words in the dictionary, such that if the word “car” was in the original dictionary, then it would also try <em>car0</em> , <em>car1</em>, …, <em>car 9</em>, <em>car00</em>, <em>car01</em>, …, etc.</p>
+<h3>Creating new passwords from existing ones</h3>
+<p>Instead of using a larger dictionary, John the Ripper can apply a multitude of transformations to a wordlist in order to create new passwords from existing ones. For example, we could make it append numbers to the end of all the words in the dictionary, such that if the word &quot;car&quot; was in the original dictionary, then it would also try <em>car0</em> , <em>car1</em>, ..., <em>car 9</em>, <em>car00</em>, <em>car01</em>, ..., etc.</p>
 <p>These transformations are defined by a set of rules found in the configuration file <em>/etc/john/john.conf</em>.</p>
 <ul>
-<li><p>Open the config file by running <code>leafpad /etc/john/john.conf &amp;</code> from the terminal.</p></li>
-<li><p>Scroll down to the line containing “[List.Rules:Wordlist]”.</p></li>
+<li>
+<p>Open the config file by running <code>leafpad /etc/john/john.conf &amp; </code> from the terminal.</p>
+</li>
+<li>
+<p>Scroll down to the line containing &quot;[List.Rules:Wordlist]&quot;.</p>
+</li>
 </ul>
-<p>Every line underneath contains a transformation rule which will be applied to every word of the dictionary. First comes zero or more rejection rules, all starting with a hyphen, e.g. -c, -8, -s, etc. These are used to decide whether the rest of the transformation rules on the line should be applied to a word or not. You can just ignore these.</p>
+<p>Every line underneath contains a transformation rule which will be applied to every word of the dictionary. First comes zero or more rejection rules, all starting with a hyphen, e.g. -c, -8, -s, etc. These are used to decide whether the rest of the transformation rules on the line should be applied to a word or not. You can just ignore these.</p>
 <p>Next comes the actual transformation rules themselves.</p>
-<p>For example the rule: <code>&lt;5 c r Q</code></p>
-<p>It applies to words of length less than 5 <em>( &lt;5 )</em> ; and if so, it will capitalize <em>( c )</em> and reverse <em>( r )</em> it. The <em>Q</em> command ensures that words that are not changed won’t be unnecessarily added to the dictionary, avoiding duplicates (e.g. capitalizing an already capitalized word does not change it).</p>
-<p>For example, if “car” was in the dictionary, then the above rule would make John the Ripper also try the word <em>raC</em>; that is by checking first if the word’s length is less than 5, then capitalizing it to get <em>Car</em>, and finally reversing it to get the result <em>raC</em>.</p>
+<p>For example the rule: <code> &lt;5 c r Q</code></p>
+<p>It applies to words of length less than 5 <em>( &lt;5 )</em> ; and if so, it will capitalize <em>( c )</em> and reverse <em>( r )</em> it. The <em>Q</em> command ensures that words that are not changed won't be unnecessarily added to the dictionary, avoiding duplicates (e.g. capitalizing an already capitalized word does not change it).</p>
+<p>For example, if &quot;car&quot; was in the dictionary, then the above rule would make John the Ripper also try the word <em>raC</em>; that is by checking first if the word's length is less than 5, then capitalizing it to get <em>Car</em>, and finally reversing it to get the result <em>raC</em>.</p>
 <ul>
-<li>Your task now is to create a rule that applies to all words that are longer than 1 and less than 7, and replaces all appearances of lowercase “L” with the number “1”. For example, if the word “hello” was in the dictionary, then “he11o” would also be added.</li>
+<li>Your task now is to create a rule that applies to all words that are longer than 1 and less than 7, and replaces all appearances of lowercase &quot;L&quot; with the number &quot;1&quot;. For example, if the word &quot;hello&quot; was in the dictionary, then &quot;he11o&quot; would also be added.</li>
 </ul>
-<div class="tip"><p>use the command “s” to substitute a letter by another. example <em>so0</em> substitutes letter “o” with a zero</p>
-<p>The description of every possible transformation rule can be found at the John the Ripper web page http://www.openwall.com/john/doc/RULES.shtml</p></div>
+
+<div class="tip"><p>use the command &quot;s&quot; to substitute a letter by another. example <em>so0</em> substitutes letter &quot;o&quot; with a zero</p>
+<p>The description of every possible transformation rule can be found at the John the Ripper web page http://www.openwall.com/john/doc/RULES.shtml</p>
+</div>
 <ul>
-<li><p>To check how the default rules work, create a dictionary file <em>test.dict</em> containing the single word “labrador” <code># echo "labrador" &gt; test.dict</code></p></li>
-<li><p>Apply the default John rules to * test.dict * and print the results as follows: <code># john --worldlist=test.dict --rules --stdout</code></p></li>
-<li><p>To find out how many new password did John create from this single-word dictionary, pipe the output above with ‘|’ into <em>wc</em>.</p></li>
+<li>
+<p>To check how the default rules work, create a dictionary file <em>test.dict</em> containing the single word &quot;labrador&quot; <code># echo &quot;labrador&quot; &gt; test.dict</code></p>
+</li>
+<li>
+<p>Apply the default John rules to * test.dict * and print the results as follows: <code># john --worldlist=test.dict --rules --stdout</code></p>
+</li>
+<li>
+<p>To find out how many new password did John create from this single-word dictionary, pipe the output above with '|' into <em>wc</em>.</p>
+</li>
 </ul>
+
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

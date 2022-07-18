@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -160,16 +163,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,23 +182,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -373,33 +358,41 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<p>In this week, we use Telenor Start IoT’s setup for the LoPy to send data via LoRaWAN into a data collection backend.</p>
-<p>This is the antenna on the roof of the Electrical Building that connects to your LoPy: <img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/7516846976_IMG_1942-300x200.jpg" alt="" width="300" height="200" class="alignnone size-medium wp-image-622" /></p>
+<p>In this week, we use Telenor Start IoT's setup for the LoPy to send data via LoRaWAN into a data collection backend.</p>
+<p>This is the antenna on the roof of the Electrical Building that connects to your LoPy:
+<img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/7516846976_IMG_1942-300x200.jpg" alt="" width="300" height="200" class="alignnone size-medium wp-image-622" /></p>
+
     </section>
     <section class="content">
-<h1 id="start-tutorial">Start Tutorial</h1>
+<h1>Start Tutorial</h1>
 <p>Follow the <a href="https://startiot.telenor.com/learning/quick-start-guide/">LoPy and Managed IoT Cloud Quick Start Guide</a>. This includes to get your account, and upgrading the LoPy firmware.</p>
+
     </section>
     <section class="content">
-<h1 id="hints-and-tips">Hints and Tips</h1>
-<p>Don’t shortcut the LoPy by putting it on a metallic surface, like a MacBook. That’ll kill it.</p>
-<p><img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-vs-macbook-300x142.jpg" alt="" width="300" height="142" class="alignnone size-medium wp-image-616" /></p>
+<h1>Hints and Tips</h1>
+<p>Don't shortcut the LoPy by putting it on a metallic surface, like a MacBook. That'll kill it.</p>
+<img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-vs-macbook-300x142.jpg" alt="" width="300" height="142" class="alignnone size-medium wp-image-616" />
 <p>Make sure you mount the antenna in the right place, i.e., the plug close to the LED.</p>
-<p><img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-300x164.jpg" alt="" width="300" height="164" class="alignnone size-medium wp-image-619" /></p>
+<img src="http://recipes.item.ntnu.no/wp-content/uploads/2017/11/lopy-300x164.jpg" alt="" width="300" height="164" class="alignnone size-medium wp-image-619" />
 <p>Also, make sure the LoPy is mounted in the correct direction onto the expansion board, as shown above.</p>
+
 <p>The tutorials only work close to a LoRaWAN antenna, for example on Gløshaugen.</p>
+
     </section>
     <section class="content">
-<h1 id="lorawan-temperature-sensor">LoRaWAN Temperature Sensor</h1>
+<h1>LoRaWAN Temperature Sensor</h1>
 <p>Follow the <a href="https://startiot.telenor.com/learning/lorawan-temperature-sensor/">LoRaWAN Temperature Sensor Tutorial</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="lopy-motion-sensor">LoPy Motion Sensor</h1>
+<h1>LoPy Motion Sensor</h1>
 <p>Follow the <a href="https://startiot.telenor.com/learning/lopy-motion-sensor/">LoPy Motion Sensor Guide</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="managed-iot-cloud-api-mqtt-subscription-optional">Managed IoT Cloud API MQTT Subscription (Optional)</h1>
+<h1>Managed IoT Cloud API MQTT Subscription (Optional)</h1>
 <p>Follow the <a href="https://startiot.telenor.com/learning/managed-iot-cloud-api-mqtt-subscription/">Managed IoT Cloud API MQTT Subscription Guide</a>.</p>
+
     </section>
 </div>
 

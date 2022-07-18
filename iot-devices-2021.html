@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,67 +412,85 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="programming-iot-devices">Programming IoT Devices</h1>
-<div class="goals"><p>Goals for this week’s lab:</p>
+<h1>Programming IoT Devices</h1>
+
+<div class="goals"><p>Goals for this week's lab:</p>
 <ul>
 <li>Starting to program an IoT device</li>
 <li>Get familiar with using a simple API (interface)</li>
 <li>Create a simple program on a device</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="setup">Setup</h1>
+<h1>Setup</h1>
 <ul>
 <li><strong>Install Chrome, or a Chrome-based browser.</strong> These browser support an interface called <em>Web USB</em>, so that you can directly connect to your Microbit from the browser.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="the-microbit">The Microbit</h1>
-<p>In today’s lab we use many of the existing resources about the Microbit that you can find online.</p>
-<h2 id="the-microbit-hardware">The Microbit Hardware</h2>
+<h1>The Microbit</h1>
+<p>In today's lab we use many of the existing resources about the Microbit that you can find online.</p>
+
+<h2>The Microbit Hardware</h2>
 <p>Start by learning about all the sensors and actuators on the Microbit:</p>
 <p><a href="https://microbit.org/get-started/user-guide/overview/">Overview of the Microbit</a></p>
-<h2 id="the-microbit-software">The Microbit Software</h2>
-<p>The Microbit can be programmed in Python, using a special version of it that is called <em>MicroPython</em>. Go through the Python Guide:</p>
+
+<h2>The Microbit Software</h2>
+<p>The Microbit can be programmed in Python, using a special version of it that is called <em>MicroPython</em>.
+Go through the Python Guide:</p>
 <p><a href="https://microbit.org/get-started/user-guide/python/">Python on the Microbit</a></p>
 <p>We are going to use the web editor, and connect with the Microbit via Web USB:</p>
 <p><a href="https://microbit.org/get-started/user-guide/web-usb/">Web Editor</a></p>
+
     </section>
     <section class="content">
-<h1 id="run-a-test-program">Run a Test Program</h1>
+<h1>Run a Test Program</h1>
+
 <p>Create a file <code>hei.py</code> with the following content:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> microbit <span class="im">import</span> display</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    display.show(<span class="st">&quot;HEI!&quot;</span>)</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="reflection-exploring-an-api">Reflection: Exploring an API</h1>
-<p>In the section above, we showed you a couple of functions that you can use to control the Microbit. Whenever you do programming, exploring an API will be an important part of your work. There are several strategies to explore an API, which you will also mix as you go along.</p>
-<h3 id="step-1-find-out-which-functions-you-need">Step 1: Find out which functions you need</h3>
+<h1>Reflection: Exploring an API</h1>
+<p>In the section above, we showed you a couple of functions that you can use to control the Microbit.
+Whenever you do programming, exploring an API will be an important part of your work.
+There are several strategies to explore an API, which you will also mix as you go along.</p>
+<h3>Step 1: Find out which functions you need</h3>
 <p>First you need to find out which functions there are at all, and how they are called. For that, you have several options:</p>
 <ul>
 <li>Look at a tutorial or read a book, which presents you a couple of functions and how to call with some examples, like we did above.</li>
 <li>Read the code documentation, which sometimes also provides examples and overview explanations.</li>
 <li>Search on the web.</li>
 </ul>
-<h3 id="step-2-find-out-how-to-use-the-function">Step 2: Find out how to use the function</h3>
-<p>Once you first know which function you need to use, you need to figure out how to use it. This means, which parameters are there and what do they do. You can figure out these more detailed questions in different ways:</p>
+<h3>Step 2: Find out how to use the function</h3>
+<p>Once you first know which function you need to use, you need to figure out how to use it. This means, which parameters are there and what do they do.
+You can figure out these more detailed questions in different ways:</p>
 <ul>
 <li>Browsing an API documentation, like when you follow the links to the functions above. Such API documentation is often generated by extracting the comments in the source code, and for good libraries they should give you a complete picture.</li>
 <li>Tool Support as offered in Visual Studio offers auto-completion. Just place your cursor after the dot of a variable. If the tool can infer which type the variable has, and if it finds the source code for the library where that type is defined, it can show you a popup window that explains the function call. You can also trigger the popup window by pressing <code>Shift-Space</code>.</li>
 </ul>
+
 <div class="figure">
 <img src="figures/iot/vs-auto-complete.gif" width="100%"/>
 </div>
 <p>(For programming the Microbit, we are using the browser as editor, since it compiles the code into MicroPython and is simple to install. Unfortunately, it does not offer auto completion like other editors.)</p>
-<h3 id="experience-helps">Experience Helps…</h3>
+
+<h3>Experience Helps...</h3>
 <p>After some time, you will also become more experienced with APIs, and sometimes you can guess which functions there probably are and how they are most likely called. In that case, you can start typing and look in the auto-completion for something that matches.</p>
-<div class="task"><p>After you finished the other tasks below, reflect on how you manage to use the API for using the components of the Microbit. What was easy? What is challenging? What helped?</p></div>
+
+<div class="task"><p>After you finished the other tasks below, reflect on how you manage to use the API for using the components of the Microbit. What was easy? What is challenging? What helped?</p>
+</div>
     </section>
     <section class="content">
-<h1 id="application-examples">Application Examples</h1>
+<h1>Application Examples</h1>
+
 <p>Some of the applications of an IoT device follow a very simple programming pattern, in which it waits for a condition to be true, and then does something. This is illustrated in the code skeleton below:</p>
+
 <div class="figure">
 <img src="figures/iot/iot-application-pattern.png" width="100%"/>
 </div>
@@ -461,48 +500,64 @@ display: inline;
 <li>Depending on the detected case, the device can react with different actions, like showing something on the display.</li>
 <li>The sleep statement lets the device pause for a bit. It specifies a number of microseconds that the device does nothing and waits before it goes into the next iteration and starts again at the top of the while-loop. The sleep is not necessary for all cases, but can be useful when you show something on the display and keep it visible for some time. In a real device that is powered by a battery, sleeping also helps to preserve energy. (This is usually implemented with a different method than sleep as shown here, but the principle for the code is the same.)</li>
 </ul>
-<p>Let’s use this application pattern in some examples. In the following, we show you some of the ideas of the <a href="https://microbit.org/get-started/user-guide/python/">Microbit documentation</a>. Go through these examples step by step. For each example, do the following:</p>
+
+<p>Let's use this application pattern in some examples. In the following, we show you some of the ideas of the <a href="https://microbit.org/get-started/user-guide/python/">Microbit documentation</a>.
+Go through these examples step by step. For each example, do the following:</p>
 <ul>
 <li>Sketch a solution individually first, then together in your team.</li>
 <li>Make it run.</li>
 <li>Compare your solution with the one given in the documentation.</li>
 </ul>
-<div class="report"><p>Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.</p></div>
-<h2 id="nightlight">Nightlight</h2>
+
+<div class="report"><p>Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.</p>
+</div>
+<h2>Nightlight</h2>
 <p>Detect that it is getting dark and turn on the display.</p>
 <ul>
 <li><a href="https://microbit.org/projects/make-it-code-it/nightlight/?editor=python">Tutorial</a></li>
 </ul>
-<div class="task"><p>Build the example as described above.</p></div>
-<h2 id="cast-a-dice">Cast a Dice</h2>
+
+<div class="task"><p>Build the example as described above.</p>
+</div>
+<h2>Cast a Dice</h2>
 <p>Detect that the device was shaken, and print a random number between 1 and 6.</p>
 <ul>
 <li><a href="https://microbit.org/projects/make-it-code-it/dice/?editor=python">Tutorial</a></li>
 </ul>
-<div class="task"><p>Build the example as described above.</p></div>
-<h2 id="max-min-thermometer">Max-Min Thermometer</h2>
+
+<div class="task"><p>Build the example as described above.</p>
+</div>
+<h2>Max-Min Thermometer</h2>
 <p>Measure the temperature regularly. When you press button A, show the minimum temperature. When you press button B, show the maximum temperature.</p>
 <ul>
 <li><a href="https://microbit.org/projects/make-it-code-it/max-min-thermometer/?editor=python">Tutorial</a></li>
 </ul>
-<div class="task"><p>Build the example as described above.</p></div>
-<div class="task"><p>(Extra) Think about how to add an extra function, so that you can reset the temperatures when both buttons are pressed. Build it.</p></div>
+
+<div class="task"><p>Build the example as described above.</p>
+</div>
+<div class="task"><p>(Extra) Think about how to add an extra function, so that you can reset the temperatures when both buttons are pressed. Build it.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="extra-create-your-own-application">(Extra) Create Your Own Application</h1>
+<h1>(Extra) Create Your Own Application</h1>
 <p>Inspired by the examples, brainstorm around some ideas you could try out with the simulated device.</p>
 <ul>
 <li>Think individually for a few minutes.</li>
-<li>Present your idea – no matter how good you think it is – to the others. Collect all ideas. (Be positive in this first round.)</li>
+<li>Present your idea -- no matter how good you think it is -- to the others. Collect all ideas. (Be positive in this first round.)</li>
 <li>Look at the collected suggestions. Which one do you want to build together? Maybe adjust suggestions, or combine ideas.</li>
 </ul>
-<div class="task"><p>Build your own application.</p></div>
-<div class="report"><p>Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.</p></div>
-<div class="task"><p>Remember to go back to the reflection task above about how to use a new API.</p></div>
+
+<div class="task"><p>Build your own application.</p>
+</div>
+<div class="report"><p>Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.</p>
+</div>
+<div class="task"><p>Remember to go back to the reflection task above about how to use a new API.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="optional-homework">Optional Homework</h1>
+<h1>Optional Homework</h1>
 <p>Train with these tutorials also on your own. This is a fun way to learn more programming concepts.</p>
+
     </section>
 </div>
 

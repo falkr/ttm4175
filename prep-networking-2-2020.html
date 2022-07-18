@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,13 +335,15 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<span name="61b931"></span><aside name="61b931"><p><strong>Note:</strong> Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There’s nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?</p>
-<p>
-<p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a></p></aside>
-<h1 id="layers-and-docker">Layers and Docker</h1>
-<p>The overall goal of this lab. is to complement knowledge on IP, subnets with some routing notions. This will be achieved using the same VMs as last week and default Linux tools.</p>
-<p>Today we will also learn more about Docker. With Docker we will be able to simulate a “mini-cloud” inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
-<h2 id="learning-goals">Learning Goals</h2>
+<span name="61b931"></span><aside name="61b931"><p><strong>Note:</strong> Running Docker inside a VM may seem strange to some of you but it allows us to keep a clean and consistent environment for all of us. There's nothing wrong with it and, for the sake of curiosity, did you know that you can run Docker inside Docker?</p>
+<p><a href="figures/net/docker-ception.jpg"><img src="figures/net/docker-ception.jpg" width="100px"></a></aside>
+<h1>Layers and Docker</h1>
+<p>The overall goal of this lab. is to complement knowledge on IP, subnets with some routing notions.
+This will be achieved using the same VMs as last week and default Linux tools.</p>
+<p>Today we will also learn more about Docker. With Docker we will be able to simulate a &quot;mini-cloud&quot; inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
+
+<h2>Learning Goals</h2>
+
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
 <li>Recognise the importance of <em>ports</em> in networking</li>
@@ -406,39 +352,55 @@ display: inline;
 <li>Images and containers</li>
 <li>The <em>Dockerfile</em></li>
 <li>Basic commands for managing containers</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="how-do-computers-communicate-part-2">How do computers communicate (part 2)</h1>
-<h2 id="protocol-layers">Protocol Layers</h2>
-<p>To better understand how computer networking is organised you should <strong>read section 1.5.1 from page 75 to page 81</strong> of the book. Again, if you read the entire first chapter, this is already covered.</p>
+<h1>How do computers communicate (part 2)</h1>
+<h2>Protocol Layers</h2>
+<p>To better understand how computer networking is organised you should <strong>read section 1.5.1 from page 75 to page 81</strong> of the book.
+Again, if you read the entire first chapter, this is already covered.</p>
 <p>Optionally you can also read section 1.5.2 to get a better overview of how information is handled through different layers (encapsulated).</p>
-<h2 id="ports">Ports</h2>
-<p>We saw that IP address are useful for identifying a machine/server’s location, or address. We also mentioned that in each address we can have several services or applications, with their respective ports or doors to reach them. To learn more about this you should <strong>read sections 2.1.1 and 2.1.2, in pages 116 to 121.</strong></p>
+
+<h2>Ports</h2>
+<p>We saw that IP address are useful for identifying a machine/server's location, or address.
+We also mentioned that in each address we can have several services or applications, with their respective ports or doors to reach them.
+To learn more about this you should <strong>read sections 2.1.1 and 2.1.2, in pages 116 to 121.</strong></p>
+
     </section>
     <section class="content">
-<h1 id="servers">Servers</h1>
-<p>In our next lab you will use the Raspberry Pi VM as a client and the Ubuntu VM (containers) and a server. To better understand what a server is watch the following videos.</p>
+<h1>Servers</h1>
+<p>In our next lab you will use the Raspberry Pi VM as a client and the Ubuntu VM (containers) and a server.
+To better understand what a server is watch the following videos.</p>
 <p>This first video is extremely simple but explains the most basic concept.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SwLdKeC8scE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p>This one goes into significantly more detail. You need only to <strong>watch the first 3 min.</strong> but the rest of the video is also interesting (and provides generally useful information).</p>
+<p>This one goes into significantly more detail.
+You need only to <strong>watch the first 3 min.</strong> but the rest of the video is also interesting (and provides generally useful information).</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UjCDWCeHCzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
     <section class="content">
-<h1 id="optional-materials">Optional Materials</h1>
-<h2 id="web-servers">Web Servers</h2>
+<h1>Optional Materials</h1>
+<h2>Web Servers</h2>
 <p>As an <strong>optional reading</strong> you can check this website about <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">webservers</a></p>
-<h2 id="docker">Docker</h2>
-<p>You already worked with Virtual Machines, which can virtualise the hardware of an entire computer and run multiple operating systems. However, there are other alternatives to fully virtualising an entire machine. Docker is one of these alternatives, that uses containerisation for offering different virtualisation possibilities. Check the video below for an introduction on Docker’s approach.</p>
+<h2>Docker</h2>
+<p>You already worked with Virtual Machines, which can virtualise the hardware of an entire computer and run multiple operating systems.
+However, there are other alternatives to fully virtualising an entire machine.
+Docker is one of these alternatives, that uses containerisation for offering different virtualisation possibilities.
+Check the video below for an introduction on Docker's approach.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TvnZTi_gaNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>To read more about the difference between Virtual Machines and Containers you can read this <a href="https://www.backblaze.com/blog/vm-vs-containers/">blog post</a>.</p>
+
     </section>
 </div>
 

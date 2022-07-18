@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,10 +335,14 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="passwords-and-cryptography">Passwords and Cryptography</h1>
-<p>This week, we will continue with passwords as topic and the newest trends in password creation and storage. Various techniques of password cracking will be introduced, as well as some of the password cracking countermeasures. We will also talk about common mistakes that some of us can fall into while storing their passcodes.</p>
-<h2 id="learning-goals-for-this-week">Learning Goals for this Week</h2>
+<h1>Passwords and Cryptography</h1>
+<p>This week, we will continue with passwords as topic and the newest trends in password creation and storage.
+Various techniques of password cracking will be introduced, as well as some of the password cracking countermeasures.
+We will also talk about common mistakes that some of us can fall into while storing their passcodes.</p>
+
+<h2>Learning Goals for this Week</h2>
 <p>By the end of this week, you will:</p>
+
 <div class="goals"><ul>
 <li>Learn the basics in password configurations, storage and cracking.</li>
 <li>Get introduced to cryptography and to the main encryption algorithms.</li>
@@ -402,20 +350,26 @@ display: inline;
 <p>And by completing the Lab, you will:</p>
 <ul>
 <li>Learn how to crack a password</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="preparation">Preparation</h1>
+<h1>Preparation</h1>
+
 <p>The following videos will help you better understand the ways to store and choose passwords.</p>
+
 <p>Tips on how <strong>not</strong> to store your passwords:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8ZtInClXe1Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>More about password cracking:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7U-RbOKanYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>Cryptography and encryption algorithms will also be addressed in this week’s lecture. Cryptography is explained in this video:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-yFZGF8FHSg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -219,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -374,8 +412,10 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="basis-code-for-state-machines">Basis Code for State Machines</h1>
-<p>The code below is the basis code for all state machines. Copy this code <strong>before</strong> the definition of your own state machines.</p>
+<h1>Basis Code for State Machines</h1>
+<p>The code below is the basis code for all state machines.
+Copy this code <strong>before</strong> the definition of your own state machines.</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> time</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> microbit <span class="im">import</span> button_a, button_b, accelerometer, display, sleep, Image</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -457,7 +497,8 @@ display: inline;
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            sleep(<span class="dv">100</span>)</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="example-0-counter">Example 0: Counter</h1>
+<h1>Example 0: Counter</h1>
+
 <div class="figure">
 <img src="figures/statemachines/counter.svg" width="100%"/>
 </div>
@@ -497,7 +538,8 @@ display: inline;
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="example-1-shake-light">Example 1: Shake Light</h1>
+<h1>Example 1: Shake Light</h1>
+
 <div class="figure">
 <img src="figures/statemachines/stm-shake-light.svg" width="100%"/>
 </div>
@@ -525,7 +567,8 @@ display: inline;
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="example-2-night-light">Example 2: Night Light</h1>
+<h1>Example 2: Night Light</h1>
+
 <div class="figure">
 <img src="figures/statemachines/stm-night-light.svg" width="100%"/>
 </div>
@@ -564,7 +607,8 @@ display: inline;
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="example-3-switch-light">Example 3: Switch Light</h1>
+<h1>Example 3: Switch Light</h1>
+
 <div class="figure">
 <img src="figures/statemachines/stm-switch-light.svg" width="100%"/>
 </div>

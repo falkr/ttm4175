@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -390,86 +411,97 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which statement is not true regarding storing the password in cleartext in the database?</p>
-<ol type="1">
+<ol>
 <li>If the attacker manages to obtain the data in the database he/she has access to the passwords immediately</li>
 <li>The length of the passwords does not strengthen the security</li>
-<li>The administrator of the database can see everyone’s password</li>
+<li>The administrator of the database can see everyone's password</li>
 <li>It makes the webpage vulnerable</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which statement is not correct regarding hashing?</p>
-<ol type="1">
+<ol>
 <li>The hash is generated using rainbow tables</li>
 <li>The length of the input does not influence the length of the hash</li>
 <li>We cannot get back the cleartext from the hash with mathematical algorithm</li>
 <li>It is also called as message digest</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Which of the following is not a hash algorithm?</p>
-<ol type="1">
+<ol>
 <li>3HES</li>
 <li>MD5</li>
 <li>SHA-1</li>
 <li>SHA-256</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Which logical definitation writes the best hashing?</p>
-<ol type="1">
+<ol>
 <li>Reversible and non-deterministic</li>
 <li>Irreversible and deterministic</li>
 <li>Irreversible and non-deterministic</li>
 <li>Reversible and deterministic</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>What is a salt in hash generation?</p>
-<ol type="1">
+<ol>
 <li>a secret method that makes algorithms able to recreate the cleartext from the hash</li>
 <li>A component that guarantees to avoid hash collision</li>
 <li>A value to verify the correctness of the hash calculation</li>
 <li>a random text that is added to the cleartext for the hash generation</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>Which of the followings is an example of hash collision?</p>
-<ol type="1">
+<ol>
 <li>two cleartext has the same salt value</li>
 <li>the attacker brute-forces the hash and find a collision with a cleartext</li>
 <li>two cleartexts result in the same hash value</li>
 <li>a cleartext has multiple hash values with the same algorithm</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>Which of the followings is not social engineering?</p>
-<ol type="1">
+<ol>
 <li>Sending an email on behalf of someone to obtain information</li>
 <li>Persuading someone to download and install a tool that contains all answers for the TTM4175 RAT questions</li>
 <li>Claiming that you cannot login to blackboard and asking someone to try to login on your computer while a keylogger is running</li>
 <li>Hacking blackboard and exposing all social information about people</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Who or what is the target of social engineering?</p>
-<ol type="1">
+<ol>
 <li>system administrators</li>
 <li>web sites with login pages</li>
 <li>all services</li>
 <li>all people</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>What is phishing?</p>
-<ol type="1">
+<ol>
 <li>downloading something from a peer-to-peer site (torrent phishing)</li>
-<li>bypassing physical security (asking someone to open a protected door for us, because we carry e.g. a heavy fishing rod)</li>
+<li>bypassing physical security (asking someone to open a protected door for us, because we carry e.g. a heavy fishing rod)</li>
 <li>Masquerading as a trusted entity, dupes a victim into clicking on a malicious link</li>
 <li>asking someone about his/her password while doing a relaxing activity like fishing or sun bathing</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>Which advice is not useful to avoid phishing?</p>
-<ol type="1">
+<ol>
 <li>Use strong passwords</li>
 <li>Use spamfilter and check the email header if it looks suspicious</li>
 <li>Never give your password in email even if a trusted person asks you</li>
 <li>Beware of any download from untrested sources</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

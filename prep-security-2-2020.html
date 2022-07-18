@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,41 +412,54 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="authentication-authorization-and-password-storage">Authentication, Authorization, and Password Storage</h1>
+<h1>Authentication, Authorization, and Password Storage</h1>
+
 <p>During this lecture, we take a closer look into the main access control functions, namely authentication and authorization.</p>
-<h2 id="learning-goals-of-this-week">Learning Goals of this Week</h2>
+
+<h2>Learning Goals of this Week</h2>
 <p>By the end of this week, you will achieve the following:</p>
+
 <div class="goals"><ul>
 <li>Understand how entities can safeguard their clients and data with authentication.</li>
 <li>Understand what types of password storage solutions are being currently utilized.</li>
 <li>Understand the advancements in password generators as devised by Google and how they are encrypted.</li>
-</ul></div>
+</ul>
+</div>
 <p>And by completing the Lab, you will:</p>
 <ul>
 <li>Learn how to bypass Windows and Linux Login.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="preparation">Preparation</h1>
+<h1>Preparation</h1>
+
 <p>To have a better understanding of what access control functions are, have a look at the following two videos:</p>
-<h3 id="authentication-and-authorization">Authentication and authorization</h3>
+<h3>Authentication and authorization</h3>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/l7520SrNNnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h3 id="multi-factor-authentication">Multi-Factor Authentication</h3>
+<h3>Multi-Factor Authentication</h3>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZXFYT-BG2So" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h3 id="password-storage-and-hashing">Password Storage and Hashing</h3>
-<p>In addition, we will examine how the passwords are stored in computer systems. Password storage and hashing are explained in this video:</p>
+<h3>Password Storage and Hashing</h3>
+<p>In addition, we will examine how the passwords are stored in computer systems.
+Password storage and hashing are explained in this video:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z8tUW8Z96dI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h3 id="creating-secure-passwords">Creating Secure Passwords</h3>
+<h3>Creating Secure Passwords</h3>
 <p>This article will give you some tips on how to create a secure password:</p>
 <p><a href="https://www.wikihow.tech/Create-a-Secure-Password">Create a Secure Password</a></p>
-<p>Several solutions have been developed in order to make creating and storing passwords easier. Example of such solutions is Google password manager, but the question is : is it safe to use? Here is an article that provides some reflections on this topic:</p>
+<p>Several solutions have been developed in order to make creating and storing passwords easier.
+Example of such solutions is Google password manager, but the question is : is it safe to use?
+Here is an article that provides some reflections on this topic:</p>
 <p><a href="https://www.makeuseof.com/tag/google-password-manager">Google Password Manager</a></p>
+
     </section>
 </div>
 

@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,14 +412,18 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="project-goal">Project Goal</h1>
-<p>For this week we have set a goal: <em>We want you to be able to create your own web server, running on a computer that you control and configure, and that serves your own website.</em> Each day we get a bit closer to that goal.</p>
+<h1>Project Goal</h1>
+<p>For this week we have set a goal: <em>We want you to be able to create your own web server, running on a computer that you control and configure, and that serves your own website.</em>
+Each day we get a bit closer to that goal.</p>
+
 <div class="figure">
 <img src="figures/teknostart/goals.png" alt="Each day we try to reach a new goal. The final goal is to run our own website." width="100%"/>
 <span name="figures/teknostart/goals.png">&nbsp;</span>
-<aside name="figures/teknostart/goals.png"><p><p>Each day we try to reach a new goal. The final goal is to run our own website.</p></p></aside>
+<aside name="figures/teknostart/goals.png"><p><p>Each day we try to reach a new goal. The final goal is to run our own website.</p>
+</p></aside>
 </div>
 <p>Of course, you learn much more than just serving your own website. On our way you will learn many useful things that will help you through the rest of this course, the rest of your studies and also later during your job:</p>
+
 <div class="goals"><ul>
 <li>You will be able to operate your own computer.</li>
 <li>You will get familiar with the most important commands to control the computer and the applications running on it.</li>
@@ -409,43 +434,53 @@ display: inline;
 <ul>
 <li>You will learn to work in teams.</li>
 <li>You will get used to English as instruction language.</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="day-1-the-raspberry-pi">Day 1: The Raspberry Pi</h1>
+<h1>Day 1: The Raspberry Pi</h1>
 <p>Today we will start things off by letting you become familiar with the Raspberry Pi.</p>
-<h3 id="learning-goals-for-today">Learning Goals for Today</h3>
+<h3>Learning Goals for Today</h3>
+
 <div class="goals"><ul>
 <li>Become familiar with the Raspberry Pi</li>
 <li>Connecting the Pi</li>
 <li>Changing the default password</li>
-</ul></div>
-<h3 id="new-linux-commands">New Linux Commands</h3>
-<ul>
-<li><a href="commands.html#ls">ls</a> — to list files and folders.</li>
-<li><a href="commands.html#passwd">passwd</a> — to change passwords.</li>
-<li><a href="commands.html#pwd">pwd</a> — to show in which directory you are.</li>
 </ul>
+</div>
+<h3>New Linux Commands</h3>
+<ul>
+<li><a href="commands.html#ls">ls</a> --- to list files and folders.</li>
+<li><a href="commands.html#passwd">passwd</a> --- to change passwords.</li>
+<li><a href="commands.html#pwd">pwd</a> --- to show in which directory you are.</li>
+</ul>
+
     </section>
     <section class="content">
-<span name="cf52b3"></span><aside name="cf52b3"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p></aside>
-<h1 id="teamwork">Teamwork</h1>
-<p>We organized you in teams of <strong>3 students</strong> in this semester. This is a good number to work together behind a computer. It’s enough to learn something from each other and work together, but not too many so it get’s to hard to coordinate your work.</p>
+<span name="cf52b3"></span><aside name="cf52b3"><p><img src="figures/doubleteam.png" width="30"/><br/>Tasks done as double team will be marked with this symbol.</p>
+</aside>
+<h1>Teamwork</h1>
+<p>We organized you in teams of <strong>3 students</strong> in this semester.
+This is a good number to work together behind a computer. It's enough to learn something from each other and work together, but not too many so it get's to hard to coordinate your work.</p>
 <p>The teams are <strong>fixed over the semester</strong> so that you get used to each other and develop a better team dynamic over time.</p>
 <p>During the beginning of the lab, when we do quizzes, for example, we join always two teams of three into a <strong>double-team</strong> of six students. The pairing of the teams is also the same each week. Team 1 is a double team with team 2, and team 3 with team 4, and so on.</p>
+
 <p>We start with a task on teamwork.</p>
+
 <a class="ntnu-button" href="teamwork-1.html">Go to teamwork task</a>
     </section>
     <section class="content">
-<h1 id="starting-the-raspberry-pi">Starting the Raspberry Pi</h1>
-<p>For our project we use the <a href="https://www.raspberrypi.org">Raspberry Pi</a>. It’s a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers. <strong>The Raspberry Pi runs the same commands (programs) and operating system like “real” servers.</strong> So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.</p>
+<h1>Starting the Raspberry Pi</h1>
+<p>For our project we use the <a href="https://www.raspberrypi.org">Raspberry Pi</a>. It's a mini-computer, so when something goes wrong the consequences are not severe. But although it is a small and cheap computer, you operate it just like most other servers. <strong>The Raspberry Pi runs the same commands (programs) and operating system like &quot;real&quot; servers.</strong> So learning how to operate a Raspberry Pi is the best exercise for operating also bigger machines later.</p>
 <p>The following video provides an introduction, and shows how to operate the Pi:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wjWZhV1v3Pk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <span name="wjWZhV1v3Pk">&nbsp;</span>
-<aside name="wjWZhV1v3Pk"><p><p>How to get started with the Raspberry Pi.</p></p></aside>
+<aside name="wjWZhV1v3Pk"><p><p>How to get started with the Raspberry Pi.</p>
+</p></aside>
 </div>
-<h2 id="task-connecting-the-pi">Task: Connecting the Pi</h2>
+<h2>Task: Connecting the Pi</h2>
 <p>With the knowledge from above, connect the Pi!</p>
 <ul>
 <li>Make sure the SD-card is inserted correctly</li>
@@ -455,64 +490,82 @@ display: inline;
 <li><em>Do <em>not</em> connect the Ethernet cable</em></li>
 </ul>
 <p>Now, plug in the power supply. You should see that the Raspberry Pi boots up.</p>
-<div class="tip"><p><strong>Tip:</strong> The Pi does not come with an on/off button. To switch it off, you <em>can</em> simply unplug it from the power source. However, if the Pi is busy writing your files to the storage, you may end up with some errors. Therefore, to make sure all is fine, use the command <code>shutdown</code>, wait until the Pi has finished, and unplug the power then safely.</p></div>
+
+<div class="tip"><p><strong>Tip:</strong> The Pi does not come with an on/off button. To switch it off, you <em>can</em> simply unplug it from the power source. However, if the Pi is busy writing your files to the storage, you may end up with some errors. Therefore, to make sure all is fine, use the command <code>shutdown</code>, wait until the Pi has finished, and unplug the power then safely.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="logging-in-and-changing-passwords">Logging In and Changing Passwords</h1>
-<h2 id="logging-in">Logging In</h2>
+<h1>Logging In and Changing Passwords</h1>
+
+<h2>Logging In</h2>
 <p>By default, the Raspberry Pi is configured with a default user with the name <code>pi</code> and the password <code>raspberry</code>.</p>
 <p>Type first the username:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi</span></span></code></pre></div>
 <p>Then, type the password, followed by the key <code>enter</code>:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">raspberry</span></span></code></pre></div>
-<h2 id="command-line">Command Line</h2>
-<p>The Raspberry Pi will probably boot directly into a graphical user interface with windows. This looks a lot like Windows or macOS, and you can use it in a similar way. For many tasks related to system administration and programming it is useful to use the <em>command line</em>. This is especially the case when the computer is somewhere in a server room or data center far away and you want to log into it remotely. (We will do that later.) Therefore, we are going to learn how to use the command line.</p>
+<h2>Command Line</h2>
+<p>The Raspberry Pi will probably boot directly into a graphical user interface with windows. This looks a lot like Windows or macOS, and you can use it in a similar way.
+For many tasks related to system administration and programming it is useful to use the <em>command line</em>.
+This is especially the case when the computer is somewhere in a server room or data center far away and you want to log into it remotely. (We will do that later.)
+Therefore, we are going to learn how to use the command line.</p>
 <p>You can access the command line by opening the terminal application from the menu:</p>
+
 <div class="figure">
 <img src="figures/teknostart/rpi-terminal-1.png" width="100%"/>
 </div>
 <div class="figure">
 <img src="figures/teknostart/rpi-terminal-2.png" width="100%"/>
 </div>
-<h2 id="changing-the-password">Changing the Password</h2>
+<h2>Changing the Password</h2>
 <p>Everybody knows the default login. This is why we do not yet connect the Raspberry Pi to the network: Anyone on the internet could connect to your Pi with this default username and password, and do all sorts of stuff,like deleting files, copying information, but also using your Pi to attack other computers! And they even can change the password so that you cannot do anything anymore! We are not joking here, this <em>really</em> happens.</p>
 <p>Therefore we need to change the password before we connect the Pi to the network. For this, we use the command <code>passwd</code>. Type the command in the command line:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">passwd</span></span></code></pre></div>
 <p>Select a password and share it with your team members.</p>
+
     </section>
     <section class="content">
-<h1 id="connecting-to-the-internet">Connecting to the Internet</h1>
-<p>After you have changed the default password, you can connect the Pi to the internet. Use the provided ethernet cable and plug the Pi into the Ethernet plug in the lab.</p>
+<h1>Connecting to the Internet</h1>
+<p>After you have changed the default password, you can connect the Pi to the internet.
+Use the provided ethernet cable and plug the Pi into the Ethernet plug in the lab.</p>
+
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="the-combination-lock">The Combination Lock</h3>
+
+<h3>The Combination Lock</h3>
 <p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
 <li>The locks come opened and with the opening combination set.</li>
 <li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.)</li>
 </ul>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

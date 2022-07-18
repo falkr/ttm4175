@@ -16,29 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 div.check ul,
 div.check ul li {
@@ -160,16 +139,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,24 +158,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -375,18 +335,22 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="labs">Labs</h1>
-<h2 id="sahara-lab">Sahara Lab</h2>
+<h1>Labs</h1>
+<h2>Sahara Lab</h2>
+
 <div class="figure">
 <img src="figures/sahara-teams.png" alt="Places for each team in Sahara" width="100%"/>
 <span name="figures/sahara-teams.png">&nbsp;</span>
-<aside name="figures/sahara-teams.png"><p><p>Places for each team in Sahara</p></p></aside>
+<aside name="figures/sahara-teams.png"><p><p>Places for each team in Sahara</p>
+</p></aside>
 </div>
-<h2 id="smash-lab">Smash Lab</h2>
+<h2>Smash Lab</h2>
+
 <div class="figure">
 <img src="figures/smash-teams.png" alt="Places for each team in the Smash Lab" width="100%"/>
 <span name="figures/smash-teams.png">&nbsp;</span>
-<aside name="figures/smash-teams.png"><p><p>Places for each team in the Smash Lab</p></p></aside>
+<aside name="figures/smash-teams.png"><p><p>Places for each team in the Smash Lab</p>
+</p></aside>
 </div>
     </section>
 </div>

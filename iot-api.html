@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,19 +155,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -173,16 +163,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -196,24 +182,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -388,68 +359,82 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="apis">APIs</h1>
+<h1>APIs</h1>
 <p><strong>Goal:</strong> Let’s create a more advanced alarm system that detects some movement (with the PIR sensor), takes a picture (with the USB webcam) and notifies you via Slack.</p>
+
 <div class="figure">
 <img src="figures/iot/alarm-system.png" width="100%"/>
 </div>
-<p>For this task, we work again in Python. Altogether, this is a complex task; you need to coordinate many functions and APIs. Each step itself should not be too hard, but you need to put eveything together in the end. Therefore, try to build the application step by step, and try each function in isolation before putting everything together. Below is a list of steps. You don’t have to do them in the given order.</p>
+<p>For this task, we work again in Python. Altogether, this is a complex task; you need to coordinate many functions and APIs. Each step itself should not be too hard, but you need to put eveything together in the end. Therefore, try to build the application step by step, and try each function in isolation before putting everything together. Below is a list of steps. You don't have to do them in the given order.</p>
+
 <div class="tips"><p>Read first through all steps, and try to make a sequence diagram of the final application. The diagram should show a lifeline for your application, a lifeline for the PIR sensor, the camera, the cloudinary API and the Slack API.</p>
 <p><strong>Task:</strong> Think through if you are using an approach that is more of an orchestration or an choreography. Which approach works here?</p>
-<p><strong>Task:</strong> Once you have the sequence diagram, work on each of the steps.</p></div>
+<p><strong>Task:</strong> Once you have the sequence diagram, work on each of the steps.</p>
+</div>
     </section>
     <section class="content">
-<h1 id="python-3.6">Python 3.6</h1>
-<p>Unfortunately, the Slack API client needs Python 3.6, but the Raspberry Pi has Python version 3.5 by default. <a href="rpi-python3-6.html">Follow this description to update Python to version 3.6</a>.</p>
+<h1>Python 3.6</h1>
+<p>Unfortunately, the Slack API client needs Python 3.6, but the Raspberry Pi has Python version 3.5 by default.
+<a href="rpi-python3-6.html">Follow this description to update Python to version 3.6</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="step-taking-a-picture">Step: Taking a Picture</h1>
+<h1>Step: Taking a Picture</h1>
 <p>Find a way to capture an image with a USB camera in Python. It’s a standard USB camera, and there should be code out there that does the job.</p>
+
     </section>
     <section class="content">
-<h1 id="step-uploading-an-image-to-slack">Step: Uploading an Image to Slack</h1>
+<h1>Step: Uploading an Image to Slack</h1>
 <p>We created a step-by-step description to <a href="iot-slack.html">send messages and images to Slack</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="step-sensing-movement">Step: Sensing Movement</h1>
+<h1>Step: Sensing Movement</h1>
 <p>We collected some descriptions how to use the <a href="iot-pir-sensor.html">passive infrared sensor to detect movement</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="finally-putting-all-together">Finally: Putting all Together</h1>
+<h1>Finally: Putting all Together</h1>
 <p>Once you have control over all of the individual steps above, put everything together to build the complete alarm system.</p>
-<p><strong>For the Report:</strong> Document how it works in a series of screenshots and photos, for instance like in a comic strip. Also, take a video that shows how your system works. The video can (and should) be short, ca 1 or 2 minutes. You don’t have to do a lot of editing, just show how the system works. We have added a section in Blackboard to deliver the video.</p>
+<p><strong>For the Report:</strong> Document how it works in a series of screenshots and photos, for instance like in a comic strip. Also, take a video that shows how your system works. The video can (and should) be short, ca 1 or 2 minutes. You don't have to do a lot of editing, just show how the system works. We have added a section in Blackboard to deliver the video.</p>
 <p><strong>Well done!</strong></p>
-<h2 id="optionally-add-more-functionality">Optionally: Add More Functionality</h2>
+<h2>Optionally: Add More Functionality</h2>
 <p>If you have time and energy left, try to find other APIs on the web and extend your application with some more useful functionality.</p>
+
     </section>
     <section class="content">
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>Reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="the-combination-lock">The Combination Lock</h3>
+
+<h3>The Combination Lock</h3>
 <p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
 <li>The locks come opened and with the opening combination set.</li>
 <li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.)</li>
 </ul>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -39,6 +42,30 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -128,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -136,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -159,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -195,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -350,17 +412,20 @@ display: inline;
 <div class="page">
     <section class="content">
 <p>This week we are going to connect an IoT device (an Arduino) to the Internet via NB-IoT, a new communication standard that has been deployed very recently.</p>
-<p>We’ll have a guest lecturer from <a href="https://startiot.telenor.com">Telenor’s Start IoT Initiative.</a></p>
-<h2 id="nb-iot">NB-IoT</h2>
-<p>Here’s a very short video on NB-IoT. Have a look:</p>
+<p>We'll have a guest lecturer from <a href="https://startiot.telenor.com">Telenor's Start IoT Initiative.</a></p>
+<h2>NB-IoT</h2>
+<p>Here's a very short video on NB-IoT. Have a look:</p>
 <p>https://youtu.be/pf7wcl1IZYc</p>
-<h2 id="the-hardware">The Hardware</h2>
+
+<h2>The Hardware</h2>
+
 <img src="https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1000x750/f8876a31b63532bbba4e781c30024a0a/a/b/abx00019_iso.jpg" alt="" width="660" class="alignnone size-large wp-image-224" />
 
 
 
-<h2 id="installation-of-the-arduino-ide">Installation of the Arduino IDE</h2>
+<h2>Installation of the Arduino IDE</h2>
 <p>The device we are going to program is an Arduino with an NB-IoT modem. Therefore, we need the Arduino IDE for programming. Please install the Arduino IDE on your laptop. <a href="https://www.arduino.cc/en/Main/Software">You find the Arduino IDE here.</a></p>
+
     </section>
 </div>
 

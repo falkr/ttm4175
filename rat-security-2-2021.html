@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -155,19 +155,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +163,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +182,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -390,86 +358,97 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which of the following is not true for packet switched networks?</p>
-<ol type="1">
+<ol>
 <li>It was introduced with the old type of telephone networks</li>
 <li>Long data is breaked into pieces while sending it over the network</li>
 <li>The sender and the destination address must be in each packet</li>
 <li>It is more efficient than circuit switched networks</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which of the following is not true about a Hop?</p>
-<ol type="1">
+<ol>
 <li>Icmp protocol and its applications such as ping follows the hop count when travelling in the network</li>
 <li>The increase of the number of hops results in greater transmission delay</li>
 <li>The number of hops can be arbitrary between two devices when sending data</li>
 <li>One hop is frequently between two network devices</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Which of the following is not true for TCP</p>
-<ol type="1">
+<ol>
 <li>The error correction is part of it</li>
 <li>Faster then UDP</li>
 <li>The packets are ordered</li>
 <li>It is guaranteed that every packet is arrived</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Which of the following is true for ICMP?</p>
-<ol type="1">
+<ol>
 <li>Used for troubleshooting</li>
 <li>A 3 way handshake provides the connection between the hosts</li>
 <li>Works well in circuit switched networks</li>
 <li>Port numbers are used for different services</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>Which of the following is not true for UDP?</p>
-<ol type="1">
+<ol>
 <li>Used when speed is important</li>
 <li>The data is reassembled at the destination</li>
 <li>A packet sent later than another can be processed earlier</li>
 <li>A 3 way handshake provides the connection between the hosts</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>In which situation would you use UDP?</p>
-<ol type="1">
+<ol>
 <li>large amount of data has to be sent and the security is important</li>
 <li>small amount of data has to be sent and the security is not important</li>
 <li>small amount of data has to be sent and the security is important</li>
 <li>large amount of data has to be sent and the security is not important</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>In which situation would you use TCP?</p>
-<ol type="1">
+<ol>
 <li>When intact data has to be arrived</li>
 <li>Video broadcast</li>
 <li>Checking if a device is available</li>
 <li>Calculating the hops between two hosts</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Which ports are used for email receiving?</p>
-<ol type="1">
+<ol>
 <li>TCP25 and TCP143</li>
 <li>TCP25,TCP110 and TCP143</li>
 <li>TCP110 and TCP143</li>
 <li>TCP25 and TCP 110</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>Which port is used normally for forwarding and transferring data during file transfer?</p>
-<ol type="1">
+<ol>
 <li>UDP53</li>
 <li>TCP23</li>
 <li>TCP20</li>
 <li>UDP21</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>On which port do you expect that the data is encrypted?</p>
-<ol type="1">
+<ol>
 <li>TCP67 and TCP68</li>
 <li>TCP22 and TCP443</li>
 <li>TCP22 and TCP80</li>
 <li>TCP53 and UDP53</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

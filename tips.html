@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -39,6 +42,30 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -136,16 +163,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -159,23 +182,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -350,11 +359,10 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="kurset-digital-student">Kurset “Digital Student”</h1>
+<h1>Kurset &quot;Digital Student&quot;</h1>
 <p>Kurset tar for seg</p>
 <ul>
-<li>Innsida – hva er innsida og hvordan få godt utbytte av innsida som student<br />
-</li>
+<li>Innsida – hva er innsida og hvordan få godt utbytte av innsida som student</li>
 <li>Innføring i Blackboard</li>
 <li>Innføring i Blackboard Collaborate og Zoom</li>
 <li>Utstyr til nettundervisning</li>
@@ -362,33 +370,46 @@ display: inline;
 <li>O365 - Word, OneNote, Teams</li>
 <li>Digital life hacks</li>
 </ul>
+
 <a class="ntnu-button" href="https://studntnu.sharepoint.com/sites/kurs/Sider/Kurskatalogen.aspx#Default=%7B%22k%22%3A%22%22%2C%22r%22%3A%5B%7B%22n%22%3A%22RefinableString06%22%2C%22t%22%3A%5B%22%5C%22ǂǂ53747564656e74%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22ǂǂ53747564656e74%5C%22%22%3A%22Student%22%7D%7D%5D%2C%22l%22%3A1044%7D">Påmelding for studenter</a>
     </section>
     <section class="content">
-<h1 id="velkommen-til-komtek">Velkommen til Komtek</h1>
+<h1>Velkommen til Komtek</h1>
 <ul>
 <li><a href="material/2021-velkommen-til-komtek.pdf">Presentasjon fra Sjur og Filip</a></li>
 <li><a href="material/2021-itv.pdf">Presentasjon fra Sander og Emilie</a></li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="study-links">Study Links</h1>
+<h1>Study Links</h1>
 <ul>
 <li><a href="https://innsida.ntnu.no/wiki/-/wiki/English/Studies+at+IIK">Studies at IIK</a> Information for all students studying at the IIK department.</li>
 <li><a href="https://innsida.ntnu.no/wiki/-/wiki/English/MTKOM">Studyplan</a></li>
-<li>Delta i Abakus arrangementer <a href="https://abakus.no" class="uri">https://abakus.no</a></li>
-<li>Delta i Itemize <a href="https://itemize.no" class="uri">https://itemize.no</a></li>
+<li>Delta i Abakus arrangementer <a href="https://abakus.no">https://abakus.no</a></li>
+<li>Delta i Itemize <a href="https://itemize.no">https://itemize.no</a></li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="ctf-links">CTF Links</h1>
+<h1>CTF Links</h1>
+
 <p>Her er et par linker til nyttige CTF sider:</p>
 <ul>
-<li><p>Lære linux, servere og web, fint sted å starte: <a href="https://overthewire.org/wargames/" class="uri">https://overthewire.org/wargames/</a></p></li>
-<li><p>Div. nybegynner: <a href="https://picoctf.com/" class="uri">https://picoctf.com/</a></p></li>
-<li><p>Mer utfordrende og større oppgaver: <a href="https://www.hackthebox.eu/" class="uri">https://www.hackthebox.eu/</a></p></li>
-<li><p>Leaderboard innen CTF-grupper på verdensbasis, kalender med live konkuranser. <a href="https://ctftime.org/" class="uri">https://ctftime.org/</a></p></li>
+<li>
+<p>Lære linux, servere og web, fint sted å starte: <a href="https://overthewire.org/wargames/">https://overthewire.org/wargames/</a></p>
+</li>
+<li>
+<p>Div. nybegynner: <a href="https://picoctf.com/">https://picoctf.com/</a></p>
+</li>
+<li>
+<p>Mer utfordrende og større oppgaver: <a href="https://www.hackthebox.eu/">https://www.hackthebox.eu/</a></p>
+</li>
+<li>
+<p>Leaderboard innen CTF-grupper på verdensbasis, kalender med live konkuranser. <a href="https://ctftime.org/">https://ctftime.org/</a></p>
+</li>
 </ul>
+
     </section>
 </div>
 

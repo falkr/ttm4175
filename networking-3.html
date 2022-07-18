@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -173,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -196,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -388,8 +384,10 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="networking-in-linux-wi-fi-and-nat">Networking in Linux – Wi-Fi and NAT</h1>
-<p>The overall goal of this lab. is to combine the previously acquired networking knowledge on networking with wireless communications and some more sophisticated address management. This will be achieved using available tools and software in Linux to manage a small network.</p>
+<h1>Networking in Linux -- Wi-Fi and NAT</h1>
+<p>The overall goal of this lab. is to combine the previously acquired networking knowledge on networking with wireless communications and some more sophisticated address management.
+This will be achieved using available tools and software in Linux to manage a small network.</p>
+
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
 <li>Understand how basic Wi-Fi works</li>
@@ -398,23 +396,33 @@ display: inline;
 <ul>
 <li>creating a Wi-Fi access point</li>
 <li>enabling IP Masquerading and NAT</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="lab.-exercises">Lab. Exercises</h1>
+<h1>Lab. Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
-<p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
+<p>Remember you should deliver a report after the networking module is finished.
+It should include the main commands and configurations necessary to complete each exercise.
+Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
-<h2 id="wireless-raspberry-pi-router">Wireless Raspberry Pi Router</h2>
+<h2>Wireless Raspberry Pi Router</h2>
+
 <div class="figure">
 <img src="figures/net/TTM4175-ex3.png" alt="Diagram of the topology to be created" width="100%"/>
 <span name="figures/net/TTM4175-ex3.png">&nbsp;</span>
-<aside name="figures/net/TTM4175-ex3.png"><p><p>Diagram of the topology to be created</p></p></aside>
+<aside name="figures/net/TTM4175-ex3.png"><p><p>Diagram of the topology to be created</p>
+</p></aside>
 </div>
-<p>This exercise builds on the work that has been done in the previous weeks. Your <em>router</em> rPi should already have all the necessary software but if you have skipped any steps in the previous labs. make sure nothing is missing.</p>
-<p>The <strong>final goal</strong> of this exercise is to create a simple wireless router using only open-source software in your Raspberry Pi (rPi). To reach this goal we will connect the <em>router</em> rPi to the Internet using the Ethernet card and use Wi-Fi to connect the <em>client</em>. As seen in the figure, in the end, you should be able to wirelessly connect multiple devices to your <em>router</em> and they should automatically get all the required network configurations to access the Internet.</p>
-<h2 id="software-checklist">Software Checklist</h2>
+<p>This exercise builds on the work that has been done in the previous weeks.
+Your <em>router</em> rPi should already have all the necessary software but if you have skipped any steps in the previous labs. make sure nothing is missing.</p>
+<p>The <strong>final goal</strong> of this exercise is to create a simple wireless router using only open-source software in your Raspberry Pi (rPi).
+To reach this goal we will connect the <em>router</em> rPi to the Internet using the Ethernet card and use Wi-Fi to connect the <em>client</em>.
+As seen in the figure, in the end, you should be able to wirelessly connect multiple devices to your <em>router</em> and they should automatically get all the required network configurations to access the Internet.</p>
+
+<h2>Software Checklist</h2>
 <p>The <em>router</em> must have the following packages installed:</p>
 <ul>
 <li><em>tcpdump</em></li>
@@ -423,14 +431,17 @@ display: inline;
 <li><em>apache2</em> or <em>nginx</em> (for the additional exercise only!)</li>
 </ul>
 <p>The <em>client</em> does not require any specific software.</p>
-<h2 id="configuring-a-wireless-router">Configuring a wireless router</h2>
-<div class="steps"><ol type="1">
+
+<h2>Configuring a wireless router</h2>
+
+<div class="steps"><ol>
 <li>Configure a static IP address for the network interface <code>wlan0</code>.</li>
 <li>Configure the <em>hostapd</em> software previously installed in order to create a Linux Wi-Fi access point.</li>
 <li><em>start</em>, and optionally <em>enable</em>, the <em>hostapd.service</em></li>
 <li>Activate DHCP on the interface <code>wlan0</code> on the <em>isc-dhcp-server</em> configuration file (and remove <code>eth0</code>).</li>
 <li>Re-configure the DHCP server properties in the <em>dhcpd.conf</em> file without forgetting:</li>
-</ol></div>
+</ol>
+</div>
 <ul>
 <li>to declare this DHCP server as authoritative;</li>
 <li>to specify a subnet and range matching the IP/mask of <code>wlan0</code>;</li>
@@ -438,140 +449,150 @@ display: inline;
 <li>to specify the <em>router</em> as the default router;</li>
 <li>to assign a fixed IP address to the <em>client</em>.</li>
 </ul>
-<div class="steps"><ol start="6" type="1">
+
+<div class="steps"><ol start="6">
 <li><em>start</em>, and optionally <em>enable</em>, the <em>isc-dhcp-server.service</em></li>
 </ol>
-<button class="w3collapsible">
-Hint (interfaces)
-</button>
+<p><button class="w3collapsible">Hint (interfaces)</button></p>
 <div class="w3content">
-<p>The interface <code>wlan0</code> may not show an IP address until it is “UP”, which means until it is being used. In particular, it <code>wlan0</code> may only be seen as up after starting <em>hostapd</em></p>
+The interface `wlan0` may not show an IP address until it is "UP", which means until it is being used.
+In particular, it `wlan0` may only be seen as up after starting _hostapd_
 <p>Make sure that the <code>wlan0</code> interface is <em>unblocked</em>, you can check it with the command <code>rfkill</code> and that it is not connected to any wireless network.</p>
-<p>Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the <em>dhcpcd.service</em> or the <em>networking.service</em>), however a reboot is sometimes easier.</p>
+<p>Note also that changes in configuration files are not automatically applied. Typically you can simply restart the service in question (e.g. the <em>dhcpcd.service</em> or the <em>networking.service</em>), however a reboot is sometimes easier.</p>
 </div>
-<button class="w3collapsible">
-Hint (hostapd)
-</button>
+<p><button class="w3collapsible">Hint (hostapd)</button></p>
 <div class="w3content">
-<p>An example on how to configure an access point with <em>hostapd</em> can be found in the file <em>hostapd.conf</em> or <em>hostapd.conf.gz</em>, the latter can be extracted with the command <code>gunzip</code>. This includes many options, from which <em>ssid and wpa_passphrase</em> should obviously be edited, but also other less trivial options that should look like this:</p>
+An example on how to configure an access point with _hostapd_ can be found in the file _hostapd.conf_ or  _hostapd.conf.gz_, the latter can be extracted with the command `gunzip`.
+This includes many options, from which *ssid and wpa_passphrase* should obviously be edited, but also other less trivial options that should look like this:
 <pre><code>  driver=nl80211
   country_code=NO
   auth_algs=1
   wpa=2
-  rsn_pairwise=CCMP </code></pre>
-<p>Before the <em>start</em>/<em>enable</em> of the <em>hostapd</em> service do not forget to point to its configuration file by editing the service’s default options located at “/etc/default/”.</p>
+  rsn_pairwise=CCMP 
+</code></pre>
+<p>Before the <em>start</em>/<em>enable</em> of the <em>hostapd</em> service do not forget to point to its configuration file by editing the service's default options located at &quot;/etc/default/&quot;.</p>
 <p>If the <em>hostapd</em> service is reported as masked you can use <code>systemctl unmask hostapd</code> to unmask it.</p>
 </div>
-<button class="w3collapsible">
-Hint (dhcpd)
-</button>
+<p><button class="w3collapsible">Hint (dhcpd)</button></p>
 <div class="w3content">
-<p>Remember that the <em>isc-dhcp-server.service</em> <strong>will not start</strong> if the chosen interface is not up or if it does not share a common subnet space with the specified configurations.</p>
+Remember that the _isc-dhcp-server.service_ **will not start** if the chosen interface is not up or if it does not share a common subnet space with the specified configurations.
 </div>
-<h2 id="configuring-the-client">Configuring the <em>client</em></h2></div>
-<div class="steps"><ol type="1">
-<li>Update the configuration of the <em>dhcpcd.conf</em> file from the <em>client</em> so that it connects to the created wireless network. For this you need to make sure that the interface <code>wlan0</code> is not using any static configuration, so that it uses DHCP and <em>wpa_supplicant</em> (default) to automatically connect to the wireless network.</li>
+<h2>Configuring the <em>client</em></h2>
+</div>
+<div class="steps"><ol>
+<li>Update the configuration of the <em>dhcpcd.conf</em> file from the <em>client</em> so that it connects to the created wireless network.
+For this you need to make sure that the interface <code>wlan0</code> is not using any static configuration, so that it uses DHCP and <em>wpa_supplicant</em> (default) to automatically connect to the wireless network.</li>
 <li>Restart the <em>dhcpcd</em> service with <code>systemctl</code> and verify that the <code>wlan0</code> interface has the static IP address you have specified.</li>
 <li>Confirm that you have wireless connectivity between both Pis and disconnect the Ethernet cable if successful.</li>
 <li>Try to connect to the network with your phone or laptop.</li>
 </ol>
-<button class="w3collapsible">
-Hint (DHCP)
-</button>
+<p><button class="w3collapsible">Hint (DHCP)</button></p>
 <div class="w3content">
-<p>Remember that if you Ethernet interface has been configured with a static IP address, it will not use DHCP, unless you used a “fallback configuration”. Consider reviewing the <em>dhcpcd.conf</em> file on your client.</p>
+Remember that if you Ethernet interface has been configured with a static IP address, it will not use DHCP, unless you used a "fallback configuration".
+Consider reviewing the *dhcpcd.conf* file on your client.
 </div>
-<button class="w3collapsible">
-Hint (wpa_supplicant)
-</button>
+<p><button class="w3collapsible">Hint (wpa_supplicant)</button></p>
 <div class="w3content">
-<p>The required configuration of a wireless interface to automatically connect to a network can be done by editing the <em>wpa_supplicant.conf</em>. This file should have a network entry looking like this:</p>
+The required configuration of a wireless interface to automatically connect to a network can be done by editing the *wpa\_supplicant.conf*.
+This file should have a network entry looking like this:
 <pre><code>  network={
        ssid=&quot;networkname&quot;
        psk=&quot;networkpassword&quot;
-  }</code></pre>
+  }
+</code></pre>
 </div></div>
-<h2 id="enable-routing">Enable routing</h2>
-<p>Even though your <em>client</em>/phone/laptop can connect to the wireless network you created, Internet connectivity will still not be available. For this we need to use IP Masquerading.</p>
-<div class="steps"><ol type="1">
+<h2>Enable routing</h2>
+<p>Even though your <em>client</em>/phone/laptop can connect to the wireless network you created, Internet connectivity will still not be available.
+For this we need to use IP Masquerading.</p>
+
+<div class="steps"><ol>
 <li>Connect your <em>router</em> to the Internet using the available Ethernet interface, if you have not done it yet, and test for connectivity.</li>
 <li>Enable IP forwarding in the <em>router</em> and activate IP Masquerading with the following commands:</li>
-</ol></div>
+</ol>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sysctl <span class="at">-w</span> net.ipv4.ip_forward=1</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-d</span> 255.255.255.255/32 <span class="at">-i</span> eth0 <span class="at">-o</span> wlan0 <span class="at">-j</span> DROP</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-d</span> 255.255.255.255/32 <span class="at">-i</span> wlan0 <span class="at">-o</span> eth0 <span class="at">-j</span> DROP</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-t</span> nat <span class="at">-A</span> POSTROUTING <span class="at">-o</span> eth0 <span class="at">-j</span> MASQUERADE</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-i</span> eth0 <span class="at">-o</span> wlan0 <span class="at">-m</span> state <span class="at">--state</span> RELATED,ESTABLISHED <span class="at">-j</span> ACCEPT</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-i</span> wlan0 <span class="at">-o</span> eth0 <span class="at">-j</span> ACCEPT</span></code></pre></div>
-<div class="steps"><ol start="3" type="1">
+<div class="steps"><ol start="3">
 <li>Verify that the <em>client</em> is now able to connect to any Internet server.</li>
 </ol>
-<button class="w3collapsible">
-Hint
-</button>
+<p><button class="w3collapsible">Hint</button></p>
 <div class="w3content">
-<p>IP forwarding is necessary for a Linux machine to act as a router and forward packets from one interface to another. You can debug/monitor your interfaces using <code>tcpdump</code>.</p>
+IP forwarding is necessary for a Linux machine to act as a router and forward packets from one interface to another.
+You can debug/monitor your interfaces using `tcpdump`.
 <p>IP Masquerading is commonly referred to as NAT (Network Address Translation) but is slightly different because it is mainly used to hide private IP addresses and not remapping IP address spaces.</p>
 </div></div>
     </section>
     <section class="content">
-<h1 id="additional-exercise">Additional Exercise</h1>
-<p>In the previous exercise you have enabled routing between several wireless-capable nodes and even used <em>iptables</em> for enabling IP Masquerading. However, we may not always want to allow access to all the nodes in our network and using <em>iptables</em> is a great way to achieve this. This exercise is <strong>optional</strong> and can be accomplished in several different ways.</p>
-<h2 id="hardened-pi-router">Hardened Pi Router</h2>
+<h1>Additional Exercise</h1>
+<p>In the previous exercise you have enabled routing between several wireless-capable nodes and even used <em>iptables</em> for enabling IP Masquerading.
+However, we may not always want to allow access to all the nodes in our network and using <em>iptables</em> is a great way to achieve this.
+This exercise is <strong>optional</strong> and can be accomplished in several different ways.</p>
+<h2>Hardened Pi Router</h2>
+
 <div class="figure">
 <img src="figures/net/TTM4175-ex5.png" alt="Diagram of the topology to be created" width="100%"/>
 <span name="figures/net/TTM4175-ex5.png">&nbsp;</span>
-<aside name="figures/net/TTM4175-ex5.png"><p><p>Diagram of the topology to be created</p></p></aside>
+<aside name="figures/net/TTM4175-ex5.png"><p><p>Diagram of the topology to be created</p>
+</p></aside>
 </div>
 <p>The goal of this exercise is to:</p>
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<div class="steps"><ol type="1">
-<li>Block all traffic coming for the range of IPs given by your DHCP server (i.e. only manually configured or fixed IP addresses can access the Internet).</li>
-<li>Instead of blocking the traffic, redirect it to a pre-defined “funny” server such as <a href="http://folk.ntnu.no/davidfp/security" class="uri">http://folk.ntnu.no/davidfp/security</a>.</li>
+
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<div class="steps"><ol>
+<li>Block all traffic coming for the range of IPs given by your DHCP server (i.e. only manually configured or fixed IP addresses can access the Internet).</li>
+<li>Instead of blocking the traffic, redirect it to a pre-defined &quot;funny&quot; server such as <a href="http://folk.ntnu.no/davidfp/security">http://folk.ntnu.no/davidfp/security</a>.</li>
 <li>In addition to redirecting traffic, modify the URL of an HTTP request to another destination.</li>
 </ol>
-<button class="w3collapsible">
-Hints
-</button>
+<p><button class="w3collapsible">Hints</button></p>
 <div class="w3content">
-<p>You only need to edit the configurations of your <em>router</em>.</p>
+You only need to edit the configurations of your _router_.
 <p>To redirect traffic you can use <em>iptables</em> DNAT to change the destination of traffic to a predefined server address.</p>
 <p>To modify URLs you can combine DNAT with a locally running webserver such as <em>nginx</em> hosting rules for manipulating HTTP headers.</p>
 </div>
-<h2 id="validation">Validation</h2>
+<h2>Validation</h2>
 <p>Ask your double team to test their setup and let them test yours.</p>
 <p>Think and write about the weaknesses of the used approach to a firewall.</p>
-<p><strong>Try to beat it!</strong></p></div>
+<p><strong>Try to beat it!</strong></p>
+</div>
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="the-combination-lock">The Combination Lock</h3>
+
+<h3>The Combination Lock</h3>
 <p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
 <li>The locks come opened and with the opening combination set.</li>
 <li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.)</li>
 </ul>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

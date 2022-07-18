@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,14 +412,23 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="ethical-hacking-lab-1">Ethical Hacking, Lab 1</h1>
-<h2 id="preparation">Preparation</h2>
-<p>The task for the first lab week is to collect technical information about the target. Technical information are the domains and subdomains belong to the target, the IP addresses and ranges that also belong to the target including hosted services. To understand IP addresses please read the following short tutorial:</p>
+<h1>Ethical Hacking, Lab 1</h1>
+
+<h2>Preparation</h2>
+<p>The task for the first lab week is to collect technical information about the target.
+Technical information are the domains and subdomains belong to the target, the IP addresses and ranges that also belong to the target including hosted services.
+To understand IP addresses please read the following short tutorial:</p>
 <p><a href="https://www.howtogeek.com/341307/how-do-ip-addresses-work/">How Do IP Addresses Work?</a></p>
-<p>IP addresses are organized in IP ranges that belong to special subnets. IP ranges can be different types and indicated with different notations such as CIDR. A short description about IP ranges can be found here:</p>
+
+<p>IP addresses are organized in IP ranges that belong to special subnets.
+IP ranges can be different types and indicated with different notations such as CIDR.
+A short description about IP ranges can be found here:</p>
 <p><a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking">Understanding IP Addresses, Subnets, and CIDR Notation for Networking</a></p>
-<p>IP address can be connected to domain names with subdomains to be easier to remember. Domain names are described here shortly:</p>
+
+<p>IP address can be connected to domain names with subdomains to be easier to remember.
+Domain names are described here shortly:</p>
 <p><a href="https://www.hostinger.com/tutorials/what-is-a-domain-name">What is a Domain Name? Domains Explained for Beginners</a></p>
+
     </section>
 </div>
 

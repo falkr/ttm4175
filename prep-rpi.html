@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -219,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -374,20 +412,22 @@ display: inline;
 <div class="page">
     <section class="content">
 <p>During the lab, we are going to connect the Raspberry Pi with some hardware, in particular a passive infrared motion sensor (PIR) and the Raspberry Pi Sense HAT. The following videos provide tutorials how to do this, including what to do in Python.</p>
-<p>Watch these videos so that you get an impression of how these devices are connected with each other and the main concepts involved. You don’t have to remember all the tiny details, but be able to answer, for instance, the following questions:</p>
+<p>Watch these videos so that you get an impression of how these devices are connected with each other and the main concepts involved. You don't have to remember all the tiny details, but be able to answer, for instance, the following questions:</p>
 <ul>
 <li>What is the GPIO?</li>
 <li>How does Python control GPIO?</li>
 </ul>
-<h2 id="connecting-hardware-to-the-raspberry-pi">Connecting Hardware to the Raspberry Pi</h2>
+<h2>Connecting Hardware to the Raspberry Pi</h2>
 <p>In this video you see how the Raspberry Pi can connect to external electronics. The GPIO pins are the electrical pins which are directly connected to the processor. GPIO stands for general purpose input output. We will use the same breadboard as in the video.</p>
 <p>https://youtu.be/IP-szuon2Bk</p>
-<h2 id="pir-passive-infrared-sensor">PIR (Passive Infrared) Sensor</h2>
+<h2>PIR (Passive Infrared) Sensor</h2>
 <p>The following video contains a good description of a passive infrared sensor, which we will use.</p>
 <p>https://youtu.be/dQY6hNA53oM</p>
-<h2 id="sense-hat">Sense HAT</h2>
+
+<h2>Sense HAT</h2>
 <p>We also have Sense Hat extension boards, which are explained in the following video:</p>
 <p>https://youtu.be/zT7fZwHTBl8</p>
+
     </section>
 </div>
 

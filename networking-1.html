@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,10 +195,7 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -220,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -375,8 +412,10 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="networking-in-linux">Networking in Linux</h1>
-<p>The overall goal of this lab. is to consolidate knowledge on IP addressing and subnets. This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.</p>
+<h1>Networking in Linux</h1>
+<p>The overall goal of this lab. is to consolidate knowledge on IP addressing and subnets.
+This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.</p>
+
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
 <li>Understand IP addresses and their organisation into subnets</li>
@@ -385,179 +424,195 @@ display: inline;
 <ul>
 <li>IP addresses (IPv4 and IPv6)</li>
 <li>routes and routing tables</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="teamwork-2">Teamwork 2</h1>
+<h1>Teamwork 2</h1>
 <p>We do some reflection on teamwork.</p>
 <p><a href="teamwork-2.html">Teamwork 2</a></p>
+
     </section>
     <section class="content">
-<h1 id="lab.-exercises">Lab. Exercises</h1>
+<h1>Lab. Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
-<p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
+<p>Remember you should deliver a report after the networking module is finished.
+It should include the main commands and configurations necessary to complete each exercise.
+Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
-<h2 id="networking-two-raspberry-pis">Networking two Raspberry Pis</h2>
+
+<h2>Networking two Raspberry Pis</h2>
+
 <div class="figure">
 <img src="figures/net/TTM4175-ex1.png" alt="Diagram of the topology to be created" width="100%"/>
 <span name="figures/net/TTM4175-ex1.png">&nbsp;</span>
-<aside name="figures/net/TTM4175-ex1.png"><p><p>Diagram of the topology to be created</p></p></aside>
+<aside name="figures/net/TTM4175-ex1.png"><p><p>Diagram of the topology to be created</p>
+</p></aside>
 </div>
 <p>The main goal of this exercise is to create a simple network between two Raspberry Pi (rPi) devices through a simple Ethernet cable.</p>
-<p>Initially you will have to connect one rPi at a time to keyboard and screen for configuring the necessary IP addresses and their masks. Afterwards you can use <code>ssh</code> if you need to change anything.</p>
-<h3 id="configuring-the-network-interfaces">Configuring the network interfaces</h3>
+<p>Initially you will have to connect one rPi at a time to keyboard and screen for configuring the necessary IP addresses and their masks.
+Afterwards you can use <code>ssh</code> if you need to change anything.</p>
+<h3>Configuring the network interfaces</h3>
 <p>Repeat these steps with each rPi, adjusting their addresses adequately.</p>
-<ol type="1">
+<ol>
 <li>Connect the keyboard, mouse and screen</li>
-<li>Using the command <code>ip addr show dev eth0</code> find out your current IP address, if any, on ‘eth0’</li>
+<li>Using the command <code>ip addr show dev eth0</code> find out your current IP address, if any, on 'eth0'</li>
 <li>Type <code>ip addr help</code> to see all the available options</li>
 </ol>
 <p><strong>NEW</strong></p>
-<ol start="4" type="1">
-<li>Let’s start by removing any unwanted address or routes on ‘eth0’. For that purpose use the command <code>ip addr flush dev eth0</code> and check that no addresses or routes remain (use <code>ip addr</code> and <code>ip route</code>).</li>
+<ol start="4">
+<li>Let's start by removing any unwanted address or routes on 'eth0'.
+For that purpose use the command <code>ip addr flush dev eth0</code> and check that no addresses or routes remain (use <code>ip addr</code> and <code>ip route</code>).</li>
 </ol>
 <p><strong>NEW</strong></p>
-<ol start="5" type="1">
-<li>Add an IP address and respective mask to the interface ‘eth0’ using the command:</li>
+<ol start="5">
+<li>Add an IP address and respective mask to the interface 'eth0' using the command:</li>
 </ol>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth0</span></code></pre></div>
-<ol start="6" type="1">
+<ol start="6">
 <li>Using the command <code>ip a s eth0</code> (same as in step 2 but shorter) verify your IP address, it should be the one you have just set.</li>
 </ol>
-<button class="w3collapsible">
-Hint (IP addresses)
-</button>
+<p><button class="w3collapsible">Hint (IP addresses)</button></p>
 <div class="w3content">
-<p>You can use any private IP address in the ranges:</p>
+You can use any private IP address in the ranges:
 <ul>
 <li>10.0.0.0/8</li>
 <li>172.16.0.0/12</li>
 <li>192.168.0.0/16</li>
 </ul>
-<p>An example of a pair of IP addresses and masks could be “10.100.2.1/30” and “10.100.2.2/30”.</p>
-<p>You need to have “root” privileges in order to change/add an IP address.</p>
-</div>
-<h3 id="verifying-your-configurations">Verifying your configurations</h3>
-<p>After configuring the two rPi connect them to each other using a single Ethernet cable. Only one rPi needs to be connected to the keyboard/screen.</p>
-<ol type="1">
+<p>An example of a pair of IP addresses and masks could be &quot;10.100.2.1/30&quot; and &quot;10.100.2.2/30&quot;.</p>
+<p>You need to have &quot;root&quot; privileges in order to change/add an IP address.</p>
+</div> 
+<h3>Verifying your configurations</h3>
+<p>After configuring the two rPi connect them to each other using a single Ethernet cable.
+Only one rPi needs to be connected to the keyboard/screen.</p>
+<ol>
 <li>Use the command <code>ip route</code> to see the added route</li>
 <li>Verify that both nodes have connectivity with the <code>ping</code> command</li>
 <li>Make sure you can connect to the rPi without keyboard/screen using <code>ssh</code></li>
 </ol>
-<button class="w3collapsible">
-Hint (ping)
-</button>
+<p><button class="w3collapsible">Hint (ping)</button></p>
 <div class="w3content">
-<p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
+Use the command `ping` like this to generate only 4 ICMP messages.
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ping</span> <span class="at">-c4</span> <span class="op">&lt;</span>ip_address<span class="op">&gt;</span></span></code></pre></div>
 </div>
-<button class="w3collapsible">
-Hint (ssh)
-</button>
+<p><button class="w3collapsible">Hint (ssh)</button></p>
 <div class="w3content">
-<p>The <code>ssh</code> service may not be running, check with <code>sudo systemctl status ssh</code>. If it is not running use the <code>systemctl</code> command with <em>start</em> and with <em>enable</em> if you want <code>ssh</code> to start from boot.</p>
+The `ssh` service may not be running, check with `sudo systemctl status ssh`.
+If it is not running use the `systemctl` command with _start_ and with  _enable_ if you want `ssh` to start from boot.
 </div>
-<h2 id="experimenting-with-masks">Experimenting with masks</h2>
-<p>The goal of this task is to get more comfortable with subnets and masks. Start by configuring the rPi <strong>not connected</strong> to keyboard/screen:</p>
-<ol type="1">
+
+<h2>Experimenting with masks</h2>
+<p>The goal of this task is to get more comfortable with subnets and masks.
+Start by configuring the rPi <strong>not connected</strong> to keyboard/screen:</p>
+<ol>
 <li>Change the IP address to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
 <li>Verify if you still have connectivity and discuss why or why not.</li>
 </ol>
-<button class="w3collapsible">
-Hint (troubleshooting)
-</button>
+<p><button class="w3collapsible">Hint (troubleshooting)</button></p>
 <div class="w3content">
-<p>You may lose connectivity at this point depending on the IP address you have previously set on the rPi connected to the keyboard/screen.</p>
+You may lose connectivity at this point depending on the IP address you have previously set on the rPi connected to the keyboard/screen.
 </div>
 <p>Now, using the rPi <strong>connected</strong> to the keyboard/screen try the following:</p>
-<ol type="1">
+<ol>
 <li>Change the IP address to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one)</li>
 <li>Check for changes in connectivity between the two rPi</li>
 <li>Using the same IP address change the mask to /30</li>
 <li>Check for changes in connectivity between the two rPi</li>
 <li>Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two rPi? Why?</li>
 </ol>
-<h2 id="experimenting-with-routes">Experimenting with routes</h2>
+
+<h2>Experimenting with routes</h2>
 <p>Using the rPi <strong>connected</strong> to the keyboard/screen try the following:</p>
-<ol type="1">
+<ol>
 <li>Remove the existing route with <code>ip route del &lt;ip/mask&gt; dev eth0</code></li>
 <li>Check for changes in connectivity between the two rPi</li>
-<li>Add a new route with the command <code>ip route add</code> with a “/30” mask</li>
+<li>Add a new route with the command <code>ip route add</code> with a &quot;/30&quot; mask</li>
 </ol>
-<h2 id="static-ip-addresses">Static IP addresses</h2>
-<p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the “dhcpcd.conf” file in <code>/etc/</code>. Edit this file and reboot to check the networking configurations have remained.</p>
+
+<h2>Static IP addresses</h2>
+<p>In order to permanently save IP configuration, so that they are persistent even after a reboot, you can edit the &quot;dhcpcd.conf&quot; file in <code>/etc/</code>.
+Edit this file and reboot to check the networking configurations have remained.</p>
 <p>Example configuration:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">interface</span> eth0</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span> ip_address=192.168.100.102/24</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span> routers=192.168.100.101</span></code></pre></div>
     </section>
     <section class="content">
-<h1 id="additional-exercises">Additional Exercises</h1>
-<h2 id="introducing-ipv6">Introducing IPv6</h2>
+<h1>Additional Exercises</h1>
+<h2>Introducing IPv6</h2>
 <p>Change the topology you created in <a href="#lab.-exercises">the previous exercise</a> to use IPv6 addresses and try:</p>
 <ul>
 <li>the <code>ping</code> command</li>
 <li>remote access with <code>ssh</code></li>
 <li>different subnets</li>
 </ul>
-<button class="w3collapsible">
-Hint
-</button>
+<p><button class="w3collapsible">Hint</button></p>
 <div class="w3content">
-<p>Remember to change the addresses in the remote rPi first or simply add the IPv6 address without modifying the IPv4 addresses you had earlier, instead of replacing.</p>
+Remember to change the addresses in the remote rPi first or simply add the IPv6 address without modifying the IPv4 addresses you had earlier, instead of replacing.
 <p>In addition note that some commands require additional arguments to handle IPv6 (check their documentation).</p>
 </div>
-<h2 id="more-ssh">More SSH</h2>
+<h2>More SSH</h2>
 <p>After configuring both devices, from the rPi with keyboard and screen, do the following:</p>
-<ol type="1">
+<ol>
 <li>Verify that both nodes have connectivity with the <code>ping</code> command</li>
-<li>Connect to the other rPi using <code>ssh</code> with the option “-o ServerAliveInterval=5” and whatever else may be necessary</li>
-<li>In the remote rPi run the “Alive” command
+<li>Connect to the other rPi using <code>ssh</code> with the option &quot;-o ServerAliveInterval=5&quot; and whatever else may be necessary</li>
+<li>In the remote rPi run the &quot;Alive&quot; command
 <ul>
-<li><code>python -c $'import time\nwhile True: print("Alive!"); time.sleep(5)'</code></li>
-</ul></li>
+<li><code>python -c $'import time\nwhile True: print(&quot;Alive!&quot;); time.sleep(5)'</code></li>
+</ul>
+</li>
 <li>Before the previous command ends, remove the Ethernet cable from one of the rPi and wait for an error message (it should take less than 1 min.).</li>
 <li>After the error message, reconnect the cable, re-establish the <code>ssh</code> session and verify if the command is still running using the <code>ps</code> command.</li>
-<li>Repeat the “Alive” command in the remote rPi making sure it is not interrupted if the connection fails, and execute steps 4 and 5 again.</li>
+<li>Repeat the &quot;Alive&quot; command in the remote rPi making sure it is not interrupted if the connection fails, and execute steps 4 and 5 again.</li>
 </ol>
-<p>If a command such as <code>ps</code> outputs too much information you can use the Unix pipeline principles to manage the output. For example <code>ps aux | grep desired_pattern</code>.</p>
-<button class="w3collapsible">
-Hint (ssh)
-</button>
+<p>If a command such as <code>ps</code> outputs too much information you can use the Unix pipeline principles to manage the output.
+For example <code>ps aux | grep desired_pattern</code>.</p>
+<p><button class="w3collapsible">Hint (ssh)</button></p>
 <div class="w3content">
-<p>To keep programs running even if there’s a connection interruption you can use the commands <code>screen</code>, <code>tmux</code> or simply run them on the background.</p>
-</div>
+To keep programs running even if there's a connection interruption you can use the commands `screen`, `tmux` or simply run them on the background.
+</div> 
+
     </section>
     <section class="content">
-<span name="e4f5ce"></span><aside name="e4f5ce"><p><img src="figures/doubleteam.png" width="30"/></p></aside>
-<h1 id="final-steps">Final Steps</h1>
-<h3 id="learning-goals">Learning Goals</h3>
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
 <p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
-<h3 id="individual-reflection">Individual Reflection</h3>
+
+<h3>Individual Reflection</h3>
 <p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
-<h3 id="the-combination-lock">The Combination Lock</h3>
+
+<h3>The Combination Lock</h3>
 <p>Each team gets their own combination lock so you can store the box in the lockers in the lab.</p>
 <ul>
 <li>The locks come opened and with the opening combination set.</li>
 <li>Take a picture of that combination in your phone, so you remember it.</li>
-<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them — don’t do that by accident.)</li>
+<li>Do not attempt to change the code. (You do so by turning the locks opening 180 degrees and then setting them --- don't do that by accident.)</li>
 </ul>
-<h3 id="cleaning-up">Cleaning Up</h3>
+
+<h3>Cleaning Up</h3>
+
 <div class="todo"><ul>
 <li>Put all hardware back into the box.</li>
 <li>Store the box in one of the lockers in the lab, using the combination lock.</li>
 <li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
-<li>Take out any trash. (Even if its not yours… thank you!)</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
 <li>Put the chairs back to the table.</li>
 </ul>
-<h3 id="individual-exercises">Individual Exercises</h3>
+<h3>Individual Exercises</h3>
 <p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
 <ul>
 <li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
 <li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
 <li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
-</ul></div>
+</ul>
+</div>
     </section>
 </div>
 

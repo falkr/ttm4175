@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -173,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -196,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -233,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -387,94 +411,106 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
-<div class="rat"><p>One of the important system files in Windows is “osk.exe”. What is the role of this file?</p>
-<ol type="1">
+<h2>Question 1</h2>
+
+<div class="rat"><p>One of the important system files in Windows is &quot;osk.exe&quot;. What is the role of this file?</p>
+<ol>
 <li>Displays or changes file attributes</li>
 <li>Runs the On-Screen Keyboard in Windows</li>
 <li>Launches the command prompt utility</li>
 <li>Detects possible damage on your computer</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
-<div class="rat"><p>What is the “etc/shadow” file in Linux used for?</p>
-<ol type="1">
+<h2>Question 2</h2>
+</div>
+<div class="rat"><p>What is the &quot;etc/shadow&quot; file in Linux used for?</p>
+<ol>
 <li>To store user groups</li>
 <li>All answers are true</li>
 <li>To store the encrypted passwords of the users</li>
-<li>It’s a backup copy of “etc/passwd” file</li>
+<li>It's a backup copy of &quot;etc/passwd&quot; file</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>What is SAM?</p>
-<ol type="1">
+<ol>
 <li>The database in which the password hashes are stored in Windows</li>
 <li>A system file</li>
 <li>A file in which the password hashes are stored in Linux</li>
 <li>A configuration file</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>In order to be granted access to your bank account online, you are requested to enter first a password, and then a code that you receive by SMS. What kind of 2-factor authentication is this?</p>
-<ol type="1">
+<ol>
 <li>Something you know + something you are</li>
 <li>Something you are + something you have</li>
 <li>Something you have + something you have</li>
 <li>Something you know + something you have</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>What is the role of password policy?</p>
-<ol type="1">
+<ol>
 <li>It defines the minimum length of passwords</li>
 <li>It defines how often a password must be changed</li>
 <li>It defines the password complexity</li>
 <li>All of the other answers are true</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
-<div class="rat"><p>What is “salt”?</p>
-<ol type="1">
+<h2>Question 6</h2>
+</div>
+<div class="rat"><p>What is &quot;salt&quot;?</p>
+<ol>
 <li>Random value added to a password before its hashing</li>
 <li>Random value added to password hashes after the hashing process</li>
 <li>A hashing algorithm</li>
 <li>A system file</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>What are the two main functions in access control?</p>
-<ol type="1">
+<ol>
 <li>Legalization and permissions</li>
 <li>Authentication and authorization</li>
 <li>Legalization and authorization</li>
 <li>Authentication and permissions</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>What are the benefits from using salt in password storage?</p>
-<ol type="1">
+<ol>
 <li>It makes the passwords easier to crack</li>
 <li>It stores the passwords in plain text</li>
 <li>It forces the uniqueness of passwords</li>
 <li>It makes the passwords easier to remember</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>Why is hashing used?</p>
-<ol type="1">
+<ol>
 <li>To read the passwords that are stored in the database</li>
 <li>To save storage space</li>
 <li>To enhance the system performance</li>
 <li>To store passwords securely in a form that cannot be read by attackers</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>What are the measures that can be taken by a company to enhance its protection against cyber attacks?</p>
-<ol type="1">
+<ol>
 <li>Educate the employees about cyber security</li>
 <li>All of the other answers are true.</li>
 <li>Use 2-factor authentication</li>
 <li>Use firewalls to block undesired traffic</li>
 </ol>
-<h2 id="question-11">Question 11</h2></div>
+<h2>Question 11</h2>
+</div>
 <div class="rat"><p>What is true about authorization?</p>
-<ol type="1">
+<ol>
 <li>It verifies the privileges that an authenticated user has</li>
-<li>It verifies the user’s identity</li>
+<li>It verifies the user's identity</li>
 <li>It precedes authentication</li>
 <li>It stores the user credentials</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

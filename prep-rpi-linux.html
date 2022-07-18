@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,10 +195,7 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -374,44 +383,30 @@ display: inline;
 
 <div class="page">
     <section class="content">
-Before the lecture, have a look through the following material:
-<h3>
-The Raspberry Pi
-</h3>
-<p>This one is a bit of a childish video, but contains some useful information. Feel free to skip it:</p>
+<p>Before the lecture, have a look through the following material:</p>
+<h3>The Raspberry Pi</h3>
+This one is a bit of a childish video, but contains some useful information. Feel free to skip it:
 <p>https://youtu.be/ZYE_ob_rxIY</p>
-<h2>
-Unix Pipeline
-</h2>
-<p>A short presentation on how simple Unix programs can be connected in a pipeline to execute a complex operation.</p>
-https://www.youtube.com/watch?v=bKzonnwoR2I
-<h2>
-grep + Unix history
-</h2>
-<p>“grep” is a powerful tool available in Unix for searching content inside a file. This video provides an overview of how Unix systems evolved and the motivation behind them.</p>
-https://www.youtube.com/watch?v=NTfOnGZUZDk
-<h2>
-Network Stacks and the Internet
-</h2>
-<p>This video provides an overview on how the Internet works and how networks are organised.</p>
-https://www.youtube.com/watch?v=PG9oKZdFb7w
-<h2>
-IP addresses and the Internet
-</h2>
-<p>IP addresses and routing are fundamental for maintaining the Internet as we know it. This video gives a brief explanation on these two aspects.</p>
+<h2>Unix Pipeline</h2>
+A short presentation on how simple Unix programs can be connected in a pipeline to execute a complex operation.
+<p>https://www.youtube.com/watch?v=bKzonnwoR2I</p>
+<h2>grep + Unix history</h2>
+"grep" is a powerful tool available in Unix for searching content inside a file. This video provides an overview of how Unix systems evolved and the motivation behind them.
+<p>https://www.youtube.com/watch?v=NTfOnGZUZDk</p>
+<h2>Network Stacks and the Internet</h2>
+This video provides an overview on how the Internet works and how networks are organised.
+<p>https://www.youtube.com/watch?v=PG9oKZdFb7w</p>
+<h2>IP addresses and the Internet</h2>
+IP addresses and routing are fundamental for maintaining the Internet as we know it. This video gives a brief explanation on these two aspects.
 <p>https://www.youtube.com/watch?v=L6bDA5FK6gs</p>
 <hr />
-<h2>
-Additional and optional materials:
-</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=tc4ROCJYbm0">A little bit of history</a></li>
-<li><a href="http://tille.garrels.be/training/tldp/index.html">Introduction to Linux</a> (only chapters 1, 2, 3, 5 and 6)</li>
-<li><a href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html">Bash Guide for Beginners</a> (only sections 1.1, 1.3, 1.6, 3.4, 4.1, 4.2, 5.1, 5.2, 6.1, 6.2 and 6.3)</li>
-<li><a href="https://www.ibm.com/developerworks/linux/tutorials/l-vi/index.html#N101AE">Quick introduction to <code>vim</code></a></li>
-<li><a href="http://vimgenius.com/">Interactive <code>vim</code> tutorial</a></li>
-<li><a href="https://mywiki.wooledge.org/BashPitfalls">Bash Pitfalls and Solutions</a> (<strong>advanced!</strong>)</li>
-</ul>
+<h2>Additional and optional materials:</h2>
+- [A little bit of history](https://www.youtube.com/watch?v=tc4ROCJYbm0)
+- [Introduction to Linux](http://tille.garrels.be/training/tldp/index.html) (only chapters 1, 2, 3, 5 and 6)
+- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html) (only sections 1.1, 1.3, 1.6, 3.4, 4.1, 4.2, 5.1, 5.2, 6.1, 6.2 and 6.3)
+- [Quick introduction to `vim`](https://www.ibm.com/developerworks/linux/tutorials/l-vi/index.html#N101AE)
+- [Interactive `vim` tutorial](http://vimgenius.com/)
+- [Bash Pitfalls and Solutions](https://mywiki.wooledge.org/BashPitfalls) (**advanced!**)
     </section>
 </div>
 

@@ -16,29 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 div.check ul,
 div.check ul li {
@@ -160,16 +139,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,24 +158,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -375,30 +335,40 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="security-vulnerabilities">Security Vulnerabilities</h1>
-<p>When it comes to security vulnerabilities, the human factor plays a major role, making it important to establish a security culture in each organization in order to mitigate against the potential threats. Beside the human factor, we also have the technical vulnerabilities which also must be taken into account. The above-mentioned issues are the center of this week’s lecture. The most common security vulnerabilities such as SQL Injection, and cross-site scripting will be addressed. Moreover, you will also learn about vulnerability tests and penetration tests.</p>
-<h2 id="learning-goals-of-this-week">Learning Goals of this Week</h2>
+<h1>Security Vulnerabilities</h1>
+<p>When it comes to security vulnerabilities, the human factor plays a major role, making it important to establish a security culture in each organization in order to mitigate against the potential threats. Beside the human factor, we also have the technical vulnerabilities which also must be taken into account.
+The above-mentioned issues are the center of this week’s lecture.
+The most common security vulnerabilities such as SQL Injection, and cross-site scripting will be addressed.
+Moreover, you will also learn about vulnerability tests and penetration tests.</p>
+<h2>Learning Goals of this Week</h2>
 <p>By the end of this week, you will:</p>
+
 <div class="goals"><ul>
 <li>Learn about vulnerability and vulnerability tests.</li>
 </ul>
 <p>And by completing the lab, you will</p>
 <ul>
 <li>Learn how to find and exploit vulnerabilities</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="preparation">Preparation</h1>
+<h1>Preparation</h1>
 <p>This video explains what SQL injection is:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_jKylhJtPmI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p>If you want to learn more details about SQL injection, this article might be of interest: <a href="https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms161953(v%3dsql.105)">SQL Injection</a></p>
+<p>If you want to learn more details about SQL injection, this article might be of interest:
+<a href="https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms161953(v%3dsql.105)">SQL Injection</a></p>
+
 <p>And this video explains cross-site scripting:</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/L5l9lSnNMxg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>The next video provides an explanation about how to find network vulnerabilities with Nmap</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3U1pJ-eJrAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

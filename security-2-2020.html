@@ -16,7 +16,42 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">.w3collapsible {
+<style type="text/css">div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
   background-color:#f0e9db;
   color: #868279; 
   padding: 8px 18px 8px 8px;
@@ -41,11 +76,81 @@
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
+}
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -201,76 +306,125 @@ div.tip p {
 <div class="page">
     </section>
     <section class="content">
-<h1 id="bypassing-authentication-in-windows-and-linux">Bypassing authentication in Windows and Linux</h1>
+<h1>Bypassing authentication in Windows and Linux</h1>
 <p>The purpose of this lab is to learn about techniques for bypassing authentication. This will be performed in both Windows and Linux.</p>
+
     </section>
     <section class="content">
-<h1 id="part1---bypassing-the-windows-log-in">Part1 - Bypassing the Windows log in</h1>
+<h1>Part1 - Bypassing the Windows log in</h1>
 <p>Scenario: you have come across a Windows 7 machine that is password-protected and you do not know the password. Your task will be to bypass the authentication mechanisms of Windows in order to get access to the machine.</p>
 <p>You will perform this task with the help of a technique called dual-booting. In a dual-booting system, two or more operating systems are installed side-by-side on the same physical hard disk, with each OS assigned to its own logical partition on the disk.</p>
 <p>We will use VirtualBox to simulate that we are running a dual-boot system with Windows 7 and Kali Linux installed on their own separate hard disks, but attached to the same machine. We need therefore to attach Windows 7 disk to the Kali Linux VM.</p>
-<h2 id="attaching-the-windows-7-disk-to-the-kali-machine-in-virtualbox">Attaching the Windows 7 disk to the Kali machine in VirtualBox</h2>
+<h2>Attaching the Windows 7 disk to the Kali machine in VirtualBox</h2>
 <ul>
-<li><p>Start the Windows 7 machine in VirtualBox and verify that you cannot access the <strong>Lab2</strong> user account without having the password. Shut down the machine again.</p></li>
-<li><p>Make sure that Windows 7 VM is turned off.</p></li>
-<li><p>In VirtualBox, with the Kali Linux VM selected, click on “Settings” then “Storage”.</p></li>
-<li><p>Click on the label “Controller SATA”, and then click on the icon next to it that reads “Add Hard Disk”.</p></li>
-<li><p>Select <em>Windows7-disk1.vdi</em> file (located in the folder <em>/courses/ttm4175/Windows 7/</em>), and add it to the Kali machine.</p></li>
+<li>
+<p>Start the Windows 7 machine in VirtualBox and verify that you cannot access the <strong>Lab2</strong> user account without having the password. Shut down the machine again.</p>
+</li>
+<li>
+<p>Make sure that Windows 7 VM is turned off.</p>
+</li>
+<li>
+<p>In VirtualBox, with the Kali Linux VM selected, click on “Settings” then “Storage”.</p>
+</li>
+<li>
+<p>Click on the label “Controller SATA”, and then click on the icon next to it that reads “Add Hard Disk”.</p>
+</li>
+<li>
+<p>Select <em>Windows7-disk1.vdi</em> file  (located in the folder <em>/courses/ttm4175/Windows 7/</em>), and add it to the Kali machine.</p>
+</li>
 </ul>
 <blockquote>
-<p>Note that the bootloader will still not have picked up that you have attached a new disk to the computer, so when you start up your (Kali Linux) machine it will not show Windows 7 in the boot selection screen. (Bootloader: a small program which is responsible for locating (and running) the actual operating system stored on the device.)</p>
-<ul>
-<li>To fix this, once you are logged into your Kali Linux machine, open up a terminal and type <code># update-grub</code></li>
-</ul>
+<p>Note that the bootloader will still not have picked up that you have attached a new disk to the computer, so when you start up your (Kali Linux) machine it will not show Windows 7 in the boot selection screen.
+(Bootloader: a small program which is responsible for locating (and running) the actual operating system stored on the device.)</p>
 </blockquote>
 <ul>
-<li>Reboot Kali Linux and check that Windows 7 has been added to the bootloader screen.</li>
+<li>
+<p>To fix this, once you are logged into your Kali Linux machine, open up a terminal and type
+<code> # update-grub</code></p>
+</li>
+<li>
+<p>Reboot Kali Linux and check that Windows 7 has been added to the bootloader screen.</p>
+</li>
 </ul>
-<h2 id="mounting-the-windows-7-partition-within-kali">Mounting the Windows 7 partition within Kali</h2>
+<h2>Mounting the Windows 7 partition within Kali</h2>
 <p>You are now ready to begin bypassing the Windows authentication from within Kali.</p>
 <ul>
-<li><p>Make sure that Windows 7 is turned off and log in to Kali Linux.</p></li>
-<li><p>start up a terminal and verify that the Windows 7 disk is successfully detected as a device from within Kali by using the utility program <em>fdisk</em>. <em>fdisk</em> lists information about all the disks and partitions attached to your machine.</p></li>
+<li>
+<p>Make sure that Windows 7 is turned off and log in to Kali Linux.</p>
+</li>
+<li>
+<p>start up a terminal and verify that the Windows 7 disk is successfully detected as a device from within Kali by using the utility program <em>fdisk</em>. <em>fdisk</em> lists information about all the disks and partitions attached to your machine.</p>
+</li>
 </ul>
 <p><code># fdisk -l</code>% ‘l’ is a lower-case ‘L’</p>
 <ul>
-<li>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under the “/mnt” folder. Make a folder called <em>/windows</em> under “/mnt” and mount the Windows 7 partition in it with the <em>mount</em> command.</li>
+<li>To access the contents of the Windows disk you need to mount its file system inside Kali. Hard drives are normally mounted under the &quot;/mnt&quot; folder. Make a folder called <em>/windows</em> under &quot;/mnt&quot; and mount the Windows 7 partition in it with the <em>mount</em> command.</li>
 </ul>
+
 <div class="hint"><ul>
-<li><p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p></li>
-<li><p>This will incorporate the Windows file system under the “/mnt/windows” folder in Kali:</p></li>
+<li>
+<p>Create folder to mount the Windows file system: <code>mkdir -p /mnt/windows</code></p>
+</li>
+<li>
+<p>This will incorporate the Windows file system under the &quot;/mnt/windows&quot; folder in Kali:</p>
+</li>
 </ul>
-<p><code>mount /dev/sdb2 /mnt/windows</code> <br/> <code>ls /mnt/windows</code></p></div>
-<h2 id="changing-the-user-password">Changing the user password</h2>
+<p><code>mount /dev/sdb2 /mnt/windows</code> <br/>
+<code>ls /mnt/windows</code></p>
+</div>
+<h2>Changing the user password</h2>
 <p>Our target here is to run Windows 7 normally. To accomplish this we will need to bypass the Windows log in screen. Since we do not know the users password we will simply have to change it!</p>
 <p>By modifying some crucial system files in Windows from within Kali, we can give ourselves access to a command line prompt with administrator access the next time we boot up Windows 7.</p>
 <ul>
-<li><p>Make sure that the Windows 7 virtual machine is turned off before continuing!</p></li>
-<li><p>On your Kali Linux machine, with the Windows disk mounted, change into the “System32” directory of the Windows file system from within Kali: <code># cd /mnt/windows/Windows/System32</code></p></li>
+<li>
+<p>Make sure that the Windows 7 virtual machine is turned off before continuing!</p>
+</li>
+<li>
+<p>On your Kali Linux machine, with the Windows disk mounted, change into the “System32” directory of the Windows file system from within Kali:
+<code># cd /mnt/windows/Windows/System32</code></p>
+</li>
 </ul>
 <p>“System32” folder contains many of the most important system files for the Windows operating system. What we need in particular is the system file <em>cmd.exe</em> , and also the on-screen-keyboard program <em>osk.exe</em>. This latter can be run before you have logged in. Even more interesting is that, programs that were executed before having logged in are run with administrator privileges!</p>
 <pre><code>cmd.exe : controls the terminal in Windows
-osk.exe : allows you to type characters into Windows without having a keyboard</code></pre>
+osk.exe : allows you to type characters into Windows without having a keyboard
+</code></pre>
 <p>So what would happen if we were to swap out the <em>osk.exe</em> binary with the <em>cmd.exe</em> binary?</p>
 <ul>
-<li><p>Start by moving the real <em>osk.exe</em> executable to a backup file:</p>
-<p><code># mv osk.exe osk.exe.backup</code> % rename the file osk.exe to osk.exe.backup</p></li>
-<li><p>Copy <em>cmd.exe</em> to <em>osk.exe</em> so that enabling the on-screen-keyboard will actually give us a command prompt instead:</p>
-<p><code># cp cmd.exe osk.exe</code> % overwrite the osk.exe binary with the cmd.exe binary</p></li>
-<li><p>Now restart your machine and select Windows 7 in the boot menu.</p></li>
-<li><p>Choose to log in as user <strong>Lab2</strong>. Verify that you cannot log in without the password.</p></li>
-<li><p>Now enable the on-screen-keyboard by clicking the little symbol in the bottom left corner. What happens? <strong>The on-screen-keyboard tricked into giving us a command line prompt – with administrator access!</strong></p></li>
-<li><p>In the command prompt type:</p>
-<p><code>C:\Windows\system32&gt; whoami</code></p></li>
+<li>
+<p>Start by moving the real <em>osk.exe</em> executable to a backup file:</p>
+<p><code># mv osk.exe osk.exe.backup</code> 	% rename the file osk.exe to osk.exe.backup</p>
+</li>
+<li>
+<p>Copy <em>cmd.exe</em> to <em>osk.exe</em> so that enabling the on-screen-keyboard will actually give us a command prompt instead:</p>
+<p><code># cp cmd.exe osk.exe</code> 	% overwrite the osk.exe binary with the cmd.exe binary</p>
+</li>
+<li>
+<p>Now restart your machine and select Windows 7 in the boot menu.</p>
+</li>
+<li>
+<p>Choose to log in as user <strong>Lab2</strong>. Verify that you cannot log in without the password.</p>
+</li>
+<li>
+<p>Now enable the on-screen-keyboard by clicking the little symbol in the bottom left corner. What
+happens?
+<strong>The on-screen-keyboard tricked into giving us a command line prompt – with administrator access!</strong></p>
+</li>
+<li>
+<p>In the command prompt type:</p>
+<p><code>C:\Windows\system32&gt; whoami</code></p>
+</li>
 </ul>
 <blockquote>
-<p>The whoami command shows you the username and user privileges that the currently logged in user has. Our goal is to get normal access to the system, i.e. not mounting it within Kali. The good news is that, with your current administrator rights, this is quite easy!</p>
+<p>The whoami command shows you the username and user privileges that the currently logged in user has. Our goal is to get normal access to the system, i.e. not mounting it within Kali. The good news is that, with your current administrator rights, this is quite easy!</p>
+</blockquote>
 <ul>
 <li>Your task is now to change the password of user <strong>Lab2</strong> to a password of your choosing, allowing you to log in as normal.</li>
 </ul>
-</blockquote>
-<div class="tip"><p>There is a command line utility for Windows called <code>net user</code> which could potentially be useful. To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p></div>
-<h3 id="reverting-changes">Reverting Changes</h3>
+
+<div class="tip"><p>There is a command line utility for Windows called <code>net user</code> which could potentially be useful.
+To get more information on how to use this command type <code>net user ?</code> in the command line window or look it up online.</p>
+</div>
+<h3>Reverting Changes</h3>
 <p>Before you continue to the next section you should revert the change you did to <em>osk.exe</em>. That is, delete the current <em>osk.exe</em> file and rename the backup file <em>osk.exe.backup</em> to <em>osk.exe</em> again. Since <strong>Lab2</strong> does not have administrator rights it cannot rename the file, hence it has to be done from within Kali Linux.</p>
 <ul>
 <li>Reboot the machine</li>
@@ -278,55 +432,82 @@ osk.exe : allows you to type characters into Windows without having a keyboard</
 <li>Mount the Windows 7 disk as you did previously</li>
 <li>Revert the changes.</li>
 </ul>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> /dev/sdb2 /mnt/windows</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> /mnt/windows/Windows/System32/osk.exe</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> /mnt/windows/Windows/System32/osk.exe.backup /mnt/windows/Windows/System32/osk.exe</span></code></pre></div>
 <ul>
-<li>Return to your home folder <code># cd</code> and unmount the Windows partition from kali Linux <code># umount /mnt/windows</code>.</li>
+<li>Return to your home folder <code># cd </code> and unmount the Windows partition from kali Linux <code># umount /mnt/windows</code>.</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="part2---bypassing-linux-authentication">Part2 - Bypassing Linux authentication</h1>
+<h1>Part2 - Bypassing Linux authentication</h1>
 <p>In this section you will learn how to bypass the authentication mechanisms in Linux. To this end, we will add the Lubuntu VM (that you downloaded last week) which is going to be the victim machine.</p>
-<h2 id="importing-lubuntu-into-virtualbox">Importing Lubuntu into VirtualBox</h2>
+<h2>Importing Lubuntu into VirtualBox</h2>
 <ul>
-<li>Start by importing the Lubuntu machine into VirtualBox by clicking “File -&gt; Import Appliance…” in the main window of VirtualBox. Find the file <em>Lubuntu.ova</em> in the folder <em>/courses/ttm4175/</em> and click “Import” –you can leave all settings at the default.</li>
+<li>Start by importing the Lubuntu machine into VirtualBox by clicking “File -&gt; Import Appliance...” in the main window of VirtualBox. Find the file <em>Lubuntu.ova</em> in the folder <em>/courses/ttm4175/</em> and click “Import” --you can leave all settings at the default.</li>
 </ul>
-<h2 id="running-kali-live">Running Kali Live</h2>
+<h2>Running Kali Live</h2>
 <p>In part 1, we assumed that both Windows 7 and Kali Linux were installed on the same system so we could access the contents of the Windows 7 disk through Kali. However, what can we do if Kali Linux is not installed on the machine? The answer is <strong>live booting</strong>.</p>
-<div class="tip"><p>Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk.</p></div>
+
+<div class="tip"><p>Live booting means to run an operating system directly from a CD-ROM or USB-drive without being installed to disk.</p>
+</div>
 <p>We will test the live booting feature by running Kali directly from CD-ROM and use it to bypass the login screen of the Lubuntu machine.</p>
 <ul>
-<li><p>Start by downloading <a href="https://cdimage.kali.org/kali-2020.3/kali-linux-2020.3-live-amd64.iso">Kali Linux (Live)</a> and save it in the folder <em>/courses/ttm4175/</em>.</p></li>
-<li><p>With the Lubuntu machine highlighted (and turned off), click on Settings -&gt; Storage.</p></li>
-<li><p>We simulate that we are inserting a CD-ROM (containing Kali Live) into the machine by clicking on «Adds Optical drive» icon (next to the Controller:IDE label). Locate and add the Kali Linux Live file <em>kali-linux-2020.2-live-amd64.iso</em> on your host machine, and then click on “choose”. You will see now that Kali Linux is listed under the Controller:IDE.</p></li>
-<li><p>Now start your Lubuntu machine. It will choose to boot from the (virtual) CD-ROM containing Kali Linux instead of the (virtual) hard disk containing the Lubuntu operating system.</p></li>
-<li><p>Select the “Live (amd64)” boot option and press Enter. If it ever asks for a username or password, then the defaults are “kali” and “kali”, respectively.</p></li>
+<li>
+<p>Start by downloading <a href="https://cdimage.kali.org/kali-2020.3/kali-linux-2020.3-live-amd64.iso">Kali Linux (Live)</a> and save it in the folder <em>/courses/ttm4175/</em>.</p>
+</li>
+<li>
+<p>With the Lubuntu machine highlighted (and turned off), click on Settings -&gt; Storage.</p>
+</li>
+<li>
+<p>We simulate that we are inserting a CD-ROM (containing Kali Live) into the machine by clicking on «Adds Optical drive» icon (next to the Controller:IDE label). Locate and add the Kali Linux Live file <em>kali-linux-2020.2-live-amd64.iso</em> on your host machine, and then click on “choose”. You will see now that Kali Linux is listed under the Controller:IDE.</p>
+</li>
+<li>
+<p>Now start your Lubuntu machine. It will choose to boot from the (virtual) CD-ROM containing Kali Linux instead of the (virtual) hard disk containing the Lubuntu operating system.</p>
+</li>
+<li>
+<p>Select the “Live (amd64)” boot option and press Enter. If it ever asks for a username or password, then the defaults are “kali” and “kali”, respectively.</p>
+</li>
 </ul>
-<h2 id="clearing-the-login-password-on-linux-with-kali-live">Clearing the login password on Linux with Kali Live</h2>
+<h2>Clearing the login password on Linux with Kali Live</h2>
 <p>Similarly to what we did in part 1, we need first to mount the Lubuntu partition within the Kali Linux file system, then make some changes to the files responsible for handling login data like usernames and passwords.</p>
 <ul>
 <li>Inside Kali create a mount point for Lubuntu and mount it.</li>
 </ul>
-<p><code># sudo mkdir -p /mnt/lubuntu</code> %Since you are logged in with “kali” user which is not a superuser, then you need to use “sudo”</p>
-<p><code># sudo fdisk -l</code> % Find out which device contains Lubuntu</p>
-<p><code># sudo mount /dev/sda1 /mnt/lubuntu</code> % sda1 in our example – could be different for you!</p>
+
+<p><code># sudo mkdir -p /mnt/lubuntu</code>               %Since you are logged in with &quot;kali&quot; user which is not a superuser, then you need to use &quot;sudo&quot;</p>
+<p><code># sudo fdisk -l</code> 				             % Find out which device contains Lubuntu</p>
+<p><code># sudo mount /dev/sda1 /mnt/lubuntu</code>         % sda1 in our example -- could be different for you!</p>
 <p>With the Lubuntu partition mounted inside of Kali, you can modify all its files as if they were normal files in Kali.</p>
 <ul>
 <li>In Lubuntu, there is a user <strong>ttm4175</strong> that is password-protected. Your task now is to find out what to modify and in which file so that, the next time you boot it up, you will not be required to enter a password to log in with the user <strong>ttm4175</strong>.</li>
 </ul>
-<button class="w3collapsible">
-Hint
-</button>
+<p><button class="w3collapsible">Hint</button></p>
 <div class="w3content">
-<p>On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the <em>/etc</em> folder. The easiest way to wipe the password is by changing the /etc/passwd file.</p>
+On most Linux systems user credentials are stored in two files: passwd and shadow, both located in the */etc* folder. The easiest way to wipe the password is by changing the /etc/passwd file.
 <p>Open the passwd file <code># sudo nano /mnt/lubuntu/etc/passwd</code>, scroll down to the entry of the <strong>ttm4175</strong> user, and remove the <em>x</em> that comes in the second place which indicates that the password is stored hashed in the shadow file. Press ctrl+ o to save the changes, and then ctrl+x to exit.</p>
 </div>
+
 <ul>
-<li><p>Remove the (virtual) CD-ROM containing Kali, and start Lubuntu. Verify that you have successfully cleared the user’s password by logging in as user <strong>ttm4175</strong> in Lubuntu.</p></li>
-<li><p>After you have bypassed the login screen of Lubuntu, pick a new password using the <em>passwd</em> command line utility. That is, open a command line window from inside Lubuntu (click the Lubuntu icon in the bottom-left corner and go “System Tools -&gt; UXTerm”) and issue the following command: &gt;&gt;<code>~$ passwd ttm4175</code></p></li>
-<li><p>Then enter your new password.</p></li>
+<li>
+<p>Remove the (virtual) CD-ROM containing Kali, and start Lubuntu. Verify that you have successfully cleared the user’s password by logging in as user <strong>ttm4175</strong> in Lubuntu.</p>
+</li>
+<li>
+<p>After you have bypassed the login screen of Lubuntu, pick a new password using the <em>passwd</em> command line utility.
+That is, open a command line window from inside Lubuntu (click the Lubuntu icon in the bottom-left corner and go “System Tools -&gt; UXTerm”) and issue the following command:</p>
+<blockquote>
+<blockquote>
+<p><code>~$ passwd ttm4175</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>Then enter your new password.</p>
+</li>
 </ul>
+
     </section>
 </div>
 

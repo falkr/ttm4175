@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -390,77 +411,92 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="figure">
 <img src="figures/statemachines/rat/rat-1.png" width="100%"/>
 </div>
 <div class="rat"><p>Which labels are correct?</p>
-<ol type="1">
-<li><span>(1)</span> state, (2) final state, (3) start state</li>
-<li><span>(1)</span> state, (2) final state, (3) initial state</li>
-<li><span>(1)</span> final state, (2) state, (3) start state</li>
-<li><span>(1)</span> state, (2) initial state,(3) end state</li>
-</ol></div>
-<h2 id="question-2">Question 2</h2>
-<div class="rat"><p>Having a trigger on an initial transition…</p>
-<ol type="1">
-<li>…is necessary, otherwise the transition is not triggered.</li>
-<li>…is optional for initial transitions.</li>
-<li>…is wrong because it can cause ambiguities.</li>
-<li>…is wrong because it this transition is triggered by the start of the state machine.</li>
-</ol></div>
-<h2 id="question-3">Question 3</h2>
+<ol>
+<li><span>(1)</span> state,         (2) final state,  (3) start state</li>
+<li><span>(1)</span> state,         (2) final state,  (3) initial state</li>
+<li><span>(1)</span> final state,   (2) state,        (3) start state</li>
+<li><span>(1)</span> state,         (2) initial state,(3) end state</li>
+</ol>
+</div>
+<h2>Question 2</h2>
+
+<div class="rat"><p>Having a trigger on an initial transition...</p>
+<ol>
+<li>...is necessary, otherwise the transition is not triggered.</li>
+<li>...is optional for initial transitions.</li>
+<li>...is wrong because it can cause ambiguities.</li>
+<li>...is wrong because it this transition is triggered by the start of the state machine.</li>
+</ol>
+</div>
+<h2>Question 3</h2>
+
 <div class="figure">
 <img src="figures/statemachines/rat/rat-2.png" width="100%"/>
 </div>
-<div class="rat"><p>What kind of element is “e1”?</p>
-<ol type="1">
+<div class="rat"><p>What kind of element is &quot;e1&quot;?</p>
+<ol>
 <li>An action</li>
 <li>An effect</li>
 <li>A trigger</li>
 <li>A transition</li>
-</ol></div>
-<h2 id="question-4">Question 4</h2>
+</ol>
+</div>
+<h2>Question 4</h2>
+
 <div class="figure">
 <img src="figures/statemachines/rat/rat-3.png" width="100%"/>
 </div>
-<div class="rat"><p>Which of the state machines STM1, STM2, STM3 is equivalent to STM0? This means they may look different, but have the same behavior.</p>
-<ol type="1">
+<div class="rat"><p>Which of the state machines STM1, STM2, STM3 is equivalent to STM0?
+This means they may look different, but have the same behavior.</p>
+<ol>
 <li>STM3</li>
 <li>None of them are equivalent.</li>
 <li>STM1</li>
 <li>STM2</li>
-</ol></div>
-<h2 id="question-5">Question 5</h2>
+</ol>
+</div>
+<h2>Question 5</h2>
+
 <div class="figure">
 <img src="figures/statemachines/rat/rat-5.png" width="100%"/>
 </div>
 <div class="rat"><p>What is problematic with this state machine?</p>
-<ol type="1">
-<li>It’s unclear what happens when C is triggered in state s1.</li>
+<ol>
+<li>It's unclear what happens when C is triggered in state s1.</li>
 <li>State s2 is not reachable</li>
 <li>State s1 is in a deadlock</li>
 <li>C is will be triggered twice.</li>
-</ol></div>
-<h2 id="question-6">Question 6</h2>
+</ol>
+</div>
+<h2>Question 6</h2>
+
 <div class="figure">
 <img src="figures/statemachines/rat/rat-4.png" width="100%"/>
 </div>
 <div class="rat"><p>Which of the states are in a deadlock?</p>
-<ol type="1">
+<ol>
 <li>s1</li>
 <li>s0</li>
 <li>s2</li>
 <li>s1 and s2</li>
-</ol></div>
-<h2 id="question-7">Question 7</h2>
+</ol>
+</div>
+<h2>Question 7</h2>
+
 <div class="rat"><p>Which of the following statements is wrong?</p>
-<ol type="1">
+<ol>
 <li>Executing a transitions takes no time.</li>
 <li>A state machine is always in exactly one state.</li>
 <li>Only one transition happens at any time.</li>
 <li>Resting in a state takes no time.</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

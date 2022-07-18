@@ -16,7 +16,34 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -101,6 +128,9 @@ div.goals ul li:before {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
+div.rat ol {
+  list-style-type: upper-alpha;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -109,16 +139,12 @@ div.goals ul li:before {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -132,23 +158,9 @@ div.goals ul li:before {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -156,6 +168,19 @@ div.tip p {
   border-left: 6px solid #1481b8
 }
 
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -310,13 +335,20 @@ div.tip p {
 <div class="page">
     </section>
     <section class="content">
-<h1 id="security-week-4">Security Week 4</h1>
-<p>The second week of web hacking will be about some complex and dangeorous web vulnerabilities. Cross Site Scripting (XSS) and SQL injection (SQLi) are two of the most well known web vulnerabilities. The Cross Site Scripting exploitation is executed in the client browser, you can read a few words about it here:</p>
+<h1>Security Week 4</h1>
+<p>The second week of web hacking will be about some complex and dangeorous web vulnerabilities.
+Cross Site Scripting (XSS) and SQL injection (SQLi) are two of the most well known web vulnerabilities.
+The Cross Site Scripting exploitation is executed in the client browser, you can read a few words about it here:</p>
 <p><a href="https://blog.securityinnovation.com/a-simple-explanation-of-cross-site-scripting">A Simple Explanation of Cross Site Scripting</a></p>
-<p>SQL injection is about modifying database requests by the attacker. Websites use the SQL database query language to store and access the data. Here is a short introduction to SQL:</p>
+
+<p>SQL injection is about modifying database requests by the attacker.
+Websites use the SQL database query language to store and access the data.
+Here is a short introduction to SQL:</p>
 <p><a href="https://kb.iu.edu/d/ahux">SQL Introduction</a></p>
-<p>When the attacker can modify the so called SQL query requested by the webserver, it is known as SQL injection attack. Please read this short introducton text about SQLi here (only read it until the section: Protecting your code against SQL injections):</p>
+<p>When the attacker can modify the so called SQL query requested by the webserver, it is known as SQL injection attack.
+Please read this short introducton text about SQLi here (only read it until the section: Protecting your code against SQL injections):</p>
 <p><a href="https://blog.sqreen.com/sql-injection-explained/">SQL Injection Explained</a></p>
+
     </section>
 </div>
 
