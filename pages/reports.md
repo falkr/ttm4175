@@ -124,3 +124,12 @@ Tilbakemelding fra en student fra 2012:
 > rapporten bare til slutt, skriv logg underveis.
 
 [^1]: <http://www.ntnu.no/studieavd/dok/retningslinjer_fusk.pdf>
+
+
+### Sjekkliste for rapporter
+
+- Include page numbers
+- Include the team name and the delivery name in the header of each page
+- Include a title page, which states delivery name, team name including a list of all members, date
+- Make sure images are readable and with high enough resolution.
+- Use of consistent styles.

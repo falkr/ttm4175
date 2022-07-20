@@ -16,163 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
-  list-style-type: upper-alpha;
-}
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  xline-height: 40px;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
-  text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-
-div.warning p {
-padding: 10px;
-background-color: #ffd9ab;
-border-radius: 5px;
-border-left: 6px solid #fc8c03 
-}
-
-div.warning p::before {
-    content: '\f071 ';
-    font-family: 'Font Awesome 5 Free'; 
-    color: #fc8c03;
-display: inline;
-}
-</style>
+<style type="text/css"></style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
 </head>
@@ -326,42 +170,188 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="using-the-pir-sensor">Using the PIR Sensor</h1>
-<p>Goal: You can connect the PIR sensor to the Pi and detect a movement by checking the signal on the cable via GPIO. You are able to create a minimal program for that.</p>
-<p>In this video you see how the Raspberry Pi can connect to external electronics. The GPIO pins are the electrical pins which are directly connected to the processor. GPIO stands for general purpose input output. We will use the same breadboard as in the video.</p>
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IP-szuon2Bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<p>The following video contains a good description of a passive infrared sensor, which we will use.</p>
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQY6hNA53oM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-    </section>
-    <section class="content">
-<h1 id="connect-the-breadboard">Connect the Breadboard</h1>
-<p>A breadboard is a protoyping board to test out simple electrical circuits. It is sometimes easier to connect components to the Raspberry Pi with a breadboard, especially with an extension cable.</p>
-<div class="figure">
-<img src="figures/iot/rpi-breadboard-connection-1.jpg" width="100%"/>
-</div>
-<h2 id="step-1-connect-breadboard-and-connector">Step 1: Connect Breadboard and Connector</h2>
-<p>Push the connector into the breadboard. Try to apply even preassure on the entire connector.</p>
-<div class="figure">
-<img src="figures/iot/rpi-breadboard-connection-2.jpg" width="100%"/>
-</div>
-<h2 id="step-2-connect-with-cable">Step 2: Connect with Cable</h2>
-<p>Connect everything as shown below. (It’s important that the cable is placed as shown on the side of the Raspberry, since it may physically fit both ways.)</p>
-<div class="figure">
-<img src="figures/iot/rpi-breadboard-connection-3.jpg" width="100%"/>
-</div>
-    </section>
-    <section class="content">
-<h1 id="detecting-movement-in-python">Detecting Movement in Python</h1>
+<h1>General Pages</h1>
 <ul>
-<li>Power down the Pi, and connect the breadboard.</li>
-<li>Connect the PIR (passive infrared) sensor with three cables. Look at the model of your PIR sensor, the cabling may be different between models.</li>
-<li>Write a program that detects when the PIR sensor is activated. You can first let the program write something on the output console. In the end the program shoud make some noise when the PIR sensor is activated, like an alarm system.</li>
-<li>Hint: When you are using <code>GPIO.setmode()</code>, use <code>GPIO.setmode(GPIO.BCM)</code> and not <code>GPIO.setmode(GPIO.BOARD)</code></li>
+<li><a href="feedback.html">Feedback</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="labs.html">Labs</a></li>
+<li><a href="learning-rats.html">About RATs</a></li>
+<li><a href="reports.html">Report</a></li>
+<li><a href="smash.html">Smash Lab</a></li>
+<li><a href="tools.html">Tools to Install</a></li>
+<li><a href="teams.html">About Teams</a></li>
+<li><a href="working-in-teams.html">About Teamwork</a></li>
 </ul>
+
+    </section>
+    <section class="content">
+<h1>Uke 33</h1>
+<ul>
+<li><a href="day0-2021.html">Day 0</a></li>
+<li><a href="day1-2021.html">Day 1</a> (empty)
+<ul>
+<li><a href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (pdf)</a></li>
+<li><a href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (pdf)</a></li>
+</ul>
+</li>
+<li><a href="day2-2021.html">Day 2</a></li>
+<li><a href="day3-2021.html">Day 3</a></li>
+<li><a href="tips.html">Tips</a></li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Etisk Hacking</h1>
+<ul>
+<li>Lab 1
+<ul>
+<li><a href="prep-security-1-2021.html">Preparation</a></li>
+<li><a href="rat-security-1-2021.html">RAT</a></li>
+<li><a href="security-1-2021.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 2
+<ul>
+<li><a href="prep-security-2-2021.html">Preparation</a></li>
+<li><a href="rat-security-2-2021.html">RAT</a></li>
+<li><a href="security-2-2021.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 3
+<ul>
+<li><a href="prep-security-3-2021.html">Preparation</a></li>
+<li><a href="rat-security-3-2021.html">RAT</a></li>
+<li><a href="security-3-2021.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 4
+<ul>
+<li><a href="prep-security-4-2021.html">Preparation</a></li>
+<li><a href="rat-security-4-2021.html">RAT</a></li>
+<li><a href="security-4-2021.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 5
+<ul>
+<li><a href="prep-security-5-2021.html">Preparation</a></li>
+<li><a href="rat-security-5-2021.html">RAT</a></li>
+<li><a href="security-5-2021.html">Lab</a></li>
+</ul>
+</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>IoT</h1>
+<ul>
+<li>Lab 1
+<ul>
+<li><a href="prep-iot-intro.html">Prep Intro</a> Into on IoT, three videos.</li>
+<li><a href="prep-iot-devices.html">Prep Devices</a> Install Python and Visual Studio.</li>
+<li><a href="iot-devices-2021.html">Devices Lab</a> Microbit introduction</li>
+</ul>
+</li>
+<li>Lab 2 - STMs
+<ul>
+<li><a href="prep-iot-stm.html">STM</a></li>
+<li><a href="prep-iot-stmpy.html">STMPY</a></li>
+<li><a href="rat-iot-2.html">RAT</a></li>
+<li><a href="iot-stm-2021.html">STM Lab</a></li>
+<li><a href="iot-stm-examples.html">STM Lab Examples</a></li>
+</ul>
+</li>
+<li>Lab 4 - MQTT
+<ul>
+<li><a href="prep-iot-mqtt.html">Prep MQTT</a></li>
+<li><a href="rat-iot-4.html">RAT4</a></li>
+<li><a href="iot-mqtt-chat.html">MQTT Chat</a></li>
+</ul>
+</li>
+<li>Lab 3 with HTTP / JSON
+<ul>
+<li><a href="rat-iot-3.html">RAT 3</a></li>
+</ul>
+</li>
+<li>Old
+<ul>
+<li><a href="iot-mqtt.html">MQTT</a> Old MQTT. Broker, Sense HAT</li>
+</ul>
+</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Networking</h1>
+<h2>2019</h2>
+<p>Uses the book also used in TTM4200. Uses Raspberry Pi in the labs.</p>
+<ul>
+<li>Lab 1
+<ul>
+<li><a href="prep-networking-1.html">Preparation</a> IP addresses, subnets, routing, network stack</li>
+<li><a href="networking-1.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 2
+<ul>
+<li><a href="prep-networking-2.html">Preparation</a> DNS, DHCP</li>
+<li><a href="networking-2.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 3
+<ul>
+<li><a href="prep-networking-3.html">Preparation</a> NAT, Wi-Fi</li>
+<li><a href="networking-3.html">Lab</a></li>
+</ul>
+</li>
+</ul>
+
+<h2>2020</h2>
+<p>Uses the book also used in TTM4200.</p>
+<ul>
+<li>Lab 1
+<ul>
+<li><a href="prep-networking-1-2020.html">Preparation</a> Videos on Binary, IP addresses, routing, network stack, subnets, virtual machines.</li>
+<li><a href="rat-networking-1.html">RAT</a></li>
+<li><a href="networking-1-2020.html">Lab</a> Network between a virtualized Ubuntu and a virtualized Raspberry Pi.</li>
+</ul>
+</li>
+<li>Lab 2
+<ul>
+<li><a href="prep-networking-2-2020.html">Preparation</a> Videos on Servers, Docker</li>
+<li><a href="rat-networking-2.html">RAT</a></li>
+<li><a href="networking-2-2020.html">Lab</a></li>
+</ul>
+</li>
+<li>Lab 3
+<ul>
+<li><a href="prep-networking-3-2020.html">Preparation</a> Routing, Web servers, DNS, Docker</li>
+<li><a href="rat-networking-3.html">RAT</a></li>
+<li><a href="networking-3-2020.html">Lab</a></li>
+</ul>
+</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Command Line</h1>
+<ul>
+<li><a href="commands-help.html">Help on Commands</a></li>
+<li><a href="commands.html">Useful Commands</a></li>
+<li><a href="computer-history.html">History of Unix</a></li>
+<li><a href="rat0.html">RAT</a></li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Installation / Usage Guides</h1>
+<ul>
+<li><a href="shell-mac.html">Shell Mac</a></li>
+<li><a href="shell-win.html">Shell Windows</a></li>
+<li><a href="virtual-box-mac.html">Virtual Box Mac</a></li>
+<li><a href="virtual-box-win.html">Virtual Box Win</a></li>
+<li><a href="virtual-machine.html">Virtual Box Machine</a></li>
+</ul>
+
     </section>
 </div>
 

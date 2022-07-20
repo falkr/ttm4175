@@ -8,6 +8,9 @@ Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digit
 
 ## Timeplan
 
+
+### Uke 33 (Teknostart, oppstartsuka)
+
 I løpet av uke 33 er emnet integrert i studiestart. 
 
 
@@ -40,6 +43,8 @@ type: table
 | [EL-6](https://link.mazemap.com/kolUEtCs)
 |}
 
+
+### Fra uke 34, (normal semester)
 
 ---
 type: table
@@ -111,6 +116,7 @@ type: table
 |}
 
 
+### Ukeplan
 
 ---
 type: table
