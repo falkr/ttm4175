@@ -16,7 +16,58 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -104,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -112,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -135,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -159,6 +217,19 @@ div.tip p {
   border-left: 6px solid #1481b8
 }
 
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -312,48 +383,55 @@ div.tip p {
 
 <div class="page">
     <section class="content">
-<p>Visit page <a href="https://minedx.site/" class="uri">https://minedx.site/</a> and use code <strong>YJFUQ</strong></p>
+<p>Visit page <a href="https://minedx.site/">https://minedx.site/</a> and use code <strong>YJFUQ</strong></p>
 <p><strong>Only one</strong> student in your team should grab a team card, and share the link with the others.</p>
-<h2 id="question-1">Question 1</h2>
+
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which one lists only commands that are useful to learn more about other commands?</p>
-<ol type="1">
+<ol>
 <li>help, man, info</li>
 <li>peek, man, info</li>
 <li>peek, info, apropos</li>
 <li>apropos, man, info</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which one is a command to create a new, empty file?</p>
-<ol type="1">
+<ol>
 <li>touch</li>
 <li>create</li>
 <li>cnf</li>
 <li>new</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>When you are in a directory and want to navigate to the parent directory (the one above it), which command do you choose?</p>
-<ol type="1">
+<ol>
 <li><code>cd.</code></li>
 <li><code>cd.</code></li>
 <li><code>cd ..</code></li>
 <li><code>cd..</code></li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
-<div class="rat"><p>What happens if you do the command “cat file.txt”?</p>
-<ol type="1">
+<h2>Question 4</h2>
+</div>
+<div class="rat"><p>What happens if you do the command &quot;cat file.txt&quot;?</p>
+<ol>
 <li>The file is created.</li>
-<li>Nothing, because you need to do “sudo cat file.txt”.</li>
+<li>Nothing, because you need to do &quot;sudo cat file.txt&quot;.</li>
 <li>The file is deleted.</li>
 <li>The content of the file appears on the screen.</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>What does grep do?</p>
-<ol type="1">
+<ol>
 <li>Print out a file.</li>
 <li>Grab a file from a URL.</li>
 <li>Log the content of a file.</li>
 <li>Find lines in a file.</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

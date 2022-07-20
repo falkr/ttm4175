@@ -16,58 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.figure {
+<style type="text/css">div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -155,19 +104,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +112,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,31 +131,15 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
-
 div.warning p {
 padding: 10px;
 background-color: #ffd9ab;
@@ -391,8 +307,10 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="learning-tools">Learning Tools</h1>
+<h1>Learning Tools</h1>
+
 <p>We use a lot of tools, but they all have their specific purpose.</p>
+
 <table class="table table-sm">
 <tr>
 <th></th>
@@ -404,7 +322,7 @@ display: inline;
 <th>Website</th>
 </tr>
 <tr>
-<td>Announcements</td>
+<th>Announcements</th>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle-half.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -413,7 +331,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Learning Material</td>
+<th>Learning Material</th>
 <td><img src="assets/icons/circle-half.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -422,7 +340,7 @@ display: inline;
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Private Questions</td>
+<th>Private Questions</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -431,7 +349,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Public Questions</td>
+<th>Public Questions</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
@@ -440,7 +358,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Deliveries</td>
+<th>Deliveries</th>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -449,7 +367,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Individual RATs</td>
+<th>Individual RATs</th>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -458,7 +376,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Team RATs</td>
+<th>Team RATs</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -467,7 +385,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Online Lectures</td>
+<th>Online Lectures</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -476,7 +394,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Contact with Teaching Assistants</td>
+<th>Contact with Teaching Assistants</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle-fill.svg" alt="OK" width="16" height="16"></td>
@@ -485,7 +403,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Contact within Teams</td>
+<th>Contact within Teams</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -494,7 +412,7 @@ display: inline;
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 </tr>
 <tr>
-<td>Document Collaboration</td>
+<th>Document Collaboration</th>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
 <td><img src="assets/icons/circle.svg" alt="OK" width="16" height="16"></td>
@@ -511,30 +429,36 @@ display: inline;
 <li>For the team RATs and the online lectures, we use ZOOM. The meeting details are available as announcement or note on Blackboard.</li>
 <li>Microsoft Teams we use for document sharing, collaboration within your teams and contact with the teaching assistants.</li>
 </ul>
-<h2 id="piazza">Piazza</h2>
+
+<h2>Piazza</h2>
 <p>Visit <strong>Piazza</strong> from within the Blackboard Page for this course. Piazza is a forum to ask questions about a course.</p>
+
 <div class="figure">
 <img src="figures/teknostart/piazza.jpeg" alt="Access to Piazza from Blackboard." width="100%"/>
 <span name="figures/teknostart/piazza.jpeg">&nbsp;</span>
-<aside name="figures/teknostart/piazza.jpeg"><p><p>Access to Piazza from Blackboard.</p></p></aside>
+<aside name="figures/teknostart/piazza.jpeg"><p><p>Access to Piazza from Blackboard.</p>
+</p></aside>
 </div>
-<h2 id="install-microsoft-office-and-teams">Install Microsoft Office and Teams</h2>
+<h2>Install Microsoft Office and Teams</h2>
 <p>Install Office 365, and especially Microsoft Teams.</p>
 <ul>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+–%20Installere+på%20PC">Installation on PC</a></li>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+–%20Installere+på%20OSX">Installation on Mac OSX</a></li>
-<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+-+Installere+på%20mobil+og+nettbrett">Installation on mobile devices</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+%E2%80%93%20Installere+p%C3%A5%20PC">Installation on PC</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+%E2%80%93%20Installere+p%C3%A5%20OSX">Installation on Mac OSX</a></li>
+<li><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Office+365+-+Installere+p%C3%A5%20mobil+og+nettbrett">Installation on mobile devices</a></li>
 </ul>
 <p><strong>Teams</strong> is a collaboration tools that includes Office documents, calendar, and the possibilities for online meetings.</p>
 <p>Join the team for this course. It is named <strong>TTM4175 2020</strong>. We send you a course code which you can use to join the team directly.</p>
+
 <div class="figure">
 <img src="figures/teknostart/teams-join.jpeg" alt="We'll send you a code to join the team for this course." width="100%"/>
 <span name="figures/teknostart/teams-join.jpeg">&nbsp;</span>
-<aside name="figures/teknostart/teams-join.jpeg"><p><p>We’ll send you a code to join the team for this course.</p></p></aside>
+<aside name="figures/teknostart/teams-join.jpeg"><p><p>We'll send you a code to join the team for this course.</p>
+</p></aside>
 </div>
-<h2 id="zoom">Zoom</h2>
+<h2>Zoom</h2>
 <p><a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/zoom+-+last+ned+og+installer">Install Zoom</a>.</p>
-<p>Zoom is for online lectures. You’ll find the Zoom link in Blackboard.</p>
+<p>Zoom is for online lectures. You'll find the Zoom link in Blackboard.</p>
+
     </section>
 </div>
 

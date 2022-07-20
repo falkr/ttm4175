@@ -16,58 +16,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.figure {
+<style type="text/css">div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -155,19 +104,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +112,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,31 +131,15 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
-
 div.warning p {
 padding: 10px;
 background-color: #ffd9ab;
@@ -390,86 +306,97 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Q: A network protocol:</p>
-<ol type="1">
+<ol>
 <li>may belong to multiple network layers.</li>
 <li>must be implemented in hardware.</li>
 <li>belongs to a single network layer.</li>
 <li>requires multiple network layers.</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Q: One of the main advantages of network layering is:</p>
-<ol type="1">
+<ol>
 <li>there are no advantages in network layering.</li>
 <li>the direct communication between all layers.</li>
 <li>potential duplication of lower-layer functionality.</li>
 <li>the modularity, which allows for easier updates.</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Q: One of the main disadvantages of network layering is:</p>
-<ol type="1">
+<ol>
 <li>there are no disadvantages in network layering.</li>
 <li>the direct communication between all layers.</li>
 <li>potential duplication of lower-layer functionality.</li>
 <li>the modularity, which allows for easier updates.</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Q: A server:</p>
-<ol type="1">
+<ol>
 <li>runs a single service only (1 server, 1 service).</li>
 <li>is responsible for sending requests to clients.</li>
 <li>is a physical computer with specialised hardware.</li>
 <li>may run several services (1 server, N services).</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>Q: A laptop:</p>
-<ol type="1">
+<ol>
 <li>cannot be used as a client nor as a server</li>
 <li>can be used as a client and as a server.</li>
 <li>can only be used as a client.</li>
 <li>can only be used as a server.</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>Q: The Internet protocol stack consists of:</p>
-<ol type="1">
+<ol>
 <li>three protocols: IP, TCP and HTTP.</li>
 <li>five layers: the physical, link, network, transport and application layers.</li>
 <li>seven layers: the physical, link, network, transport, session, presentation and application layers.</li>
 <li>two protocols: IP and HTTP.</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>Q: The HTTP protocol, which provides for Web document request and transfer, resides at:</p>
-<ol type="1">
+<ol>
 <li>session layer.</li>
 <li>the application layer.</li>
 <li>the network layer.</li>
 <li>transport layer.</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Q: The Domain Name System (DNS), resides at:</p>
-<ol type="1">
+<ol>
 <li>transport layer.</li>
 <li>session layer.</li>
 <li>the application layer.</li>
 <li>the network layer.</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>Q: The IP protocol, which defines the fields in the datagram, resides at:</p>
-<ol type="1">
+<ol>
 <li>the network layer.</li>
 <li>the application layer.</li>
 <li>transport layer.</li>
 <li>session layer.</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>Q: In addition to an IP address, a networked process is reached by specifying:</p>
-<ol type="1">
+<ol>
 <li>a TCP buffer.</li>
 <li>a port number.</li>
 <li>a domain name.</li>
 <li>a socket.</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

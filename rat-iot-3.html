@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -390,70 +334,80 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
-<div class="rat"><p>Which of the following ways is a good idea to convert a data type (here a dictionary) stored in the variable  in Python into a string that can be easily stored or transmitted?</p>
-<ol type="1">
+<h2>Question 1</h2>
+
+<div class="rat"><p>Which of the following ways is a good idea to convert a data type (here a dictionary) stored in the variable \texttt{data} in Python into a string that can be easily stored or transmitted?</p>
+<ol>
 <li><code>string = str(data)</code></li>
 <li><code>string = json.to_string(data)</code></li>
 <li><code>string = json.load(data)</code></li>
 <li><code>string = json.dumps(data)</code></li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
-<div class="rat"><p>Imagine you want to send a message from one computer to another, but you want to ensure that this message really reaches the other computer. What can you do?</p>
-<ol type="1">
+<h2>Question 2</h2>
+</div>
+<div class="rat"><p>Imagine you want to send a message from one computer to another, but you want to ensure that this
+message really reaches the other computer. What can you do?</p>
+<ol>
 <li>Use the single-message pattern.</li>
 <li>Add a timer to the single-message pattern.</li>
 <li>Use a better transmission channel.</li>
 <li>Use the request-response pattern.</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>What is the main difference between clients and servers?</p>
-<ol type="1">
+<ol>
 <li>The server runs in a data center, the client in a normal computer.</li>
 <li>The server can send a message to the client whenever it wants, but not the other way round.</li>
 <li>Only clients can start an interaction.</li>
 <li>The server is a more powerful machine than a client.</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Which of the following statements is true?</p>
-<ol type="1">
+<ol>
 <li>HTTP is only used to transfer HTML pages.</li>
 <li>HTTP assumes a client-server interaction with request-response.</li>
 <li>HTTP is a symmetric protocol, client and server can do the same things.</li>
 <li>HTTP is integrated into (a part of) TCP/IP.</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>What means serialization, as understood in the preparation material?</p>
-<ol type="1">
+<ol>
 <li>To transform a data structure into a sequence of bits or bytes.</li>
 <li>To execute a program in a sequence.</li>
 <li>To transmit data via an electrical or optical signal.</li>
 <li>To watch an entire season of a series in one weekend.</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>Which of the following is a valid serialization of data in JSON?</p>
-<ol type="1">
-<li><code>&lt;data time=“12:05”, temperature=“20.0”, humidity=“54.3”/&gt;</code></li>
-<li><code>{“time”: “12:05”, “temperature”: 20.0, “humidity”: 54.3}</code></li>
-<li><code>[‘time’=‘12:05’, ‘temperature’=20.0, ‘humidity’=54.3]</code></li>
-<li><code>&lt;data time=“12:05” temperature=“20.0” humidity=“54.3”/&gt;</code></li>
+<ol>
+<li><code>&lt;data time=&quot;12:05&quot;, temperature=&quot;20.0&quot;, humidity=&quot;54.3&quot;/&gt;</code></li>
+<li><code>{&quot;time&quot;: &quot;12:05&quot;, &quot;temperature&quot;: 20.0, &quot;humidity&quot;: 54.3}</code></li>
+<li><code>['time'='12:05', 'temperature'=20.0, 'humidity'=54.3]</code></li>
+<li><code>&lt;data time=&quot;12:05&quot; temperature=&quot;20.0&quot; humidity=&quot;54.3&quot;/&gt;</code></li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>Which type of diagrams can we use to show message exchanges?</p>
-<ol type="1">
+<ol>
 <li>sequence diagrams</li>
 <li>serialization diagrams</li>
 <li>message diagrams</li>
 <li>synchronization diagrams</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>A request from a HTTP client arrives at a web server implemented in Python. What happens?</p>
-<ol type="1">
-<li>the server’s method <code>respond()</code> is called</li>
+<ol>
+<li>the server's method <code>respond()</code> is called</li>
 <li>the server stores the request for later</li>
 <li>the client invokes the <code>reply()</code> function</li>
-<li>the server’s method <code>do_GET()</code> is called.</li>
-</ol></div>
+<li>the server's method <code>do_GET()</code> is called.</li>
+</ol>
+</div>
     </section>
 </div>
 

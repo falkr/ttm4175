@@ -16,7 +16,34 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -112,16 +139,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -135,23 +158,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -326,42 +335,57 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="web-servers-and-dns">Web servers and DNS</h1>
-<p>At this point you can already setup simple network configurations. This week we will continue exploring some networking commands, namely for routing, and we will setup a basic <a href="https://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System (DNS)</a> and Webserver. In order to do so, you get better acquainted with routing, DNS and web servers.</p>
+<h1>Web servers and DNS</h1>
+<p>At this point you can already setup simple network configurations.
+This week we will continue exploring some networking commands, namely for routing, and we will setup a basic <a href="https://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System (DNS)</a> and Webserver.
+In order to do so, you get better acquainted with routing, DNS and web servers.</p>
+
 <div class="goals"><p>After this week you will be able to:</p>
 <ul>
 <li>Recognise the role of routing in networking</li>
 <li>Use <code>ip route</code> for managing routes</li>
 <li>Retrieve basic DNS information</li>
 <li>Deploy simple network services</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="routing">Routing</h1>
+<h1>Routing</h1>
 <p>This video was previously included as optional material. However, now we want to focus more on routing so you should (re-)watch it.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AkxqkoxErRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     </section>
     <section class="content">
-<h1 id="dns">DNS</h1>
-<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>). DNS enables this and much more! To learn more about this <strong>read from section 2.4 to 2.4.2, in pages 160 to 167.</strong></p>
+<h1>DNS</h1>
+<p>Even though each website and server we connect to in the Internet has one or more IP addresses, we mostly remember them by their name (e.g. <em>ntnu.no</em> or <em>google.com</em>).
+DNS enables this and much more!
+To learn more about this <strong>read from section 2.4 to 2.4.2, in pages 160 to 167.</strong></p>
+
     </section>
     <section class="content">
-<h1 id="web-server">Web server</h1>
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">This page</a> was already an optional reading from last week. This week however it’s important that you fully understand its contents (you already meet the prerequisites indicated on top of the page but, if not, follow the provided links and read more about the basic principles).</p>
+<h1>Web server</h1>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">This page</a> was already an optional reading from last week.
+This week however it's important that you fully understand its contents (you already meet the prerequisites indicated on top of the page but, if not, follow the provided links and read more about the basic principles).</p>
+
     </section>
     <section class="content">
-<h1 id="optional-materials">Optional Materials</h1>
-<h2 id="docker-compose">Docker Compose</h2>
-<p>Earlier we saw how to build images and run containers from them, one by one. However, there are better ways to handle multiple images and containers, as well as the dependencies between them.</p>
-<p>Docker Compose is a tool that allows us to manage several containers based on a simple configuration file (‘docker-compose.yml’). In our next lab. we’ll make use of Docker Compose to handle multiple containers (see figure below) so it’s best if you have a preliminary understanding of the possibilities.</p>
+<h1>Optional Materials</h1>
+<h2>Docker Compose</h2>
+<p>Earlier we saw how to build images and run containers from them, one by one.
+However, there are better ways to handle multiple images and containers, as well as the dependencies between them.</p>
+<p>Docker Compose is a tool that allows us to manage several containers based on a simple configuration file ('docker-compose.yml').
+In our next lab. we'll make use of Docker Compose to handle multiple containers (see figure below) so it's best if you have a preliminary understanding of the possibilities.</p>
+
 <div class="figure">
 <img src="figures/net/lab3-topo.png" alt="Simple illustration of the 2 containers we will configure (DNS and Web server)" width="100%"/>
 <span name="figures/net/lab3-topo.png">&nbsp;</span>
-<aside name="figures/net/lab3-topo.png"><p><p>Simple illustration of the 2 containers we will configure (DNS and Web server)</p></p></aside>
+<aside name="figures/net/lab3-topo.png"><p><p>Simple illustration of the 2 containers we will configure (DNS and Web server)</p>
+</p></aside>
 </div>
 <p>The following video provides a nice explanation of what can be done and of the potential of using <em>compose</em> in a complex environment.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Qw9zlE3t8Ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

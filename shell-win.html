@@ -16,7 +16,58 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -104,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -112,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -135,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -326,22 +384,27 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="terminal-and-ssh-in-windows">Terminal and SSH in Windows</h1>
+<h1>Terminal and SSH in Windows</h1>
+
 <p>A current installation of Windows already has a terminal and SSH installed. Open the windows menu, and type <code>power</code> to find the Windows PowerShell. Open it as an administrator.</p>
+
 <div class="figure">
 <img src="figures/terminal/terminal-win-1.png" alt="" width="100%"/>
 <span name="figures/terminal/terminal-win-1.png">&nbsp;</span>
 <aside name="figures/terminal/terminal-win-1.png"><p></p></aside>
 </div>
 <p>You should see a terminal window opening.</p>
+
 <div class="figure">
 <img src="figures/terminal/terminal-win-2.png" alt="" width="100%"/>
 <span name="figures/terminal/terminal-win-2.png">&nbsp;</span>
 <aside name="figures/terminal/terminal-win-2.png"><p></p></aside>
 </div>
 <p>Type the following command:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Get-WindowsCapability</span> <span class="at">-Online</span> <span class="kw">|</span> <span class="ex">?</span> Name <span class="at">-like</span> <span class="st">&#39;OpenSSH*&#39;</span></span></code></pre></div>
-<p>If SSH is installed, you’ll see something like the following:</p>
+<p>If SSH is installed, you'll see something like the following:</p>
+
 <div class="figure">
 <img src="figures/terminal/terminal-win-3.png" alt="" width="100%"/>
 <span name="figures/terminal/terminal-win-3.png">&nbsp;</span>
@@ -349,8 +412,9 @@ display: inline;
 </div>
     </section>
     <section class="content">
-<h1 id="older-windows-versions">Older Windows Versions</h1>
+<h1>Older Windows Versions</h1>
 <p>If you are using an older version of Windows, you may have to download additional software such as <a href="https://putty.org/">Putty</a> to use SSH.</p>
+
     </section>
 </div>
 

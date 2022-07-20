@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,12 +412,14 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="help-for-commands">Help for Commands</h1>
+<h1>Help for Commands</h1>
 <p>There are several ways to find out more about commands.</p>
-<h2 id="man-pages">Man-Pages</h2>
+<h2>Man-Pages</h2>
 <p>If you already know which command you want to use, but are not sure how exactly to use it, you can read its man-page (<em>man</em> stands for <em>manual</em>). For instance, to learn more about the <code>passwd</code> command, type</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> passwd</span></code></pre></div>
 <p>The command reveals this:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PASSWD</span><span class="er">(</span><span class="ex">1</span><span class="kw">)</span>                 <span class="ex">BSD</span> General Commands Manual                PASSWD<span class="er">(</span><span class="ex">1</span><span class="kw">)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
@@ -410,11 +433,15 @@ display: inline;
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     <span class="ex">the</span> super-user, passwd first prompts for the current password and will</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     <span class="ex">not</span> continue unless the correct password is entered.</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
-<p>You can return to the command line by pressing <code>q</code> (for <em>quit</em>). You can also <a href="http://man7.org/linux/man-pages/dir_all_alphabetic.html">browse man-pages online</a>.</p>
-<h2 id="apropos-command">apropos Command</h2>
-<p>Let’s say you want to copy a file but are unsure what the proper command is called. You can search in your local man-pages using the apropos command, for instance:</p>
+<p>You can return to the command line by pressing <code>q</code> (for <em>quit</em>).
+You can also <a href="http://man7.org/linux/man-pages/dir_all_alphabetic.html">browse man-pages online</a>.</p>
+
+<h2>apropos Command</h2>
+<p>Let's say you want to copy a file but are unsure what the proper command is called. You can search in your local man-pages using the apropos command, for instance:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apropos</span> copy</span></code></pre></div>
 <p>reveals</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FcCacheCopySet</span><span class="er">(</span><span class="ex">3</span><span class="kw">)</span>        <span class="ex">-</span> Returns a copy of the fontset from cache</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">FcCharSetCopy</span><span class="er">(</span><span class="ex">3</span><span class="kw">)</span>         <span class="ex">-</span> Copy a charset</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">FcLangSetCopy</span><span class="er">(</span><span class="ex">3</span><span class="kw">)</span>         <span class="ex">-</span> copy a langset object</span>
@@ -433,10 +460,13 @@ display: inline;
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cpio</span><span class="er">(</span><span class="ex">1</span><span class="kw">)</span>                  <span class="ex">-</span> copy files to and from archives</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
 <p>From there you can read that <code>cp</code> is probably the right command you were looking for.</p>
-<h2 id="command-help">Command Help</h2>
+
+<h2>Command Help</h2>
 <p>The man pages are quite extensive, and sometimes you want to have a shorter description. Then you can use the help text for the command, which is often available when you use the <code>--help</code> flag for the command:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">--help</span></span></code></pre></div>
 <p>This reveals the following:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cd:</span> cd [-L<span class="kw">|</span><span class="ex">[-P</span> [-e]] [-@]] [dir]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Change</span> the shell working directory.</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   </span>

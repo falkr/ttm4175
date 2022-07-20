@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -236,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -391,10 +412,14 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="nat-and-wi-fi">NAT and Wi-Fi</h1>
-<p>At this point, understanding addressing, routing and how to dynamically handle hosts, we can now create our own private network. Since a network disconnected from the Internet may not be so interesting you will now learn how one public IP address can be used by several hosts, using IP Masquerading, typically referred to as Network Address Translation (NAT). In addition, since the IEEE 802.11 wireless protocol, or Wi-Fi, is so commonly used for connectivity, you will also learn how to create your own Wi-Fi access point using a Raspberry Pi.</p>
-<p>This week’s readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>. Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
-<h2 id="learning-goals">Learning Goals</h2>
+<h1>NAT and Wi-Fi</h1>
+<p>At this point, understanding addressing, routing and how to dynamically handle hosts, we can now create our own private network.
+Since a network disconnected from the Internet may not be so interesting you will now learn how one public IP address can be used by several hosts, using IP Masquerading, typically referred to as Network Address Translation (NAT).
+In addition, since the IEEE 802.11 wireless protocol, or Wi-Fi, is so commonly used for connectivity, you will also learn how to create your own Wi-Fi access point using a Raspberry Pi.</p>
+<p>This week's readings will still be based on the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>.
+Remember that the <em>details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
+<h2>Learning Goals</h2>
+
 <div class="goals"><p>After this week you will be able to:</p>
 <ul>
 <li>Understand how IP Masquerading/NAT works</li>
@@ -403,20 +428,31 @@ display: inline;
 <ul>
 <li>configuring IP masquerading</li>
 <li>installing and configuring a basic Wi-Fi access point</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="understanding-nat">Understanding NAT</h1>
-<p>As you now know there are special types of IP addresses and a lack of public IPv4 addresses. Network Address Translation (NAT) allows us to minimise this issue through IP Masquerading and a lot more (e.g. improve security). To learn more about NAT read <strong>section 7.7 and its subsections (from page 200 to 204)</strong>. In addition, you may also read more IP Masquerading in Linux <a href="http://www.tldp.org/HOWTO/IP-Masquerade-HOWTO/ipmasq-background2.0.html">here</a>. Wikipedia is also an interesting resource for knowing more about <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>.</p>
+<h1>Understanding NAT</h1>
+<p>As you now know there are special types of IP addresses and a lack of public IPv4 addresses.
+Network Address Translation (NAT) allows us to minimise this issue through IP Masquerading and a lot more (e.g. improve security).
+To learn more about NAT read <strong>section 7.7 and its subsections (from page 200 to 204)</strong>.
+In addition, you may also read more IP Masquerading in Linux <a href="http://www.tldp.org/HOWTO/IP-Masquerade-HOWTO/ipmasq-background2.0.html">here</a>.
+Wikipedia is also an interesting resource for knowing more about <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>.</p>
+
     </section>
     <section class="content">
-<h1 id="understanding-wi-fi">Understanding Wi-Fi</h1>
-<p>Wi-Fi is nowadays present in almost every household, office, public transport,  We use it in our computers, phones, smart-watches, TVs, consoles, … But how does it work? Read more about it in:</p>
+<h1>Understanding Wi-Fi</h1>
+<p>Wi-Fi is nowadays present in almost every household, office, public transport, \ldots
+We use it in our computers, phones, smart-watches, TVs, consoles, …
+But how does it work?
+Read more about it in:</p>
 <ul>
 <li><strong>section 3.1.7 (pages 99 and 100)</strong> and</li>
 <li><strong>sections 3.7.4 and 3.7.4.1 (from page 107 and 110)</strong>.</li>
 </ul>
+
     </section>
 </div>
 

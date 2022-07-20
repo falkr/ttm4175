@@ -16,226 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-div.rat ol {
+<style type="text/css">div.rat ol {
   list-style-type: upper-alpha;
-}
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  xline-height: 40px;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
-  text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-
-div.warning p {
-padding: 10px;
-background-color: #ffd9ab;
-border-radius: 5px;
-border-left: 6px solid #fc8c03 
-}
-
-div.warning p::before {
-    content: '\f071 ';
-    font-family: 'Font Awesome 5 Free'; 
-    color: #fc8c03;
-display: inline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -390,86 +172,97 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which of the following is a possible ipv4 address?</p>
-<ol type="1">
+<ol>
 <li>239.257.28.110</li>
 <li>2001:DB8::1</li>
 <li>152.66.14.121</li>
 <li>10.4.6.0.1</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which of the following statements is true?</p>
-<ol type="1">
+<ol>
 <li>The ipv4 addresses have 2^(4<em>8) possible combinations while the ipv6 addresses have 2^(6</em>8) combinations</li>
 <li>An ipv4 address is also an ipv6 address, but an ipv6 address is never an ipv4 address</li>
 <li>There are 2^(128-32) times more ipv6 adresses than ipv4 addresses</li>
 <li>The ipv4 address consist of 4 times 32bits (128bits total)</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Why subnet mask is needed?</p>
-<ol type="1">
+<ol>
 <li>To determine the network id and the host id from the ipv4 address</li>
 <li>To determine the ip protocol in use (ipv4 or ipv6)</li>
 <li>To determine the gateway ip address</li>
 <li>To use domain name services</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>Which service provides ip address automatically in a network when the device is plugged in?</p>
-<ol type="1">
+<ol>
 <li>There is no such service</li>
 <li>The Domain Name Service</li>
 <li>The Border Gateway Protocol</li>
 <li>The Dynamic Host Configuration Protocol</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>Which network class can have the most hosts?</p>
-<ol type="1">
+<ol>
 <li>Class A</li>
 <li>Class C</li>
 <li>Class E</li>
 <li>Every network class can have the same amount of hosts in its network</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>Which of the following addresses is internal or reserved private address?</p>
-<ol type="1">
+<ol>
 <li>8.8.8.8</li>
 <li>0.0.0.0</li>
 <li>10.10.10.10</li>
 <li>172.32.0.1</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>What is the first and last ip address of the 192.168.0.0/22 CIDR network range?</p>
-<ol type="1">
+<ol>
 <li>The first is 192.168.0.0 and the last is 192.168.2.255</li>
 <li>The first is 192.168.2.0 and the last is 192.168.3.255</li>
 <li>The first is 192.168.0.0 and the last is 192.168.3.255</li>
 <li>The first is 192.168.0.0 and the last is 192.168.1.255</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Which of the following domains contains a country code TLD?</p>
-<ol type="1">
+<ol>
 <li>ntnu.mil</li>
 <li>ntnu.no</li>
 <li>ntnu.edu</li>
 <li>facebook.com/ntnu.no</li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>Which of the following statements is correct regarding domain names?</p>
-<ol type="1">
+<ol>
 <li>Domain names can be bought only by companies or public organizations</li>
 <li>Buying a domain also includes bying a physical server for website hosting</li>
 <li>Each domain can have 3 free subdomains to use by the owner but adds additional cost above 3</li>
 <li>Domain name ownership for private persons has to be renewed after a certain period (generally in each year)</li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>Which service tells the owner of a domain considering GDPR?</p>
-<ol type="1">
+<ol>
 <li>HOSTINGER</li>
 <li>WHOIS</li>
 <li>DNS</li>
 <li>WHOAMI</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

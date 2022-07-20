@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -219,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -373,70 +411,79 @@ display: inline;
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which message pattern describes the communication in MQTT best?</p>
-<ol type="1">
+<ol>
 <li>Publish-subscribe</li>
 <li>Single-message</li>
 <li>Request-response</li>
 <li>Observer</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>To receive a message, a client has to:</p>
-<ol type="1">
+<ol>
 <li>connect to a server and make a request</li>
 <li>subscribe to another client</li>
 <li>connect to a broker, subscribe to a topic</li>
 <li>connect to a broker, publish a message</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Which statement is true?</p>
-<ol type="1">
+<ol>
 <li>Clients can subscribe to messages or publish topics.</li>
 <li>Only the broker can publish messages.</li>
 <li>Clients send responses directly to other clients.</li>
 <li>Any client can publish messages.</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
-<div class="rat"><p>Assume a message with a topic “T” and QoS=0 is sent to the broker. What happens next?</p>
-<ol type="1">
+<h2>Question 4</h2>
+</div>
+<div class="rat"><p>Assume a message with a topic &quot;T&quot; and QoS=0 is sent to the broker. What happens next?</p>
+<ol>
 <li>Nothing, because of Qos=0.</li>
-<li>The broker forwards the message to all clients that subscribed to topic “T”.</li>
-<li>The broker forwards the message to at most one client that subscribed to topic “T”.</li>
-<li>The broker forwards the message to the client that most recently subscribed to topic “T”.</li>
+<li>The broker forwards the message to all clients that subscribed to topic &quot;T&quot;.</li>
+<li>The broker forwards the message to at most one client that subscribed to topic &quot;T&quot;.</li>
+<li>The broker forwards the message to the client that most recently subscribed to topic &quot;T&quot;.</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
-<div class="rat"><p>The terms “at most once”, “at least once”, “exactly once” refer to…</p>
-<ol type="1">
-<li>…the number of clients that will receive a message when several subscribe to the same topic.</li>
-<li>…how many clients are allowed to subscribe to a topic.</li>
-<li>…how often a client can send a message with the same payload.</li>
-<li>…to the delivery of the messages - how hard will the clients and broker try to deliver a message.</li>
+<h2>Question 5</h2>
+</div>
+<div class="rat"><p>The terms &quot;at most once&quot;, &quot;at least once&quot;, &quot;exactly once&quot; refer to...</p>
+<ol>
+<li>...the number of clients that will receive a message when several subscribe to the same topic.</li>
+<li>...how many clients are allowed to subscribe to a topic.</li>
+<li>...how often a client can send a message with the same payload.</li>
+<li>...to the delivery of the messages - how hard will the clients and broker try to deliver a message.</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>Which roles does the programm MQTT.Fx have?</p>
-<ol type="1">
+<ol>
 <li>It is a efficient MQTT server.</li>
 <li>It is a combined MQTT and HTTP client.</li>
 <li>It is a normal MQTT client, but with a general user interface.</li>
 <li>It is just a powerful MQTT broker.</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>What do HTTP and MQTT in common?</p>
-<ol type="1">
+<ol>
 <li>Both protocols use client-server architecture.</li>
 <li>Both protocols use topics.</li>
 <li>Both protocols can run on top of TCP.</li>
 <li>Both protocols are based on the request-response pattern.</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Why is is a good idea to place the code for a subscription into the function that is called when the connection was established successfully?</p>
-<ol type="1">
+<ol>
 <li>We automatically subscribe to the topic again in case of a reconnection.</li>
 <li>We subscribe immediately after a connect, without using a timeout.</li>
 <li>It is the only way to subscribe to several topics at once.</li>
 <li>The above statement is false, there is no such callback function.</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

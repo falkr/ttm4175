@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -152,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -160,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -219,6 +229,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -374,27 +412,37 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="day2---introduction-to-offensive-security">Day2 - Introduction to offensive security</h1>
+<h1>Day2 - Introduction to offensive security</h1>
 <p>An introduction will be presented about offensive security and the schedule for 19/08 and 20/08.</p>
-<p>Malicious hacking attacks take place every day. To protect ourselves we have to learn the attacker’s mindset and understand the way how they work.</p>
+<p>Malicious hacking attacks take place every day. To protect ourselves we have to learn the attacker's mindset and understand the way how they work.</p>
 <p><strong>TTM4175</strong> provides a section about ethical hacking where students get the basic knowledge how to start to learn ethical hacking.</p>
-<h2 id="ethical-hacking-short-introduction">Ethical hacking short introduction</h2>
+
+<h2>Ethical hacking short introduction</h2>
 <p>A short presentation about the general steps of ethical hacking and basic tools that are necessary for hacking.</p>
 <p>The legal aspects of attacking computer networks and systems will be also discussed.</p>
-<h2 id="install-virtualization-platforms-virtualbox-vmware-player">Install virtualization platforms (Virtualbox, VMware player)</h2>
+
+<h2>Install virtualization platforms (Virtualbox, VMware player)</h2>
 <p>Select one virtualization platform and install:</p>
 <p>Install Virtualbox on Windows <a href="https://websiteforstudents.com/installing-virtualbox-windows-10/">install virtualbox Win10</a>.</p>
 <p>Install Virtualbox on Mac <a href="https://confluence.uconn.edu/busnit/windows-learning-environment/installing-oracle-virtualbox-on-a-mac">install virtualbox Mac</a>.</p>
-<p>Install Vmware Player on Windows <a href="https://techvatan.com/install-vmware-player-on-windows-10/">install vmware Win10</a>.</p>
+<p>Install Vmware Player  on Windows <a href="https://techvatan.com/install-vmware-player-on-windows-10/">install vmware Win10</a>.</p>
 <p>Install Vmware Player on Mac <a href="https://www.sysnettechsolutions.com/en/install-vmware-fusion/">install vmware Mac</a>.</p>
-<h2 id="install-kali-linux">Install Kali linux</h2>
+
+<h2>Install Kali linux</h2>
 <p>Kali linux is a debian based hacker linux that was developed by <a href="https://www.offensive-security.com/">Offensive Security</a>.</p>
 <p>Download a custom image for your virtualization platform from here: <a href="https://www.kali.org/get-kali/#kali-virtual-machines">Custom Image Downloads</a>.</p>
-<p>For the VirtualBox platform just download and click on the <strong>ova</strong> file. The virtual Image will be automatically created. For the Vmware Player unzip the <strong>7z</strong> file first, then click on the <strong>vmx</strong> file. If Vmware asks answer “I copied it” for the image question.</p>
-<h2 id="capture-the-flag-introduction">Capture the flag introduction</h2>
-<p>Capture the Flag (CTF) is a hacking competition type where individuals and teams are competing with each other. A CTF competition is consist of hacking challenges that has to be solved by the participant. A successful solution is awarded by the solution flag of the hacking challenge. The flag is basically a string such as <em>Hacking-Arena{Th1s_1s_your_f1rst_fl4g}</em> that is only accessible if the challenge is solved. The participants has to submit all flags to the challenge server, that is how the competition goes. For your first hacking competition please register a user on the Darth Vader CTF server <a href="http://vader.hackingarena.com">vader.hackingarena.com</a>.</p>
+<p>For the VirtualBox platform just download and click on the <strong>ova</strong> file. The virtual Image will be automatically created.
+For the Vmware Player unzip the <strong>7z</strong> file first, then click on the <strong>vmx</strong> file. If Vmware asks answer &quot;I copied it&quot; for the image question.</p>
+
+<h2>Capture the flag introduction</h2>
+<p>Capture the Flag (CTF) is a hacking competition type where individuals and teams are competing with each other.
+A CTF competition is consist of hacking challenges that has to be solved by the participant. A successful solution is awarded by the solution flag of the hacking challenge.
+The flag is basically a string such as <em>Hacking-Arena{Th1s_1s_your_f1rst_fl4g}</em> that is only accessible if the challenge is solved.
+The participants has to submit all flags to the challenge server, that is how the competition goes.
+For your first hacking competition please register a user on the Darth Vader CTF server <a href="http://vader.hackingarena.com">vader.hackingarena.com</a>.</p>
 <p>The available challenges on the CTF servers are all connected to the very first step of all attacks which is information gathering.</p>
 <p>A general introduction to Capture the Flag will also be presented.</p>
+
     </section>
 </div>
 

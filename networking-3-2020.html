@@ -16,7 +16,34 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -101,6 +128,9 @@ div.goals ul li:before {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
+div.rat ol {
+  list-style-type: upper-alpha;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -109,16 +139,12 @@ div.goals ul li:before {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -132,16 +158,28 @@ div.goals ul li:before {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
   border-radius: 5px;
   border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -297,126 +335,168 @@ div.tip p {
 <div class="page">
     </section>
     <section class="content">
-<h1 id="web-servers-and-dns">Web servers and DNS</h1>
-<p>The overall goal of this lab. is to complement knowledge on IP and subnets with some routing notions for setting up our own DNS and Web servers. This will be achieved using the same VMs as last week and default Linux tools.</p>
-<h2 id="learning-goals">Learning Goals</h2>
+<h1>Web servers and DNS</h1>
+<p>The overall goal of this lab. is to complement knowledge on IP and subnets with some routing notions for setting up our own DNS and Web servers.
+This will be achieved using the same VMs as last week and default Linux tools.</p>
+
+<h2>Learning Goals</h2>
+
 <div class="goals"><p>After this lab you will be able to:</p>
 <ul>
 <li>Recognise the role of routing in networking</li>
 <li>Use <code>ip route</code> for managing routes</li>
 <li>Retrieve basic DNS information</li>
 <li>Deploy simple network services</li>
-</ul></div>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="lab.-exercises">Lab. Exercises</h1>
+<h1>Lab. Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
-<p>Remember you should deliver a report after the networking module is finished. It should include the main commands and configurations necessary to complete each exercise. Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
+<p>Remember you should deliver a report after the networking module is finished.
+It should include the main commands and configurations necessary to complete each exercise.
+Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
-<h2 id="preparation">Preparation</h2>
-<div class="steps"><ol type="1">
-<li>Make sure there’s connectivity between both VMs (you should have configured static IP address in the previous labs.).</li>
+
+<h2>Preparation</h2>
+
+<div class="steps"><ol>
+<li>Make sure there's connectivity between both VMs (you should have configured static IP address in the previous labs.).</li>
 <li>Test if your Ubuntu VM has Internet connectivity.</li>
-<li>Make sure you’ve got enough free disk space for your VM (at least 3GB).</li>
-</ol></div>
+<li>Make sure you've got enough free disk space for your VM (at least 3GB).</li>
+</ol>
+</div>
 <p><strong>Note:</strong> If you have problems with lack of memory/RAM in your computer consider this:</p>
 <ul>
 <li>You can complete this entire lab. without the RPi VM (except for the optional part);</li>
 <li>You can run the Ubuntu VM in headless mode and connect to it via <code>ssh</code>;</li>
-<li>Instead of retrieving web pages with a “normal browser” you can use the command <code>wget</code> (or a text-based browser such as Lynx).</li>
+<li>Instead of retrieving web pages with a &quot;normal browser&quot; you can use the command <code>wget</code> (or a text-based browser such as Lynx).</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="a-simple-network-with-services">A simple network with services</h1>
+<h1>A simple network with services</h1>
+
 <div class="figure">
 <img src="figures/net/lab3-topo.png" alt="Network to be created with docker-compose." width="100%"/>
 <span name="figures/net/lab3-topo.png">&nbsp;</span>
-<aside name="figures/net/lab3-topo.png"><p><p>Network to be created with docker-compose.</p></p></aside>
+<aside name="figures/net/lab3-topo.png"><p><p>Network to be created with docker-compose.</p>
+</p></aside>
 </div>
-<p><strong>–&gt; In your Ubuntu VM</strong></p>
-<div class="steps"><ol type="1">
+<p><strong>--&gt; In your Ubuntu VM</strong></p>
+
+<div class="steps"><ol>
 <li>Download <a href="material/lab3-compose.zip">this zip file</a> with the necessary container configuration files.</li>
-<li><code>unzip</code> the downloaded file and inside the ‘lab3’ folder edit the ‘docker-compose.yml’ file.</li>
+<li><code>unzip</code> the downloaded file and inside the 'lab3' folder edit the 'docker-compose.yml' file.</li>
 <li>Read through the file and see how we configured 3 containers and their networks, matching the figure above.</li>
-<li>In the webserver’s configuration section edit the IP address to match the topology above (line 51, replace the text “—–Fyll inn her ——” with the correct IP address). Save and exit the file.</li>
+<li>In the webserver's configuration section edit the IP address to match the topology above (line 51, replace the text &quot;-----Fyll inn her ------&quot; with the correct IP address). Save and exit the file.</li>
 <li>Now you can start your topology with the command below. Afterwards list all running containers (discuss what happened in your report).</li>
-</ol></div>
+</ol>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span> <span class="at">--build</span></span></code></pre></div>
-<div class="tip"><p>The first time you run <code>docker-compose</code> it will take a few minutes to build the images (approx. 5 min. or less). Use that time to carefully read the next steps.</p></div>
-<h2 id="configuring-simple-routing">Configuring simple routing</h2>
-<p>In this part of the lab. your objective is to guarantee you can route packets from your host to the containers. Notice that we have a router in our topology that connects two different subnets. We will need to configure this router container (‘router0’) so that packets are correctly forwarded.</p>
-<p><strong>–&gt; In your Ubuntu VM</strong></p>
-<div class="steps"><ol type="1">
-<li>First, we should check our current routing table in the host machine (use: <code>ip route list</code>).</li>
-<li>You should see that the host has direct routes to the subnets ‘10.241.1.0/29’ and ‘10.168.1.0/29’, via the devices “br-*”. Include this in your report (a screenshot with a highlight is enough).</li>
-<li>Since we don’t want the host to directly access all the containers — it should go via ‘router0’ — run the following command:</li>
-</ol></div>
+<div class="tip"><p>The first time you run <code>docker-compose</code> it will take a few minutes to build the images (approx. 5 min. or less).
+Use that time to carefully read the next steps.</p>
+</div>
+<h2>Configuring simple routing</h2>
+<p>In this part of the lab. your objective is to guarantee you can route packets from your host to the containers.
+Notice that we have a router in our topology that connects two different subnets.
+We will need to configure this router container ('router0') so that packets are correctly forwarded.</p>
+<p><strong>--&gt; In your Ubuntu VM</strong></p>
+
+<div class="steps"><ol>
+<li>First, we should check our current routing table in the host machine (use: <code>ip route list </code>).</li>
+<li>You should see that the host has direct routes to the subnets '10.241.1.0/29' and '10.168.1.0/29', via the devices &quot;br-*&quot;. Include this in your report (a screenshot with a highlight is enough).</li>
+<li>Since we don't want the host to directly access all the containers --- it should go via 'router0' --- run the following command:</li>
+</ol>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip route del 10.241.1.0/29</span></code></pre></div>
-<div class="steps"><ol start="4" type="1">
-<li>Verify that you have connectivity with ‘10.168.1.2’ and not with ‘10.241.1.2’. Briefly explain why in your report.</li>
-<li>Now we need to add a new route such that traffic for the network ‘10.241.1.0/29’ is forwarded via ‘router0’ (i.e. via ‘10.168.1.2’).</li>
-</ol></div>
+<div class="steps"><ol start="4">
+<li>Verify that you have connectivity with '10.168.1.2' and not with '10.241.1.2'. Briefly explain why in your report.</li>
+<li>Now we need to add a new route such that traffic for the network '10.241.1.0/29' is forwarded via 'router0' (i.e. via '10.168.1.2').</li>
+</ol>
+</div>
 <button class="w3collapsible">Adding routes</button>
 <div class="w3content">
 <p>Remember the command <code>ip route add</code>.</p>
+
 </div>
-<div class="steps"><ol start="6" type="1">
-<li>Now verify that packet forwarding is enabled (i.e. “= 1”) with the command:</li>
-</ol></div>
+<div class="steps"><ol start="6">
+<li>Now verify that packet forwarding is enabled (i.e. &quot;= 1&quot;) with the command:</li>
+</ol>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sysctl</span> net.ipv4.conf.all.forwarding</span></code></pre></div>
-<div class="steps"><ol start="7" type="1">
+<div class="steps"><ol start="7">
 <li>From your host machine make sure you can <code>ping</code> the web server using its address and include a screenshot on your report.</li>
-</ol></div>
-<h2 id="using-our-dns-server-container">Using our DNS server (container)</h2>
-<p>As you can probably guess, our DNS container contains a running DNS server which will support our proposed network. Follow the steps below but don’t forget to explore the provided configurations to learn some more.</p>
-<p><strong>–&gt; In your Ubuntu VM</strong></p>
-<div class="steps"><ol type="1">
-<li>Open a web browser and try to retrieve the web site ‘www.ttm4175.com’. What happens and why?</li>
-<li>Edit the file ‘/etc/resolv.conf’ and change the “nameserver” to ‘10.241.1.2’ (or add a new entry above). This will tell the system to make DNS requests to this address first, which corresponds to our DNS container.</li>
+</ol>
+</div>
+<h2>Using our DNS server (container)</h2>
+<p>As you can probably guess, our DNS container contains a running DNS server which will support our proposed network.
+Follow the steps below but don't forget to explore the provided configurations to learn some more.</p>
+<p><strong>--&gt; In your Ubuntu VM</strong></p>
+
+<div class="steps"><ol>
+<li>Open a web browser and try to retrieve the web site 'www.ttm4175.com'. What happens and why?</li>
+<li>Edit the file '/etc/resolv.conf' and change the &quot;nameserver&quot; to '10.241.1.2' (or add a new entry above). This will tell the system to make DNS requests to this address first, which corresponds to our DNS container.</li>
 <li>Repeat step 1. What happens and why?</li>
-<li>Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. ‘mail.ttm4175.com’ resolves to ‘10.241.1.3’).</li>
-</ol></div>
+<li>Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. 'mail.ttm4175.com' resolves to '10.241.1.3').</li>
+</ol>
+</div>
 <button class="w3collapsible">Finding DNS server configurations</button>
 <div class="w3content">
-<p>If you explore the Docker configuration of the DNS container (in the ‘dnsserver/config_files’ folder) you will find all the details you need. You can also check inside the actual container you built, where the configuration files have been placed.</p>
+<p>If you explore the Docker configuration of the DNS container (in the 'dnsserver/config_files' folder) you will find all the details you need.
+You can also check inside the actual container you built, where the configuration files have been placed.</p>
+
 </div>
-<div class="tip"><p>To make nameserver changes permanent use the <em>netplan</em> configuration like you did last week.</p></div>
-<h2 id="exploring-our-web-server-container">Exploring our Web server (container)</h2>
-<p><strong>–&gt; In your Ubuntu VM</strong></p>
-<div class="steps"><ol type="1">
-<li>Go into your web server container (‘webserver’). How did you do it?</li>
-<li>Navigate to ‘/etc/nginx/sites-available’ and open the file ‘default’.</li>
-<li>In this file find the <em>root</em> directory where the web server pages are stored, namely the ‘index.html’ file, and include it in your report.</li>
-<li>In your host machine, open the web browser and visit the site ‘www.ttm4175.com’.</li>
-<li>Now, back in your web server container edit the file ‘index.html’ (be creative!!) and save it when you finish.</li>
+<div class="tip"><p>To make nameserver changes permanent use the <em>netplan</em> configuration like you did last week.</p>
+</div>
+<h2>Exploring our Web server (container)</h2>
+<p><strong>--&gt; In your Ubuntu VM</strong></p>
+
+<div class="steps"><ol>
+<li>Go into your web server container ('webserver'). How did you do it?</li>
+<li>Navigate to '/etc/nginx/sites-available' and open the file 'default'.</li>
+<li>In this file find the <em>root</em> directory where the web server pages are stored, namely the 'index.html' file, and include it in your report.</li>
+<li>In your host machine, open the web browser and visit the site 'www.ttm4175.com'.</li>
+<li>Now, back in your web server container edit the file 'index.html' (be creative!!) and save it when you finish.</li>
 <li>Return to your web browser, refresh the page (it should look different), take a screenshot and include it in your report.</li>
-</ol></div>
+</ol>
+</div>
 <button class="w3collapsible">Working inside your containers</button>
 <div class="w3content">
-<p>Remember that you can go inside your running containers with the command <code>docker exec -it &lt;name&gt; /bin/bash</code>. Alternatively, you can also use <code>ssh</code> to enter your container.</p>
-<p>And don’t forget the <a href="./commands.html">useful commands page</a>.</p>
+<p>Remember that you can go inside your running containers with the command <code>docker exec -it &lt;name&gt; /bin/bash</code>.
+Alternatively, you can also use <code>ssh</code> to enter your container.</p>
+<p>And don't forget the <a href="./commands.html">useful commands page</a>.</p>
+
 </div>
-<h2 id="final-task">Final task</h2>
-<p>In your report describe what happens in the network when you open the page ‘www.ttm4175.com’. You can just explain, step by step, the requests and answers from the browser to the servers and back. This should include the IP addresses of each server (don’t forget DNS).</p>
-<p>If you want, you can also include screenshots (e.g. <code>tcpdump</code>) and you can also start/stop containers by hand to see how they affect the overall process (e.g. stop the DNS server).</p>
+<h2>Final task</h2>
+<p>In your report describe what happens in the network when you open the page 'www.ttm4175.com'.
+You can just explain, step by step, the requests and answers from the browser to the servers and back.
+This should include the IP addresses of each server (don't forget DNS).</p>
+<p>If you want, you can also include screenshots (e.g. <code>tcpdump</code>) and you can also start/stop containers by hand to see how they affect the overall process (e.g. stop the DNS server).</p>
 <p>Finally, you can stop all the containers and remove the networks with the command:</p>
+
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> down</span></code></pre></div>
-<div class="tip"><p>If you want to restart your network but haven’t changed the setup you can simply run <code>docker-compose up -d</code>, without the <code>--build</code> flag, and it will be much faster than the first time!</p></div>
+<div class="tip"><p>If you want to restart your network but haven't changed the setup you can simply run <code>docker-compose up -d</code>, without the <code>--build</code> flag, and it will be much faster than the first time!</p>
+</div>
     </section>
     <section class="content">
-<h1 id="optional-exercises">Optional Exercises</h1>
-<h2 id="routing-from-the-rpi-to-the-docker-services">Routing from the RPi to the Docker services</h2>
-<p><strong>–&gt; In your RPi VM</strong></p>
-<div class="steps"><ol type="1">
-<li>Can you <code>ping</code> the container ‘router0’? Why or why not?</li>
+<h1>Optional Exercises</h1>
+<h2>Routing from the RPi to the Docker services</h2>
+<p><strong>--&gt; In your RPi VM</strong></p>
+
+<div class="steps"><ol>
+<li>Can you <code>ping</code> the container 'router0'? Why or why not?</li>
 <li>How does your routing table look like? Do you need to add or remove any entry?</li>
-<li><strong>After having IP connectivity</strong>, attempt to open or <code>ping</code> the web server using the hostname ‘www.ttm4175.com’. What happens? Why? How can you fix it?</li>
-</ol></div>
+<li><strong>After having IP connectivity</strong>, attempt to open or <code>ping</code> the web server using the hostname 'www.ttm4175.com'. What happens? Why? How can you fix it?</li>
+</ol>
+</div>
 <button class="w3collapsible">Tips for pros</button>
 <div class="w3content">
-<p>Forwarding is enabled in Ubuntu but <code>iptables</code> doesn’t allow forwarding from outside the host to our containers.</p>
+<p>Forwarding is enabled in Ubuntu but <code>iptables</code> doesn't allow forwarding from outside the host to our containers.</p>
 <p>You need to allow enable forwarding specifically to the network or interface, e.g.:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> iptables <span class="at">-A</span> FORWARD <span class="at">-i</span> enp0s8 <span class="at">-j</span> ACCEPT</span></code></pre></div>
+<pre><code class="language-bash">sudo iptables -A FORWARD -i enp0s8 -j ACCEPT
+</code></pre>
+
 </div>
     </section>
 </div>

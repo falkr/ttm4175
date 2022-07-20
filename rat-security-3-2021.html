@@ -16,7 +16,58 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.figure {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
 }
@@ -104,6 +155,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -112,16 +176,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -135,11 +195,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -159,6 +217,19 @@ div.tip p {
   border-left: 6px solid #1481b8
 }
 
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -312,86 +383,97 @@ div.tip p {
 
 <div class="page">
     <section class="content">
-<h2 id="question-1">Question 1</h2>
+<h2>Question 1</h2>
+
 <div class="rat"><p>Which of the following is a characteristics of a static webpage?</p>
-<ol type="1">
+<ol>
 <li>There is no client side code execution</li>
 <li>Everything that is running outside of Amazon</li>
 <li>The php code is executed only on the client side</li>
 <li>There is no server side code execution</li>
 </ol>
-<h2 id="question-2">Question 2</h2></div>
+<h2>Question 2</h2>
+</div>
 <div class="rat"><p>Which of the following is not a characteristics of a dynamic webpage?</p>
-<ol type="1">
+<ol>
 <li>Also known as server side web applications</li>
 <li>It creates HTML pages on the server side</li>
 <li>Often establishes database requests on the server side</li>
 <li>The ruby on rails code is executed on both sides</li>
 </ol>
-<h2 id="question-3">Question 3</h2></div>
+<h2>Question 3</h2>
+</div>
 <div class="rat"><p>Which filetype cannot be downloaded from the webserver to the browser?</p>
-<ol type="1">
+<ol>
 <li>html files</li>
 <li>png files</li>
 <li>php files</li>
 <li>stylesheets (css files)</li>
 </ol>
-<h2 id="question-4">Question 4</h2></div>
+<h2>Question 4</h2>
+</div>
 <div class="rat"><p>What is true for XMLHttpRequest?</p>
-<ol type="1">
+<ol>
 <li>running on the client and server side</li>
 <li>running only on the client side</li>
 <li>running only on the server side</li>
 <li>it updates the webpage only when the users ask for it</li>
 </ol>
-<h2 id="question-5">Question 5</h2></div>
+<h2>Question 5</h2>
+</div>
 <div class="rat"><p>Which of the following is not part of a web request?</p>
-<ol type="1">
+<ol>
 <li>body</li>
 <li>status code</li>
 <li>command</li>
 <li>header</li>
 </ol>
-<h2 id="question-6">Question 6</h2></div>
+<h2>Question 6</h2>
+</div>
 <div class="rat"><p>What type of error is indicated with the 404 File not Found status code?</p>
-<ol type="1">
+<ol>
 <li>redirection error</li>
 <li>client error</li>
 <li>server error</li>
 <li>informational error</li>
 </ol>
-<h2 id="question-7">Question 7</h2></div>
+<h2>Question 7</h2>
+</div>
 <div class="rat"><p>Which of the following cannot be part of the request header?</p>
-<ol type="1">
+<ol>
 <li>browser type</li>
 <li>encoding</li>
 <li>accepted language</li>
 <li>last modified timestamp</li>
 </ol>
-<h2 id="question-8">Question 8</h2></div>
+<h2>Question 8</h2>
+</div>
 <div class="rat"><p>Which of these is a valid html tag?</p>
-<ol type="1">
+<ol>
 <li><code>&lt;body&gt;</code></li>
 <li><code>&lt;http&gt;</code></li>
 <li><code>(head)</code></li>
 <li><code>&lt;/php&gt;</code></li>
 </ol>
-<h2 id="question-9">Question 9</h2></div>
+<h2>Question 9</h2>
+</div>
 <div class="rat"><p>Which html element changes the look of the fonts with the size?</p>
-<ol type="1">
+<ol>
 <li><code>&lt;p&gt;</code></li>
 <li><code>&lt;fontsize&gt;</code></li>
 <li><code>&lt;h1&gt;</code></li>
 <li><code>&lt;title&gt;</code></li>
 </ol>
-<h2 id="question-10">Question 10</h2></div>
+<h2>Question 10</h2>
+</div>
 <div class="rat"><p>Which is true?</p>
-<ol type="1">
+<ol>
 <li>Hypertext in HTML refers to client side code languages such as javascript</li>
 <li>HTML tags can be embedded in each other</li>
 <li>HTML was developed by DARPA</li>
 <li>The latest HTML version in use is HTML4</li>
-</ol></div>
+</ol>
+</div>
     </section>
 </div>
 

@@ -24,7 +24,7 @@ a.ntnu-button {
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -176,16 +176,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,10 +195,7 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
 div.task p {
@@ -391,17 +384,20 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="teams">Teams</h1>
+<h1>Teams</h1>
+
 <p>In this course we will work in teams. To be flexible and have the optimal number of students for the different activities, we have a structure of double teams:</p>
 <ul>
 <li>You will be assigned to a team of three students, this is your <strong>core team</strong> <strong>(kjerneteam)</strong>.</li>
 <li>Two core teams are combined into a <strong>double team</strong> of six students, for tasks which are better in larger teams.</li>
 </ul>
 <p>The team ID consists of a letter and a number that distinguish core team and double team. You will find the team assignments on Blackboard.</p>
+
 <div class="figure">
 <img src="figures/teams.png" alt="You belong at the same time to a team of 3 and a team of 6." width="100%"/>
 <span name="figures/teams.png">&nbsp;</span>
-<aside name="figures/teams.png"><p><p>You belong at the same time to a team of 3 and a team of 6.</p></p></aside>
+<aside name="figures/teams.png"><p><p>You belong at the same time to a team of 3 and a team of 6.</p>
+</p></aside>
 </div>
 <p>We will use the double teams for:</p>
 <ul>
@@ -413,6 +409,7 @@ display: inline;
 <li>the labs</li>
 <li>the reports</li>
 </ul>
+
     </section>
 </div>
 

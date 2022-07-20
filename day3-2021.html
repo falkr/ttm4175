@@ -16,12 +16,15 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">a.ntnu-button {
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
     border: 1px solid #00509e;
-    border-color: #00509e !important
+    border-color: #00509e !important;
     border-style: solid !important;
     border-radius: 10rem;
     display: inline-block;
@@ -160,16 +163,12 @@ div.rat ol {
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -183,23 +182,9 @@ div.rat ol {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
-}
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
+  margin: -20px -10px -20px -20px
 }
 
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -374,16 +359,18 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="day3---introduction-to-open-source-intelligence-osint">Day3 - Introduction to Open Source Intelligence (OSINT)</h1>
+<h1>Day3 - Introduction to Open Source Intelligence (OSINT)</h1>
 <p>The first task of a hacking attack is to plan the attack and prepare for the attack. In order to get information about the target thorough information gathering process is needed.</p>
-<h2 id="osint-tools">OSINT tools</h2>
+<h2>OSINT tools</h2>
 <p>Several OSINT information gathering methods will be discussed such as how to obtain specific information from the social media or with Internet search engines.</p>
 <p><a href="https://www.blackhat.com/presentations/bh-europe-05/BH_EU_05-Long.pdf">Google hacking</a></p>
 <p><a href="https://www.cybrary.it/blog/0p3n/google-dorks-easy-way-of-hacking/">Google dork on easy way of hacking</a></p>
-<h2 id="information-gathering-ctf-challenges">Information gathering CTF challenges</h2>
-<p>The Darth Vader <a href="https://vader.hackingarena.com">vader.hackingarena.com</a> challenge server presents different information gathering challenges. Student groups should be created with 4 members. The groups start the competition by trying to solve the presented challenges.</p>
-<h2 id="solution-of-the-information-gathering-challenges">Solution of the Information gathering challenges</h2>
+<h2>Information gathering CTF challenges</h2>
+<p>The Darth Vader <a href="https://vader.hackingarena.com">vader.hackingarena.com</a> challenge server presents different information gathering challenges.
+Student groups should be created with 4 members. The groups start the competition by trying to solve the presented challenges.</p>
+<h2>Solution of the Information gathering challenges</h2>
 <p>The solution for the information gathering challenges will be provided by the end of the day.</p>
+
     </section>
 </div>
 

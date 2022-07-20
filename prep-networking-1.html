@@ -19,30 +19,6 @@
 <style type="text/css">div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
-a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
 div.check ul,
 div.check ul li {
   padding: 0;
@@ -155,19 +131,6 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -176,16 +139,12 @@ display: inline;
 
 .steps li {
   margin: 0 0 10px 0;
-  xline-height: 40px;
   min-height: 40px
 }
 
 .steps li:before {
   content: counter(li);
   counter-increment: li;
-  xborder: 2px solid #1481b8;
-  xcolor: white;
-  xbackground-color: #1481b8;
   border: 2px solid #868279;
   color: #868279;
   background-color: none;
@@ -199,24 +158,9 @@ display: inline;
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right:-10px;
-  margin-left:-20px;
-  margin-top:-20px;
-  margin-bottom:-20px;
+  margin: -20px -10px -20px -20px
 }
 
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -391,11 +335,16 @@ display: inline;
 <div class="page">
     </section>
     <section class="content">
-<h1 id="ip-addresses-subnets-and-routing">IP Addresses, Subnets and Routing</h1>
-<p>Last week you have already learned about IP addresses and how to connect your Raspberry Pi to the Internet. Now you will learn even more about IP addressing, routing and the fundamental aspects that enable the Internet.</p>
-<p>To know more about networking we will be using the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>, which can be freely downloaded. We will be using this book in the upcoming three weeks.</p>
-<p>Reading the <em>first chapter is recommended</em> but not mandatory. However, each week will focus on specific sections that need to be read and understood. <em>Details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
-<h2 id="learning-goals">Learning Goals</h2>
+<h1>IP Addresses, Subnets and Routing</h1>
+<p>Last week you have already learned about IP addresses and how to connect your Raspberry Pi to the Internet.
+Now you will learn even more about IP addressing, routing and the fundamental aspects that enable the Internet.</p>
+<p>To know more about networking we will be using the book <a href="http://intronetworks.cs.luc.edu/">An Introduction To Computer Networks</a>, which can be freely downloaded.
+We will be using this book in the upcoming three weeks.</p>
+<p>Reading the <em>first chapter is recommended</em> but not mandatory.
+However, each week will focus on specific sections that need to be read and understood.
+<em>Details about the required readings will be available in each section, <strong>in bold</strong>.</em></p>
+<h2>Learning Goals</h2>
+
 <div class="goals"><p>After this week you will be able to:</p>
 <ul>
 <li>Understand IP addresses and their organisation into subnets</li>
@@ -404,31 +353,40 @@ display: inline;
 <ul>
 <li>IP addresses (IPv4 and IPv6)</li>
 <li>routes and routing tables</li>
-</ul></li>
-</ul></div>
+</ul>
+</li>
+</ul>
+</div>
     </section>
     <section class="content">
-<h1 id="understanding-ip-addresses-and-subnets">Understanding IP addresses and subnets</h1>
+<h1>Understanding IP addresses and subnets</h1>
 <p>The following video gives a short overview how IP addresses are used on our everyday lives whenever we use the Internet.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/L6bDA5FK6gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2 id="more-about-ip-addresses">More about IP addresses</h2>
-<p>Focusing on IP addresses, and to prepare for the lecture’s quiz, you need to read <strong>section 1.10 (from page 24 to page 29)</strong>. If you already read the first chapter you can skip to the next section on subnets.</p>
-<h2 id="subnets">Subnets</h2>
-<p>In order to better understand subnets, which we will use together with private addresses, you should read <strong>section 7.3 (page 190)</strong>. After knowing more about special addresses you need to understand how subnets are used in IPv4 and IPv6 by reading:</p>
+<h2>More about IP addresses</h2>
+<p>Focusing on IP addresses, and to prepare for the lecture's quiz, you need to read <strong>section 1.10 (from page 24 to page 29)</strong>.
+If you already read the first chapter you can skip to the next section on subnets.</p>
+<h2>Subnets</h2>
+<p>In order to better understand subnets, which we will use together with private addresses, you should read <strong>section 7.3 (page 190)</strong>.
+After knowing more about special addresses you need to understand how subnets are used in IPv4 and IPv6 by reading:</p>
 <ul>
-<li><strong>Section 7.6 and 7.6.1 (from page 194 to 198)</strong> – IPv4</li>
-<li><strong>Section 8.10 and 8.10.1 (pages 248 and 249)</strong> – IPv6</li>
+<li><strong>Section 7.6 and 7.6.1 (from page 194 to 198)</strong> -- IPv4</li>
+<li><strong>Section 8.10 and 8.10.1 (pages 248 and 249)</strong> -- IPv6</li>
 </ul>
+
     </section>
     <section class="content">
-<h1 id="routing">Routing</h1>
-<p>The videos and readings above already provided some insights about routing. However the following video provides more information and shows the importance of routing in today’s Internet.</p>
+<h1>Routing</h1>
+<p>The videos and readings above already provided some insights about routing.
+However the following video provides more information and shows the importance of routing in today's Internet.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AkxqkoxErRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p>If you want to know some more about the Internet and network stacks the following video is also very interesting.</p>
+
 <div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PG9oKZdFb7w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
