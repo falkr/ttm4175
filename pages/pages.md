@@ -11,7 +11,6 @@
 * [About Teamwork](working-in-teams.html)
 
 
-
 # Uke 33
 
 * [Day 0](day0-2021.html)
@@ -21,8 +20,6 @@
 * [Day 2](day2-2021.html)
 * [Day 3](day3-2021.html)
 * [Tips](tips.html)
-
-
 
 
 # Etisk Hacking
@@ -50,30 +47,7 @@
 
 
 
-# IoT
-
-* Lab 1
-  * [Prep Intro](prep-iot-intro.html) Into on IoT, three videos.
-  * [Prep Devices](prep-iot-devices.html) Install Python and Visual Studio.
-  * [Devices Lab](iot-devices-2021.html) Microbit introduction
-* Lab 2 - STMs
-  * [STM](prep-iot-stm.html)
-  * [STMPY](prep-iot-stmpy.html)
-  * [RAT](rat-iot-2.html)
-  * [STM Lab](iot-stm-2021.html)
-  * [STM Lab Examples](iot-stm-examples.html)
-* Lab 4 - MQTT
-  * [Prep MQTT](prep-iot-mqtt.html)
-  * [RAT4](rat-iot-4.html)
-  * [MQTT Chat](iot-mqtt-chat.html)
-* Lab 3 with HTTP / JSON
-  * [RAT 3](rat-iot-3.html)
-* Old
-  * [MQTT](iot-mqtt.html) Old MQTT. Broker, Sense HAT
-
-
-
-# Networking
+# Networking and Command Line
 
 ## 2019
 
@@ -109,7 +83,7 @@ Uses the book also used in TTM4200.
 
 
 
-# Command Line
+## Command Line
 
 * [Help on Commands](commands-help.html)
 * [Useful Commands](commands.html)
@@ -117,10 +91,33 @@ Uses the book also used in TTM4200.
 * [RAT](rat0.html)
 
 
-# Installation / Usage Guides
+## Installation / Usage Guides
 
 * [Shell Mac](shell-mac.html)
 * [Shell Windows](shell-win.html)
 * [Virtual Box Mac](virtual-box-mac.html)
 * [Virtual Box Win](virtual-box-win.html)
 * [Virtual Box Machine](virtual-machine.html)
+
+
+
+# IoT
+
+* Lab 1
+  * [Prep Intro](prep-iot-intro.html) Into on IoT, three videos.
+  * [Prep Devices](prep-iot-devices.html) Install Python and Visual Studio.
+  * [Devices Lab](iot-devices-2021.html) Microbit introduction
+* Lab 2 - STMs
+  * [STM](prep-iot-stm.html)
+  * [STMPY](prep-iot-stmpy.html)
+  * [RAT](rat-iot-2.html)
+  * [STM Lab](iot-stm-2021.html)
+  * [STM Lab Examples](iot-stm-examples.html)
+* Lab 4 - MQTT
+  * [Prep MQTT](prep-iot-mqtt.html)
+  * [RAT4](rat-iot-4.html)
+  * [MQTT Chat](iot-mqtt-chat.html)
+* Lab 3 with HTTP / JSON
+  * [RAT 3](rat-iot-3.html)
+* Old
+  * [MQTT](iot-mqtt.html) Old MQTT. Broker, Sense HAT
