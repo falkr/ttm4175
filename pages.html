@@ -128,6 +128,19 @@ div.goals ul li:before {
 div.rat ol {
   list-style-type: upper-alpha;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .steps ol, .steps ul {
   counter-reset: li;
   list-style: none;
@@ -156,6 +169,18 @@ div.rat ol {
   height: 30px;
   position: relative;
   margin: -20px -10px -20px -20px
+}
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
 }
 div.tip p {
   padding: 10px;
@@ -403,46 +428,7 @@ display: inline;
 
     </section>
     <section class="content">
-<h1>IoT</h1>
-<ul>
-<li>Lab 1
-<ul>
-<li><a href="prep-iot-intro.html">Prep Intro</a> Into on IoT, three videos.</li>
-<li><a href="prep-iot-devices.html">Prep Devices</a> Install Python and Visual Studio.</li>
-<li><a href="iot-devices-2021.html">Devices Lab</a> Microbit introduction</li>
-</ul>
-</li>
-<li>Lab 2 - STMs
-<ul>
-<li><a href="prep-iot-stm.html">STM</a></li>
-<li><a href="prep-iot-stmpy.html">STMPY</a></li>
-<li><a href="rat-iot-2.html">RAT</a></li>
-<li><a href="iot-stm-2021.html">STM Lab</a></li>
-<li><a href="iot-stm-examples.html">STM Lab Examples</a></li>
-</ul>
-</li>
-<li>Lab 4 - MQTT
-<ul>
-<li><a href="prep-iot-mqtt.html">Prep MQTT</a></li>
-<li><a href="rat-iot-4.html">RAT4</a></li>
-<li><a href="iot-mqtt-chat.html">MQTT Chat</a></li>
-</ul>
-</li>
-<li>Lab 3 with HTTP / JSON
-<ul>
-<li><a href="rat-iot-3.html">RAT 3</a></li>
-</ul>
-</li>
-<li>Old
-<ul>
-<li><a href="iot-mqtt.html">MQTT</a> Old MQTT. Broker, Sense HAT</li>
-</ul>
-</li>
-</ul>
-
-    </section>
-    <section class="content">
-<h1>Networking</h1>
+<h1>Networking and Command Line</h1>
 <h2>2019</h2>
 <p>Uses the book also used in TTM4200. Uses Raspberry Pi in the labs.</p>
 <ul>
@@ -492,9 +478,7 @@ display: inline;
 </li>
 </ul>
 
-    </section>
-    <section class="content">
-<h1>Command Line</h1>
+<h2>Command Line</h2>
 <ul>
 <li><a href="commands-help.html">Help on Commands</a></li>
 <li><a href="commands.html">Useful Commands</a></li>
@@ -502,15 +486,52 @@ display: inline;
 <li><a href="rat0.html">RAT</a></li>
 </ul>
 
-    </section>
-    <section class="content">
-<h1>Installation / Usage Guides</h1>
+<h2>Installation / Usage Guides</h2>
 <ul>
 <li><a href="shell-mac.html">Shell Mac</a></li>
 <li><a href="shell-win.html">Shell Windows</a></li>
 <li><a href="virtual-box-mac.html">Virtual Box Mac</a></li>
 <li><a href="virtual-box-win.html">Virtual Box Win</a></li>
 <li><a href="virtual-machine.html">Virtual Box Machine</a></li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>IoT</h1>
+<ul>
+<li>Lab 1
+<ul>
+<li><a href="prep-iot-intro.html">Prep Intro</a> Into on IoT, three videos.</li>
+<li><a href="prep-iot-devices.html">Prep Devices</a> Install Python and Visual Studio.</li>
+<li><a href="iot-devices-2021.html">Devices Lab</a> Microbit introduction</li>
+</ul>
+</li>
+<li>Lab 2 - STMs
+<ul>
+<li><a href="prep-iot-stm.html">STM</a></li>
+<li><a href="prep-iot-stmpy.html">STMPY</a></li>
+<li><a href="rat-iot-2.html">RAT</a></li>
+<li><a href="iot-stm-2021.html">STM Lab</a></li>
+<li><a href="iot-stm-examples.html">STM Lab Examples</a></li>
+</ul>
+</li>
+<li>Lab 4 - MQTT
+<ul>
+<li><a href="prep-iot-mqtt.html">Prep MQTT</a></li>
+<li><a href="rat-iot-4.html">RAT4</a></li>
+<li><a href="iot-mqtt-chat.html">MQTT Chat</a></li>
+</ul>
+</li>
+<li>Lab 3 with HTTP / JSON
+<ul>
+<li><a href="rat-iot-3.html">RAT 3</a></li>
+</ul>
+</li>
+<li>Old
+<ul>
+<li><a href="iot-mqtt.html">MQTT</a> Old MQTT. Broker, Sense HAT</li>
+</ul>
+</li>
 </ul>
 
     </section>
