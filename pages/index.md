@@ -27,7 +27,7 @@ type: table
 | [EL-6](https://link.mazemap.com/kolUEtCs)
 |-
 | Tirsdag, 16. aug.
-| _ingenting_
+| bedriftsbesøk
 |
 |-
 | Onsdag, 17. aug. 2022, 9:00 - ca. 16:30
