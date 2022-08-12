@@ -27,8 +27,8 @@ type: table
 | [EL-6](https://link.mazemap.com/kolUEtCs)
 |-
 | Tirsdag, 16. aug.
-| bedriftsbesøk
-|
+| Bedriftsbesøk 
+| 08:15 ved [SINTEF](https://goo.gl/maps/x6XQTSBWf9sjheNV8)
 |-
 | Onsdag, 17. aug. 2022, 9:00 - ca. 16:30
 | Teknostart Dag 1
@@ -43,10 +43,7 @@ type: table
 | [EL-6](https://link.mazemap.com/kolUEtCs)
 |}
 
-
-#### Bedriftsbesøk 
-
-Allerede tirsdag 16. august skal dere få besøke en bedrift og få se hva dere kan jobbe med i fremtiden. Da vil SINTEF og Norsk Helsenett vil gi dere et innblikk i arbeidslivet.
+**Bedriftsbesøk:** Allerede tirsdag 16. august skal dere få besøke en bedrift og få se hva dere kan jobbe med i fremtiden. Da vil SINTEF og Norsk Helsenett vil gi dere et innblikk i arbeidslivet.
 Det blir også servert frokost, så alt dere trenger å gjøre er å møte opp kl. 08.15 hos SINTEF (Strindvegen 4, [se kart her](https://goo.gl/maps/x6XQTSBWf9sjheNV8)).
 
 
