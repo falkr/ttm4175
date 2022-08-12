@@ -31,13 +31,13 @@
 ├── Loading template /home/runner/work/ttm4175/ttm4175/templates/page.html.
 ├── Using threadpool.
 └── Translated
+    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3.html
+    ├── /home/runner/work/ttm4175/ttm4175/learning-rats.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/learning-rats.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-1-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/smash.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-security-3-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-1-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/reports.html
     ├── /home/runner/work/ttm4175/ttm4175/teamwork-2.html
@@ -50,38 +50,38 @@
     ├── /home/runner/work/ttm4175/ttm4175/rpi-python3-6.html
     ├── /home/runner/work/ttm4175/ttm4175/virtual-box-win.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-security-5-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/pages.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-stm-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/tools.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-stm.html
+    ├── /home/runner/work/ttm4175/ttm4175/pages.html
     ├── /home/runner/work/ttm4175/ttm4175/commands-help.html
+    ├── /home/runner/work/ttm4175/ttm4175/tools.html
     ├── /home/runner/work/ttm4175/ttm4175/tips.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-stm.html
     ├── /home/runner/work/ttm4175/ttm4175/commands.html
     ├── /home/runner/work/ttm4175/ttm4175/feedback.html
-    ├── /home/runner/work/ttm4175/ttm4175/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/working-in-teams.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-security-2-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-api.html
-    ├── /home/runner/work/ttm4175/ttm4175/virtual-box-mac.html
     ├── /home/runner/work/ttm4175/ttm4175/networking-3-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-mqtt.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-api.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-security-2-2021.html
+    ├── /home/runner/work/ttm4175/ttm4175/working-in-teams.html
+    ├── /home/runner/work/ttm4175/ttm4175/index.html
     ├── /home/runner/work/ttm4175/ttm4175/day2-2021.html
+    ├── /home/runner/work/ttm4175/ttm4175/virtual-box-mac.html
     ├── /home/runner/work/ttm4175/ttm4175/day0-2021.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-iot-mqtt.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-devices.html
     ├── /home/runner/work/ttm4175/ttm4175/day3-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/teamwork-1.html
     ├── /home/runner/work/ttm4175/ttm4175/shell-win.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-security-1-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/security-1-2021.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-security-1-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/networking-3.html
     ├── /home/runner/work/ttm4175/ttm4175/shell-mac.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-2.html
     ├── /home/runner/work/ttm4175/ttm4175/labs.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-1.html
     ├── /home/runner/work/ttm4175/ttm4175/computer-history.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-1.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-2.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-intro.html
     ├── /home/runner/work/ttm4175/ttm4175/networking-2-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-1-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-stmpy.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-1-2020.html
     └── /home/runner/work/ttm4175/ttm4175/iot-mqtt-chat.html
