@@ -72,7 +72,7 @@ type: table
 |-
 | 37
 |
-| 
+| Frank: Om Teamarbeid
 |-
 | 38
 |
@@ -92,7 +92,7 @@ type: table
 |-
 | 42
 | 
-| Frank: Om Teamarbeid
+| 
 |-
 | 43
 |
