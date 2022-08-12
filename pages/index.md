@@ -92,7 +92,7 @@ type: table
 |-
 | 42
 | 
-| _info kommer_
+| Frank: Om Teamarbeid
 |-
 | 43
 |
