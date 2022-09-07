@@ -224,6 +224,34 @@ div.warning p::before {
     color: #fc8c03;
 display: inline;
 }
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
 </style>
 <script src="assets/anchor.js"></script>
 <script src="assets/script-aside.js"></script>
@@ -263,6 +291,8 @@ display: inline;
       <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
       <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
       <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="prep-teamwork.html">Teamwork</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>

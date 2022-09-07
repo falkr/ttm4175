@@ -40,6 +40,30 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -75,8 +99,131 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #1481b8;
 }
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
 
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
 table.weekplan {
   width: 100%;
   table-layout: fixed;
@@ -261,83 +408,39 @@ table.weekplan a {
 <div class="page">
     </section>
     <section class="content">
-<h1>Internet of Things</h1>
-<p>Most of you have heard about the <em>Internet of Things</em> or IoT in various settings, how it <em>&quot;connects everything&quot;</em> and makes <em>&quot;everything smart&quot;</em>. It's hard to tell which of the predictions will come true and which ones will remain fantasy. Some products are useful to some (I for example really like that my door does not need a physical key anymore), some products will remain useless, and maybe we haven't thought of the really useful applications yet.</p>
-<p>In this week, we start by looking at some of the ingredients of IoT systems, some of the challenges, and start programming an IoT device in Python.</p>
-<p>A good way of thinking about IoT is to understand the underlying technological trends that happened over the last decades:</p>
+<h1>Working in Teams</h1>
+<p>You have already started to work in a team, and maybe got to know some of the team members a little bit better.
+Much of the work as an engineer is done in teams.
+Working well in teams, and coordinating them is maybe one of the most important non-technical skills you need when working.</p>
+<p>We therefore spend an entire week only on learning about teamwork and reflecting about it.</p>
+
+<h2>Learning Goals</h2>
+
+<div class="goals"><p>After this week, you will be able to:</p>
 <ul>
-<li><strong>Embedded computing</strong> devices get smaller, cheaper and more energy-efficient. This makes it feasible to embed computers into all kinds of devices. The term <em>embedded</em> simply means that the computation is not happening in a general-purpose computer (like your laptop) but embedded into another system or product.</li>
-<li><strong>Mobile coverage</strong> is improving, and new protocols are available that are suitable for energy-efficient machine-to-machine communication.</li>
-<li>Advances in <strong>data analytics</strong> and machine learning make it possible to process data and learn from it, so that data gathered by many embedded devices can be transformed into valuable knowledge.</li>
+<li>Be more aware of the importance of teamwork</li>
+<li>Be aware and reflect about your own role in teams</li>
 </ul>
-<p>These trends make it possible that general things (and not only typical computers and phones) can gain computational power and be connected to the internet.
-Examples are often grouped into different <strong>domains</strong>, many of them referring with the word &quot;smart&quot; to the fact that they are computational and communicating:</p>
-<ul>
-<li><strong>Smart Home</strong>: Light bulbs can be controlled remotely, and the house can be instrumented with sensors to detect if someone is breaking in, water leaks or fire starts. It can also be used to measure temperature and humidity in each room for climate control.</li>
-<li><strong>Smart Buildings</strong>: In larger buildings, heating and lights can be controlled according to where people are, and facilities such as toilets are cleaned in proportion with their usage.</li>
-<li><strong>Smart City</strong>: Living conditions and usage patterns can be monitored, such as noise or air quality. Examples are also smarter handling of waste, as waste bins can tell how full they are and energy can be saved by not emptying bins that are not yet full.</li>
-<li><strong>Smart Grid</strong>: This is the term for the energy distribution net, which to an increasing degree gets digitalized so that it can be monitored and controlled better.</li>
-<li><strong>Industry 4.0</strong>: Tools and fabrication facilities can be better instrumented to have better control over the production process.</li>
-<li><strong>Precision Agriculture</strong>: Soil moisture can be monitored and controlled in much more fine-grained levels so that water and fertilizer or fungicides can be applied much more targeted. Animals can be tracked and their behavior observed.</li>
-<li><strong>Intelligent Traffic Systems</strong>: Monitoring the state of roads with regard to weather, and infrastructure like bridges and tunnels for structural safety.</li>
-</ul>
-<p>These are just a few examples. Most of them have in common that they monitor some phenomena (like the physical properties of something) or observe resources so that we can make better decisions that, in the end, save valuable resources.
-But apart from these potential benefits, there is also a long list of <strong>challenges, problems and dangers</strong> that come with this type of system.</p>
-<ul>
-<li><strong>Privacy</strong>: More devices around us that collect more data are also a challenge regarding privacy, when data is used differently than originally intended, unaware by who is observed, or simply stolen.</li>
-<li><strong>Security</strong>: More connected devices mean a larger surface for attacks. This is dangerous for the devices or the connected systems, but also for other systems, as IoT devices can be used for distributed denial of service attacks that can render other systems unusable.</li>
-<li><strong>Safety</strong>: When cars or other potentially dangerous devices get connected, we need to focus on the implications for safety.</li>
-<li><strong>Electronic Waste</strong>: We cannot just build more and more electronics with short lifecycle without worrying where the poisonous materials for their production come from or where they end up. Also note that the waste problem does not only mean what is happening with the specific device <em>after</em> its lifetime, but that its production already created a lot of problematic waste <em>during its production</em>.</li>
-</ul>
-
-<h2>IoT Security, Safety, Privacy</h2>
-<p>Let's first have a look at security in general in a video that also provides some context about IoT:</p>
-<!-- 15:15 -->
-
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/D3yrk4TaIQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2>Safety in IoT</h2>
-<!-- 7:48 -->
-<p>This is a video from the Computerphile Channel, where Ross Anderson explains the challenge with the Internet of things with regard to safety.</p>
+    </section>
+    <section class="content">
+<h1>Preparation</h1>
 
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PLiE0Nr8VOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<p>One of the main arguments in this video is that IoT creates a new category of device. Before, we had two types of devices:</p>
-<ul>
-<li>Devices with short lifetimes (2-5 years), like computers and mobile phones. During their short lifetimes, they receive monthly updates for security until they are replaced since there are much more powerful devices.</li>
-<li>Devices with long lifetimes (&gt;10-20 years), like cars or fridges, which are engineered once, then tested but do not regularly receive updates.</li>
-</ul>
-<p>With the IoT, the division between these two categories is getting blurry: A device that should have a long lifetime (like a car or a fridge) is combined with a components that has a traditionally short lifecycle (the embedded computer), and suddenly a device may need critical security updates several decades into the future!</p>
+<h2>Teamwork in this Course</h2>
+<p>As an introduction, <a href="working-in-teams.html">read this short introduction about teamwork in this specific course</a>.</p>
 
-<div class="figure">
-<img src="figures/iot/iot-lifetime.png" alt="IoT devices combine functions that have very different lifetimes." width="100%"/>
-<span name="figures/iot/iot-lifetime.png">&nbsp;</span>
-<aside name="figures/iot/iot-lifetime.png"><p><p>IoT devices combine functions that have very different lifetimes.</p>
-</p></aside>
-</div>
-<p>Think about the dilemma with these different life cycles. Is this a reason why a smart fridge is really a bad product idea? Here is a nice article: <a href="https://www.ifixit.com/News/7747/smart-fridges-dumb-idea">Smart Fridges Are Still a Dumb Idea</a></p>
+<h2>Team Roles</h2>
+<p>Everyone is different, and has different points of view, different strengths, preferences and weaknesses.
+Working as an effective team also means to be aware of these differences, being aware of each others' strengths, weaknesses and compensate where necessary.</p>
 
-<h2>Privacy in IoT</h2>
-<!-- 17:37  -->
-<p>The following is an interview with <a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>, the founder of the Free Software Foundation. The interview starts a bit awkward, but gets into the fundamental privacy issues raised by IoT.</p>
+<p>As a start, we perform a role analysis for each one of you. For this, we use the team roles by Belbin. (There are different models, but we found these to fit nicely in our setting.)</p>
+<p>First, have a look at the following lecture that explains the different roles:</p>
+<p><a href="https://ntnu.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c3d62bf1-5f41-4c18-be55-aefd00950bc3">Panopto Lecture on Team Roles</a> (Requires NTNU Login)</p>
+<p>You should receive an email from Belbin (admin@belbin.com) with a personal link for a test of your team roles. When you are asked for your email address, it is important that you use the one from NTNU. (See Blackboard for a list of all student email adresses we have registered.) Contact me in case you did not receive an email from Belbin.</p>
+<p>To be correct: For this test to be useful, you should fill it out as correctly as possible, otherwise you are not learning anything about yourself.
+The test is voluntary, if you don't want to reveal this private information, don't do the test, it has no influence on you passing the course. During the teamwork afterwards we discuss each others profiles in teams, and it makes most sense to handle the results openly. This should not be a concern as the profile you receive does not judge you, but lists potential preferences and weaknesses in a weighted way, so you don't need to be concerned that results are somehow interpreted negative. (I did the test myself and will show you my own profile in class.)</p>
+<p>Print out the profile you receive as a result, especially the table on page 4 with your profile. This will be important input in the teamwork.</p>
 
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AAP4N3KyLmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h2>Electronic Waste</h2>
-
-<p>Electronic waste in a general problem, but it has implications on what we need to consider when we want to understand the impact and challenges with the Internet of Things:</p>
-<ul>
-<li>On the one side, the IoT devices itself are electronic devices that contribute to waste. As said above, even if devices are small and cheap, we cannot just keep producing them without considering their entire life cycle.</li>
-<li>On the other side, making devices like fridges that traditionally had a long life span into electronic devices can give them a much shorter life span, and by that indirectly contribute to the problem of electronic waste.</li>
-</ul>
-<p>The video below is a longer one, and viewing it is optional. But have a look at it, just to get an impression of how severe this problem is.</p>
-
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QTU1F865JJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
     </section>
 </div>
 
