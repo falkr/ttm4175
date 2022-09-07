@@ -1,4 +1,4 @@
-# Om teamarbeid
+# Om teamarbeid i emnet
 
 Vi har samlet en del informasjon fra de siste år som er veldig nyttig å
 få med seg. Ikke nøl å spørre studentassistentene og faglærerne hvis du
