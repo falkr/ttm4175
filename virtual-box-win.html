@@ -16,7 +16,31 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
-<style type="text/css">div.check ul,
+<style type="text/css">a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
 div.check ul li {
   padding: 0;
   margin: 0;
@@ -100,31 +124,6 @@ div.goals ul li:before {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-.w3collapsible {
-  background-color:#f0e9db;
-  color: #868279; 
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active, .w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
 div.report p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -167,6 +166,7 @@ display: inline;
   position: relative;
   margin: -20px -10px -20px -20px
 }
+
 div.task p {
 padding: 10px;
 background-color: #D6E5F0;
@@ -198,6 +198,34 @@ div.warning p::before {
     font-family: 'Font Awesome 5 Free'; 
     color: #fc8c03;
 display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
 <script src="assets/anchor.js"></script>
@@ -238,6 +266,8 @@ display: inline;
       <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
       <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
       <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="prep-teamwork.html">Teamwork</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
       <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
