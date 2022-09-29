@@ -87,7 +87,7 @@ type: table
 |-
 | 40
 |
-| Laszlo: Etisk hacking
+| ingen undervisning i emnet
 |-
 | 41
 |
@@ -95,7 +95,7 @@ type: table
 |-
 | 42
 | 
-| 
+| Laszlo: Etisk hacking
 |-
 | 43
 |
@@ -103,15 +103,15 @@ type: table
 |-
 | 44
 |
-| IoT 2
+| IoT 2: Tilstandmaskiner
 |-
 | 45
 |
-| IoT 3
+| IoT 3: HTTP and JSON
 |-
 | 46
 |
-| IoT 4
+| IoT 4: MQTT
 |-
 | 47
 |
