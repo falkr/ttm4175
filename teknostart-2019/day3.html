@@ -1,0 +1,619 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4175">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduction to Communication Technology and Digital Security">
+<meta property="og:description" content="Introduction to Communication Technology and Digital Security">
+
+
+<link rel="stylesheet" href="assets/bootstrap.min.css">
+<script src="assets/jquery-3.5.1.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
+</style>
+<script src="assets/anchor.js"></script>
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
+      <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
+      <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="day0-2020.html">(2020) Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">(2020) Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">(2020) Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">(2020) Dag 3: SSH and HTML</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="tips.html">Tips</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Security and Ethical Hacking</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2021.html">Security 1</a>
+      <a class="dropdown-item" href="prep-security-2-2021.html">Security 2</a>
+      <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
+      <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
+      <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="prep-teamwork.html">Teamwork</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <!--
+      <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2020.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2-2020.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3-2020.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4-2020.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1-2021.html">Security 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L02-Technical_information_gathering.pdf">Security 2: Technical Information gathering</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L03-Network_mapping.pdf">Security 3: Network mapping</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking1.pdf">Security 4: Web Hacking 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
+        <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="teamwork.html">Teamwork</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <!--
+        <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+        <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
+        <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
+        <a class="dropdown-item" href="security-3-2020.html">Security 3</a>
+        <a class="dropdown-item" href="security-4-2020.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020-solution.html">IoT 3: HTTP and JSON (Solution and Revised Tasks)</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>-->
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
+      <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
+      <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1>Day 3: Exploring IP, SSH and HTML</h1>
+<p>Today we will explore the world of HTML, the marking language used to build every website on the World Wide Web.
+In order to this we will also briefly look into IP addresses and the Secure Shell (SSH). NTNU hosts servers from where we can host our web sites. What a web server is will be explained tomorrow, but in the end it is just a computer that you can ask for a web site, and it will return the web site you asked for. Today we will be using the web server already hosted by NTNU to serve our web site out into the internet.</p>
+<h3>Learning Goals for Today</h3>
+
+<div class="goals"><ul>
+<li>Become familiar with HTML</li>
+<li>Understand IP addressing</li>
+<li>Learn how to use SSH and SCP</li>
+</ul>
+</div>
+<h3>New Linux Commands</h3>
+<ul>
+<li><a href="commands.html#passwd">passwd</a> --- to change passwords.</li>
+<li><a href="commands.html#ls">ls</a> --- to list files and folders.</li>
+<li><a href="ip.html#ip">ip</a> --- show / manipulate routing, network devices, interfaces and tunnels.</li>
+<li><a href="ssh.html#ssh">ssh</a> --- remote login program.</li>
+<li><a href="scp.html#scp">scp</a> --- remote file copy program.</li>
+<li><a href="ping.html#ping">ping</a> --- send ICMP <em>ECHO_REQUEST</em> to network hosts.</li>
+<li><a href="curl.html#curl">curl</a> --- transfer a URL.</li>
+<li><a href="aplay.html#aplay">aplay</a> --- command-line sound player for ALSA.</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Finding your IP address and checking for connectivity</h1>
+<p>In a terminal of your Raspberry Pi you can easily find its IP address by using the command <code>ip</code>.
+Try and type the following command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> address</span></code></pre></div>
+<p>This command shows you all the existing IP addresses associated with your Raspberry Pi.
+These addresses are fundamental for connecting computers and other devices to each other and the Internet.
+Each network card (e.g. wireless card) is called an <em>interface</em> and it may have one or more IP addresses.
+A typical IP(v4) address at NTNU looks something like <code>129.241.200.112/24.</code></p>
+<p>Write down the address and mask of the interface <code>eth0</code>.</p>
+
+    </section>
+    <section class="content">
+<h1>Testing Internet Connectivity</h1>
+<p>By default, the Linux distribution we are using has a running service, or daemon, that automatically configures network interfaces whenever a new link is found.
+This service is called <code>dhcpcd</code> and runs a networking protocol called DHCP.
+You will learn more about this later in the course.</p>
+<p>DHCP is also used to automatically configure the routes that are used to reach the Internet.
+You can find any route installed in your Raspberry Pi by typing the following command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> route</span></code></pre></div>
+<p>You should see a <em>default route</em> via the IP address 129.241.200.1, which corresponds to a router at NTNU responsible for forwarding our packets to and from the Internet.</p>
+<p>To see if we can send something back and forth between two computers, we can use the command <code>ping</code>.
+It does exactly what it sounds like... It sends a &quot;ping&quot; message to the other computer, which then answers.</p>
+
+<div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jr0JaXfKj68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Try pinging that router with the command <code>ping</code>:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ping</span> 129.241.200.1</span></code></pre></div>
+<p>You can also use the same command to <code>ping</code> other online machines such as the server hosting the website from the European Space Agency at <em>www.esa.int</em>.
+Can you see any significant difference from the previous <code>ping</code> command?</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ping</span> www.esa.int</span></code></pre></div>
+    </section>
+    <section class="content">
+<span name="4d537d"></span><aside name="4d537d"><p>Programs are sometimes calles <em>services</em> to emphasize that they run in the background, are usually always on and are somehow useful for other functions.</p>
+</aside>
+<h1>Remote Access to a Computer</h1>
+<p>It is possible to access a Linux system and manage it <strong>remotely</strong> using different tools.
+One of the most popular ones is the Secure Shell, referred to as <code>ssh</code>.
+It is a program (or <em>service</em>) that waits for incoming SSH connections and then remotely controls the computer.</p>
+
+<p>This service needs to be enabled <strong>in your Raspberry Pi</strong> with the following commands:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable ssh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start ssh</span></code></pre></div>
+<p>Now, <strong>from your desktop PC with Linux</strong> you can access your Raspberry Pi using the IP address you found earlier and the command <code>ssh</code> as such:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> pi@<span class="op">&lt;</span>your_ip_address<span class="op">&gt;</span></span></code></pre></div>
+<p><strong>Note:</strong> a warning message should appear the first time you connect since the certificates being used have never been exchanged before.
+It is okay to say &quot;yes&quot; and then type in your password.</p>
+<p>You now have access to the terminal of the Raspberry Pi, but without it being connected to monitor or keyboard. You access it remotely. In this way, it could really be anywhere else in the world. On your desk, in a room nearby, in a data center far far away!</p>
+<p>Play around with some commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) to check if it is your Raspberry Pi and that navigation works as before, just via another computer.</p>
+
+<h3>Playing a sound... Remotely!</h3>
+<p>Now that you are remotely controlling your Raspberry IP issue the following command to download a simple sound file:</p>
+
+<p>Now that you are remotely controlling your Raspberry Pi, issue the following command to download a simple sound file in wav format:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://ttm4175.iik.ntnu.no/onesmall.wav <span class="at">-O</span></span></code></pre></div>
+<p>Connect the speakers to the audio jack on the Raspberry Pi, and see if it requires to be switched on or extra power via USB.
+Play the file with the following command:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aplay</span> onesmall.wav</span></code></pre></div>
+    </section>
+    <section class="content">
+<h1>Setting up a web site</h1>
+<p>The web server that is hosted by NTNU runs in <a href="https://whatis.techtarget.com/definition/headless-server"><em>headless mode</em></a>, which means that the machine has neither a monitor, mouse or keyboard. What we <em>can</em> do though, is remotely manage and control it through SSH. When we are connected, there is another challenge that we have to overcome in order to begin developing our website. The server is terminal-based, which means that everything you want to accomplish on the server must be done purely through the terminal, including writing and editing files. There are a few option for doing this. The three arguably most common text editors for the terminal is <em>Vim</em>, <em>Emacs</em> and <em>Nano</em>. Todays focus will be centered around Nano.</p>
+
+<div class="note-box"><p>It is important to note that today, most servers in companies and businesses run in headless mode, as it makes the servers faster and easier to manage.</p>
+</div>
+<h2>Nano</h2>
+<p>When getting used to the command-line, people who are new to Linux can be put off by other, more advanced text editors such as for instance Vim and emacs. While these two are excellent programs, they do have a bit of a learning curve.
+<a href="https://www.nano-editor.org/">Nano</a> is an easy-to-use text editor. It's also installed in most Linux distributions, so you can usually rely on that it's there.</p>
+<p>To create a new file in Nano, we simply type <code>nano</code> in our terminal.
+Nano will open in a windows that looks something like this.</p>
+
+<div class="figure">
+<img src="figures/teknostart/image-45.png" alt="The Nano editor" width="100%"/>
+<span name="figures/teknostart/image-45.png">&nbsp;</span>
+<aside name="figures/teknostart/image-45.png"><p><p>The Nano editor</p>
+</p></aside>
+</div>
+<p>Now we can start typing the contents of the file.</p>
+<h4>Saving and exiting</h4>
+<p>If you want to save the changes you've made, press <code>Ctrl + O</code>. To exit nano, type <code>Ctrl + X</code>. If you ask nano to exit from a modified file, it will ask you if you want to save it. Just press <code>N</code> in case you don't, or <code>Y</code> in case you do. It will then ask you for a filename. Just type it in and press Enter.</p>
+<h4>Open already existing file</h4>
+<p>To open an already existing file in Nano, we write <code>nano path/to/filename</code> or simply <code>nano filename</code>if you are in the correct folder path. Saving and exiting is the same as above.</p>
+<p>Check out this list of useful commands used in Nano: <a href="https://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/">Nano Cheatsheet</a></p>
+
+<h2>2. Connecting to the server</h2>
+<p>As mentioned, we will use SSH to connect to the NTNU server.</p>
+
+<div class="steps"><ol>
+<li>Open a terminal window</li>
+<li>type <code>ssh &lt;ntnu_username&gt;@login.stud.ntnu.no</code> and press enter</li>
+<li>Enter you password</li>
+</ol>
+<p>You should get a message that looks like this:</p>
+</div>
+<div class="figure">
+<img src="figures/teknostart/image-46.png" width="100%"/>
+</div>
+<p>You are now successfully connected to the server. Here you have access to the files on the server and all the programs that are installed here. As demonstrated by playing a sound file on the Raspberry Pi earlier, everything you do in this terminal is executed on the server.</p>
+
+    </section>
+    <section class="content">
+<h1>Step 3: Making a Website</h1>
+<p>NTNU has made a solution for students to create their own website and immediately publish them on the internet.</p>
+<h3>HTML</h3>
+<p>Hyper Text Markup Language (HTML) is a language for creating a webpage. Webpages are usually viewed in a web browser. They can include text, links, pictures, and even sound and video.
+HTML is used to describe each of these kinds of content so the web browser can display them correctly.</p>
+<p>Websites on the internet are written in HTML. Each HTML file is just a plain text file, but with a <em>.html</em> file extension instead of <em>.txt</em>.
+To see the HTML code that lies behind any website, open Firefox and navigate to any website that you like. Then, right click on the page and choose <code>View Page Source</code>. This will take you to the underlying HTML code for this site that your browser uses to present the site in a viewable way.</p>
+
+<h3>Creating the Website</h3>
+
+<p>Although <a href="https://innsida.ntnu.no/wiki/-/wiki/English/Create+your+own+website">This</a> guide explains how to set it up, in simple terms, the steps are as follows</p>
+<ol>
+<li>In the terminal connected to the server via SSH, navigate to the folder <code>/web/folk/&lt;ntnu_username&gt;</code>.</li>
+<li>Here, create a file with Nano called <code>index.html</code>.</li>
+</ol>
+<ul>
+<li>The reason we make a file called <code>index.html</code>is because the server will automatically look for a file with this name, and publish the website that is written in this file.</li>
+</ul>
+<ol start="3">
+<li>Write your HTML code and save the file.</li>
+<li>Navigate to <code>https://folk.ntnu.no/&lt;ntnu_username&gt;</code>in your browser to view you website.</li>
+</ol>
+
+<span name="025b39"></span><aside name="025b39"><p>Decide for yourself if you want to have a personal homepage or not. You can delete the created HTML files and the homepage will disappear. The NTNU Wiki has <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+p%C3%A5+folk-ntnu-no">more info about these homepages</a>.</p>
+</aside>
+<p>You can find a sample HTML page <a href="https://home.samfundet.no/~halvogro/komtekintro/sample.txt"><strong>here</strong></a>.
+Copy and paste these into your <code>index.html</code> or try to find another HTML file online. If you want, you can also clone some websites by copying the source code found by viewing the page source. Have a look at the source of <a href="https://www.nrk.no/">'https://nrk.no'</a> for instance.</p>
+
+    </section>
+    <section class="content">
+<span name="e4f5ce"></span><aside name="e4f5ce"><img src="figures/doubleteam.png" width="30"/></aside>
+<h1>Final Steps</h1>
+<h3>Learning Goals</h3>
+<p>In your double-team, reflect about what you learned today. Write a few sentences that capture (in your own words) what you learned and why it can be useful. Share these few sentences with everyone in the double-team. (You should use this text in the individual reflection below.)</p>
+
+<h3>Individual Reflection</h3>
+<p>Fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BSxiepoCd7lKk70IThBWqdJUQzJJUEVaQlBBMlFaSFBaTllITkcxRDEzNi4u" class="arrow">individual reflection survey</a>.</p>
+
+<h3>Cleaning Up</h3>
+
+<div class="todo"><ul>
+<li>Put all hardware back into the box.</li>
+<li>Store the box in one of the lockers in the lab, using the combination lock.</li>
+<li>Connect all parts of the PC back to it (keyboard, mouse, monitor).</li>
+<li>Take out any trash. (Even if its not yours... thank you!)</li>
+<li>Put the chairs back to the table.</li>
+</ul>
+<h3>Individual Exercises</h3>
+<p>We recommend that you take some time to consider if there are any parts of this unit that you want to repeat individually, at your own pace. If you decide to do so, you have several options:</p>
+</div>
+<ul>
+<li>You have access to the hardware box at all times from the lockers. Just make sure everyone in your team knows where the box is, and put it back into the locker.</li>
+<li>Install a Raspberry Pi Image on a Virtual Box in your PC. With this, you always have a Raspberry Pi with you.</li>
+<li>Some of the Linux-related exercises also work on the Linux-PCs in the lab.</li>
+</ul>
+
+    </section>
+</div>
+
+
+<footer></footer>
+<script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+</script>
+</body>
+</html>

@@ -1,0 +1,776 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4175">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduction to Communication Technology and Digital Security">
+<meta property="og:description" content="Introduction to Communication Technology and Digital Security">
+
+
+<link rel="stylesheet" href="assets/bootstrap.min.css">
+<script src="assets/jquery-3.5.1.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
+<style type="text/css">div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.rat ol {
+  list-style-type: upper-alpha;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
+</style>
+<script src="assets/anchor.js"></script>
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
+      <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
+      <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="day0-2020.html">(2020) Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">(2020) Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">(2020) Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">(2020) Dag 3: SSH and HTML</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="tips.html">Tips</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Security and Ethical Hacking</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2021.html">Security 1</a>
+      <a class="dropdown-item" href="prep-security-2-2021.html">Security 2</a>
+      <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
+      <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
+      <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="prep-teamwork.html">Teamwork</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <!--
+      <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2020.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2-2020.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3-2020.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4-2020.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1-2021.html">Security 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L02-Technical_information_gathering.pdf">Security 2: Technical Information gathering</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L03-Network_mapping.pdf">Security 3: Network mapping</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking1.pdf">Security 4: Web Hacking 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
+        <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="teamwork.html">Teamwork</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <!--
+        <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+        <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
+        <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
+        <a class="dropdown-item" href="security-3-2020.html">Security 3</a>
+        <a class="dropdown-item" href="security-4-2020.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020-solution.html">IoT 3: HTTP and JSON (Solution and Revised Tasks)</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>-->
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
+      <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
+      <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1>HTTP and JSON</h1>
+
+<p>In this week, we will communicate via HTTP and build our own little
+server for that. This server will be able to serve a simple website and
+we will use it to store data from the Raspberry Pi.</p>
+<p>You remember that we worked with something similar in the second week,
+where we created a website on an Apache web server.
+This time, we use the webserver to build a smart home system, and we also program it in Python instead of using Apache.</p>
+<h2>Learning Goals</h2>
+
+<p>Goals: After this week, you will be able to:</p>
+<ul>
+<li>Create your own webserver in Python.</li>
+<li>Serialize data in Python via JSON.</li>
+<li>Send complex data types via HTTP.</li>
+<li>Assemble an overall system.</li>
+<li>Know more about HTTP, JSON, client-server, request-response.</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Example: A Smart Home System</h1>
+<p>Let's first look at an example system. Two weeks ago you learned how to
+connect the Sense HAT and the Raspberry Pi to a Python program, so that
+you could read values from the Sense HAT and also turn on its LEDs.
+Imagine now that this Raspberry Pi is part of a system you want to
+install at home, for instance to check the temperature while you are
+away, and maybe switch on the heater before you arrive home. The sensors
+report their values to a server. Since this server is somewhere in a
+data center, we say that it's running <em>in the cloud.</em> The sensors report
+their values periodically to the server, and the server keeps track of
+the values sent. When we want to know the temperature at home, we can
+simply ask the web server with a browser to present us the last measured
+temperature value.</p>
+
+<div class="figure">
+<img src="figures/iot/smart-home.png" alt="An example system with a temperature sensor that sends its measurements to a server. Users can check the temperature by accessing a website published by the server" width="100%"/>
+<span name="figures/iot/smart-home.png">&nbsp;</span>
+<aside name="figures/iot/smart-home.png"><p><p>An example system with a temperature sensor that sends its measurements to a server. Users can check the temperature by accessing a website published by the server</p>
+</p></aside>
+</div>
+<p>During this week, we want to implement such a system, with the Raspberry
+Pi and Sense HAT as our sensor, and another Raspberry Pi as the web
+server. For this, we need several elements:</p>
+<ul>
+<li>We need to know more about the WWW and the HTTP protocol.</li>
+<li>We need to transform data so we can send it.</li>
+<li>We need to build a web server in Python.</li>
+</ul>
+<p><strong>Think a bit:</strong> What can be some benefits of using HTTP, a web server
+and a browser as elements in this system?</p>
+
+    </section>
+    <section class="content">
+<h1>Sequence Diagrams and Message Patterns</h1>
+<p>From today on we start to think a bit more about the patterns of
+interactions between computers, that is, in which sequence they send
+messages between each other. For that, we use a special type of diagram,
+called <strong>sequence diagram</strong>. Below you see a very simple one. The
+vertical lines (top to bottom) are called <em>lifelines</em> and define a
+computer or any other communicating element. The box at the start of the
+lifeline describes what the lifeline represents. Here, we just apply
+role names, and call one of them <em>sender</em> and the other one <em>receiver</em>.
+The horizontal arrow represents a message that travels between the
+computers.</p>
+
+<div class="figure">
+<img src="figures/iot/single-message.svg" width="100%"/>
+</div>
+<p>Messages can be lost, for instance when somebody plugs out a cable,
+disturbs the wireless signal or when some part of the network in between
+fails. We can show that a message is lost by letting it run into a big
+cross:</p>
+
+<div class="figure">
+<img src="figures/iot/single-message.svg" width="100%"/>
+</div>
+<p>The above interaction follows a simple patternthat we call <strong>single
+message.</strong> As you can see, a problem with this message pattern is that
+messages can get lost, and neither the sender nor the receiver detect
+it. For that reason, we often use other message patterns or build
+applications so that they can handle message losses. The next pattern we
+are going to look at is already an improvement.</p>
+
+<h2>The Request-Response Message Pattern</h2>
+<p>Another message pattern is <strong>request-response</strong>, shown in the diagram
+below. It is used when one computer (the <em>requestor</em>) wants to get some
+information from another one (the <em>responder</em>).</p>
+
+<div class="figure">
+<img src="figures/iot/request-response.svg" width="100%"/>
+</div>
+<p>Another benefit of the request-response pattern is that the requestor
+knows that the responder has received the request once it receives the
+response. Therefore, we often use a request-response pattern even when
+we are not interested in the content of the response, just to be sure
+that the original request has ben sent. The response in this case is
+also called <em>acknowledgement</em>, and the entire pattern is called a
+<em>handshake</em>. In case the requestor does not receive a response within
+some time, it can for instance try again and send another request. To
+sum up, the request-response pattern is used in two cases:</p>
+<ul>
+<li>
+<p>When the requestor needs some data from the responder, i.e., when
+the requestor wants to know something.</p>
+</li>
+<li>
+<p>When the requestor only wants to tell something to the responder,
+but wants to know of the responder actually received the data.</p>
+</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>WWW -- The World Wide Web</h1>
+
+<p>Many people do not distinguish between the <em>Internet</em> and the <em>World
+Wide Web</em>.[^1] The two are, however, quite different: The <em>Internet</em>, as
+you have learned by now, is a system of interconnected computer networks
+that communicate via IP and enable services like email, video streaming,
+or internet telephony. It also enables the World Wide Web, which is a
+collection of documents that you can access from specific servers.</p>
+
+<h2>The Client-Server Model</h2>
+<p>When you access a website, this involves an interaction between two
+computers: The web server that stores the website, and your computer
+with a web browser that acts as a client.</p>
+
+<div class="figure">
+<img src="figures/iot/client-server.svg" width="100%"/>
+</div>
+<p>Both the client and the server are computers, but within this
+interaction model they behave quite different: The server doesn't know
+anything about the clients before they connect, and just waits for
+clients. Once a client makes a request, it answers this request with a
+response. The server <em>serves</em> the request. In the basic case of serving
+a website, the server only reacts on the requests. All interactions are
+initiated (started) by the client.</p>
+<p>Often, servers are powerful machines, running in a data center and
+serving many clients. But that is not always the case. A server can also
+be a tiny computer, serving only a single or a few other clients. The
+term <em>client-server</em> only refers to the roles they have in the
+interactions: the client takes initiative and the server responds.</p>
+
+<h2>HTTP</h2>
+<p>Once two computers communicate, we have to ensure that they understand
+each other. This is where protocols come in. They define a set of rules
+that all partners have to follow. You already know something about the
+<em>Internet Protocol</em>, IP. This protocol defines how we can send data
+packages between computers connected networks that together make up the
+Internet. TCP is a protocol that is used to control IP packets, so that
+they arrive in a particular order and are resubmitted when they get
+lost.[^2]</p>
+<p>Sending data packets does not yet ensure that computers can actually
+understand the data. This is why there are protocols defined on top of
+TCP and IP, for the different types of applications that we want to use
+on the internet. For accessing websites, this protocol is HTTP, or
+<em>Hypertext Transfer Protocol</em>. HTTP is based on a pattern that is called
+request-response, meaning that all interactions consist of a request
+message, sent by the client, and a corresponding response, sent by the
+server. To get a website, the request looks as follows:</p>
+<pre><code>GET /index.html HTTP/1.1
+Host: www.example.com
+</code></pre>
+<p>Note that the keyword <code>GET</code> shows that the browser would like to access
+a resource. It is followed by <code>/index.html</code>, which is the path of the
+website we would like to read. The corresponding response can look like
+this:[^3]</p>
+<pre><code>HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 138
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+ETag: &quot;3f80f-1b6-3e1cb03b&quot;
+Accept-Ranges: bytes
+Connection: close
+
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;An Example Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Hello World, this is a very simple HTML document.
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The answer indicates the HTTP version, followed by the token <code>200 OK</code>,
+which means that the response actually contains the requested
+information. When a site is not accessible, the code is a
+<code>404 Not Found</code>, which you may have seen when browsing the web.
+Following the header information is the actual content of the document
+we want to access. Here, it is a HTML site, beginning with the <code>&lt;html&gt;</code>
+tag. This language describes websites with some markup, so that you can
+have tables and arrange all sorts of elements and render them in a
+browser. So when you request a website, it's basically these two
+messages that are exchanged between your browser (the client) and the
+web server.</p>
+
+    </section>
+    <section class="content">
+<h1>Web Server in Python</h1>
+<p>It's simple to create a web server in Python.</p>
+
+<div class="figure">
+<img src="figures/iot/python-server.svg" width="100%"/>
+</div>
+<p>Of course, much of the code running the server is hidden in libraries,
+but our code controls some interesting parts of the server.</p>
+<ol>
+<li>
+<p>We define a class <code>RequestHandler</code>. This class has the only task to
+define how we answer a request.</p>
+</li>
+<li>
+<p>When a request comes to the web server, the method <code>do_GET(self)</code> is
+called by the server. In this method we can compute our response. In
+this case, we return response code <code>200</code> (which means OK), set the
+content type in the header, and then set the content to be
+<code>Hello World</code>. We encode the string into bytes, using Unicode
+<code>utf-8</code> encoding.</p>
+</li>
+<li>
+<p>These lines start the actual server. We create an instance of the
+class <code>HTTPServer</code> and then tell it to start.</p>
+</li>
+</ol>
+<p>Don't worry too much about some of the code here, but focus on the
+<code>do_GET()</code> method, which gets called once the request arrives and then
+computes an answer.</p>
+
+    </section>
+    <section class="content">
+<h1>Serialization of Data</h1>
+<p>When two computers communicate, they send their data as a sequence of
+bits or bytes, which in turn are transformed into electrical or optical
+signals that then travel via cables or fibers. But how do we get such a
+sequence of bits from the data? Somehow we must ensure that data that is
+translated into a sequence of bits also can be translated back again
+once we receive them. For this, we need serialization methods.</p>
+
+<div class="figure">
+<img src="figures/iot/serialization.png" width="100%"/>
+</div>
+<p>If we just want to transfer text, there is for instance the ASCII
+standard that explains how letters, numbers and other signs are
+transformed into bits. A text (or <em>string</em>) is a sequence of characters,
+An <code>A</code>, for instance, is represented by the bits <code>100 0001</code>. The Unicode
+standard expands ASCII to convert a much larger set of symbols,
+including <code>Ê</code>, <code>¯</code>, and <code>Â</code>. Unicode also encodes emoji. To transfer
+text or emoji, we must hence know ho they are encoded (for instance
+which specific version of Unicode) and look up the bits and bytes in a
+table. (We <em>serialized</em> the data.) The other way round, when we receive
+bits and want to create letters from it, we <em>deserialize</em> the data,
+which means that we look up which letters the bits correspond to.</p>
+<p>Serialization is not only useful when we want to transmit data from one
+computer to another. It is also useful when we want to store a data
+structure into a file. A file is storing a series of bytes, and
+serialization determines how we get these bytes from a data structure.</p>
+<p>Now imagine we want to transfer more structured data, for instance the
+measurements of a sensor in a house. We would like to send the current
+time, the temperature and the humidity. To do that, we could of course
+send a string that just lists the different data items in a sequence,
+for instance:</p>
+<pre><code>12:05  20.0  54.3
+</code></pre>
+<p>When we then deserialize the data, i.e., construct the measurement
+values at the receiver side, we need to know in which sequence these
+values were and put everything correct back together. For a simple
+problem, this is possible, but you can imagine how many mistakes may
+happen here!</p>
+
+<h2>Serialization With JSON</h2>
+<p>Instead of inventing our method of putting data into a data sequence
+each time, we use a more robust and standardized way of packing the data
+together. Have a look at the following:</p>
+<pre><code>{&quot;time&quot;: &quot;12:05&quot;, &quot;temperature&quot;: 20.0, &quot;humidity&quot;: 54.3}
+</code></pre>
+<p>This way of writing data is called JSON, pronounced &quot;Jason,&quot; and an
+abbreviation for <em>JavaScript Object Notation</em>, because it was originally
+inspired by how JavaScript serialized its objects. It may also remind
+you of a Python dictionary. The example above is only a very simple one.
+The data can also be nested, i.e., a data field can refer to a JSON
+structure that for instance declares the data fields separate from each
+other or adds the information in which unit the measurement is given,
+for instance as follows:</p>
+<pre><code>{&quot;time&quot;: {&quot;hour&quot;:12, 
+          &quot;minutes&quot;: 5,
+          &quot;seconds&quot;: 0}, 
+ &quot;temperature&quot;: {&quot;value&quot;: 20.0, 
+                 &quot;unit&quot;: &quot;celcius&quot;}, 
+ &quot;humidity&quot;: {&quot;value&quot;: 54.3, 
+              &quot;unit&quot;: &quot;percent&quot;}}
+</code></pre>
+<p>There's a lot of history in such data formats, and sometimes it's not
+even technical reasons why one is used or the other, or how they look in
+detail. Another format used for similar purposes is called <code>XML</code>, or
+<em>Extensible Markup Language</em>. In this language, the same piece of data
+could look as follows:</p>
+<pre><code>&lt;dataset&gt;
+    &lt;data name=&quot;time&quot; value=&quot;12:05&quot;/&gt;
+    &lt;data name=&quot;temperature&quot; value=&quot;20.0&quot;/&gt;
+    &lt;data name=&quot;humidity&quot; value=&quot;54.3&quot;/&gt;
+&lt;/dataset&gt;
+</code></pre>
+<p>XML looks a lot more like the HTML that is used to encode a website.
+Since JSON is a bit simpler to use, we will stick with it in the
+following.</p>
+<h2>JSON in Python</h2>
+<p>For Python there is a library to convert data structures into JSON and
+back again. This is how you import the library:</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> json</span></code></pre></div>
+<p>We assume that the data structure is stored as a Python dictionary:</p>
+<pre><code>measurement = {'time': '12:05', 'temperature': 20.0, 'humidity': 54.3}
+</code></pre>
+<p>There is an operation <code>json.dumps()</code> to create the JSON-serialized
+string out of a data structure.</p>
+<pre><code>string = json.dumps(measurement)
+print(string)
+</code></pre>
+<p>The output will be the following:</p>
+<pre><code>{&quot;time&quot;: &quot;12:05&quot;, &quot;humidity&quot;: 54.3, &quot;temperature&quot;: 20.0}
+</code></pre>
+<p>The resulting string in JSON almost looks like the original Python
+string. This is because Python dictionaries look very similar to JSON,
+but this also works for more complex data types.</p>
+<p>The other way round will also work; The function <code>json.loads()</code> takes a
+JSON string and creates a Python data type from it. For instance, we can
+do the following:</p>
+<pre><code>measurement = json.loads('{&quot;time&quot;: &quot;12:05&quot;, &quot;humidity&quot;: 54.3, &quot;temperature&quot;: 20.0}')
+</code></pre>
+<p>The result is that the variable <code>measurement</code> now has data of type
+<code>dict</code>. Now we can work on the data like with any other Python data
+type, and integrate it in our application.</p>
+<p>So, simplified said, with JSON we can convert any Python data type into
+a string that follows the JSON specification. It is then easy to store
+or transmit this string (as a series of bytes), and transform it back
+into data again.</p>
+<p>[^1]: Some, sadly, also think that the Internet is the same as
+Facebook...</p>
+<p>[^2]: You may remember this from your first week in Komtek when you
+played the transmission game in the auditorium: You have been a TCP
+packet!</p>
+<p>[^3]: These code snippets are taken from
+<a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session_state">https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session_state</a></p>
+
+    </section>
+</div>
+
+
+<footer></footer>
+<script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+</script>
+</body>
+</html>

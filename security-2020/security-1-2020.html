@@ -1,0 +1,599 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>TTM4175</title>
+<meta property="og:title" content="TTM4175">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduction to Communication Technology and Digital Security">
+<meta property="og:description" content="Introduction to Communication Technology and Digital Security">
+
+
+<link rel="stylesheet" href="assets/bootstrap.min.css">
+<script src="assets/jquery-3.5.1.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-icons.css">
+<style type="text/css">a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.w3collapsible {
+  background-color:#f0e9db;
+  color: #868279; 
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active, .w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+div.warning p {
+padding: 10px;
+background-color: #ffd9ab;
+border-radius: 5px;
+border-left: 6px solid #fc8c03 
+}
+
+div.warning p::before {
+    content: '\f071 ';
+    font-family: 'Font Awesome 5 Free'; 
+    color: #fc8c03;
+display: inline;
+}
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
+</style>
+<script src="assets/anchor.js"></script>
+<script src="assets/script-aside.js"></script>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:#666666"#2B65EC"> <!-- fixed-top -->
+        <ul class="nav nav-pills">
+        <li class="nav-item">
+    <a class="nav-link" href="index.html" style="font-weight: bold")>TTM4175</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teknostart</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="day0-2021.html">Oppstart</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_ethical_hacking.pdf">Introduction to Ethical Hacking (PDF)</a>
+      <a class="dropdown-item" href="material/TTM4175-2021-L01-Introduction_to_Kali_linux.pdf">Introduction to Kali Linux (PDF)</a>
+      <a class="dropdown-item" href="day2-2021.html">Dag 2</a>
+      <a class="dropdown-item" href="day3-2021.html">Dag 3</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="day0-2020.html">(2020) Dag 0: Getting Started</a>
+      <a class="dropdown-item" href="day1-2020.html">(2020) Dag 1: Virtual Box</a>
+      <a class="dropdown-item" href="day2-2020.html">(2020) Dag 2: Linux Command Line</a>
+      <a class="dropdown-item" href="day3-2020.html">(2020) Dag 3: SSH and HTML</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="tips.html">Tips</a>
+    </div>
+  </li>
+        
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Preparation</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Security and Ethical Hacking</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2021.html">Security 1</a>
+      <a class="dropdown-item" href="prep-security-2-2021.html">Security 2</a>
+      <a class="dropdown-item" href="prep-security-3-2021.html">Security 3</a>
+      <a class="dropdown-item" href="prep-security-4-2021.html">Security 4</a>
+      <a class="dropdown-item" href="prep-security-5-2021.html">Security 5</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="prep-teamwork.html">Teamwork</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <!--
+      <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+      <a class="dropdown-item" href="prep-networking-1-2020.html">Binary and IP addresses</a>
+      <a class="dropdown-item" href="prep-networking-2-2020.html">Layers and Docker</a>
+      <a class="dropdown-item" href="prep-networking-3-2020.html">Webservers and DNS</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+      <a class="dropdown-item" href="prep-security-1-2020.html">Security 1: Cyber Security and Ethical Hacking </a>
+      <a class="dropdown-item" href="prep-security-2-2020.html">Security 2: Authentication, Authorization, and Password Storage</a>
+      <a class="dropdown-item" href="prep-security-3-2020.html">Security 3: Passwords and Cryptography</a>
+      <a class="dropdown-item" href="prep-security-4-2020.html">Security 4: Security Vulnerabilities</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+      <a class="dropdown-item" href="prep-iot-intro.html">IoT 1: Introduction</a>
+      <a class="dropdown-item" href="prep-iot-devices.html">IoT 1: Installation</a>
+      <a class="dropdown-item" href="prep-iot-stm.html">IoT 2: State Machines</a>
+      <a class="dropdown-item" href="prep-iot-stmpy.html">IoT 2: State Machines in Micro Python</a>
+      <a class="dropdown-item" href="prep-iot-http-json.html">IoT 3: HTTP and JSON</a>
+      <a class="dropdown-item" href="prep-iot-mqtt.html">IoT 4: MQTT</a>
+      <a class="dropdown-item" href="prep-iot-api.html">IoT 4: APIs</a>
+      <a class="dropdown-item" href="prep-iot-nb-iot.html">NB-IoT (Extra)</a>-->
+    </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labs</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item disabled"><strong>Security</strong></a>
+        <a class="dropdown-item" href="security-1-2021.html">Security 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L02-Technical_information_gathering.pdf">Security 2: Technical Information gathering</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L03-Network_mapping.pdf">Security 3: Network mapping</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking1.pdf">Security 4: Web Hacking 1</a>
+        <a class="dropdown-item" href="material/TTM4175-2021-L04-Web_hacking2.pdf">Security 4: Web Hacking 2</a>
+        <a class="dropdown-item" href="security-5-2021.html">Security 5</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="teamwork.html">Teamwork</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices-2021.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm-2021.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <!--
+        <a class="dropdown-item disabled"><strong>Networking (2020)</strong></a>
+        <a class="dropdown-item" href="networking-1-2020.html">Binary and IP addresses</a>
+        <a class="dropdown-item" href="networking-2-2020.html">Layers and Docker</a>
+        <a class="dropdown-item" href="networking-3-2020.html">Webservers and DNS</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Security (2020)</strong></a>
+        <a class="dropdown-item" href="security-1-2020.html">Security 1</a>
+        <a class="dropdown-item" href="security-2-2020.html">Security 2</a>
+        <a class="dropdown-item" href="security-3-2020.html">Security 3</a>
+        <a class="dropdown-item" href="security-4-2020.html">Security 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item disabled"><strong>Internet of Things (2020)</strong></a>
+        <a class="dropdown-item" href="iot-devices.html">IoT 1: Programming Devices</a>
+        <a class="dropdown-item" href="iot-stm.html">IoT 2: State Machines</a>
+        <a class="dropdown-item" href="iot-http-json-2020.html">IoT 3: HTTP and JSON</a>
+        <a class="dropdown-item" href="iot-http-json-2020-solution.html">IoT 3: HTTP and JSON (Solution and Revised Tasks)</a>
+        <a class="dropdown-item" href="iot-mqtt-chat.html">IoT 4: MQTT Chat</a>
+        <a class="dropdown-item" href="iot-lopy.html">LoPy</a>
+        <a class="dropdown-item" href="iot-mqtt.html">MQTT</a>
+        <a class="dropdown-item" href="iot-lorawan.html">LoRaWAN / NB-IoT</a>
+        <a class="dropdown-item" href="iot-api.html">API</a>-->
+      </div>
+  </li>
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extra</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item disabled"><strong>Learning</strong></a>
+      <a class="dropdown-item" href="learning-rats.html">RATs</a>
+      <a class="dropdown-item" href="feedback.html">Tilbakemelding</a>
+      <a class="dropdown-item" href="reports.html">Rapporter</a>
+      <a class="dropdown-item" href="teams.html">Teams</a>
+      <a class="dropdown-item" href="working-in-teams.html">Working in Teams</a>
+      <a class="dropdown-item" href="tools.html">Learning Tools</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Material</strong></a>
+      <a class="dropdown-item" href="commands-help.html">Help on Commands</a>
+      <a class="dropdown-item" href="commands.html">List of Commands</a>
+      <a class="dropdown-item" href="computer-history.html">Extra Videos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled"><strong>Tools</strong></a>
+      <a class="dropdown-item" href="virtual-box-mac.html">Virtual Box for Mac</a>
+      <a class="dropdown-item" href="virtual-box-win.html">Virtual Box for Windows</a>
+      <a class="dropdown-item" href="shell-mac.html">Terminal and SSH on Mac</a>
+      <a class="dropdown-item" href="shell-win.html">Terminal and SSH on Windows</a>
+    </div>
+  </li>
+  
+  <!--
+  <li class="nav-item">
+    <a class="nav-link" href="#">Blackboard</a>
+  </li>-->
+</ul>
+
+<div class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></div>
+             <a class="navbar-brand" href="https://ntnu.edu">
+      	<svg width="100" height="30">
+      		<image xlink:href="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.svg" 
+      		src="https://innsida.ntnu.no/innsida-theme/images/ntnu-graphics/ntnu_logo_white.png" width="100%" height="100%"></image>
+      	</svg>
+      </a>
+    </nav>
+
+
+<div class="page">
+    </section>
+    <section class="content">
+<h1>Installing VirtualBox and Kali Linux</h1>
+<p>This first lab is intended to get you familiar with VirtualBox, where you will be adding our main hacking environment, namely Kali Linux, and a victim machine which is Windows 7.</p>
+<p>We assume that you have created a folder <em>/courses/ttm4175/</em> on your machine, and that you have already downloaded the Windows 7 and Kali Linux OVA files (as instructed in the preparation for this lab).</p>
+<h2>Naming conventions</h2>
+<ul>
+<li>
+<p>Host machine: The physical machine that runs on the actual hardware of the machine, and on which the VirtualBox program is installed. In your case, the host machine would be whatever operating system you have installed on your PC/laptop. We will generally not be using the host machine for anything other than launching VirtualBox.</p>
+</li>
+<li>
+<p>Virtual machine (VM): the machine(s) that run within the VirtualBox program. They do not run directly on the physical hardware of your machine, but rather on the simulated machine that VirtualBox provides for them.</p>
+</li>
+</ul>
+
+<div class="goals"><p>In this lab you will learn to:</p>
+<ul>
+<li>Add and update Kali Linux VM</li>
+<li>Add Windows VM</li>
+<li>Use some commands for user management in Linux</li>
+</ul>
+</div>
+    </section>
+    <section class="content">
+<h1>VirtualBox configuration</h1>
+<ul>
+<li>Open VirtualBox. Under File -&gt; Preferences, Change the “Default Machine Folder” to <em>/courses/ttm4175/</em>, which ensures that your virtual machines will be created in the <em>/courses/ttm4175/</em> folder.</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Adding a Kali Linux VM to VirtualBox</h1>
+<ul>
+<li>
+<p>Go to File -&gt; Import Appliance. Click on the folder icon and browse to the Kali Linux OVA file, then click on Next.</p>
+</li>
+<li>
+<p>In the &quot;settings&quot; screen, leave all settings at the default value. You can choose another name for the VM if you want, by clicking on the name and replacing it with the name of your choice (for example &quot;Kali Linux&quot;).</p>
+</li>
+<li>
+<p>Click on Import, and then on Agree on the system license agreement.</p>
+</li>
+<li>
+<p>When the installation is complete, go through the settings. If you see the expression &quot;Invalid settings detected&quot; at the bottom of the screen, hover the mouse over it to see what settings need to be adjusted.</p>
+</li>
+<li>
+<p>Under Settings -&gt; System -&gt; Motherboard, allocate between 4000-5000 MB of memory (RAM). If the value is not within the green range that you see on the screen, then change to another valid value.</p>
+</li>
+<li>
+<p>Start the machine, and login with username = kali, password = kali</p>
+</li>
+</ul>
+<h2>Configuring the keyboard settings for Kali Linux</h2>
+<ul>
+<li>
+<p>Click on the Terminal Emulator</p>
+</li>
+<li>
+<p>To change the keyboard settings to Norwegian, run the following command: <code>sudo dpkg-reconfigure keyboard-configuration</code></p>
+</li>
+<li>
+<p>Re-enter the password for kali</p>
+</li>
+<li>
+<p>The &quot;keyboard type&quot; on the first screen will likely be correct (&quot;Generic..&quot;). Keep the selected value and press Enter.</p>
+</li>
+<li>
+<p>When prompted for the keyboard layout, scroll down (using the arrow key) to &quot;Other&quot;, then select &quot;Norwegian&quot;, then &quot;Norwegian&quot; again.</p>
+</li>
+<li>
+<p>When asked about &quot;Key to function as AltGr&quot;, &quot;compose key&quot; and &quot;control+Alt+Backspace&quot;, keep the selected values and press Enter.</p>
+</li>
+<li>
+<p>Exit the terminal and restart Kali Linux.</p>
+</li>
+</ul>
+<h2>Create a root user</h2>
+<p>You will now create a <strong>root</strong> superuser that you will use instead of the standard user account <strong>kali</strong>. Here are the instructions to do so:</p>
+<ul>
+<li>
+<p>Issue command <code>sudo su</code></p>
+</li>
+<li>
+<p>Enter the password for <strong>kali</strong> user account</p>
+</li>
+<li>
+<p>Issue command <code>passwd root</code></p>
+</li>
+<li>
+<p>Enter a password of your choosing for the <strong>root</strong> account and retype that password.</p>
+</li>
+<li>
+<p>At this point you can log out and log in again with the <strong>root</strong> account</p>
+</li>
+</ul>
+<h2>Update Kali Linux</h2>
+<ul>
+<li>In the terminal window, run the following commands:</li>
+</ul>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> clean <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> update <span class="at">-y</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> dist-upgrade <span class="at">-y</span></span></code></pre></div>
+<ul>
+<li>When prompted about restarting services during package upgrades, select Yes.</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Adding a Windows 7 VM to VirtualBox</h1>
+<p>Next, we will create a new VM containing Windows 7. This machine will be the “victim” computer throughout the most of this lab.</p>
+<ul>
+<li>
+<p>Import the file Windows 7.ova into VirtualBox: from the main VirtualBox window click on “Import Appliance..”; select the Windows 7.ova file; then click “Import”. You can just leave all the settings as they are.</p>
+</li>
+<li>
+<p>Boot it up and log in with user <strong>Lab1</strong> to try it out (this account has no password).</p>
+</li>
+</ul>
+
+    </section>
+    <section class="content">
+<h1>Manage users in Linux</h1>
+<h2>Get a List of All Users using the /etc/passwd File</h2>
+<p>Local user information is stored in the /etc/passwd file. Each line in this file represents login information for one user.</p>
+<ul>
+<li>
+<p>Start Kali Linux and log in with <strong>root</strong> username</p>
+</li>
+<li>
+<p>Open the passwd file using cat: <code>cat /etc/passwd</code>. You will get all the users that are defined in Kali Linux.</p>
+</li>
+</ul>
+<p>Each line in the file has seven fields delimited by colons that contain the following information:
+Username, Encrypted password <em>(x means that the password is stored in the /etc/shadow file)</em>, User ID number, User’s group ID number, Full name of the user (GECOS), User home directory and Login shell (defaults to /bin/bash).</p>
+
+<h2>Display the username only</h2>
+<p>Using either <em>awk</em> or <em>cut</em> commands, your task is to print only the first field containing the username.</p>
+<p><button class="w3collapsible">Hint</button></p>
+<div class="w3content">
+<p><code>awk -F: '{ print $1}' /etc/passwd</code></p>
+<p><code>cut -d: -f1 /etc/passwd</code></p>
+</div>
+<h2>Check whether a user exists in the Linux system</h2>
+<ul>
+<li>
+<p>We can use the command <em>getent</em> to get a list of all Linux users: <code>getent passwd</code></p>
+</li>
+<li>
+<p>To check whether a user exists in Linux, you can simply filter the users’ list that we obtained by piping the list to the <em>grep</em> command <code>getent passwd | grep &lt;username&gt;</code>.</p>
+</li>
+</ul>
+<p>If the user exists, the command above will print the user’s login information. If there is no output, it means that the user doesn’t exist.</p>
+<ul>
+<li>Check if the users <strong>kali</strong>, <strong>mysql</strong>, and <strong>lab</strong> exist.</li>
+</ul>
+<h2>Create a user and add it to a group</h2>
+<ul>
+<li>
+<p>Create a group <strong>ttm4175</strong> using the command <code>groupadd &lt;groupname&gt;</code></p>
+</li>
+<li>
+<p>Create a user <strong>user1</strong> using the command <code>useradd &lt;username&gt;</code></p>
+</li>
+<li>
+<p>Create a password for <strong>user1</strong> using the command <code>passwd &lt;username&gt;</code></p>
+</li>
+<li>
+<p>Add <strong>user1</strong> to the group <strong>ttm4175</strong> using the command <code>adduser &lt;username&gt; &lt;groupname&gt;</code></p>
+</li>
+<li>
+<p>Remove the account <strong>user1</strong> using the command <code>deluser &lt;username&gt;</code></p>
+</li>
+<li>
+<p>Remove the group <strong>ttm4175</strong> using the command <code>delgroup &lt;groupname&gt;</code></p>
+</li>
+</ul>
+
+    </section>
+</div>
+
+
+<footer></footer>
+<script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+</script>
+</body>
+</html>
