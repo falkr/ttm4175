@@ -121,11 +121,11 @@ sum up, the request-response pattern is used in two cases:
 # WWW -- The World Wide Web
 
 
-Many people do not distinguish between the *Internet* and the *World
-Wide Web*.[^1] The two are, however, quite different: The *Internet*, as
+Many people do not distinguish between the *Internet* and the *World Wide Web*. 
+The two are, however, quite different: The *Internet*, as
 you have learned by now, is a system of interconnected computer networks
 that communicate via IP and enable services like email, video streaming,
-or internet telephony. It also enables the World Wide Web, which is a
+or internet telephony. It also enables the *World Wide Web*, which is a
 collection of documents that you can access from specific servers.
 
 
@@ -164,7 +164,7 @@ that all partners have to follow. You already know something about the
 packages between computers connected networks that together make up the
 Internet. TCP is a protocol that is used to control IP packets, so that
 they arrive in a particular order and are resubmitted when they get
-lost.[^2]
+lost.
 
 Sending data packets does not yet ensure that computers can actually
 understand the data. This is why there are protocols defined on top of
@@ -373,13 +373,6 @@ So, simplified said, with JSON we can convert any Python data type into
 a string that follows the JSON specification. It is then easy to store
 or transmit this string (as a series of bytes), and transform it back
 into data again.
-
-[^1]: Some, sadly, also think that the Internet is the same as
-    Facebook\...
-
-[^2]: You may remember this from your first week in Komtek when you
-    played the transmission game in the auditorium: You have been a TCP
-    packet!
 
 [^3]: These code snippets are taken from
     <https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session_state>
