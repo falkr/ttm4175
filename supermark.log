@@ -4,38 +4,6 @@
 ├── The template does not contain insertion tag {js}
 ├── The template does not contain insertion tag {rel_path}
 ├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/image-45.png does
-│   not exist.
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day3-2020.md 187
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day3.md 145
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/image-46.png does
-│   not exist.
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day3-2020.md 216
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day3.md 174
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/rpi-terminal-fold
-│   ers-1.png does not exist.
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 94
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day2.md 94
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/rpi-terminal-fold
-│   ers-2.png does not exist.
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 109
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day2.md 109
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-1.png 
-│   does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 192
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-2.png 
-│   does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 206
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-3.png 
-│   does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 220
-├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/goals.png does 
 │   not exist.
 │   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day1-2020.md 6
@@ -81,6 +49,28 @@
 │   does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day1-2020.md 196
 ├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/rpi-terminal-fold
+│   ers-1.png does not exist.
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 94
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day2.md 94
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/rpi-terminal-fold
+│   ers-2.png does not exist.
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 109
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day2.md 109
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-1.png 
+│   does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 192
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-2.png 
+│   does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 206
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/quizlet-3.png 
+│   does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day2-2020.md 220
+├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/vbox2020/vbox-settings3.png 
 │   does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day1-2020.md 207
@@ -110,6 +100,16 @@
 │   g does not exist.
 │   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day1-2020.md 300
 │   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day1.md 127
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/image-45.png does
+│   not exist.
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day3-2020.md 187
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day3.md 145
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/image-46.png does
+│   not exist.
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2020/day3-2020.md 216
+│   └── /home/runner/work/ttm4175/ttm4175/pages/teknostart-2019/day3.md 174
 ├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/piazza.jpeg does 
 │   not exist.
@@ -152,18 +152,6 @@
 │   not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/prep-iot-http-json.md 
 │       257
-├── Figure file /home/runner/work/ttm4175/ttm4175/pages/figures/http/yr-1.png 
-│   does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 68
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/http/smart-home.png does not
-│   exist.
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 
-│   │   224
-│   ├── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 
-│   │   370
-│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020-solut
-│       ion.md 9
 ├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/lopy-expansion-2.png 
 │   does not exist.
@@ -191,6 +179,18 @@
 ├── Figure file /home/runner/work/ttm4175/ttm4175/pages/figures/iot/lopy-run.png
 │   does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-lopy.md 128
+├── Figure file /home/runner/work/ttm4175/ttm4175/pages/figures/http/yr-1.png 
+│   does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 68
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/http/smart-home.png does not
+│   exist.
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 
+│   │   224
+│   ├── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020.md 
+│   │   370
+│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-http-json-2020-solut
+│       ion.md 9
 ├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/statemachines/counter.svg 
 │   does not exist.
@@ -227,18 +227,6 @@
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/dse-buttons.png does not
 │   exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-devices.md 125
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
-│   n-1.jpg does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 26
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
-│   n-2.jpg does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 36
-├── Figure file 
-│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
-│   n-3.jpg does not exist.
-│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 45
 ├── Figure file /home/runner/work/ttm4175/ttm4175/pages/figures/iot/dse-leds.png
 │   does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-devices.md 138
@@ -266,6 +254,18 @@
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/iot-application-pattern.
 │   png does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-devices.md 249
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
+│   n-1.jpg does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 26
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
+│   n-2.jpg does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 36
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/iot/rpi-breadboard-connectio
+│   n-3.jpg does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/iot-old/iot-pir-sensor.md 45
 ├── Figure file 
 │   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/command-memory-1.
 │   jpg does not exist.
@@ -308,10 +308,10 @@
 ├── Using threadpool.
 └── Translated
     ├── /home/runner/work/ttm4175/ttm4175/feedback.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-teamwork.html
     ├── /home/runner/work/ttm4175/ttm4175/teams.html
-    ├── /home/runner/work/ttm4175/ttm4175/index.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-teamwork.html
+    ├── /home/runner/work/ttm4175/ttm4175/index.html
     ├── /home/runner/work/ttm4175/ttm4175/security-1-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/networking-2.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-1.html
@@ -321,63 +321,63 @@
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-http-json.html
     ├── /home/runner/work/ttm4175/ttm4175/shell-mac.html
     ├── /home/runner/work/ttm4175/ttm4175/day0-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-3-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-stmpy.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-stm-examples.html
     ├── /home/runner/work/ttm4175/ttm4175/pages.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-3-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/tips.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/computer-history.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3.html
     ├── /home/runner/work/ttm4175/ttm4175/rpi-python3-6.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-3.html
+    ├── /home/runner/work/ttm4175/ttm4175/computer-history.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-api.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-devices.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-stm-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-security-2-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/tools.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-security-3-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/learning-rats.html
     ├── /home/runner/work/ttm4175/ttm4175/reports.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-stm-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/labs.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-stm.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-2-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-mqtt-chat.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-mqtt.html
     ├── /home/runner/work/ttm4175/ttm4175/commands.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-mqtt.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-mqtt-chat.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-intro.html
     ├── /home/runner/work/ttm4175/ttm4175/day3-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/virtual-box-win.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-2-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-security-4-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/day2-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-3.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2.html
+    ├── /home/runner/work/ttm4175/ttm4175/virtual-box-win.html
     ├── /home/runner/work/ttm4175/ttm4175/commands-help.html
+    ├── /home/runner/work/ttm4175/ttm4175/day2-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/teamwork.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-networking-2.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-3.html
     ├── /home/runner/work/ttm4175/ttm4175/smash.html
     ├── /home/runner/work/ttm4175/ttm4175/virtual-box-mac.html
     ├── /home/runner/work/ttm4175/ttm4175/teamwork-2.html
-    ├── /home/runner/work/ttm4175/ttm4175/shell-win.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-security-5-2021.html
-    ├── /home/runner/work/ttm4175/ttm4175/prep-security-1-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/virtual-machine.html
+    ├── /home/runner/work/ttm4175/ttm4175/shell-win.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-security-1-2021.html
+    ├── /home/runner/work/ttm4175/ttm4175/prep-security-5-2021.html
     ├── /home/runner/work/ttm4175/ttm4175/problems/prep-communication.html
     ├── /home/runner/work/ttm4175/ttm4175/prep-networking-1-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-http-json.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/prep-security-2-2020.htm
     │   l
-    ├── /home/runner/work/ttm4175/ttm4175/iot-http-json.html
     ├── /home/runner/work/ttm4175/ttm4175/networking-1-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/prep-security-4-2020.htm
     │   l
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/rat-security-4-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/security-2020/security-1-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/networking-1.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/security-2-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/rat-security-3-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/networking-1.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/rat-security-1-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/security-2020/prep-security-1-2020.htm
-    │   l
-    ├── /home/runner/work/ttm4175/ttm4175/security-2020/security-1-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/rat-security-2-2020.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/prep-security-3-2020.htm
+    │   l
+    ├── /home/runner/work/ttm4175/ttm4175/security-2020/prep-security-1-2020.htm
     │   l
     ├── /home/runner/work/ttm4175/ttm4175/prep-iot-mqtt.html
     ├── /home/runner/work/ttm4175/ttm4175/teknostart-2020/day0-2020.html
@@ -394,16 +394,16 @@
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-lorawan.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2019/security-3.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/prep-iot-http-json.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-http-json.html
-    ├── /home/runner/work/ttm4175/ttm4175/security-2019/security-4.html
     ├── /home/runner/work/ttm4175/ttm4175/security-2020/security-4-2020.html
-    ├── /home/runner/work/ttm4175/ttm4175/teknostart-2020/day3-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/security-2019/security-4.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-http-json.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-slack.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-pir-sensor.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-stm.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-pir-sensor.html
+    ├── /home/runner/work/ttm4175/ttm4175/teknostart-2020/day3-2020.html
+    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-lopy.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/prep-rpi.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-devices.html
-    ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-lopy.html
     ├── /home/runner/work/ttm4175/ttm4175/teknostart-2019/day1.html
     ├── /home/runner/work/ttm4175/ttm4175/teknostart-2019/day5.html
     ├── /home/runner/work/ttm4175/ttm4175/iot-old/iot-http-json-2020-solution.ht
