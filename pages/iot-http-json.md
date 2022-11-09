@@ -237,8 +237,10 @@ source: figures/http/smart-home.png
 ---
 
 * The sensor periodically measures its temperature and provides it to the server in the center, using HTTP POST requests. 
-* The server stores the temperature of the temperature sensor, and periodically requests the temperature forecast from the API from yr.no via HTTP GET requests. 
-* The server also answers GET requests from clients to present both the sensor temperature and the prediction from <yr.no> in a single page. 
+* The server stores the temperature of the temperature sensor, and periodically requests the temperature forecast from the API from [yr.no](yr.no) via HTTP GET requests. 
+* The server also answers GET requests from clients to present both the sensor temperature and the prediction from [yr.no](yr.no) in a single page. 
+
+:task: Create a sequence diagram with three components: temperature sensor, the server, Yr and the mobile client. Illustrate with the sequence diagram how the temperature sensor updates the server with the measured temperature, and how the mobile client makes a request to our server, which also involves getting the temperature forecast from Yr.
 
 
 ## Code for the Web Server
@@ -347,7 +349,7 @@ Note: Whenever you are going to change the code of the web server, you will need
 ## Request via Web Browser
 
 * Either on the same machine, or (even better) on a different machine in case you are in the same network, access the website address that the server prints out in a browser.
-* If you access the browser on the same machine, you can type `http://localhost:8023/` as address. Otherwise, use the IP address instead of `localhost.
+* If you access the browser on the same machine, you can type `http://localhost:8023/` as address. Otherwise, use the IP address instead of `localhost`.
 * What happens in the browser, and what happens in the command where the server program runs?
 * Create a sequence diagram of what you have just observed, and annotate it with details that you find relevant.
 * Answer the following questions:
@@ -384,11 +386,16 @@ source: figures/http/smart-home.png
 
 So, to repeat: 
 
-* Here, the `do_GET()` function processes the requests from browsers that want to know the temperature, and it works pretty much like the **GET** for any other website; we return a complete webstie to the browser that shows the temperature.
+* Here, the `do_GET()` function processes the requests from browsers that want to know the temperature, and it works pretty much like the **GET** for any other website; we return a complete website to the browser that shows the temperature.
 
 * With the `do_POST()` function, a smart sensor (which we imitate with another Python program) can tell the sensor which temperature it measured. 
 
 The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.) 
+
+
+
+:task: Run the code, like any Python program via `python webserver.py`.
+
 
 
 :task: 
@@ -479,10 +486,8 @@ print_response(response)
 
 ## Decoding Data in the Server
 
-* Pay attention to the method `do_POST()` in the server, and work on the incoming data to decode it. (We have provided the code for that.) There are helper functions in the server code you can use. Among others, the function `extract_json_string(string)` is useful to extract a JSON string (within curly brackets) from a string.
-* Re-create the incoming dictionary that originates at the client.
-* Extract the temperature sent by the client, and store it in the data dictionary of the server.
-
+* Pay attention to the method `do_POST()` in the server
+* What is happening in the code that we provided in the method `do_POST()`, step by step?
 
 
 # Storing Temperature Data in the Server
@@ -511,24 +516,14 @@ To repeat and clarify:
 * `do_POST()` stores the temperature data submitted by the temperature sensor application,
 * `do_GET()` provides the website with the the data from the sensor and the air temperature obtained from the forecast.
 
-
+:task: Uncomment the storage for the temperature in the code.
 
 ### Adding the Yr Forecast
 
 
-Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together. 
+:task: Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together. 
 
-Use the function for getting the forecast you have developed above. 
-
-
-### Optional Task: Storing the Forecast
-
-Your solution will probably make a new request for a forecast with yr.no each time your server should answer a request via `do_get()`.
-
-Create a solution where the server stores the forecast temperature, and re-uses it for the different requests. 
-
-What are benefits and drawbacks of this solution? 
-How would you even further improve it?
+Use the function for getting the forecast you have developed above. This means you web server which acts as a server because it implements the methods GET and POST, now also acts as a client towards Yr.no since it requests data from it. 
 
 
 
