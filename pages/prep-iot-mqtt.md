@@ -481,6 +481,7 @@ communication in the system.
 
 ---
 type: hint
+title: Solution for the exercise above. Click to reveal. 
 ---
 <div>
 <table class="table table-sm">
