@@ -22,7 +22,7 @@ Det er ulike kunnskapsnivå i NTNU på informasjonssikkerhet, derfor er det vikt
 ---
 type: qna
 q: Når får jeg lenke til kurset?  
-
+---
 Du vil få lenken to døgn etter at du har aktivert din brukerkonto ved NTNU. 
 
 
