@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="generator" content="">
-  <title>TTM4115</title>
+  <title>TTM4175</title>
   <link rel="canonical" href="https://edu.iik.ntnu.no">
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,18 @@ div.figurefullwitdth {
   margin-right: -33px;
   width: 100%;
 }
+button:hover {
+  background-color: #EFF7FF;
+}
+div.qna .accordion-button:not(.collapsed) {
+  background-color: #EFF7FF;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+  color: #00509e;
+}
 
+div.qna .accordion-button:not(.collapsed)::after {
+  color: #00509e;
+}
 
 table.weekplan {
   width: 100%;
@@ -85,39 +96,12 @@ table.weekplan a {
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">TTM4115</a>
+          <a class="nav-link" href="index.html">TTM4175</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Units
-          </a>
-          <ul class="dropdown-menu dropdown-menu">
-            <a class="dropdown-item" href="unit-1-setup/index.html">Unit 1: Introduction and Setup</a>
-            <a class="dropdown-item" href="unit-2-models/index.html">Unit 2: Modeling and Deployment Diagrams</a>
-            <a class="dropdown-item" href="unit-3-stm/index.html">Unit 3: State Machines</a>
-            <a class="dropdown-item" href="unit-4-req/index.html">Unit 4: User Requirements</a>
-            <a class="dropdown-item" href="unit-5-stmpy/index.html">Unit 5: State Machines in Python</a>
-            <a class="dropdown-item" href="unit-6-agile/index.html">Unit 6: Agile Development</a>
-            <a class="dropdown-item" href="unit-7-comm/index.html">Unit 7: Communication</a>
-            <a class="dropdown-item" href="unit-8-sd/index.html">Unit 8: Interactions</a>
-            <a class="dropdown-item" href="unit-9-comp/index.html">Unit 9: Components</a>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/teknostart/index.html">Teknostart</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Project
-          </a>
-          <ul class="dropdown-menu dropdown-menu">
-            <a class="dropdown-item" href="project/index.html">Semester Project</a>
-            <a class="dropdown-item" href="project/deliveries-t1.html">Specification 1</a>
-            <a class="dropdown-item" href="project/deliveries-i1.html">Feedback on Specification 1</a>
-            <a class="dropdown-item" href="project/deliveries-t2.html">Specification 2</a>
-            <a class="dropdown-item" href="project/deliveries-i2.html">Feedback on Specification 2</a>
-            <a class="dropdown-item" href="project/deliveries-t3.html">Specification 3 (Final)</a>
-            <a class="dropdown-item" href="project/deliveries-i3.html">Feedback on Specification 3</a>
-            
-          </ul>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Learning
@@ -177,7 +161,7 @@ table.weekplan a {
 </nav>
     </section>
     <section class="content">
-<h1>Introduksjon til Kommunikasjonsteknologi og digital sikkerhet</h1>
+<h1>Kommunikasjonsteknologi og digital sikkerhet</h1>
 <p>Kurset er introduksjonsemnet til studieprogram <a href="https://www.ntnu.no/studier/mtkom">Kommunikasjonsteknologi og digital sikkerhet</a> og gir deg oversikt over flere emner og tema i studiet.</p>
 <!--
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
@@ -490,6 +474,7 @@ I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og d
   </script>
   <script>
     
+
 
 
 
