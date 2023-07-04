@@ -38,6 +38,7 @@ Du får en epost med lenke til et kurs om informasjonssikkerhet. [Les mer om kur
 
 # Teknostart Dag 1 (Tirsdag)
 
+## 09:15
 
 ---
 type: youtube
@@ -45,8 +46,9 @@ video: TNQsmPf24go
 ---
 
 
+## 15:00
 
-[Fedderuke Kick-Off](https://www.samfundet.no/arrangement/3605-fadderuke-kick-off)
+[Fadderuke Kick-Off](https://www.samfundet.no/arrangement/3605-fadderuke-kick-off)
 
 
 # Teknostart Dag 2 (Onsdag)

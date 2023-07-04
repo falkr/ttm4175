@@ -1,4 +1,4 @@
-# Introduksjon til Kommunikasjonsteknologi og digital sikkerhet
+# Kommunikasjonsteknologi og digital sikkerhet
 
 Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digital sikkerhet](https://www.ntnu.no/studier/mtkom) og gir deg oversikt over flere emner og tema i studiet.
 
