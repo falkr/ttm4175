@@ -9,7 +9,7 @@ Let us first make a HTTP request for the most common job: requesting the content
 
 ### Checking the News via Curl
 
-Use the command line tool curl to request the website:
+Use the command line tool `curl to request the website:
 
 ```bash
 curl --verbose https://www.nrk.no/
@@ -188,7 +188,17 @@ def get_air_temp(lat, lon):
 Remember that Python lets you create a string that includes variables with the `format()` function:
 
 ```python
+lat = ...
+lon = ...
 url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={}&lon={}".format(lat, lon)
+```
+
+A newer and more compact way to format strings and integrate variables is using f-strings, where you write the variables directly into curly brackets. (Note the `f` before the string.)
+
+```python
+lat = ...
+lon = ...
+url = f"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat}&lon={lon}"
 ```
 
 
