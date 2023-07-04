@@ -1,0 +1,61 @@
+╭──────────────────────────────╮
+│ 🍌 Finished with 5 warnings. │
+╰──────────────────────────────╯
+├── Page teknostart/dag1.md in breadcrumbs does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/breadcrumbs.yaml
+├── Page networking/index.md in breadcrumbs does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/breadcrumbs.yaml
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/teknostart/goals.png does 
+│   not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/index.md 174
+├── Figure file 
+│   /home/runner/work/ttm4175/ttm4175/pages/figures/security/overview.png does 
+│   not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/index.md 187
+├── Figure file /home/runner/work/ttm4175/ttm4175/pages/figures/iot/overview.png
+│   does not exist.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/index.md 199
+├── Found configuration file.
+│   └── config.toml
+├── Found extension FactBoxParagraphExtension
+├── Found extension CardExtension
+├── Found extension CardGroupExtension
+├── Found extension HintExtension
+├── Found extension HintParagraphExtension
+├── Found extension TipsParagraphExtension
+├── Found extension StepsParagraphExtension
+├── Found extension VideoExtension
+├── Found extension DoubleParagraphExtension
+├── Found extension QuizExtension
+├── Found extension RATParagraphExtension
+├── Found extension ButtonExtension
+├── Found extension WarningParagraphExtension
+├── Found extension RubricTableClassExtension
+├── Found extension GoalsParagraphExtension
+├── Found extension WeekplanTableClassExtension
+├── Found extension DefinitionParagraphExtension
+├── Found extension TreeParagraphExtension
+├── Found extension TaskParagraphExtension
+├── Found extension QuoteExtension
+├── Found extension NavExtension
+├── Found extension DeliveryParagraphExtension
+├── Found extension LinesExtension
+├── Found extension GuidelineParagraphExtension
+├── Found extension CheckParagraphExtension
+├── Found extension LinkExtension
+├── Found extension TableExtension
+├── Found extension FigureExtension
+├── Found extension ReportParagraphExtension
+├── Found extension AbstractParagraphExtension
+├── Looking for breadcrumbs file in 
+│   /home/runner/work/ttm4175/ttm4175/pages/breadcrumbs.yaml
+├── Breadcrumbs exist in 
+│   /home/runner/work/ttm4175/ttm4175/pages/breadcrumbs.yaml
+├── Loading template /home/runner/work/ttm4175/ttm4175/templates/page.html.
+├── Using threadpool.
+└── Translated
+    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/index.html
+    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/information-security.h
+    │   tml
+    └── /home/runner/work/ttm4175/ttm4175/docs/index.html
