@@ -22,9 +22,6 @@
   font-weight: bold;
   font-style: italic;
 }
-div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
-}
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
@@ -81,37 +78,29 @@ a.ntnu-button:hover {
 .person-card-detail {
   font-size: 0.8em;
 }
-div.checklistbox {
-  width: 18rem;
-  float: right;
-  padding: 10px;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  background-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 6px solid #00509e
-  }
-  
-div.checklistbox::before { 
-  content: "Checklist:";
-  font-weight: bold;
-  padding: 0px 0 12px 0;
-  display: block;
-  color: #00509e;
-  }
-
-div.checklistbox ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  float: left;
-  margin-left: -1.5em;
-  color: #00509e;
-  line-height: 1.5rem;
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
+div.check ul {
+  margin: 2em 0;
+}
 
-div.checklistbox ul {
-  list-style-type: none;
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 .double {
   column-count: 2;
@@ -216,88 +205,6 @@ div.qna .accordion-button:not(.collapsed) {
 
 div.qna .accordion-button:not(.collapsed)::after {
   color: #00509e;
-}
-ol.quiz li {
-  padding-left:3rem;
-  cursor: pointer;
-  }
-ol.quiz li::before {
-  font-family: bootstrap-icons !important;
-  padding-top:0.3rem;
-  padding-right: 1rem;
-  margin-left:-2rem;
-  font-size: 1rem;
-  vertical-align: top;
-  }
-ol.quiz li.unselected::before {
-  content: "\f28a";
-  }
-ol.quiz li.unselected:hover::before {
-  content: "\f287";
-  }
-ol.quiz li.selected::before {
-  content: "\f287";
-  color: #666666;
-  }
-ol.quiz li.unselected-true::before {
-  content: "\f26b";
-  color: #5CA551;
-  }
-ol.quiz li.selected-true::before {
-  content: "\f26a";
-  color: #5CA551;
-  }
-ol.quiz li.unselected-false::before {
-  content: "\f5e7";
-  }
-ol.quiz li.selected-false::before {
-  content: "\f5e6";
-  color: #FF3B30;
-  }
-ol.quiz li.selected-false {
-  color:#666666;
-  background-color: #FFD6D3;
-  border-top: none;
-  border-bottom: none;
-  }
-ol.quiz li.selected-true {
-  background-color:#DBF6CF;
-  border-top: none;
-  border-bottom: none;
-  }
-ol.quiz li.unselected-false {
-  color:lightgray;
-  }
-ol.quiz li.unselected-true {
-  background-color:#DBF6CF;
-  border-top: none;
-  border-bottom: none;
-  }
-div.card-footer a {
-  cursor: pointer;
-}
-div.quotedoc {
-  padding: 22px;
-  xbackground-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 0px solid #00509e;
-  #margin: 1rem 0 1rem 0;
-}
-
-div.quotecontent {
-  font-size:1em;
-  
-}
-
-div.quotetitle {
-  font-style: italic;
-  margin-bottom: 2rem;
-}
-
-div.quotedoc h1:first-child,
-div.quotedoc h2:first-child,
-div.quotedoc h3:first-child {
-  margin-top: 0em;
 }
 .rubric p {
 	margin: 0px
@@ -599,7 +506,7 @@ All extensions
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="_doc/">Syntax</a>
+          <a class="nav-link" href="_doc/index.html">Syntax</a>
           </li>
         </ul>
       </div>
@@ -689,7 +596,6 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
-
 
 
 

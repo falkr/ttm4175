@@ -18,7 +18,11 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    div.factbox {
+    div.abstract {
+  font-weight: bold;
+  font-style: italic;
+}
+div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 a.ntnu-button {
@@ -76,6 +80,30 @@ a.ntnu-button:hover {
 
 .person-card-detail {
   font-size: 0.8em;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
 }
 div.checklistbox {
   width: 18rem;
@@ -271,29 +299,6 @@ ol.quiz li.unselected-true {
   }
 div.card-footer a {
   cursor: pointer;
-}
-div.quotedoc {
-  padding: 22px;
-  xbackground-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 0px solid #00509e;
-  #margin: 1rem 0 1rem 0;
-}
-
-div.quotecontent {
-  font-size:1em;
-  
-}
-
-div.quotetitle {
-  font-style: italic;
-  margin-bottom: 2rem;
-}
-
-div.quotedoc h1:first-child,
-div.quotedoc h2:first-child,
-div.quotedoc h3:first-child {
-  margin-top: 0em;
 }
 .rubric p {
 	margin: 0px
@@ -609,7 +614,7 @@ All extensions
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="_doc/">Syntax</a>
+          <a class="nav-link" href="_doc/index.html">Syntax</a>
           </li>
         </ul>
       </div>
@@ -624,6 +629,8 @@ All extensions
   </script>
   <script>
     
+
+
 
 
 
@@ -698,7 +705,6 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
-
 
 
 

@@ -18,8 +18,9 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    div.factbox {
-  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+    div.abstract {
+  font-weight: bold;
+  font-style: italic;
 }
 a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
@@ -44,6 +45,65 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+div.check ul,
+div.check ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.check ul {
+  margin: 2em 0;
+}
+
+div.check ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.check ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size:20;
+  float: left;
+  margin-left: -1.5em;
+  color: #1481b8;
+}
+.double {
+  column-count: 2;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -79,6 +139,32 @@ div.goals ul li:before {
   float: left;
   margin-left: -1.5em;
   color: #00509e;
+}
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 .w3collapsible {
   background-color: #f0e9db;
@@ -233,6 +319,35 @@ div.card-footer a {
 	font-size: 12px;
 	font-style: italic;
 	color: gray
+}
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
 }
 
 div.tip p {
@@ -489,7 +604,7 @@ All extensions
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="_doc/">Syntax</a>
+          <a class="nav-link" href="_doc/index.html">Syntax</a>
           </li>
         </ul>
       </div>
@@ -504,6 +619,13 @@ All extensions
   </script>
   <script>
     
+
+
+
+
+
+
+
 
 
 
@@ -573,6 +695,7 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
 
 
 
