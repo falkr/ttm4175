@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4115</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="assets/anchor.js"></script>
+  <script src="assets/script-aside.js"></script>
+  <style type="text/css">
+    div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body>
+  
+  
+
+
+
+<nav class="navbar navbar-expand-lg navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+      <img id="header_logo" alt="NTNU Hjemmeside" width="120px" src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23px">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">TTM4115</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="unit-1-setup/index.html">Unit 1: Introduction and Setup</a>
+            <a class="dropdown-item" href="unit-2-models/index.html">Unit 2: Modeling and Deployment Diagrams</a>
+            <a class="dropdown-item" href="unit-3-stm/index.html">Unit 3: State Machines</a>
+            <a class="dropdown-item" href="unit-4-req/index.html">Unit 4: User Requirements</a>
+            <a class="dropdown-item" href="unit-5-stmpy/index.html">Unit 5: State Machines in Python</a>
+            <a class="dropdown-item" href="unit-6-agile/index.html">Unit 6: Agile Development</a>
+            <a class="dropdown-item" href="unit-7-comm/index.html">Unit 7: Communication</a>
+            <a class="dropdown-item" href="unit-8-sd/index.html">Unit 8: Interactions</a>
+            <a class="dropdown-item" href="unit-9-comp/index.html">Unit 9: Components</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="project/index.html">Semester Project</a>
+            <a class="dropdown-item" href="project/deliveries-t1.html">Specification 1</a>
+            <a class="dropdown-item" href="project/deliveries-i1.html">Feedback on Specification 1</a>
+            <a class="dropdown-item" href="project/deliveries-t2.html">Specification 2</a>
+            <a class="dropdown-item" href="project/deliveries-i2.html">Feedback on Specification 2</a>
+            <a class="dropdown-item" href="project/deliveries-t3.html">Specification 3 (Final)</a>
+            <a class="dropdown-item" href="project/deliveries-i3.html">Feedback on Specification 3</a>
+            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Learning
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="learning/feedback.html">Teachers and Feedback</a>
+            <a class="dropdown-item" href="learning/goals.html">Learning Goals</a>
+            <a class="dropdown-item" href="learning/grading.html">Grading</a>
+            <a class="dropdown-item" href="learning/reflection.html">Reflection</a>
+            <a class="dropdown-item" href="learning/tbl.html">Team-Based Learning</a>
+            <a class="dropdown-item" href="learning/teamwork.html">Teamwork</a>
+            <a class="dropdown-item" href="schedule.html">Schedule</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tools
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="tools/index.html">Tools</a>
+            <!--<a class="dropdown-item" href="tools/tools-python.html">Python</a>-->
+            <a class="dropdown-item" href="tools/tools-gui.html">GUIs in Python</a>    
+            <a class="dropdown-item" href="tools/tools-mqtt.html">MQTT</a>            
+            <a class="dropdown-item" href="tools/tools-notebooks.html">Notebooks</a>
+            <a class="dropdown-item" href="tools/tools-stmpy.html">STMPY</a>            
+          </ul>
+        </li>
+      </ul>
+      <div class="bg-light border ms-auto"></div>
+        <div>
+        <a class="nav-link" href="schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+          <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+          <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+  <main class="container">
+
+    <div class="row g-5 justify-content-md-center pb-5">
+
+
+
+      <div class="col-md-9" style="margin-top: 6rem;">
+        <div class="page">
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item active" aria-current="page">TTM4175</li>
+</ol>
+</nav>
+    </section>
+    <section class="content">
+<h1>Introduksjon til Kommunikasjonsteknologi og digital sikkerhet</h1>
+<p>Kurset er introduksjonsemnet til studieprogram <a href="https://www.ntnu.no/studier/mtkom">Kommunikasjonsteknologi og digital sikkerhet</a> og gir deg oversikt over flere emner og tema i studiet.</p>
+<!--
+<a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
+-->
+<h2>Timeplan</h2>
+
+<h3>Uke 33 (Teknostart)</h3>
+<p>I løpet av uke 33 gjennomfører vi <a href="teknostart/index.html">Teknostart</a>.</p>
+
+<h3>Fra uke 34, (normal semester)</h3>
+
+<table class="table table-sm">
+<tr>
+<th><p>Uke</p>
+</th>
+<th><p>Tid</p>
+</th>
+<th><p>Tema</p>
+</th>
+</tr>
+<tr>
+<td><p>33</p>
+</td>
+<td></td>
+<td><p><a href="teknostart/index.html">Teknostart</a></p>
+</td>
+</tr>
+<tr>
+<td><p>34</p>
+</td>
+<td></td>
+<td><p>Linux kommandolinje</p>
+</td>
+</tr>
+<tr>
+<td><p>35</p>
+</td>
+<td></td>
+<td><p>Nett</p>
+</td>
+</tr>
+<tr>
+<td><p>36</p>
+</td>
+<td></td>
+<td><p>Nett</p>
+</td>
+</tr>
+<tr>
+<td><p>37</p>
+</td>
+<td></td>
+<td><p>Frank: Om Teamarbeid</p>
+</td>
+</tr>
+<tr>
+<td><p>38</p>
+</td>
+<td></td>
+<td><p>Etisk hacking / Sikkerhet</p>
+</td>
+</tr>
+<tr>
+<td><p>39</p>
+</td>
+<td></td>
+<td><p>Etisk hacking / Sikkerhet</p>
+</td>
+</tr>
+<tr>
+<td><p>40</p>
+</td>
+<td></td>
+<td><p>Etisk hacking / Sikkerhet</p>
+</td>
+</tr>
+<tr>
+<td><p>41</p>
+</td>
+<td></td>
+<td><p>Etisk hacking / Sikkerhet</p>
+</td>
+</tr>
+<tr>
+<td><p>42</p>
+</td>
+<td></td>
+<td><p><em>info kommer</em></p>
+</td>
+</tr>
+<tr>
+<td><p>43</p>
+</td>
+<td></td>
+<td><p>IoT 1, Introduction to IoT and the Microbit</p>
+</td>
+</tr>
+<tr>
+<td><p>44</p>
+</td>
+<td></td>
+<td><p>IoT 2: Tilstandmaskiner</p>
+</td>
+</tr>
+<tr>
+<td><p>45</p>
+</td>
+<td></td>
+<td><p>IoT 3: HTTP and JSON</p>
+</td>
+</tr>
+<tr>
+<td><p>46</p>
+</td>
+<td></td>
+<td><p>IoT 4: MQTT</p>
+</td>
+</tr>
+<tr>
+<td><p>47</p>
+</td>
+<td></td>
+<td><p><em>info kommer</em></p>
+</td>
+</tr>
+</table>
+<h3>Ukeplan</h3>
+
+<table class="weekplan table table-sm">
+<tr>
+<th><p>Time</p>
+</th>
+<th><p>Mon</p>
+</th>
+<th><p>Tue</p>
+</th>
+<th><p>Wed</p>
+</th>
+<th><p>Thu</p>
+</th>
+<th><p>Fri</p>
+</th>
+</tr>
+<tr>
+<td><p>08:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td rowspan="2"><p><a href="https://link.mazemap.com/QO2zpqJ0">Kjel 4</a> (Forelesning)</p>
+</td>
+</tr>
+<tr>
+<td><p>09:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>10:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td rowspan="4"><p><a href="https://link.mazemap.com/pR24A3cf">Sahara Lab</a> (Lab)</p>
+</td>
+</tr>
+<tr>
+<td><p>11:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>12:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>13:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>14:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>15:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>16:15</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+    </section>
+    <section class="content">
+<h1>Innhold</h1>
+<p>Emnet består av <a href="teknostart/index.html">Teknostart</a>, etterfølgt av labarbeid med litt forskjellig fokus:</p>
+<h2>Oppstartsuka</h2>
+<p>I første uken blir du kjent med datamaskiner, hvordan internettet fungerer og hvor sårbar den er. Vi skal også lage vår egen hjemmeside og ser på interaksjon mellom nettleser og server, kryptering og nettet i mellom.</p>
+
+<figure class="figure">
+    <img src="figures/teknostart/goals.png" class="figure-img img-fluid rounded" alt="Each day we try to reach a new goal. The final goal is to run our own website.">
+  <figcaption class="figure-caption">Each day we try to reach a new goal. The final goal is to run our own website.</figcaption>
+</figure>
+<h2>Sikkerhet</h2>
+<p>Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer.
+Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer.
+I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.</p>
+
+<span name="84c669"></span><aside name="84c669"><p><img src="figures/laszlo.jpg" width="100px"><p><a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no</p></p>
+</aside>
+<figure class="figure">
+    <img src="figures/security/overview.png" class="figure-img img-fluid rounded" alt="">
+</figure>
+<h2>Tingenes Internet</h2>
+<p>Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.</p>
+
+<span name="c7c2f9"></span><aside name="c7c2f9"><p><img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p></p>
+</aside>
+<figure class="figure">
+    <img src="figures/iot/overview.png" class="figure-img img-fluid rounded" alt="">
+</figure>
+    </section>
+    <section class="content">
+<h1>Om Emnet</h1>
+<h2>Forventninger til deg som student</h2>
+<p>Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.</p>
+<p>Vi forventer at du:</p>
+<ul>
+<li>Deltar aktivt på alle forelesningene. Om du er forhindret, send en mail til <a href="mailto:kraemer@ntnu.no">Frank</a> på forhånd.</li>
+<li>Deltar aktivt i labarbeidene på de oppsatte veiledningstimene.</li>
+<li>Bidrar til positivt og konstruktivt gruppearbeid.</li>
+<li>Bidrar i å skrive avsluttende rapport fra hver lab.</li>
+</ul>
+<h2>Vurdering</h2>
+<p>Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.</p>
+<p>Det er ingen eksamen i emnet.</p>
+
+    </section>
+</div>
+      </div>
+
+
+
+
+    </div>
+
+  </main>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7d705a">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/falkr/ttm4115/tree/master/pages/index.md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg> Edit this page
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+  </script>
+  <script>
+    
+
+
+
+  </script>
+</body>
+
+</html>

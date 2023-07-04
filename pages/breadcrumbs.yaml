@@ -1,0 +1,8 @@
+- page: index.md
+  title: TTM4175
+- - page: teknostart/index.md
+    title: Teknostart
+  - - page: teknostart/dag1.md
+      title: Dag 1
+  - page: networking/index.md
+    title: Networking

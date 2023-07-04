@@ -9,42 +9,9 @@ Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digit
 ## Timeplan
 
 
-### Uke 33 (Teknostart, oppstartsuka)
+### Uke 33 (Teknostart)
 
-I løpet av uke 33 er emnet integrert i studiestart. 
-
-
----
-type: table
----
-{|
-! Tid
-! Tema
-! Sted
-|-
-| Mandag, 15. aug. 2022, 13:00 - 15:00
-| Immatrikulering og orientering
-| [EL-6](https://link.mazemap.com/kolUEtCs)
-|-
-| Tirsdag, 16. aug.
-| Bedriftsbesøk 
-| 08:15 ved [SINTEF](https://goo.gl/maps/x6XQTSBWf9sjheNV8)
-|-
-| Onsdag, 17. aug. 2022, 9:00 - ca. 16:30
-| Teknostart Dag 1
-| [EL-6](https://link.mazemap.com/kolUEtCs)
-|-
-| Torsdag, 18. aug. 2022, 9:00 - 15:00
-| Teknostart Dag 2
-| [EL-3](https://link.mazemap.com/QqBVasau)
-|-
-| Fredag, 19. aug. 2022, 9:00 - ca. 15:00
-| Teknostart Dag 3
-| [EL-6](https://link.mazemap.com/kolUEtCs)
-|}
-
-**Bedriftsbesøk:** Allerede tirsdag 16. august skal dere få besøke en bedrift og få se hva dere kan jobbe med i fremtiden. Da vil SINTEF og Norsk Helsenett vil gi dere et innblikk i arbeidslivet.
-Det blir også servert frokost, så alt dere trenger å gjøre er å møte opp kl. 08.15 hos SINTEF (Strindvegen 4, [se kart her](https://goo.gl/maps/x6XQTSBWf9sjheNV8)).
+I løpet av uke 33 gjennomfører vi [Teknostart](teknostart/index.html). 
 
 
 ### Fra uke 34, (normal semester)
@@ -58,20 +25,20 @@ type: table
 ! Tema 
 |-
 | 33
-| se ovenfor
-| Studiestart
+| 
+| [Teknostart](teknostart/index.html)
 |-
 | 34
 | 
-| Laszlo
+| Linux kommandolinje
 |-
 | 35
 |
-| Amir
+| Nett
 |-
 | 36
 |
-| Amir
+| Nett
 |-
 | 37
 |
@@ -79,23 +46,23 @@ type: table
 |-
 | 38
 |
-| Laszlo: Etisk hacking
+| Etisk hacking / Sikkerhet
 |-
 | 39
 |
-| Laszlo: Etisk hacking
+| Etisk hacking / Sikkerhet
 |-
 | 40
 |
-| ingen undervisning i emnet
+| Etisk hacking / Sikkerhet
 |-
 | 41
 |
-| Laszlo: Etisk hacking
+| Etisk hacking / Sikkerhet
 |-
 | 42
 | 
-| Laszlo: Etisk hacking
+| _info kommer_
 |-
 | 43
 |
@@ -138,8 +105,8 @@ class: weekplan table-sm table-bordered
 | 
 |  
 |
-| rowspan="2" | [Kjel 4](https://link.mazemap.com/QO2zpqJ0) (Forelesning)
 |
+| rowspan="2" | [Kjel 4](https://link.mazemap.com/QO2zpqJ0) (Forelesning)
 |-
 | 09:15
 | 
@@ -151,8 +118,8 @@ class: weekplan table-sm table-bordered
 | 
 |
 |
-| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab)
-| 
+|
+| rowspan="4" | [Sahara Lab](https://link.mazemap.com/pR24A3cf) (Lab) 
 |-
 | 11:15
 |
@@ -198,11 +165,11 @@ class: weekplan table-sm table-bordered
 
 # Innhold
 
-Emnet består av oppstartsuka, etterfølgt av labarbeid med litt forskjellig fokus:
+Emnet består av [Teknostart](teknostart/index.html), etterfølgt av labarbeid med litt forskjellig fokus:
 
 ## Oppstartsuka
 
-I første uken blir du kjent med datamaskiner og nettverk, og får ferdigheter som vi trenger i resten av semesteret og hele studiet. Vi kommer til å kjøre en virtualisert datamaskin i deres egen datamaskin, lære om tilgang via kommandolinje og SSH, og lage deres egen webside.
+I første uken blir du kjent med datamaskiner, hvordan internettet fungerer og hvor sårbar den er. Vi skal også lage vår egen hjemmeside og ser på interaksjon mellom nettleser og server, kryptering og nettet i mellom.
 
 ---
 type: figure
