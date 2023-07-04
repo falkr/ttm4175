@@ -18,11 +18,7 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    div.abstract {
-  font-weight: bold;
-  font-style: italic;
-}
-div.factbox {
+    div.factbox {
   width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
 }
 a.ntnu-button {
@@ -48,97 +44,6 @@ a.ntnu-button:hover {
     background: #00509e;
     color: #fff;
     text-decoration: none
-}
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
-}
-
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
-}
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
-}
-
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-div.checklistbox {
-  width: 18rem;
-  float: right;
-  padding: 10px;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  background-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 6px solid #00509e
-  }
-  
-div.checklistbox::before { 
-  content: "Checklist:";
-  font-weight: bold;
-  padding: 0px 0 12px 0;
-  display: block;
-  color: #00509e;
-  }
-
-div.checklistbox ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  float: left;
-  margin-left: -1.5em;
-  color: #00509e;
-  line-height: 1.5rem;
-}
-
-
-div.checklistbox ul {
-  list-style-type: none;
-}
-.double {
-  column-count: 2;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -201,33 +106,6 @@ div.goals ul li:before {
   background-color: #f3f3f3;
   margin-bottom: 15px;
 }
-.w3collapsible {
-  background-color: #f0e9db;
-  color: #868279;
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active,
-.w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-
 
 button:hover {
   background-color: #EFF7FF;
@@ -299,113 +177,6 @@ ol.quiz li.unselected-true {
   }
 div.card-footer a {
   cursor: pointer;
-}
-div.quotedoc {
-  padding: 22px;
-  xbackground-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 0px solid #00509e;
-  #margin: 1rem 0 1rem 0;
-}
-
-div.quotecontent {
-  font-size:1em;
-  
-}
-
-div.quotetitle {
-  font-style: italic;
-  margin-bottom: 2rem;
-}
-
-div.quotedoc h1:first-child,
-div.quotedoc h2:first-child,
-div.quotedoc h3:first-child {
-  margin-top: 0em;
-}
-.rubric p {
-	margin: 0px
-}
-
-.rubric th {
-	text-align: center;
-	padding: 6px;
-}
-
-.rubric td {
-	vertical-align: top;
-	font-size: 12px;
-	padding: 6px;
-}
-
-.rubric th {
-	font-size: 12px;
-	vertical-align: top;
-}
-
-.rubric td:nth-child(2),
-.rubric th:nth-child(2) {
-	background-color: #D0E8DC;
-	width: 22%
-}
-
-.rubric td:nth-child(3),
-.rubric th:nth-child(3) {
-	background-color: #FCFDE3;
-	width: 22%
-}
-
-.rubric td:nth-child(4),
-.rubric th:nth-child(4) {
-	background-color: #F8D9C2;
-	width: 22%
-}
-
-.rubric td:nth-child(5),
-.rubric th:nth-child(5) {
-	background-color: #EBBCB9;
-	width: 22%
-}
-
-.rubric tfoot td {
-	text-align: right;
-	border-bottom: none;
-	padding: 1px;
-}
-
-.rubric tfoot a {
-	font-size: 12px;
-	font-style: italic;
-	color: gray
-}
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
-  text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin: -20px -10px -20px -20px
 }
 
 div.tip p {
@@ -569,93 +340,15 @@ table.weekplan a {
 
       <div class="col-md-9" style="margin-top: 6rem;">
         <div class="page">
-<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
-<li class="breadcrumb-item active" aria-current="page">Teknostart</li>
-</ol>
-</nav>
     </section>
     <section class="content">
-<h1>Teknostart</h1>
-
-<table class="table table-sm">
-<tr>
-<th><p>Tid</p>
-</th>
-<th><p>Tema</p>
-</th>
-<th><p>Sted</p>
-</th>
-</tr>
-<tr>
-<td><p>Mandag, 14. aug. 2023, 10:00</p>
-</td>
-<td><p>Immatrikulering og orientering</p>
-</td>
-<td><p><a href="https://link.mazemap.com/Zx7Rran8">EL-2</a></p>
-</td>
-</tr>
-<tr>
-<td><p>Tirsdag, 15. aug. 2023, 9:15 - ca. 15:00</p>
-</td>
-<td><p>Teknostart Dag 1</p>
-</td>
-<td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
-</td>
-</tr>
-<tr>
-<td><p>Onsdag, 16. aug. 2023, 9:15 - ca. 15:00</p>
-</td>
-<td><p>Teknostart Dag 2</p>
-</td>
-<td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
-</td>
-</tr>
-<tr>
-<td><p>Torsdag, 17. aug. 2023, 9:15 - ca. 15:00</p>
-</td>
-<td><p>Teknostart Dag 3</p>
-</td>
-<td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
-</td>
-</tr>
-<tr>
-<td><p>Fredag, 18. aug. 2023, 9:15 - ca. 15:00</p>
-</td>
-<td><p>Teknostart Dag 4</p>
-</td>
-<td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
-</td>
-</tr>
-</table>
-    </section>
-    <section class="content">
-<h1>Generelt om studiestart</h1>
-<p>Du får en epost med lenke til et kurs om informasjonssikkerhet. <a href="information-security.html">Les mer om kurset</a>.</p>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 1 (Tirsdag)</h1>
-<h2>09:15</h2>
-
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TNQsmPf24go" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h2>15:00</h2>
-<p><a href="https://www.samfundet.no/arrangement/3605-fadderuke-kick-off">Fadderuke Kick-Off</a></p>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 2 (Onsdag)</h1>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 3 (Torsdag)</h1>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 4 (Fredag)</h1>
+<h1>Development</h1>
+<ul>
+<li><a href="api/supermark/index.html">API</a></li>
+<li><a href="https://github.com/falkr/supermark">Github Repository</a></li>
+<li><a href="https://pypi.org/project/supermark/">PyPi Listing</a></li>
+<li><a href="https://www.codacy.com/app/falkr/supermark?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=falkr/supermark&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/fd3d2a790647466692ce54258a798273" alt="Codacy Badge" /></a></li>
+</ul>
 
     </section>
 </div>
@@ -681,7 +374,7 @@ table.weekplan a {
         <div class="bg-light ms-auto border-0"></div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/falkr/ttm4175/tree/master/pages/teknostart/index.md">
+            <a class="nav-link" href="https://github.com/falkr/ttm4175/tree/master/pages/_doc/development.md">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -704,14 +397,6 @@ table.weekplan a {
   </script>
   <script>
     
-
-
-
-
-
-
-
-
 
 
 
@@ -780,9 +465,6 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
-
-
-
 
 
 
