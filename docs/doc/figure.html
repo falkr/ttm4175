@@ -54,6 +54,48 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+button:hover {
+  background-color: #EFF7FF;
+}
+div.qna .accordion-button:not(.collapsed) {
+  background-color: #EFF7FF;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+  color: #00509e;
+}
+
+div.qna .accordion-button:not(.collapsed)::after {
+  color: #00509e;
+}
+
+
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
 
   </style>
 </head>
@@ -238,6 +280,7 @@ Formats can be <code>jpg</code>, <code>png</code>, <code>pdf</code>.</p>
 
 
 
+
 function quiz_select(quiz_id, alternative) {
     quiz = document.getElementById(quiz_id);
     let i = 0;
@@ -300,6 +343,9 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
+
+
 
   </script>
 </body>

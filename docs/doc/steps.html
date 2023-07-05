@@ -18,7 +18,10 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    a.ntnu-button {
+    div.factbox {
+  width:250px; float: right; margin: 0 15px 15px 15px; padding:15px; background: lightblue
+}
+a.ntnu-button {
     font: 600 14px "Source Sans Pro", Georgia, serif;
     background: #fff;
     color: #00509e;
@@ -73,33 +76,6 @@ a.ntnu-button:hover {
 
 .person-card-detail {
   font-size: 0.8em;
-}
-div.check ul,
-div.check ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.check ul {
-  margin: 2em 0;
-}
-
-div.check ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.check ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size:20;
-  float: left;
-  margin-left: -1.5em;
-  color: #1481b8;
-}
-.double {
-  column-count: 2;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -201,6 +177,65 @@ div.qna .accordion-button:not(.collapsed) {
 
 div.qna .accordion-button:not(.collapsed)::after {
   color: #00509e;
+}
+ol.quiz li {
+  padding-left:3rem;
+  cursor: pointer;
+  }
+ol.quiz li::before {
+  font-family: bootstrap-icons !important;
+  padding-top:0.3rem;
+  padding-right: 1rem;
+  margin-left:-2rem;
+  font-size: 1rem;
+  vertical-align: top;
+  }
+ol.quiz li.unselected::before {
+  content: "\f28a";
+  }
+ol.quiz li.unselected:hover::before {
+  content: "\f287";
+  }
+ol.quiz li.selected::before {
+  content: "\f287";
+  color: #666666;
+  }
+ol.quiz li.unselected-true::before {
+  content: "\f26b";
+  color: #5CA551;
+  }
+ol.quiz li.selected-true::before {
+  content: "\f26a";
+  color: #5CA551;
+  }
+ol.quiz li.unselected-false::before {
+  content: "\f5e7";
+  }
+ol.quiz li.selected-false::before {
+  content: "\f5e6";
+  color: #FF3B30;
+  }
+ol.quiz li.selected-false {
+  color:#666666;
+  background-color: #FFD6D3;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.selected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.unselected-false {
+  color:lightgray;
+  }
+ol.quiz li.unselected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+div.card-footer a {
+  cursor: pointer;
 }
 .rubric p {
 	margin: 0px
@@ -543,8 +578,6 @@ All extensions
   </script>
   <script>
     
-
-
 
 
 

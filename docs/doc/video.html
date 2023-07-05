@@ -42,37 +42,40 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
 }
 
-.person-card-name {
-  font-weight: 600;
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.person-card-email {
-  font-size: 0.8em;
+div.goals ul {
+  margin: 2em 0;
 }
 
-.person-card-detail {
-  font-size: 0.8em;
-}
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
 }
 
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
 }
 
 button:hover {
@@ -87,98 +90,95 @@ div.qna .accordion-button:not(.collapsed) {
 div.qna .accordion-button:not(.collapsed)::after {
   color: #00509e;
 }
-.rubric p {
-	margin: 0px
+ol.quiz li {
+  padding-left:3rem;
+  cursor: pointer;
+  }
+ol.quiz li::before {
+  font-family: bootstrap-icons !important;
+  padding-top:0.3rem;
+  padding-right: 1rem;
+  margin-left:-2rem;
+  font-size: 1rem;
+  vertical-align: top;
+  }
+ol.quiz li.unselected::before {
+  content: "\f28a";
+  }
+ol.quiz li.unselected:hover::before {
+  content: "\f287";
+  }
+ol.quiz li.selected::before {
+  content: "\f287";
+  color: #666666;
+  }
+ol.quiz li.unselected-true::before {
+  content: "\f26b";
+  color: #5CA551;
+  }
+ol.quiz li.selected-true::before {
+  content: "\f26a";
+  color: #5CA551;
+  }
+ol.quiz li.unselected-false::before {
+  content: "\f5e7";
+  }
+ol.quiz li.selected-false::before {
+  content: "\f5e6";
+  color: #FF3B30;
+  }
+ol.quiz li.selected-false {
+  color:#666666;
+  background-color: #FFD6D3;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.selected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.unselected-false {
+  color:lightgray;
+  }
+ol.quiz li.unselected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+div.card-footer a {
+  cursor: pointer;
 }
 
-.rubric th {
-	text-align: center;
-	padding: 6px;
+
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
 }
 
-.rubric td {
-	vertical-align: top;
-	font-size: 12px;
-	padding: 6px;
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
 }
 
-.rubric th {
-	font-size: 12px;
-	vertical-align: top;
+table.weekplan td, table.weekplan th {
+  text-align: center;
 }
 
-.rubric td:nth-child(2),
-.rubric th:nth-child(2) {
-	background-color: #D0E8DC;
-	width: 22%
+table.weekplan td:empty {
+  background-color: white;
 }
 
-.rubric td:nth-child(3),
-.rubric th:nth-child(3) {
-	background-color: #FCFDE3;
-	width: 22%
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
 }
 
-.rubric td:nth-child(4),
-.rubric th:nth-child(4) {
-	background-color: #F8D9C2;
-	width: 22%
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
 }
-
-.rubric td:nth-child(5),
-.rubric th:nth-child(5) {
-	background-color: #EBBCB9;
-	width: 22%
-}
-
-.rubric tfoot td {
-	text-align: right;
-	border-bottom: none;
-	padding: 1px;
-}
-
-.rubric tfoot a {
-	font-size: 12px;
-	font-style: italic;
-	color: gray
-}
-
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-.tree ul, .tree ul ul {
-  list-style: none;
- } 
-.tree ul ul {
- }
- .tree ul li {
-  margin: 0;
-  padding: 0 7px;
-  line-height: 20px; 
-  border-left: 1px solid #868279;
- }
- .tree ul li:last-child {
-     border-left:none;
- }
- .tree ul li:before {
-    position:relative;
-    top:-0.3em;
-    height:22px;
-    width:12px;
-    color:white;
-    border-bottom:1px solid #868279;
-    content:"";
-    display:inline-block;
-    left:-7px;
- }
- .tree ul li:last-child:before {
-    border-left:1px solid #868279;
-    border-radius: 0px 0px 0px 3px   
- }
-
 
   </style>
 </head>
@@ -307,8 +307,7 @@ All extensions
 </div>
 <h2>Source Code</h2>
 
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> youtube</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">video</span><span class="kw">:</span><span class="at"> wupToqz1e2g</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">caption</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;The Pale Blue Dot.&quot;</span></span>
@@ -325,8 +324,7 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="
 </aside>
 <h2>Source Code</h2>
 
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> youtube</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">video</span><span class="kw">:</span><span class="at"> wupToqz1e2g</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">caption</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;The Pale Blue Dot.&quot;</span></span>
@@ -384,12 +382,68 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="
 
 
 
+function quiz_select(quiz_id, alternative) {
+    quiz = document.getElementById(quiz_id);
+    let i = 0;
+    for (li of quiz.getElementsByTagName("li")) {
+        if (li.classList.contains('selected') || li.classList.contains('unselected')) {
+            if (i == alternative) {
+                li.classList.add('selected')
+                li.classList.remove('unselected')
+            } else {
+                li.classList.add('unselected')
+                li.classList.remove('selected')
+            }
+        }
+        i = i + 1
+    }
+    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
+        if (div.getAttribute("data") == "instructions") {
+            div.classList.add('visually-hidden')
+        } else if (div.getAttribute("data") == "confirm") {
+            div.classList.remove('visually-hidden')
+        }
+    }
+}
 
-
-
-
-
-
+function quiz_confirm(quiz_id, correct) {
+    quiz = document.getElementById(quiz_id);
+    let i = 0;
+    let selected = -1;
+    for (li of quiz.getElementsByTagName("li")) {
+        if (i == correct) {
+            if (li.classList.contains('selected')) {
+                // selected and true
+                selected = i
+                li.classList.remove('selected')
+                li.classList.add('selected-true')
+            } else if (li.classList.contains('unselected')) {
+                // unselected but true
+                li.classList.remove('unselected')
+                li.classList.add('unselected-true')
+            }
+        } else {
+            if (li.classList.contains('selected')) {
+                // selected but false
+                selected = i
+                li.classList.remove('selected')
+                li.classList.add('selected-false')
+            } else if (li.classList.contains('unselected')) {
+                // unselected and false
+                li.classList.remove('unselected')
+                li.classList.add('unselected-false')
+            }
+        }
+        i = i + 1
+    }
+    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
+        if (div.getAttribute("data") == "confirm") {
+            div.classList.add('visually-hidden')
+        } else if (div.getAttribute("data") == selected) {
+            div.classList.remove('visually-hidden')
+        }
+    }
+}
 
 
 
