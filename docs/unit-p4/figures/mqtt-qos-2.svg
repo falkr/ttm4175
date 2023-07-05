@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="733.0827 609.34646 363.8347 149.13381" width="363.8347" height="149.13381">
+  <defs>
+    <font-face font-family="Calibri" font-size="10" panose-1="2 15 5 2 2 2 4 3 2 4" units-per-em="1000" underline-position="-113.28125" underline-thickness="65.42969" slope="0" x-height="464.35547" cap-height="631.8359" ascent="952.1484" descent="-268.5547" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Calibri"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.10.2 
+    <dc:date>2019-07-10 06:09:46 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-opacity="1" fill-opacity="1" fill="none" stroke="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_145">
+        <g id="Graphic_111">
+          <rect x="733.5827" y="609.84646" width="79.37009" height="22.677167" fill="white"/>
+          <rect x="733.5827" y="609.84646" width="79.37009" height="22.677167" stroke="#929292" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(738.5827 614.68504)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="15.695786" y="10">publisher</tspan>
+          </text>
+        </g>
+        <g id="Graphic_110">
+          <rect x="875.315" y="609.84646" width="79.37009" height="22.677166" fill="white"/>
+          <rect x="875.315" y="609.84646" width="79.37009" height="22.677166" stroke="#929292" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(880.315 614.68504)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="21.416" y="10">broker</tspan>
+          </text>
+        </g>
+        <g id="Line_109">
+          <line x1="773.2677" y1="632.5236" x2="773.2677" y2="757.9803" stroke="#929292" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_108">
+          <line x1="914.5" y1="631.9724" x2="914.5" y2="757.9803" stroke="#929292" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_107">
+          <rect x="1017.0473" y="609.84646" width="79.37009" height="22.677167" fill="white"/>
+          <rect x="1017.0473" y="609.84646" width="79.37009" height="22.677167" stroke="#929292" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(1022.0473 614.68504)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="13.681626" y="10">subscriber</tspan>
+          </text>
+        </g>
+        <g id="Line_106">
+          <line x1="1056.7323" y1="632.5236" x2="1056.7323" y2="757.9803" stroke="#929292" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_105">
+          <line x1="773.7677" y1="659.81885" x2="905.6" y2="659.81885" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_104">
+          <text transform="translate(831.7023 648.4803)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="0" y="10">publish</tspan>
+          </text>
+        </g>
+        <g id="Line_99">
+          <line x1="915.5" y1="674.5747" x2="1047.3323" y2="674.5747" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_98">
+          <text transform="translate(973.4346 663.2361)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="0" y="10">publish</tspan>
+          </text>
+        </g>
+        <g id="Line_95">
+          <line x1="915.5" y1="733.51965" x2="783.6677" y2="733.51965" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_94">
+          <text transform="translate(827.2492 722.1811)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="0" y="10">pubcomp</tspan>
+          </text>
+        </g>
+        <g id="Line_89">
+          <line x1="915.5" y1="688.1653" x2="783.6677" y2="688.1653" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_88">
+          <text transform="translate(832.3005 676.8267)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="0" y="10">pubrec</tspan>
+          </text>
+        </g>
+        <g id="Line_87">
+          <line x1="773.7677" y1="705.1732" x2="905.6" y2="705.1732" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_86">
+          <text transform="translate(833.2673 693.8346)" fill="black">
+            <tspan font-family="Calibri" font-size="10" font-weight="400" fill="black" x="0" y="10">pubrel</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -18,29 +18,37 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important;
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
+    .person-card img {
+  width: 56px;
+  border: 1px solid #eee;
 }
 
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
 }
 div.figure {
   padding: 20px 0 20px 0;
@@ -52,6 +60,56 @@ div.figurefullwitdth {
   margin-left: -33px;
   margin-right: -33px;
   width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+}
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 
 button:hover {
@@ -67,6 +125,24 @@ div.qna .accordion-button:not(.collapsed)::after {
   color: #00509e;
 }
 
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
 
 table.weekplan {
   width: 100%;
@@ -123,10 +199,33 @@ table.weekplan a {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="../index.html">TTM4175</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teknostart
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="..//teknostart/index.html">Teknostart</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+            <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+            <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+            <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+
+          </ul>
         </li>
+        
+        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -210,7 +309,7 @@ table.weekplan a {
 <tr>
 <td><p>Tirsdag, 15. aug. 2023, 9:15 - ca. 15:00</p>
 </td>
-<td><p>Teknostart Dag 1</p>
+<td><p><a href="day1.html">Teknostart Dag 1</a></p>
 </td>
 <td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
 </td>
@@ -218,7 +317,7 @@ table.weekplan a {
 <tr>
 <td><p>Onsdag, 16. aug. 2023, 9:15 - ca. 15:00</p>
 </td>
-<td><p>Teknostart Dag 2</p>
+<td><p><a href="day2.html">Teknostart Dag 2</a></p>
 </td>
 <td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
 </td>
@@ -226,7 +325,7 @@ table.weekplan a {
 <tr>
 <td><p>Torsdag, 17. aug. 2023, 9:15 - ca. 15:00</p>
 </td>
-<td><p>Teknostart Dag 3</p>
+<td><p><a href="day3.html">Teknostart Dag 3</a></p>
 </td>
 <td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
 </td>
@@ -234,7 +333,7 @@ table.weekplan a {
 <tr>
 <td><p>Fredag, 18. aug. 2023, 9:15 - ca. 15:00</p>
 </td>
-<td><p>Teknostart Dag 4</p>
+<td><p><a href="day4.html">Teknostart Dag 4</a></p>
 </td>
 <td><p><a href="https://link.mazemap.com/oHWUNXyP">EL-1</a></p>
 </td>
@@ -243,31 +342,29 @@ table.weekplan a {
     </section>
     <section class="content">
 <h1>Generelt om studiestart</h1>
+<ul>
+<li>Informasjon om <a href="https://www.ntnu.no/studier/mtkom/studiestart">studiestart</a></li>
+<li><a href="https://i.ntnu.no/ny-student">Ni steg du må gjøre ved studiestart</a></li>
+</ul>
+
+<h2>Kurs om informasjonssikkerhet</h2>
 <p>Du får en epost med lenke til et kurs om informasjonssikkerhet. <a href="information-security.html">Les mer om kurset</a>.</p>
 
     </section>
     <section class="content">
-<h1>Teknostart Dag 1 (Tirsdag)</h1>
-<h2>09:15</h2>
+<h1>Om Teknostart</h1>
+<p><strong>Visjon:</strong> Teknostart skaper motiverte og inspirerte teknologistudenter, som bidrar til kunnskap for en bedre verden</p>
+<p><strong>Formål:</strong> Hensikten med Teknostart er at studentene raskt finner seg til rette på studiet slik at de trives og mestrer studiene.</p>
+<p>Teknostart skal ha undervisnings- og læringsaktiviteter som bidrar til sosial og akademisk inkludering og mestring. Teknostart skal sørge for at studentene får informasjon som bidrar til å justere studenters forventinger og lette overgangen til studenttilværelsen. Teknostart skal legge til rette for tilgjengelige identiteter (som studentene kan identifisere seg med). Dette gjelder særlig for underrepresenterte grupper, knyttet til kjønn, etnisitet og/eller alder</p>
 
-<div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TNQsmPf24go" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="goals"><p>Læringsmål:</p>
+<ul>
+<li>Kandidaten skal få kjennskap til sitt studieprogram og sitt fagmiljø</li>
+<li>Kandidaten skal få kjennskap til sitt studium, hva det innebærer å være sivilingeniørstudent og hvilke muligheter studiet gir</li>
+<li>Kandidaten skal kunne løse enkle oppgaver i en gruppe. Oppgaven skal være relevant for studieprogrammet og skal innebære bruk av matematikk</li>
+<li>Kandidaten skal få erfaring med gruppearbeid og skal kunne reflektere over samarbeidsprosessene i gruppa</li>
+</ul>
 </div>
-<h2>15:00</h2>
-<p><a href="https://www.samfundet.no/arrangement/3605-fadderuke-kick-off">Fadderuke Kick-Off</a></p>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 2 (Onsdag)</h1>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 3 (Torsdag)</h1>
-
-    </section>
-    <section class="content">
-<h1>Teknostart Dag 4 (Fredag)</h1>
-
     </section>
 </div>
       </div>
@@ -318,68 +415,11 @@ table.weekplan a {
 
 
 
-function quiz_select(quiz_id, alternative) {
-    quiz = document.getElementById(quiz_id);
-    let i = 0;
-    for (li of quiz.getElementsByTagName("li")) {
-        if (li.classList.contains('selected') || li.classList.contains('unselected')) {
-            if (i == alternative) {
-                li.classList.add('selected')
-                li.classList.remove('unselected')
-            } else {
-                li.classList.add('unselected')
-                li.classList.remove('selected')
-            }
-        }
-        i = i + 1
-    }
-    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
-        if (div.getAttribute("data") == "instructions") {
-            div.classList.add('visually-hidden')
-        } else if (div.getAttribute("data") == "confirm") {
-            div.classList.remove('visually-hidden')
-        }
-    }
-}
 
-function quiz_confirm(quiz_id, correct) {
-    quiz = document.getElementById(quiz_id);
-    let i = 0;
-    let selected = -1;
-    for (li of quiz.getElementsByTagName("li")) {
-        if (i == correct) {
-            if (li.classList.contains('selected')) {
-                // selected and true
-                selected = i
-                li.classList.remove('selected')
-                li.classList.add('selected-true')
-            } else if (li.classList.contains('unselected')) {
-                // unselected but true
-                li.classList.remove('unselected')
-                li.classList.add('unselected-true')
-            }
-        } else {
-            if (li.classList.contains('selected')) {
-                // selected but false
-                selected = i
-                li.classList.remove('selected')
-                li.classList.add('selected-false')
-            } else if (li.classList.contains('unselected')) {
-                // unselected and false
-                li.classList.remove('unselected')
-                li.classList.add('unselected-false')
-            }
-        }
-        i = i + 1
-    }
-    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
-        if (div.getAttribute("data") == "confirm") {
-            div.classList.add('visually-hidden')
-        } else if (div.getAttribute("data") == selected) {
-            div.classList.remove('visually-hidden')
-        }
-    }
-}
+
+
+
+
 
 
 

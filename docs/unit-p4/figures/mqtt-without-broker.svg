@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="219.5 273 305 201" width="305" height="201">
+  <defs>
+    <font-face font-family="Calibri" font-size="16" panose-1="2 15 5 2 2 2 4 3 2 4" units-per-em="1000" underline-position="-113.28125" underline-thickness="65.42969" slope="0" x-height="464.35547" cap-height="631.8359" ascent="952.1484" descent="-268.5547" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Calibri"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.10.2 
+    <dc:date>2019-07-10 05:18:36 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-opacity="1" fill-opacity="1" fill="none" stroke="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Line_10">
+        <line x1="302.04034" y1="291.3456" x2="398.95966" y2="348.6544" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_11">
+        <line x1="303.07106" y1="322.97753" x2="397.92894" y2="351.02247" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_12">
+        <line x1="303.5" y1="354" x2="397.5" y2="354" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_13">
+        <line x1="303.07106" y1="385.02247" x2="397.92894" y2="356.97753" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_14">
+        <line x1="302.04034" y1="416.6544" x2="398.95966" y2="359.3456" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_15">
+        <line x1="300.85557" y1="449.03245" x2="400.14443" y2="360.96755" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_23">
+        <line x1="300.87255" y1="292.9484" x2="400.12745" y2="380.5516" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_24">
+        <line x1="302.05756" y1="325.3164" x2="398.94244" y2="382.1836" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_25">
+        <line x1="303.08286" y1="356.9372" x2="397.91714" y2="384.5628" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_26">
+        <line x1="303.4999" y1="387.95435" x2="397.5001" y2="387.54565" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_27">
+        <line x1="303.05912" y1="418.98226" x2="397.94088" y2="390.51774" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_28">
+        <line x1="302.0231" y1="450.6254" x2="398.9769" y2="392.8746" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_62">
+        <text transform="translate(424.5 343.5)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">heater</tspan>
+        </text>
+      </g>
+      <g id="Graphic_63">
+        <text transform="translate(424.5 377)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">window blinds</tspan>
+        </text>
+      </g>
+      <g id="Graphic_73">
+        <text transform="translate(224.5 278)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_74">
+        <text transform="translate(224.5 312)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_75">
+        <text transform="translate(224.5 346)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 3</tspan>
+        </text>
+      </g>
+      <g id="Graphic_76">
+        <text transform="translate(224.5 380)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 4</tspan>
+        </text>
+      </g>
+      <g id="Graphic_77">
+        <text transform="translate(224.5 412.5)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 5</tspan>
+        </text>
+      </g>
+      <g id="Graphic_78">
+        <text transform="translate(224.5 448)" fill="black">
+          <tspan font-family="Calibri" font-size="16" font-weight="400" fill="black" x="0" y="15">temp 6</tspan>
+        </text>
+      </g>
+      <g id="Graphic_2">
+        <circle cx="293" cy="286" r="10.5000167779699" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="286" r="10.5000167779699" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_3">
+        <circle cx="293" cy="320" r="10.5000167779699" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="320" r="10.5000167779699" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_4">
+        <circle cx="293" cy="354" r="10.5000167779698" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="354" r="10.5000167779698" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_5">
+        <circle cx="293" cy="388" r="10.5000167779698" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="388" r="10.5000167779698" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_6">
+        <circle cx="293" cy="422" r="10.5000167779699" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="422" r="10.5000167779699" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_9">
+        <circle cx="293" cy="456" r="10.5000167779699" fill="#ff365e" fill-opacity=".5066085"/>
+        <circle cx="293" cy="456" r="10.5000167779699" stroke="#ff365e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_8">
+        <circle cx="408" cy="354" r="10.5000167779699" fill="#0098ff" fill-opacity=".5"/>
+        <circle cx="408" cy="354" r="10.5000167779699" stroke="#0098ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_22">
+        <circle cx="408" cy="387.5" r="10.5000167779699" fill="#0098ff" fill-opacity=".5"/>
+        <circle cx="408" cy="387.5" r="10.5000167779699" stroke="#0098ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

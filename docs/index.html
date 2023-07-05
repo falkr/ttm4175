@@ -18,28 +18,37 @@
   <script src="assets/anchor.js"></script>
   <script src="assets/script-aside.js"></script>
   <style type="text/css">
-    div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
+    .person-card img {
+  width: 56px;
+  border: 1px solid #eee;
 }
 
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-button:hover {
-  background-color: #EFF7FF;
-}
-div.qna .accordion-button:not(.collapsed) {
-  background-color: #EFF7FF;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
-  color: #00509e;
+.person-card-name {
+  font-weight: 600;
 }
 
-div.qna .accordion-button:not(.collapsed)::after {
-  color: #00509e;
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
 }
 
 table.weekplan {
@@ -97,10 +106,33 @@ table.weekplan a {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">TTM4175</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teknostart
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="teknostart/index.html">Teknostart oversikt</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="teknostart/day1.html">Dag 1</a>
+            <a class="dropdown-item" href="teknostart/day2.html">Dag 2</a>
+            <a class="dropdown-item" href="teknostart/day3.html">Dag 3</a>
+            <a class="dropdown-item" href="teknostart/day4.html">Dag 4</a>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/teknostart/index.html">Teknostart</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="unit-p1/index.html">IoT and the Microbit</a>
+            <a class="dropdown-item" href="unit-p2/index.html">State Machines</a>
+            <a class="dropdown-item" href="unit-p3/index.html">HTTP and JSON</a>
+            <a class="dropdown-item" href="unit-p4/index.html">MQTT</a>
+
+          </ul>
         </li>
+        
+        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -166,12 +198,53 @@ table.weekplan a {
 <!--
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
 -->
-<h2>Timeplan</h2>
 
-<h3>Uke 33 (Teknostart)</h3>
-<p>I løpet av uke 33 gjennomfører vi <a href="teknostart/index.html">Teknostart</a>.</p>
+    </section>
+    <section class="content">
+<h1>Teknostart</h1>
+<p>I løpet av uke 33 gir vi deg en god start i studiet gjennom <a href="teknostart/index.html">Teknostart</a>.</p>
 
-<h3>Fra uke 34, (normal semester)</h3>
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+<div class="col">
+    <div class="card shadow-sm h-100">
+    <div class="card-body">
+        <h5 class="card-title">Teknostart Dag 1</h5>
+        <p class="card-text">Tirsdag: Vi lærer hvordan internettet fungerer.</p>
+        <a href="teknostart/day1.html" class="stretched-link"></a>
+    </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card shadow-sm h-100">
+    <div class="card-body">
+        <h5 class="card-title">Teknostart Dag 2</h5>
+        <p class="card-text">Onsdag: Vi krypterer innhold og forhindrer datatap.</p>
+        <a href="teknostart/day2.html" class="stretched-link"></a>
+    </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card shadow-sm h-100">
+    <div class="card-body">
+        <h5 class="card-title">Teknostart Dag 3</h5>
+        <p class="card-text">Torsdag: Vi lager nettet robust og pålitelig.</p>
+        <a href="teknostart/day3.html" class="stretched-link"></a>
+    </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card shadow-sm h-100">
+    <div class="card-body">
+        <h5 class="card-title">Teknostart Dag 4</h5>
+        <p class="card-text">Fredag: Vi lager våre egen nettside.</p>
+        <a href="teknostart/day4.html" class="stretched-link"></a>
+    </div>
+    </div>
+</div>
+</div>
+    </section>
+    <section class="content">
+<h1>Timeplan</h1>
 
 <table class="table table-sm">
 <tr>
@@ -185,110 +258,126 @@ table.weekplan a {
 <tr>
 <td><p>33</p>
 </td>
-<td></td>
+<td><p>tir.-fre. 9:15</p>
+</td>
 <td><p><a href="teknostart/index.html">Teknostart</a></p>
 </td>
 </tr>
 <tr>
 <td><p>34</p>
 </td>
-<td></td>
-<td><p>Linux kommandolinje</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 1: Linux kommandolinje (Stas)</p>
 </td>
 </tr>
 <tr>
 <td><p>35</p>
 </td>
-<td></td>
-<td><p>Nett</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 2: Nett 1 (Stas)</p>
 </td>
 </tr>
 <tr>
 <td><p>36</p>
 </td>
-<td></td>
-<td><p>Nett</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 3: Nett 2 (Stas)</p>
 </td>
 </tr>
 <tr>
 <td><p>37</p>
 </td>
-<td></td>
-<td><p>Frank: Om Teamarbeid</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 4: Nett 3 (Stas)</p>
 </td>
 </tr>
 <tr>
 <td><p>38</p>
 </td>
-<td></td>
-<td><p>Etisk hacking / Sikkerhet</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Om Teamarbeid (Frank)</p>
 </td>
 </tr>
 <tr>
 <td><p>39</p>
 </td>
-<td></td>
-<td><p>Etisk hacking / Sikkerhet</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 5: Etisk hacking / Sikkerhet</p>
 </td>
 </tr>
 <tr>
 <td><p>40</p>
 </td>
-<td></td>
-<td><p>Etisk hacking / Sikkerhet</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 6: Etisk hacking / Sikkerhet</p>
 </td>
 </tr>
 <tr>
 <td><p>41</p>
 </td>
-<td></td>
-<td><p>Etisk hacking / Sikkerhet</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p>Lab 7: Etisk hacking / Sikkerhet</p>
 </td>
 </tr>
 <tr>
 <td><p>42</p>
 </td>
-<td></td>
+<td><p>Fredag 8:15-14:00</p>
+</td>
 <td><p><em>info kommer</em></p>
 </td>
 </tr>
 <tr>
 <td><p>43</p>
 </td>
-<td></td>
-<td><p>IoT 1, Introduction to IoT and the Microbit</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p><a href="unit-p1/index.html">Lab 8: Introduction to IoT and the Microbit</a></p>
 </td>
 </tr>
 <tr>
 <td><p>44</p>
 </td>
-<td></td>
-<td><p>IoT 2: Tilstandmaskiner</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p><a href="unit-p2/index.html">Lab 9: Tilstandmaskiner</a></p>
 </td>
 </tr>
 <tr>
 <td><p>45</p>
 </td>
-<td></td>
-<td><p>IoT 3: HTTP and JSON</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p><a href="unit-p3/index.html">Lab 10: HTTP and JSON</a></p>
 </td>
 </tr>
 <tr>
 <td><p>46</p>
 </td>
-<td></td>
-<td><p>IoT 4: MQTT</p>
+<td><p>Fredag 8:15-14:00</p>
+</td>
+<td><p><a href="unit-p4/index.html">Lab 11: MQTT</a></p>
 </td>
 </tr>
 <tr>
 <td><p>47</p>
 </td>
-<td></td>
+<td><p>Fredag 8:15-14:00</p>
+</td>
 <td><p><em>info kommer</em></p>
 </td>
 </tr>
 </table>
 <h3>Ukeplan</h3>
+<p>Vi møtes fredager klokken 8:15 i <a href="https://link.mazemap.com/QO2zpqJ0">Kjel-4</a>, og fortsetter med lab i <a href="https://link.mazemap.com/pR24A3cf">Sahara</a> klokken 10:15. Labben varer til 14:00.</p>
 
 <table class="weekplan table table-sm">
 <tr>
@@ -387,35 +476,6 @@ table.weekplan a {
 </table>
     </section>
     <section class="content">
-<h1>Innhold</h1>
-<p>Emnet består av <a href="teknostart/index.html">Teknostart</a>, etterfølgt av labarbeid med litt forskjellig fokus:</p>
-<h2>Oppstartsuka</h2>
-<p>I første uken blir du kjent med datamaskiner, hvordan internettet fungerer og hvor sårbar den er. Vi skal også lage vår egen hjemmeside og ser på interaksjon mellom nettleser og server, kryptering og nettet i mellom.</p>
-
-<figure class="figure">
-    <img src="figures/teknostart/goals.png" class="figure-img img-fluid rounded" alt="Each day we try to reach a new goal. The final goal is to run our own website.">
-  <figcaption class="figure-caption">Each day we try to reach a new goal. The final goal is to run our own website.</figcaption>
-</figure>
-<h2>Sikkerhet</h2>
-<p>Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer.
-Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer.
-I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.</p>
-
-<span name="84c669"></span><aside name="84c669"><p><img src="figures/laszlo.jpg" width="100px"><p><a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no</p></p>
-</aside>
-<figure class="figure">
-    <img src="figures/security/overview.png" class="figure-img img-fluid rounded" alt="">
-</figure>
-<h2>Tingenes Internet</h2>
-<p>Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.</p>
-
-<span name="c7c2f9"></span><aside name="c7c2f9"><p><img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p></p>
-</aside>
-<figure class="figure">
-    <img src="figures/iot/overview.png" class="figure-img img-fluid rounded" alt="">
-</figure>
-    </section>
-    <section class="content">
 <h1>Om Emnet</h1>
 <h2>Forventninger til deg som student</h2>
 <p>Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.</p>
@@ -480,68 +540,6 @@ I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og d
 
 
 
-function quiz_select(quiz_id, alternative) {
-    quiz = document.getElementById(quiz_id);
-    let i = 0;
-    for (li of quiz.getElementsByTagName("li")) {
-        if (li.classList.contains('selected') || li.classList.contains('unselected')) {
-            if (i == alternative) {
-                li.classList.add('selected')
-                li.classList.remove('unselected')
-            } else {
-                li.classList.add('unselected')
-                li.classList.remove('selected')
-            }
-        }
-        i = i + 1
-    }
-    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
-        if (div.getAttribute("data") == "instructions") {
-            div.classList.add('visually-hidden')
-        } else if (div.getAttribute("data") == "confirm") {
-            div.classList.remove('visually-hidden')
-        }
-    }
-}
-
-function quiz_confirm(quiz_id, correct) {
-    quiz = document.getElementById(quiz_id);
-    let i = 0;
-    let selected = -1;
-    for (li of quiz.getElementsByTagName("li")) {
-        if (i == correct) {
-            if (li.classList.contains('selected')) {
-                // selected and true
-                selected = i
-                li.classList.remove('selected')
-                li.classList.add('selected-true')
-            } else if (li.classList.contains('unselected')) {
-                // unselected but true
-                li.classList.remove('unselected')
-                li.classList.add('unselected-true')
-            }
-        } else {
-            if (li.classList.contains('selected')) {
-                // selected but false
-                selected = i
-                li.classList.remove('selected')
-                li.classList.add('selected-false')
-            } else if (li.classList.contains('unselected')) {
-                // unselected and false
-                li.classList.remove('unselected')
-                li.classList.add('unselected-false')
-            }
-        }
-        i = i + 1
-    }
-    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
-        if (div.getAttribute("data") == "confirm") {
-            div.classList.add('visually-hidden')
-        } else if (div.getAttribute("data") == selected) {
-            div.classList.remove('visually-hidden')
-        }
-    }
-}
 
 
 

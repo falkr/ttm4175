@@ -42,6 +42,38 @@ a.ntnu-button:hover {
     color: #fff;
     text-decoration: none
 }
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -77,6 +109,33 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #00509e;
 }
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
 
 button:hover {
   background-color: #EFF7FF;
@@ -149,7 +208,38 @@ ol.quiz li.unselected-true {
 div.card-footer a {
   cursor: pointer;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
 
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
 
 table.weekplan {
   width: 100%;
@@ -206,10 +296,33 @@ table.weekplan a {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="../index.html">TTM4175</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teknostart
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="..//teknostart/index.html">Teknostart</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+            <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+            <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+            <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+
+          </ul>
         </li>
+        
+        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -341,6 +454,10 @@ All extensions
 
 
 
+
+
+
+
 function quiz_select(quiz_id, alternative) {
     quiz = document.getElementById(quiz_id);
     let i = 0;
@@ -403,6 +520,9 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
+
+
 
 
 

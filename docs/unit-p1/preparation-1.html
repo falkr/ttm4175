@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4175</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="../assets/anchor.js"></script>
+  <script src="../assets/script-aside.js"></script>
+  <style type="text/css">
+    .person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+.person-card img {
+  width: 56px;
+  border: 1px solid #eee;
+}
+
+.person-card-name {
+  font-weight: 600;
+}
+
+.person-card-email {
+  font-size: 0.8em;
+}
+
+.person-card-detail {
+  font-size: 0.8em;
+}
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+}
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
+
+button:hover {
+  background-color: #EFF7FF;
+}
+div.qna .accordion-button:not(.collapsed) {
+  background-color: #EFF7FF;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+  color: #00509e;
+}
+
+div.qna .accordion-button:not(.collapsed)::after {
+  color: #00509e;
+}
+
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+table.weekplan {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.weekplan td {
+  background-color: #1481b8;
+  color: white;
+}
+
+table.weekplan td, table.weekplan th {
+  text-align: center;
+}
+
+table.weekplan td:empty {
+  background-color: white;
+}
+
+table.weekplan td:first-child {
+  background-color: white;
+  color: grey;
+}
+
+table.weekplan a {
+  font-weight:bold;
+  color: white;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body>
+  
+  
+
+
+
+<nav class="navbar navbar-expand-lg navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+      <img id="header_logo" alt="NTNU Hjemmeside" width="120px" src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23px">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  			<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+		</svg>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">TTM4175</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teknostart
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+            <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+            <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+            <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+
+          </ul>
+        </li>
+        
+        
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Learning
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../learning/feedback.html">Teachers and Feedback</a>
+            <a class="dropdown-item" href="../learning/goals.html">Learning Goals</a>
+            <a class="dropdown-item" href="../learning/grading.html">Grading</a>
+            <a class="dropdown-item" href="../learning/reflection.html">Reflection</a>
+            <a class="dropdown-item" href="../learning/tbl.html">Team-Based Learning</a>
+            <a class="dropdown-item" href="../learning/teamwork.html">Teamwork</a>
+            <a class="dropdown-item" href="../schedule.html">Schedule</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tools
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../tools/index.html">Tools</a>
+            <!--<a class="dropdown-item" href="../tools/tools-python.html">Python</a>-->
+            <a class="dropdown-item" href="../tools/tools-gui.html">GUIs in Python</a>    
+            <a class="dropdown-item" href="../tools/tools-mqtt.html">MQTT</a>            
+            <a class="dropdown-item" href="../tools/tools-notebooks.html">Notebooks</a>
+            <a class="dropdown-item" href="../tools/tools-stmpy.html">STMPY</a>            
+          </ul>
+        </li>
+      </ul>
+      <div class="bg-light border ms-auto"></div>
+        <div>
+        <a class="nav-link" href="../schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+          <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+          <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+  <main class="container">
+
+    <div class="row g-5 justify-content-md-center pb-5">
+
+
+
+      <div class="col-md-9" style="margin-top: 6rem;">
+        <div class="page">
+    </section>
+    <section class="content">
+<h1>Internet of Things</h1>
+<p>Most of you have heard about the <em>Internet of Things</em> or IoT in various settings, how it <em>&quot;connects everything&quot;</em> and makes <em>&quot;everything smart&quot;</em>. It's hard to tell which of the predictions will come true and which ones will remain fantasy. Some products are useful to some (I for example really like that my door does not need a physical key anymore), some products will remain useless, and maybe we haven't thought of the really useful applications yet.</p>
+<p>In this week, we start by looking at some of the ingredients of IoT systems, some of the challenges, and start programming an IoT device in Python.</p>
+<p>A good way of thinking about IoT is to understand the underlying technological trends that happened over the last decades:</p>
+<ul>
+<li><strong>Embedded computing</strong> devices get smaller, cheaper and more energy-efficient. This makes it feasible to embed computers into all kinds of devices. The term <em>embedded</em> simply means that the computation is not happening in a general-purpose computer (like your laptop) but embedded into another system or product.</li>
+<li><strong>Mobile coverage</strong> is improving, and new protocols are available that are suitable for energy-efficient machine-to-machine communication.</li>
+<li>Advances in <strong>data analytics</strong> and machine learning make it possible to process data and learn from it, so that data gathered by many embedded devices can be transformed into valuable knowledge.</li>
+</ul>
+<p>These trends make it possible that general things (and not only typical computers and phones) can gain computational power and be connected to the internet.
+Examples are often grouped into different <strong>domains</strong>, many of them referring with the word &quot;smart&quot; to the fact that they are computational and communicating:</p>
+<ul>
+<li><strong>Smart Home</strong>: Light bulbs can be controlled remotely, and the house can be instrumented with sensors to detect if someone is breaking in, water leaks or fire starts. It can also be used to measure temperature and humidity in each room for climate control.</li>
+<li><strong>Smart Buildings</strong>: In larger buildings, heating and lights can be controlled according to where people are, and facilities such as toilets are cleaned in proportion with their usage.</li>
+<li><strong>Smart City</strong>: Living conditions and usage patterns can be monitored, such as noise or air quality. Examples are also smarter handling of waste, as waste bins can tell how full they are and energy can be saved by not emptying bins that are not yet full.</li>
+<li><strong>Smart Grid</strong>: This is the term for the energy distribution net, which to an increasing degree gets digitalized so that it can be monitored and controlled better.</li>
+<li><strong>Industry 4.0</strong>: Tools and fabrication facilities can be better instrumented to have better control over the production process.</li>
+<li><strong>Precision Agriculture</strong>: Soil moisture can be monitored and controlled in much more fine-grained levels so that water and fertilizer or fungicides can be applied much more targeted. Animals can be tracked and their behavior observed.</li>
+<li><strong>Intelligent Traffic Systems</strong>: Monitoring the state of roads with regard to weather, and infrastructure like bridges and tunnels for structural safety.</li>
+</ul>
+<p>These are just a few examples. Most of them have in common that they monitor some phenomena (like the physical properties of something) or observe resources so that we can make better decisions that, in the end, save valuable resources.
+But apart from these potential benefits, there is also a long list of <strong>challenges, problems and dangers</strong> that come with this type of system.</p>
+<ul>
+<li><strong>Privacy</strong>: More devices around us that collect more data are also a challenge regarding privacy, when data is used differently than originally intended, unaware by who is observed, or simply stolen.</li>
+<li><strong>Security</strong>: More connected devices mean a larger surface for attacks. This is dangerous for the devices or the connected systems, but also for other systems, as IoT devices can be used for distributed denial of service attacks that can render other systems unusable.</li>
+<li><strong>Safety</strong>: When cars or other potentially dangerous devices get connected, we need to focus on the implications for safety.</li>
+<li><strong>Electronic Waste</strong>: We cannot just build more and more electronics with short lifecycle without worrying where the poisonous materials for their production come from or where they end up. Also note that the waste problem does not only mean what is happening with the specific device <em>after</em> its lifetime, but that its production already created a lot of problematic waste <em>during its production</em>.</li>
+</ul>
+
+<nav class="d-flex justify-content-between">
+<div></div>
+<div></div>
+<a type="button" href="preparation-2.html" class="page-link rounded">
+Next
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-right-short" viewBox="0 0 16 16" id="arrow-right-short"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /></svg>
+</a>
+</nav>
+    </section>
+</div>
+      </div>
+
+
+
+
+    </div>
+
+  </main>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #7d705a">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/falkr/ttm4175/tree/master/pages/unit-p1/preparation-1.md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg> Edit this page
+            </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="doc/index.html">Syntax</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+  </script>
+  <script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

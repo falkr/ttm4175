@@ -237,6 +237,19 @@ ol.quiz li.unselected-true {
 div.card-footer a {
   cursor: pointer;
 }
+div.report p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.report p::before {
+    content: 'For the Report: ';
+    font-weight: bold; 
+    color: #1481b8;
+display: inline;
+}
 .rubric p {
 	margin: 0px
 }
@@ -293,6 +306,18 @@ div.card-footer a {
 	color: gray
 }
 
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
 div.tip p {
   padding: 10px;
   background-color: #d9eaf2;
@@ -397,10 +422,33 @@ table.weekplan a {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="../index.html">TTM4175</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teknostart
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="..//teknostart/index.html">Teknostart</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Units
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+            <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+            <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+            <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+
+          </ul>
         </li>
+        
+        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -642,6 +690,8 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
+
 
 
 
