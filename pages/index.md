@@ -6,15 +6,50 @@ Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digit
 <a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
 -->
 
-## Timeplan
 
 
-### Uke 33 (Teknostart)
 
-I løpet av uke 33 gjennomfører vi [Teknostart](teknostart/index.html). 
+# Teknostart
+
+I løpet av uke 33 gir vi deg en god start i studiet gjennom [Teknostart](teknostart/index.html). 
+
+---
+type: cards
+columns: 2
+---
 
 
-### Fra uke 34, (normal semester)
+---
+type: card/text
+title: Teknostart Dag 1
+text: "Tirsdag: Vi lærer hvordan internettet fungerer."
+link: teknostart/day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 2
+text: "Onsdag: Vi krypterer innhold og forhindrer datatap."
+link: teknostart/day2.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 3
+text: "Torsdag: Vi lager nettet robust og pålitelig."
+link: teknostart/day3.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 4
+text: "Fredag: Vi lager våre egen nettside."
+link: teknostart/day4.html
+---
+
+
+# Timeplan
+
 
 ---
 type: table
@@ -25,68 +60,70 @@ type: table
 ! Tema 
 |-
 | 33
-| 
+| tir.-fre. 9:15
 | [Teknostart](teknostart/index.html)
 |-
 | 34
-| 
-| Linux kommandolinje
+| Fredag 8:15-14:00
+| Lab 1: Linux kommandolinje (Stas)
 |-
 | 35
-|
-| Nett
+| Fredag 8:15-14:00
+| Lab 2: Nett 1 (Stas)
 |-
 | 36
-|
-| Nett
+| Fredag 8:15-14:00
+| Lab 3: Nett 2 (Stas)
 |-
 | 37
-|
-| Frank: Om Teamarbeid
+| Fredag 8:15-14:00
+| Lab 4: Nett 3 (Stas) 
 |-
 | 38
-|
-| Etisk hacking / Sikkerhet
+| Fredag 8:15-14:00
+| Om Teamarbeid (Frank)
 |-
 | 39
-|
-| Etisk hacking / Sikkerhet
+| Fredag 8:15-14:00
+| Lab 5: Etisk hacking / Sikkerhet
 |-
 | 40
-|
-| Etisk hacking / Sikkerhet
+| Fredag 8:15-14:00
+| Lab 6: Etisk hacking / Sikkerhet
 |-
 | 41
-|
-| Etisk hacking / Sikkerhet
+| Fredag 8:15-14:00
+| Lab 7: Etisk hacking / Sikkerhet
 |-
 | 42
-| 
+| Fredag 8:15-14:00
 | _info kommer_
 |-
 | 43
-|
-| IoT 1, Introduction to IoT and the Microbit
+| Fredag 8:15-14:00
+| [Lab 8: Introduction to IoT and the Microbit](unit-p1/index.html)
 |-
 | 44
-|
-| IoT 2: Tilstandmaskiner
+| Fredag 8:15-14:00
+| [Lab 9: Tilstandmaskiner](unit-p2/index.html)
 |-
 | 45
-|
-| IoT 3: HTTP and JSON
+| Fredag 8:15-14:00
+| [Lab 10: HTTP and JSON](unit-p3/index.html)
 |-
 | 46
-|
-| IoT 4: MQTT
+| Fredag 8:15-14:00
+| [Lab 11: MQTT](unit-p4/index.html)
 |-
 | 47
-|
+| Fredag 8:15-14:00
 | _info kommer_
 |}
 
 
 ### Ukeplan
+
+Vi møtes fredager klokken 8:15 i [Kjel-4](https://link.mazemap.com/QO2zpqJ0), og fortsetter med lab i [Sahara](https://link.mazemap.com/pR24A3cf) klokken 10:15. Labben varer til 14:00. 
 
 ---
 type: table
@@ -161,47 +198,6 @@ class: weekplan table-sm table-bordered
 |
 |}
 
-
-
-# Innhold
-
-Emnet består av [Teknostart](teknostart/index.html), etterfølgt av labarbeid med litt forskjellig fokus:
-
-## Oppstartsuka
-
-I første uken blir du kjent med datamaskiner, hvordan internettet fungerer og hvor sårbar den er. Vi skal også lage vår egen hjemmeside og ser på interaksjon mellom nettleser og server, kryptering og nettet i mellom.
-
----
-type: figure
-source: figures/teknostart/goals.png
-caption: "Each day we try to reach a new goal. The final goal is to run our own website."
----
-
-
-## Sikkerhet
-
-Du kommer til å lære om cybersikkerhet, etisk hacking og mye mer. 
-Formålet er at du skal ha forståelse for hvorfor og hvordan IT-systemer utnyttes, hvor ligger sårbarheter, og hvilke tiltak kan brukes for å beskytte disse systemer. 
-I labb-timene vil du bli kjent med virtualisering, VirtualBox og Kali Linux og du skal lære om passordknekking og sårbarhetsscanning.
-
----
-type: figure
-source: figures/security/overview.png
----
-
-:aside: <img src="figures/laszlo.jpg" width="100px"><p><a href="">Laszlo Erdodi</a><br/><i class="far fa-envelope"></i> laszloe@ntnu.no</p>
-
-
-## Tingenes Internet
-
-Vi bruker mye av det vi har lært så langt i emnet og ser på applikasjoner og teknologiene som blir brukt i tingenes internett. Vi kommer til å jobbe med hardware or sensorikk, overføre data og lager et samensatt overvåkingssystem.
-
----
-type: figure
-source: figures/iot/overview.png
----
-
-:aside: <img src="figures/frank.jpg" width="100px"><p><a href="https://www.ntnu.edu/employees/kraemer">Frank Alexander Kraemer</a><br/><i class="far fa-envelope"></i> kraemer@ntnu.no</p>
 
 
 # Om Emnet
