@@ -18,7 +18,31 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    .person-card img {
+    a.ntnu-button {
+    font: 600 14px "Source Sans Pro", Georgia, serif;
+    background: #fff;
+    color: #00509e;
+    border: 1px solid #00509e;
+    border-color: #00509e !important;
+    border-style: solid !important;
+    border-radius: 10rem;
+    display: inline-block;
+    padding: 5px 15px;
+    height: auto;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a.ntnu-button:hover {
+    background: #00509e;
+    color: #fff;
+    text-decoration: none
+}
+.person-card img {
   width: 56px;
   border: 1px solid #eee;
 }
@@ -124,19 +148,6 @@ div.qna .accordion-button:not(.collapsed) {
 
 div.qna .accordion-button:not(.collapsed)::after {
   color: #00509e;
-}
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
 }
 
 div.task p {
@@ -398,7 +409,7 @@ table.weekplan a {
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="doc/index.html">Syntax</a>
+          <a class="nav-link" href="../supermark/index.html">Syntax</a>
           </li>
         </ul>
       </div>
@@ -413,6 +424,7 @@ table.weekplan a {
   </script>
   <script>
     
+
 
 
 
