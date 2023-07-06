@@ -85,8 +85,52 @@ div.goals ul li:before {
   margin-left: -1.5em;
   color: #00509e;
 }
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
 
 
+div.task p {
+padding: 10px;
+background-color: #D6E5F0;
+border-radius: 5px;
+border-left: 6px solid #1481b8 
+}
+
+div.task p::before { 
+content: "Task: ";
+font-weight: bold;
+display: inline;
+}
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
 table.weekplan {
   width: 100%;
   table-layout: fixed;
@@ -149,10 +193,10 @@ table.weekplan a {
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
-            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
-            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
-            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+            <a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -160,11 +204,12 @@ table.weekplan a {
             Units
           </a>
           <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../units.html">Oversikt</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
             <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
-
           </ul>
         </li>
         
@@ -175,13 +220,8 @@ table.weekplan a {
             Learning
           </a>
           <ul class="dropdown-menu dropdown-menu">
-            <a class="dropdown-item" href="../learning/feedback.html">Teachers and Feedback</a>
-            <a class="dropdown-item" href="../learning/goals.html">Learning Goals</a>
-            <a class="dropdown-item" href="../learning/grading.html">Grading</a>
-            <a class="dropdown-item" href="../learning/reflection.html">Reflection</a>
-            <a class="dropdown-item" href="../learning/tbl.html">Team-Based Learning</a>
-            <a class="dropdown-item" href="../learning/teamwork.html">Teamwork</a>
-            <a class="dropdown-item" href="../schedule.html">Schedule</a>
+            <a class="dropdown-item" href="../learning/learning.html">Læring</a>
+            <a class="dropdown-item" href="../learning/reports.html">Rapporter</a>
           </ul>
         </li>
         <li class="nav-item dropdown">

@@ -240,6 +240,35 @@ div.tip p {
   border-radius: 5px;
   border-left: 6px solid #1481b8
 }
+div.tipsbox {
+  padding: 12px;
+  background-color: #EFF7FF;
+  border-radius: 0px;
+  border-top: 6px solid #00509e;
+  margin: 1rem 0 1rem 0;
+  }
+  
+div.tipsbox::before { 
+  content: "Tips:";
+  font-weight: bold;
+  display: block;
+  color: #00509e;
+  padding: 0px 0 12px 0;
+  }
+
+div.tipsbox ul li:before {
+  content: '\f26a';
+  font-family: bootstrap-icons !important;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+  line-height: 1.5rem;
+}
+
+
+div.tipsbox ul {
+  list-style-type: none;
+}
 
 table.weekplan {
   width: 100%;
@@ -303,10 +332,10 @@ table.weekplan a {
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../teknostart/day1.html">Dag 1</a>
-            <a class="dropdown-item" href="../teknostart/day2.html">Dag 2</a>
-            <a class="dropdown-item" href="../teknostart/day3.html">Dag 3</a>
-            <a class="dropdown-item" href="../teknostart/day4.html">Dag 4</a>
+            <a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a>
+            <a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a>
+            <a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a>
+            <a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -314,11 +343,12 @@ table.weekplan a {
             Units
           </a>
           <ul class="dropdown-menu dropdown-menu">
+            <a class="dropdown-item" href="../units.html">Oversikt</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
             <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
-
           </ul>
         </li>
         
@@ -329,13 +359,8 @@ table.weekplan a {
             Learning
           </a>
           <ul class="dropdown-menu dropdown-menu">
-            <a class="dropdown-item" href="../learning/feedback.html">Teachers and Feedback</a>
-            <a class="dropdown-item" href="../learning/goals.html">Learning Goals</a>
-            <a class="dropdown-item" href="../learning/grading.html">Grading</a>
-            <a class="dropdown-item" href="../learning/reflection.html">Reflection</a>
-            <a class="dropdown-item" href="../learning/tbl.html">Team-Based Learning</a>
-            <a class="dropdown-item" href="../learning/teamwork.html">Teamwork</a>
-            <a class="dropdown-item" href="../schedule.html">Schedule</a>
+            <a class="dropdown-item" href="../learning/learning.html">Læring</a>
+            <a class="dropdown-item" href="../learning/reports.html">Rapporter</a>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -619,6 +644,7 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
 
 
 
