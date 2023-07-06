@@ -13,6 +13,7 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+List that uses checkboxes as items.
 
 
 

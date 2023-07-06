@@ -17,14 +17,14 @@ icon: gear-wide-connected
 
 ---
 type: link
-link: "development.html"
-title: "Development"
+link: "extensions.html"
+title: "Extensions"
 icon: gear-wide-connected
 ---
 
 ---
 type: link
-link: "extensions.html"
-title: "Extensions"
+link: "development.html"
+title: "Development"
 icon: gear-wide-connected
 ---

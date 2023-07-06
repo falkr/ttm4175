@@ -13,6 +13,7 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+Cards provide links with additional elements like text or arrows.
 
 
 
@@ -35,7 +36,7 @@ prev: ["All extensions", "index.html"]
 
 <table class="table"><tbody><td>Python type</td><td>Card</td>
 <tr></tr>
-<td>type</td><td>card/arrow, card/text, card, card/person</td>
+<td>type</td><td>card/arrow, card/person, card, card/text</td>
 <tr></tr>
 <td>Language</td><td><a href="#">YAML</a></td>
 <tr></tr>
@@ -215,6 +216,90 @@ type: card/text
 title: IIK Snacks and Science
 text: Seminar om forskning for studenter ved IIK.
 link: snacks.html
+---
+```
+
+
+
+
+
+
+# Example
+
+---
+type: cards
+columns: 4
+---
+
+
+---
+type: card/text
+title: Teknostart Dag 1
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 2
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 3
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 4
+text: Tirsdag
+link: day1.html
+---
+
+
+
+
+
+
+## Source Code
+
+```yaml
+---
+type: cards
+columns: 4
+---
+
+
+---
+type: card/text
+title: Teknostart Dag 1
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 2
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 3
+text: Tirsdag
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 4
+text: Tirsdag
+link: day1.html
 ---
 ```
 

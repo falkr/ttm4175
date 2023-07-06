@@ -13,6 +13,8 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+A table style for study plans.
+
 
 ### Legend
 

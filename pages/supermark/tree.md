@@ -13,6 +13,7 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+Display a tree hierarchy, like a folder structure.
 
 
 

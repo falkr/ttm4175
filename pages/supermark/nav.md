@@ -13,6 +13,7 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+Page navigation to move back, next or up.
 
 
 

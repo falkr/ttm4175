@@ -13,6 +13,7 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+A paragraph style for definitions.
 
 
 

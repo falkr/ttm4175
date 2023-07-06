@@ -13,6 +13,8 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+Show warnings in a box.
+
 # Warnings
 
 :warning: Use warnings to prevent harm or damage. Draw attention.

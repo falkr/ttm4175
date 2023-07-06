@@ -13,6 +13,8 @@ prev: ["All extensions", "index.html"]
 
 # Documentation
 
+Tables in Wikimedia syntax.
+
 # Tables
 
 Tables can be included directly as HTML, or via the following YAML section that refers to a table stored in a file.
