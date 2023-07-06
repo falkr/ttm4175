@@ -269,6 +269,35 @@ div.tipsbox ul li:before {
 div.tipsbox ul {
   list-style-type: none;
 }
+.tree ul, .tree ul ul {
+  list-style: none;
+ } 
+.tree ul ul {
+ }
+ .tree ul li {
+  margin: 0;
+  padding: 0 7px;
+  line-height: 20px; 
+  border-left: 1px solid #868279;
+ }
+ .tree ul li:last-child {
+     border-left:none;
+ }
+ .tree ul li:before {
+    position:relative;
+    top:-0.3em;
+    height:22px;
+    width:12px;
+    color:white;
+    border-bottom:1px solid #868279;
+    content:"";
+    display:inline-block;
+    left:-7px;
+ }
+ .tree ul li:last-child:before {
+    border-left:1px solid #868279;
+    border-radius: 0px 0px 0px 3px   
+ }
 
 table.weekplan {
   width: 100%;
@@ -586,6 +615,7 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
+
 
 
 
