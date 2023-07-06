@@ -121,8 +121,6 @@ type: table
 |}
 
 
-### Ukeplan
-
 Vi møtes fredager klokken 8:15 i [Kjel-4](https://link.mazemap.com/QO2zpqJ0), og fortsetter med lab i [Sahara](https://link.mazemap.com/pR24A3cf) klokken 10:15. Labben varer til 14:00. 
 
 ---
@@ -197,24 +195,3 @@ class: weekplan table-sm table-bordered
 |
 |
 |}
-
-
-
-# Om Emnet
-
-## Forventninger til deg som student
-
-Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnåes gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene.
-
-Vi forventer at du:
-
-- Deltar aktivt på alle forelesningene. Om du er forhindret, send en mail til [Frank](mailto:kraemer@ntnu.no) på forhånd.
-- Deltar aktivt i labarbeidene på de oppsatte veiledningstimene.
-- Bidrar til positivt og konstruktivt gruppearbeid.
-- Bidrar i å skrive avsluttende rapport fra hver lab.
-
-## Vurdering
-
-Emnet vurderes med bestått / ikke bestått. For å få bestått må man få godkjent alle de tre obligatoriske labarbeidene. Labarbeidene vurderes på bakgrunn av innlevert labrapport. Hver gruppe leverer felles rapport fra hvert labarbeid. Labrapportene må leveres innen de fristene som er satt i undervisningsplanen. Rapportene vil bli vurdert fortløpende til bestått / ikke bestått.
-
-Det er ingen eksamen i emnet.
