@@ -4,11 +4,11 @@
     title: Teknostart
   - - page: teknostart/day1.md
       title: Dag 1
-  - - page: teknostart/day2.md
+    - page: teknostart/day2.md
       title: Dag 2
-  - - page: teknostart/day3.md
+    - page: teknostart/day3.md
       title: Dag 3
-  - - page: teknostart/day4.md
+    - page: teknostart/day4.md
       title: Dag 4
 - - page: unit-p1/index.md
     title: IoT 1
