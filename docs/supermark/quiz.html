@@ -18,137 +18,7 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
   <style type="text/css">
-    a.ntnu-button {
-    font: 600 14px "Source Sans Pro", Georgia, serif;
-    background: #fff;
-    color: #00509e;
-    border: 1px solid #00509e;
-    border-color: #00509e !important;
-    border-style: solid !important;
-    border-radius: 10rem;
-    display: inline-block;
-    padding: 5px 15px;
-    height: auto;
-    font-weight: bold;
-    line-height: 1.5em;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    text-decoration: none
-}
-
-a.ntnu-button:hover {
-    background: #00509e;
-    color: #fff;
-    text-decoration: none
-}
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
-}
-
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
-}
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
-}
-
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
-}
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-div.goals ul,
-div.goals ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-div.goals ul {
-  margin: 2em 0;
-}
-
-div.goals ul li {
-  margin: 1em;
-  margin-left: 3em;
-}
-
-div.goals ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  font-size: 20;
-  float: left;
-  margin-left: -1.5em;
-  color: #00509e;
-}
-.w3collapsible {
-  background-color: #f0e9db;
-  color: #868279;
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active,
-.w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-
-
-button:hover {
-  background-color: #EFF7FF;
-}
-div.qna .accordion-button:not(.collapsed) {
-  background-color: #EFF7FF;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
-  color: #00509e;
-}
-
-div.qna .accordion-button:not(.collapsed)::after {
-  color: #00509e;
-}
+    /* === quiz === */
 ol.quiz li {
   padding-left:3rem;
   cursor: pointer;
@@ -208,96 +78,7 @@ ol.quiz li.unselected-true {
 div.card-footer a {
   cursor: pointer;
 }
-div.report p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
 
-div.report p::before {
-    content: 'For the Report: ';
-    font-weight: bold; 
-    color: #1481b8;
-display: inline;
-}
-
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-div.tip p {
-  padding: 10px;
-  background-color: #d9eaf2;
-  border-radius: 5px;
-  border-left: 6px solid #1481b8
-}
-div.tipsbox {
-  padding: 12px;
-  background-color: #EFF7FF;
-  border-radius: 0px;
-  border-top: 6px solid #00509e;
-  margin: 1rem 0 1rem 0;
-  }
-  
-div.tipsbox::before { 
-  content: "Tips:";
-  font-weight: bold;
-  display: block;
-  color: #00509e;
-  padding: 0px 0 12px 0;
-  }
-
-div.tipsbox ul li:before {
-  content: '\f26a';
-  font-family: bootstrap-icons !important;
-  float: left;
-  margin-left: -1.5em;
-  color: #00509e;
-  line-height: 1.5rem;
-}
-
-
-div.tipsbox ul {
-  list-style-type: none;
-}
-
-table.weekplan {
-  width: 100%;
-  table-layout: fixed;
-}
-
-table.weekplan td {
-  background-color: #1481b8;
-  color: white;
-}
-
-table.weekplan td, table.weekplan th {
-  text-align: center;
-}
-
-table.weekplan td:empty {
-  background-color: white;
-}
-
-table.weekplan td:first-child {
-  background-color: white;
-  color: grey;
-}
-
-table.weekplan a {
-  font-weight:bold;
-  color: white;
-  text-decoration: underline;
-}
 
   </style>
 </head>
@@ -402,7 +183,7 @@ table.weekplan a {
       <div class="col-md-9" style="margin-top: 6rem;">
         <div class="page">
 <nav class="d-flex justify-content-between">
-<a type="button" href="index.html" class="page-link rounded">
+<a type="button" href="extensions.html" class="page-link rounded">
 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-left-short" viewBox="0 0 16 16" id="arrow-left-short"><path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" /></svg>
 All extensions
 </a>
@@ -411,7 +192,7 @@ All extensions
 </nav>
     </section>
     <section class="content">
-<h1>Documentation</h1>
+<h1>Extension quiz</h1>
 <p>A multiple choice questions that can be solved directly in the page.</p>
 
 <table class="table"><tbody><td>Python type</td><td>Quiz</td>
@@ -435,30 +216,30 @@ All extensions
 
     </section>
     <section class="content">
-<h1>Example</h1>
+<h1>Example 1</h1>
 
-<div class="card mb-5 shadow-sm" id="a54091">
+<div class="card mb-5 shadow-sm" id="b019f4">
   <div class="card-body">
     <h5 class="card-title">Example Quiz 1</h5>
     <div class="card-text"><p>Which of the alternatives is the best one?</p>
 </div>
 </div>
 <ol class="list-group list-group-flush quiz">
-<li class="list-group-item unselected" onclick="quiz_select('a54091', 0)">An fake answer.</li>
-<li class="list-group-item unselected" onclick="quiz_select('a54091', 1)">Another fake answer.</li>
-<li class="list-group-item unselected" onclick="quiz_select('a54091', 2)">This is the right answer.</li>
-<li class="list-group-item unselected" onclick="quiz_select('a54091', 3)">Yet another fake anser.</li>
+<li class="list-group-item unselected" onclick="quiz_select('b019f4', 0)">This is the right answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('b019f4', 1)">A fake answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('b019f4', 2)">Another fake answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('b019f4', 3)">Yet another fake anser.</li>
 </ol>
 <div class="card-footer">
 <div data="instructions">
   <i>Select the alternative that matches best.</i>
 </div>
 <div class="visually-hidden" data="confirm">
-  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('a54091', 2)">confirm</a>.</i>
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('b019f4', 0)">confirm</a>.</i>
 </div>
-<div class="visually-hidden" data="0">False. You selected a fake answer.</div>
-<div class="visually-hidden" data="1">False. You selected yet another fake answer.</div>
-<div class="visually-hidden" data="2">Correct. You selected the</div>
+<div class="visually-hidden" data="0">Correct. You selected the</div>
+<div class="visually-hidden" data="1">False. You selected a fake answer.</div>
+<div class="visually-hidden" data="2">False. You selected yet another fake answer.</div>
 <div class="visually-hidden" data="3"><b>Wrong.</b></div>
 </div>
 </div>
@@ -469,7 +250,7 @@ All extensions
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Example Quiz 1</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">question</span><span class="kw">:</span><span class="at"> Which of the alternatives is the best one?</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">correct</span><span class="kw">:</span><span class="at"> This is the right answer.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">false-1</span><span class="kw">:</span><span class="at"> An fake answer.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">false-1</span><span class="kw">:</span><span class="at"> A fake answer.</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">false-2</span><span class="kw">:</span><span class="at"> Another fake answer.</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">false-3</span><span class="kw">:</span><span class="at"> Yet another fake anser.</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">result-correct</span><span class="kw">:</span><span class="at"> Correct. You selected the </span></span>
@@ -479,9 +260,9 @@ All extensions
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
     </section>
     <section class="content">
-<h1>Example</h1>
+<h1>Example 2</h1>
 
-<div class="card mb-5 shadow-sm" id="325109">
+<div class="card mb-5 shadow-sm" id="6e64aa">
   <div class="card-body">
     <h5 class="card-title">Example Quiz 2</h5>
     <div class="card-text"><p>Which of the alternatives is the best one?</p>
@@ -492,22 +273,22 @@ All extensions
 </div>
 </div>
 <ol class="list-group list-group-flush quiz">
-<li class="list-group-item unselected" onclick="quiz_select('325109', 0)">An fake answer.</li>
-<li class="list-group-item unselected" onclick="quiz_select('325109', 1)">Another fake answer.</li>
-<li class="list-group-item unselected" onclick="quiz_select('325109', 2)">Yet another fake anser.</li>
-<li class="list-group-item unselected" onclick="quiz_select('325109', 3)">This is the right answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('6e64aa', 0)">This is the right answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('6e64aa', 1)">A fake answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('6e64aa', 2)">Another fake answer.</li>
+<li class="list-group-item unselected" onclick="quiz_select('6e64aa', 3)">Yet another fake anser.</li>
 </ol>
 <div class="card-footer">
 <div data="instructions">
   <i>Select the alternative that matches best.</i>
 </div>
 <div class="visually-hidden" data="confirm">
-  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('325109', 3)">confirm</a>.</i>
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('6e64aa', 0)">confirm</a>.</i>
 </div>
-<div class="visually-hidden" data="0">False. You selected a fake answer.</div>
-<div class="visually-hidden" data="1">False. You selected yet another fake answer.</div>
-<div class="visually-hidden" data="2"><b>Wrong.</b></div>
-<div class="visually-hidden" data="3">Correct. You selected the</div>
+<div class="visually-hidden" data="0">Correct. You selected the</div>
+<div class="visually-hidden" data="1">False. You selected a fake answer.</div>
+<div class="visually-hidden" data="2">False. You selected yet another fake answer.</div>
+<div class="visually-hidden" data="3"><b>Wrong.</b></div>
 </div>
 </div>
 <h2>Source Code</h2>
@@ -516,7 +297,7 @@ All extensions
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> quiz</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Example Quiz 2</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">correct</span><span class="kw">:</span><span class="at"> This is the right answer.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">false-1</span><span class="kw">:</span><span class="at"> An fake answer.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">false-1</span><span class="kw">:</span><span class="at"> A fake answer.</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">false-2</span><span class="kw">:</span><span class="at"> Another fake answer.</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">false-3</span><span class="kw">:</span><span class="at"> Yet another fake anser.</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">result-correct</span><span class="kw">:</span><span class="at"> Correct. You selected the </span></span>
@@ -575,14 +356,6 @@ All extensions
   </script>
   <script>
     
-
-
-
-
-
-
-
-
 function quiz_select(quiz_id, alternative) {
     quiz = document.getElementById(quiz_id);
     let i = 0;
@@ -645,13 +418,6 @@ function quiz_confirm(quiz_id, correct) {
         }
     }
 }
-
-
-
-
-
-
-
 
   </script>
 </body>
