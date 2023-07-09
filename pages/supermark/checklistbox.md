@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension checklistbox
 
 List that uses checkboxes as items.
 
@@ -20,7 +20,7 @@ List that uses checkboxes as items.
 
 
 
-# Example
+# Example 1
 
 :checklistbox: Remember the following:
 * Clean the desk.

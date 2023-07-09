@@ -1,6 +1,17 @@
+---
+type: nav
+prev: ["Documentation", "index.html"]
+---
+
+
 # Writing Documents
 
-Supermark documents are simple textfiles that include chunks of text, which itself can use different text-based syntax like Markdown, YAML or HTML.
+Supermark documents are simple textfiles that include chunks of text, which can use different text-based syntax like Markdown, YAML, HTML or Wikimedia tables.
+
+* Place your source files in a folder called `pages` or sub-folders within it.
+* Use the extension `*.md`.
+* Use UTF-8 encoding.
+
 
 ## Chunks
 
@@ -11,14 +22,6 @@ Chunks are separated by two or more blank lines.
 
 The Markdown chunks of the document should follow [Pandoc's Markdown syntax](https://pandoc.org/MANUAL.html#pandocs-markdown).
 They are useful to markup paragraphs of text, headers, links and lists.
-
-
-
-## YAML Chunks
-
-YAML elements start and stop with a delimiter `---`.
-The content must be [valid YAML syntax](https://yaml.org). 
-Ths is easiest when copying existing examples. 
 
 
 ## HTML Chunks
@@ -34,6 +37,14 @@ Use a chunk as a reference to other chunks defined in other files.
 ref: file.md
 ---
 ```
+
+## YAML Chunks
+
+YAML elements start and stop with a delimiter `---`.
+The content must be [valid YAML syntax](https://yaml.org). 
+Ths is easiest when copying existing examples. 
+
+The detailed elements in YAML chunk are defined by extensions, explained below.
 
 
 ## Code Chunks
@@ -58,23 +69,49 @@ For an updated list, type:
 pandoc --list-highlight-languages
 ```
 
-# File Encoding
 
-  - UTF-8
+# Extenions
 
-
-
+Supermark uses extenions to add more elements. Have a look at [all installed extenions](extenions.html).
 
 
-# Image Placeholders
+## Paragraph Extenions
+
+Markdown chunks can be extended with a prefix between two colons, like this:
+
+```markdown
+:warning: This is a warning box, using **Markdown** syntax inside.
+```
+
+This results in the following box:
+
+:warning: This is a warning box, using **Markdown** syntax inside.
+
+
+The `:extension:` prefix only applies to the current chunk. This means that you use **two blank lines** before you start the next chunk that is not a warning anymore.
 
 
 # Constants
 
+You can use constants in markdown chunks that are replaced during the building process.
+Refer to the constant names wrapped in double curly braces and colons as shown below.
 
-You can use constants in your documents that get replaced with values. 
+Usage of the variable in a Markdown chunk:
 
 ```markdown
-Year: {{:year:}}
+This document is written in the year {{:year:}}.
 ```
+
+
+The constants and their values are declared in the configuration file `config.toml`. 
+
+**config.toml**
+```
+input = "pages"
+output = "docs"
+
+[replacements]
+"year" = "2023"
+```
+
 

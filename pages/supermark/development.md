@@ -1,3 +1,8 @@
+---
+type: nav
+prev: ["Documentation", "index.html"]
+---
+
 # Development
 
   - [API](api/supermark/index.html)

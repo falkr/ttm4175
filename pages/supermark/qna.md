@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension qna
 
 Questions with expandable answers.
 
@@ -36,7 +36,7 @@ Questions with expandable answers.
 
 
 
-# Example
+# Example 1
 
 ---
 type: qna

@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension nav
 
 Page navigation to move back, next or up.
 
@@ -36,7 +36,7 @@ Page navigation to move back, next or up.
 
 
 
-# Example
+# Example 1
 
 ---
 type: nav
@@ -62,7 +62,7 @@ next: ["Home", "index.html"]
 
 
 
-# Example
+# Example 2
 
 ---
 type: nav
@@ -92,7 +92,7 @@ next: ["Home", "index.html"]
 
 
 
-# Example
+# Example 3
 
 ---
 type: nav

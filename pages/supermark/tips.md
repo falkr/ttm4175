@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension tips
 
 Paragraph style to show tips.
 

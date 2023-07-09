@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension goals
 
 Format a list with learning goals.
 
@@ -20,7 +20,7 @@ Format a list with learning goals.
 
 
 
-# Example
+# Example 1
 
 :goals:
 - Learning Goal 1

@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension link
 
 A link as a box with text and icon.
 
@@ -38,7 +38,7 @@ Select icons from [Bootstrap Icons](https://icons.getbootstrap.com).
 
 
 
-# Example
+# Example 1
 
 ---
 type: link

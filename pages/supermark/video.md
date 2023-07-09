@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension video
 
 Include videos from Youtube by referring to the video ID.
 
@@ -36,7 +36,7 @@ Include videos from Youtube by referring to the video ID.
 
 
 
-# Example
+# Example 1
 
 ---
 type: youtube
@@ -66,7 +66,7 @@ start: 80
 
 
 
-# Example
+# Example 2
 
 ---
 type: youtube

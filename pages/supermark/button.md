@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension button
 
 Links in the style of buttons.
 
@@ -36,7 +36,7 @@ Links in the style of buttons.
 
 
 
-# Example
+# Example 1
 
 ---
 type: button
@@ -64,7 +64,7 @@ text: Visit NTNU
 
 
 
-# Example
+# Example 2
 
 ---
 type: button

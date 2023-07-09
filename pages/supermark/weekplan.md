@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension weekplan
 
 A table that is suitable for creating weekplans.
 
@@ -38,7 +38,7 @@ The css styling automatically highlights the cells that are used to ensure good 
 
 
 
-# Example
+# Example 1
 
 ---
 type: table/weekplan

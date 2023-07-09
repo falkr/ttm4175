@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension card
 
 Cards provide links with additional elements like text or arrows.
 
@@ -36,7 +36,7 @@ Cards provide links with additional elements like text or arrows.
 
 <table class="table"><tbody><td>Python type</td><td>Card</td>
 <tr></tr>
-<td>type</td><td>card/arrow, card/person, card, card/text</td>
+<td>type</td><td>card/arrow, card, card/person, card/text</td>
 <tr></tr>
 <td>Language</td><td><a href="#">YAML</a></td>
 <tr></tr>
@@ -52,7 +52,7 @@ Cards provide links with additional elements like text or arrows.
 
 
 
-# Example
+# Example 1
 
 ---
 type: card/text
@@ -84,7 +84,7 @@ link_title: Finn dine studentrepresentanter
 
 
 
-# Example
+# Example 2
 
 ---
 type: cards
@@ -134,7 +134,7 @@ Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen:
 
 
 
-# Example
+# Example 3
 
 ---
 type: card/person
@@ -166,7 +166,7 @@ image: "_placeholder 200 x 200"
 
 
 
-# Example
+# Example 4
 
 ---
 type: card/arrow
@@ -194,7 +194,7 @@ link: student.html
 
 
 
-# Example
+# Example 5
 
 ---
 type: card/text
@@ -224,7 +224,7 @@ link: snacks.html
 
 
 
-# Example
+# Example 6
 
 ---
 type: cards

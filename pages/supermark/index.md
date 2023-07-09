@@ -1,5 +1,7 @@
-# Supermark
+# Supermark Documentation
 
+
+## Writing Supermark Documents
 
 ---
 type: link
@@ -10,17 +12,30 @@ icon: gear-wide-connected
 
 ---
 type: link
-link: "usage.html"
-title: "Using the command line"
+link: "extensions.html"
+title: "Syntax Extensions"
+icon: gear-wide-connected
+---
+
+
+## Setting Things Up
+
+---
+type: link
+link: "installation.html"
+title: "Installation"
 icon: gear-wide-connected
 ---
 
 ---
 type: link
-link: "extensions.html"
-title: "Extensions"
+link: "usage.html"
+title: "Using the command line"
 icon: gear-wide-connected
 ---
+
+
+## For Developers
 
 ---
 type: link

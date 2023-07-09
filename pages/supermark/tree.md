@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension tree
 
 Display a tree hierarchy, like a folder structure.
 
@@ -20,7 +20,7 @@ Display a tree hierarchy, like a folder structure.
 
 
 
-# Example
+# Example 1
 
 :tree:
 - course/

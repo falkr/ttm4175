@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension quote
 
 Quoting elements from another document, with a link.
 
@@ -36,7 +36,7 @@ Quoting elements from another document, with a link.
 
 
 
-# Example
+# Example 1
 
 ---
 type: quote

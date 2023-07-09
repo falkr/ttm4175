@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension steps
 
 Lists that outline a series of steps.
 
@@ -20,7 +20,7 @@ Lists that outline a series of steps.
 
 
 
-# Example
+# Example 1
 
 :steps:
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non imperdiet mauris. Sed rutrum massa at leo fringilla consequat. Duis eget leo vel augue placerat venenatis nec id lectus. Maecenas aliquam ac lectus sit amet dictum. Mauris odio tortor, tincidunt sed pulvinar in, varius in massa. Curabitur fermentum turpis felis, a egestas diam consectetur et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam lacinia lobortis accumsan. Quisque bibendum molestie metus, eu pharetra ante cursus eget. Fusce lobortis velit et massa sollicitudin, a bibendum elit commodo. Sed at pretium enim. Nunc viverra feugiat eros, sodales molestie dui lobortis eget. Donec sollicitudin dui commodo, imperdiet nibh eget, faucibus ex.
@@ -50,7 +50,7 @@ Lists that outline a series of steps.
 
 
 
-# Example
+# Example 2
 
 :steps:
 1. This is the first step

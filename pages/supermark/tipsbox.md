@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension tipsbox
 
 Paragraph style to show tips in a box.
 
@@ -20,7 +20,7 @@ Paragraph style to show tips in a box.
 
 
 
-# Example
+# Example 1
 
 :tipsbox: Tips for RATs:
 * Leg vekt på å **forklare ting til hverandre**.

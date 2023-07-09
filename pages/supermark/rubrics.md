@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension rubrics
 
 Table style for rubrics.
 
@@ -36,7 +36,7 @@ Table style for rubrics.
 
 
 
-# Example
+# Example 1
 
 ---
 type: table

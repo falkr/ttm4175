@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension hints
 
 Hints are boxes with information that is only visible when the reader clicks on the header.
 
@@ -40,7 +40,7 @@ It ends after two consecutive empty lines.
 
 
 
-# Example
+# Example 1
 
 ---
 type: hint
@@ -76,7 +76,7 @@ Within the content you can have lists:
 
 
 
-# Example
+# Example 2
 
 :hint: This is a hint that is only visible after clicking a button.
 

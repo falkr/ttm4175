@@ -4,14 +4,14 @@
 
 ---
 type: nav
-prev: ["All extensions", "index.html"]
+prev: ["All extensions", "extensions.html"]
 ---
 
 
 
 
 
-# Documentation
+# Extension quiz
 
 A multiple choice questions that can be solved directly in the page.
 
@@ -36,14 +36,14 @@ A multiple choice questions that can be solved directly in the page.
 
 
 
-# Example
+# Example 1
 
 ---
 type: quiz
 title: Example Quiz 1
 question: Which of the alternatives is the best one?
 correct: This is the right answer.
-false-1: An fake answer.
+false-1: A fake answer.
 false-2: Another fake answer.
 false-3: Yet another fake anser.
 result-correct: Correct. You selected the 
@@ -65,7 +65,7 @@ type: quiz
 title: Example Quiz 1
 question: Which of the alternatives is the best one?
 correct: This is the right answer.
-false-1: An fake answer.
+false-1: A fake answer.
 false-2: Another fake answer.
 false-3: Yet another fake anser.
 result-correct: Correct. You selected the 
@@ -80,13 +80,13 @@ result-false-2: False. You selected yet another fake answer.
 
 
 
-# Example
+# Example 2
 
 ---
 type: quiz
 title: Example Quiz 2
 correct: This is the right answer.
-false-1: An fake answer.
+false-1: A fake answer.
 false-2: Another fake answer.
 false-3: Yet another fake anser.
 result-correct: Correct. You selected the 
@@ -111,7 +111,7 @@ Which of the alternatives is the best one?
 type: quiz
 title: Example Quiz 2
 correct: This is the right answer.
-false-1: An fake answer.
+false-1: A fake answer.
 false-2: Another fake answer.
 false-3: Yet another fake anser.
 result-correct: Correct. You selected the 
