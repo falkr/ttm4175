@@ -19,7 +19,30 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    
+    /* === milestone === */
+div.milestone p {
+    padding: 10px;
+    background-color: #EBF0C4;
+    border-radius: 5px;
+    position: relative;
+    padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.milestone p::before {
+    content: '\f3cb';
+    font-family: bootstrap-icons !important;
+    color: #7C8934;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
   </style>
 </head>
 
@@ -143,7 +166,17 @@ All extensions
 </div>
 <h2>Source Code</h2>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idbd3e3e">:milestone: **Milestone:** We try to make this application work.
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idbd3e3e">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <pre><code>:milestone: **Milestone:** We try to make this application work.</code></pre>
+</div>
     </section>
     <section class="content">
 <h1>Example 2</h1>
@@ -154,9 +187,21 @@ suis telae ab sine calentibus sorores <strong>indeploratum inrupit</strong>. For
 </div>
 <h2>Source Code</h2>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id4efb1e">:milestone: **Milestone Reached!** Lorem markdownum est constitit ut dixit; perque verus. **Et Elide talibus**:
+suis telae ab sine calentibus sorores **indeploratum inrupit**. Fore aurum
+**carnibus**, invidia mihi, fessos contrarius Venus ut arva.
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id4efb1e">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <pre><code>:milestone: **Milestone Reached!** Lorem markdownum est constitit ut dixit; perque verus. **Et Elide talibus**:
 suis telae ab sine calentibus sorores **indeploratum inrupit**. Fore aurum
 **carnibus**, invidia mihi, fessos contrarius Venus ut arva.</code></pre>
+</div>
     </section>
 </div>
       </div>
@@ -214,6 +259,7 @@ suis telae ab sine calentibus sorores **indeploratum inrupit**. Fore aurum
   </script>
   <script>
     
+
 
   </script>
 </body>

@@ -237,6 +237,132 @@ The tasks are independent of each other, but the first one is the easiest to get
 </ol>
 <p>In the following, you will usually only copy the base state machine (2) and work on the code for the extended state machine (3), including how to start it (4). Sometimes you may want to adjust the import statements if you need access to more elements.</p>
 </div>
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id074a9d"># 1 import statements
+from utime import ticks_ms
+from microbit import button_a, button_b, accelerometer, display, sleep, Image
+
+ON = Image.SQUARE
+OFF = Image.SQUARE_SMALL
+
+# 2 base state machine
+class StateMachine:
+    """
+    The following code segment defines a basis state machine.
+    Leave this code as it is. (Or be careful what you do.)"""
+
+    def __init__(self, timer_names=["t1", "t2", "t3"]):
+        self.active = False
+        self.state = "initial"
+        self.timer_names = timer_names
+        self.timers = {}
+
+    def _ticks_ms(self):
+        # return int(round(time() * 1000))
+        return ticks_ms()
+
+    def initial_transition(self, timers):
+        """Overwrite this method to define the initial transition.
+        Must return the name of the first state."""
+        return None
+
+    def transition(self, state, event, timers):
+        """Overwrite this method to define the transitions.
+
+        `state` - the current state
+        `event` - the triggering event
+        `timers` - to start and stop timers
+
+        Return the name of the next state,
+        or None to stay in current state."""
+        return None
+
+    def start(self, name, timeout):
+        """Start a timer.
+        The name must be t1, t2 or t2.
+        The timeout is given in milliseconds.
+        """
+        self.timers[name] = self._ticks_ms() + timeout
+
+    def stop(self, name):
+        """Stop a timer."""
+        self.timers[name] = None
+
+    def _detect_event(self):
+        now = self._ticks_ms()
+        for timer in self.timer_names:
+            if (timer in self.timers) and (self.timers[timer] is not None):
+                if self.timers[timer] < now:
+                    self.timers[timer] = None
+                    return timer
+        if button_a.was_pressed():
+            return "button_a"
+        if button_b.was_pressed():
+            return "button_b"
+        if accelerometer.was_gesture("shake"):
+            return "shake"
+        return None
+
+    def run(self):
+        """Run the state machine."""
+        self.active = True
+        while self.active:
+            if self.state == "initial":
+                next_state = self.initial_transition(self)
+                if next_state:
+                    if next_state == "final":
+                        self.active = False
+                    self.state = next_state
+            event = self._detect_event()
+            if event is not None:
+                next_state = self.transition(self.state, event, self)
+                if next_state:
+                    self.state = next_state
+            sleep(100)
+
+# 3 the extended state machine
+class Counter(StateMachine):
+    """Counting the number of clicks on button A.
+    If 10 is reached, an "alarm" is shown by switching all LEDs on.
+    The counter can be reset at any time with button B.
+    """
+
+    def initial_transition(self, timers):
+        self.counter = 0
+        display.show(self.counter)
+        return "count"
+
+    def transition(self, state, event, timers):
+        if state == "count":
+            if event == "button_a":
+                if self.counter < 9:
+                    self.counter = self.counter + 1
+                    display.show(self.counter)
+                    return "count"
+                else:
+                    display.show(ON)
+                    timers.start("t1", 1000)
+                    return "alarm"
+            elif event == "button_b":
+                self.counter = 0
+                display.show(self.counter)
+                return "count"
+        elif state == "alarm":
+            if event == "t1":
+                self.counter = 0
+                display.show(self.counter)
+                return "count"
+
+# 4 starting the machine
+stm = Counter()
+stm.run()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id074a9d">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 import statements</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utime <span class="im">import</span> ticks_ms</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> microbit <span class="im">import</span> button_a, button_b, accelerometer, display, sleep, Image</span>
@@ -355,6 +481,7 @@ The tasks are independent of each other, but the first one is the easiest to get
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 starting the machine</span></span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> Counter()</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+</div>
 <h3>Diagram for the Counter</h3>
 
 <figure class="figure">
@@ -380,6 +507,33 @@ The tasks are independent of each other, but the first one is the easiest to get
 </div>
 <p>Have a look at the code below, and run it. (We here only show the code of the extended state machine for the shake light, remember to keep the code for the base state machine and the import statements.)</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idd820cb">class ShakeLight(StateMachine):
+    """Switch on the light if you shake the device
+    and turn it off again after 2 seconds.
+    """
+
+    def initial_transition(self, timers):
+        display.show(Image.SQUARE_SMALL)
+        return "off"
+
+    def transition(self, state, event, timers):
+        if state == "off":
+            if event == "shake":
+                display.show(Image.SQUARE)
+                timers.start("t1", 2000)
+                return "on"
+        elif state == "on":
+            if event == "t1":
+                display.show(Image.SQUARE_SMALL)
+                return "off"
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idd820cb">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
@@ -399,6 +553,7 @@ The tasks are independent of each other, but the first one is the easiest to get
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                display.show(Image.SQUARE_SMALL)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span></code></pre></div>
+</div>
 <p><strong>Task:</strong> First, describe the behavior of the shake light in a few sentences.</p>
 
 <p><strong>Task:</strong> Draw a state machine that corresponds to the code. Make sure to include all necessary elements.</p>
@@ -419,6 +574,39 @@ The tasks are independent of each other, but the first one is the easiest to get
 <p><strong>Task:</strong> Extend the state machine diagram so that it also switches the light off again after the level goes under 80.</p>
 <p><strong>Task:</strong> Add the code for the added functionality and check that it works. Include a series of small screenshots in your report.</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id5d0cc6">class NightLight(StateMachine):
+    """Periodically read the light level.
+    If the light level is above 100, switch on the light.
+    If it is below 80, switch the light off again.
+    """
+
+    def initial_transition(self, timers):
+        display.show(Image.SQUARE_SMALL)
+        timers.start("t1", 1000)
+        return "off"
+
+    def transition(self, state, event, timers):
+        if state == "off":
+            if event == "t1":
+                if display.read_light_level() > 100:
+                    display.show(Image.SQUARE)
+                    timers.start("t1", 1000)
+                    return "on"
+                else:
+                    timers.start("t1", 1000)
+                    return "off"
+
+
+stm = NightLight()
+stm.run()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id5d0cc6">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> NightLight(StateMachine):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Periodically read the light level.</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    If the light level is above 100, switch on the light.</span></span>
@@ -444,6 +632,7 @@ The tasks are independent of each other, but the first one is the easiest to get
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> NightLight()</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+</div>
     </section>
     <section class="content">
 <h1>Switch Light</h1>
@@ -463,6 +652,36 @@ The tasks are independent of each other, but the first one is the easiest to get
 <li>You only have to fill the content of the functions <code>initial_transition</code> and <code>transition</code>.</li>
 </ul>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id98dd91">class SwitchLight(StateMachine):
+"""Switch between states off and on by pressing button A.
+
+The change between on and off only happens if button A is pressed
+twice quickly.
+
+State off is represented by a small square,
+state on with a big square.
+
+The transitional states between on and off are shown
+with arrows up and down.
+"""
+
+def initial_transition(self, timers):
+    # add your code here
+
+def transition(self, state, event, timers):
+    # add your code here
+
+
+stm = SwitchLight()
+stm.run()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id98dd91">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SwitchLight(StateMachine):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;Switch between states off and on by pressing button A.</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -485,6 +704,7 @@ The tasks are independent of each other, but the first one is the easiest to get
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> SwitchLight()</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+</div>
     </section>
     <section class="content">
 <h1>Hand Sanitizer Station</h1>
@@ -520,6 +740,24 @@ These machines, as you know, detect that someone puts their hand under the dispe
 </div>
 <p><strong>Task:</strong> Create the code for the machines. Use below below as starting point.</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ida3261a">class Dispenser(StateMachine):
+    
+    def initial_transition(self, timers):
+        # define your initial transition here
+
+    def transition(self, state, event, timers):
+        # define your transitions here
+
+stm = Dispenser()
+stm.run()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ida3261a">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dispenser(StateMachine):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
@@ -530,6 +768,7 @@ These machines, as you know, detect that someone puts their hand under the dispe
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> Dispenser()</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+</div>
 <p><strong>Task:</strong> Document the solution of your dispenser as detailed as possible, to explain to the reader how it works. Include a comic-like sequence of screenshots, too.</p>
 
     </section>

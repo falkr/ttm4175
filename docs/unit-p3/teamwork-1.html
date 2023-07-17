@@ -77,9 +77,24 @@ display: inline;
 /* === tips === */
 div.tip p {
   padding: 10px;
-  background-color: #d9eaf2;
+  background-color: #E3BCDA;
   border-radius: 5px;
-  border-left: 6px solid #1481b8
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.tip p::before {
+  content: '\f706';
+  font-family: bootstrap-icons !important;
+  color: #75225E;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 
@@ -197,7 +212,17 @@ div.tip p {
 <h3>Checking the News via Curl</h3>
 <p>Use the command line tool `curl to request the website:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id9df47a">curl --verbose https://www.nrk.no/
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id9df47a">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--verbose</span> https://www.nrk.no/</span></code></pre></div>
+</div>
 <div class="task"><p>Can you read some of the headlines?</p>
 </div>
 <div class="task"><p>What happens if you try to use the URL <code>http://www.nrk.no/</code> instead? What does the response say? Can you find out what this response means?</p>
@@ -208,14 +233,38 @@ div.tip p {
 
 <span name="e3c025"></span><aside name="e3c025"><p>Using <code>pip</code> with the <code>python3 -m</code> prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the <code>pip</code> installation that also matches your <code>python3</code>. You also don't need to worry about <code>pip3</code> or <code>pip</code>.</p>
 </aside>
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idab4771">python3 -m pip install requests
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idab4771">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install requests</span></code></pre></div>
+</div>
 <p>With this package installed, the program to make a request to a website looks like this:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id35985b">import requests
+
+url = "https://nrk.no/"
+response = requests.get(url)
+print(response.text)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id35985b">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://nrk.no/&quot;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div>
+</div>
 <p>The request returns a data structure of the type <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">Response</a> which contains the answer as a text field, which we simply print out.</p>
 
 <div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
@@ -240,7 +289,17 @@ For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
 <h3>Weather via Curl</h3>
 <p>We can also do the same HTTP request from our command line using <code>curl</code>:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id1935f7">curl 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&lon=10.39'
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id1935f7">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="st">&#39;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&amp;lon=10.39&#39;</span></span></code></pre></div>
+</div>
 <h3>Weather via Python</h3>
 <p>Let us use Python again for making the same request, with the requests module as done above.
 Find the correct URL from the API website.</p>
@@ -273,11 +332,25 @@ print(response.json())
 </div>
 <p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal <code>print()</code> function, the data structure doesn't look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ida0f396">from pprint import pprint
+
+# your code...
+
+pprint(response.json())
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ida0f396">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># your code...</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pprint(response.json())</span></code></pre></div>
+</div>
 <p>Notice that we use now the function <code>pprint()</code> instead of <code>print()</code> to print things <em>pretty</em>. Pretty good, huh?</p>
 
 <div class="task"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p>
@@ -317,22 +390,73 @@ For now, we are just interested in the air temperature.</p>
 <h3>Function for the Temperature</h3>
 <p>Using the code above, create a function that takes the latitude and longitude as input arguments and that returns the air temperature at that location. This is how the function should look like:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idb59126">def get_air_temp(lat, lon):
+	# TODO make a request
+	# TODO return only the value of the air temperature only
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idb59126">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_air_temp(lat, lon):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co"> make a request</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co"> return only the value of the air temperature only</span></span></code></pre></div>
+</div>
 <p>Remember that Python lets you create a string that includes variables with the <code>format()</code> function:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id76675e">lat = ...
+lon = ...
+url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={}&lon={}".format(lat, lon)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id76675e">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> ...</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lon <span class="op">=</span> ...</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=</span><span class="sc">{}</span><span class="st">&amp;lon=</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(lat, lon)</span></code></pre></div>
+</div>
 <p>A newer and more compact way to format strings and integrate variables is using f-strings, where you write the variables directly into curly brackets. (Note the <code>f</code> before the string.)</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idee5d5f">lat = ...
+lon = ...
+url = f"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat}&lon={lon}"
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idee5d5f">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> ...</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lon <span class="op">=</span> ...</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="ss">f&quot;https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=</span><span class="sc">{</span>lat<span class="sc">}</span><span class="ss">&amp;lon=</span><span class="sc">{</span>lon<span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div>
+</div>
 <p>Let's make this a bit more compact for later, so that we store the coordinates of a few places and only have to provide place names.
 We can for instance simply code them in a nested dictionary:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id20fee9">places = {
+	"Trondheim": {"lat": 63.43, "lon": 10.39},
+	"Oslo": {"lat": 59.91, "lon": 10.75},
+	"Bergen": {"lat": 60.39, "lon": 5.32},
+	"Avaldsnes": {"lat": 59.35, "lon": 5.27},
+	"Tromsø": {"lat": 69.64, "lon": 18.95},
+}
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id20fee9">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>places <span class="op">=</span> {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Trondheim&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">63.43</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">10.39</span>},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oslo&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">59.91</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">10.75</span>},</span>
@@ -340,10 +464,22 @@ We can for instance simply code them in a nested dictionary:</p>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Avaldsnes&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">59.35</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">5.27</span>},</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tromsø&quot;</span>: {<span class="st">&quot;lat&quot;</span>: <span class="fl">69.64</span>, <span class="st">&quot;lon&quot;</span>: <span class="fl">18.95</span>},</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
 <p>With this dictionary declared globally in the file (above any function definitions), create a new version of the function to compare the air temperature:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ided1bda">def get_air_temp_2(place):
+	# create the function
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ided1bda">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_air_temp_2(place):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create the function</span></span></code></pre></div>
+</div>
 <p>Fantastic---we now have a compact function that gets the temperature forecast from Yr so we can use it later in our application. We'll come back to it.</p>
 
     </section>
@@ -370,6 +506,92 @@ Now we want to also build a web server so that we can <strong>accept HTTP reques
 The code for the server handling a requests therefore also works very differently from the one making a request.</p>
 <p>Copy the following code into a file <code>webserver.py</code>. The code declares some functions, and then a class <code>RequestHandler</code>, which defines a web server. It then configures and starts this web server, which is then active and waits for GET requests.</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ideabf42">from http.server import HTTPServer, BaseHTTPRequestHandler
+from urllib.parse import quote, unquote
+import json
+import socket
+
+
+def extract_json_string(string):
+	start = string.find("{")
+	stop = string.rfind("}")
+	return string[start : stop + 1]
+
+
+def get_ip_address():
+	return socket.gethostbyname(socket.gethostname())
+
+
+def dictionary_to_string(dictionary):
+	return json.dumps(dictionary)
+
+
+def json_string_to_dictionary(json_string):
+	return json.loads(json_string)
+
+
+def encode_string_into_url(string):
+	return quote(string)
+
+
+def decode_url_back_to_string(url_encoded_string):
+	return unquote(url_encoded_string)
+
+
+def string_to_unicode_bytes(string):
+	return string.encode("utf-8")
+
+
+class RequestHandler(BaseHTTPRequestHandler):
+	def store_data(self, name, data):
+		if not hasattr(self.server, "data"):
+			self.server.data = {}
+		self.server.data[name] = data
+
+	def load_data(self, name):
+		if hasattr(self.server, "data"):
+			if name in self.server.data:
+				return self.server.data[name]
+		return None
+
+	def do_GET(self):
+		# Phase 1: What has been requested?
+		print("-------- Incoming GET request --------")
+		print("  Request data: {}".format(self.requestline))
+
+		# Phase 2: Which data do we want to send back?
+		response = "Hei hei"
+
+		# Phase 3: Let's send back the data!
+		response_in_bytes = string_to_unicode_bytes(response)
+		self.send_response(200)
+		self.send_header("Content-type", "text/plain")
+		self.end_headers()
+		self.wfile.write(response_in_bytes)
+
+
+port = 8023
+httpd = HTTPServer(
+	("", port),
+	RequestHandler,
+)
+print("")
+print(" ******** TTM4175 Web Server  ******** ")
+print(
+	"    The server will be reachable via  http://{}:{}/".format(get_ip_address(), port)
+)
+print("    Terminate the server via Ctrl-C.")
+print(" ************************************* ")
+print("")
+httpd.serve_forever()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ideabf42">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> http.server <span class="im">import</span> HTTPServer, BaseHTTPRequestHandler</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
@@ -448,6 +670,7 @@ The code for the server handling a requests therefore also works very differentl
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot; ************************************* &quot;</span>)</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;&quot;</span>)</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>httpd.serve_forever()</span></code></pre></div>
+</div>
 <ul>
 <li>Read carefully through the code, starting in the line where we assign a port, and then the definitions of classes and functions above.</li>
 <li>You can ignore the functions <code>store_data()</code> and <code>load_data()</code> for now.</li>
@@ -479,7 +702,17 @@ This may be surprising, since it should get the request as input and then comput
 <h1>Sending Data to the Server</h1>
 <p>We can send additional data with our request, by appending it into the URL as follows:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ide4c311">http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 54.3}
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ide4c311">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <pre><code>http://localhost:8000/?data={&quot;time&quot;: &quot;12:05&quot;, &quot;temperature&quot;: 20.0, &quot;humidity&quot;: 54.3}</code></pre>
+</div>
 <h2>Sending Data via the Browser</h2>
 <ul>
 <li>Copy the URL from above, but adjust it to your IP address (if necessary).</li>
@@ -511,6 +744,45 @@ To let the sensor inform the server about the temperature, it uses instead the <
 </div>
 <div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function. See the code below for that function.</p>
 </div>
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idc6da62">def do_POST(self):
+	"""HTTP POST request as it comes from the sensor device application,
+	for instance to send the current temerature."""
+
+	print("-------- Incoming POST request --------")
+	print("  Request data: {}".format(self.requestline))
+
+	decoded_request = decode_url_back_to_string(self.requestline)
+	print("  Decoded data: {}".format(decoded_request))
+
+	json_string = extract_json_string(decoded_request)
+	print("  Extracted JSON string: {}".format(json_string))
+
+	dictionary = json_string_to_dictionary(json_string)
+	print(dictionary)
+
+	# We extract the temperature...
+	temperature = dictionary["temperature"]
+	print(f"Temperature {temperature} received in do_POST()")
+	# ...and store it
+	# self.store_data("temperature", temperature)
+
+	# Phase 2: Which data do we want to send back?
+	response = "ok"
+
+	# Phase 3: Let's send back the data!
+	response_in_bytes = string_to_unicode_bytes(response)
+	self.send_response(200)
+	self.send_header("Content-type", "text/plain")
+	self.end_headers()
+	self.wfile.write(response_in_bytes)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idc6da62">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_POST(<span class="va">self</span>):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;HTTP POST request as it comes from the sensor device application,</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    for instance to send the current temerature.&quot;&quot;&quot;</span></span>
@@ -542,12 +814,48 @@ To let the sensor inform the server about the temperature, it uses instead the <
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.send_header(<span class="st">&quot;Content-type&quot;</span>, <span class="st">&quot;text/plain&quot;</span>)</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.end_headers()</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.wfile.write(response_in_bytes)</span></code></pre></div>
+</div>
 <p>We use from now on the <code>do_GET()</code> function to serve the web site that displays the temperature, and the function <code>do_POST()</code> to receive data from the temperature sensor. The web server can hence process two different requests: one for storing data, one for serving a website that presents the data.</p>
 <h2>Sending Data via Python Requests</h2>
 <p>We now want to send data to the web server from Python. In a real system, a sensor should do this automated and in periodic intervals.
 (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.)
 This code sends the data to the web server, using a <strong>POST</strong> request:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idab9b67">import requests
+import json
+from urllib.parse import quote, unquote
+
+
+def dictionary_to_string(dictionary):
+	return json.dumps(dictionary)
+
+def encode_string_into_url(string):
+	return quote(string)
+
+def print_response(response):
+	print('-------- Response --------')
+	print('Status code: {}'.format(response.status_code))
+	print('-------- Content--------')
+	print(response.text)
+	print('------------------------')
+
+# example data
+dictionary = {}
+dictionary['temperature'] = 20.0
+dictionary['sensor_name'] = 'kitchen'
+
+# ... your code ...
+
+response = requests.post('http://192.168.86.104:8000/?data={}'.format(...))
+print_response(response)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idab9b67">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> quote, unquote</span>
@@ -575,6 +883,7 @@ This code sends the data to the web server, using a <strong>POST</strong> reques
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(<span class="st">&#39;http://192.168.86.104:8000/?data=</span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(...))</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>print_response(response)</span></code></pre></div>
+</div>
 <ul>
 <li>Create a new client program with the code above.</li>
 <li>Add the necessary lines to convert the data to send, use the included functions.</li>
@@ -595,6 +904,24 @@ This code sends the data to the web server, using a <strong>POST</strong> reques
 <p>The web server should store the temperature that the sensor sends in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough.
 We use the two functions <code>store_data()</code> and <code>load_data()</code> shown below to store or load data.</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="idf96d7c">def store_data(self, name, data):
+	if not hasattr(self.server, "data"):
+		self.server.data = {}
+	self.server.data[name] = data
+
+def load_data(self, name):
+	if hasattr(self.server, "data"):
+		if name in self.server.data:
+			return self.server.data[name]
+	return None
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idf96d7c">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> store_data(<span class="va">self</span>, name, data):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">hasattr</span>(<span class="va">self</span>.server, <span class="st">&quot;data&quot;</span>):</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.server.data <span class="op">=</span> {}</span>
@@ -605,6 +932,7 @@ We use the two functions <code>store_data()</code> and <code>load_data()</code> 
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> name <span class="kw">in</span> <span class="va">self</span>.server.data:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.server.data[name]</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div>
+</div>
 <p>As you see, these functions use the <code>self.server</code> attribute, which provides access to the actual server instance.
 From there, we can access a variable <code>data</code> that is a dictionary so that we can store variables by name.
 I this way we can store data also between different calls of the <code>do_GET()</code> and <code>do_POST()</code> functions.
@@ -625,6 +953,24 @@ To repeat and clarify:</p>
 <h1>Optional Task: Nice HTML Output</h1>
 <p>Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id7fc710">def generate_basic_html_page(title='Default Title'):
+	lines = []
+	lines.append('<html>')
+	lines.append('    <head><title>{}</title></head>'.format(title))
+	lines.append('    <body>')
+	lines.append('        <h1>Hello!</h1>')
+	lines.append('        <p>This is a very simple HTML page. It even contains a <a href="http://www.ntnu.no">link.</a></p>')
+	lines.append('    </body>')
+	lines.append('</html>')
+	return '\n'.join(lines)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id7fc710">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_basic_html_page(title<span class="op">=</span><span class="st">&#39;Default Title&#39;</span>):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> []</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">&#39;&lt;html&gt;&#39;</span>)</span>
@@ -635,6 +981,7 @@ To repeat and clarify:</p>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">&#39;    &lt;/body&gt;&#39;</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">&#39;&lt;/html&gt;&#39;</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>.join(lines)</span></code></pre></div>
+</div>
 <ul>
 <li>
 <p>Copy the code above into the web server file from above. Place the function just below the import statements, so that it is at the top level of the file. (Not within the class declaration.)</p>

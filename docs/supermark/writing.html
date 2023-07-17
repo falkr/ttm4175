@@ -176,9 +176,21 @@ They are useful to markup paragraphs of text, headers, links and lists.</p>
 <h2>Referenced Chunks</h2>
 <p>Use a chunk as a reference to other chunks defined in other files.</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="ida4ed9c">---
+ref: file.md
+---
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ida4ed9c">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ref</span><span class="kw">:</span><span class="at"> file.md</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+</div>
 <h2>YAML Chunks</h2>
 <p>YAML elements start and stop with a delimiter <code>---</code>.
 The content must be <a href="https://yaml.org">valid YAML syntax</a>.
@@ -201,7 +213,17 @@ pandoc --list-highlight-languages
 <p><code>abc</code>, <code>asn1</code>, <code>asp</code>, <code>ats</code>, <code>awk</code>, <code>actionscript</code>, <code>ada</code>, <code>agda</code>, <code>alertindent</code>, <code>apache</code>, <code>bash</code>, <code>bibtex</code>, <code>boo</code>, <code>c</code>, <code>cs</code>, <code>cpp</code>, <code>cmake</code>, <code>css</code>, <code>changelog</code>, <code>clojure</code>, <code>coffee</code>, <code>coldfusion</code>, <code>commonlisp</code>, <code>curry</code>, <code>d</code>, <code>dtd</code>, <code>diff</code>, <code>djangotemplate</code>, <code>dockerfile</code>, <code>doxygen</code>, <code>doxygenlua</code>, <code>eiffel</code>, <code>elixir</code>, <code>email</code>, <code>erlang</code>, <code>fsharp</code>, <code>fortran</code>, <code>gcc</code>, <code>glsl</code>, <code>gnuassembler</code>, <code>m4</code>, <code>go</code>, <code>html</code>, <code>hamlet</code>, <code>haskell</code>, <code>haxe</code>, <code>ini</code>, <code>isocpp</code>, <code>idris</code>, <code>fasm</code>, <code>nasm</code>, <code>json</code>, <code>jsp</code>, <code>java</code>, <code>javascript</code>, <code>javadoc</code>, <code>julia</code>, <code>kotlin</code>, <code>llvm</code>, <code>latex</code>, <code>lex</code>, <code>lilypond</code>, <code>literatecurry</code>, <code>literatehaskell</code>, <code>lua</code>, <code>mips</code>, <code>makefile</code>, <code>markdown</code>, <code>mathematica</code>, <code>matlab</code>, <code>maxima</code>, <code>mediawiki</code>, <code>metafont</code>, <code>modelines</code>, <code>modula2</code>, <code>modula3</code>, <code>monobasic</code>, <code>ocaml</code>, <code>objectivec</code>, <code>objectivecpp</code>, <code>octave</code>, <code>opencl</code>, <code>php</code>, <code>povray</code>, <code>pascal</code>, <code>perl</code>, <code>pike</code>, <code>postscript</code>, <code>powershell</code>, <code>prolog</code>, <code>pure</code>, <code>purebasic</code>, <code>python</code>, <code>r</code>, <code>relaxng</code>, <code>relaxngcompact</code>, <code>roff</code>, <code>ruby</code>, <code>rhtml</code>, <code>rust</code>, <code>sgml</code>, <code>sql</code>, <code>sqlmysql</code>, <code>sqlpostgresql</code>, <code>scala</code>, <code>scheme</code>, <code>tcl</code>, <code>tcsh</code>, <code>texinfo</code>, <code>mandoc</code>, <code>vhdl</code>, <code>verilog</code>, <code>xml</code>, <code>xul</code>, <code>yaml</code>, <code>yacc</code>, <code>zsh</code>, <code>dot</code>, <code>noweb</code>, <code>rest</code>, <code>sci</code>, <code>sed</code>, <code>xorg</code>, <code>xslt</code>,</p>
 <p>For an updated list, type:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id0a6d0b">pandoc --list-highlight-languages
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id0a6d0b">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--list-highlight-languages</span></span></code></pre></div>
+</div>
     </section>
     <section class="content">
 <h1>Extenions</h1>
@@ -210,7 +232,17 @@ pandoc --list-highlight-languages
 <h2>Paragraph Extenions</h2>
 <p>Markdown chunks can be extended with a prefix between two colons, like this:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id3678e9">:warning: This is a warning box, using **Markdown** syntax inside.
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id3678e9">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>:warning: This is a warning box, using **Markdown** syntax inside.</span></code></pre></div>
+</div>
 <p>This results in the following box:</p>
 
 <div class="warning"><p>This is a warning box, using <strong>Markdown</strong> syntax inside.</p>
@@ -224,15 +256,39 @@ pandoc --list-highlight-languages
 Refer to the constant names wrapped in double curly braces and colons as shown below.</p>
 <p>Usage of the variable in a Markdown chunk:</p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id3fa01c">This document is written in the year {{:year:}}.
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id3fa01c">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>This document is written in the year {{:year:}}.</span></code></pre></div>
+</div>
 <p>The constants and their values are declared in the configuration file <code>config.toml</code>.</p>
 <p><strong>config.toml</strong></p>
 
+<div class="source-code-frame">
+<pre class="hidden-pre" id="id740e0d">input = "pages"
+output = "docs"
+
+[replacements]
+"year" = "2023"
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id740e0d">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <pre><code>input = &quot;pages&quot;
 output = &quot;docs&quot;
 
 [replacements]
 &quot;year&quot; = &quot;2023&quot;</code></pre>
+</div>
     </section>
 </div>
       </div>

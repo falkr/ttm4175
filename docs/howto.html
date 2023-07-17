@@ -47,6 +47,29 @@
   margin-bottom: 15px;
 }
 
+/* === milestone === */
+div.milestone p {
+    padding: 10px;
+    background-color: #EBF0C4;
+    border-radius: 5px;
+    position: relative;
+    padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.milestone p::before {
+    content: '\f3cb';
+    font-family: bootstrap-icons !important;
+    color: #7C8934;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
 /* === report === */
 div.report p {
     padding: 10px;
@@ -73,9 +96,24 @@ div.report p::before {
 /* === tips === */
 div.tip p {
   padding: 10px;
-  background-color: #d9eaf2;
+  background-color: #E3BCDA;
   border-radius: 5px;
-  border-left: 6px solid #1481b8
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.tip p::before {
+  content: '\f706';
+  font-family: bootstrap-icons !important;
+  color: #75225E;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 /* === tree === */
@@ -216,7 +254,8 @@ div.tip p {
     <section class="content">
 <h1>How to Teach a TTM4175 Unit</h1>
 
-<p>This note summarizes guidelines and tips on how to structure and run a unit in this course.</p>
+<p>This note summarizes guidelines and tips on how to structure and run a unit in this course.
+Ideally, all units are structured similarly to provide a routine to students that reinforces good learning habits.</p>
 
     </section>
     <section class="content">
@@ -422,6 +461,7 @@ It may also be a good idea to empty the room at least once completely and let so
   </script>
   <script>
     
+
 
 
 
