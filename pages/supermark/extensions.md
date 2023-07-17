@@ -21,6 +21,7 @@ prev: ["Documentation", "index.html"]
 <li><a href="nav.html">nav</a> Page navigation to move back, next or up</li>
 <li><a href="hints.html">hints</a> Hints are boxes with information that is only visible when the reader clicks on the header</li>
 <li><a href="goals.html">goals</a> Format a list with learning goals</li>
+<li><a href="milestone.html">milestone</a> Paragraph style to emphasize milestones</li>
 <li><a href="task.html">task</a> Paragraph style to highlight tasks</li>
 <li><a href="tips.html">tips</a> Paragraph style to show tips</li>
 <li><a href="report.html">report</a> Paragraph style for hints for report writing</li>

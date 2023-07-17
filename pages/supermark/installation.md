@@ -13,7 +13,10 @@ so that you can later execute the pip command and the other commands that Superm
 
 ## Install Pandoc
 
-Install [Pandoc](https://pandoc.org/installing.html).
+Install [Pandoc](https://pandoc.org/installing.html). 
+
+If you share a project with others, or run Supermark also as Github Action, try to install Pandoc version **2.12**.
+This ensures that files are generated identically and do not cause unnecessary changes in version control. 
 
 ## Install Supermark
 
