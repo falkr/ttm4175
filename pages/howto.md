@@ -1,7 +1,8 @@
 # How to Teach a TTM4175 Unit
 
 
-This note summarizes guidelines and tips on how to structure and run a unit in this course. 
+This note summarizes guidelines and tips on how to structure and run a unit in this course.
+Ideally, all units are structured similarly to provide a routine to students that reinforces good learning habits. 
 
 
 # Unit Design
