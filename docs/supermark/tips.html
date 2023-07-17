@@ -17,8 +17,17 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    
+    /* === tips === */
+div.tip p {
+  padding: 10px;
+  background-color: #d9eaf2;
+  border-radius: 5px;
+  border-left: 6px solid #1481b8
+}
+
+
   </style>
 </head>
 
@@ -135,6 +144,15 @@ All extensions
 <p>Paragraph style to show tips.</p>
 
     </section>
+    <section class="content">
+<h1>Example 1</h1>
+
+<div class="tip"><p>Here is a tip that makes life easier for you.</p>
+</div>
+<h2>Source Code</h2>
+
+<pre><code>:tip: Here is a tip that makes life easier for you.</code></pre>
+    </section>
 </div>
       </div>
 
@@ -187,9 +205,11 @@ All extensions
   <script>
     anchors.add('h1').add('h2').add('h3');
     anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
     
+
 
   </script>
 </body>

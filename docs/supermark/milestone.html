@@ -19,64 +19,7 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === rubrics === */
-.rubric p {
-	margin: 0px
-}
-
-.rubric th {
-	text-align: center;
-	padding: 6px;
-}
-
-.rubric td {
-	vertical-align: top;
-	font-size: 12px;
-	padding: 6px;
-}
-
-.rubric th {
-	font-size: 12px;
-	vertical-align: top;
-}
-
-.rubric td:nth-child(2),
-.rubric th:nth-child(2) {
-	background-color: #D0E8DC;
-	width: 22%
-}
-
-.rubric td:nth-child(3),
-.rubric th:nth-child(3) {
-	background-color: #FCFDE3;
-	width: 22%
-}
-
-.rubric td:nth-child(4),
-.rubric th:nth-child(4) {
-	background-color: #F8D9C2;
-	width: 22%
-}
-
-.rubric td:nth-child(5),
-.rubric th:nth-child(5) {
-	background-color: #EBBCB9;
-	width: 22%
-}
-
-.rubric tfoot td {
-	text-align: right;
-	border-bottom: none;
-	padding: 1px;
-}
-
-.rubric tfoot a {
-	font-size: 12px;
-	font-style: italic;
-	color: gray
-}
-
-
+    
   </style>
 </head>
 
@@ -189,111 +132,31 @@ All extensions
 </nav>
     </section>
     <section class="content">
-<h1>Extension rubrics</h1>
-<p>Table style for rubrics.</p>
-
-<table class="table"><tbody><td>Python type</td><td>Table</td>
-<tr></tr>
-<td>type</td><td>table</td>
-<tr></tr>
-<td>Language</td><td><a href="#">YAML</a></td>
-<tr></tr>
-<td>Required fields</td><td></td>
-<tr></tr>
-<td>Optional fields</td><td>file, class, caption, format</td>
-<tr></tr>
-<td>Post-Yaml Section</td><td>required</td>
-<tr></tr></tbody></table>
-
-
-
-
-
-
+<h1>Extension milestone</h1>
+<p>Paragraph style to emphasize milestones.</p>
 
     </section>
     <section class="content">
 <h1>Example 1</h1>
 
-<table class="rubric table table-sm">
-<tr>
-<th>&nbsp;</th>
-<th><p>Excellent</p>
-</th>
-<th><p>Good</p>
-</th>
-<th><p>Sufficient</p>
-</th>
-<th><p>Not rateable</p>
-</th>
-</tr>
-<tr>
-<td><p>Layout</p>
-</td>
-<td><p>Layout follows a strategy that helps to understand the diagram.</p>
-</td>
-<td><p>Layout is structured.</p>
-</td>
-<td><p>Layout is structured.</p>
-</td>
-<td><p>Layout is unstructured and random.</p>
-</td>
-</tr>
-<tr>
-<td><p>Syntax</p>
-</td>
-<td><p>Correct syntax.</p>
-</td>
-<td><p>Correct Syntax.</p>
-</td>
-<td><p>Overall good syntax, with a few minor errors.</p>
-</td>
-<td><p>Major syntactical flaws.</p>
-</td>
-</tr>
-<tr>
-<td><p>Level of Detail</p>
-</td>
-<td><p>Consistent and intentional level of detail.</p>
-</td>
-<td><p>Adequate detailing.</p>
-</td>
-<td><p>Some inconsistencies, too much focus on some details on the expense of others.</p>
-</td>
-<td>&nbsp;</td>
-</tr>
-</table>
+<div class="milestone"><p><strong>Milestone:</strong> We try to make this application work.</p>
+</div>
 <h2>Source Code</h2>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span><span class="kw">:</span><span class="at"> rubric</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">|</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">!</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">! Excellent</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">! Good</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">! Sufficient</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">! Not rateable</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">|-</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">| Layout</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">| Layout follows a strategy that helps to understand the diagram.</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">| Layout is structured.</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">| Layout is structured.</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">| Layout is unstructured and random.</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">|-</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">| Syntax</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">| Correct syntax.</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">| Correct Syntax.</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">| Overall good syntax</span><span class="kw">,</span><span class="at"> with a few minor errors.</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">| Major syntactical flaws.</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">|-</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">| Level of Detail</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">| Consistent and intentional level of detail.</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">| Adequate detailing.</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="at">| Some inconsistencies</span><span class="kw">,</span><span class="at"> too much focus on some details on the expense of others.</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">|</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="at">|</span><span class="kw">}</span></span></code></pre></div>
+<pre><code>:milestone: **Milestone:** We try to make this application work.</code></pre>
+    </section>
+    <section class="content">
+<h1>Example 2</h1>
+
+<div class="milestone"><p><strong>Milestone Reached!</strong> Lorem markdownum est constitit ut dixit; perque verus. <strong>Et Elide talibus</strong>:
+suis telae ab sine calentibus sorores <strong>indeploratum inrupit</strong>. Fore aurum
+<strong>carnibus</strong>, invidia mihi, fessos contrarius Venus ut arva.</p>
+</div>
+<h2>Source Code</h2>
+
+<pre><code>:milestone: **Milestone Reached!** Lorem markdownum est constitit ut dixit; perque verus. **Et Elide talibus**:
+suis telae ab sine calentibus sorores **indeploratum inrupit**. Fore aurum
+**carnibus**, invidia mihi, fessos contrarius Venus ut arva.</code></pre>
     </section>
 </div>
       </div>
@@ -337,7 +200,7 @@ All extensions
       <ul>
         <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
         <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
-        <li>To edit this page, make a commit to <a href="https://github.com/falkr/ttm4175/tree/master/pages/supermark/rubrics.md">this file</a></li>
+        <li>To edit this page, make a commit to <a href="https://github.com/falkr/ttm4175/tree/master/pages/supermark/milestone.md">this file</a></li>
       </ul>
     </div>
   </div>
@@ -351,8 +214,6 @@ All extensions
   </script>
   <script>
     
-
-
 
   </script>
 </body>

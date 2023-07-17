@@ -17,6 +17,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/script-aside.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
     
   </style>
@@ -138,6 +139,8 @@ Make sure that you let the installer add the Python command line tools to your p
 so that you can later execute the pip command and the other commands that Supermark comes with.</p>
 <h2>Install Pandoc</h2>
 <p>Install <a href="https://pandoc.org/installing.html">Pandoc</a>.</p>
+<p>If you share a project with others, or run Supermark also as Github Action, try to install Pandoc version <strong>2.12</strong>.
+This ensures that files are generated identically and do not cause unnecessary changes in version control.</p>
 <h2>Install Supermark</h2>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install supermark</span></code></pre></div>
@@ -194,6 +197,7 @@ so that you can later execute the pip command and the other commands that Superm
   <script>
     anchors.add('h1').add('h2').add('h3');
     anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
     
