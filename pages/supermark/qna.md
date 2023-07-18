@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension qna
 
 Questions with expandable answers.
+<table class="table"></table>
 
 
 

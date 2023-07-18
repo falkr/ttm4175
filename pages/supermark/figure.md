@@ -36,6 +36,7 @@ Formats can be `jpg`, `png`, `pdf`.
 Captions are recommended.
 
 
+<table class="table"></table>
 
 
 

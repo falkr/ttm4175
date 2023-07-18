@@ -65,6 +65,7 @@ A table style for study plans.
 </div>
 </div>
 ```
+<table></table>
 
 
 

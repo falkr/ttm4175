@@ -5,14 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 
-figcaption {
-  color: #868279;
-    padding: 10px 10px;
-    background: #faf8f5;
-    border: solid 1px #f7f4ed;
-    border-left: solid 8px #f0e9db;
-}
-
 aside {
   color: #868279;
   padding: 10px 10px;
@@ -191,13 +183,18 @@ code {
   font-size: 100%
 }
 
-pre.bash {
+/*pre.bash {
     color: lightgrey;
-    background-color: #263238;
+    background-color: #54626a;
     text-shadow: 0 0 0.5px white;
     font-size: 100%;
-    padding: 6px;
-    border-radius: 6px
+    xpadding: 6px;
+    xborder-radius: 6px
+}*/
+
+pre {
+  white-space: pre-wrap;
+  margin-bottom: 0;
 }
 
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
@@ -263,9 +260,4 @@ button.copy-button {
 }
 button.copy-button:hover {
   color: #444444;
-}
-.hidden-pre {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
 }

@@ -45,6 +45,7 @@ The file tables/table.mw contains the table:
 |Ice cream 
 |}
 ```
+<table class="table"></table>
 
 
 

@@ -14,6 +14,10 @@ prev: ["All extensions", "extensions.html"]
 # Extension abstract
 
 An abstract at the beginning of an article or a page.
+<table class="table"><tbody><td>Type</td><td>Markdown Paragraph Extension</td>
+<tr></tr>
+<td>Tag</td><td>abstract</td>
+<tr></tr></tbody></table>
 
 
 

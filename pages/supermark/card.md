@@ -14,6 +14,8 @@ prev: ["All extensions", "extensions.html"]
 # Extension card
 
 Cards provide links with additional elements like text or arrows.
+<table class="table"></table>
+<table class="table"></table>
 
 
 

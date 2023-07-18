@@ -16,6 +16,7 @@ prev: ["All extensions", "extensions.html"]
 A table that is suitable for creating weekplans.
 
 The css styling automatically highlights the cells that are used to ensure good readability.
+<table></table>
 
 
 

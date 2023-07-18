@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension nav
 
 Page navigation to move back, next or up.
+<table class="table"></table>
 
 
 

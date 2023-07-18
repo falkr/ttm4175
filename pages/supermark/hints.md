@@ -18,6 +18,7 @@ Hints are boxes with information that is only visible when the reader clicks on 
 The top of the hint is specified with a YAML section. 
 The content of the hint is provided as post-YAML section, directly following the YAML header.
 It ends after two consecutive empty lines.
+<table class="table"></table>
 
 
 
@@ -32,7 +33,7 @@ It ends after two consecutive empty lines.
 <tr></tr>
 <td>Optional fields</td><td>title, image</td>
 <tr></tr>
-<td>Post-Yaml Section</td><td>required</td>
+<td>Post-Yaml Section</td><td>optional</td>
 <tr></tr></tbody></table>
 
 
@@ -78,7 +79,11 @@ Within the content you can have lists:
 
 # Example 2
 
-:hint: This is a hint that is only visible after clicking a button.
+---
+type: hint
+title: Hint about Something
+image: hint.png
+---
 
 
 
@@ -87,8 +92,12 @@ Within the content you can have lists:
 
 ## Source Code
 
-```
-:hint: This is a hint that is only visible after clicking a button.
+```yaml
+---
+type: hint
+title: Hint about Something
+image: hint.png
+---
 ```
 
 

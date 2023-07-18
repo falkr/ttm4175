@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension video
 
 Include videos from Youtube by referring to the video ID.
+<table class="table"></table>
 
 
 

@@ -14,6 +14,10 @@ prev: ["All extensions", "extensions.html"]
 # Extension tipsbox
 
 Paragraph style to show tips in a box.
+<table class="table"><tbody><td>Type</td><td>Markdown Paragraph Extension</td>
+<tr></tr>
+<td>Tag</td><td>tipsbox</td>
+<tr></tr></tbody></table>
 
 
 

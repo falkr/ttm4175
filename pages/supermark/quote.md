@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension quote
 
 Quoting elements from another document, with a link.
+<table class="table"></table>
 
 
 

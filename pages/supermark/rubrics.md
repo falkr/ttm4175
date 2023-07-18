@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension rubrics
 
 Table style for rubrics.
+<table></table>
 
 
 

@@ -14,6 +14,7 @@ prev: ["All extensions", "extensions.html"]
 # Extension button
 
 Links in the style of buttons.
+<table class="table"></table>
 
 
 
