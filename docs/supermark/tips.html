@@ -19,19 +19,20 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === tips === */
-div.tip p {
+    /* === boxes === */
+div.box {
   padding: 10px;
-  background-color: #E3BCDA;
   border-radius: 5px;
   position: relative;
   padding: 1rem 1rem 1rem 3.5rem;
 }
 
-div.tip p::before {
-  content: '\f706';
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
   font-family: bootstrap-icons !important;
-  color: #75225E;
   font-size: 1.5rem;
   padding: 0.8rem;
   position: absolute;
@@ -39,7 +40,69 @@ div.tip p::before {
   top: 0;
   height: 100%;
   display: grid;
-  place-items: center;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
 }
 
 
@@ -162,12 +225,12 @@ All extensions
     <section class="content">
 <h1>Example 1</h1>
 
-<div class="tip"><p>Here is a tip that makes life easier for you.</p>
+<div class="tip box mt-3 mb-3"><p>Here is a tip that makes life easier for you.</p>
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id34724e">:tip: Here is a tip that makes life easier for you.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id34724e">:tip: Here is a tip that makes life easier for you.
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id34724e">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">

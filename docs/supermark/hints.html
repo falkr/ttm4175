@@ -47,34 +47,6 @@
   margin-bottom: 15px;
 }
 
-/* === hints === */
-.w3collapsible {
-  background-color: #f0e9db;
-  color: #868279;
-  padding: 8px 18px 8px 8px;
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active,
-.w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
-}
-
 
   </style>
 </head>
@@ -193,6 +165,7 @@ All extensions
 <p>The top of the hint is specified with a YAML section.
 The content of the hint is provided as post-YAML section, directly following the YAML header.
 It ends after two consecutive empty lines.</p>
+<table class="table"></table>
 
 <table class="table"><tbody><td>Python type</td><td>Hint</td>
 <tr></tr>
@@ -204,7 +177,7 @@ It ends after two consecutive empty lines.</p>
 <tr></tr>
 <td>Optional fields</td><td>title, image</td>
 <tr></tr>
-<td>Post-Yaml Section</td><td>required</td>
+<td>Post-Yaml Section</td><td>optional</td>
 <tr></tr></tbody></table>
 
 
@@ -229,8 +202,8 @@ It ends after two consecutive empty lines.</p>
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idf6ba21">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf6ba21">---
 type: hint
 title: Hint about Something
 ---
@@ -260,20 +233,30 @@ Within the content you can have lists:
     <section class="content">
 <h1>Example 2</h1>
 
-<div class="hint"><p>This is a hint that is only visible after clicking a button.</p>
+<button class="w3collapsible">Hint about Something</button>
+<div class="w3content">
+
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id00a33f">:hint: This is a hint that is only visible after clicking a button.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idaeb894">---
+type: hint
+title: Hint about Something
+image: hint.png
+---
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id00a33f">
+<button type="button" class="copy-button" data-clipboard-target="#idaeb894">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<pre><code>:hint: This is a hint that is only visible after clicking a button.</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> hint</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Hint about Something</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> hint.png</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
     </section>
 </div>
@@ -332,7 +315,6 @@ Within the content you can have lists:
   </script>
   <script>
     
-
 
 
   </script>

@@ -19,7 +19,93 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === figure === */
+    /* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -32,41 +118,8 @@ div.figurefullwitdth {
   width: 100%;
 }
 
-/* === task === */
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-
-/* === tips === */
-div.tip p {
-  padding: 10px;
-  background-color: #E3BCDA;
-  border-radius: 5px;
-  position: relative;
-  padding: 1rem 1rem 1rem 3.5rem;
-}
-
-div.tip p::before {
-  content: '\f706';
-  font-family: bootstrap-icons !important;
-  color: #75225E;
-  font-size: 1.5rem;
-  padding: 0.8rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  display: grid;
-  place-items: center;
+figcaption {
+  color: #868279;
 }
 
 
@@ -210,8 +263,8 @@ This is done by function calls.</p>
 <h3>Receiving Messages</h3>
 <p>When we receive a message, we tell the UI by calling the following function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id81a59d">gui.receive(sender, message, uuid)
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id81a59d">gui.receive(sender, message, uuid)
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id81a59d">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -228,8 +281,8 @@ This is a unique name, so that we later can associate delivery and read receipts
 <h3>Receiving Delivery Receipts</h3>
 <p>We can tell the UI that we received a delivery receipt by calling the following function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ide2874e">gui.receipt_delivered(sender, uuid)
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ide2874e">gui.receipt_delivered(sender, uuid)
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#ide2874e">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -244,8 +297,8 @@ This is a unique name, so that we later can associate delivery and read receipts
 <h3>Receiving Read Receipts</h3>
 <p>We can tell the UI that we received a read receipt by calling the following function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id80e437">gui.receipt_read(sender, uuid)
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id80e437">gui.receipt_read(sender, uuid)
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id80e437">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -260,8 +313,8 @@ This is a unique name, so that we later can associate delivery and read receipts
 <h3>Receiving Typing Hints</h3>
 <p>We can tell the UI that we received a typing indication with the following call:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idb3166c">gui.typing(sender)
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idb3166c">gui.typing(sender)
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#idb3166c">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -280,8 +333,8 @@ This is a unique name, so that we later can associate delivery and read receipts
 <p>Messages are sent when the sender writes a message in the message field and clicks <em>Send</em>.
 The UI lets us know about this by calling the following function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id2bc195">def on_send(sender, receiver, message, uuid):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id2bc195">def on_send(sender, receiver, message, uuid):
     # publish message via MQTT
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id2bc195">
@@ -296,8 +349,8 @@ The UI lets us know about this by calling the following function:</p>
 <h3>Read Receipts</h3>
 <p>When a message is read, the UI calls the following function. This happens whenever the chat history gets visible to the user.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id6ed99c">def on_read(sender, receiver, uuid):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id6ed99c">def on_read(sender, receiver, uuid):
     # publish read receipt via MQTT
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id6ed99c">
@@ -313,8 +366,8 @@ The UI lets us know about this by calling the following function:</p>
 <p>Whenever we start typing, we send a typing hint to the chat contacts.
 The UI informs us about typing with the following function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id37e4f3">def on_type(sender, receiver):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id37e4f3">def on_type(sender, receiver):
     # publish typing hint via MQTT
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id37e4f3">
@@ -330,8 +383,8 @@ The UI informs us about typing with the following function:</p>
 
 <p>The UI is written with a library that is called DearPyGui. You can install it as usual:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id8d6eaa">python3 -m pip install dearpygui
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id8d6eaa">python3 -m pip install dearpygui
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id8d6eaa">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -343,8 +396,8 @@ The UI informs us about typing with the following function:</p>
 </div>
 <p>On windows, you may receive the following error message when you start the program:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idaa1b16">>>> import dearpygui.*
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idaa1b16">>>> import dearpygui.*
 Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
 ImportError: DLL load failed: The specified module could not be found.
@@ -375,8 +428,8 @@ Your task will only be to test the user interface and describe how it works, so 
 <p>This is the code to test the user interface.
 You can find it in file <code>test_chat_gui.py</code>.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id99b1f8">from chat_gui import ChatGui
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id99b1f8">from chat_gui import ChatGui
 
 # TODO change to fit your team
 my_id = "team1a"
@@ -473,8 +526,8 @@ Let's test them.
 <p><strong>Topic:</strong> We publish messages that carry a chat message to the topic <code>ttm4175/chat/&lt;receiver&gt;/message</code>. The <code>&lt;receiver&gt;</code> is the name of the contact we want to send the message to. So, if we want to send a chat message to team2a, that topic is <code>ttm4175/chat/team2a/message</code></p>
 <p><strong>Payload:</strong> The payload should be a json-formatted string, with the following fields:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id9be5f4">{"sender": "team1a",
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id9be5f4">{"sender": "team1a",
  "receiver": "team2a",
  "message": "Hei!",
  "uuid": "16fd2706"}
@@ -539,7 +592,7 @@ You may need to generate a random client ID.</p>
 </ul>
 <p>Now we want to connect the chat user interface with MQTT, so that we can send and receive messages. We will not yet send receipts or typing indications.</p>
 
-<div class="tip"><p>From now on, you don't need MQTT.Fx anymore, but it can be useful in case you need to debug.
+<div class="tip box mt-3 mb-3"><p>From now on, you don't need MQTT.Fx anymore, but it can be useful in case you need to debug.
 When you stay subscribed to some topics, you can see if you actually receive messages in case not everything immediately works as you think.</p>
 </div>
 <h3>Code</h3>
@@ -547,8 +600,8 @@ When you stay subscribed to some topics, you can see if you actually receive mes
 You can find it in file <code>chat_with_mqtt_step_1.py</code>.</p>
 <p>This code uses the paho-mqtt package, which you need to install via</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id4935d1">python3 -m pip install paho-mqtt
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id4935d1">python3 -m pip install paho-mqtt
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id4935d1">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -560,8 +613,8 @@ You can find it in file <code>chat_with_mqtt_step_1.py</code>.</p>
 </div>
 <p>Here is the code:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id9ce886">from chat_gui import ChatGui
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id9ce886">from chat_gui import ChatGui
 import paho.mqtt.client as mqtt
 import json
 
@@ -723,8 +776,8 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 <h3>Delivery Receipts</h3>
 <p>When a message is delivered to a client, that means, received via MQTT, we acknowledge its delivery by publishing an MQTT message to the topic: <code>ttm4175/chat/&lt;receiver&gt;/delivered</code></p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id31672d">{"sender": "team1",
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id31672d">{"sender": "team1",
  "receiver": "team2",
  "status": "delivered",
  "uuid": "16fd2706"}
@@ -745,8 +798,8 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 <h3>Read Receipts</h3>
 <p>Read receipts are sent to topic <code>ttm4175/chat/&lt;receiver&gt;/read</code>.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id74012a">{"sender": "team1",
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id74012a">{"sender": "team1",
  "receiver": "team2",
  "status": "read",
  "uuid": "16fd2706"}
@@ -765,8 +818,8 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 <h3>Typing Indications</h3>
 <p>Typing indications are sent to topic <code>ttm4175/chat/&lt;receiver&gt;/typing</code>.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idf4eb65">{"sender": "team1",
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf4eb65">{"sender": "team1",
  "receiver": "team2",
  "status": "typing"}
 </pre>
@@ -877,7 +930,6 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
   </script>
   <script>
     
-
 
 
   </script>

@@ -32,6 +32,10 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+figcaption {
+  color: #868279;
+}
+
 /* === hints === */
 .w3collapsible {
   background-color: #f0e9db;
@@ -58,43 +62,6 @@ div.figurefullwitdth {
   overflow: hidden;
   background-color: #f3f3f3;
   margin-bottom: 15px;
-}
-
-/* === task === */
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
-}
-
-/* === tips === */
-div.tip p {
-  padding: 10px;
-  background-color: #E3BCDA;
-  border-radius: 5px;
-  position: relative;
-  padding: 1rem 1rem 1rem 3.5rem;
-}
-
-div.tip p::before {
-  content: '\f706';
-  font-family: bootstrap-icons !important;
-  color: #75225E;
-  font-size: 1.5rem;
-  padding: 0.8rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  display: grid;
-  place-items: center;
 }
 
 
@@ -212,8 +179,8 @@ div.tip p::before {
 <h3>Checking the News via Curl</h3>
 <p>Use the command line tool `curl to request the website:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id9df47a">curl --verbose https://www.nrk.no/
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id9df47a">curl --verbose https://www.nrk.no/
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id9df47a">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -233,8 +200,8 @@ div.tip p::before {
 
 <span name="e3c025"></span><aside name="e3c025"><p>Using <code>pip</code> with the <code>python3 -m</code> prefix prevents that you use a wrong installation of pip in your computer, for instance the one for Python 2.7. By going through Python, you make sure you use the <code>pip</code> installation that also matches your <code>python3</code>. You also don't need to worry about <code>pip3</code> or <code>pip</code>.</p>
 </aside>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idab4771">python3 -m pip install requests
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idab4771">python3 -m pip install requests
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#idab4771">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -246,8 +213,8 @@ div.tip p::before {
 </div>
 <p>With this package installed, the program to make a request to a website looks like this:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id35985b">import requests
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id35985b">import requests
 
 url = "https://nrk.no/"
 response = requests.get(url)
@@ -289,8 +256,8 @@ For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
 <h3>Weather via Curl</h3>
 <p>We can also do the same HTTP request from our command line using <code>curl</code>:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id1935f7">curl 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&lon=10.39'
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id1935f7">curl 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=63.43&lon=10.39'
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id1935f7">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -332,8 +299,8 @@ print(response.json())
 </div>
 <p>The requests module has already transformed the JSON-formatted string in to a set of corresponding Python data structures, which consists of dictionaries and lists. When we print these with the normal <code>print()</code> function, the data structure doesn't look very nice, and it is hard to understand how the data is nested. Therefore, Python has a function for printing data in a pretty way:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ida0f396">from pprint import pprint
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ida0f396">from pprint import pprint
 
 # your code...
 
@@ -390,8 +357,8 @@ For now, we are just interested in the air temperature.</p>
 <h3>Function for the Temperature</h3>
 <p>Using the code above, create a function that takes the latitude and longitude as input arguments and that returns the air temperature at that location. This is how the function should look like:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idb59126">def get_air_temp(lat, lon):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idb59126">def get_air_temp(lat, lon):
 	# TODO make a request
 	# TODO return only the value of the air temperature only
 </pre>
@@ -407,8 +374,8 @@ For now, we are just interested in the air temperature.</p>
 </div>
 <p>Remember that Python lets you create a string that includes variables with the <code>format()</code> function:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id76675e">lat = ...
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id76675e">lat = ...
 lon = ...
 url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={}&lon={}".format(lat, lon)
 </pre>
@@ -424,8 +391,8 @@ url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={}&lon={}"
 </div>
 <p>A newer and more compact way to format strings and integrate variables is using f-strings, where you write the variables directly into curly brackets. (Note the <code>f</code> before the string.)</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idee5d5f">lat = ...
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idee5d5f">lat = ...
 lon = ...
 url = f"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat}&lon={lon}"
 </pre>
@@ -442,8 +409,8 @@ url = f"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat}&lon
 <p>Let's make this a bit more compact for later, so that we store the coordinates of a few places and only have to provide place names.
 We can for instance simply code them in a nested dictionary:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id20fee9">places = {
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id20fee9">places = {
 	"Trondheim": {"lat": 63.43, "lon": 10.39},
 	"Oslo": {"lat": 59.91, "lon": 10.75},
 	"Bergen": {"lat": 60.39, "lon": 5.32},
@@ -467,8 +434,8 @@ We can for instance simply code them in a nested dictionary:</p>
 </div>
 <p>With this dictionary declared globally in the file (above any function definitions), create a new version of the function to compare the air temperature:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ided1bda">def get_air_temp_2(place):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ided1bda">def get_air_temp_2(place):
 	# create the function
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#ided1bda">
@@ -506,8 +473,8 @@ Now we want to also build a web server so that we can <strong>accept HTTP reques
 The code for the server handling a requests therefore also works very differently from the one making a request.</p>
 <p>Copy the following code into a file <code>webserver.py</code>. The code declares some functions, and then a class <code>RequestHandler</code>, which defines a web server. It then configures and starts this web server, which is then active and waits for GET requests.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ideabf42">from http.server import HTTPServer, BaseHTTPRequestHandler
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ideabf42">from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import quote, unquote
 import json
 import socket
@@ -702,8 +669,8 @@ This may be surprising, since it should get the request as input and then comput
 <h1>Sending Data to the Server</h1>
 <p>We can send additional data with our request, by appending it into the URL as follows:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ide4c311">http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 54.3}
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ide4c311">http://localhost:8000/?data={"time": "12:05", "temperature": 20.0, "humidity": 54.3}
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#ide4c311">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -744,8 +711,8 @@ To let the sensor inform the server about the temperature, it uses instead the <
 </div>
 <div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function. See the code below for that function.</p>
 </div>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idc6da62">def do_POST(self):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idc6da62">def do_POST(self):
 	"""HTTP POST request as it comes from the sensor device application,
 	for instance to send the current temerature."""
 
@@ -821,8 +788,8 @@ To let the sensor inform the server about the temperature, it uses instead the <
 (As we work without special hardware, we are happy with a Python program that just imitates the temperature sensor.)
 This code sends the data to the web server, using a <strong>POST</strong> request:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idab9b67">import requests
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idab9b67">import requests
 import json
 from urllib.parse import quote, unquote
 
@@ -904,8 +871,8 @@ print_response(response)
 <p>The web server should store the temperature that the sensor sends in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough.
 We use the two functions <code>store_data()</code> and <code>load_data()</code> shown below to store or load data.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idf96d7c">def store_data(self, name, data):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf96d7c">def store_data(self, name, data):
 	if not hasattr(self.server, "data"):
 		self.server.data = {}
 	self.server.data[name] = data
@@ -953,8 +920,8 @@ To repeat and clarify:</p>
 <h1>Optional Task: Nice HTML Output</h1>
 <p>Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id7fc710">def generate_basic_html_page(title='Default Title'):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id7fc710">def generate_basic_html_page(title='Default Title'):
 	lines = []
 	lines.append('<html>')
 	lines.append('    <head><title>{}</title></head>'.format(title))
@@ -1068,8 +1035,6 @@ To repeat and clarify:</p>
   </script>
   <script>
     
-
-
 
 
   </script>

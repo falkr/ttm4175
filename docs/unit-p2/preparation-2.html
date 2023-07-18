@@ -32,6 +32,10 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+figcaption {
+  color: #868279;
+}
+
 
   </style>
 </head>
@@ -157,8 +161,8 @@ For simplicity, we store the variable as a string, which corresponds to the name
 </figure>
 <p>We can encode this in Python as an if-statement that takes the current state as condition:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id87f238">if state == "on":
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id87f238">if state == "on":
     # switch light off
     # change into state "off"
 elif state == "off":
@@ -194,8 +198,8 @@ The method receives the following parameters:</p>
 <li><code>timers</code> - a variable to start and stop timers</li>
 </ul>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idf2c226">def transition(self, state, event, timers):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf2c226">def transition(self, state, event, timers):
     # logic to execute the transitions
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#idf2c226">
@@ -249,8 +253,8 @@ Within each state branch, there is another if-statement, which distinguishes the
 <p>To handle the initial transition, we just declare an extra transition function.
 It is similar to the other transition function, but does not have the <code>event</code> parameter, since an initial transition is started always when a state machine starts.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id5c60e9">    def initial_transition(self, timers):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id5c60e9">    def initial_transition(self, timers):
         ### the initial transition
 
     def transition(self, state, event, timers):
@@ -303,8 +307,8 @@ That means, the logic that</p>
 <p>We have put all this logic into a Python structure called a <strong>class</strong>.
 This is a concept from object-oriented programming, which will come later in your programming courses. It makes the definition of your own state machines much easier, and you don't have to understand object-orientation and classes completely to use it. There is only a few things to take care of:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id97b771">class MyStateMachine1(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id97b771">class MyStateMachine1(StateMachine):
 
     def initial_transition(self, timers):
         ### the initial transition
@@ -337,8 +341,8 @@ This is a concept from object-oriented programming, which will come later in you
 <h3>Running The Machine</h3>
 <p>To run your state machine, you need then to declare a variable of it and call the <code>run()</code> function it inherited from the base state machine:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id238898">stm = MyStateMachine1()
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id238898">stm = MyStateMachine1()
 stm.run()
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id238898">
@@ -354,8 +358,8 @@ stm.run()
 <p>This also explains how we handle variables: The variable is not a part of the global context, but tied to our state machine. We therefore always use the prefix <code>self.</code> before the variable.</p>
 <p>In the listing below we initialize a variable <code>x</code> when we start the machine in the initial transition and assign a new value in the transition function. The prefix <code>self</code> refers to the parameter we get from both of these functions.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id6753e6">class MyStateMachine1(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id6753e6">class MyStateMachine1(StateMachine):
 
     def initial_transition(self, timers):
         ### the initial transition

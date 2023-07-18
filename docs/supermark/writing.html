@@ -19,28 +19,90 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === warning === */
-div.warning p {
-    padding: 10px;
-    background-color: #ffd9ab;
-    border-radius: 5px;
-    border-left: 0px solid #fc8c03;
-    position: relative;
-    padding: 1rem 1rem 1rem 3.5rem;
+    /* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
 }
 
-div.warning p::before {
-    content: '\f33a';
-    font-family: bootstrap-icons !important;
-    color: #fc8c03;
-    font-size: 1.5rem;
-    padding: 0.8rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    display: grid;
-    place-items: center;
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
 }
 
 
@@ -176,8 +238,8 @@ They are useful to markup paragraphs of text, headers, links and lists.</p>
 <h2>Referenced Chunks</h2>
 <p>Use a chunk as a reference to other chunks defined in other files.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ida4ed9c">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ida4ed9c">---
 ref: file.md
 ---
 </pre>
@@ -213,8 +275,8 @@ pandoc --list-highlight-languages
 <p><code>abc</code>, <code>asn1</code>, <code>asp</code>, <code>ats</code>, <code>awk</code>, <code>actionscript</code>, <code>ada</code>, <code>agda</code>, <code>alertindent</code>, <code>apache</code>, <code>bash</code>, <code>bibtex</code>, <code>boo</code>, <code>c</code>, <code>cs</code>, <code>cpp</code>, <code>cmake</code>, <code>css</code>, <code>changelog</code>, <code>clojure</code>, <code>coffee</code>, <code>coldfusion</code>, <code>commonlisp</code>, <code>curry</code>, <code>d</code>, <code>dtd</code>, <code>diff</code>, <code>djangotemplate</code>, <code>dockerfile</code>, <code>doxygen</code>, <code>doxygenlua</code>, <code>eiffel</code>, <code>elixir</code>, <code>email</code>, <code>erlang</code>, <code>fsharp</code>, <code>fortran</code>, <code>gcc</code>, <code>glsl</code>, <code>gnuassembler</code>, <code>m4</code>, <code>go</code>, <code>html</code>, <code>hamlet</code>, <code>haskell</code>, <code>haxe</code>, <code>ini</code>, <code>isocpp</code>, <code>idris</code>, <code>fasm</code>, <code>nasm</code>, <code>json</code>, <code>jsp</code>, <code>java</code>, <code>javascript</code>, <code>javadoc</code>, <code>julia</code>, <code>kotlin</code>, <code>llvm</code>, <code>latex</code>, <code>lex</code>, <code>lilypond</code>, <code>literatecurry</code>, <code>literatehaskell</code>, <code>lua</code>, <code>mips</code>, <code>makefile</code>, <code>markdown</code>, <code>mathematica</code>, <code>matlab</code>, <code>maxima</code>, <code>mediawiki</code>, <code>metafont</code>, <code>modelines</code>, <code>modula2</code>, <code>modula3</code>, <code>monobasic</code>, <code>ocaml</code>, <code>objectivec</code>, <code>objectivecpp</code>, <code>octave</code>, <code>opencl</code>, <code>php</code>, <code>povray</code>, <code>pascal</code>, <code>perl</code>, <code>pike</code>, <code>postscript</code>, <code>powershell</code>, <code>prolog</code>, <code>pure</code>, <code>purebasic</code>, <code>python</code>, <code>r</code>, <code>relaxng</code>, <code>relaxngcompact</code>, <code>roff</code>, <code>ruby</code>, <code>rhtml</code>, <code>rust</code>, <code>sgml</code>, <code>sql</code>, <code>sqlmysql</code>, <code>sqlpostgresql</code>, <code>scala</code>, <code>scheme</code>, <code>tcl</code>, <code>tcsh</code>, <code>texinfo</code>, <code>mandoc</code>, <code>vhdl</code>, <code>verilog</code>, <code>xml</code>, <code>xul</code>, <code>yaml</code>, <code>yacc</code>, <code>zsh</code>, <code>dot</code>, <code>noweb</code>, <code>rest</code>, <code>sci</code>, <code>sed</code>, <code>xorg</code>, <code>xslt</code>,</p>
 <p>For an updated list, type:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id0a6d0b">pandoc --list-highlight-languages
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id0a6d0b">pandoc --list-highlight-languages
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id0a6d0b">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -232,8 +294,8 @@ pandoc --list-highlight-languages
 <h2>Paragraph Extenions</h2>
 <p>Markdown chunks can be extended with a prefix between two colons, like this:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id3678e9">:warning: This is a warning box, using **Markdown** syntax inside.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id3678e9">:warning: This is a warning box, using **Markdown** syntax inside.
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id3678e9">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -245,7 +307,7 @@ pandoc --list-highlight-languages
 </div>
 <p>This results in the following box:</p>
 
-<div class="warning"><p>This is a warning box, using <strong>Markdown</strong> syntax inside.</p>
+<div class="warning box mt-3 mb-3"><p>This is a warning box, using <strong>Markdown</strong> syntax inside.</p>
 </div>
 <p>The <code>:extension:</code> prefix only applies to the current chunk. This means that you use <strong>two blank lines</strong> before you start the next chunk that is not a warning anymore.</p>
 
@@ -256,8 +318,8 @@ pandoc --list-highlight-languages
 Refer to the constant names wrapped in double curly braces and colons as shown below.</p>
 <p>Usage of the variable in a Markdown chunk:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id3fa01c">This document is written in the year {{:year:}}.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id3fa01c">This document is written in the year {{:year:}}.
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id3fa01c">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -270,8 +332,8 @@ Refer to the constant names wrapped in double curly braces and colons as shown b
 <p>The constants and their values are declared in the configuration file <code>config.toml</code>.</p>
 <p><strong>config.toml</strong></p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id740e0d">input = "pages"
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id740e0d">input = "pages"
 output = "docs"
 
 [replacements]

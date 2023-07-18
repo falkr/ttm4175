@@ -19,7 +19,93 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === figure === */
+    /* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -32,41 +118,8 @@ div.figurefullwitdth {
   width: 100%;
 }
 
-/* === report === */
-div.report p {
-    padding: 10px;
-    background-color: #D6E5F0;
-    border-radius: 5px;
-    position: relative;
-    padding: 1rem 1rem 1rem 3.5rem;
-}
-
-div.report p::before {
-    content: '\f43e';
-    font-family: bootstrap-icons !important;
-    color: #1481b8;
-    font-size: 1.5rem;
-    padding: 0.8rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    display: grid;
-    place-items: center;
-}
-
-/* === task === */
-div.task p {
-padding: 10px;
-background-color: #D6E5F0;
-border-radius: 5px;
-border-left: 6px solid #1481b8 
-}
-
-div.task p::before { 
-content: "Task: ";
-font-weight: bold;
-display: inline;
+figcaption {
+  color: #868279;
 }
 
 
@@ -205,8 +258,8 @@ Go through the Python Guide:</p>
 
 <p>Create a file <code>hei.py</code> with the following content:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idb6b867">from microbit import display
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idb6b867">from microbit import display
 
 while True:
 	display.show("HEI!")
@@ -277,7 +330,7 @@ Go through these examples step by step. For each example, do the following:</p>
 <li>Compare your solution with the one given in the documentation.</li>
 </ul>
 
-<div class="report"><p>Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.</p>
+<div class="report box mt-3 mb-3"><p>Show how the applications work with a short sequence of photos you take of the Microbit. Describe what the code does.</p>
 </div>
 <h2>Nightlight</h2>
 <p>Detect that it is getting dark and turn on the display.</p>
@@ -317,7 +370,7 @@ Go through these examples step by step. For each example, do the following:</p>
 
 <div class="task"><p>Build your own application.</p>
 </div>
-<div class="report"><p>Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.</p>
+<div class="report box mt-3 mb-3"><p>Document your application with the help of a series of screen shots and a description. Explain your idea, show the code, and explain how it works.</p>
 </div>
 <div class="task"><p>Remember to go back to the reflection task above about how to use a new API.</p>
 </div>
@@ -378,7 +431,6 @@ Go through these examples step by step. For each example, do the following:</p>
   </script>
   <script>
     
-
 
 
   </script>

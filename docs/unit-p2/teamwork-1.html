@@ -32,6 +32,10 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+figcaption {
+  color: #868279;
+}
+
 /* === goals === */
 div.goals ul,
 div.goals ul li {
@@ -237,8 +241,8 @@ The tasks are independent of each other, but the first one is the easiest to get
 </ol>
 <p>In the following, you will usually only copy the base state machine (2) and work on the code for the extended state machine (3), including how to start it (4). Sometimes you may want to adjust the import statements if you need access to more elements.</p>
 </div>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id074a9d"># 1 import statements
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id074a9d"># 1 import statements
 from utime import ticks_ms
 from microbit import button_a, button_b, accelerometer, display, sleep, Image
 
@@ -507,8 +511,8 @@ stm.run()
 </div>
 <p>Have a look at the code below, and run it. (We here only show the code of the extended state machine for the shake light, remember to keep the code for the base state machine and the import statements.)</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idd820cb">class ShakeLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idd820cb">class ShakeLight(StateMachine):
     """Switch on the light if you shake the device
     and turn it off again after 2 seconds.
     """
@@ -574,8 +578,8 @@ stm.run()
 <p><strong>Task:</strong> Extend the state machine diagram so that it also switches the light off again after the level goes under 80.</p>
 <p><strong>Task:</strong> Add the code for the added functionality and check that it works. Include a series of small screenshots in your report.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id5d0cc6">class NightLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id5d0cc6">class NightLight(StateMachine):
     """Periodically read the light level.
     If the light level is above 100, switch on the light.
     If it is below 80, switch the light off again.
@@ -652,8 +656,8 @@ stm.run()
 <li>You only have to fill the content of the functions <code>initial_transition</code> and <code>transition</code>.</li>
 </ul>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id98dd91">class SwitchLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id98dd91">class SwitchLight(StateMachine):
 """Switch between states off and on by pressing button A.
 
 The change between on and off only happens if button A is pressed
@@ -740,8 +744,8 @@ These machines, as you know, detect that someone puts their hand under the dispe
 </div>
 <p><strong>Task:</strong> Create the code for the machines. Use below below as starting point.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="ida3261a">class Dispenser(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ida3261a">class Dispenser(StateMachine):
     
     def initial_transition(self, timers):
         # define your initial transition here

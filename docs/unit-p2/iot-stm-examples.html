@@ -32,6 +32,10 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+figcaption {
+  color: #868279;
+}
+
 
   </style>
 </head>
@@ -141,8 +145,8 @@ div.figurefullwitdth {
 <p>The code below is the basis code for all state machines.
 Copy this code <strong>before</strong> the definition of your own state machines.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id33b81e">from time import time
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id33b81e">from time import time
 from microbit import button_a, button_b, accelerometer, display, sleep, Image
 
 ON = Image.SQUARE
@@ -315,8 +319,8 @@ class StateMachine:
 <figure class="figure">
     <img src="figures/counter.svg" class="figure-img img-fluid rounded" alt="">
 </figure>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id2b3f48">class Counter(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id2b3f48">class Counter(StateMachine):
 	"""Counting the number of clicks on button A.
 	If 10 is reached, an "alarm" is shown by switching all LEDs on.
 	The counter can be reset at any time with button B.
@@ -399,8 +403,8 @@ stm.run()
 <figure class="figure">
     <img src="figures/stm-shake-light.svg" class="figure-img img-fluid rounded" alt="">
 </figure>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id1fc2f1">class ShakeLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id1fc2f1">class ShakeLight(StateMachine):
 	"""Switch on the light if you shake the device
 	and turn it off again after 2 seconds.
 	"""
@@ -459,8 +463,8 @@ stm.run()
 <figure class="figure">
     <img src="figures/stm-night-light.svg" class="figure-img img-fluid rounded" alt="">
 </figure>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id7de522">class NightLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id7de522">class NightLight(StateMachine):
 	"""Periodically read the light level.
 	If the light level is above 100, switch on the light.
 	If it is below 80, switch the light off again.
@@ -541,8 +545,8 @@ stm.run()
 <figure class="figure">
     <img src="figures/stm-switch-light.svg" class="figure-img img-fluid rounded" alt="">
 </figure>
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id994d7b">class SwitchLight(StateMachine):
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id994d7b">class SwitchLight(StateMachine):
 	"""Switch between states off and on by pressing button A.
 
 	The change between on and off only happens if button A is pressed
