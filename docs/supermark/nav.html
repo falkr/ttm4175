@@ -66,6 +66,10 @@
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -181,10 +185,10 @@ next: ["Home", "index.html"]
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> nav</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">next</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;index.html&quot;</span><span class="kw">]</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> nav</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">next:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span> <span class="st">&quot;index.html&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -219,12 +223,12 @@ next: ["Home", "index.html"]
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> nav</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prev</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;All extensions&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;index.html&quot;</span><span class="kw">]</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">up</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;index.html&quot;</span><span class="kw">]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">next</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;index.html&quot;</span><span class="kw">]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> nav</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">prev:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;All extensions&quot;</span><span class="kw">,</span> <span class="st">&quot;index.html&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">up:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span> <span class="st">&quot;index.html&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="fu">next:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;Home&quot;</span><span class="kw">,</span> <span class="st">&quot;index.html&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -252,10 +256,10 @@ prev: ["All extensions", "index.html"]
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> nav</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prev</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;All extensions&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;index.html&quot;</span><span class="kw">]</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> nav</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">prev:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;All extensions&quot;</span><span class="kw">,</span> <span class="st">&quot;index.html&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
 </div>

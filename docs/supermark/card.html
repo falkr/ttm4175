@@ -84,6 +84,10 @@
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -219,13 +223,13 @@ link_title: Finn dine studentrepresentanter
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Dine studentrepresentanter</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Som student har du en del tillitsvalgte, representanter og andre kontaktpunkter.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> studentrepresentanter.html</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">link_title</span><span class="kw">:</span><span class="at"> Finn dine studentrepresentanter</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">title:</span><span class="at"> Dine studentrepresentanter</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">text:</span><span class="at"> Som student har du en del tillitsvalgte, representanter og andre kontaktpunkter.</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="fu">link:</span><span class="at"> studentrepresentanter.html</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="fu">link_title:</span><span class="at"> Finn dine studentrepresentanter</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -275,22 +279,22 @@ Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen:
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> cards</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Finn rett person å snakke med</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">*   Hvis det gjelder et konkret **emne**, ta gjerne kontakt med faglæreren direkte, eller ta det opp med referansegruppen. Om det ikke finnes referansegruppe, ta kontakt med din [klassetillitsvalgt (KTV)](studentrepresentanter.html).</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">*   Hvis det gjelder undervisning eller det sosiale i hele **årstrinnet**, ta kontakt med din [klassetillitsvalgt (KTV)](studentrepresentanter.html), [studentkontakter](studentrepresentanter.html), eller [din kullkoordinator](kullkoordinator-studenter.html). Du kan også ta kontakt med din studieprogramleder.</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">*   Hvis du trenger **personlig hjelp eller veiledning**, ta kontakt med din studieveileder. De kan også formidle alle andre hjelpetilbud.</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">*   Bruk [Si fra!](https://i.ntnu.no/sifra-ansatt) for å varsle om **uønskede hendelser** og **ting som ikke fungerer**.</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">*   Hvis du ellers lurer på noe, [send oss en e-post](mailto:kontakt@iik.ntnu.no).</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> cards</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">columns:</span><span class="at"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="fu">type:</span><span class="at"> card</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="fu">title:</span><span class="at"> Finn rett person å snakke med</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="fu">Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen:</span></a>
+<a class="sourceLine" id="cb1-12" title="12">*   Hvis det gjelder et konkret **emne**, ta gjerne kontakt med faglæreren direkte, eller ta det opp med referansegruppen. Om det ikke finnes referansegruppe, ta kontakt med din <span class="kw">[</span>klassetillitsvalgt (KTV)<span class="kw">]</span>(studentrepresentanter.html).</a>
+<a class="sourceLine" id="cb1-13" title="13">*   Hvis det gjelder undervisning eller det sosiale i hele **årstrinnet**, ta kontakt med din <span class="kw">[</span>klassetillitsvalgt (KTV)<span class="kw">]</span>(studentrepresentanter.html), <span class="kw">[</span>studentkontakter<span class="kw">]</span>(studentrepresentanter.html), eller <span class="kw">[</span>din kullkoordinator<span class="kw">]</span>(kullkoordinator-studenter.html). Du kan også ta kontakt med din studieprogramleder.</a>
+<a class="sourceLine" id="cb1-14" title="14">*   Hvis du trenger **personlig hjelp eller veiledning**, ta kontakt med din studieveileder. De kan også formidle alle andre hjelpetilbud.</a>
+<a class="sourceLine" id="cb1-15" title="15">*   Bruk <span class="kw">[</span>Si fra!<span class="kw">]</span>(https://i.ntnu.no/sifra-ansatt) for å varsle om **uønskede hendelser** og **ting som ikke fungerer**.</a>
+<a class="sourceLine" id="cb1-16" title="16">*   Hvis du ellers lurer på noe, <span class="kw">[</span>send oss en e-post<span class="kw">]</span>(mailto:kontakt@iik.ntnu.no).</a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -331,13 +335,13 @@ image: "_placeholder 200 x 200"
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/person</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Firstname Surname</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">email</span><span class="kw">:</span><span class="at"> email@ntnu.no</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">detail</span><span class="kw">:</span><span class="at"> Course teacher</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;_placeholder 200 x 200&quot;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> card/person</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">name:</span><span class="at"> Firstname Surname</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">email:</span><span class="at"> email@ntnu.no</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="fu">detail:</span><span class="at"> Course teacher</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="fu">image:</span><span class="at"> </span><span class="st">&quot;_placeholder 200 x 200&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -370,11 +374,11 @@ link: student.html
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/arrow</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> For studenter</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> student.html</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> card/arrow</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">title:</span><span class="at"> For studenter</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">link:</span><span class="at"> student.html</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -407,12 +411,12 @@ link: snacks.html
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> IIK Snacks and Science</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Seminar om forskning for studenter ved IIK.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> snacks.html</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">title:</span><span class="at"> IIK Snacks and Science</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="fu">text:</span><span class="at"> Seminar om forskning for studenter ved IIK.</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="fu">link:</span><span class="at"> snacks.html</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -499,39 +503,39 @@ link: day1.html
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> cards</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Teknostart Dag 1</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Tirsdag</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> day1.html</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Teknostart Dag 2</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Tirsdag</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> day1.html</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Teknostart Dag 3</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Tirsdag</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> day1.html</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> card/text</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Teknostart Dag 4</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span><span class="kw">:</span><span class="at"> Tirsdag</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">link</span><span class="kw">:</span><span class="at"> day1.html</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">type:</span><span class="at"> cards</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">columns:</span><span class="at"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="fu">title:</span><span class="at"> Teknostart Dag 1</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="fu">text:</span><span class="at"> Tirsdag</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="fu">link:</span><span class="at"> day1.html</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="fu">title:</span><span class="at"> Teknostart Dag 2</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="fu">text:</span><span class="at"> Tirsdag</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="fu">link:</span><span class="at"> day1.html</span></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-20" title="20"></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="fu">title:</span><span class="at"> Teknostart Dag 3</span></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="fu">text:</span><span class="at"> Tirsdag</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="fu">link:</span><span class="at"> day1.html</span></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-27" title="27"></a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb1-29" title="29"><span class="fu">type:</span><span class="at"> card/text</span></a>
+<a class="sourceLine" id="cb1-30" title="30"><span class="fu">title:</span><span class="at"> Teknostart Dag 4</span></a>
+<a class="sourceLine" id="cb1-31" title="31"><span class="fu">text:</span><span class="at"> Tirsdag</span></a>
+<a class="sourceLine" id="cb1-32" title="32"><span class="fu">link:</span><span class="at"> day1.html</span></a>
+<a class="sourceLine" id="cb1-33" title="33"><span class="ot">---</span></a></code></pre></div>
 </div>
     </section>
 </div>
