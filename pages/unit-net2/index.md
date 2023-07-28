@@ -16,15 +16,20 @@ Go through the following preparation material before we meet in class:
 
 ---
 type: link
-title: 'Ports, Layers, Client-Server Architecture, Web Servers'
+title: 'Net II - Preparation: Ports, Layers, Client-Server Architecture, Web Servers'
 icon: journal-bookmark-fill
 link: preparation.html
 ---
 
 ## Teamwork
 
-a
+In the lab, go through the following activities with your team:
 
-## Optional Homework
 
-a
+---
+type: link
+title: 'Net II - Teamwork: Ports, Layers, Client-Server Architecture, Web Servers'
+icon: people-fill
+link: teamwork.html
+---
+

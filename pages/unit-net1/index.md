@@ -18,15 +18,21 @@ Go through the following preparation material before we meet in class:
 
 ---
 type: link
-title: 'Binary, IP Addresses, Subnets, LAN Configuration'
+title: 'Net I - Preparation: Binary, IP Addresses, Subnets, LAN Configuration'
 icon: journal-bookmark-fill
 link: preparation.html
 ---
 
+
 ## Teamwork
 
-a
+In the lab, go through the following activities with your team:
 
-## Optional Homework
 
-a
+---
+type: link
+title: 'Net I - Teamwork: Binary, IP Addresses, Subnets, LAN Configuration'
+icon: people-fill
+link: teamwork.html
+---
+
