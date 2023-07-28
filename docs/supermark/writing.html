@@ -253,9 +253,9 @@ ref: file.md
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">ref:</span><span class="at"> file.md</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ot">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ref</span><span class="kw">:</span><span class="at"> file.md</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <h2>YAML Chunks</h2>
 <p>YAML elements start and stop with a delimiter <code>---</code>.
@@ -288,7 +288,7 @@ pandoc --list-highlight-languages
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">pandoc</span> --list-highlight-languages</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--list-highlight-languages</span></span></code></pre></div>
 </div>
     </section>
     <section class="content">
@@ -307,7 +307,7 @@ pandoc --list-highlight-languages
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb1-1" title="1">:warning: This is a warning box, using **Markdown** syntax inside.</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>:warning: This is a warning box, using **Markdown** syntax inside.</span></code></pre></div>
 </div>
 <p>This results in the following box:</p>
 
@@ -331,7 +331,7 @@ Refer to the constant names wrapped in double curly braces and colons as shown b
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb1-1" title="1">This document is written in the year {{:year:}}.</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>This document is written in the year {{:year:}}.</span></code></pre></div>
 </div>
 <p>The constants and their values are declared in the configuration file <code>config.toml</code>.</p>
 <p><strong>config.toml</strong></p>
