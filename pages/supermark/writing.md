@@ -69,8 +69,23 @@ For an updated list, type:
 pandoc --list-highlight-languages
 ```
 
+# Margin Notes
 
-# Extenions
+
+You can place the content of a chunk as additional information to another chunk. 
+Margin notes are aligned to the top of the chunk they are attached to.
+
+To start a new margin note, create a markdown chunk with a tag `:aside:` in the beginning.
+
+:aside: This is a note at the margin. It can also contain **Markdown syntax**, and even span over several paragraphs. 
+
+See, here is a second paragraph.
+
+
+
+
+
+# Extensions
 
 Supermark uses extenions to add more elements. Have a look at [all installed extenions](extenions.html).
 
