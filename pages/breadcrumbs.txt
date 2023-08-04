@@ -4,4 +4,30 @@ index.md - TTM4175
     teknostart/day2.md - Dag 2
     teknostart/day3.md - Dag 3
     teknostart/day4.md - Dag 4
+  unit-cli/index.md - Linux Command Line
+    unit-cli/teamwork.md - Teamwork
+  unit-net1/index.md - Networking 1
+    unit-net1/preparation-1.md - Preparation 1
+    unit-net1/preparation-2.md - Preparation 2
+    unit-net1/teamwork.md - Teamwork
+  unit-net2/index.md - Networking 2
+    unit-net2/preparation.md - Preparation
+    unit-net2/teamwork.md - Teamwork
+  unit-net3/index.md - Networking 3
+    unit-net3/preparation.md - Preparation
+    unit-net3/teamwork.md - Teamwork
   unit-p1/index.md - IoT 1
+    unit-p1/preparation-1.md - Preparation 1
+    unit-p1/preparation-2.md - Preparation 2
+    unit-p1/teamwork-1.md - Teamwork
+  unit-p2/index.md - IoT 1
+    unit-p2/preparation-1.md - Preparation 1
+    unit-p2/preparation-2.md - Preparation 2
+    unit-p2/teamwork-1.md - Teamwork
+  unit-p3/index.md - IoT 1
+    unit-p3/preparation-1.md - Preparation 1
+    unit-p3/preparation-2.md - Preparation 2
+    unit-p3/teamwork-1.md - Teamwork
+  unit-p4/index.md - IoT 1
+    unit-p3/preparation-1.md - Preparation 1
+    unit-p3/teamwork-1.md - Teamwork
