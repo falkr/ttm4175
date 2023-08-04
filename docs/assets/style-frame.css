@@ -127,7 +127,3 @@ a {
   /* background-color: #2B65EC; */
   text-decoration: none;
 }
-
-main a {
-  background-image: linear-gradient(rgba(255, 255, 255, 0) 83%, color(display-p3 0.231 0.498 0.706) 85%, #00d1ff);
-}
