@@ -169,12 +169,17 @@ figcaption {
   </nav>
 
   <main class="container container-max-width">
-    <section class="mt-5 mb-5 py-3">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../breadcrumbs.txt/unit-p3/teamwork-1.html">Teamwork</a></li>
+</ol>
+</nav>
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>HTTP and JSON</h1>
 <p>Today we will use HTTP as communication protocol and JSON as serialization format to send data, from a client to a server and from a server to a client.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>HTTP Client Requests: Checking the News</h1>
 <p>Let us first make a HTTP request for the most common job: requesting the content of a website. Of course, you know what happens when you make a request to <a href="https://www.nrk.no/">https://www.nrk.no/</a> via your browser. But there are other ways you can make such a request.</p>
 <h3>Checking the News via Curl</h3>
@@ -237,7 +242,7 @@ print(response.text)
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>HTTP Client Requests: Checking the Weather</h1>
 <p>So these were requests to get the content of a website.
 But HTTP can also be used in a different way. <a href="Yr.no">Yr.no</a> provides weather information, which most people access either via the website or the mobile app.
@@ -449,7 +454,7 @@ We can for instance simply code them in a nested dictionary:</p>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Fantastic---we now have a compact function that gets the temperature forecast from Yr so we can use it later in our application. We'll come back to it.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Smart Temperature Sensor</h1>
 <p>We now want to create a system that combines HTTP requests to create a more advanced temperature display.
 Instead of just showing the local temperature of a sensor, it should also show the predicted temperature.
@@ -664,7 +669,7 @@ This may be surprising, since it should get the request as input and then comput
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Sending Data to the Server</h1>
 <p>We can send additional data with our request, by appending it into the URL as follows:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -865,7 +870,7 @@ print_response(response)
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Storing Temperature Data in the Server</h1>
 <p>The web server should store the temperature that the sensor sends in. So we need some way to store data in the web server. In a real system, this is done with data bases or more powerful storage solutions optimized to serve many requests. For our little server, just storing the data in a Python dictionary is enough.
 We use the two functions <code>store_data()</code> and <code>load_data()</code> shown below to store or load data.</p>
@@ -915,7 +920,7 @@ To repeat and clarify:</p>
 <p>Use the function for getting the forecast you have developed above. This means you web server which acts as a server because it implements the methods GET and POST, now also acts as a client towards Yr.no since it requests data from it.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Task: Nice HTML Output</h1>
 <p>Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -970,7 +975,7 @@ To repeat and clarify:</p>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Things to Remember</h1>
 <ul>
 <li>HTTP can be used for more than just websites, it can also be used to let applications in general transport any type of data.</li>
