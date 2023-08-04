@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4175</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/style-frame.css" rel="stylesheet">
+  <link href="../assets/style-fonts.css" rel="stylesheet">
+  <link href="../assets/style-code.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="../assets/anchor.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+/* === figure === */
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+figcaption {
+  color: #868279;
+}
+
+/* === goals === */
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f3cb';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+}
+
+/* === hints === */
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
+/* === steps === */
+.steps ol, .steps ul {
+  counter-reset: li;
+  list-style: none;
+  margin-left: 10px
+}
+
+.steps li {
+  margin: 0 0 10px 0;
+  min-height: 40px
+}
+
+.steps li:before {
+  content: counter(li);
+  counter-increment: li;
+  border: 2px solid #868279;
+  color: #868279;
+  background-color: none;
+  font-family: "Source Sans Pro", Georgia, serif;
+  font-weight: bold;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  top:8px;
+  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: -20px -10px -20px -20px
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+        <img id="header_logo" alt="NTNU Hjemmeside" width="120"
+          src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">TTM4175</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Teknostart
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a></li>
+              <li>
+                <div class="dropdown-divider"></div>
+              </li>
+              <li><a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Units
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <a class="dropdown-item" href="../units.html">Oversikt</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+              <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+              <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+              <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
+              <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+              <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+              <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+              <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Learning
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../learning/learning.html">Læring</a></li>
+              <li><a class="dropdown-item" href="../learning/reports.html">Rapporter</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../tools/index.html">Tools</a></li>
+              <!--<li><a class="dropdown-item" href="../tools/tools-python.html">Python</a></li>-->
+              <li><a class="dropdown-item" href="../tools/tools-gui.html">GUIs in Python</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-mqtt.html">MQTT</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-notebooks.html">Notebooks</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-stmpy.html">STMPY</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bg-light border ms-auto"></div>
+        <div>
+          <a class="nav-link" href="../schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+              <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+              <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-max-width">
+    <section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Networking II - Ports, Layers, Client-Server Architecture, Web Servers</h1>
+<p>The overall goal of this lab is to complement knowledge on IP, subnets with some routing notions.
+This will be achieved using the same VMs as last week and default Linux tools.</p>
+<p>Today we will also learn more about Docker. With Docker we will be able to simulate a &quot;mini-cloud&quot; inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Learning Goals</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>After this lab you will be able to:</p>
+<ul>
+<li>Recognise the importance of <em>ports</em> in networking</li>
+<li>Learn basic Docker principles:
+<ul>
+<li>Images and containers</li>
+<li>The <em>Dockerfile</em></li>
+<li>Basic commands for managing containers</li>
+</ul>
+</li>
+</ul>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Lab Exercises</h1>
+<p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
+<p>Remember you should deliver a report after the networking module is finished.
+It should include the main commands and configurations necessary to complete each exercise.
+Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
+<p>These exercises should be completed in teams.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparation</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
+<li>Make sure there's connectivity between both VMs (you should have configured static IP address in the previous lab.).</li>
+<li>Test if your Ubuntu VM has Internet connectivity.</li>
+<li>Test if your RPi VM has Internet connectivity.</li>
+<li>Make sure you've got enough free disk space for your VM (at least 3GB).</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Experimenting with routes</h2>
+<p>Today we won't see all the network layers in action but we will look into layer-3 routing.
+Later in this lab we will move to the application layer, which is higher in the networking stack.</p>
+<p>Now, <strong>on your RPi VM</strong> try the following:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
+<li>Check the current routes associated to 'eth1'</li>
+<li>Remove the existing route with <code>ip route del &lt;ip/mask&gt; dev eth1</code>.</li>
+<li>Check for changes in connectivity between the two VMs with the <code>ping</code> command first from the RPi and afterwards from Ubuntu. Is there any difference?</li>
+<li>Install the program &quot;tcpdump&quot; with the command <code>sudo apt install tcpdump</code> (when asked, type Y or yes to install)</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p><code>tcpdump</code> dumps all the received/sent network traffic (i.e. prints all the traffic)</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
+<li>Now, on your RPi run the command <code>sudo tcpdump -i eth1</code> and try to <code>ping</code> from the Ubuntu VM. Register what happens.</li>
+<li><strong>Repeat step 4</strong> but this time run <code>tcpdump</code> <strong>on Ubuntu</strong> and for the correct interface connected to the internal network. Is there a difference? If so, why?</li>
+<li><strong>On your RPi</strong>, add a new route with the command <code>ip route add</code> with the smallest subnet size possible (don't forget to include this in your <strong>report</strong>).</li>
+<li>Make sure you have re-established the connectivity between the two VMs.</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint on tcpdump</button>
+<div class="w3content">
+<p>In this exercise it's important to remember/understand that a <code>ping</code> consists of two messages.
+One on the way out, and another returning one.</p>
+<p>In our exercise the Ubuntu VM has a route (a path) to reach our RPi, which means that its messages will be sent to their destination.
+On the other hand, the RPi VM <strong>does not</strong> have a route for reaching Ubuntu (even if the &quot;cable is connected&quot;).
+This should be visible when using <code>tcpdump</code>, which will get packets on the RPi but not on Ubuntu.</p>
+
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Docker</h2>
+<h3>Introduction</h3>
+<p>We will start with a few basic steps, if you have any issues please ask for help!
+It's important that you understand well these steps before moving forward.</p>
+<p><strong>---&gt; On your Ubuntu VM</strong></p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
+<li>On your Ubuntu VM find out what kind of operating system you're emulating.</li>
+<li>In Docker's hub <a href="https://hub.docker.com/">https://hub.docker.com/</a> search for the same operating system.</li>
+<li>You should have found at least one <em>Docker Official Image</em>, which is important to take into account! Don't use images you don't trust.</li>
+<li>Now enter the following in your terminal:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id0fc11f">docker pull ubuntu
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id0fc11f">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull ubuntu</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository.
+This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p>
+</aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="warning box mt-3 mb-3"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in &quot;/etc/netplan/01-network-manager-all.yaml&quot; to include <em>nameservers</em> below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf617dc">enp0s3:
+    dhcp4: yes
+    nameservers:
+        addresses: [8.8.4.4,8.8.8.8]
+...
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idf617dc">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">nameservers</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">...</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
+<li>You can see all locally available Docker images by typing:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="ida4090c">docker images
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#ida4090c">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> images</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="6">
+<li>Now let's build and run a container from the Ubuntu image using:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id28e300">docker run -dit --name my-ubuntu-container ubuntu
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id28e300">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-dit</span> <span class="at">--name</span> my-ubuntu-container ubuntu</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"><p>The <code>run</code> command will build an instance of the Ubuntu image.
+This instance is what we call a container.
+We can build several containers that originate from the same image.
+This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the <a href="prep-networking-2-2020.html#optional-materials">optional materials section</a>).</p>
+<p>If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.</p>
+</aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="7">
+<li>Using the generated ID, &quot;enter&quot; the new Ubuntu container using the following command, which will run a shell inside it:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idd595fb">docker exec -it <containerID> bash
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idd595fb">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>It's enough to use only part of the Container ID, as long as it is unique.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="8">
+<li>Compare the version of your container's Ubuntu with the one from your VM using the command below inside the container and inside the VM:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf10b27">cat /etc/os-release
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idf10b27">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/os-release</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>The goal of this last step is to verify the power of using containers.
+The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="9">
+<li>To exit your container you can just enter &quot;exit&quot;, type <code>Ctrl+d</code> or type <code>Ctrl+p Ctrl+q</code> (the latter detaches from a container even if wasn't started in <em>detach mode</em>).</li>
+<li>To list all running containers you can use the command <code>docker ps</code>. Try it.</li>
+<li>You can stop running containers with <code>docker stop &lt;containerID/name&gt;</code>. Stop your Ubuntu container.</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>After stopping the container you will no longer be able to &quot;enter&quot; it.
+If you try the <em>exec</em> command again it will fail.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="12">
+<li>Now, list all running containers again to see the difference.</li>
+<li>What happens if you try <code>docker ps -a</code>?</li>
+<li>To remove a container you can use the command <code>docker rm &lt;containerID/name&gt;</code>.</li>
+<li>Try again the command <code>docker ps -a</code>. Did anything change?</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>To learn more about Docker commands, apart from using <code>man</code> and <code>--help</code> you can also check our <a href="commands.html#docker-commands">List of Commands</a> and <a href="material/ttm4200-lab1-support-document-2020.pdf">this support document</a>, created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>More on Docker</h3>
+<p>Now we'll use Docker to setup a Web Server in our VM without having to change it.
+This is very useful in many contexts, even for you throughout your degree.
+For example, if you need to use a specific software for a given course, instead of installing on your own machine, you can just create a container with all the necessary software and run it when needed!</p>
+</div><aside class="col-md-4 chunk ps-2"><p>For making things simpler, in this part of the lab we need to run the Ubuntu VM with graphics support (<em>Normal start</em>).
+It can be done without but it needs some extra (non-included) steps.</p>
+</aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Back to the lab!</p>
+<p>Instead of pulling a generic Docker image, we are going to create our own Docker image, defined using a 'Dockerfile'.
+This file contains a set of instructions, necessary to create a Docker image.
+To do so just follow these steps:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
+<li>Download <a href="material/lab2-docker.zip">this zip file</a> with a basic container configuration.</li>
+<li><code>unzip</code> the downloaded file and navigate to the folder './lab2/webserver/'.</li>
+<li>Inside this folder you will fine a simple 'Dockerfile' with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.</li>
+<li>Now you can build your own image based on this 'Dockerfile' with the command:</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id23bf13">docker build -t webserver .
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id23bf13">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> webserver .</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
+<li>List all available Docker images to see the new image. How many new images do you see? Why?</li>
+<li>Create a container based on the image you just built and register its ID (you can also retrieve it later).</li>
+<li>Enter your new container and find its IP address.</li>
+<li>Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.</li>
+<li>Stop and remove all running containers (can you find a way of doing it with a single command? Search online!).</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you have issues with your browser ask for help from a TA.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint about managing containers</button>
+<div class="w3content">
+<p>To create a container you want to use the command <code>docker run</code> with the necessary/correct options.</p>
+<p>To find container IDs you want to use the command <code>docker ps</code> (<code>-a</code> optional).</p>
+
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Exercises</h1>
+<h2>Two servers, same IP address?</h2>
+<p><em>You can run this exercise without graphics support on your Ubuntu VM.</em></p>
+<p><strong>Intro:</strong> A Web Server can be run in the same machine to support multiple websites.
+This is typically done by analysing the website's name (DNS) and replying with the correct page.
+However, more than one Web Server in the same machine means we would have to use port 80 or 443 more than once, which we can't!
+In the upcoming tasks you will see how we can get around this limitation.</p>
+</div><aside class="col-md-4 chunk ps-2"><p>By convention Web Server bind port 80 for HTTP and port 443 for HTTPS.
+These default ports are used in many networking services, for saving us time in having to specify a port for each standard service.
+For example, SSH uses port 22 by default (that's why we used it when we set port forwarding, remember?).</p>
+</aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
+<li>Inside the unzipped folder navigate to './lab2/webserver-1/'.</li>
+<li>What is the main difference from the 'Dockerfile' in this folder compared to the one used earlier (in the folder 'webserver')? Discuss this in your report.</li>
+<li>Build an image based on the included 'Dockerfile', name this image &quot;webserver-1&quot;.</li>
+<li>Repeat step 1 and 2 for 'webserver-2' and name the image accordingly.</li>
+<li>Run the commands below and look at them carefully. Note the <code>-p</code> option. What does it do?</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idb36bae">docker run -d --name serverNr1 -p 8080:80 webserver-1
+docker run -d --name serverNr2 -p 8081:80 webserver-2
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idb36bae">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">--name</span> serverNr1 <span class="at">-p</span> 8080:80 webserver-1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">--name</span> serverNr2 <span class="at">-p</span> 8081:80 webserver-2</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="6">
+<li>On your RPi VM (<em>Normal start</em>), open the web browser and type the IP address of your Ubuntu VM followed by &quot;:8080&quot; to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?</li>
+<li>Repeat the previous step using port 8081 instead. What's the difference?</li>
+<li>In your report make an illustration of what you think happened, including the RPi and Ubuntu VM, the link between them and the containers, as well as some arrows to represent the webpage request (e.g. with IP and port number as labels). You can use the figure below as inspiration.</li>
+<li>Stop and remove all the containers.</li>
+<li>Remove all Docker images.</li>
+</ol>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/net/lab3-topo.png" class="figure-img img-fluid rounded" alt="Simple illustration of the setup we will have in lab 3. Can be used **as inspiration** to illustrate lab 2.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Simple illustration of the setup we will have in lab 3. Can be used **as inspiration** to illustrate lab 2.</figcaption></aside></div>
+</section>
+  </main>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #555555">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+              aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit this page</h5>
+    </div>
+    <div class="offcanvas-body">
+      <ul>
+        <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
+        <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
+        <li>To edit this page, make a commit to <a
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-net2/teamwork.md">this file</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
+  </script>
+  <script>
+
+
+
+
+</script>
+</body>
+
+</html>
