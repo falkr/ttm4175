@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4175</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/style-frame.css" rel="stylesheet">
+  <link href="../assets/style-fonts.css" rel="stylesheet">
+  <link href="../assets/style-code.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="../assets/anchor.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
+  <style>/* === figure === */
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+figcaption {
+  color: #868279;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+        <img id="header_logo" alt="NTNU Hjemmeside" width="120"
+          src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">TTM4175</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Teknostart
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a></li>
+              <li>
+                <div class="dropdown-divider"></div>
+              </li>
+              <li><a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Units
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <a class="dropdown-item" href="../units.html">Oversikt</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+              <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+              <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+              <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
+              <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+              <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+              <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+              <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Learning
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../learning/learning.html">Læring</a></li>
+              <li><a class="dropdown-item" href="../learning/reports.html">Rapporter</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../tools/index.html">Tools</a></li>
+              <!--<li><a class="dropdown-item" href="../tools/tools-python.html">Python</a></li>-->
+              <li><a class="dropdown-item" href="../tools/tools-gui.html">GUIs in Python</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-mqtt.html">MQTT</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-notebooks.html">Notebooks</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-stmpy.html">STMPY</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bg-light border ms-auto"></div>
+        <div>
+          <a class="nav-link" href="../schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+              <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+              <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-max-width">
+    <section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>State Machines</h1>
+<p>So far, you have learned how to use Python to program a device.
+We have used functions to control the components of the devices, like the LEDs, to find out if buttons have been pressed or read sensor values.
+We used a simple application pattern, in which we had a main while-loop.
+For simple applications, this is sufficient and works well.
+But this way of programming can quickly get very complicated, if you want to build more complex applications and solve a bit more difficult issues.
+This single while loop would very quickly get very complex.</p>
+<p><em>&quot;I can handle complicated code!&quot;</em> you could say. But even if that <em>would</em> be true, we need to be careful.
+When designing a system, the goal is not only to get some code that works.
+We also need to <strong>document</strong> how the system works, so that it can be as simple as possible for <strong>others</strong> to understand as well.
+Some code may be extremely relevant for the safety of a system, or critical in other ways.</p>
+<p>This week we will learn a way to express more complicated behavior using the concept of state machines.
+This is a concept that you will meet again in other courses, because state machines are a useful tool to describe behavior, and especially behavior where several things are going on at the same time.
+Communication protocols can be described and built with state machines, and systems can express how they synchronize their behavior using state machines.</p>
+<p>For IoT, state machines can be useful to describe how a device controls its behavior, and we will use it to create some more complex examples.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Hello, State Machines!</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Let's assume we need to describe how a traffic light works. One idea is to just take pictures of a traffic light, like this:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/traffic-light-1.jpg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>That already helps --- the photos describe the phases in which we can observe the traffic light. Whenever we look at the traffic light, it is in one of the phases described by the photos. For easier reference we have even given these photos some labels, intuitively <em>red</em>, <em>red-yellow</em>, <em>green</em> and <em>yellow</em>. (The <em>red-yellow</em> is common in many, but not all countries.)</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The photos already help explaining the traffic light. But imagine you want to explain on paper in which sequence a traffic light switches its lights. One way is text, but a simpler way is to add arrows between the photos, like this:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/traffic-light-2.jpg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Of course, the picture above is a simplification. Some traffic lights are switched off at night and just blink yellow. The same happens as a default state in case there is an error in the controller. We can show this blinking with the two additional photos <em>blink-off</em> and <em>blink-on</em>. The two arrows between them show how the blinking is created by two phases, one with the yellow light on and one with all lights off. We also show that blinking can be started from any of the other phases, because an error can always happen, and the lights may be switched off at any time. When we get out of the blinking sequence, we go towards the phase <em>red</em> for safety.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/traffic-light-3.jpg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>That's a complete and detailed description of a traffic light. As one last thing we add an arrow to mark in which phase a traffic light starts once it is switched on for the first time. For safety, we put it into <em>red</em> first.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>State Machine Diagrams</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>For the traffic light above we described actually a state machine. Since taking photos of real objects is cumbersome, and we also want to describe abstract things we cannot take a photo off, we replace the photos above with a more convenient symbol, a rectangle with rounded corners. These are the states in which the traffic light can be. A state machine for the traffic light looks then like this:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/traffic-light-4.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Notice the detailed elements in this diagram:</p>
+<ul>
+<li>The states are shown as rounded rectangles. The state names are shown in bold text. As a naming convention, we only use lowercase letters, numbers, and underscores for state machine names, similar to rules for variable names in programming languages.</li>
+<li>The start of the state machine is shown by a compact black dot. This is also a state, called the <em>initial state</em>. Once the state machine is activated, it starts at this initial state.</li>
+<li>We assume that a traffic light only can be turned off from the state <em>blink_on</em>. This is shown by the final state, which is the circle with the extra border.</li>
+</ul>
+<h2>States</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>State symbols with the same name refer to the same state. This means, we can use a copy of the state symbol to make our layout easier, without changing what we actually mean by the diagram. For instance, we can remove the long arrow from state <code>yellow</code> to state <code>red</code> just by having another copy of the symbol for state <code>red</code>:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/traffic-light-5.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The diagram describes exactly the same behavior. Both state symbols for the state <code>red</code> refer to the same state, so our traffic light still has the same number of states, just its layout changed. In this simple state machine this doesn't really matter, but this can help you to create better layouts once state machines become larger.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>State Names:</strong> Selecting good names for states can help making state machine easier to understand, especially when the states map to phases of the thing we want to model, like <em>on</em> and <em>off</em> for a lamp, or <em>open</em> and <em>close</em> for a lock. But sometimes there is no obvious good name. In such cases, I recommend to use state names like <code>s0</code>, <code>s1</code>. You always have the possibility to attach a note to a state and explain what it means.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Transitions</h2>
+<p>The arrows between the states are called <strong>transitions</strong>. We have said above that the state machine is at any point in time in exactly one of its states. It is not in two or more of them at the same time, and it is never somewhere in between. Conceptually, this means that a state machine switches from one state to another <strong>within no time at all</strong>,  meaning that <strong>transitions take no time</strong>.</p>
+<p>To understand this property, think of a state machine as a board game, where you move a token from one place to another.
+A token can only rest on the board, in one of the designated places.
+When you throw a dice and move forward, you need to pick up the token and move it into the next place.
+Of course, during that process, the token is briefly in the air.
+But nothing else is allowed to happen during that time.
+The other players will just look at what you are doing and not move their own tokens.
+So practically, the token moved from one place to another in no time.
+In the same way, a state machine is moving between its states by executing a transition, and nothing else happens while they execute.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><a title="Isai Symens, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Mens_Erger_Je_Niet_Bordspel_1.jpg"><img width="512" alt="Mens Erger Je Niet Bordspel 1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Mens_Erger_Je_Niet_Bordspel_1.jpg/512px-Mens_Erger_Je_Niet_Bordspel_1.jpg"></a>
+
+
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Triggers</h2>
+<p>So far, we have not yet talked about <em>when</em> a transition happens, this means, what <strong>triggers</strong> a transition. We have, for example, not described <em>when</em> the traffic light switches from <code>red</code> to <code>red_yellow</code>. There are three types of events that can trigger transitions in a state machine:</p>
+<ul>
+<li>The state machine is started, then its <strong>transition from the initial state</strong> is triggered. This happens when the component or code surrounding the machine is started and then starts up the machine, for instance when we boot our firmware and the software starts running.</li>
+<li>The state machine observes the <strong>expiration of a timer</strong>. Timers are managed by the machine itself, and we will learn how timers can be started and stopped later.</li>
+<li>When we work with the Microbit, the events can be <strong>actions from the user</strong>, like pressing any of the buttons, or that device detects a gesture.</li>
+</ul>
+<p>A transition must have exactly one trigger. Without one, it would never be started at all. For simplicity, we also don't allow more than one trigger. A trigger is declared using a label on the arrow, followed by a <code>/</code>. This means that you should have a trigger label at all transitions.</p>
+<p>The only exception to this rule are transitions starting at initial states, because their trigger is implicitly the start of the entire machine.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Actions</h2>
+<p>Let's have a look at a blinking light that you find often at the entry of tunnels. The light blinks with two lamps to indicate that the tunnel is closed. The blinking happens so that either the left lamp or the right lamp are on, and they switch every second.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/tunnel.jpg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>From our experience with the more complex traffic light, this should be an easy state machine to write down. It has two states, <code>left</code>and <code>right</code>, corresponding to one of the lamps being switched on. We also added labels to some of the transitions. They describe that the state machine switches from state <code>left</code> to state <code>right</code> triggered by an event <code>t1</code>. This is a timer. It switches back with a timer <code>t2</code>. The detailed timer operations are not yet visible, we come later to that.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/tunnel-1.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Now we also want to specify the actions to switch the individual lamps on and off. We assume that we have for this the actions <code>left_on()</code>, <code>left_off()</code>, and <code>right_on()</code>, <code>right_off()</code>. We already use Python syntax for these actions. In our state machine diagram we can use these actions and add them to the transitions.</p>
+<p>The actions are also called an <strong>effect</strong> of the transition, and happen at the same instant the transition is executed, that means, when we switch states. The effects are written behind the <code>/</code> of the transition label.</p>
+<ul>
+<li>The state machine runs action <code>left_on()</code> when it starts, as declared by the initial transition.</li>
+<li>When the machine switches from state <code>left</code> to <code>right</code>, it runs actions <code>left_off()</code> and <code>right_on()</code>, separated with a <code>;</code>.</li>
+<li>When the machine switches from state <code>right</code> to <code>left</code>, it runs actions <code>right_off()</code> and <code>left_on()</code>, separated with a <code>;</code>.</li>
+<li>When the blinking light switches off and moves into the final state, we run actions <code>left_off()</code> or <code>right_off()</code>, depending on in which of the two states we are.</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/tunnel-2.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Timers</h2>
+<p>The expiration of a timer can trigger a transition. By convention, we name timers with a prefix <code>t</code>, like for example <code>t0</code>. To declare that a transition is triggered by a timer, we simply write the name of the timer in the beginning of the transition label.</p>
+<p>State machines manage timers on their own, wich also means that timers can only be started as part of an action within the same state machine. As we anticipate already our implementation in Python, we use the following syntax for controlling timers:</p>
+<ul>
+<li><code>start_timer(t1, 1000)</code> starts a timer with name <code>t1</code> that will expire after 1000 milliseconds. If we invoke this action again while the timer is active and has not yet expired yet, the countdown will again start from the beginning, i.e., we expect the timeout 1000 milliseconds from the last call of <code>start_timer(t1, 1000)</code>.</li>
+<li><code>stop_timer(t1)</code> stops a timer, so that a timeout will not happen in the future. In case this action is called but <code>t1</code> already expired or was never started before, nothing happens.</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/tunnel-3.svg" class="figure-img img-fluid rounded" alt="Complete blinking light, in this version with the actions to start the timers.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Complete blinking light, in this version with the actions to start the timers.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Spaghetti Timer Example</h3>
+<p>Imagine we want to describe the behavior of a simple spaghetti timer. This timer expires after 10 minutes and then beeps for 3 seconds. We can do this with the state machine below.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/spaghetti-1.svg" class="figure-img img-fluid rounded" alt="Simple timer that beeps for 3 seconds after 10 minutes are over.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Simple timer that beeps for 3 seconds after 10 minutes are over.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Decisions</h2>
+<p>In some cases, we want to have a choice in which state a transition should switch, based on conditions in data. As an example, let's look at the incomplete state machine below. It describes a part of a controller for a heater. In state <code>heater_on</code> we wait for 1 second for timer <code>t</code>, which triggers the transition towards the choice state. This choice state has two alternative branches, distinguished by two guards, in rectangular brackets. Think of them as an if-statement in a programming language. (And that is actually how we will later implement them.) If the temperature is okay, we switch into state <code>heater_off</code>. If not, we take the else-branch and restart the timer, to check again in another 1000 milliseconds.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/choice.svg" class="figure-img img-fluid rounded" alt="Part of a temperature controller, using a decision with branches.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Part of a temperature controller, using a decision with branches.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Don't worry too much about what to write into the guard for now. This will get clearer once we implement state machines in Python.</p>
+<p>A decision can have many outgoing branches. One of them must have a guard that is true, otherwise the state machine would be blocked. I therefore recommend to have an else-branch, which is true whenever none of the other branches is true.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Errors in State Machines</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You may think: <em>&quot;Why do we need all these rules for state machines?&quot;</em>
+This is because we want to describe behavior precisely, in such a way that it is unambiguous (everyone knows what it means) and so that it does not contain any errors, or at least that errors would be easy to find.</p>
+<p>In the following we are going to describe some examples of state machines that contain an error or that are somehow problematic, in the sense that they show behavior that is probably not intended or useful for an application.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Missing Initial States</h3>
+<p>When the initial state is missing, we don't know where to start the state machine.
+So every state machine must have exactly one initial state.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/error-1.svg" class="figure-img img-fluid rounded" alt="Missing initial states.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Missing initial states.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Missing Triggers</h3>
+<p>Every transition out of an ordinary state needs a trigger, otherwise there is no way it will ever be executed.
+Only the initial transition has no trigger attached, because it is implicitly triggered by the start of the machine.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/error-2.svg" class="figure-img img-fluid rounded" alt="Missing triggers.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Missing triggers.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Same Outgoing Triggers</h3>
+<p>Look at the example below: Imagine we are in state <code>s1</code> and event <code>e1</code> happens.
+In this state machine it is not clear if we are moving into state <code>s2</code> or <code>s3</code>, since both transitions are labeled with the same event.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/error-3.svg" class="figure-img img-fluid rounded" alt="Double triggers.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Double triggers.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Timer is Never Started</h3>
+<p>Another example is that we wait for an even that never happens, like in the example below.
+A timer can only ever expire if we started it before.
+In the state machine, the timer <code>t1</code> will never expired because it never gets started in the first place.
+This is almost certainly an error, because if we never want the timer to expire, we shouldn't even declare such a transiton. So probably, the creator of the machine forgot to start the timer.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/error-4.svg" class="figure-img img-fluid rounded" alt="Missing initial states.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Missing initial states.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>State is a Deadlock</h3>
+<p>A deadlock is a state with no way out of it, that means, a state without any outgoing transition.
+This can be a sign for a missing or forgotten transition.
+If that is desired, you can consider to use a final state to make it clear that the state machine should be terminated.
+In the examples above, states <code>s_2</code> and <code>s_3</code> are all deadlock states, because the machine never moves out of them.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+  </main>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #555555">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+              aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit this page</h5>
+    </div>
+    <div class="offcanvas-body">
+      <ul>
+        <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
+        <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
+        <li>To edit this page, make a commit to <a
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-p2/preparation-1.md">this file</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
+  </script>
+  <script>
+</script>
+</body>
+
+</html>

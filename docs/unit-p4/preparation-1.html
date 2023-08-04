@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4175</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/style-frame.css" rel="stylesheet">
+  <link href="../assets/style-fonts.css" rel="stylesheet">
+  <link href="../assets/style-code.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="../assets/anchor.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
+  <style>/* === figure === */
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+figcaption {
+  color: #868279;
+}
+
+/* === hints === */
+.w3collapsible {
+  background-color: #f0e9db;
+  color: #868279;
+  padding: 8px 18px 8px 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.w3active,
+.w3collapsible:hover {
+  background-color: #f0e9cb;
+}
+
+.w3content {
+  filter: blur(3px);
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+        <img id="header_logo" alt="NTNU Hjemmeside" width="120"
+          src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">TTM4175</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Teknostart
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a></li>
+              <li>
+                <div class="dropdown-divider"></div>
+              </li>
+              <li><a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Units
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <a class="dropdown-item" href="../units.html">Oversikt</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+              <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+              <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+              <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
+              <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+              <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+              <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+              <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Learning
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../learning/learning.html">Læring</a></li>
+              <li><a class="dropdown-item" href="../learning/reports.html">Rapporter</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../tools/index.html">Tools</a></li>
+              <!--<li><a class="dropdown-item" href="../tools/tools-python.html">Python</a></li>-->
+              <li><a class="dropdown-item" href="../tools/tools-gui.html">GUIs in Python</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-mqtt.html">MQTT</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-notebooks.html">Notebooks</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-stmpy.html">STMPY</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bg-light border ms-auto"></div>
+        <div>
+          <a class="nav-link" href="../schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+              <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+              <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-max-width">
+    <section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Background: Hacking Ferries</h1>
+<p>If you want, have a look at this TEDx Talk by Andy Stanford Clark, who is one of the inventors of MQTT.
+The talk is not so much about the MQTT protocol itself, but you'll get some context and background that may help you learn more in the following.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s9nrm8q5eGg?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>MQTT</h1>
+<p>MQTT is often used in situations where events should be sent from many
+sensors and broadcast to several applications. IBM and others for
+instance use MQTT so that IoT devices can send updates into their cloud services.
+When Facebook introduced their standalone Messenger application, they
+also relied on MQTT to push messages to the clients.</p>
+</div><aside class="col-md-4 chunk ps-2"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
+</aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>MQTT is simple to work with, and the following are &quot;my favourite&quot;
+5 reasons for using MQTT:</p>
+<ol>
+<li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
+<li><strong>You only need to handle a single IP address.</strong> That is the address of the broker. All other addressing happens indirectly via topics.</li>
+<li><strong>Application startup is simple.</strong> You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.</li>
+<li><strong>MQTT works also behind NAT.</strong> NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to &quot;push&quot; messages into a subscribed computer in the prvate network. Only the broker needs to be accessible.</li>
+<li><strong>MQTT is bi-directional by default.</strong> Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Broker Architecture</h1>
+<p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a
+repetition, remember first the client-server architecture, as we have it
+for instance in HTTP:</p>
+<h2>Client-Server</h2>
+<p><strong>Client-server:</strong> The client knows the address of the server. The server gets to know
+the client only after the client makes initial contact. Since only
+the client knows the address of the server initially, it is only the
+clients that can make the first contact and take initiative. In the
+world wide web, servers can host web sites and are contacted by
+browsers (the clients.) This is an example where there are many
+clients and only few servers, and where servers are optimized to
+server many clients. But there are also protocols in which the
+server is on a tiny sensor device, and &quot;serves&quot; the values of the
+sensor to any client that are interested in them.</p>
+<h3>Problems with Client-Server</h3>
+<p>Assume again a home automation system, in which a
+controller adjusts the heater (on/off) based on the temperature reported
+by several sensors that are distributed in the room. With HTTP, the two
+communication parts were client and servers, and the client can send
+data to the server or request data via the request-response pattern. We
+have hence two possibilities, depending on how we assign the roles of
+client and server:</p>
+<ul>
+<li>
+<p><strong>HTTP, sensors act as clients:</strong> The sensors are HTTP clients and
+repeatedly send their temperature measurements to the heater, which
+is acts as an HTTP server.</p>
+</li>
+<li>
+<p><strong>HTTP, sensors act as servers:</strong> Vice-versa, we can think of a
+solution where each temperature sensor is a HTTP server, and the
+heater acts as a client. The heater makes requests to each sensor
+and asks for the current temperature, and then adjusts the heater
+based on all of the responses.</p>
+</li>
+</ul>
+<p>Assume now that not only the heater module is interested in the
+temperature, but also the controller for the window blinds. (If it gets
+very warm during the summer, it could move down the blinds to keep the
+sun down.) With the above solutions, what would that look like?</p>
+<ul>
+<li>
+<p>If the sensors should be the clients, then we now have to update all
+the sensor logic so that they not only send their measurements to
+the heater, but also the blind controller. Even worse, since all
+transmission cost energy, we roughly doubled the energy consumption
+of the sensor nodes, since the communication doubled. This makes
+that the batteries only last half as long!</p>
+</li>
+<li>
+<p>If the sensors act as HTTP servers and we introduce the blind
+controller, they don't have to change their code. They just answer
+now double as many requests; the ones from the heater and the ones
+from the blind controller. For the battery life, this is equally bad
+as the solution above.</p>
+</li>
+</ul>
+<p>The problem with the above scenario is that we used a direct
+communication between the sensors and the control units, as shown in the figure below.
+Each sensor (in red) is connected to each controller.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-without-broker.svg" class="figure-img img-fluid rounded" alt="This architecture connects each sensor with each client, which is not suitable.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">This architecture connects each sensor with each client, which is not suitable.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>New: Client-Broker</h2>
+<p>Now imagine a system where the components are more separate from each other, and do not communicate directly with
+each other. We can achieve this by introducing a component that
+decouples the sensors and the controllers. We call that component a
+<strong>broker</strong>, shown in the figure below:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-with-broker.svg" class="figure-img img-fluid rounded" alt="This architecture introduces a broker, and sensors only connect to this broker.">
+</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">This architecture introduces a broker, and sensors only connect to this broker.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>Client-broker:</strong> A message broker is a server that distributes messages.
+Clients communicate with the server and send messages to the broker, which then get distributed to those clients that are interested in the events.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The broker is a generic component, which means that it is not specific
+for any application and that you can use the same broker for many
+different applications.
+You hence don't need to write your own broker,
+but can use an existing one and just configure it. There are several
+MQTT brokers available. The one we are going to use is called
+<strong>Mosquitto</strong>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Message Pattern: Publish-Subscribe</h1>
+<p>With the new architecture of a broker also comes a new message pattern that is suitable for this architecture. It is called <strong>publish-subscribe</strong>.</p>
+<ul>
+<li>
+<p>The <strong>publish</strong> part is very simple: Whenever a client (here a
+sensor) makes an observation, it sends a message to the broker. We
+also say that the client <em>publishes</em> a message, or that the client
+acts as a publisher.</p>
+</li>
+<li>
+<p>The <strong>subscribe</strong> part works as follows: Clients that are interested
+in a certain information <em>subscribe</em> to the broker. Whenever another
+client publishes that information, the broker forwards this message
+to all clients that have subscribed.</p>
+</li>
+</ul>
+<p>A minimal interaction looks as follows:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-basic.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>In MQTT, clients can be publishers or subscribers, or both. There can be
+any number of subscribers and any number of publishers in a system.
+Because of the publish-subscribe pattern, the subscribers do not have to
+know about the publishers, and the publishers do not have to know of the
+subscribers. They only have to know the address of the MQTT broker and
+connect to it.</p>
+<p>For our home automation system, this enables an elegant and efficient
+solution: The sensors at as publishing clients that send their
+measurements to the broker. The controllers act as subscriber clients
+that subscribe to the broker for temperature updates. Once the broker
+receives the temperature updates, it forwards them to the controllers.
+When adding a new controller, it can just be a new subscriber that
+subscribes to the broker, but the communication and the behavior of the
+sensors does not change. Also, each sensor sends every measurement only
+once (to the broker), which helps to save energy.</p>
+<p>Below you see an example with two subscribers. Only subscriber 2
+receives the first published message. Subscriber 1 only receives it
+after it also subscribes.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-publish-subscribe.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Topics</h1>
+<p>Topics are used to define which information a subscriber is interested
+in, and match it with the information publishers provide. Usually,
+subscribers are not interested in all messages that all publishers send.
+Subscribers therefore only subscribe to specific topics, which depend on
+the application. The topics are organized in a hierarchy, separated by a
+slash (&quot;/&quot;). The following is an example for topics that an application
+for home automation can use:</p>
+<pre><code>house/garage/lights/l1
+house/garage/lights/l2
+house/garage/sensors/pi1
+house/garage/doors/d1
+</code></pre>
+<p>The light <em>l1</em> for instance subscribes to the topic
+<code>house/garage/lights/l1</code> so that it can receive messages that switch it
+on or off. The passive infrared sensor <em>pi1</em> publishes messages to the
+topic <code>house/garage/sensors/pi1</code> every time it detects a movement.</p>
+<p>Topics are hence useful to structure the communication of an application. They are a mechanism that combines some aspect of addressing with that of message names. Central to the concept of topics is that several clients can listen to the same topic.</p>
+<h2>Example Application</h2>
+<p>An application to switch on the lights whenever a movement is detected
+can work like this: (In pseudo code)</p>
+<pre><code>subscribe to house/garage/sensors/pi1
+whenever an MQTT message arrives at house/garage/sensors/pi1:
+    send a message 
+        to house/garage/lights/l1 with payload &quot;on&quot;
+    
+    after some time, send a message
+        to house/garage/lights/l1 with payload &quot;off&quot;
+</code></pre>
+<h2>Topic Subscription Wildcards</h2>
+<p>When subscribing, topics can include wildcards, which make it possible for a client to
+subscribe to several topics with a single pattern:</p>
+<ul>
+<li>The &quot;+&quot; is used as a wildcard for a single level</li>
+<li>The &quot;#&quot; is used as a wildcard for several levels. It must only be
+placed at the end of a topic pattern.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>To receive all messages sent within the house, a subscriber can
+subscribe to <code>house/#</code></li>
+<li>To receive all messages for lights in any zone (garage or kitchen),
+a subscriber can subscribe to <code>house/+/lights/+</code></li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>Exercise:</strong> A publisher sends a message to the topic <code>a/b/c/d</code>. Which
+of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscription topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div>
+<table class="table table-sm">
+<caption style=""></caption>
+<thead>
+<tr class="row-1">
+<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-1">
+<td class="column-1">1</td><td class="column-2">#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-2">
+<td class="column-1">2</td><td class="column-2">+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-3">
+<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-4">
+<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-5">
+<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-6">
+<td class="column-1">6</td><td class="column-2">a/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-7">
+<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-8">
+<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-9">
+<td class="column-1">9</td><td class="column-2">a/b/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-10">
+<td class="column-1">10</td><td class="column-2">a/b/c</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-11">
+<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-12">
+<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-13">
+<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-14">
+<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
+<tr class="row-15">
+<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Quality of Service</h1>
+<p>Messages can be sent with three different quality-of-service (QoS)
+flags, which determine how much effort the broker and the clients spend
+on sending them:</p>
+<ul>
+<li>
+<p>QoS=0 is also called <em>At most once</em>. The message can get lost, and
+there will be no attempts to resend it.</p>
+</li>
+<li>
+<p>QoS=1 is also called <em>At least once</em>. This means that the message
+will be eventually received, but that several copies of the message
+may appear due to duplication. The receiver has to detect any such
+duplicates.</p>
+</li>
+<li>
+<p>QoS=2 is also called <em>Exactly once</em>. This guarantees the delivery
+and avoids any duplication.</p>
+</li>
+</ul>
+<p><strong>You may ask:</strong> <em>If QoS=2 is available, why would one ever use any of
+the lower QoS levels?</em></p>
+<p>The answer is that the highest quality of service is also more expensive
+with regards to transmission effort. To send a single QoS=2 message,
+several messages on the underlying channel are necessary. Therefore, an
+application should always choose the lowest QoS level it can work with.</p>
+<p>Below you see the diagrams that show how many control packages are
+involved to just send a single MQTT message, using QoS = 0.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-qos-0.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>For QoS=2, the protocol uses more control messages to transport a single MQTT message.
+This shows that there are more control messages involved the higher the QoS level is.
+This also means that it is more expensive for the network to transport MQTT messages with higher QoS level, as it uses more resources.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqtt-qos-2.svg" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>MQTT Clients in Python</h1>
+<p>There are libraries to use MQTT in a variety of programming languages.
+For Python, there is a library for an MQTT client called <em>Paho</em>. As
+usual, you install it via pip, using</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idccb0c5">pip install paho-mqtt
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idccb0c5">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install paho-mqtt</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The code for a client that subscribes to a topic looks like this:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id216b75">import paho.mqtt.client as mqtt
+
+def on_connect(mqttc, obj, flags, rc):
+    print("Connected: " + str(rc))
+
+def on_message(mqttc, obj, msg):
+    print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+
+def on_publish(mqttc, obj, mid):
+    print("Published: " + str(mid))
+
+def on_subscribe(mqttc, obj, mid, granted_qos):
+    print("Subscribed: " + str(mid) + " " + str(granted_qos))
+
+mqttc = mqtt.Client()
+mqttc.on_message = on_message
+mqttc.on_connect = on_connect
+mqttc.on_publish = on_publish
+mqttc.on_subscribe = on_subscribe
+mqttc.connect('localhost', 1883)
+mqttc.loop_start()
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id216b75">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_connect(mqttc, obj, flags, rc):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Connected: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(rc))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_message(mqttc, obj, msg):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(msg.topic <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.qos) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(msg.payload))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_publish(mqttc, obj, mid):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Published: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_subscribe(mqttc, obj, mid, granted_qos):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Subscribed: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(mid) <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="bu">str</span>(granted_qos))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>mqttc <span class="op">=</span> mqtt.Client()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>mqttc.on_message <span class="op">=</span> on_message</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>mqttc.on_connect <span class="op">=</span> on_connect</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>mqttc.on_publish <span class="op">=</span> on_publish</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>mqttc.on_subscribe <span class="op">=</span> on_subscribe</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>mqttc.<span class="ex">connect</span>(<span class="st">&#39;localhost&#39;</span>, <span class="dv">1883</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>mqttc.loop_start()</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The code above is in its structure similar to the one we used when
+creating our own HTTP server. We connect to an MQTT broker using its address (or <code>localhost</code> when it’s on the same computer).
+The default port for MQTT is 1883.</p>
+<p>After the client is created in <code>mqttc = mqtt.Client()</code>, we register a number of callback functions.
+These functions are called by the client whenever one of the events happens, that means, after we are connected, received a message, subscribed to a topic  or published a message. We can use them to trigger other behavior.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>MQTT Publisher Client</h2>
+<p>The following code is used to publish a message:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id35d0eb">mqttc.publish('a/b/c/d')
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id35d0eb">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>)</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can also specify which qos level we want, and add some payload (content) to the message:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id89b4a6">mqttc.publish('a/b/c/d', payload='Content of the message', qos=2)
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id89b4a6">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Debugging With MQTTX</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>MQTTX is a tool useful during development. Using MQTTX is
+simple, but because we have now talked about brokers, clients,
+publishers and subscribers, you may lose track and wonder what
+MQTTX does: Think of it as a testing and helper tool for MQTT.
+Essentially, MQTTX is a MQTT client, and connects to an
+MQTT broker, subscribe to topics and send messages to topics.
+You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Install <a href="https://mqttx.app">MQTTX</a> already before the lecture.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqttx-1.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Connecting to a Broker</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Start MQTTX</li>
+<li>Add a connection by clicking on the <code>+</code> button. Enter the address <code>mqtt20.iik.ntnu.no</code> as hostname. Protocol <code>mqtt://</code> is already set by default, and our port should be <code>1883</code>. As name you can use the same as the hostname.</li>
+<li>Click on <code>Connect</code></li>
+</ol>
+<p>You should get a green &quot;Connected&quot; message. If not, our broker might be down (contact me then) or you are not connected to the internet.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqttx-3.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Publishing a Message</h2>
+<p>Once you are connected to a broker, and the broker is selected in the list to the left, you can publish a message to a topic using the interface in the lower right corner.</p>
+<ol>
+<li>Write the topic in the field with the grey label <code>Topic</code></li>
+<li>Optionally select the QoS level.</li>
+<li>In the text field below the topic you can write the payload of the message, and MQTTX gives you the possibility to show it as Plaintext or JSON (these two options are most suitable for us).</li>
+<li>Click the send symbol on the lower right corner.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Subscribing to a Topic</h2>
+<ol>
+<li>Once you are connected, click on <code>+ New Subscription</code></li>
+<li>Enter the topic. Include wildcards <code>+</code> and <code>#</code> as you need.</li>
+<li>Set the QoS (default is 0)</li>
+<li>Click on <code>Confirm</code></li>
+</ol>
+<p>You should now be subscribed to a topic. You can test this by sending a message as described above to that topic. You should then see that you have both sent and received that message in the conversation window.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="figures/mqttx-2.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Subscribe to a topic and then publish a message to that topic, so that you can see that it is sent back to you like in the screenshot above.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Observing Communication</h2>
+<p>Because MQTT uses the publish-subscribe pattern, the MQTTX can simply subscribe
+to any topics that are interesting in your application and you can see
+which messages are sent to these topics, without disturbing the
+communication in the system.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Solution for the exercise above. Click to reveal.</button>
+<div class="w3content">
+<div>
+<table class="table table-sm">
+<caption style=""></caption>
+<thead>
+<tr class="row-1">
+<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-1">
+<td class="column-1">1</td><td class="column-2">#</td><td>Yes!</td></tr>
+<tr class="row-2">
+<td class="column-1">2</td><td class="column-2">+/+/+</td><td>No! We only subscribe to topics that include 3 levels.</td></tr>
+<tr class="row-3">
+<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td>Yes!</td></tr>
+<tr class="row-4">
+<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td>Yes!</td></tr>
+<tr class="row-5">
+<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td>Yes!</td></tr>
+<tr class="row-6">
+<td class="column-1">6</td><td class="column-2">a/#</td><td>Yes!</td></tr>
+<tr class="row-7">
+<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td>Yes!</td></tr>
+<tr class="row-8">
+<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td>Yes!</td></tr>
+<tr class="row-9">
+<td class="column-1">9</td><td class="column-2">a/b/#</td><td>Yes!</td></tr>
+<tr class="row-10">
+<td class="column-1">10</td><td class="column-2">a/b/c</td><td>No! The publishing topic also includes a 'd', which does not match, even at the end.</td></tr>
+<tr class="row-11">
+<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td>Yes!</td></tr>
+<tr class="row-12">
+<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td>Yes!</td></tr>
+<tr class="row-13">
+<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td>Yes!</td></tr>
+<tr class="row-14">
+<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td>No! The first b of the subscription topic does not match the first a of the publishing topic.</td></tr>
+<tr class="row-15">
+<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td>No! The last plus implies that there should be another level for the topic, after the d/.</td></tr>
+</tbody>
+</table>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+  </main>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #555555">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+              aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit this page</h5>
+    </div>
+    <div class="offcanvas-body">
+      <ul>
+        <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
+        <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
+        <li>To edit this page, make a commit to <a
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-p4/preparation-1.md">this file</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
+  </script>
+  <script>
+
+
+</script>
+</body>
+
+</html>
