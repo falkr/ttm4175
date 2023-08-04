@@ -21,7 +21,102 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
-  <style>/* === figure === */
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
+/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -196,9 +291,9 @@ figcaption {
 </button>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--verbose</span> https://www.nrk.no/</span></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Can you read some of the headlines?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Can you read some of the headlines?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>What happens if you try to use the URL <code>http://www.nrk.no/</code> instead? What does the response say? Can you find out what this response means?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>What happens if you try to use the URL <code>http://www.nrk.no/</code> instead? What does the response say? Can you find out what this response means?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Checking the News via Python</h3>
 <p>You can make requests also programmatically, that means, as part of a program running in Python. For that, a dedicated package <code>requests</code> exists that lets you make requests and parse the response in a simple way.</p>
@@ -239,7 +334,7 @@ print(response.text)
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The request returns a data structure of the type <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">Response</a> which contains the answer as a text field, which we simply print out.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Have a look at the output, it should be the same as the one obtained with curl.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
@@ -253,7 +348,7 @@ This box lets you try out a request, directly from the website.
 The required input data are latitude and longitude.
 For Trondheim, those are <code>lat=63.43</code> and <code>lon=10.39</code>.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Use the API documentation on the website to make a request, and browse through the response you get in the answer box below. Check if you can recognize some of the values and if they are more or less what you expect.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
     <img src="figures/yr-1.png" class="figure-img img-fluid rounded" alt="">
@@ -286,7 +381,7 @@ print(response.text)
 </code></pre>
 
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Run the code, document the result.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Run the code, document the result.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The Yr API provides its response as a JSON-formatted string. For that reason, we can ask the response to provide us the format in JSON via the function <code>response.json()</code> which you can also print via <code>print(response.json())</code>.</p>
 </div><aside class="col-md-4 chunk ps-2"><p>Note that <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.text">text</a> is a field or variable in the requests object, but <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response.json">json()</a> is a function we call on it, therefore we use the braces.</p>
@@ -324,7 +419,7 @@ pprint(response.json())
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Notice that we use now the function <code>pprint()</code> instead of <code>print()</code> to print things <em>pretty</em>. Pretty good, huh?</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Pretty-print the response as JSON structure of dicts and lists, and document a few lines to give an illustration of its structure.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint for the code</button>
 <div class="w3content">
@@ -343,11 +438,11 @@ It also contains so-called meta-data which explains details <em>about</em> the d
 These are all useful, but make the structure of the response a bit complex.
 For now, we are just interested in the air temperature.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Can you find the data field <code>air_temperature</code>?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Can you find the data field <code>air_temperature</code>?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>When we want to use the temperature in our program, we need to extract it out of this complex structure.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tips"><ul>
 <li>Work step by step.</li>
@@ -469,7 +564,7 @@ Below is a figure of the setup:</p>
 <li>The server also answers GET requests from clients to present both the sensor temperature and the prediction from <a href="yr.no">yr.no</a> in a single page.</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Create a sequence diagram with three components: temperature sensor, the server, Yr and the mobile client. Illustrate with the sequence diagram how the temperature sensor updates the server with the measured temperature, and how the mobile client makes a request to our server, which also involves getting the temperature forecast from Yr.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Create a sequence diagram with three components: temperature sensor, the server, Yr and the mobile client. Illustrate with the sequence diagram how the temperature sensor updates the server with the measured temperature, and how the mobile client makes a request to our server, which also involves getting the temperature forecast from Yr.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Code for the Web Server</h2>
 <p>Above we have <strong>initiated HTTP requests as clients</strong> to get news and weather, and combined two weather requests to a little program.
@@ -651,7 +746,7 @@ httpd.serve_forever()
 <p><strong>A detail:</strong> You may see that the <code>do_GET()</code> function only has <code>self</code> as parameter (from the class), and does not have a return value.
 This may be surprising, since it should get the request as input and then compute an answer. However, see how the code above gets access to the request via the attribute <code>self.requestline</code>. Similarly, the response is created by calling some functions on the parent class, for instance <code>self.wfile.write(response_in_bytes)</code>. So therefore the <code>do_GET()</code> function does not have any input or return parameters. It's more a question of how the API is designed, the authors have made a decision here.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Note: Whenever you are going to change the code of the web server, you will need to terminate it via <code>Ctrl-C</code> and then restart it.</p>
 <h2>Request via Web Browser</h2>
@@ -711,9 +806,9 @@ To let the sensor inform the server about the temperature, it uses instead the <
 </ul>
 <p>The temperature sensor and the browser to show the temperature to a user are acting completely independently. (Of course, the server can only show a temperature to a browser if the temperature sensor has at least updated the temperature once.)</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Run the code, like any Python program via <code>python webserver.py</code>.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function. See the code below for that function.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Add a function <code>do_POST():</code> <strong>in addition</strong> to the already existing <code>do_GET()</code> function. See the code below for that function.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
 <pre class="d-none" id="idc6da62">def do_POST(self):
@@ -913,10 +1008,10 @@ To repeat and clarify:</p>
 <li><code>do_GET()</code> provides the website with the the data from the sensor and the air temperature obtained from the forecast.</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Uncomment the storage for the temperature in the code.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Uncomment the storage for the temperature in the code.</p>
 <h3>Adding the Yr Forecast</h3>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together.</p>
 <p>Use the function for getting the forecast you have developed above. This means you web server which acts as a server because it implements the methods GET and POST, now also acts as a client towards Yr.no since it requests data from it.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
@@ -1039,6 +1134,7 @@ To repeat and clarify:</p>
     var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
+
 
 </script>
 </body>
