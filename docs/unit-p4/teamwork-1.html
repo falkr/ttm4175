@@ -107,6 +107,15 @@ div.tip>*:first-child::before {
   color: #75225E;
 }
 
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
 /* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
@@ -491,7 +500,7 @@ gui.show()
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>gui.show()</span></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Change the value of the variable <code>my_id</code> to match your team name. The team names have the form <code>team1a</code>, <code>team1b</code>, ... <code>team12b</code>. The ids <code>x1</code> to <code>x6</code> are for testing and the student assistants.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Change the value of the variable <code>my_id</code> to match your team name. The team names have the form <code>team1a</code>, <code>team1b</code>, ... <code>team12b</code>. The ids <code>x1</code> to <code>x6</code> are for testing and the student assistants.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Testing Sending of Messages and Outgoing Typing Indicators</h3>
 <ul>
@@ -543,7 +552,7 @@ Let's test them.
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">&quot;message&quot;</span><span class="fu">:</span> <span class="st">&quot;Hei!&quot;</span><span class="fu">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">&quot;uuid&quot;</span><span class="fu">:</span> <span class="st">&quot;16fd2706&quot;</span><span class="fu">}</span></span></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Check carefully to which topic you should subscribe so that you can <strong>receive</strong> messages for your team name.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Check carefully to which topic you should subscribe so that you can <strong>receive</strong> messages for your team name.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Chatting via MQTT.Fx</h3>
 <p>Let us first chat by MQTT only, that means, without the Chat UI from above.
@@ -573,7 +582,7 @@ You may need to generate a random client ID.</p>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
     <img src="figures/mqtt-fx-broker-5.png" class="figure-img img-fluid rounded" alt="On the publish tab, you can send chat messages.">
 </figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">On the publish tab, you can send chat messages.</figcaption></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Work together with another team. Make sure both teams have the correct topics, and send messages between each other.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Work together with another team. Make sure both teams have the correct topics, and send messages between each other.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You can publish messages on the <em>Publish</em> tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the <em>Subscribe</em> tab.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -752,15 +761,15 @@ gui.show()
 </li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Exchange again the value of variable <code>my_id</code> to your team.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Exchange again the value of variable <code>my_id</code> to your team.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Examine the six lines of code starting with <code>mqttc = mqtt.Client()</code>. What happens here?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Examine the six lines of code starting with <code>mqttc = mqtt.Client()</code>. What happens here?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>How does our code tell the MQTT client to use the callbacks <code>on_message()</code> and <code>on_connect()</code>?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>How does our code tell the MQTT client to use the callbacks <code>on_message()</code> and <code>on_connect()</code>?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>How does our code tell the chat ui to use the callbacks <code>on_type()</code>, <code>on_send()</code> and <code>on_read()</code>?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>How does our code tell the chat ui to use the callbacks <code>on_type()</code>, <code>on_send()</code> and <code>on_read()</code>?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Send chat messages to another team, and check that you can also receive messages.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Send chat messages to another team, and check that you can also receive messages.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
@@ -836,13 +845,13 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>This final version of the chat program should receive also send receipts and typing indications. How do you need to expand the topic subscription after you connected to the MQTT broker, so that you also receive these messages?</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Change the line with the topic subscription so that you can also receive receipts and typing indications.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Change the line with the topic subscription so that you can also receive receipts and typing indications.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Note: There is a one-line solution to do this, but you can also use a solution that uses several lines.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Coordinate with another team, and explore the delivery and read receipts and the typing indications. Does all work?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Coordinate with another team, and explore the delivery and read receipts and the typing indications. Does all work?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Try to figure out from the code how we send the delivery receipts. Is the user interface involved in this?</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Try to figure out from the code how we send the delivery receipts. Is the user interface involved in this?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">

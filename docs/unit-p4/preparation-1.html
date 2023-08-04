@@ -21,7 +21,102 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
-  <style>/* === figure === */
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
+/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -586,7 +681,7 @@ Essentially, MQTTX is a MQTT client, and connects to an
 MQTT broker, subscribe to topics and send messages to topics.
 You can subscribe to topics and hence listen to everything that happens in the system. You can also send messages manually for testing.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Install <a href="https://mqttx.app">MQTTX</a> already before the lecture.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Install <a href="https://mqttx.app">MQTTX</a> already before the lecture.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
     <img src="figures/mqttx-1.png" class="figure-img img-fluid rounded" alt="">
@@ -624,7 +719,7 @@ You can subscribe to topics and hence listen to everything that happens in the s
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
     <img src="figures/mqttx-2.png" class="figure-img img-fluid rounded" alt="">
 </figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task"><p>Subscribe to a topic and then publish a message to that topic, so that you can see that it is sent back to you like in the screenshot above.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Subscribe to a topic and then publish a message to that topic, so that you can see that it is sent back to you like in the screenshot above.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Observing Communication</h2>
 <p>Because MQTT uses the publish-subscribe pattern, the MQTTX can simply subscribe
@@ -734,6 +829,7 @@ communication in the system.</p>
     var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
+
 
 
 </script>
