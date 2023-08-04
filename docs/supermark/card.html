@@ -37,24 +37,6 @@
   font-size: 0.8em;
 }
 
-/* === card === */
-.person-card img {
-  width: 56px;
-  border: 1px solid #eee;
-}
-
-.person-card-name {
-  font-weight: 600;
-}
-
-.person-card-email {
-  font-size: 0.8em;
-}
-
-.person-card-detail {
-  font-size: 0.8em;
-}
-
 
   </style>
 </head>
@@ -102,6 +84,10 @@
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -170,6 +156,8 @@ All extensions
     <section class="content">
 <h1>Extension card</h1>
 <p>Cards provide links with additional elements like text or arrows.</p>
+<table class="table"></table>
+<table class="table"></table>
 
 <table class="table"><tbody><td>Python type</td><td>CardGroup</td>
 <tr></tr>
@@ -220,8 +208,8 @@ All extensions
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id05fb5f">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id05fb5f">---
 type: card/text
 title: Dine studentrepresentanter
 text: Som student har du en del tillitsvalgte, representanter og andre kontaktpunkter.
@@ -267,8 +255,8 @@ link_title: Finn dine studentrepresentanter
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id77618f">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id77618f">---
 type: cards
 columns: 1
 ---
@@ -332,8 +320,8 @@ Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen:
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id609904">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id609904">---
 type: card/person
 name: Firstname Surname
 email: email@ntnu.no
@@ -373,8 +361,8 @@ image: "_placeholder 200 x 200"
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idc56372">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idc56372">---
 type: card/arrow
 title: For studenter
 link: student.html
@@ -409,8 +397,8 @@ link: student.html
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id08e2bf">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id08e2bf">---
 type: card/text
 title: IIK Snacks and Science
 text: Seminar om forskning for studenter ved IIK.
@@ -474,8 +462,8 @@ link: snacks.html
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id04c67b">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id04c67b">---
 type: cards
 columns: 4
 ---
@@ -606,7 +594,6 @@ link: day1.html
   </script>
   <script>
     
-
 
 
   </script>

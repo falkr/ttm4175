@@ -123,6 +123,10 @@
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -196,8 +200,8 @@ The optional class attribute places a <code>&lt;div&gt;</code> element around th
 <p>The optional format attribute allows to select the markup within the cells. Examples are html, markdown, wikimedia, latex.</p>
 <p>A different way to include tables is to include HTML chunks with tables.</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id638856">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id638856">---
 type: table
 file: tables/table.mw
 class: rubric
@@ -219,8 +223,8 @@ caption: "Table with a caption."
 </div>
 <p>The file tables/table.mw contains the table:</p>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id9157b3">{|
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id9157b3">{|
 |Orange
 |Apple
 |-
@@ -248,6 +252,8 @@ caption: "Table with a caption."
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">|</span>Ice cream </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dv">|}</span></span></code></pre></div>
 </div>
+<table class="table"></table>
+
 <table class="table"><tbody><td>Python type</td><td>Table</td>
 <tr></tr>
 <td>type</td><td>table</td>
@@ -296,8 +302,8 @@ caption: "Table with a caption."
 </table>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id404768">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id404768">---
 type: table
 class: rubric
 caption: "Table with a caption."

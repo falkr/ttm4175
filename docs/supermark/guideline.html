@@ -19,19 +19,90 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === guideline === */
-div.guideline p {
+    /* === boxes === */
+div.box {
   padding: 10px;
-  background-color: #fae7e8;
   border-radius: 5px;
-  border-left: 6px solid #e45460;
-  font: normal 14px "Source Sans Pro", Menlo, Consolas, Monaco, monospace;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
 }
 
-div.guideline p::before { 
-  content: "Guideline: ";
-  font-weight: bold;
-  display: inline;
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
 }
 
 
@@ -81,6 +152,10 @@ div.guideline p::before {
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -154,12 +229,12 @@ All extensions
     <section class="content">
 <h1>Example 1</h1>
 
-<div class="guideline"><p>A guideline that the user should note.</p>
+<div class="guideline box mt-3 mb-3"><p>A guideline that the user should note.</p>
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="idb16994">:guideline: A guideline that the user should note.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idb16994">:guideline: A guideline that the user should note.
 
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#idb16994">

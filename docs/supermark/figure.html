@@ -32,6 +32,10 @@ div.figurefullwitdth {
   width: 100%;
 }
 
+figcaption {
+  color: #868279;
+}
+
 /* === tree === */
 .tree ul, .tree ul ul {
   list-style: none;
@@ -110,6 +114,10 @@ div.figurefullwitdth {
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -209,6 +217,12 @@ Files are copied during the build process.</p>
 <p>Formats can be <code>jpg</code>, <code>png</code>, <code>pdf</code>.</p>
 <p>Captions are recommended.</p>
 </div>
+<table class="table"></table>
+
+
+
+
+
 <table class="table"><tbody><td>Python type</td><td>Figure</td>
 <tr></tr>
 <td>type</td><td>figure</td>
@@ -222,12 +236,6 @@ Files are copied during the build process.</p>
 <td>Post-Yaml Section</td><td>no</td>
 <tr></tr></tbody></table>
 
-
-
-
-
-
-
     </section>
     <section class="content">
 <h1>Example 1</h1>
@@ -238,8 +246,8 @@ Files are copied during the build process.</p>
 </figure>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id3a9598">---
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id3a9598">---
 type: figure
 source: _placeholder 800 x 200
 caption: "The TCP protocol uses state machines to describe parts of its behavior."

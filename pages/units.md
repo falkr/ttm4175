@@ -22,6 +22,34 @@ columns: 1
 
 ---
 type: card/text
+title: The Linux Command Line Interface (CLI) (Week 34)
+text: We learn the basics around navigating and operating the Linux CLI.
+link: unit-cli/index.html
+---
+
+---
+type: card/text
+title: Networking I - Binary, IP Addresses, Subnets, LAN Configuration (Week 35)
+text: We dive deeper into IP addresses, learning about their components, representation, and how to configure them in a local network.
+link: unit-net1/index.html
+---
+
+---
+type: card/text
+title: Networking II - Ports, Layers, Client-Server Architecture, Web Servers (Week 36)
+text: Using web servers as an example, we take a closer look at the layering principle and service architectures.
+link: unit-net2/index.html
+---
+
+---
+type: card/text
+title: Networking III - Routing, DNS (Week 37)
+text: Moving on from directly connected machines addressed via IP addresses, we deal with IP forwarding / routing and DNS.
+link: unit-net3/index.html
+---
+
+---
+type: card/text
 title: Tingenes internett
 text: Vi lærer om utfordringene og programmerer en Microbit.
 link: unit-p1/index.html

@@ -65,19 +65,19 @@ type: table
 |-
 | 34
 | Fredag 8:15-14:00
-| Lab 1: Linux kommandolinje (Stas)
+| [Lab 1: Linux CLI](unit-cli/index.html)
 |-
 | 35
 | Fredag 8:15-14:00
-| Lab 2: Nett 1 (Stas)
+| [Lab 2: IPs, LAN](unit-net1/index.html)
 |-
 | 36
 | Fredag 8:15-14:00
-| Lab 3: Nett 2 (Stas)
+| [Lab 3: Ports, Web Servers](unit-net2/index.html)
 |-
 | 37
 | Fredag 8:15-14:00
-| Lab 4: Nett 3 (Stas) 
+| [Lab 4: Routing, DNS](unit-net3/index.html)
 |-
 | 38
 | Fredag 8:15-14:00

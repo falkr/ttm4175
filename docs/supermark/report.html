@@ -19,27 +19,90 @@
   <script src="../assets/script-aside.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <style type="text/css">
-    /* === report === */
-div.report p {
-    padding: 10px;
-    background-color: #D6E5F0;
-    border-radius: 5px;
-    position: relative;
-    padding: 1rem 1rem 1rem 3.5rem;
+    /* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
 }
 
-div.report p::before {
-    content: '\f43e';
-    font-family: bootstrap-icons !important;
-    color: #1481b8;
-    font-size: 1.5rem;
-    padding: 0.8rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    display: grid;
-    place-items: center;
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
 }
 
 
@@ -89,6 +152,10 @@ div.report p::before {
           <ul class="dropdown-menu dropdown-menu">
             <a class="dropdown-item" href="../units.html">Oversikt</a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+            <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+            <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+            <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
             <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
             <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
             <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
@@ -162,12 +229,12 @@ All extensions
     <section class="content">
 <h1>Example 1</h1>
 
-<div class="report"><p>This is a hint for a report.</p>
+<div class="report box mt-3 mb-3"><p>This is a hint for a report.</p>
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id86ba2a">:report: This is a hint for a report.
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id86ba2a">:report: This is a hint for a report.
 </pre>
 <button type="button" class="copy-button" data-clipboard-target="#id86ba2a">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -181,14 +248,14 @@ All extensions
     <section class="content">
 <h1>Example 2</h1>
 
-<div class="report"><p>Lorem markdownum est constitit ut dixit; perque verus. <strong>Et Elide talibus</strong>:
+<div class="report box mt-3 mb-3"><p>Lorem markdownum est constitit ut dixit; perque verus. <strong>Et Elide talibus</strong>:
 suis telae ab sine calentibus sorores <strong>indeploratum inrupit</strong>. Fore aurum
 <strong>carnibus</strong>, invidia mihi, fessos contrarius Venus ut arva.</p>
 </div>
 <h2>Source Code</h2>
 
-<div class="source-code-frame">
-<pre class="hidden-pre" id="id0d2dbc">:report: Lorem markdownum est constitit ut dixit; perque verus. **Et Elide talibus**:
+<div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id0d2dbc">:report: Lorem markdownum est constitit ut dixit; perque verus. **Et Elide talibus**:
 suis telae ab sine calentibus sorores **indeploratum inrupit**. Fore aurum
 **carnibus**, invidia mihi, fessos contrarius Venus ut arva.
 </pre>
