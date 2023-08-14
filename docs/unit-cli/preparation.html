@@ -150,15 +150,9 @@ div.goals ul li:before {
   </nav>
 
   <main class="container container-max-width">
-    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../breadcrumbs.txt/unit-cli/index.html">Linux Command Line</a></li>
-</ol>
-</nav>
-<section class="mt-2 mb-5 py-3">
+    <section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>The Linux Command Line Interface (CLI)</h1>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Learning Goals</h2>
+<h2>Learning Goals</h2>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>Goals for this week's lab</p>
 <ul>
@@ -177,28 +171,97 @@ div.goals ul li:before {
 </li>
 </ul>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparation</h2>
-<p>Go through the following preparation material before we meet in class:</p>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>General Overview</h1>
+<p>The preparations for this unit consist of three parts
+1. <strong>Reading</strong> up on background information about the command line and some basic functions
+2. <strong>Watching</strong> a few videos showcasing the use of those basic commands
+3. <strong>Trying out</strong> the commands on your own machine and learning how to connect to the Virtual Machine (VM) that we'll use in this and upcoming labs</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mt-3 mb-3">
-<div class="card-body">
-<a href="preparation.html" class="stretched-link">
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16" id="journal-bookmark-fill"><path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" /><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" /><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" /></svg>
-<span class="ms-3">CLI - Preparation: Basic Commands, Remote Access to Lab Virtual Machines</span>
-</a>
-</div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Teamwork</h2>
-<p>In the lab, go through the following activities with your team:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You can complete these parts in any order you prefer, but we suggest setting up your own environment first and experiment with the commands as they come up in the videos and readings.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mt-3 mb-3">
-<div class="card-body">
-<a href="teamwork.html" class="stretched-link">
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-people-fill" viewBox="0 0 16 16" id="people-fill"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" /></svg>
-<span class="ms-3">CLI - Teamwork: Putting Knowledge in Action: Capture-the-Flag (CTF) and CLI Mystery</span>
-</a>
-</div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>1) Introduction to the CLI and Documentation of Important Commands</h1>
+<p><a href="https://www.learnenough.com/command-line-tutorial">A tutorial introduction to the Unix command line</a></p>
+<p>The <strong>introduction of Chapter 1 along with Sections 1.1, 1.2, and 1.4</strong> (boxes and exercises are optional at this point) provides a broad overview into the topic.</p>
+<ul>
+<li><a href="https://linuxhandbook.com/linux-directory-structure/">Linux directory structure</a></li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>2) Videos on Basic Commands for Interacting with Files (Navigation, Manipulation, Search)</h1>
+<p>An introductory series on basic commands you'll use in the command line environment.</p>
+<ul>
+<li>File system navigation and inspection (<code>cd</code>, <code>ls</code>, ..)</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/j6vKLJxAKfw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li>File system manipulation (<code>cp</code>, <code>rm</code>, ..)</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eoejHvAPDFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li>Search and match inside files using <code>grep</code> (the first five minutes of this are sufficient at this stage)</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VGgTmxXp7xQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li>Printing file contents using <code>cat</code></li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EKWGioJTMkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li>Getting help with <code>man</code></li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/blFOgzwJbfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li>Redirecting command outputs to files using <code>&gt;</code> / <code>&gt;&gt;</code> and chaining together (<em>piping</em>) commands with <code>|</code></li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CE8bukfjOZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>3) Practical</h1>
+<h2>Setting up a CLI Environment on Your Own Machine</h2>
+<p>-&gt; subpage Mac-Terminal / Win-WSL</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Connecting to the Remote Lab Virtual Machine (VM)</h2>
+<p>intro: we can connect to remote machines either via ssh (if we only want to use the CLI) or using graphical tools - you may know TeamViewer - we'll use VNC for that.</p>
+<p>disclaimer: you need to be in the NTNU network to connect to the VMs -&gt; either on-site via eduroam or via VPN -&gt; link to NTNU VPN wiki page with instructions</p>
+<p>shell and SSH</p>
+<p>extend based on <a href="https://falkr.github.io/ttm4175-2022/shell-mac.html">Mac Guide</a> and <a href="https://falkr.github.io/ttm4175-2022/shell-win.html">Windows Guide</a>
+in both cases: <code>ssh -V</code> to check whether ssh is installed</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>https://learn.microsoft.com/en-us/windows/wsl/install-manual
+https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
+https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows (we'll only need the client part)</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Additional Resources</h1>
+<ul>
+<li><a href="commands-help.html">Commands for getting help</a>: how to use the <code>man</code> and <code>apropos</code> commands to get help and information directly on the command line</li>
+<li><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Unix/Linux Command Reference</a>: handy overview of many commonly used commands and options</li>
+<li><a href="https://explainshell.com/">explainshell.com</a>: online tool that parses a given command and provides details on the command itself as well as the provided options / flags / arguments</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
@@ -243,7 +306,7 @@ div.goals ul li:before {
         <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
         <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
         <li>To edit this page, make a commit to <a
-            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-cli/index.md">this file</a></li>
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-cli/preparation.md">this file</a></li>
       </ul>
     </div>
   </div>
