@@ -4,7 +4,7 @@ The overall goal of this lab is to consolidate knowledge on IP addressing and su
 This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.
 
 
-:goals: After this lab you will be able to:
+:goals: After this lab you will be able to
 
 - Understand and apply basic binary arithmetic
 - Understand IP addresses and their organisation into subnets
