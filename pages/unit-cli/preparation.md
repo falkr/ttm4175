@@ -16,9 +16,10 @@
 # General Overview
 
 The preparations for this unit consist of three parts
-    1. **Reading** up on background information about the command line and some basic functions
-    2. **Watching** a few videos showcasing the use of those basic commands
-    3. **Trying out** the commands on your own machine and learning how to connect to the Virtual Machine (VM) that we'll use in this and upcoming labs
+
+1. **Reading** up on background information about the command line and some basic functions
+2. **Watching** a few videos showcasing the use of those basic commands
+3. **Trying out** the commands on your own machine and learning how to connect to the Virtual Machine (VM) that we'll use in this and upcoming labs
 
 
 You can complete these parts in any order you prefer, but we suggest setting up your own environment first and experiment with the commands as they come up in the videos and readings.

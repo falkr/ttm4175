@@ -35,7 +35,7 @@ In the lab, go through the following activities with your team:
 
 ---
 type: link
-title: 'CLI - Teamwork: Putting Knowledge in Action: Capture-the-Flag (CTF) and CLI Mystery'
+title: 'CLI - Teamwork: Putting Knowledge into Action: Capture-the-Flag (CTF) and CLI Mystery'
 icon: people-fill
 link: teamwork.html
 ---
