@@ -142,6 +142,8 @@ source: img/tiger-vnc-004.png
 ---
 
 
+:tip:
+If you experience performance issues using VNC, you can try connecting to your lab VM using the x2go software. A guide for doing so can be found [here](https://www.ntnu.no/wiki/download/attachments/272859791/ttm4200-openstack-guide.pdf?version=1&modificationDate=1669571371048&api=v2). The only difference is that in your case the user name will be `netlab` instead of `ttm4200`.
 
 
 # 2) Introduction to the CLI and Documentation of Important Commands

@@ -137,8 +137,6 @@ Of course, if you've already read Chapter 1 you'll already know all about this!
 By now you're already familiar with virtual machines.
 However, if you still have questions about what a VM is, this short video can provide some help.
 
-:aside: We don't endorse some of the language used in this video!
-
 
 ---
 type: youtube
