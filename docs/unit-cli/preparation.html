@@ -21,7 +21,119 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
-  <style>/* === goals === */
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
+/* === figure === */
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+figcaption {
+  color: #868279;
+}
+
+/* === goals === */
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -176,27 +288,155 @@ div.goals ul li:before {
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>General Overview</h1>
 <p>The preparations for this unit consist of three parts</p>
 <ol>
+<li><strong>Practical</strong>:
+<ul>
+<li>Setting up the necessary programs to connect to the Virtual Machines (VM) that we'll use in this and upcoming labs, and</li>
+<li>Trying out the commands from readings and videos on your own machine</li>
+</ul>
+</li>
 <li><strong>Reading</strong> up on background information about the command line and some basic functions</li>
 <li><strong>Watching</strong> a few videos showcasing the use of those basic commands</li>
-<li><strong>Trying out</strong> the commands on your own machine and learning how to connect to the Virtual Machine (VM) that we'll use in this and upcoming labs</li>
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You can complete these parts in any order you prefer, but we suggest setting up your own environment first and experiment with the commands as they come up in the videos and readings.</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can complete these parts in any order you prefer, but we suggest setting up your own environment first and experimenting with the commands on your own machine as they come up in the videos and readings.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>1) Introduction to the CLI and Documentation of Important Commands</h1>
-<p><a href="https://www.learnenough.com/command-line-tutorial">A tutorial introduction to the Unix command line</a></p>
-<p>The <strong>introduction of Chapter 1 along with Sections 1.1, 1.2, and 1.4</strong> (boxes and exercises are optional at this point) provides a broad overview into the topic.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>1) Practical</h1>
+<h2>Setting up a Local CLI Environment on Your Own Machine</h2>
 <ul>
-<li><a href="https://linuxhandbook.com/linux-directory-structure/">Linux directory structure</a></li>
+<li>If you're using <strong>MacOS</strong> or a <strong>Linux</strong> distribution, you can summon a CLI environment by launching the <em>Terminal</em> app or your distribution's equivalent thereof.</li>
+<li>For <strong>Windows</strong> users, we suggest setting up the <a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual">Windows Subsystem for Linux (WSL)</a> which will allow you to run a Linux command line on your Windows machine.
+<ul>
+<li>Follow steps 1-6 from the linked article and install a Linux distribution of your choice, for instance Ubuntu 20.04.</li>
+<li>When launching the Ubuntu app for the first time, you'll be prompted to create a (local) user account. After picking a name and password of your choice, you'll be in a Linux CLI environment.</li>
+<li>Future references to <em>opening a terminal</em> mean opening the Ubuntu app in your case.</li>
+<li>Note: the home directory of your new user will be empty initially, but you can navigate to your regular Windows user folder by typing <code>cd /mnt/c/Users/yourusername</code>.</li>
+</ul>
+</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Connecting to the Remote Lab Virtual Machine (VM)</h2>
+<p>To reduce the load on your personal machines and give all groups a consistent experience, you will connect to virtual machines that run in NTNU's <a href="https://www.ntnu.no/wiki/display/skyhigh">Skyhigh OpenStack cluster</a>. You can get a quick summary about what VMs are in the following video. The figure below shows a brief overview of components and connections.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yIVXjl4SwVo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/openstack-vms.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can connect to remote (virtual) machines either via <abbr title="Secure Shell">SSH</abbr> if we only want to use the command line, or with tools such as <abbr title="Virtual Network Computing">VNC</abbr> to also launch graphical applications.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You need to be in the NTNU network to connect to the VMs. This is automatically the case if you are on campus and using the <em>eduroam</em> WiFi. Otherwise, you can use the NTNU <abbr title="Virtual Private Network">VPN</abbr> <a href="https://i.ntnu.no/wiki/-/wiki/Norsk/Installere+VPN">service</a> to connect to the NTNU network first.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Verifying that an SSH Client is Installed</h3>
+<p>MacOS and nearly all desktop Linux distributions come with an SSH client preinstalled and hence require no further installation. If you followed the installation of WSL above, the Ubuntu environment will also provide you with an SSH client. You can verify the availability of an SSH client by opening a terminal and typing <code>ssh -V</code>. Below, you can find the expected output for different platforms.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id50d444"># WSL / Linux
+stas@DESKTOP [~]
+-> % ssh -V
+OpenSSH_8.2p1 Ubuntu-4ubuntu0.9, OpenSSL 1.1.1f  31 Mar 2020
+
+# On a Mac
+stas@stas-mbp [~] 
+-> % ssh -V
+OpenSSH_9.0p1, LibreSSL 3.3.6
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id50d444">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># WSL / Linux</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">stas@DESKTOP</span> [~]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> % ssh <span class="at">-V</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">OpenSSH_8.2p1</span> Ubuntu-4ubuntu0.9, OpenSSL 1.1.1f  31 Mar 2020</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># On a Mac</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">stas@stas-mbp</span> [~] </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> % ssh <span class="at">-V</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">OpenSSH_9.0p1,</span> LibreSSL 3.3.6</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Connecting via SSH</h3>
+<p>On the day of the lab, you will receive the following credentials that will allow you to connect to your team's VM: user name, password, and IP address of the VM.</p>
+<p>If you want to connect using SSH, you can open a terminal and type in <code>ssh &lt;user&gt;@&lt;ip&gt;</code>, replacing <code>&lt;user&gt;</code> and <code>&lt;ip&gt;</code> with the corresponding data from your credentials. You will then be prompted to provide the password and proceed to a command line environment on the remote VM where you can execute commands. Afterwards, you can quit the session by writing <code>exit</code> or hitting <code>Ctrl+D</code> on your keyboard. The output of a short example session is provided below. Notice how the beginning of the command prompt changes to <code>netlab@netlab-linux:~$</code> after connecting, indicating that you are logged in as the user <code>netlab</code> on a host called <code>netlab-linux</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id1c63bf">stas@DESKTOP [~]
+-> % ssh netlab@10.212.170.85
+netlab@10.212.170.86's password:
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-156-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ [...]
+netlab@netlab-linux:~$ ls
+Desktop  Documents  Downloads  GNS3  Music  Pictures  Public  Templates  Videos
+netlab@netlab-linux:~$ exit
+logout
+Connection to 10.212.170.85 closed.
+stas@DESKTOP [~]
+-> %
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id1c63bf">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stas@DESKTOP</span> [~]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> % ssh netlab@10.212.170.85</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">netlab@10.212.170.86</span><span class="st">&#39;s password:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-156-generic x86_64)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st"> * Documentation:  https://help.ubuntu.com</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st"> [...]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">netlab@netlab-linux:~$ ls</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">Desktop  Documents  Downloads  GNS3  Music  Pictures  Public  Templates  Videos</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">netlab@netlab-linux:~$ exit</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">logout</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">Connection to 10.212.170.85 closed.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="st">stas@DESKTOP [~]</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="st">-&gt; %</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Connecting via VNC</h3>
+<p>While the CLI environment will be sufficient to complete the first lab, we will start using some graphical programs from week 35 and will therefore connect to the remote VM's desktop using a VNC application. We will outline the use of <a href="https://tigervnc.org/">TigerVNC</a> since it has implementations for all major platforms, but any VNC client should work. You can find the installer <a href="https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/">here</a> (<code>tigervnc64-1.13.1.exe</code> for Windows, <code>TigerVNC-1.13.1.dmg</code> for MacOS, <code>sudo apt install tigervnc-viewer</code> on Debian-based Linux distributions).</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You will receive the credentials for connecting to the VM later. For now, you can continue with reading / watching the material in Sections <a href="#2-introduction-to-the-cli-and-documentation-of-important-command">2</a> and <a href="#3-videos-on-basic-commands-for-interacting-with-files-navigation">3</a>.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Once installed, you can launch the TigerVNC Viewer and connect to the remote VM by providing its IP address and password (once inside the VNC client and once within the VM). Finally, you should see the remote desktop as outlined in the screenshots below.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/tiger-vnc-001.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/tiger-vnc-002.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/tiger-vnc-003.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/tiger-vnc-004.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>2) Introduction to the CLI and Documentation of Important Commands</h1>
+<ul>
+<li><a href="https://www.learnenough.com/command-line-tutorial">A tutorial introduction to the Unix command line</a>
+<ul>
+<li>The <strong>introduction of Chapter 1 along with Sections 1.1, 1.2, and 1.4</strong> (boxes and exercises are optional at this point) provides a broad overview into the topic.</li>
+</ul>
+</li>
+<li><a href="commands-help.html">Commands for getting help</a>: how to use the <code>man</code> and <code>apropos</code> commands to get help and information directly on the command line.</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>2) Videos on Basic Commands for Interacting with Files (Navigation, Manipulation, Search)</h1>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>3) Videos on Basic Commands for Interacting with Files (Navigation, Manipulation, Search)</h1>
 <p>An introductory series on basic commands you'll use in the command line environment.</p>
-<ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
 <li>File system navigation and inspection (<code>cd</code>, <code>ls</code>, ..)</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -211,7 +451,7 @@ div.goals ul li:before {
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eoejHvAPDFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
-<li>Search and match inside files using <code>grep</code> (the first five minutes of this are sufficient at this stage)</li>
+<li>Search and match inside files using <code>grep</code>. <strong>Note</strong>: the first five minutes are sufficient at this stage.</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
@@ -231,37 +471,12 @@ div.goals ul li:before {
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/blFOgzwJbfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
-<li>Redirecting command outputs to files using <code>&gt;</code> / <code>&gt;&gt;</code> and chaining together (<em>piping</em>) commands with <code>|</code></li>
-</ul>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CE8bukfjOZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-</section>
-<section class="mt-5 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>3) Practical</h1>
-<h2>Setting up a CLI Environment on Your Own Machine</h2>
-<p>-&gt; subpage Mac-Terminal / Win-WSL</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Connecting to the Remote Lab Virtual Machine (VM)</h2>
-<p>intro: we can connect to remote machines either via ssh (if we only want to use the CLI) or using graphical tools - you may know TeamViewer - we'll use VNC for that.</p>
-<p>disclaimer: you need to be in the NTNU network to connect to the VMs -&gt; either on-site via eduroam or via VPN -&gt; link to NTNU VPN wiki page with instructions</p>
-<p>shell and SSH</p>
-<p>extend based on <a href="https://falkr.github.io/ttm4175-2022/shell-mac.html">Mac Guide</a> and <a href="https://falkr.github.io/ttm4175-2022/shell-win.html">Windows Guide</a>
-in both cases: <code>ssh -V</code> to check whether ssh is installed</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>https://learn.microsoft.com/en-us/windows/wsl/install-manual
-https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
-https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows (we'll only need the client part)</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Additional Resources</h1>
 <ul>
-<li><a href="commands-help.html">Commands for getting help</a>: how to use the <code>man</code> and <code>apropos</code> commands to get help and information directly on the command line</li>
-<li><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Unix/Linux Command Reference</a>: handy overview of many commonly used commands and options</li>
-<li><a href="https://explainshell.com/">explainshell.com</a>: online tool that parses a given command and provides details on the command itself as well as the provided options / flags / arguments</li>
+<li><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Unix/Linux Command Reference</a>: handy overview of many commonly used commands and options.</li>
+<li><a href="https://explainshell.com/">explainshell.com</a>: online tool that parses a given command and provides details on the command itself as well as the provided options / flags / arguments.</li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
@@ -321,6 +536,8 @@ https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_
     var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
+
+
 
 </script>
 </body>
