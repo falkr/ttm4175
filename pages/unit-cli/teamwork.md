@@ -15,6 +15,10 @@
     - Understand basic virtualization principles
 
 
+## Overview of the Day
+
+
+
 ## Connecting to the Lab VM
 
 Install VNC, get credentials (blackboard / email / printout), connect, open terminal.
