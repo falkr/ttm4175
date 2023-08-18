@@ -10,21 +10,17 @@
 
 ---
 type: link
----
-
----
-type: link
-link: slides/2023-itemize
+link: slides/2023-itemize.pdf
 title: "Presentasjon fra Itemize"
 icon: easel2
 ---
 
 Relevante lenker til Itemize:
 
-* Hjemmeside: https://itemize.no/
-* Registrering: https://itemize.no/registrer
-* Arrangementer: https://itemize.no/arrangementer/
-* Discord: https://discord.gg/3NAzCuA
-* Mail: hack@itemize.no | theodor.midtlien@itemize.no 
+* [Hjemmeside](https://itemize.no/)
+* [Registrering](https://itemize.no/registrer)
+* [Arrangementer](https://itemize.no/arrangementer/)
+* [Discord](https://discord.gg/3NAzCuA)
+* [Mail](mailto:hack@itemize.no)
 * Instagram: @itemizentnu
 * Facebook: [Itemize NTNU](https://www.facebook.com/ItemizeNTNU/)
