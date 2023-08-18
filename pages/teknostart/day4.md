@@ -17,8 +17,8 @@
     * [Mozilla HTML cheatsheet](https://developer.mozilla.org/en-US/docs/Learn/HTML/Cheatsheet) 
     * [W3Schools - HTML tags](https://www.w3schools.com/tags/default.asp)
     * [Stanford CS21 HTML cheatsheet](https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf)
-* [Links to your websites](https://s.ntnu.no/ts-pages)
-* [Link to Teknostart evaluation form](https://s.ntnu.no/tekno)
+* [List of links to your websites](https://s.ntnu.no/ts-pages)
+* [Teknostart evaluation form](https://s.ntnu.no/tekno)
 
 
 
