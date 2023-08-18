@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>TTM4175</title>
+  <link rel="canonical" href="https://edu.iik.ntnu.no">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/style-frame.css" rel="stylesheet">
+  <link href="../assets/style-fonts.css" rel="stylesheet">
+  <link href="../assets/style-code.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="../assets/anchor.js"></script>
+  <script src="../assets/clipboard.min.js"></script>
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
+/* === figure === */
+div.figure {
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+div.figurefullwitdth {
+  padding: 20px 0 20px 0;
+  margin-left: -33px;
+  margin-right: -33px;
+  width: 100%;
+}
+
+figcaption {
+  color: #868279;
+}
+
+/* === goals === */
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f3cb';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://ntnu.edu" title="NTNU Homepage">
+        <img id="header_logo" alt="NTNU Hjemmeside" width="120"
+          src="https://www.ntnu.no/o/ntnu-theme/images/logo_ntnu.svg" height="23">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">TTM4175</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Teknostart
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../teknostart/index.html">Teknostart oversikt</a></li>
+              <li>
+                <div class="dropdown-divider"></div>
+              </li>
+              <li><a class="dropdown-item" href="../teknostart/day1.html">Teknostart Dag 1</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day2.html">Teknostart Dag 2</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day3.html">Teknostart Dag 3</a></li>
+              <li><a class="dropdown-item" href="../teknostart/day4.html">Teknostart Dag 4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Units
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <a class="dropdown-item" href="../units.html">Oversikt</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../unit-cli/index.html">Linux CLI</a>
+              <a class="dropdown-item" href="../unit-net1/index.html">IPs, LAN</a>
+              <a class="dropdown-item" href="../unit-net2/index.html">Ports, Web Servers</a>
+              <a class="dropdown-item" href="../unit-net3/index.html">Routing, DNS</a>
+              <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
+              <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
+              <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
+              <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Learning
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../learning/learning.html">Læring</a></li>
+              <li><a class="dropdown-item" href="../learning/reports.html">Rapporter</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="../tools/index.html">Tools</a></li>
+              <!--<li><a class="dropdown-item" href="../tools/tools-python.html">Python</a></li>-->
+              <li><a class="dropdown-item" href="../tools/tools-gui.html">GUIs in Python</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-mqtt.html">MQTT</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-notebooks.html">Notebooks</a></li>
+              <li><a class="dropdown-item" href="../tools/tools-stmpy.html">STMPY</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bg-light border ms-auto"></div>
+        <div>
+          <a class="nav-link" href="../schedule.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+              <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+              <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-max-width">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../breadcrumbs.txt/unit-cli/teamwork.html">Teamwork</a></li>
+</ol>
+</nav>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>The Linux Command Line Interface (CLI)</h1>
+<h2>Learning Goals</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>Goals for this week's lab</p>
+<ul>
+<li>Get to know the Linux Command Line Interface (CLI)
+<ul>
+<li>Understand its importance</li>
+<li>Learn basic commands for
+<ul>
+<li>Navigation</li>
+<li>Remote access</li>
+<li>Networking-related tasks</li>
+</ul>
+</li>
+<li>Understand basic virtualization principles</li>
+</ul>
+</li>
+</ul>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Overview of the Day</h2>
+<ul>
+<li>Connect to the Lab VM</li>
+<li>Practice using basic commands for file system manipulation and file search in a Jeopardy-style Capture-the-Flag (CTF) scenario</li>
+<li>Practice using text search and text aggregation commands to solve a whodunit-style crime mystery</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Connecting to the Lab VM</h1>
+<p>After receiving the credentials for your team's VM, please refer to <a href="preparation.html#connecting-via-vnc">the preparation page</a> for a guide on how to connect to it.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>We suggest that you use one computer to connect to the VM and type in the commands.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Upon connecting to the VM, launch the <em>Terminal Emulator</em> application from the desktop.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Capture the Flag</h1>
+<p>Capture the Flag (CTF) is a special kind of information security competition. The goal is to collect passwords, or <strong>flags</strong> to progress. There are three common types of CTFs: Jeopardy, Attack-Defence, and mixed.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li><strong>Jeopardy-style CTFs</strong> have a couple of questions (tasks) in a range of categories. For example, web, forensic, or crypto. Teams get points for every solved task. Generally, teams will be awarded more points for more difficult tasks. Consecutive tasks are unlocked after solving the previous one. The team with the most points when the time is over is the winner. A famous example of this kind of CTF is the <em>DEFCON CTF Qualifier</em>.</li>
+<li><strong>Attack-defence</strong> is another interesting kind of competition. Here, every team has their own network, with many machines, or a single computer, with vulnerable services. The teams are given an amount of time to patch services and secure the network or system, and to develop exploits to hack the systems of other teams. Then, organizers connect participants of the competition and the wargame starts. You should protect own services for defence points and hack opponents for attack points. Historically, this is the first type of CTFs. For instance, the <em>DEFCON CTF</em> is something like the World Cup of CTF competitions.</li>
+</ul>
+<p>Today, we are going to do a relatively short Jeopardy-style CTF about basic Linux commands. It will help you become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparing the CTF</h2>
+<p>Note: this CTF is based on Halvor Groven's <a href="https://home.samfundet.no/~halvogro/teknostart2020/teknostart_ctf.zip">original implementation from 2020</a>.</p>
+<h3>Step 1: Move to the CTF Directory</h3>
+<p>Open the terminal and check which folder you are in. We do that with the command <code>pwd</code> (<em>&quot;print working directory&quot;</em>):</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id6792bd">pwd
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id6792bd">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Move into the <code>teknostart_ctf</code> folder inside your home directory, using the <code>cd</code> (<em>&quot;change directory&quot;</em>) command:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idcb8cba">cd /home/netlab/teknostart_ctf
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idcb8cba">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/netlab/teknostart_ctf</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Step 2: The CTF and Levelcheck Programs</h3>
+<p>This is a terminal based game and is written in the programming language <a href="(https://www.python.org/)">Python</a>. There are two files that are important for the CTF:</p>
+<ul>
+<li><code>teknostart_ctf.py</code>, which is the actual CTF program. Its usage is explained in the next section.</li>
+<li><code>levelcheck</code> is needed for some levels and checks if the tasks have been completed. It prints out the flag if the task has been done correctly. It is used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.</li>
+</ul>
+<p>To run an executable file in the folder that you are currently in, we type <code>./</code> followed by the name of the program.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Example: First CTF Task</h1>
+<h3>Step 1</h3>
+<p>Run the program for the first time.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idd8f413">./teknostart_ctf.py
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idd8f413">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./teknostart_ctf.py</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You should get an output that looks like this.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idf062bb">CURRENT LEVEL: level 1
+
+----------------------------------------
+
+In which folder are you located when you open the terminal?
+
+Example answer:      /folder/folder      
+Answer given:        None                
+Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
+Correct hash:        1c4d3877bf4fe64f9d55cdbbf10d9b02c329b2a5a162ae3014b83da8c3024a71
+Levelchecker:        NO                  
+
+----------------------------------------
+
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idf062bb">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<pre><code>CURRENT LEVEL: level 1
+
+----------------------------------------
+
+In which folder are you located when you open the terminal?
+
+Example answer:      /folder/folder      
+Answer given:        None                
+Hash of answer:      dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91
+Correct hash:        1c4d3877bf4fe64f9d55cdbbf10d9b02c329b2a5a162ae3014b83da8c3024a71
+Levelchecker:        NO                  
+
+----------------------------------------
+</code></pre>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
+<li><code>CURRENT LEVEL</code> is the level that you are currently on, this will increase as you progress.</li>
+<li><code>Question</code> is the task for this level, read it carefully.</li>
+<li><code>Example answer</code> is an example answer to give you an idea of what format the answer should be. For instance, when asked about a file name, this example tries to show that we are looking for the full filename, including the file ending <code>.txt</code>.</li>
+<li><code>Answer given</code> is the answer you gave, which is &quot;None&quot; by default.</li>
+<li><code>Hash of answer</code> is a hashed version of your answer. The game takes the answer that you put in, does some math on it, and generates a <a href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> which it will try to compare to the hashed version of the correct answer.</li>
+<li><code>Correct hash</code> is the hashed version of the correct answer. If this hash matches the hash of your answer, the answer is correct.</li>
+<li><code>levelcheck</code> tells you whether you have to use the <code>levelcheck</code> program to check that you have done the task correctly.
+-- The value is either <code>YES</code> or <code>NO</code> for each level. If this says <code>YES</code>, it means you have to navigate to <code>/home/netlab/teknostart_ctf</code> and run <code>./levelcheck</code> to check that you have completed the task correctly. If you have, you will get the password (flag) to progress to the next level.</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Step 2: Solve the Task</h3>
+<p>The first you will see is what level you are on, level 1 in this case. As you progress, this will increase. Next is the challenge for this level. This question asks for the folder path that you are in each time you launch a new terminal.</p>
+<p>First, we open a new terminal and check which folder we are in by typing <code>pwd</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/ctf-001.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>As we can see, we are located in <code>/home/netlab</code>.</p>
+<h3>Step 3: Check Your Answer</h3>
+<p>To test our answer, we run the program again and input our answer, <code>/home/netlab</code>.</p>
+<p>First we change the directory back to where the program <code>teknostart_ctf.py</code> is located.</p>
+<p>Because we are already inside the folder <code>/home/netlab</code>, we can simply type <code>cd teknostart_ctf</code>, which will put us in <code>/home/netlab/teknostart_ctf</code>.</p>
+<p>You can confirm the presence of the program by typing <code>ls</code> to list the files in the directory, and checking for <code>teknostart_ctf.py</code> among the outputs.</p>
+<p>We can now run it, and input our answer <code>/home/netlab</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/ctf-002.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Success! We have provided the correct flag and the next task is given to us. Try to solve as many of the following tasks as you can.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>CLI Mystery</h1>
+<p><a href="https://github.com/veltman/clmystery">Command Line Mystery</a></p>
+<p>intro, pointers to cheatsheet and how to use hints, how to check solutions.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+  </main>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #555555">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/informasjonskapsler">Om informasjonskapsler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ntnu.no/personvern">Personvern</a>
+          </li>
+        </ul>
+        <div class="bg-light ms-auto border-0"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+              aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit this page</h5>
+    </div>
+    <div class="offcanvas-body">
+      <ul>
+        <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
+        <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
+        <li>To edit this page, make a commit to <a
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-cli/teamwork.md">this file</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    anchors.add('h1').add('h2').add('h3');
+    anchors.options.visible = 'always';
+    var clipboard = new ClipboardJS('.copy-button');
+  </script>
+  <script>
+
+
+</script>
+</body>
+
+</html>
