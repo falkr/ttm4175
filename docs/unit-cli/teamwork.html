@@ -302,7 +302,7 @@ div.goals ul li:before {
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Connecting to the Lab VM</h1>
 <p>After receiving the credentials for your team's VM, please refer to <a href="preparation.html#connecting-via-vnc">the preparation page</a> for a guide on how to connect to it.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>We suggest that you use one computer to connect to the VM and type in the commands.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>We suggest that you use one computer per group to connect to the VM and type in the commands.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Upon connecting to the VM, launch the <em>Terminal Emulator</em> application from the desktop.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -317,7 +317,7 @@ div.goals ul li:before {
 </ul>
 <p>Today, we are going to do a relatively short Jeopardy-style CTF about basic Linux commands. It will help you become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparing the CTF</h2>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparing for the CTF</h2>
 <p>Note: this CTF is based on Halvor Groven's <a href="https://home.samfundet.no/~halvogro/teknostart2020/teknostart_ctf.zip">original implementation from 2020</a>.</p>
 <h3>Step 1: Move to the CTF Directory</h3>
 <p>Open the terminal and check which folder you are in. We do that with the command <code>pwd</code> (<em>&quot;print working directory&quot;</em>):</p>
@@ -349,7 +349,7 @@ div.goals ul li:before {
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can also move to the home directory by writing <code>cd ~</code>. The wiggly line that looks like a snake is called <em>tilde</em> and an abbreviation for your home directory.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Step 2: The CTF and Levelcheck Programs</h3>
-<p>This is a terminal based game and is written in the programming language <a href="(https://www.python.org/)">Python</a>. There are two files that are important for the CTF:</p>
+<p>This is a terminal-based game and is written in the programming language <a href="(https://www.python.org/)">Python</a>. There are two files that are important for the CTF:</p>
 <ul>
 <li><code>teknostart_ctf.py</code>, which is the actual CTF program. Its usage is explained in the next section.</li>
 <li><code>levelcheck</code> is needed for some levels and checks if the tasks have been completed. It prints out the flag if the task has been done correctly. It is used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.</li>
@@ -436,18 +436,48 @@ Levelchecker:        NO
 <p>First we change the directory back to where the program <code>teknostart_ctf.py</code> is located.</p>
 <p>Because we are already inside the folder <code>/home/netlab</code>, we can simply type <code>cd teknostart_ctf</code>, which will put us in <code>/home/netlab/teknostart_ctf</code>.</p>
 <p>You can confirm the presence of the program by typing <code>ls</code> to list the files in the directory, and checking for <code>teknostart_ctf.py</code> among the outputs.</p>
-<p>We can now run it, and input our answer <code>/home/netlab</code>.</p>
+<p>We can now run it, and input our answer, <code>/home/netlab</code>.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
     <img src="img/ctf-002.png" class="figure-img img-fluid rounded" alt="">
 </figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Success! We have provided the correct flag and the next task is given to us. Try to solve as many of the following tasks as you can.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Success! We have provided the correct flag and the next task is given to us. Solve the remaining tasks. Level 12 is the final level.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you would like to reset the CTF to its original state and restart from level 1, you can navigate to your home folder <code>/home/netlab</code> and run <code>./reset_ctf.sh</code>.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Notes on the Report for the CTF Part</h3>
+<p>For the CTF part, you can structure your report into two parts. First, provide a table with the columns <em>Level</em>, <em>Commands</em>, and <em>Flag</em>. In this table, you should include the commands you ended up using to solve the challenge as well as the resulting password / flag. Second, provide answers to the following questions:</p>
+<ul>
+<li>In level 7, can you create both folders in a single command? The <code>man</code> page of the command you used could be helpful.</li>
+<li>In level 10, how could you figure out the location of the file <code>helloworld.txt</code> if it was not provided in the question?</li>
+<li>In level 11, what was your strategy to locate the file?</li>
+</ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>CLI Mystery</h1>
-<p><a href="https://github.com/veltman/clmystery">Command Line Mystery</a></p>
-<p>intro, pointers to cheatsheet and how to use hints, how to check solutions.</p>
+<p>The second part of this lab deals with the <a href="https://github.com/veltman/clmystery">Command Line Mystery</a>. This is a whodunit-style crime mystery scenario that will help you internalize commands related to handling, searching, and analyzing text files. To get started, navigate into the <code>clmystery</code> folder inside your user folder and view the instructions via <code>cat instructions</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>As noted on the GitHub page, you can consult the <code>cheatsheet.md</code> or <code>cheatsheet.pdf</code> for an overview of the most relevant commands and options that might come in handy when solving the mystery. Additionally, there are <code>hint</code> files that can serve as inspiration if you're stuck.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>It can be helpful to create temporary files for storing intermediate results or filtered versions of files. Recall the options for <em>redirecting</em> outputs using <code>&gt;</code>, <code>&gt;&gt;</code>, and <code>|</code> that we discussed in the lecture. You can find more on this in the <em>Command Output</em> section of the cheatsheet.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="report box mt-3 mb-3"><p>We suggest taking notes on commands, evidence, and the overall process from the beginning, so that you'll have an easier time compiling the report.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you would like to reset the task to its original state and restart, you can navigate to your home folder <code>/home/netlab</code> and run <code>./reset_clmystery.sh</code>.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Notes on the Report for the CLI Mystery Part</h3>
+<p>You can use the following basic structure to create your report.</p>
+<ul>
+<li><strong>Tools and commands</strong>: outline and explain which commands you used to solve the mystery. Try to categorize the tools into the types of tasks they helped you with.</li>
+<li><strong>Key evidence and insights</strong>: for each piece of evidence, explain how you found it (<em>specific</em> commands and explanation of what they do, hints, ..) and elaborate on how it helped guide the investigation and narrow down the potential suspects. Finally, state the name of the murderer and how you arrived at that conclusion.</li>
+<li><strong>Reflections</strong>: discuss particular challenges that you encountered while solving the task and how you managed to overcome them. You can also mention commands or options that you discovered during the investigation and how they helped you.</li>
+</ul>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Task(s) - OverTheWire Wargames</h1>
+<p>If you're done with both the CTF and the mystery, you can check out the <a href="https://overthewire.org/wargames/bandit/">OverTheWire Wargames</a> for more advanced CTF-style challenges that go beyond the scope of this course and help you to further explore the capabilities of the command line.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
