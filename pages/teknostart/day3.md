@@ -24,3 +24,14 @@ Relevante lenker til Itemize:
 * [Mail](mailto:hack@itemize.no)
 * Instagram: @itemizentnu
 * Facebook: [Itemize NTNU](https://www.facebook.com/ItemizeNTNU/)
+
+
+
+# Om Linjeforening Abakus
+
+---
+type: link
+link: slides/2023-abakus.pdf
+title: "Presentasjon fra Abakus"
+icon: easel2
+---
