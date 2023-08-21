@@ -143,7 +143,17 @@ source: img/tiger-vnc-004.png
 
 
 :tip:
-If you experience performance issues using VNC, you can try connecting to your lab VM using the x2go software. A guide for doing so can be found [here](https://www.ntnu.no/wiki/download/attachments/272859791/ttm4200-openstack-guide.pdf?version=1&modificationDate=1669571371048&api=v2). The only difference is that in your case the user name will be `netlab` instead of `ttm4200`.
+There might be performance issues with VNC if you're idle for a prolonged period or reconnect after your host machine went to sleep with the VNC session open. In those cases, you can try logging in and out with the `netlab` user. To do this, click the mouse icon in the top left corner, click the "power button" at the bottom right of the resulting menu, and select the "Log Out" option. After this, you can reconnect with your VNC client and hopefully get improved responsiveness.
+
+
+---
+type: figure
+source: img/vnc-relog.png
+---
+
+
+:tip:
+If you still experience performance issues using VNC, you can also try connecting to your lab VM using the x2go software. A guide for doing so can be found [here](https://www.ntnu.no/wiki/download/attachments/272859791/ttm4200-openstack-guide.pdf?version=1&modificationDate=1669571371048&api=v2). The only difference is that in your case the user name will be `netlab` instead of `ttm4200`.
 
 
 # 2) Introduction to the CLI and Documentation of Important Commands

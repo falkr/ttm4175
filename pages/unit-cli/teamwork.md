@@ -24,7 +24,7 @@
 After receiving the credentials for your team's VM, please refer to [the preparation page](preparation.html#connecting-via-vnc) for a guide on how to connect to it.
 
 :tip:
-We suggest that you use one computer to connect to the VM and type in the commands.
+We suggest that you use one computer per group to connect to the VM and type in the commands.
 
 
 Upon connecting to the VM, launch the *Terminal Emulator* application from the desktop.
@@ -41,7 +41,7 @@ Capture the Flag (CTF) is a special kind of information security competition. Th
 Today, we are going to do a relatively short Jeopardy-style CTF about basic Linux commands. It will help you become more familiar with the terminal and navigation around the Linux file structure. The game consists of 12 levels that are supposed to make you feel a little more comfortable using the Terminal as a tool for the Linux Command Line. The first level is used as an example to show how the game is run.
 
 
-## Preparing the CTF
+## Preparing for the CTF
 
 Note: this CTF is based on Halvor Groven's [original implementation from 2020](https://home.samfundet.no/~halvogro/teknostart2020/teknostart_ctf.zip).
 
@@ -64,7 +64,7 @@ cd /home/netlab/teknostart_ctf
 
 ### Step 2: The CTF and Levelcheck Programs
 
-This is a terminal based game and is written in the programming language [Python]((https://www.python.org/)). There are two files that are important for the CTF:
+This is a terminal-based game and is written in the programming language [Python]((https://www.python.org/)). There are two files that are important for the CTF:
 
 - `teknostart_ctf.py`, which is the actual CTF program. Its usage is explained in the next section.
 - `levelcheck` is needed for some levels and checks if the tasks have been completed. It prints out the flag if the task has been done correctly. It is used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.
@@ -135,7 +135,7 @@ Because we are already inside the folder `/home/netlab`, we can simply type `cd 
 
 You can confirm the presence of the program by typing `ls` to list the files in the directory, and checking for `teknostart_ctf.py` among the outputs.
 
-We can now run it, and input our answer `/home/netlab`.
+We can now run it, and input our answer, `/home/netlab`.
 
 
 ---
@@ -144,14 +144,54 @@ source: img/ctf-002.png
 ---
 
 
-Success! We have provided the correct flag and the next task is given to us. Try to solve as many of the following tasks as you can.
+Success! We have provided the correct flag and the next task is given to us. Solve the remaining tasks. Level 12 is the final level.
+
+:tip:
+If you would like to reset the CTF to its original state and restart from level 1, you can navigate to your home folder `/home/netlab` and run `./reset_ctf.sh`.
+
+
+### Notes on the Report for the CTF Part
+
+For the CTF part, you can structure your report into two parts. First, provide a table with the columns *Level*, *Commands*, and *Flag*. In this table, you should include the commands you ended up using to solve the challenge as well as the resulting password / flag. Second, provide answers to the following questions:
+
+- In level 7, can you create both folders in a single command? The `man` page of the command you used could be helpful.
+- In level 10, how could you figure out the location of the file `helloworld.txt` if it was not provided in the question?
+- In level 11, what was your strategy to locate the file?
+
 
 
 # CLI Mystery
 
-[Command Line Mystery](https://github.com/veltman/clmystery)
+The second part of this lab deals with the [Command Line Mystery](https://github.com/veltman/clmystery). This is a whodunit-style crime mystery scenario that will help you internalize commands related to handling, searching, and analyzing text files. To get started, navigate into the `clmystery` folder inside your user folder and view the instructions via `cat instructions`.
 
-intro, pointers to cheatsheet and how to use hints, how to check solutions.
+:tip:
+As noted on the GitHub page, you can consult the `cheatsheet.md` or `cheatsheet.pdf` for an overview of the most relevant commands and options that might come in handy when solving the mystery. Additionally, there are `hint` files that can serve as inspiration if you're stuck.
 
+
+:tip:
+It can be helpful to create temporary files for storing intermediate results or filtered versions of files. Recall the options for *redirecting* outputs using `>`, `>>`, and `|` that we discussed in the lecture. You can find more on this in the *Command Output* section of the cheatsheet.
+
+
+:report:
+We suggest taking notes on commands, evidence, and the overall process from the beginning, so that you'll have an easier time compiling the report.
+
+
+:tip:
+If you would like to reset the task to its original state and restart, you can navigate to your home folder `/home/netlab` and run `./reset_clmystery.sh`.
+
+
+### Notes on the Report for the CLI Mystery Part
+
+You can use the following basic structure to create your report.
+- **Tools and commands**: outline and explain which commands you used to solve the mystery. Try to categorize the tools into the types of tasks they helped you with. 
+- **Key evidence and insights**: for each piece of evidence, explain how you found it (*specific* commands and explanation of what they do, hints, ..) and elaborate on how it helped guide the investigation and narrow down the potential suspects. Finally, state the name of the murderer and how you arrived at that conclusion.
+- **Reflections**: discuss particular challenges that you encountered while solving the task and how you managed to overcome them. You can also mention commands or options that you discovered during the investigation and how they helped you.
+
+
+
+
+# Optional Task(s) - OverTheWire Wargames
+
+If you're done with both the CTF and the mystery, you can check out the [OverTheWire Wargames](https://overthewire.org/wargames/bandit/) for more advanced CTF-style challenges that go beyond the scope of this course and help you to further explore the capabilities of the command line.
 
 
