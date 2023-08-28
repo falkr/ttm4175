@@ -190,64 +190,13 @@ You don't have to include *all* the commands you needed to type, **it is enough 
 
 
 
-## Static IP addresses
-
-In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it.
-However, this is done differently in different Linux systems.
-Below you'll see how to do it in Raspbian and Ubuntu.
-
-**---> On your RPi VM**
-
-To save your settings you need to edit the "dhcpcd.conf" file in `/etc/` (don't forget to check if you have permissions).
-Edit this file and reboot to check the networking configurations have remained.
-
-:aside:
-You don't need to reboot your RPi to apply these settings, it's enough to restart the networking service but you need to type a bit more (e.g. `sudo ip link set eth1 down && sudo ip link set eth1 up` **or** `service networking restart`).
-
-
-
-Example configuration (change accordingly!):
-
-```yaml
-interface eth1
-static ip_address=192.168.100.102/24
-static routers=192.168.100.101
-```
-
-**---> On your Ubuntu VM**
-
-To save your settings you need to edit the "01-network-manager-all.yaml" file in `/etc/netplan`.
-After editing you can apply your changes with the command `sudo netplan apply`:
-
-Example configuration (change accordingly!):
-
-```yaml
-network:
-    version: 2
-    renderer: networkd
-    ethernets:
-        enp0s3:
-            dhcp4: yes
-            nameservers:
-                addresses: [8.8.4.4,8.8.8.8]
-        enp0s8:
-            dhcp4: no
-            addresses:
-                - 10.0.20.2/24
-```
-
-:tip: Be careful with the indentation! Use spaces to align or copy-paste exactly as shown (change the addresses as needed).
-
-
-
 # Optional Exercises
 
 ## Introducing IPv6
 
-Change the topology you created in [the previous exercise](#lab.-exercises) to use IPv6 addresses and try:
+Using the same topology, use IPv6 addresses and experiment with
 
 * the `ping` command
-* remote access with `ssh`
 * different subnets
 
 ---
@@ -255,36 +204,5 @@ type: hint
 title: "Hint"
 ---
 Note that some commands require additional arguments to handle IPv6 (check their documentation).
-
-
-## More SSH
-
-The goal of this exercise is to show you how `ssh` handles sessions.
-
-:steps:
-1. Using the internal network interface, connect both VMs have connectivity with each other, using the `ping` command.
-2. Connect to the RPi from the Ubuntu VM using `ssh` with the option "-o ServerAliveInterval=5" and the remaining needed parameters.
-3. In the RPi `ssh` session run the "Alive" command:
-
-
-* `python -c $'import time\nwhile True: print("Alive!"); time.sleep(5)'`
-
-:steps
-4. Now, your RPi VM directly (on another terminal window), set the 'eth1' interface down (`ip l s eth1 down`) and wait for an error message on your `ssh` connection (it should take less than 1 min.).
-5. After the error message, set 'eth1' up again, re-establish the `ssh` session and verify if the command is still running using the `ps` command.
-6. Find a way to repeat the "Alive" command in the RPi making sure it is not interrupted if the connection fails (**this will require some research or check the hint below**).
-
-:tip:
-If a command such as `ps` outputs too much information you can use the Unix pipeline principles to manage the output.
-For example `ps aux | grep desired_pattern`.
-
-
-If you couldn't figure out step 6. above you can see a hint below.
-
----
-type: hint
-title: "Hint (ssh)"
----
-To keep programs running even if there's a connection interruption you can use the commands `screen`, `tmux` or simply run them on the background.
 
 
