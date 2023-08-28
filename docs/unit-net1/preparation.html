@@ -21,7 +21,102 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
-  <style>/* === goals === */
+  <style>/* === boxes === */
+div.box {
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem 1rem 1rem 3.5rem;
+}
+
+div.box>p {
+  margin-bottom: 0px;
+}
+
+div.box>*:first-child::before {
+  font-family: bootstrap-icons !important;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: grid;
+}
+
+div.milestone {
+  background-color: #E3BCDA;
+}
+
+div.milestone>*:first-child::before {
+  content: '\f706';
+  color: #75225E;
+}
+
+div.delivery {
+  background-color: #ffd9ab;
+}
+
+div.delivery>*:first-child::before {
+  content: '\f1be';
+  color: #fc8c03;
+}
+
+div.definition {
+  background-color: #EEE5D5;
+}
+
+div.definition>*:first-child::before {
+  content: '\f3e9';
+  color: #7D705A;
+}
+
+div.guideline {
+  background-color: #fae7e8;
+}
+
+div.guideline>*:first-child::before {
+  content: '\f548';
+  color: #e45460;
+}
+
+div.report {
+  background-color: #D6E5F0;
+}
+
+div.report>*:first-child::before {
+  content: '\f43e';
+  color: #1481b8;
+}
+
+div.warning {
+  background-color: #ffd9ab;
+}
+
+div.warning>*:first-child::before {
+  content: '\f33a';
+  color: #fc8c03;
+}
+
+div.tip {
+  background-color: #E3BCDA;
+}
+
+div.tip>*:first-child::before {
+  content: '\f402';
+  color: #75225E;
+}
+
+div.task {
+  background-color: #fae7e8;
+}
+
+div.task>*:first-child::before {
+  content: '\f5db';
+  color: #e45460;
+}
+
+/* === goals === */
 div.goals ul,
 div.goals ul li {
   padding: 0;
@@ -171,12 +266,9 @@ div.goals ul li:before {
 <section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Binary and IP Addresses</h1>
 <p>Last week you have already learned about IP addresses. Now you will learn even more about IP addressing and the fundamental aspects that enable the Internet.</p>
-<p>To know more about networking, we will be using the book <a href="http://gaia.cs.umass.edu/kurose_ross/index.html">Computer Networking: A Top Down Approach</a>, 7th edition.
+<p>To know more about networking, we will be using the book <a href="https://gaia.cs.umass.edu/kurose_ross/eighth.php">Computer Networking: A Top Down Approach</a>, 8th edition.
 We will be using this book in the upcoming three weeks and in the course TTM4200 in the Spring semester, so please try to get a copy as soon as possible.</p>
-</div><aside class="col-md-4 chunk ps-2"><p>If you get the 8th edition there's no problem, the main contents are similar.
-<span style="color:red">TODO still true or will we switch to 8th?</span></p>
-</aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Reading the <em>first chapter is recommended</em> but not mandatory.
+<p>Reading the <em>first chapter is recommended</em> but not mandatory.
 Each week will focus on specific sections that need to be read and understood.
 <em>Details about the required readings will be available every week, <strong>in bold</strong>.</em></p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -216,14 +308,15 @@ This will be very useful when working with IP addresses and subnets.</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/L6bDA5FK6gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>More about IP Addresses</h2>
-<p>Focusing on IP addresses, and to prepare for the lecture's quiz, you need to <strong>read from section 1.1 to 1.2.1 of the book (from page 30 to page 39)</strong>.
+<p>Focusing on IP addresses, and to prepare for the lecture's quiz, you need to <strong>read from section 1.1 to 1.2.1 of the book (from page 32 to page 41)</strong>.
 If you already read the first chapter you can check the additional materials below.</p>
-</div><aside class="col-md-4 chunk ps-2"><p>This will also be included in the RAT, don't ignore it!</p>
-</aside></div>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>This will also be included in the RAT, don't ignore it!</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Material</h1>
-<p>The materials below won't be tested but will be very important in a near future.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Material: Routing, Subnets, and More</h1>
+<p>The material below won't be tested but will be very important in the near future.</p>
 <h2>Routing</h2>
 <p>The videos and readings above already provided some insights about routing.
 However the following video provides more information and shows the importance of routing in today's Internet.</p>
@@ -239,8 +332,9 @@ However the following video provides more information and shows the importance o
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Subnets</h2>
 <p>We will talk more about IP subnets in the classroom.
 However, if you want to learn more about it in advance, you can check this video with a pizza analogy for subnets!</p>
-</div><aside class="col-md-4 chunk ps-2"><p>this one is a bit too slow but it motivates <em>why</em> we want subnets.</p>
-</aside></div>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>This one is a bit too slow-paced but it motivates <em>why</em> we want subnets.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-yz3FV8WliU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -254,13 +348,6 @@ However, if you want to learn more about it in advance, you can check this video
 You can read more about these phenomena in pages 62--66 and 69--70.
 Of course, if you've already read Chapter 1 you'll already know all about this!</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Virtual Machines</h2>
-<p>By now you're already familiar with virtual machines.
-However, if you still have questions about what a VM is, this short video can provide some help.</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yIVXjl4SwVo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
@@ -318,6 +405,7 @@ However, if you still have questions about what a VM is, this short video can pr
     var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
+
 
 </script>
 </body>
