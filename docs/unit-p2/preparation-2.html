@@ -21,6 +21,7 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
+  <script src="../assets/script-aside.js"></script>
   <style>/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
@@ -143,9 +144,7 @@ figcaption {
   <main class="container container-max-width">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
 <ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
-<li class="breadcrumb-item"><a href="index.html">IoT 1</a></li>
-<li class="breadcrumb-item active" aria-current="page">Preparation 2</li>
+<li class="breadcrumb-item"><a href="../breadcrumbs.txt/unit-p2/preparation-2.html">Preparation 2</a></li>
 </ol>
 </nav>
 <section class="mt-2 mb-5 py-3">
@@ -183,12 +182,12 @@ elif state == "off":
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># switch light off</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change into state &quot;off&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># switch light on</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change into state &quot;on&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># switch light off</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="co"># change into state &quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="co"># switch light on</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="co"># change into state &quot;on&quot;</span></a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Idea 2: A Transition Function</h3>
 <p>Now that we have taken care of the control state by an explicit variable, we need to think how to implement the transitions.
@@ -216,8 +215,8 @@ The method receives the following parameters:</p>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># logic to execute the transitions</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># logic to execute the transitions</span></a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>In the if-statement above, we change what we do only based on the current state.
 This was okay because every state of the blinking light only had a single outgoing transition.
@@ -273,11 +272,11 @@ It is similar to the other transition function, but does not have the <code>even
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-2" title="2">        <span class="co">### the initial transition</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-5" title="5">        <span class="co">### the remaining transitions</span></a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Final state</h3>
 <p>To make a transition into the final state, just return the special name <code>&quot;final&quot;</code> as next state, and the state machine will terminate.</p>
@@ -328,13 +327,13 @@ This is a concept from object-oriented programming, which will come later in you
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> MyStateMachine1(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-4" title="4">        <span class="co">### the initial transition</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-7" title="7">        <span class="co">### the remaining transitions</span></a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
 <li>You declare your code inside a class. Use a new name for each example, here we have used <code>MyStateMachine1</code> as name.</li>
@@ -357,8 +356,8 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> MyStateMachine1()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">stm <span class="op">=</span> MyStateMachine1()</a>
+<a class="sourceLine" id="cb1-2" title="2">stm.run()</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Variables</h3>
 <p>This also explains how we handle variables: The variable is not a part of the global context, but tied to our state machine. We therefore always use the prefix <code>self.</code> before the variable.</p>
@@ -382,16 +381,16 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyStateMachine1(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the initial transition</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">### init a variable x</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">### the remaining transitions</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> MyStateMachine1(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-4" title="4">        <span class="co">### the initial transition</span></a>
+<a class="sourceLine" id="cb1-5" title="5">        <span class="co">### init a variable x</span></a>
+<a class="sourceLine" id="cb1-6" title="6">        <span class="va">self</span>.x <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-9" title="9">        <span class="co">### the remaining transitions</span></a>
+<a class="sourceLine" id="cb1-10" title="10">        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.x <span class="op">+</span> <span class="dv">1</span></a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>

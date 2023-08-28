@@ -14,128 +14,113 @@ This will be achieved using available networking tools in Linux to manage a simp
     - IP subnets and masks
 
 
-# Pre-requisites for today
 
-Before continuing please check these two steps:
-
-:steps:
-1. Make sure you have at least 20GB of disk space.
-2. Confirm that you've downloaded the new VM image ([link](
-https://filesender.uninett.no/?s=download&token=a0ca6d46-2078-4984-a532-b68e3fd2cbaf)).
+# Launching GNS3 and Creating a Basic Network
 
 
+In today's lab, we're going to use the [GNS3 network emulator](https://www.gns3.com/) which is already pre-installed on your VMs. This tool allows us to easily and visually create networks whose components we can configure by accessing their respective command line interface. After connecting to your VM, launch the `GNS3` program from the desktop and create a new empty project.
 
-
-# Importing and configuring the Ubuntu VM
-
-:steps:
-1. Start by importing the newly downloaded VM just like you did for the RaspberryPI.
-2. After the import is completed (it will take a few minutes), configure the settings of the new VM according to your computer specifications (for example, my laptop has only 8GB RAM so I configured my VM with 4GB).
-You shouldn't use all the resources from your host machine in your VM as it can make things become less responsive.
-3. Inside the VM settings go to `Network->Adapter 2` and configure it to be attached to an "Internal Network" as shown in the figure below.
-4. Add a second adapter to the RaspberryPI VM, attach it to the same "Internal Network".
 
 ---
 type: figure
-source: figures/vbox2020/settings-internalnetwork.png
-caption: "The internal network connecting the two VMs"
+source: img/gns-001.png
 ---
 
+
+You can add various devices like network switches and hosts, as well as links between them from the menus on the left. After adding the devices, you can control their state using the controls at the top as outlined in the figure.
+
+
+---
+type: figure
+source: img/gns-002.png
+---
+
+
+Try to create a minimal topology that consists of two dierctly connected hosts by dragging instances of the `ubuntu-host` onto the main panel, and then interconnecting their `eth0` interfaces by consecutively clicking on the `Add a link` button and the two hosts. The result should look as follows.
+
+
+---
+type: figure
+source: img/gns-003.png
+---
+
+
+By starting all devices using the green button at the top, the respective containers are launched. Once they are running, you can access their terminal by double-clicking the respective device in the topology.
+
 :tip:
-You can think of an "internal network" as a cable directly connecting VMs. This means they don't connect to the Internet or have any other features such as DHCP or NAT.
-
-Another tip, if you want to access the Ubuntu VM through `ssh` (recommended) remember to add _port forwarding_ on adapter one and choose a different _Host port_ such as 2223.
-
+If you close the terminal of a container, the container itself will turn off and you will have to turn it back on by right-clicking the device and pressing start. **Beware: containers are stateless by design, so restarting the container will also lead to a complete loss of any files and configuration changes on it.**
 
 
 # Lab Exercises
 
 Please **read each exercise** entirely before starting to solve it.
 
+:report:
 Remember you should deliver a report after the networking module is finished.
 It should include the main commands and configurations necessary to complete each exercise.
 Do not forget to take notes while solving the exercises so you do not have to repeat them.
 
-These exercises should be completed in teams.
 
 
-## Quick overview of IP addresses
+## Quick Overview of IP Addresses
 
 By now you've already seen that IP addresses are an important part of the Internet and computer networks in general.
 Before looking into more complicated setups, complete the following tasks and remember to include them in your report.
 
-:steps:
-1. Start by finding the IP address of <ntnu.no>. For this you can use the command `host`.
-2. Convert the found IP address to binary (you can use external tools!).
-3. How many bytes does this IP address contain?
-4. How many bits are there between each point (full stop) in the address 192.168.0.13?
 
-:tip:
+1. Start by finding the IP address of `ntnu.no`. You can use the `host` command for this.
+2. Convert the IP address you found to binary (you can use external tools!).
+3. How many bytes does this IP address contain?
+4. How many bits are there between each point (full stop) in the address 192.168.0.14?
+
+
+:report:
 Start your report now and keep updating it as you go! It doesn't have to look pretty but if you keep everything now (screenshots, notes, ...) you don't have to repeat it later. 
 
 
 
-## Networking two computers (VMs)
-
----
-type: figure
-source: figures/net/TTM4175-ex1-2020.png
-caption: "Diagram of the topology to be created"
----
-
-The main goal of this exercise is to create a simple network between the two VMs through a simple network configuration as if they were connected by an Ethernet cable.
-
-Remember you can edit configurations by directly using the VMs or, instead by simply using `ssh` from your host machine where you can have one or more terminals per VM.
+## Networking with Two Computers
 
 
-### Configuring the network interfaces
+The main goal of this exercise is to get familiar with basic network configuration commands using the simple two-host network topology we created earlier.
 
 
+### Configuring the Network Interfaces
 
-**---> On your RPi VM**
 
-Try the following steps:
+##### On ubuntu-host-1
 
-:steps:
-1. Using the command `ip addr show dev eth1` find out your current IP address, if any, on 'eth1'
+Try the following steps
+
+
+1. Using the command `ip addr show dev eth0` find out your current IP address, if any, on `eth0`
 2. Type `ip addr help` to see all the available options
-3. Let's now remove any unwanted address or routes on 'eth1' with the command:
-```bash
-ip addr flush dev eth1
-```
-
-:steps:
-4. Add an IP address and respective mask to the interface 'eth1' using the command:
-```bash
-ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth1
-```
-
-:tip: **Note:** you should avoid the subnet 10.0.2.0/24 as it already being used on 'eth0'.
-
-
-:steps:
-5. Using the command `ip a s eth1` (same as in step 1 but shorter) to verify your IP address, it should be the one you have just set.
-6. Use the command `ip link set up dev eth1` to "turn on" the interface, in case it is down.
+3. Let's now remove any unwanted address or routes on `eth0` with the command `ip addr flush dev eth0`
+4. Add an IP address and respective mask to the interface `eth0` using the command `ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth0`
+5. Using the command `ip a s eth0` (same as in step 1 but shorter) to verify your IP address. It should be the one you have just set.
+6. Use the command `ip link set up dev eth0` to "turn on" the interface, in case it is down.
 
 
 
-**---> On your Ubuntu VM**
+##### On ubuntu-host-2
 
-Repeat the configurations above, paying attention to the different interface notation and assigning a new IP address:
+Repeat the configurations above, paying attention to the different interface notation and assigning a new IP address.
 
-:steps:
-1. Remove any address/route on the interface 'enp0s8' (e-n-p-zero-s-eight).
-2. Add a different IP address and mask to the interface 'enp0s8' such that it is in the same subnet as 'eth1' on the RPi.
-3. Use the command `ip l s up dev enp0s8` to set the interface to "UP".
-4. How many addresses does the chosen subnet contain? 
+1. Remove any address/route on the interface `eth0`.
+2. Add a different IP address and mask to the interface `eth0` such that it is in the same subnet as `eth0` on the first host.
+3. Use the command `ip l s up dev eth0` to set the interface to "UP".
+4. How many addresses does the subnet you chose contain? 
+
 
 :tip:
 Remember that one IP address can only be used by a single interface in the same network! It should be unique.
 
+
+
 The size of the subnet depends on the number of bits used on the corresponding mask.
 
 
-Spoiler alert! Before clicking the box below try to solve the exercise on your own but of course you are free to check it out.
+Spoiler alert! Before clicking the box below, try to solve the exercise on your own, but of course you are free to check it out.
 
 ---
 type: hint
@@ -151,44 +136,33 @@ You can use "any" private IP address in the ranges:
 
 An example of a pair of IP addresses and masks could be "10.100.2.1/30" and "10.100.2.2/30".
 
-**Remember:** you need to have "root" privileges in order to change/add an IP address. 
+**Remember:** you need to have "root" privileges in order to change/add an IP address. For the containers in the GNS3 environment, this is always the case as indicated by the command prompt starting with the `#` sign as opposed to the `$` sign you see for instance as the netlab user on the host VM. 
 
 
-### Verifying your configurations
+### Verifying Your Configuration
 
-After configuring the two VMs continue with the following steps:
-
-:steps:
-1. On one of the VMs use the command `ip route` to see the added route. Which one is the new entry?
-2. Verify that both nodes have connectivity with the `ping` command. First from the RPi and afterwards from the Ubuntu machine.
-3. Make sure you can connect to the RPi from the Ubuntu machine using `ssh`.
-4. From one of the VMs `ping` <ntnu.no>. What's the main difference in behaviour that you can see?
+After configuring the two hosts, continue with the following steps.
 
 
-Spoiler ahead...
-
----
-type: hint
-title: "Hint (ping)"
----
-Use the command `ping` like this to generate only 4 ICMP messages.
-```bash
-ping -c4 <ip_address>
-```
-And note the round-trip **time** of each message...
+1. On one of the hosts, use the command `ip route` to see the routing table. What is the entry you see?
+2. Verify that both nodes have connectivity with the `ping` command. First from ubuntu-host-1 and afterwards from ubuntu-host-2.
+3. You can also capture packets that traverse your network using the Wireshark tool we've seen during the lecture. To do so, right-click the link, hit "start capture", make sure that "Start the capture visualization program" is checked, and confirm with "OK".
+4. Run `ping` again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient).
 
 
 
-## Experimenting with masks
+## Experimenting with Masks
 
 The goal of this task is to get more comfortable with subnets and masks and see how they work in practice.
 If you have questions about why something happens, or does not happen, feel free to ask!
 
-**---> On your RPi VM**
 
-:steps:
-1. Change the IP address of 'eth1' to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one).
-2. Verify if you still have connectivity and discuss why or why not.
+
+##### On ubuntu-host-1
+
+
+1. Change the IP address of `eth0` to `10.10.10.30` using the mask `255.255.255.192`.
+2. Verify that you still have connectivity and discuss why or why not.
 
 
 
@@ -199,19 +173,20 @@ title: "Hint (troubleshooting)"
 You may lose connectivity at this point depending on the IP addresses you have previously chosen.
 
 
-**---> On your Ubuntu VM**
 
-Now, on your Ubuntu VM make the following changes:
+##### On ubuntu-host-2
 
-:steps:
-1. Change the IP address of 'enp0s8' to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one).
-2. Check for changes in connectivity between the two VMs. Can one VM still `ping` the other?
-3. Using the same IP address change the mask to '/30'.
-4. Check for changes in connectivity between the two VMs.
-5. Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two VMs? Why?
+Make the following changes.
 
-:tip:
-**About the report** You don't have to include all the commands you needed to type, **it is enough to discuss/explain** the changes in connectivity and the choices you made.
+
+1. Change the IP address of `eth0` to `10.10.10.5` using the mask `255.255.255.192`.
+2. Check for changes in connectivity between the two hosts. Can one still `ping` the other?
+3. Using the same IP address, change the mask to `/30`.
+4. Check for changes in connectivity between the two hosts.
+5. Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two hosts? Why?
+
+:report:
+You don't have to include *all* the commands you needed to type, **it is enough to discuss/explain** the changes in connectivity and the choices you made.
 
 
 

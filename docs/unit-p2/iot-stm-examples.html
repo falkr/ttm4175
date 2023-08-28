@@ -21,6 +21,7 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
+  <script src="../assets/script-aside.js"></script>
   <style>/* === figure === */
 div.figure {
   padding: 20px 0 20px 0;
@@ -233,85 +234,85 @@ class StateMachine:
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> time</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> microbit <span class="im">import</span> button_a, button_b, accelerometer, display, sleep, Image</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ON <span class="op">=</span> Image.SQUARE</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>OFF <span class="op">=</span> Image.SQUARE_SMALL</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> StateMachine:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    The following code segment defines a basis state machine.</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Leave this code as it is. (Or be careful what you do.)&quot;&quot;&quot;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, timer_names<span class="op">=</span>[<span class="st">&quot;t1&quot;</span>, <span class="st">&quot;t2&quot;</span>, <span class="st">&quot;t3&quot;</span>]):</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.active <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.state <span class="op">=</span> <span class="st">&quot;initial&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.timer_names <span class="op">=</span> timer_names</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.timers <span class="op">=</span> {}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _ticks_ms(<span class="va">self</span>):</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">int</span>(<span class="bu">round</span>(time() <span class="op">*</span> <span class="dv">1000</span>))</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Overwrite this method to define the initial transition.</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">        Must return the name of the first state.&quot;&quot;&quot;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Overwrite this method to define the transitions.</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">        `state` - the current state</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">        `event` - the triggering event</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">        `timers` - to start and stop timers</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">        Return the name of the next state,</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">        or None to stay in current state.&quot;&quot;&quot;</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> start(<span class="va">self</span>, name, timeout):</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Start a timer.</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">        The name must be t1, t2 or t2.</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">        The timeout is given in milliseconds.</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.timers[name] <span class="op">=</span> <span class="va">self</span>._ticks_ms() <span class="op">+</span> timeout</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> stop(<span class="va">self</span>, name):</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Stop a timer.&quot;&quot;&quot;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.timers[name] <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _detect_event(<span class="va">self</span>):</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        now <span class="op">=</span> <span class="va">self</span>._ticks_ms()</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> timer <span class="kw">in</span> <span class="va">self</span>.timer_names:</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (timer <span class="kw">in</span> <span class="va">self</span>.timers) <span class="kw">and</span> (<span class="va">self</span>.timers[timer] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>):</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="va">self</span>.timers[timer] <span class="op">&lt;</span> now:</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.timers[timer] <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> timer</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> button_a.was_pressed():</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;button_a&quot;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> button_b.was_pressed():</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;button_b&quot;</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> accelerometer.was_gesture(<span class="st">&quot;shake&quot;</span>):</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;shake&quot;</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run(<span class="va">self</span>):</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Run the state machine.&quot;&quot;&quot;</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.active <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">self</span>.active:</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;initial&quot;</span>:</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>                next_state <span class="op">=</span> <span class="va">self</span>.initial_transition(<span class="va">self</span>)</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> next_state:</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> next_state <span class="op">==</span> <span class="st">&quot;final&quot;</span>:</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>                        <span class="va">self</span>.active <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.state <span class="op">=</span> next_state</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>            event <span class="op">=</span> <span class="va">self</span>._detect_event()</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>                next_state <span class="op">=</span> <span class="va">self</span>.transition(<span class="va">self</span>.state, event, <span class="va">self</span>)</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> next_state:</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.state <span class="op">=</span> next_state</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            sleep(<span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">from</span> time <span class="im">import</span> time</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">from</span> microbit <span class="im">import</span> button_a, button_b, accelerometer, display, sleep, Image</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4">ON <span class="op">=</span> Image.SQUARE</a>
+<a class="sourceLine" id="cb1-5" title="5">OFF <span class="op">=</span> Image.SQUARE_SMALL</a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">class</span> StateMachine:</a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">    The following code segment defines a basis state machine.</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">    Leave this code as it is. (Or be careful what you do.)&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, timer_names<span class="op">=</span>[<span class="st">&quot;t1&quot;</span>, <span class="st">&quot;t2&quot;</span>, <span class="st">&quot;t3&quot;</span>]):</a>
+<a class="sourceLine" id="cb1-14" title="14">        <span class="va">self</span>.active <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb1-15" title="15">        <span class="va">self</span>.state <span class="op">=</span> <span class="st">&quot;initial&quot;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="va">self</span>.timer_names <span class="op">=</span> timer_names</a>
+<a class="sourceLine" id="cb1-17" title="17">        <span class="va">self</span>.timers <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="kw">def</span> _ticks_ms(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb1-20" title="20">        <span class="cf">return</span> <span class="bu">int</span>(<span class="bu">round</span>(time() <span class="op">*</span> <span class="dv">1000</span>))</a>
+<a class="sourceLine" id="cb1-21" title="21"></a>
+<a class="sourceLine" id="cb1-22" title="22">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-23" title="23">        <span class="co">&quot;&quot;&quot;Overwrite this method to define the initial transition.</span></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="co">        Must return the name of the first state.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-25" title="25">        <span class="cf">return</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb1-26" title="26"></a>
+<a class="sourceLine" id="cb1-27" title="27">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-28" title="28">        <span class="co">&quot;&quot;&quot;Overwrite this method to define the transitions.</span></a>
+<a class="sourceLine" id="cb1-29" title="29"></a>
+<a class="sourceLine" id="cb1-30" title="30"><span class="co">        `state` - the current state</span></a>
+<a class="sourceLine" id="cb1-31" title="31"><span class="co">        `event` - the triggering event</span></a>
+<a class="sourceLine" id="cb1-32" title="32"><span class="co">        `timers` - to start and stop timers</span></a>
+<a class="sourceLine" id="cb1-33" title="33"></a>
+<a class="sourceLine" id="cb1-34" title="34"><span class="co">        Return the name of the next state,</span></a>
+<a class="sourceLine" id="cb1-35" title="35"><span class="co">        or None to stay in current state.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">        <span class="cf">return</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb1-37" title="37"></a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="kw">def</span> start(<span class="va">self</span>, name, timeout):</a>
+<a class="sourceLine" id="cb1-39" title="39">        <span class="co">&quot;&quot;&quot;Start a timer.</span></a>
+<a class="sourceLine" id="cb1-40" title="40"><span class="co">        The name must be t1, t2 or t2.</span></a>
+<a class="sourceLine" id="cb1-41" title="41"><span class="co">        The timeout is given in milliseconds.</span></a>
+<a class="sourceLine" id="cb1-42" title="42"><span class="co">        &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-43" title="43">        <span class="va">self</span>.timers[name] <span class="op">=</span> <span class="va">self</span>._ticks_ms() <span class="op">+</span> timeout</a>
+<a class="sourceLine" id="cb1-44" title="44"></a>
+<a class="sourceLine" id="cb1-45" title="45">    <span class="kw">def</span> stop(<span class="va">self</span>, name):</a>
+<a class="sourceLine" id="cb1-46" title="46">        <span class="co">&quot;&quot;&quot;Stop a timer.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-47" title="47">        <span class="va">self</span>.timers[name] <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb1-48" title="48"></a>
+<a class="sourceLine" id="cb1-49" title="49">    <span class="kw">def</span> _detect_event(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb1-50" title="50">        now <span class="op">=</span> <span class="va">self</span>._ticks_ms()</a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="cf">for</span> timer <span class="kw">in</span> <span class="va">self</span>.timer_names:</a>
+<a class="sourceLine" id="cb1-52" title="52">            <span class="cf">if</span> (timer <span class="kw">in</span> <span class="va">self</span>.timers) <span class="kw">and</span> (<span class="va">self</span>.timers[timer] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>):</a>
+<a class="sourceLine" id="cb1-53" title="53">                <span class="cf">if</span> <span class="va">self</span>.timers[timer] <span class="op">&lt;</span> now:</a>
+<a class="sourceLine" id="cb1-54" title="54">                    <span class="va">self</span>.timers[timer] <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb1-55" title="55">                    <span class="cf">return</span> timer</a>
+<a class="sourceLine" id="cb1-56" title="56">        <span class="cf">if</span> button_a.was_pressed():</a>
+<a class="sourceLine" id="cb1-57" title="57">            <span class="cf">return</span> <span class="st">&quot;button_a&quot;</span></a>
+<a class="sourceLine" id="cb1-58" title="58">        <span class="cf">if</span> button_b.was_pressed():</a>
+<a class="sourceLine" id="cb1-59" title="59">            <span class="cf">return</span> <span class="st">&quot;button_b&quot;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">        <span class="cf">if</span> accelerometer.was_gesture(<span class="st">&quot;shake&quot;</span>):</a>
+<a class="sourceLine" id="cb1-61" title="61">            <span class="cf">return</span> <span class="st">&quot;shake&quot;</span></a>
+<a class="sourceLine" id="cb1-62" title="62">        <span class="cf">return</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb1-63" title="63"></a>
+<a class="sourceLine" id="cb1-64" title="64">    <span class="kw">def</span> run(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb1-65" title="65">        <span class="co">&quot;&quot;&quot;Run the state machine.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-66" title="66">        <span class="va">self</span>.active <span class="op">=</span> <span class="va">True</span></a>
+<a class="sourceLine" id="cb1-67" title="67">        <span class="cf">while</span> <span class="va">self</span>.active:</a>
+<a class="sourceLine" id="cb1-68" title="68">            <span class="cf">if</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;initial&quot;</span>:</a>
+<a class="sourceLine" id="cb1-69" title="69">                next_state <span class="op">=</span> <span class="va">self</span>.initial_transition(<span class="va">self</span>)</a>
+<a class="sourceLine" id="cb1-70" title="70">                <span class="cf">if</span> next_state:</a>
+<a class="sourceLine" id="cb1-71" title="71">                    <span class="cf">if</span> next_state <span class="op">==</span> <span class="st">&quot;final&quot;</span>:</a>
+<a class="sourceLine" id="cb1-72" title="72">                        <span class="va">self</span>.active <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb1-73" title="73">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
+<a class="sourceLine" id="cb1-74" title="74">            event <span class="op">=</span> <span class="va">self</span>._detect_event()</a>
+<a class="sourceLine" id="cb1-75" title="75">            <span class="cf">if</span> event <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb1-76" title="76">                next_state <span class="op">=</span> <span class="va">self</span>.transition(<span class="va">self</span>.state, event, <span class="va">self</span>)</a>
+<a class="sourceLine" id="cb1-77" title="77">                <span class="cf">if</span> next_state:</a>
+<a class="sourceLine" id="cb1-78" title="78">                    <span class="va">self</span>.state <span class="op">=</span> next_state</a>
+<a class="sourceLine" id="cb1-79" title="79">            sleep(<span class="dv">100</span>)</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
@@ -362,40 +363,40 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Counter(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Counting the number of clicks on button A.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    If 10 is reached, an &quot;alarm&quot; is shown by switching all LEDs on.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    The counter can be reset at any time with button B.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        display.show(<span class="va">self</span>.counter)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;count&quot;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;count&quot;</span>:</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="va">self</span>.counter <span class="op">&lt;</span> <span class="dv">9</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.counter <span class="op">=</span> <span class="va">self</span>.counter <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                    display.show(<span class="va">self</span>.counter)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;count&quot;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                    display.show(ON)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;alarm&quot;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;button_b&quot;</span>:</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                display.show(<span class="va">self</span>.counter)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;alarm&quot;</span>:</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                display.show(<span class="va">self</span>.counter)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> Counter()</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> Counter(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Counting the number of clicks on button A.</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    If 10 is reached, an &quot;alarm&quot; is shown by switching all LEDs on.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    The counter can be reset at any time with button B.</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-10" title="10">        <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;count&quot;</span>:</a>
+<a class="sourceLine" id="cb1-14" title="14">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">if</span> <span class="va">self</span>.counter <span class="op">&lt;</span> <span class="dv">9</span>:</a>
+<a class="sourceLine" id="cb1-16" title="16">                    <span class="va">self</span>.counter <span class="op">=</span> <span class="va">self</span>.counter <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-17" title="17">                    display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-18" title="18">                    <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-20" title="20">                    display.show(ON)</a>
+<a class="sourceLine" id="cb1-21" title="21">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-22" title="22">                    <span class="cf">return</span> <span class="st">&quot;alarm&quot;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;button_b&quot;</span>:</a>
+<a class="sourceLine" id="cb1-24" title="24">                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-25" title="25">                display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-26" title="26">                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-27" title="27">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;alarm&quot;</span>:</a>
+<a class="sourceLine" id="cb1-28" title="28">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-29" title="29">                <span class="va">self</span>.counter <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-30" title="30">                display.show(<span class="va">self</span>.counter)</a>
+<a class="sourceLine" id="cb1-31" title="31">                <span class="cf">return</span> <span class="st">&quot;count&quot;</span></a>
+<a class="sourceLine" id="cb1-32" title="32"></a>
+<a class="sourceLine" id="cb1-33" title="33">stm <span class="op">=</span> Counter()</a>
+<a class="sourceLine" id="cb1-34" title="34">stm.run()</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
@@ -434,28 +435,28 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ShakeLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    and turn it off again after 2 seconds.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        display.show(OFF)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                display.show(ON)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                display.show(OFF)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> ShakeLight()</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> ShakeLight(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Switch on the light if you shake the device</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    and turn it off again after 2 seconds.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-7" title="7">        display.show(OFF)</a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-12" title="12">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;shake&quot;</span>:</a>
+<a class="sourceLine" id="cb1-13" title="13">                display.show(ON)</a>
+<a class="sourceLine" id="cb1-14" title="14">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">2000</span>)</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-17" title="17">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-18" title="18">                display.show(OFF)</a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-20" title="20"></a>
+<a class="sourceLine" id="cb1-21" title="21">stm <span class="op">=</span> ShakeLight()</a>
+<a class="sourceLine" id="cb1-22" title="22">stm.run()</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
@@ -505,39 +506,39 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> NightLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Periodically read the light level.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    If the light level is above 100, switch on the light.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    If it is below 80, switch the light off again.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        display.show(OFF)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> display.read_light_level() <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    display.show(ON)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> display.read_light_level() <span class="op">&lt;</span> <span class="dv">80</span>:</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                    display.show(OFF)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> NightLight()</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> NightLight(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Periodically read the light level.</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">    If the light level is above 100, switch on the light.</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    If it is below 80, switch the light off again.</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-8" title="8">        display.show(OFF)</a>
+<a class="sourceLine" id="cb1-9" title="9">        timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-14" title="14">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-15" title="15">                <span class="cf">if</span> display.read_light_level() <span class="op">&gt;</span> <span class="dv">100</span>:</a>
+<a class="sourceLine" id="cb1-16" title="16">                    display.show(ON)</a>
+<a class="sourceLine" id="cb1-17" title="17">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-18" title="18">                    <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">                <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-20" title="20">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-21" title="21">                    <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">        <span class="cf">elif</span> <span class="va">self</span>.state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-23" title="23">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-24" title="24">                <span class="cf">if</span> display.read_light_level() <span class="op">&lt;</span> <span class="dv">80</span>:</a>
+<a class="sourceLine" id="cb1-25" title="25">                    display.show(OFF)</a>
+<a class="sourceLine" id="cb1-26" title="26">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-27" title="27">                    <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">                <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-29" title="29">                    timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb1-30" title="30">                    <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-31" title="31"></a>
+<a class="sourceLine" id="cb1-32" title="32">stm <span class="op">=</span> NightLight()</a>
+<a class="sourceLine" id="cb1-33" title="33">stm.run()</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
@@ -599,51 +600,51 @@ stm.run()
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SwitchLight(StateMachine):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Switch between states off and on by pressing button A.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    The change between on and off only happens if button A is pressed</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    twice quickly.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    State off is represented by a small square,</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    state on with a big suqare.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    The transitional states between on and off are shown</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    with arrows up and down.</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        display.show(OFF)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                display.show(Image.ARROW_N)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">300</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;almost_on&quot;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;almost_on&quot;</span>:</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                display.show(ON)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                display.show(OFF)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                display.show(Image.ARROW_S)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                timers.start(<span class="st">&quot;t2&quot;</span>, <span class="dv">300</span>)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;almost_off&quot;</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;almost_off&quot;</span>:</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                display.show(OFF)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;t2&quot;</span>:</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                display.show(ON)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>stm <span class="op">=</span> SwitchLight()</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>stm.run()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> SwitchLight(StateMachine):</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="co">&quot;&quot;&quot;Switch between states off and on by pressing button A.</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">    The change between on and off only happens if button A is pressed</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">    twice quickly.</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co">    State off is represented by a small square,</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">    state on with a big suqare.</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">    The transitional states between on and off are shown</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">    with arrows up and down.</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="kw">def</span> initial_transition(<span class="va">self</span>, timers):</a>
+<a class="sourceLine" id="cb1-15" title="15">        display.show(OFF)</a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-17" title="17"></a>
+<a class="sourceLine" id="cb1-18" title="18">    <span class="kw">def</span> transition(<span class="va">self</span>, state, event, timers):</a>
+<a class="sourceLine" id="cb1-19" title="19">        <span class="cf">if</span> state <span class="op">==</span> <span class="st">&quot;off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-20" title="20">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-21" title="21">                display.show(Image.ARROW_N)</a>
+<a class="sourceLine" id="cb1-22" title="22">                timers.start(<span class="st">&quot;t1&quot;</span>, <span class="dv">300</span>)</a>
+<a class="sourceLine" id="cb1-23" title="23">                <span class="cf">return</span> <span class="st">&quot;almost_on&quot;</span></a>
+<a class="sourceLine" id="cb1-24" title="24">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;almost_on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-25" title="25">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-26" title="26">                display.show(ON)</a>
+<a class="sourceLine" id="cb1-27" title="27">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;t1&quot;</span>:</a>
+<a class="sourceLine" id="cb1-29" title="29">                display.show(OFF)</a>
+<a class="sourceLine" id="cb1-30" title="30">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-31" title="31">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;on&quot;</span>:</a>
+<a class="sourceLine" id="cb1-32" title="32">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-33" title="33">                display.show(Image.ARROW_S)</a>
+<a class="sourceLine" id="cb1-34" title="34">                timers.start(<span class="st">&quot;t2&quot;</span>, <span class="dv">300</span>)</a>
+<a class="sourceLine" id="cb1-35" title="35">                <span class="cf">return</span> <span class="st">&quot;almost_off&quot;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">        <span class="cf">elif</span> state <span class="op">==</span> <span class="st">&quot;almost_off&quot;</span>:</a>
+<a class="sourceLine" id="cb1-37" title="37">            <span class="cf">if</span> event <span class="op">==</span> <span class="st">&quot;button_a&quot;</span>:</a>
+<a class="sourceLine" id="cb1-38" title="38">                display.show(OFF)</a>
+<a class="sourceLine" id="cb1-39" title="39">                <span class="cf">return</span> <span class="st">&quot;off&quot;</span></a>
+<a class="sourceLine" id="cb1-40" title="40">            <span class="cf">elif</span> event <span class="op">==</span> <span class="st">&quot;t2&quot;</span>:</a>
+<a class="sourceLine" id="cb1-41" title="41">                display.show(ON)</a>
+<a class="sourceLine" id="cb1-42" title="42">                <span class="cf">return</span> <span class="st">&quot;on&quot;</span></a>
+<a class="sourceLine" id="cb1-43" title="43"></a>
+<a class="sourceLine" id="cb1-44" title="44">stm <span class="op">=</span> SwitchLight()</a>
+<a class="sourceLine" id="cb1-45" title="45">stm.run()</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>

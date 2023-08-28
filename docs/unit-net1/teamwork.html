@@ -21,6 +21,7 @@
     crossorigin="anonymous"></script>
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
+  <script src="../assets/script-aside.js"></script>
   <style>/* === boxes === */
 div.box {
   padding: 10px;
@@ -323,9 +324,7 @@ div.goals ul li:before {
   <main class="container container-max-width">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
 <ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
-<li class="breadcrumb-item"><a href="index.html">Networking 1</a></li>
-<li class="breadcrumb-item active" aria-current="page">Teamwork</li>
+<li class="breadcrumb-item"><a href="../breadcrumbs.txt/unit-net1/teamwork.html">Teamwork</a></li>
 </ol>
 </nav>
 <section class="mt-2 mb-5 py-3">
@@ -348,120 +347,81 @@ This will be achieved using available networking tools in Linux to manage a simp
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Pre-requisites for today</h1>
-<p>Before continuing please check these two steps:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Launching GNS3 and Creating a Basic Network</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Make sure you have at least 20GB of disk space.</li>
-<li>Confirm that you've downloaded the new VM image (<a href="https://filesender.uninett.no/?s=download&amp;token=a0ca6d46-2078-4984-a532-b68e3fd2cbaf">link</a>).</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-</section>
-<section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Importing and configuring the Ubuntu VM</h1>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>In today's lab, we're going to use the <a href="https://www.gns3.com/">GNS3 network emulator</a> which is already pre-installed on your VMs. This tool allows us to easily and visually create networks whose components we can configure by accessing their respective command line interface. After connecting to your VM, launch the <code>GNS3</code> program from the desktop and create a new empty project.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Start by importing the newly downloaded VM just like you did for the RaspberryPI.</li>
-<li>After the import is completed (it will take a few minutes), configure the settings of the new VM according to your computer specifications (for example, my laptop has only 8GB RAM so I configured my VM with 4GB).
-You shouldn't use all the resources from your host machine in your VM as it can make things become less responsive.</li>
-<li>Inside the VM settings go to <code>Network-&gt;Adapter 2</code> and configure it to be attached to an &quot;Internal Network&quot; as shown in the figure below.</li>
-<li>Add a second adapter to the RaspberryPI VM, attach it to the same &quot;Internal Network&quot;.</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
-    <img src="figures/vbox2020/settings-internalnetwork.png" class="figure-img img-fluid rounded" alt="The internal network connecting the two VMs">
-</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">The internal network connecting the two VMs</figcaption></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can think of an &quot;internal network&quot; as a cable directly connecting VMs. This means they don't connect to the Internet or have any other features such as DHCP or NAT.</p>
-<p>Another tip, if you want to access the Ubuntu VM through <code>ssh</code> (recommended) remember to add <em>port forwarding</em> on adapter one and choose a different <em>Host port</em> such as 2223.</p>
+    <img src="img/gns-001.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You can add various devices like network switches and hosts, as well as links between them from the menus on the left. After adding the devices, you can control their state using the controls at the top as outlined in the figure.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/gns-002.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Try to create a minimal topology that consists of two dierctly connected hosts by dragging instances of the <code>ubuntu-host</code> onto the main panel, and then interconnecting their <code>eth0</code> interfaces by consecutively clicking on the <code>Add a link</code> button and the two hosts. The result should look as follows.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
+    <img src="img/gns-003.png" class="figure-img img-fluid rounded" alt="">
+</figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>By starting all devices using the green button at the top, the respective containers are launched. Once they are running, you can access their terminal by double-clicking the respective device in the topology.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you close the terminal of a container, the container itself will turn off and you will have to turn it back on by right-clicking the device and pressing start. <strong>Beware: containers are stateless by design, so restarting the container will also lead to a complete loss of any files and configuration changes on it.</strong></p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Lab Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
-<p>Remember you should deliver a report after the networking module is finished.
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="report box mt-3 mb-3"><p>Remember you should deliver a report after the networking module is finished.
 It should include the main commands and configurations necessary to complete each exercise.
 Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
-<p>These exercises should be completed in teams.</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Quick overview of IP addresses</h2>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Quick Overview of IP Addresses</h2>
 <p>By now you've already seen that IP addresses are an important part of the Internet and computer networks in general.
 Before looking into more complicated setups, complete the following tasks and remember to include them in your report.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Start by finding the IP address of &lt;ntnu.no&gt;. For this you can use the command <code>host</code>.</li>
-<li>Convert the found IP address to binary (you can use external tools!).</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Start by finding the IP address of <code>ntnu.no</code>. You can use the <code>host</code> command for this.</li>
+<li>Convert the IP address you found to binary (you can use external tools!).</li>
 <li>How many bytes does this IP address contain?</li>
-<li>How many bits are there between each point (full stop) in the address 192.168.0.13?</li>
+<li>How many bits are there between each point (full stop) in the address 192.168.0.14?</li>
 </ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="report box mt-3 mb-3"><p>Start your report now and keep updating it as you go! It doesn't have to look pretty but if you keep everything now (screenshots, notes, ...) you don't have to repeat it later.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Start your report now and keep updating it as you go! It doesn't have to look pretty but if you keep everything now (screenshots, notes, ...) you don't have to repeat it later.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Networking two computers (VMs)</h2>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Networking with Two Computers</h2>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
-    <img src="figures/net/TTM4175-ex1-2020.png" class="figure-img img-fluid rounded" alt="Diagram of the topology to be created">
-</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Diagram of the topology to be created</figcaption></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The main goal of this exercise is to create a simple network between the two VMs through a simple network configuration as if they were connected by an Ethernet cable.</p>
-<p>Remember you can edit configurations by directly using the VMs or, instead by simply using <code>ssh</code> from your host machine where you can have one or more terminals per VM.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The main goal of this exercise is to get familiar with basic network configuration commands using the simple two-host network topology we created earlier.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Configuring the network interfaces</h3>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Configuring the Network Interfaces</h3>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>---&gt; On your RPi VM</strong></p>
-<p>Try the following steps:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h5>On ubuntu-host-1</h5>
+<p>Try the following steps</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Using the command <code>ip addr show dev eth1</code> find out your current IP address, if any, on 'eth1'</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Using the command <code>ip addr show dev eth0</code> find out your current IP address, if any, on <code>eth0</code></li>
 <li>Type <code>ip addr help</code> to see all the available options</li>
-<li>Let's now remove any unwanted address or routes on 'eth1' with the command:</li>
+<li>Let's now remove any unwanted address or routes on <code>eth0</code> with the command <code>ip addr flush dev eth0</code></li>
+<li>Add an IP address and respective mask to the interface <code>eth0</code> using the command <code>ip addr add &lt;your_chosen_ip_here&gt;/&lt;chosen_mask&gt; dev eth0</code></li>
+<li>Using the command <code>ip a s eth0</code> (same as in step 1 but shorter) to verify your IP address. It should be the one you have just set.</li>
+<li>Use the command <code>ip link set up dev eth0</code> to &quot;turn on&quot; the interface, in case it is down.</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idbe215f">ip addr flush dev eth1
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idbe215f">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr flush dev eth1</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="4">
-<li>Add an IP address and respective mask to the interface 'eth1' using the command:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idb8974d">ip addr add <your_chosen_ip_here>/<chosen_mask> dev eth1
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idb8974d">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> addr add <span class="op">&lt;</span>your_chosen_ip_here<span class="op">&gt;</span>/<span class="op">&lt;</span>chosen_mask<span class="op">&gt;</span> dev eth1</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p><strong>Note:</strong> you should avoid the subnet 10.0.2.0/24 as it already being used on 'eth0'.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
-<li>Using the command <code>ip a s eth1</code> (same as in step 1 but shorter) to verify your IP address, it should be the one you have just set.</li>
-<li>Use the command <code>ip link set up dev eth1</code> to &quot;turn on&quot; the interface, in case it is down.</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>---&gt; On your Ubuntu VM</strong></p>
-<p>Repeat the configurations above, paying attention to the different interface notation and assigning a new IP address:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Remove any address/route on the interface 'enp0s8' (e-n-p-zero-s-eight).</li>
-<li>Add a different IP address and mask to the interface 'enp0s8' such that it is in the same subnet as 'eth1' on the RPi.</li>
-<li>Use the command <code>ip l s up dev enp0s8</code> to set the interface to &quot;UP&quot;.</li>
-<li>How many addresses does the chosen subnet contain?</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h5>On ubuntu-host-2</h5>
+<p>Repeat the configurations above, paying attention to the different interface notation and assigning a new IP address.</p>
+<ol>
+<li>Remove any address/route on the interface <code>eth0</code>.</li>
+<li>Add a different IP address and mask to the interface <code>eth0</code> such that it is in the same subnet as <code>eth0</code> on the first host.</li>
+<li>Use the command <code>ip l s up dev eth0</code> to set the interface to &quot;UP&quot;.</li>
+<li>How many addresses does the subnet you chose contain?</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Remember that one IP address can only be used by a single interface in the same network! It should be unique.</p>
-<p>The size of the subnet depends on the number of bits used on the corresponding mask.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Spoiler alert! Before clicking the box below try to solve the exercise on your own but of course you are free to check it out.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The size of the subnet depends on the number of bits used on the corresponding mask.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Spoiler alert! Before clicking the box below, try to solve the exercise on your own, but of course you are free to check it out.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint (IP addresses)</button>
 <div class="w3content">
@@ -473,56 +433,47 @@ Before looking into more complicated setups, complete the following tasks and re
 </ul>
 <p><strong>Note:</strong> you can't use the first nor the last IP address of a network/subnet. So, for example, for the network 10.12.1.0/24 you cannot use the addresses 10.12.1.0 nor 10.12.1.255 (remember that /24 corresponds to an 8 bit mask or 255.255.255.0).</p>
 <p>An example of a pair of IP addresses and masks could be &quot;10.100.2.1/30&quot; and &quot;10.100.2.2/30&quot;.</p>
-<p><strong>Remember:</strong> you need to have &quot;root&quot; privileges in order to change/add an IP address.</p>
+<p><strong>Remember:</strong> you need to have &quot;root&quot; privileges in order to change/add an IP address. For the containers in the GNS3 environment, this is always the case as indicated by the command prompt starting with the <code>#</code> sign as opposed to the <code>$</code> sign you see for instance as the netlab user on the host VM.</p>
 
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Verifying your configurations</h3>
-<p>After configuring the two VMs continue with the following steps:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Verifying Your Configuration</h3>
+<p>After configuring the two hosts, continue with the following steps.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>On one of the VMs use the command <code>ip route</code> to see the added route. Which one is the new entry?</li>
-<li>Verify that both nodes have connectivity with the <code>ping</code> command. First from the RPi and afterwards from the Ubuntu machine.</li>
-<li>Make sure you can connect to the RPi from the Ubuntu machine using <code>ssh</code>.</li>
-<li>From one of the VMs <code>ping</code> &lt;ntnu.no&gt;. What's the main difference in behaviour that you can see?</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>On one of the hosts, use the command <code>ip route</code> to see the routing table. What is the entry you see?</li>
+<li>Verify that both nodes have connectivity with the <code>ping</code> command. First from ubuntu-host-1 and afterwards from ubuntu-host-2.</li>
+<li>You can also capture packets that traverse your network using the Wireshark tool we've seen during the lecture. To do so, right-click the link, hit &quot;start capture&quot;, make sure that &quot;Start the capture visualization program&quot; is checked, and confirm with &quot;OK&quot;.</li>
+<li>Run <code>ping</code> again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient).</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Spoiler ahead...</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint (ping)</button>
-<div class="w3content">
-<p>Use the command <code>ping</code> like this to generate only 4 ICMP messages.</p>
-<pre><code class="language-bash">ping -c4 &lt;ip_address&gt;
-</code></pre>
-<p>And note the round-trip <strong>time</strong> of each message...</p>
-
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Experimenting with masks</h2>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Experimenting with Masks</h2>
 <p>The goal of this task is to get more comfortable with subnets and masks and see how they work in practice.
 If you have questions about why something happens, or does not happen, feel free to ask!</p>
-<p><strong>---&gt; On your RPi VM</strong></p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Change the IP address of 'eth1' to 10.10.10.30 using the mask 255.255.255.192 (first add a new address then delete the previous one).</li>
-<li>Verify if you still have connectivity and discuss why or why not.</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h5>On ubuntu-host-1</h5>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Change the IP address of <code>eth0</code> to <code>10.10.10.30</code> using the mask <code>255.255.255.192</code>.</li>
+<li>Verify that you still have connectivity and discuss why or why not.</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint (troubleshooting)</button>
 <div class="w3content">
 <p>You may lose connectivity at this point depending on the IP addresses you have previously chosen.</p>
 
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>---&gt; On your Ubuntu VM</strong></p>
-<p>Now, on your Ubuntu VM make the following changes:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h5>On ubuntu-host-2</h5>
+<p>Make the following changes.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Change the IP address of 'enp0s8' to 10.10.10.5 using the mask 255.255.255.192 (first add a new address then delete the previous one).</li>
-<li>Check for changes in connectivity between the two VMs. Can one VM still <code>ping</code> the other?</li>
-<li>Using the same IP address change the mask to '/30'.</li>
-<li>Check for changes in connectivity between the two VMs.</li>
-<li>Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two VMs? Why?</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Change the IP address of <code>eth0</code> to <code>10.10.10.5</code> using the mask <code>255.255.255.192</code>.</li>
+<li>Check for changes in connectivity between the two hosts. Can one still <code>ping</code> the other?</li>
+<li>Using the same IP address, change the mask to <code>/30</code>.</li>
+<li>Check for changes in connectivity between the two hosts.</li>
+<li>Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two hosts? Why?</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p><strong>About the report</strong> You don't have to include all the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="report box mt-3 mb-3"><p>You don't have to include <em>all</em> the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Static IP addresses</h2>
 <p>In order to permanently save your IP configuration, so that they are persistent even after a reboot, you need to save it.
@@ -546,9 +497,9 @@ static routers=192.168.100.101
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">interface eth1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">static ip_address=192.168.100.102/24</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">static routers=192.168.100.101</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1">interface eth1</a>
+<a class="sourceLine" id="cb1-2" title="2">static ip_address=192.168.100.102/24</a>
+<a class="sourceLine" id="cb1-3" title="3">static routers=192.168.100.101</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>---&gt; On your Ubuntu VM</strong></p>
 <p>To save your settings you need to edit the &quot;01-network-manager-all.yaml&quot; file in <code>/etc/netplan</code>.
@@ -575,18 +526,18 @@ After editing you can apply your changes with the command <code>sudo netplan app
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">network</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">renderer</span><span class="kw">:</span><span class="at"> networkd</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ethernets</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">enp0s3</span><span class="kw">:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">nameservers</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">enp0s8</span><span class="kw">:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">addresses</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="kw">-</span><span class="at"> 10.0.20.2/24</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">network:</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="fu">version:</span><span class="at"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="fu">renderer:</span><span class="at"> networkd</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="fu">ethernets:</span></a>
+<a class="sourceLine" id="cb1-5" title="5">        <span class="fu">enp0s3:</span></a>
+<a class="sourceLine" id="cb1-6" title="6">            <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">yes</span></a>
+<a class="sourceLine" id="cb1-7" title="7">            <span class="fu">nameservers:</span></a>
+<a class="sourceLine" id="cb1-8" title="8">                <span class="fu">addresses:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        <span class="fu">enp0s8:</span></a>
+<a class="sourceLine" id="cb1-10" title="10">            <span class="fu">dhcp4:</span><span class="at"> </span><span class="ch">no</span></a>
+<a class="sourceLine" id="cb1-11" title="11">            <span class="fu">addresses:</span></a>
+<a class="sourceLine" id="cb1-12" title="12">                <span class="kw">-</span> 10.0.20.2/24</a></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Be careful with the indentation! Use spaces to align or copy-paste exactly as shown (change the addresses as needed).</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
