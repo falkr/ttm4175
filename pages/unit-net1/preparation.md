@@ -15,12 +15,8 @@
 
 Last week you have already learned about IP addresses. Now you will learn even more about IP addressing and the fundamental aspects that enable the Internet.
 
-To know more about networking, we will be using the book [Computer Networking: A Top Down Approach](http://gaia.cs.umass.edu/kurose_ross/index.html), 7th edition.
+To know more about networking, we will be using the book [Computer Networking: A Top Down Approach](https://gaia.cs.umass.edu/kurose_ross/eighth.php), 8th edition.
 We will be using this book in the upcoming three weeks and in the course TTM4200 in the Spring semester, so please try to get a copy as soon as possible.
-
-:aside: If you get the 8th edition there's no problem, the main contents are similar.
-<span style="color:red">TODO still true or will we switch to 8th?</span>
-
 
 Reading the *first chapter is recommended* but not mandatory.
 Each week will focus on specific sections that need to be read and understood.
@@ -77,15 +73,15 @@ video: L6bDA5FK6gs
 
 ## More about IP Addresses
 
-Focusing on IP addresses, and to prepare for the lecture's quiz, you need to **read from section 1.1 to 1.2.1 of the book (from page 30 to page 39)**.
+Focusing on IP addresses, and to prepare for the lecture's quiz, you need to **read from section 1.1 to 1.2.1 of the book (from page 32 to page 41)**.
 If you already read the first chapter you can check the additional materials below.
 
-:aside: This will also be included in the RAT, don't ignore it!
+:tip: This will also be included in the RAT, don't ignore it!
 
 
-# Optional Material
+# Optional Material: Routing, Subnets, and More
 
-The materials below won't be tested but will be very important in a near future.
+The material below won't be tested but will be very important in the near future.
 
 ## Routing
 
@@ -110,7 +106,7 @@ video: PG9oKZdFb7w
 We will talk more about IP subnets in the classroom.
 However, if you want to learn more about it in advance, you can check this video with a pizza analogy for subnets!
 
-:aside: this one is a bit too slow but it motivates _why_ we want subnets.
+:tip: This one is a bit too slow-paced but it motivates _why_ we want subnets.
 
 ---
 type: youtube
@@ -130,16 +126,4 @@ video: XQ3T14SIlV4
 Surely you've experienced "lag" and "loss of connection".
 You can read more about these phenomena in pages 62--66 and 69--70.
 Of course, if you've already read Chapter 1 you'll already know all about this!
-
-
-## Virtual Machines
-
-By now you're already familiar with virtual machines.
-However, if you still have questions about what a VM is, this short video can provide some help.
-
-
----
-type: youtube
-video: yIVXjl4SwVo
----
 
