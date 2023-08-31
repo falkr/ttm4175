@@ -150,7 +150,7 @@ An example of a pair of IP addresses and masks could be "10.100.2.1/30" and "10.
 After configuring the two hosts, continue with the following steps.
 
 
-1. On one of the hosts, use the command `ip route` to see the routing table. What is the entry you see?
+1. On one of the hosts, use the command `ip route` to see the routing table. For now, just report the entry you see. We will dive deeper into the exact meaning of it in a later unit.
 2. Verify that both nodes have connectivity with the `ping` command. First, by `ping`-ing ubuntu-host-2's IP address from ubuntu-host-1 and afterwards ubuntu-host-1's IP address from ubuntu-host-2.
 
 :tip:
