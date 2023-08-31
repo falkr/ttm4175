@@ -11,6 +11,9 @@
     - IP addresses (IPv4 and IPv6)
     - IP subnets and masks
 
+
+* Today's [lecture slides](2023-ttm4175-week-35-net1.pdf)
+
 ## Preparation
 
 Go through the following preparation material before we meet in class:

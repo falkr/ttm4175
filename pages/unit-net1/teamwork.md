@@ -51,6 +51,7 @@ By starting all devices using the green button at the top, the respective contai
 If you close the terminal of a container, the container itself will turn off and you will have to turn it back on by right-clicking the device and pressing start. **Beware: containers are stateless by design, so restarting the container will also lead to a complete loss of any files and configuration changes on it.**
 
 
+
 # Lab Exercises
 
 Please **read each exercise** entirely before starting to solve it.
@@ -69,6 +70,11 @@ Before looking into more complicated setups, complete the following tasks and re
 
 
 1. Start by finding the IP address of `ntnu.no`. You can use the `host` command for this.
+
+:tip:
+Note that the containers within your GNS3 network are not connected to the Internet. Hence, use the `host` command either on your local machine or in a terminal window on your lab VM.
+
+
 2. Convert the IP address you found to binary (you can use external tools!).
 3. How many bytes does this IP address contain?
 4. How many bits are there between each point (full stop) in the address 192.168.0.14?
@@ -145,9 +151,14 @@ After configuring the two hosts, continue with the following steps.
 
 
 1. On one of the hosts, use the command `ip route` to see the routing table. What is the entry you see?
-2. Verify that both nodes have connectivity with the `ping` command. First from ubuntu-host-1 and afterwards from ubuntu-host-2.
+2. Verify that both nodes have connectivity with the `ping` command. First, by `ping`-ing ubuntu-host-2's IP address from ubuntu-host-1 and afterwards ubuntu-host-1's IP address from ubuntu-host-2.
+
+:tip:
+The basic syntax of the `ping` command is `ping <destination_ip_address>`, e.g., `ping 10.0.0.5`. The output contains per-packet statistics if there is a route to the target network and the target address can be reached or an error message otherwise. You can use `Ctrl+C` to stop sending packets.
+
+
 3. You can also capture packets that traverse your network using the Wireshark tool we've seen during the lecture. To do so, right-click the link, hit "start capture", make sure that "Start the capture visualization program" is checked, and confirm with "OK".
-4. Run `ping` again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient).
+4. Run `ping` again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient). You can also include a screenshot of your Wireshark window in the report if it helps with your explanations.
 
 
 
@@ -184,6 +195,19 @@ Make the following changes.
 3. Using the same IP address, change the mask to `/30`.
 4. Check for changes in connectivity between the two hosts.
 5. Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two hosts? Why?
+
+
+---
+type: hint
+title: "Hint (finding the minimum mask length)"
+---
+It may be helpful to convert the addresses of both hosts to binary first. Also, feel free to consult online tools such as [the IP calculator](https://jodies.de/ipcalc).
+
+
+
+:tip:
+Don't forget to make the changes on **both** hosts when experimenting with different subnet sizes.
+
 
 :report:
 You don't have to include *all* the commands you needed to type, **it is enough to discuss/explain** the changes in connectivity and the choices you made.
