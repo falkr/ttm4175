@@ -354,6 +354,11 @@ Before looking into more complicated setups, complete the following tasks and re
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
 <li>Start by finding the IP address of <code>ntnu.no</code>. You can use the <code>host</code> command for this.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Note that the containers within your GNS3 network are not connected to the Internet. Hence, use the <code>host</code> command either on your local machine or in a terminal window on your lab VM.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="2">
 <li>Convert the IP address you found to binary (you can use external tools!).</li>
 <li>How many bytes does this IP address contain?</li>
 <li>How many bits are there between each point (full stop) in the address 192.168.0.14?</li>
@@ -412,9 +417,14 @@ Before looking into more complicated setups, complete the following tasks and re
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
 <li>On one of the hosts, use the command <code>ip route</code> to see the routing table. What is the entry you see?</li>
-<li>Verify that both nodes have connectivity with the <code>ping</code> command. First from ubuntu-host-1 and afterwards from ubuntu-host-2.</li>
+<li>Verify that both nodes have connectivity with the <code>ping</code> command. First, by <code>ping</code>-ing ubuntu-host-2's IP address from ubuntu-host-1 and afterwards ubuntu-host-1's IP address from ubuntu-host-2.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>The basic syntax of the <code>ping</code> command is <code>ping &lt;destination_ip_address&gt;</code>, e.g., <code>ping 10.0.0.5</code>. The output contains per-packet statistics if there is a route to the target network and the target address can be reached or an error message otherwise. You can use <code>Ctrl+C</code> to stop sending packets.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="3">
 <li>You can also capture packets that traverse your network using the Wireshark tool we've seen during the lecture. To do so, right-click the link, hit &quot;start capture&quot;, make sure that &quot;Start the capture visualization program&quot; is checked, and confirm with &quot;OK&quot;.</li>
-<li>Run <code>ping</code> again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient).</li>
+<li>Run <code>ping</code> again and observe what kind of packets / messages are exchanged. Do some research to figure out the broad use of the involved protocols (few sentences in your report are sufficient). You can also include a screenshot of your Wireshark window in the report if it helps with your explanations.</li>
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Experimenting with Masks</h2>
@@ -444,6 +454,13 @@ If you have questions about why something happens, or does not happen, feel free
 <li>Using the same IP address, what is the smallest subnet size, and corresponding mask, that you can use to maintain connectivity between the two hosts? Why?</li>
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint (finding the minimum mask length)</button>
+<div class="w3content">
+<p>It may be helpful to convert the addresses of both hosts to binary first. Also, feel free to consult online tools such as <a href="https://jodies.de/ipcalc">the IP calculator</a>.</p>
+
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Don't forget to make the changes on <strong>both</strong> hosts when experimenting with different subnet sizes.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="report box mt-3 mb-3"><p>You don't have to include <em>all</em> the commands you needed to type, <strong>it is enough to discuss/explain</strong> the changes in connectivity and the choices you made.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
