@@ -167,60 +167,53 @@ div.goals ul li:before {
 <li>Recognise the importance of <em>ports</em> in networking</li>
 <li>Understand how computer networking is organized into protocol layers</li>
 <li>Get familiar with the popular client-server architecture for network-based services and see it in action in the context of a web server</li>
-<li></li>
 </ul>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Layers and Docker</h1>
-<p>The overall goal of this lab is to complement knowledge on IP, subnets with some routing notions.
-This will be achieved using the same VMs as last week and default Linux tools.</p>
-<p>Today we will also learn more about Docker. With Docker we will be able to simulate a &quot;mini-cloud&quot; inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-</section>
-<section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>How do computers communicate (part 2)</h1>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Layers and Ports</h1>
 <h2>Protocol Layers</h2>
-<p>To better understand how computer networking is organised you should <strong>read section 1.5.1 from page 75 to page 81</strong> of the book.
+<p>To better understand how computer networking is organized you should <strong>read section 1.5.1 from page 77 to page 82</strong> of the book.
 Again, if you read the entire first chapter, this is already covered.</p>
-<p>Optionally you can also read section 1.5.2 to get a better overview of how information is handled through different layers (encapsulated).</p>
+<p>Optionally, you can also read section 1.5.2 to get a better overview of how information is handled through different layers (encapsulated).</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Ports</h2>
 <p>We saw that IP address are useful for identifying a machine/server's location, or address.
 We also mentioned that in each address we can have several services or applications, with their respective ports or doors to reach them.
-To learn more about this you should <strong>read sections 2.1.1 and 2.1.2, in pages 116 to 121.</strong></p>
+To learn more about this, you should <strong>read sections 2.1.1 and 2.1.2, on pages 114 to 118.</strong></p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Servers</h1>
-<p>In our next lab you will use the Raspberry Pi VM as a client and the Ubuntu VM (containers) and a server.
-To better understand what a server is watch the following videos.</p>
-<p>This first video is extremely simple but explains the most basic concept.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Client-Server Architecture</h1>
+<p>In our next lab, you will use one container as a client and the other as a server.
+To better understand what a server is, watch the following videos.</p>
+<p>This first video explains the most basic concept (relevant segment: 09:36-11:36).</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SwLdKeC8scE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/abeupgK5z48?start=576&end=696" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>This one goes into significantly more detail.
-You need only to <strong>watch the first 3 min.</strong> but the rest of the video is also interesting (and provides generally useful information).</p>
+You only need to <strong>watch the first 3 min.</strong> but the rest of the video is also interesting and provides generally useful information.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UjCDWCeHCzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Materials</h1>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Material</h1>
 <h2>Web Servers</h2>
-<p>As an <strong>optional reading</strong> you can check this website about <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">webservers</a></p>
-<h2>Docker</h2>
-<p>You already worked with Virtual Machines, which can virtualise the hardware of an entire computer and run multiple operating systems.
-However, there are other alternatives to fully virtualising an entire machine.
-Docker is one of these alternatives, that uses containerisation for offering different virtualisation possibilities.
+<p>As an <strong>optional reading</strong>, you can check this website about <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server">webservers</a></p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Docker</h2>
+<p>You already worked with Virtual Machines, which can virtualize the hardware of an entire computer and run different operating systems.
+Additionally, you have already seen Docker containers in action when you created hosts in the GNS3 environment.
+Docker offers an alternative to fully virtualizing an entire machine by utilizing containerization.
 Check the video below for an introduction on Docker's approach.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="figure">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TvnZTi_gaNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>To read more about the difference between Virtual Machines and Containers you can read this <a href="https://www.backblaze.com/blog/vm-vs-containers/">blog post</a>.</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>To read more about the difference between VMs and containers, you can read this <a href="https://www.backblaze.com/blog/vm-vs-containers/">blog post</a>.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
