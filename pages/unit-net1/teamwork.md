@@ -1,7 +1,7 @@
 # Networking I - Binary, IP Addresses, Subnets, LAN Configuration
 
 The overall goal of this lab is to consolidate knowledge on IP addressing and subnets.
-This will be achieved using available networking tools in Linux to manage a simple Raspberry Pi network.
+This will be achieved using available networking tools in Linux to manage a simple network in the GNS3 emulator.
 
 
 :goals: After this lab you will be able to

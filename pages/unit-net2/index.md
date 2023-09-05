@@ -7,7 +7,8 @@
 - Recognise the importance of _ports_ in networking
 - Understand how computer networking is organized into protocol layers
 - Get familiar with the popular client-server architecture for network-based services and see it in action in the context of a web server
-- 
+
+
 
 ## Preparation
 
