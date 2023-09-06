@@ -377,6 +377,138 @@ Before you continue, make sure that the two hosts can reach each other by using 
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
+<section class="mt-2 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Docker</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>For this second part, you can quit GNS3 and open a terminal directly on your VM. The CLI prompt should say <code>netlab@netlab-linux:~$ </code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Basics</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>In Docker, we distinguish between <em>images</em> and <em>containers</em> (also called <em>instances</em>). Images are the pre-built templates or snapshots that package all the software that is required for the intended use case. The use case can be a fresh install of a specific Linux distribution, a pre-installed and pre-configured service (web server, mail server, database, ..), or more. For this, an image can include code and configuration files, runtimes and libraries, as well as other dependencies. Based on such an image, we can launch one or multiple running containers that execute the environment defined in the image.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>
+<p>To check which images are available on your machine, you can run <code>docker images</code>. How many images are listed in your case?</p>
+</li>
+<li>
+<p>You can create an instance based on the <code>ubuntu</code> image by running</p>
+</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id28e300">docker run -dit --name my-ubuntu-container ubuntu
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id28e300">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-dit</span> <span class="at">--name</span> my-ubuntu-container ubuntu</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The output should give you a long ID which is used to uniquely identify that specific instance. For easier reference, we also provided a more memorable name, <code>my-ubuntu-container</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can learn more about the options of docker run in the <a href="https://docs.docker.com/engine/reference/run/">documentation</a>. For now, it is enough to know that <code>docker run -dit</code> instantiates a container in the background, and allows us to attach to its console later on.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="3">
+<li>You can confirm that the instance has been created using <code>docker ps</code> (process status). The output contains the ID, base image name, and other high-level information about your running container instances. Following step 2, you can also launch additional instances from the same image and confirm their presence using <code>docker ps</code>.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you create multiple containers and explicitly provide a name, make sure that the name is unique to avoid errors.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="4">
+<li>With the containers running, you can attach to them via</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="idd595fb">docker exec -it <containerID> bash
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#idd595fb">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Your prompt should change from <code>netlab@netlab-linux:~$ </code> to <code>root@fa00f8e10813:/# </code>, indicating that you are now logged in as root on the container with the respective ID. Create some files or folders inside the container.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>In this case, the <code>containerID</code> can be either the ID from the outputs in the previous step (the first few characters are enough as long as they are enough to uniquely identify your container), or the name you chose when running the container.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="5">
+<li>Try running <code>cat /etc/os-release</code> inside your container, then <code>exit</code> back to your netlab VM and run the same command to compare the operating system versions. What can you observe?</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint</button>
+<div class="w3content">
+<p>This step illustrates some of the power of using containers.
+The Docker image we used as the basis for our container uses a different version of the same operating system and, as we shall see later, it is even possible to run different Linux distributions in our containers, regardless of the main host's distribution.</p>
+
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="6">
+<li>
+<p>To clean up, you can stop and remove containers using <code>docker stop &lt;containerID&gt;</code> followed by <code>docker rm &lt;containerID&gt;</code>.</p>
+</li>
+<li>
+<p>Re-create one of the containers according to step 2. What happened to the files/folders you created in step 4? Discuss how this relates to the concepts of images and containers.</p>
+</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Building Our Own Image</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can also define our own image to create containers which run our desired software. As an example, we will create the web server from the fist part of today's lab. To this end, we will use the <code>ubuntu</code> image as a starting point and extend it to fit our needs. The Docker way of doing this involves a <em>Dockerfile</em> which you can think of as a recipe for building images.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>Download an exemplary Dockerfile project with the command below. <code>wget</code> is similar to the <code>curl</code> command you used earlier, but in its default behavior downloads the file rather than displaying its content.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id52f776">wget https://folk.ntnu.no/stanisll/2023/ttm4175/ttm4175-webserver.zip
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id52f776">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://folk.ntnu.no/stanisll/2023/ttm4175/ttm4175-webserver.zip</span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="2">
+<li>
+<p>Extract the zip archive using <code>unzip ttm4175-webserver.zip</code> and navigate into the newly created <code>ttm4175-webserver</code> folder.</p>
+</li>
+<li>
+<p>Read through the commented <code>Dockerfile</code> and try to follow what it does.</p>
+</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can refer to the <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile manual</a> if you want to learn more about the different Dockerfile-specific instructions like <code>FROM</code>, <code>RUN</code>, and <code>EXPOSE</code>. For more information about the apt software package manager, you can use <code>man apt</code>.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="4">
+<li>
+<p>Extend the Dockerfile to not only copy the <code>example.html</code> file, but also <code>lipsum.txt</code>. You can use the <code>nano</code> editor for this.</p>
+</li>
+<li>
+<p>To build an image based on the Dockerfile, execute <code>docker build -t ttm4175-webserver .</code> (don't forget the dot). This will instruct docker to scan the current directory (<code>.</code>) for a Dockerfile and build an image called <code>ttm4175-webserver</code>.</p>
+</li>
+<li>
+<p>Confirm that the build was successful by checking <code>docker images</code>. Then launch an instance of the <code>ttm4175-webserver</code> and attach to it (cf. steps 2 and 4 in the Docker basics part).</p>
+</li>
+<li>
+<p>Within the container,</p>
+<ul>
+<li>Find out its IP address using tools you already know and note it in your report.</li>
+<li>Navigate to the <code>/var/www</code> directory and confirm that the files you specified in the <code>COPY</code> part of the Dockerfile are present.</li>
+<li>As in the web server exercise, launch a web server on port 80.</li>
+<li>Open a web browser in your VM (not on your laptop) and navigate to the IP address of the container. What do you see? Take a screenshot and include it in your report.</li>
+</ul>
+</li>
+<li>
+<p>Stop and remove all running containers. Can you find a way of doing it with a single command? Search online!</p>
+</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
   </main>
 
 
