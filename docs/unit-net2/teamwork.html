@@ -117,23 +117,6 @@ div.task>*:first-child::before {
   color: #e45460;
 }
 
-/* === figure === */
-div.figure {
-  padding: 20px 0 20px 0;
-  width: 100%;
-}
-
-div.figurefullwitdth {
-  padding: 20px 0 20px 0;
-  margin-left: -33px;
-  margin-right: -33px;
-  width: 100%;
-}
-
-figcaption {
-  color: #868279;
-}
-
 /* === goals === */
 div.goals ul,
 div.goals ul li {
@@ -186,37 +169,6 @@ div.goals ul li:before {
   overflow: hidden;
   background-color: #f3f3f3;
   margin-bottom: 15px;
-}
-
-/* === steps === */
-.steps ol, .steps ul {
-  counter-reset: li;
-  list-style: none;
-  margin-left: 10px
-}
-
-.steps li {
-  margin: 0 0 10px 0;
-  min-height: 40px
-}
-
-.steps li:before {
-  content: counter(li);
-  counter-increment: li;
-  border: 2px solid #868279;
-  color: #868279;
-  background-color: none;
-  font-family: "Source Sans Pro", Georgia, serif;
-  font-weight: bold;
-  border-radius: 100%;
-  text-align: center;
-  display: inline-block;
-  top:8px;
-  left:-30px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin: -20px -10px -20px -20px
 }
 
 </style>
@@ -331,16 +283,16 @@ div.goals ul li:before {
 </nav>
 <section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Networking II - Ports, Layers, Client-Server Architecture, Web Servers</h1>
-<p>The overall goal of this lab is to complement knowledge on IP, subnets with some routing notions.
-This will be achieved using the same VMs as last week and default Linux tools.</p>
-<p>Today we will also learn more about Docker. With Docker we will be able to simulate a &quot;mini-cloud&quot; inside our Ubuntu VM. This can be a bit overwhelming at first but we will look at it slowly.</p>
+<p>The overall goal of this lab is to complement your knowledge on IP and subnets by bringing applications into the picture and allowing you to see the notions of ports and layers in a concrete example.
+This will be achieved using the same GNS3-based environment as last week.</p>
+<p>Additionally, we will learn more about Docker. Docker is the tool that is used to provision the invididual hosts in out GNS3 environment, but has many use cases beyond that.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Learning Goals</h2>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>After this lab you will be able to:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>After this lab, you will be able to</p>
 <ul>
 <li>Recognise the importance of <em>ports</em> in networking</li>
-<li>Learn basic Docker principles:
+<li>Learn basic Docker principles
 <ul>
 <li>Images and containers</li>
 <li>The <em>Dockerfile</em></li>
@@ -353,276 +305,77 @@ This will be achieved using the same VMs as last week and default Linux tools.</
 <section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Lab Exercises</h1>
 <p>Please <strong>read each exercise</strong> entirely before starting to solve it.</p>
-<p>Remember you should deliver a report after the networking module is finished.
+<p>Remember that you should deliver a report after the networking module is finished.
 It should include the main commands and configurations necessary to complete each exercise.
 Do not forget to take notes while solving the exercises so you do not have to repeat them.</p>
 <p>These exercises should be completed in teams.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparation</h2>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Make sure there's connectivity between both VMs (you should have configured static IP address in the previous lab.).</li>
-<li>Test if your Ubuntu VM has Internet connectivity.</li>
-<li>Test if your RPi VM has Internet connectivity.</li>
-<li>Make sure you've got enough free disk space for your VM (at least 3GB).</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Experimenting with routes</h2>
-<p>Today we won't see all the network layers in action but we will look into layer-3 routing.
-Later in this lab we will move to the application layer, which is higher in the networking stack.</p>
-<p>Now, <strong>on your RPi VM</strong> try the following:</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Check the current routes associated to 'eth1'</li>
-<li>Remove the existing route with <code>ip route del &lt;ip/mask&gt; dev eth1</code>.</li>
-<li>Check for changes in connectivity between the two VMs with the <code>ping</code> command first from the RPi and afterwards from Ubuntu. Is there any difference?</li>
-<li>Install the program &quot;tcpdump&quot; with the command <code>sudo apt install tcpdump</code> (when asked, type Y or yes to install)</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p><code>tcpdump</code> dumps all the received/sent network traffic (i.e. prints all the traffic)</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
-<li>Now, on your RPi run the command <code>sudo tcpdump -i eth1</code> and try to <code>ping</code> from the Ubuntu VM. Register what happens.</li>
-<li><strong>Repeat step 4</strong> but this time run <code>tcpdump</code> <strong>on Ubuntu</strong> and for the correct interface connected to the internal network. Is there a difference? If so, why?</li>
-<li><strong>On your RPi</strong>, add a new route with the command <code>ip route add</code> with the smallest subnet size possible (don't forget to include this in your <strong>report</strong>).</li>
-<li>Make sure you have re-established the connectivity between the two VMs.</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint on tcpdump</button>
-<div class="w3content">
-<p>In this exercise it's important to remember/understand that a <code>ping</code> consists of two messages.
-One on the way out, and another returning one.</p>
-<p>In our exercise the Ubuntu VM has a route (a path) to reach our RPi, which means that its messages will be sent to their destination.
-On the other hand, the RPi VM <strong>does not</strong> have a route for reaching Ubuntu (even if the &quot;cable is connected&quot;).
-This should be visible when using <code>tcpdump</code>, which will get packets on the RPi but not on Ubuntu.</p>
-
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Docker</h2>
-<h3>Introduction</h3>
-<p>We will start with a few basic steps, if you have any issues please ask for help!
-It's important that you understand well these steps before moving forward.</p>
-<p><strong>---&gt; On your Ubuntu VM</strong></p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>On your Ubuntu VM find out what kind of operating system you're emulating.</li>
-<li>In Docker's hub <a href="https://hub.docker.com/">https://hub.docker.com/</a> search for the same operating system.</li>
-<li>You should have found at least one <em>Docker Official Image</em>, which is important to take into account! Don't use images you don't trust.</li>
-<li>Now enter the following in your terminal:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id0fc11f">docker pull ubuntu
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#id0fc11f">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull ubuntu</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"><p>The <code>pull</code> command retrieves the image from Docker Hub into your local repository.
-This allows you to use the image to create containers multiple times, without having to download it again (unless it needs to be updated).</p>
-</aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="warning box mt-3 mb-3"><p>At this stage, if you get an <em>Error response from daemon</em> edit your network configurations in &quot;/etc/netplan/01-network-manager-all.yaml&quot; to include <em>nameservers</em> below, followed by the command <code>sudo netplan apply</code> to apply the changes.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idf617dc">enp0s3:
-    dhcp4: yes
-    nameservers:
-        addresses: [8.8.4.4,8.8.8.8]
-...
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idf617dc">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">enp0s3</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dhcp4</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">nameservers</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">addresses</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="fl">8.8.4.4</span><span class="kw">,</span><span class="fl">8.8.8.8</span><span class="kw">]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">...</span></span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
-<li>You can see all locally available Docker images by typing:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="ida4090c">docker images
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#ida4090c">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> images</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="6">
-<li>Now let's build and run a container from the Ubuntu image using:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id28e300">docker run -dit --name my-ubuntu-container ubuntu
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#id28e300">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-dit</span> <span class="at">--name</span> my-ubuntu-container ubuntu</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"><p>The <code>run</code> command will build an instance of the Ubuntu image.
-This instance is what we call a container.
-We can build several containers that originate from the same image.
-This is similar to the VM Images that we used earlier, that can be used to build several different VMs, but uses a different technology (for a better explanation check the video on the <a href="prep-networking-2-2020.html#optional-materials">optional materials section</a>).</p>
-<p>If the container is created correctly, you should see its container identifier (container ID), which we will use to manage it.</p>
-</aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="7">
-<li>Using the generated ID, &quot;enter&quot; the new Ubuntu container using the following command, which will run a shell inside it:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idd595fb">docker exec -it <containerID> bash
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idd595fb">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> <span class="op">&lt;</span>containerID<span class="op">&gt;</span> bash</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>It's enough to use only part of the Container ID, as long as it is unique.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="8">
-<li>Compare the version of your container's Ubuntu with the one from your VM using the command below inside the container and inside the VM:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idf10b27">cat /etc/os-release
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idf10b27">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/os-release</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>The goal of this last step is to verify the power of using containers.
-The Docker image we pulled was used as the basis for our container and, as we shall see later, it is possible to run different Linux distributions in our containers, even if the main host is Ubuntu.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="9">
-<li>To exit your container you can just enter &quot;exit&quot;, type <code>Ctrl+d</code> or type <code>Ctrl+p Ctrl+q</code> (the latter detaches from a container even if wasn't started in <em>detach mode</em>).</li>
-<li>To list all running containers you can use the command <code>docker ps</code>. Try it.</li>
-<li>You can stop running containers with <code>docker stop &lt;containerID/name&gt;</code>. Stop your Ubuntu container.</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>After stopping the container you will no longer be able to &quot;enter&quot; it.
-If you try the <em>exec</em> command again it will fail.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="12">
-<li>Now, list all running containers again to see the difference.</li>
-<li>What happens if you try <code>docker ps -a</code>?</li>
-<li>To remove a container you can use the command <code>docker rm &lt;containerID/name&gt;</code>.</li>
-<li>Try again the command <code>docker ps -a</code>. Did anything change?</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>To learn more about Docker commands, apart from using <code>man</code> and <code>--help</code> you can also check our <a href="commands.html#docker-commands">List of Commands</a> and <a href="material/ttm4200-lab1-support-document-2020.pdf">this support document</a>, created by a couple of your KOMTEK colleagues for TTM4200 (next Spring!).</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>More on Docker</h3>
-<p>Now we'll use Docker to setup a Web Server in our VM without having to change it.
-This is very useful in many contexts, even for you throughout your degree.
-For example, if you need to use a specific software for a given course, instead of installing on your own machine, you can just create a container with all the necessary software and run it when needed!</p>
-</div><aside class="col-md-4 chunk ps-2"><p>For making things simpler, in this part of the lab we need to run the Ubuntu VM with graphics support (<em>Normal start</em>).
-It can be done without but it needs some extra (non-included) steps.</p>
-</aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Back to the lab!</p>
-<p>Instead of pulling a generic Docker image, we are going to create our own Docker image, defined using a 'Dockerfile'.
-This file contains a set of instructions, necessary to create a Docker image.
-To do so just follow these steps:</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Download <a href="material/lab2-docker.zip">this zip file</a> with a basic container configuration.</li>
-<li><code>unzip</code> the downloaded file and navigate to the folder './lab2/webserver/'.</li>
-<li>Inside this folder you will fine a simple 'Dockerfile' with comments created by two KOMTEK colleagues. Read through the file and comments to see how it works.</li>
-<li>Now you can build your own image based on this 'Dockerfile' with the command:</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id23bf13">docker build -t webserver .
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#id23bf13">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> webserver .</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="5">
-<li>List all available Docker images to see the new image. How many new images do you see? Why?</li>
-<li>Create a container based on the image you just built and register its ID (you can also retrieve it later).</li>
-<li>Enter your new container and find its IP address.</li>
-<li>Open a browser inside your Ubuntu VM and enter the IP address of your container. What did you see? Take a screenshot and include it in your report.</li>
-<li>Stop and remove all running containers (can you find a way of doing it with a single command? Search online!).</li>
-</ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>If you have issues with your browser ask for help from a TA.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint about managing containers</button>
-<div class="w3content">
-<p>To create a container you want to use the command <code>docker run</code> with the necessary/correct options.</p>
-<p>To find container IDs you want to use the command <code>docker ps</code> (<code>-a</code> optional).</p>
-
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Optional Exercises</h1>
-<h2>Two servers, same IP address?</h2>
-<p><em>You can run this exercise without graphics support on your Ubuntu VM.</em></p>
-<p><strong>Intro:</strong> A Web Server can be run in the same machine to support multiple websites.
-This is typically done by analysing the website's name (DNS) and replying with the correct page.
-However, more than one Web Server in the same machine means we would have to use port 80 or 443 more than once, which we can't!
-In the upcoming tasks you will see how we can get around this limitation.</p>
-</div><aside class="col-md-4 chunk ps-2"><p>By convention Web Server bind port 80 for HTTP and port 443 for HTTPS.
-These default ports are used in many networking services, for saving us time in having to specify a port for each standard service.
-For example, SSH uses port 22 by default (that's why we used it when we set port forwarding, remember?).</p>
-</aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol>
-<li>Inside the unzipped folder navigate to './lab2/webserver-1/'.</li>
-<li>What is the main difference from the 'Dockerfile' in this folder compared to the one used earlier (in the folder 'webserver')? Discuss this in your report.</li>
-<li>Build an image based on the included 'Dockerfile', name this image &quot;webserver-1&quot;.</li>
-<li>Repeat step 1 and 2 for 'webserver-2' and name the image accordingly.</li>
-<li>Run the commands below and look at them carefully. Note the <code>-p</code> option. What does it do?</li>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Web Server, Ports, HTTP</h1>
+<h2>Initializing the Environment</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We will use the same topology as last week, using one host as client and one as server. To get started, <strong>close any running instances of GNS3 and launch it again</strong>. You can load your project from last time or re-create the two-host topology according to <a href="/unit-net1/teamwork.html#launching-gns3-and-creating-a-basic-network">last week's instructions</a>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>Since the underlying Docker images that are used for the hosts have been updated, it is necessary to restart GNS3 for the changes to take effect.</p>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>As last week, set compatible IP addresses on the interfaces of the two hosts, for instance <code>10.0.0.1/24</code> and <code>10.0.0.2/24</code>.
+Before you continue, make sure that the two hosts can reach each other by using <code>ping</code>.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Running a Web Server</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
+<li>As mentioned before, one host will take the role of the client and one that of the server. On the server (<code>ubuntu-host-2</code> with IP <code>10.0.0.2</code>), navigate to the <code>/var/www</code> folder and inspect its contents.</li>
 </ol>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idb36bae">docker run -d --name serverNr1 -p 8080:80 webserver-1
-docker run -d --name serverNr2 -p 8081:80 webserver-2
-</pre>
-<button type="button" class="copy-button" data-clipboard-target="#idb36bae">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-	</svg>
-</button>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">--name</span> serverNr1 <span class="at">-p</span> 8080:80 webserver-1</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">--name</span> serverNr2 <span class="at">-p</span> 8081:80 webserver-2</span></code></pre></div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="steps"><ol start="6">
-<li>On your RPi VM (<em>Normal start</em>), open the web browser and type the IP address of your Ubuntu VM followed by &quot;:8080&quot; to specify the desired port and enter it (e.g. 10.0.20.2:8080). What did you see?</li>
-<li>Repeat the previous step using port 8081 instead. What's the difference?</li>
-<li>In your report make an illustration of what you think happened, including the RPi and Ubuntu VM, the link between them and the containers, as well as some arrows to represent the webpage request (e.g. with IP and port number as labels). You can use the figure below as inspiration.</li>
-<li>Stop and remove all the containers.</li>
-<li>Remove all Docker images.</li>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="2">
+<li>You can run a simple Python-based HTTP server in your current working directory by issuing the command <code>python3 -m http.server 80</code>. This will instruct python to run the <code>http.server</code> module with <code>80</code> as its first argument, indicating which port the HTTP server should listen to. 80 is the standard port number for HTTP. You can learn more about commonly used port numbers <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">here</a>.</li>
 </ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tip box mt-3 mb-3"><p>You can use the combination <code>Ctrl-C</code> to stop the server application and regain control of the console.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><figure class="figure">
-    <img src="figures/net/lab3-topo.png" class="figure-img img-fluid rounded" alt="Simple illustration of the setup we will have in lab 3. Can be used **as inspiration** to illustrate lab 2.">
-</figure></div><aside class="col-md-4 chunk ps-2"><figcaption class="figure-caption">Simple illustration of the setup we will have in lab 3. Can be used **as inspiration** to illustrate lab 2.</figcaption></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Interacting with the Web Server</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="3">
+<li>With the server application running, we can access the content it serves. Instead of using a browser, we can use command line tools like <code>curl</code> to connect to the server and download HTML pages or other files that are offered.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="4">
+<li>From the host (<code>ubuntu-host-1</code> if you're following the same naming and addressing scheme), try <code>curl 10.0.0.2</code>. Observe the output and relate it to the content you saw in step 1. Investigate how you can download the file <code>example.html</code>.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="5">
+<li>On <code>ubuntu-host-2</code>, stop the server application, rename <code>example.html</code> to <code>index.html</code>, and restart the server application. Re-run the <code>curl</code> commands from the client from the previous step and discuss the differences in the output. What happens if you try requesting a page that does not exist?</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Capturing HTTP Traffic</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="6">
+<li>Following the <a href="/unit-net1/teamwork.html#verifying-your-configuration">instructions from last week</a>, start a traffic capture on the link between the client and the server.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="7">
+<li>
+<p>With Wireshark open, run the previous <code>curl</code> commands again and discuss the HTTP traffic that appears.</p>
+<ul>
+<li>What kind of information is exchanged between client and server in the HTTP messages in each direction?</li>
+<li>Click on an HTTP packet and check the detailed view in the lower half of the Wireshark window. Taking a look at these details, what can you tell about the protocol stack that is used here? Refer back to chapter 1.5.1 in the book and map the protocols you find to the different layers.</li>
+<li>Compare how the traffic changes when you request <code>example.html</code> and <code>lipsum.txt</code>. What could be the reason?</li>
+</ul>
+</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Hint</button>
+<div class="w3content">
+<p>Compare the size of the two files and recall what we discussed about packets.</p>
+
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Changing Ports</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="8">
+<li>Going back to the server, stop the application and re-run it using a different port. For instance, <code>python3 -m http.server 8000</code>. How does this change the output at the client trying to <code>curl</code>? Find out how to point <code>curl</code> to a specific port, e.g., by consulting its <a href="https://curl.se/docs/manual.html">manual</a>.</li>
+</ol>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
@@ -680,8 +433,6 @@ docker run -d --name serverNr2 -p 8081:80 webserver-2
     var clipboard = new ClipboardJS('.copy-button');
   </script>
   <script>
-
-
 
 
 </script>
