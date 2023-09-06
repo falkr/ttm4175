@@ -99,7 +99,92 @@ Compare the size of the two files and recall what we discussed about packets.
 
 
 
+# Docker
 
 
+For this second part, you can quit GNS3 and open a terminal directly on your VM. The CLI prompt should say `netlab@netlab-linux:~$ `.
 
 
+## Basics
+
+
+In Docker, we distinguish between *images* and *containers* (also called *instances*). Images are the pre-built templates or snapshots that package all the software that is required for the intended use case. The use case can be a fresh install of a specific Linux distribution, a pre-installed and pre-configured service (web server, mail server, database, ..), or more. For this, an image can include code and configuration files, runtimes and libraries, as well as other dependencies. Based on such an image, we can launch one or multiple running containers that execute the environment defined in the image.
+
+
+1. To check which images are available on your machine, you can run `docker images`. How many images are listed in your case?
+
+2. You can create an instance based on the `ubuntu` image by running 
+```bash
+docker run -dit --name my-ubuntu-container ubuntu
+```
+
+The output should give you a long ID which is used to uniquely identify that specific instance. For easier reference, we also provided a more memorable name, `my-ubuntu-container`.
+
+:tip:
+You can learn more about the options of docker run in the [documentation](https://docs.docker.com/engine/reference/run/). For now, it is enough to know that `docker run -dit` instantiates a container in the background, and allows us to attach to its console later on.
+
+
+3. You can confirm that the instance has been created using `docker ps` (process status). The output contains the ID, base image name, and other high-level information about your running container instances. Following step 2, you can also launch additional instances from the same image and confirm their presence using `docker ps`.
+
+:tip:
+If you create multiple containers and explicitly provide a name, make sure that the name is unique to avoid errors.
+
+
+4. With the containers running, you can attach to them via 
+```bash
+docker exec -it <containerID> bash
+```
+Your prompt should change from `netlab@netlab-linux:~$ ` to `root@fa00f8e10813:/# `, indicating that you are now logged in as root on the container with the respective ID. Create some files or folders inside the container.
+ 
+:tip:
+In this case, the `containerID` can be either the ID from the outputs in the previous step (the first few characters are enough as long as they are enough to uniquely identify your container), or the name you chose when running the container.
+
+
+5. Try running `cat /etc/os-release` inside your container, then `exit` back to your netlab VM and run the same command to compare the operating system versions. What can you observe?
+
+---
+type: hint
+title: "Hint"
+---
+This step illustrates some of the power of using containers.
+The Docker image we used as the basis for our container uses a different version of the same operating system and, as we shall see later, it is even possible to run different Linux distributions in our containers, regardless of the main host's distribution.
+
+
+6. To clean up, you can stop and remove containers using `docker stop <containerID>` followed by `docker rm <containerID>`.
+
+7. Re-create one of the containers according to step 2. What happened to the files/folders you created in step 4? Discuss how this relates to the concepts of images and containers.
+
+
+## Building Our Own Image
+
+
+We can also define our own image to create containers which run our desired software. As an example, we will create the web server from the fist part of today's lab. To this end, we will use the `ubuntu` image as a starting point and extend it to fit our needs. The Docker way of doing this involves a *Dockerfile* which you can think of as a recipe for building images.
+
+
+1. Download an exemplary Dockerfile project with the command below. `wget` is similar to the `curl` command you used earlier, but in its default behavior downloads the file rather than displaying its content.
+
+```bash
+wget https://folk.ntnu.no/stanisll/2023/ttm4175/ttm4175-webserver.zip
+```
+
+2. Extract the zip archive using `unzip ttm4175-webserver.zip` and navigate into the newly created `ttm4175-webserver` folder.
+
+3. Read through the commented `Dockerfile` and try to follow what it does.
+
+:tip:
+You can refer to the [Dockerfile manual](https://docs.docker.com/engine/reference/builder/) if you want to learn more about the different Dockerfile-specific instructions like `FROM`, `RUN`, and `EXPOSE`. For more information about the apt software package manager, you can use `man apt`.
+
+
+4. Extend the Dockerfile to not only copy the `example.html` file, but also `lipsum.txt`. You can use the `nano` editor for this.
+
+5. To build an image based on the Dockerfile, execute `docker build -t ttm4175-webserver .` (don't forget the dot). This will instruct docker to scan the current directory (`.`) for a Dockerfile and build an image called `ttm4175-webserver`.
+
+6. Confirm that the build was successful by checking `docker images`. Then launch an instance of the `ttm4175-webserver` and attach to it (cf. steps 2 and 4 in the Docker basics part).
+
+7. Within the container, 
+    - Find out its IP address using tools you already know and note it in your report.
+    - Navigate to the `/var/www` directory and confirm that the files you specified in the `COPY` part of the Dockerfile are present.
+    - As in the web server exercise, launch a web server on port 80.
+    - Open a web browser in your VM (not on your laptop) and navigate to the IP address of the container. What do you see? Take a screenshot and include it in your report.
+
+8. Stop and remove all running containers. Can you find a way of doing it with a single command? Search online!
