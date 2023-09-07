@@ -9,6 +9,7 @@
 - Get familiar with the popular client-server architecture for network-based services and see it in action in the context of a web server
 
 
+* Today's [lecture slides](2023-ttm4175-week-36-net2.pdf)
 
 ## Preparation
 
