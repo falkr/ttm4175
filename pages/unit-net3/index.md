@@ -1,11 +1,11 @@
-# Networking III - Routing, DNS
+# Networking III - Routing and DNS
 
-The overall goal of this unit is to complement knowledge on IP and subnets with some routing notions for setting up our own DNS and Web servers.
-This will be achieved using the same VMs as last week and default Linux tools.
+The overall goal of this unit is to complement knowledge on IP and subnets with some routing notions as well as setting up our own DNS and web servers.
+
 
 ## Learning Goals
 
-:goals: After this lab you will be able to:
+:goals: After this lab you will be able to
 
 - Recognise the role of routing in networking
 - Use `ip route` for managing routes
@@ -15,7 +15,7 @@ This will be achieved using the same VMs as last week and default Linux tools.
 
 ## Preparation
 
-Go through the following preparation material before we meet in class:
+Go through the following preparation material before we meet in class.
 
 
 ---
@@ -28,7 +28,7 @@ link: preparation.html
 
 ## Teamwork
 
-In the lab, go through the following activities with your team:
+In the lab, go through the following activities with your team.
 
 
 ---
@@ -37,4 +37,17 @@ title: 'Net III - Teamwork: Routing, DNS'
 icon: people-fill
 link: teamwork.html
 ---
+
+
+
+
+---
+ref: ../reflect.md
+---
+
+
+:tip:
+If the form does not open properly or you get an error message, try right-clicking the link and opening it in a new tab or window.
+
+
 
