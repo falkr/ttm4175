@@ -169,7 +169,7 @@ wget https://folk.ntnu.no/stanisll/2023/ttm4175/ttm4175-webserver.zip
 
 2. Extract the zip archive using `unzip ttm4175-webserver.zip` and navigate into the newly created `ttm4175-webserver` folder.
 
-3. Read through the commented `Dockerfile` and try to follow what it does.
+3. Read through the commented `Dockerfile` and try to understand what it does. You do not need to execute the commands in that file.
 
 :tip:
 You can refer to the [Dockerfile manual](https://docs.docker.com/engine/reference/builder/) if you want to learn more about the different Dockerfile-specific instructions like `FROM`, `RUN`, and `EXPOSE`. For more information about the apt software package manager, you can use `man apt`.

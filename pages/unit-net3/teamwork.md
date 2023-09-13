@@ -1,17 +1,7 @@
 # Networking III - Routing, DNS
 
-The overall goal of this lab is to complement knowledge on IP and subnets with some routing notions for setting up our own DNS and Web servers.
-This will be achieved using the same VMs as last week and default Linux tools.
-
-
-## Learning Goals
-
-:goals: After this lab you will be able to:
-
-- Recognise the role of routing in networking
-- Use `ip route` for managing routes
-- Retrieve basic DNS information
-- Deploy simple network services
+At this point, you can already set up simple network configurations.
+This week, we will continue exploring networking commands - in particular those related to routing - and we will interact with a basic [Domain Name System (DNS)](https://en.wikipedia.org/wiki/Domain_Name_System) and web server.
 
 
 ## Learning Goals
@@ -28,179 +18,125 @@ This will be achieved using the same VMs as last week and default Linux tools.
 
 Please **read each exercise** entirely before starting to solve it.
 
-Remember you should deliver a report after the networking module is finished.
+Remember that you should deliver a report after the networking module is finished.
 It should include the main commands and configurations necessary to complete each exercise.
 Do not forget to take notes while solving the exercises so you do not have to repeat them.
 
 These exercises should be completed in teams.
 
 
-## Preparation
-
-:steps:
-1. Make sure there's connectivity between both VMs (you should have configured static IP address in the previous labs.).
-2. Test if your Ubuntu VM has Internet connectivity.
-3. Make sure you've got enough free disk space for your VM (at least 3GB).
 
 
-**Note:** If you have problems with lack of memory/RAM in your computer consider this:
 
-* You can complete this entire lab without the RPi VM (except for the optional part);
-* You can run the Ubuntu VM in headless mode and connect to it via `ssh`;
-* Instead of retrieving web pages with a "normal browser" you can use the command `wget` (or a text-based browser such as Lynx).
+# Import and Topology
 
 
-# A simple network with services
+For today's lab, we're going to use a project that comes with several pre-configured components. To get started and make sure that changes are applied within GNS3, **close any running instances of GNS3 and launch it again**. On launch, pick the `lab03-routing-and-dns` project from the *Projects library* tab in GNS3 as outlined in the following graphic.
+
 
 ---
 type: figure
-source: figures/net/lab3-topo.png
-caption: Network to be created with docker-compose.
+source: img/lab03-001-load-project.png
 ---
 
-**--> In your Ubuntu VM**
 
-:steps:
-1. Download [this zip file](material/lab3-compose.zip) with the necessary container configuration files.
-2. `unzip` the downloaded file and inside the 'lab3' folder edit the 'docker-compose.yml' file.
-3. Read through the file and see how we configured 3 containers and their networks, matching the figure above.
-4. In the webserver's configuration section edit the IP address to match the topology above (line 51, replace the text "-----Fyll inn her ------" with the correct IP address). Save and exit the file.
-5. Now you can start your topology with the command below. Afterwards list all running containers (discuss what happened in your report).
-
-```bash
-docker-compose up -d --build
-``` 
-
-:tip:
-The first time you run `docker-compose` it will take a few minutes to build the images (approx. 5 min. or less).
-Use that time to carefully read the next steps.
+You will be presented with a network topology that consists of three routers (R1-R3), a switch, and three hosts, corresponding to a client, a DNS server, and a (web) server. A schematic overview of the network topology is provided in the graphic below. The graphic shows network interface names alongside their configured IP addresses, their interconnections, and uses the same colors to highlight interfaces that are on the same subnet.
 
 
+---
+type: figure
+source: img/lab03-002-topology.png
+---
 
-## Configuring simple routing
 
-In this part of the lab your objective is to guarantee you can route packets from your host to the containers.
-Notice that we have a router in our topology that connects two different subnets.
-We will need to configure this router container ('router0') so that packets are correctly forwarded.
+# Identifying Packets' Paths and Confirming Routes
 
-**--> In your Ubuntu VM**
 
-:steps:
-1. First, we should check our current routing table in the host machine (use: `ip route list `).
-2. You should see that the host has direct routes to the subnets '10.241.1.0/29' and '10.168.1.0/29', via the devices "br-\*". Include this in your report (a screenshot with a highlight is enough).
-3. Since we don't want the host to directly access all the containers --- it should go via 'router0' --- run the following command:
-```bash
-sudo ip route del 10.241.1.0/29
+The hosts and routers are already set up in a way that allows communication between the client (`10.240.1.3`) and the server (`10.168.1.2`). First, confirm that this is actually the case - for instance by `ping`-ing from one to the other. Although this confirms connectivity, you do not yet know which path packets take through the network to reach their respective destination.
+
+
+1. Recall (or look up online) which command line tool we used to figure out the path packets take to a given destination and use it to determine the sequence of IP addresses / interfaces / devices that packets from the client take on their way to the server.
+
+The way packets are treated by computers and routers along the way is determined by the devices' *routing tables*. You can inspect routing table entries by issuing the `ip route` command. For instance, the routing table of the client looks as follows:
+
+```
+root@client:/# ip route
+10.168.1.0/24 via 10.240.1.1 dev eth0 
+10.240.1.0/24 dev eth0 proto kernel scope link src 10.240.1.3
 ```
 
-:steps:
-4. Verify that you have connectivity with '10.168.1.2' and not with '10.241.1.2'. Briefly explain why in your report.
-5. Now we need to add a new route such that traffic for the network '10.241.1.0/29' is forwarded via 'router0' (i.e. via '10.168.1.2').
+The first item of any routing table entry is the destination network (`10.168.1.0/24` and `10.240.1.0/24` in this example). If the device wants to send a packet towards the specified network, it will consult the matching routing table entry to find the appropriate interface to send it out of and the next-hop device (typically a router) along the way. 
 
----
-type: hint
-title: Adding routes
----
-Remember the command `ip route add`.
+In case of the first rule, packets destined for the `10.168.1.0/24` will be sent out the `eth0` interface towards the `eth0` interface of router R1 which is on the same network as the client and has the IP address `10.240.1.1`.
+
+The second rule states that if the client wants to send data to any device in the `10.240.1.0/24` network, it shall use the `eth0` interface and use `10.240.1.3` as its source IP address. 
 
 
-:steps:
-6. Now verify that packet forwarding is enabled (i.e. "= 1") with the command:
-```bash
-sysctl net.ipv4.conf.all.forwarding
-```
-
-:steps:
-7. From your host machine make sure you can `ping` the web server using its address and include a screenshot on your report.
+2. Using the `ip route` command on the routers you identified along the path from client to server, confirm that the route configuration does indeed match the observed behavior. In particular, explain which routing table entries are triggered when a packet from the client to the server or a packet from the server to the client traverses the respective router.
 
 
-## Using our DNS server (container)
-
-As you can probably guess, our DNS container contains a running DNS server which will support our proposed network.
-Follow the steps below but don't forget to explore the provided configurations to learn some more.
-
-**--> In your Ubuntu VM**
-
-:steps:
-1. Open a web browser and try to retrieve the web site 'www.ttm4175.com'. What happens and why?
-2. Edit the file '/etc/resolv.conf' and change the "nameserver" to '10.241.1.2' (or add a new entry above). This will tell the system to make DNS requests to this address first, which corresponds to our DNS container.
-3. Repeat step 1. What happens and why?
-4. Find out what other domain names your DNS container resolves and include them, and their corresponding addresses, in your report (e.g. 'mail.ttm4175.com' resolves to '10.241.1.3').
+# Adjusting Routes
 
 
----
-type: hint
-title: Finding DNS server configurations
----
-If you explore the Docker configuration of the DNS container (in the 'dnsserver/config_files' folder) you will find all the details you need.
-You can also check inside the actual container you built, where the configuration files have been placed.
+In addition to retrieving routing table information, the `ip route` command can be used to modify routing behavior. Using the same syntax as the outputs we discussed in step 1, we can use `ip route add` and `ip route del` to add or delete entries. For instance, you can delete the route to the server from the client to the server by `ip route del 10.168.1.0/24 via 10.240.1.1 dev eth0`.
+
+
+3. What happens if you try to ping or otherwise reach the server after deleting the route? Add the route again and confirm that connectivity is restored.
+
+
+4. Using your knowledge of routing and the `ip route` command, adjust the routing table entries on routers R1-R3 so that packets from the client to the server take the path client-R1-R2-server. Document and discuss the purpose of all commands and where you use them, and finally confirm your configuration by once again checking the output of the tool for checking the end-to-end path on the client.
 
 
 :tip:
-To make nameserver changes permanent use the _netplan_ configuration like you did last week.
+For this step, you will only need rules of the shape `<destination_network/mask> via <next_hop_ip> dev <interface>`.
 
-
-
-## Exploring our Web server (container)
-
-**--> In your Ubuntu VM**
-
-:steps:
-1. Go into your web server container ('webserver'). How did you do it?
-2. Navigate to '/etc/nginx/sites-available' and open the file 'default'.
-3. In this file find the *root* directory where the web server pages are stored, namely the 'index.html' file, and include it in your report.
-4. In your host machine, open the web browser and visit the site 'www.ttm4175.com'.
-5. Now, back in your web server container edit the file 'index.html' (be creative!!) and save it when you finish.
-6. Return to your web browser, refresh the page (it should look different), take a screenshot and include it in your report.
-
----
-type: hint
-title: Working inside your containers
----
-Remember that you can go inside your running containers with the command `docker exec -it <name> /bin/bash`.
-Alternatively, you can also use `ssh` to enter your container.
-
-And don't forget the [useful commands page](./commands.html).
-
-
-
-## Final task
-
-In your report describe what happens in the network when you open the page 'www.ttm4175.com'.
-You can just explain, step by step, the requests and answers from the browser to the servers and back.
-This should include the IP addresses of each server (don't forget DNS).
-
-If you want, you can also include screenshots (e.g. `tcpdump`) and you can also start/stop containers by hand to see how they affect the overall process (e.g. stop the DNS server).
-
-Finally, you can stop all the containers and remove the networks with the command:
-```bash
-docker-compose down
-```
 
 :tip:
-If you want to restart your network but haven't changed the setup you can simply run `docker-compose up -d`, without the `--build` flag, and it will be much faster than the first time!
+If your configuration happens to break along the way, you can just restart the device in question or the entire network to revert it back to its initial configuration.
 
 
+# DNS Server and Client-Side Nameserver Settings
 
-# Optional Exercises
 
-## Routing from the RPi to the Docker services
+To get started with this step, let the `server` machine run its web server in the usual way.
 
-**--> In your RPi VM**
-
-:steps:
-1. Can you `ping` the container 'router0'? Why or why not?
-2. How does your routing table look like? Do you need to add or remove any entry?
-3. **After having IP connectivity**, attempt to open or `ping` the web server using the hostname 'www.ttm4175.com'. What happens? Why? How can you fix it?
-
----
-type: hint
-title: Tips for pros
----
-Forwarding is enabled in Ubuntu but `iptables` doesn't allow forwarding from outside the host to our containers.
-
-You need to allow enable forwarding specifically to the network or interface, e.g.:
-```bash
-sudo iptables -A FORWARD -i enp0s8 -j ACCEPT
 ```
+root@server:/# cd /var/www/
+root@server:/var/www# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+```
+
+From the client, confirm that you can download the web site from the server with `curl 10.168.1.2`.
+
+**Our goal for this part, is to use DNS to enable the client to reach the server through the more human-readable address `ttm4175.com` rather than its IP address.**
+
+Open a console on the `dns` host and navigate to `/etc/bind`. This is the home of configuration files related to the BIND 9 DNS server that runs on this host.
+
+
+1. Inspect the file `named.conf.local`. The `zone` defines the portion of the namespace for which this machine is responsible. Inside the zone definition, `file` points to the file that contains the actual DNS records for the zone. Use [the BIND 9 documentation](https://bind9.readthedocs.io/en/latest/reference.html#namedconf-statement-zone) or any other source to find the meaning of the `type master` part of the configuration.
+
+
+2. Take a look at the `file` that is referenced in the above configuration. Go through the file and discuss the broad meaning of the various entries. Feel free to consult [online resources](https://www.thegeekdiary.com/understanding-dns-zone-files/).
+
+
+3. You can make DNS requests from the client to the DNS server by invoking the `nslookup` utility that we used in the past. Issue the commands `nslookup ttm4175.com`, `nslookup ttm4175.com 10.240.1.2`, and `curl ttm4175.com` at the client. Explain the different outputs you get.
+
+
+4. Back in GNS3, start a capture on the link between the client and the switch. Re-run `nslookup ttm4175.com 10.240.1.2` and discuss the DNS packets you see. What transport protocol does DNS use? What kinds of and how many queries and responses are being sent?
+
+
+5. To add our DNS server as the default nameserver for the client, open a console on the client and use a text editor such as `nano` to add the following line to `/etc/resolv.conf`:
+
+
+```
+nameserver 10.240.1.2
+```
+
+6. Run `nslookup ttm4175.com` and `curl ttm4175.com` again and document what happens.
+
+
+## End-to-End Scenario
+
+
+7. For your report, describe what happens in the network when you download the page "ttm4175.com" (e.g., when you use `curl ttm4175.com`). You can explain, step by step, the requests and answers from the client to the server and back. This should include the IP addresses, protocols, and involved devices / services. You can also provide screenshots to illustrate and highlight your explanations.
 

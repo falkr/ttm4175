@@ -1,6 +1,6 @@
 # Networking III - Routing and DNS
 
-At this point you can already set up simple network configurations.
+At this point, you can already set up simple network configurations.
 This week, we will continue exploring networking commands - in particular those for routing - and we will set up a basic [Domain Name System (DNS)](https://en.wikipedia.org/wiki/Domain_Name_System) and web server.
 
 
