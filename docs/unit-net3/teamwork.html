@@ -382,7 +382,7 @@ root@server:/var/www# python3 -m http.server 80
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...</code></pre>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>From the client, confirm that you can download the web site from the server with <code>curl 10.168.1.2</code>.</p>
-<p><strong>Our goal for this part, is to use DNS to enable the client to reach the server through the more human-readable address <code>ttm4175.com</code> rather than its IP address.</strong></p>
+<p><strong>Our goal for this part is to use DNS to enable the client to reach the server through the more human-readable address <code>ttm4175.com</code> rather than its IP address.</strong></p>
 <p>Open a console on the <code>dns</code> host and navigate to <code>/etc/bind</code>. This is the home of configuration files related to the BIND 9 DNS server that runs on this host.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol>
