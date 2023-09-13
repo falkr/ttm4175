@@ -108,7 +108,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
 From the client, confirm that you can download the web site from the server with `curl 10.168.1.2`.
 
-**Our goal for this part, is to use DNS to enable the client to reach the server through the more human-readable address `ttm4175.com` rather than its IP address.**
+**Our goal for this part is to use DNS to enable the client to reach the server through the more human-readable address `ttm4175.com` rather than its IP address.**
 
 Open a console on the `dns` host and navigate to `/etc/bind`. This is the home of configuration files related to the BIND 9 DNS server that runs on this host.
 
