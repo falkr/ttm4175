@@ -7,10 +7,13 @@ The overall goal of this unit is to complement knowledge on IP and subnets with 
 
 :goals: After this lab you will be able to
 
-- Recognise the role of routing in networking
+- Recognize the role of routing in networking
 - Use `ip route` for managing routes
 - Retrieve basic DNS information
 - Deploy simple network services
+
+
+* Today's [lecture slides](2023-ttm4175-week-37-net3.pdf)
 
 
 ## Preparation

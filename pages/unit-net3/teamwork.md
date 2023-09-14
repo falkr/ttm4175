@@ -8,7 +8,7 @@ This week, we will continue exploring networking commands - in particular those 
 
 :goals: After this lab you will be able to:
 
-- Recognise the role of routing in networking
+- Recognize the role of routing in networking
 - Use `ip route` for managing routes
 - Retrieve basic DNS information
 - Deploy simple network services
