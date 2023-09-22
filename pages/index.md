@@ -85,7 +85,7 @@ type: table
 |-
 | 39
 | Fredag 8:15-14:00
-| Lab 5: Etisk hacking / Sikkerhet
+| [Lab 6: Cybersecurity 1](unit-s1/index.html)
 |-
 | 40
 | Fredag 8:15-14:00
