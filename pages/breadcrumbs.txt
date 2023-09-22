@@ -16,6 +16,7 @@ index.md - TTM4175
   unit-net3/index.md - Networking 3
     unit-net3/preparation.md - Preparation
     unit-net3/teamwork.md - Teamwork
+  unit-s1/index.md - Cyber Security 1
   unit-p1/index.md - IoT 1
     unit-p1/preparation-1.md - Preparation 1
     unit-p1/preparation-2.md - Preparation 2

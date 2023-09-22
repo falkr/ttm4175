@@ -1,4 +1,4 @@
-Cyber Secuirty
+# Cyber Security
 
 
 
@@ -13,13 +13,13 @@ Cyber Secuirty
 
 
 ## Preparation
-Curiosity :-) Just go through the following preparation material before we meet in class:
+
+Go through the following preparation material before we meet in class:
 
 ---
 type: youtube
 video: 5dGUXG_Fz_U
 ---
-
 
 ---
 type: youtube
