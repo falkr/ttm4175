@@ -49,8 +49,4 @@ ref: ../reflect.md
 ---
 
 
-:tip:
-If the form does not open properly or you get an error message, try right-clicking the link and opening it in a new tab or window.
-
-
 
