@@ -28,7 +28,8 @@ video: GT0daScxO18
 ---
 
 -----
-ref: ../Lecture 1.pptx
+ref: https://studntnu-my.sharepoint.com/:b:/g/personal/muhammmy_ntnu_no/EeSHWVYFfnBDrCaryjFyLWIBfFQNehl7wulF6F7FlddyuQ?e=hU1CP7
+pass:123
 -----
 
 ---
