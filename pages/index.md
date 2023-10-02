@@ -81,43 +81,43 @@ type: table
 |-
 | 38
 | Fredag 8:15-14:00
-| Om Teamarbeid (Frank)
+| Lab 5: Om Teamarbeid (Frank)
 |-
 | 39
 | Fredag 8:15-14:00
-| [Lab 6: Cybersecurity 1](unit-s1/index.html)
+| (Lab 6: Cybersecurity 1)
 |-
 | 40
-| Fredag 8:15-14:00
-| Lab 6: Etisk hacking / Sikkerhet
+| Fredag 8:15-10:00
+| Lab 7: Bærekraft (kun forelesning 8:15-10:00, Iwona Windekilde) 
 |-
 | 41
 | Fredag 8:15-14:00
-| Lab 7: Etisk hacking / Sikkerhet
+| [Lab 8: Introduction to IoT and the Microbit](unit-p1/index.html) (Frank Alexander)
 |-
 | 42
 | Fredag 8:15-14:00
-| _info kommer_
+| [Lab 9: Tilstandmaskiner](unit-p2/index.html) (Frank Alexander)
 |-
 | 43
 | Fredag 8:15-14:00
-| [Lab 8: Introduction to IoT and the Microbit](unit-p1/index.html)
+| [Lab 10: HTTP and JSON](unit-p3/index.html) (Frank Alexander)
 |-
 | 44
 | Fredag 8:15-14:00
-| [Lab 9: Tilstandmaskiner](unit-p2/index.html)
+| Lab: Cybersikkerhet 1 (Basel Katt)
 |-
 | 45
 | Fredag 8:15-14:00
-| [Lab 10: HTTP and JSON](unit-p3/index.html)
+| [Lab 11: MQTT](unit-p4/index.html) (Frank Alexander)
 |-
 | 46
 | Fredag 8:15-14:00
-| [Lab 11: MQTT](unit-p4/index.html)
+| Lab: Cybersikkerhet 2 (Basel Katt)
 |-
 | 47
 | Fredag 8:15-14:00
-| _info kommer_
+| Lab: Cybersikkerhet 3 (Basel Katt)
 |}
 
 
