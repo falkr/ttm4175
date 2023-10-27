@@ -518,7 +518,7 @@ To repeat and clarify:
 
 :task: Uncomment the storage for the temperature in the code.
 
-### Adding the Yr Forecast
+### Optional Task: Adding the Yr Forecast
 
 
 :task: Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together. 
