@@ -252,56 +252,38 @@ div.goals ul li:before {
   </nav>
 
   <main class="container container-max-width">
-    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
-<li class="breadcrumb-item active" aria-current="page">Networking 1</li>
-</ol>
-</nav>
-<section class="mt-2 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Networking I - Binary, IP Addresses, Subnets, LAN Configuration</h1>
-<h2>Learning Goals</h2>
+    <section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Cyber Security</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>After this week, you will be able to</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Learning Goals</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><p>Goals for this week's lab:</p>
 <ul>
-<li>Understand and apply basic binary arithmetic</li>
-<li>Understand IP addresses and their organisation into subnets</li>
-<li>Create and configure Local Area Networks (LANs)</li>
-<li>Use basic Linux commands for managing:
-<ul>
-<li>IP addresses (IPv4 and IPv6)</li>
-<li>IP subnets and masks</li>
+<li>Define what cybersecurity is and why it's important in our digital lives.</li>
+<li>Recognize the role of cybersecurity in protecting computer systems, networks, and personal data.</li>
+<li>Identify and explain common cyber threats such as malware, phishing, password breaches, and social engineering.</li>
+<li>Understand the potential consequences of falling victim to these threats.</li>
 </ul>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Preparation</h2>
+<p>Go through the following preparation material before we meet in class:</p>
+<p>From the book <a href="https://link.springer.com/book/10.1007/978-981-19-2658-7">Cybersecurity and Identity Access Management</a>:</p>
+<ul>
+<li>
+<p>Chapter 1: <a href="https://link.springer.com/chapter/10.1007/978-981-19-2658-7_1">Cybersecurity for Beginners</a>
+(pages 1-20)</p>
+</li>
+<li>
+<p>Chapter 2: <a href="https://link.springer.com/chapter/10.1007/978-981-19-2658-7_2">The Basics of Hacking and Penetration Testing</a>
+(pages 21-46)</p>
 </li>
 </ul>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ul>
-<li>Today's <a href="2023-ttm4175-week-35-net1.pdf">lecture slides</a></li>
-</ul>
-<h2>Preparation</h2>
-<p>Go through the following preparation material before we meet in class:</p>
+<p>The book is accessible from within the campus network, either a separate PDF for each chapter or as entire book.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mt-3 mb-3">
-<div class="card-body">
-<a href="preparation.html" class="stretched-link">
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16" id="journal-bookmark-fill"><path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" /><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" /><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" /></svg>
-<span class="ms-3">Net I - Preparation: Binary, IP Addresses, Subnets, LAN Configuration</span>
-</a>
-</div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Teamwork</h2>
-<p>In the lab, go through the following activities with your team:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mt-3 mb-3">
-<div class="card-body">
-<a href="teamwork.html" class="stretched-link">
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="bi bi-people-fill" viewBox="0 0 16 16" id="people-fill"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" /></svg>
-<span class="ms-3">Net I - Teamwork: Binary, IP Addresses, Subnets, LAN Configuration</span>
-</a>
-</div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-2 mb-5 py-3">
+<section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Avsluttende refleksjon</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Etter hver uke skal du gå gjennom en kort individuell refleksjon rund det du har lært i uken.
@@ -363,7 +345,7 @@ Fyll ut skjema for denne uken her:</p>
         <li>This site is hosted on <a href="https://github.com/falkr/ttm4175">Github</a></li>
         <li>The source is written in <a href="../supermark/index.html">Supermark</a> syntax</li>
         <li>To edit this page, make a commit to <a
-            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-net1/index.md">this file</a></li>
+            href="https://github.com/falkr/ttm4175/tree/master/pages/unit-cs1/index.md">this file</a></li>
       </ul>
     </div>
   </div>
