@@ -46,7 +46,7 @@ tom:x:1001:1001:,,,:/home/tom:/bin/bash
 
 We can see that the entry consists of 7 fields, which are 
 1. username `tom`
-2. password `x` means that the encrypted password is stored in the /etc/shadow file
+2. password `x` means that the hashed password is stored in the /etc/shadow file
 3. user id (UID), which is the uid of the user, in this case it is: 1001
 4. group id (UID), which is the gid of the user, in this case it is: 1001
 5. user id information (comment), which is an extra information about the user, in this case it is empty `,,,`
@@ -60,11 +60,11 @@ The shadow file contains secure information about all user accounts of the syste
 tom:$y$j9T$tdzhkxe2roboPaji2GMzh.$jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6:19662:0:99999:7:::
 ```
 
-We can see that an entry consists of 6 fields: 
+We can see that an entry consists of 8 fields: 
 1. username `tom`
 2. password `$y$j9T$tdzhkxe2roboPaji2GMzh.$jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6`. The password field has the following format: `$id$param$salt$hashed`. "id" indicates the algorithm id which has the following values: 
 `$1$` means MD5, `$2a$` means Blowfish,... `$5$` means SHA-256, `$6$` means  SHA-512, and `$y$` means YESCRYPT. 
-The above password indicates that the algorithm used is Yescrypt, the parameter is `j9T`, the salt is `tdzhkxe2roboPaji2GMzh.`, and the encrypted/hashed password is `jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6`
+The above password indicates that the algorithm used is Yescrypt, the parameter is `j9T`, the salt is `tdzhkxe2roboPaji2GMzh.`, and the hashed password is `jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6`
 3. lastchange, which indicates when the password was changed last. The number indicates the number of days since 01.01.1970. In this case, it is 19662 days. 
 4. minimum number of days to change the password, which is 0
 5. maximum number of days to change the password, which is 99999
