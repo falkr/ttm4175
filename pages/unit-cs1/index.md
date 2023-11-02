@@ -32,6 +32,12 @@ The book is accessible from within the campus network, either a separate PDF for
 ## Teamwork
 
 
+---
+type: link
+title: 'Teamwork: Password Cracking'
+icon: people-fill
+link: teamwork.html
+---
 
 
 ---
