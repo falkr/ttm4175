@@ -30,7 +30,7 @@ Go through the following preparation material before we meet in class:
 
 ---
 type: link
-title: 'An Introduction to IoT'
+title: 'Introduction to the MQTT protocol'
 icon: journal-bookmark-fill
 link: preparation-1.html
 ---
@@ -43,7 +43,7 @@ In the lab, go through the following activities with your team:
 
 ---
 type: link
-title: 'Getting Started with the Microbit'
+title: 'Chat Application with MQTT'
 icon: people-fill
 link: teamwork-1.html
 ---
