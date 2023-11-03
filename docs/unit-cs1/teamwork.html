@@ -274,7 +274,7 @@ Instead, we will try a list of more likely passwords known as <em>dictionary att
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can see that the entry consists of 7 fields, which are</p>
 <ol>
 <li>username <code>tom</code></li>
-<li>password <code>x</code> means that the encrypted password is stored in the /etc/shadow file</li>
+<li>password <code>x</code> means that the hashed password is stored in the /etc/shadow file</li>
 <li>user id (UID), which is the uid of the user, in this case it is: 1001</li>
 <li>group id (UID), which is the gid of the user, in this case it is: 1001</li>
 <li>user id information (comment), which is an extra information about the user, in this case it is empty <code>,,,</code></li>
@@ -295,12 +295,12 @@ Instead, we will try a list of more likely passwords known as <em>dictionary att
 </button>
 <pre><code>tom:$y$j9T$tdzhkxe2roboPaji2GMzh.$jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6:19662:0:99999:7:::</code></pre>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can see that an entry consists of 6 fields:</p>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We can see that an entry consists of 8 fields:</p>
 <ol>
 <li>username <code>tom</code></li>
 <li>password <code>$y$j9T$tdzhkxe2roboPaji2GMzh.$jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6</code>. The password field has the following format: <code>$id$param$salt$hashed</code>. &quot;id&quot; indicates the algorithm id which has the following values:
 <code>$1$</code> means MD5, <code>$2a$</code> means Blowfish,... <code>$5$</code> means SHA-256, <code>$6$</code> means  SHA-512, and <code>$y$</code> means YESCRYPT.
-The above password indicates that the algorithm used is Yescrypt, the parameter is <code>j9T</code>, the salt is <code>tdzhkxe2roboPaji2GMzh.</code>, and the encrypted/hashed password is <code>jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6</code></li>
+The above password indicates that the algorithm used is Yescrypt, the parameter is <code>j9T</code>, the salt is <code>tdzhkxe2roboPaji2GMzh.</code>, and the hashed password is <code>jbAYYu0KutRWoGWPcN5PfAL8llhIzPGUFbfS5nKAja6</code></li>
 <li>lastchange, which indicates when the password was changed last. The number indicates the number of days since 01.01.1970. In this case, it is 19662 days.</li>
 <li>minimum number of days to change the password, which is 0</li>
 <li>maximum number of days to change the password, which is 99999</li>
