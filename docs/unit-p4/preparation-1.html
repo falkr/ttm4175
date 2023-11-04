@@ -134,32 +134,65 @@ figcaption {
   color: #868279;
 }
 
-/* === hints === */
-.w3collapsible {
-  background-color: #f0e9db;
-  color: #868279;
-  padding: 8px 18px 8px 8px;
+/* === quiz === */
+ol.quiz li {
+  padding-left:3rem;
   cursor: pointer;
-  width: 100%;
-  border: none;
-  border-radius: 3px 3px 0 0;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.w3active,
-.w3collapsible:hover {
-  background-color: #f0e9cb;
-}
-
-.w3content {
-  filter: blur(3px);
-  padding: 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  margin-bottom: 15px;
+  }
+ol.quiz li::before {
+  font-family: bootstrap-icons !important;
+  padding-top:0.3rem;
+  padding-right: 1rem;
+  margin-left:-2rem;
+  font-size: 1rem;
+  vertical-align: top;
+  }
+ol.quiz li.unselected::before {
+  content: "\f28a";
+  }
+ol.quiz li.unselected:hover::before {
+  content: "\f287";
+  }
+ol.quiz li.selected::before {
+  content: "\f287";
+  color: #666666;
+  }
+ol.quiz li.unselected-true::before {
+  content: "\f26b";
+  color: #5CA551;
+  }
+ol.quiz li.selected-true::before {
+  content: "\f26a";
+  color: #5CA551;
+  }
+ol.quiz li.unselected-false::before {
+  content: "\f5e7";
+  }
+ol.quiz li.selected-false::before {
+  content: "\f5e6";
+  color: #FF3B30;
+  }
+ol.quiz li.selected-false {
+  color:#666666;
+  background-color: #FFD6D3;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.selected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+ol.quiz li.unselected-false {
+  color:lightgray;
+  }
+ol.quiz li.unselected-true {
+  background-color:#DBF6CF;
+  border-top: none;
+  border-bottom: none;
+  }
+div.card-footer a {
+  cursor: pointer;
 }
 
 </style>
@@ -286,8 +319,8 @@ The talk is not so much about the MQTT protocol itself, but you'll get some cont
 sensors and broadcast to several applications. IBM and others for
 instance use MQTT so that IoT devices can send updates into their cloud services.
 When Facebook introduced their standalone Messenger application, they
-also relied on MQTT to push messages to the clients.</p>
-</div><aside class="col-md-4 chunk ps-2"><p>Read the article <a href="https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920">Building Facebook Messenger</a></p>
+also relied on <a href="https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/">MQTT to push messages to the clients</a>.</p>
+</div><aside class="col-md-4 chunk ps-2"><p>Read the article <a href="https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/">Building Facebook Messenger</a></p>
 </aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>MQTT is simple to work with, and the following are &quot;my favourite&quot;
 5 reasons for using MQTT:</p>
@@ -295,7 +328,7 @@ also relied on MQTT to push messages to the clients.</p>
 <li><strong>MQTT is simple to debug.</strong> You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.</li>
 <li><strong>You only need to handle a single IP address.</strong> That is the address of the broker. All other addressing happens indirectly via topics.</li>
 <li><strong>Application startup is simple.</strong> You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.</li>
-<li><strong>MQTT works also behind NAT.</strong> NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to &quot;push&quot; messages into a subscribed computer in the prvate network. Only the broker needs to be accessible.</li>
+<li><strong>MQTT works also behind NAT.</strong> NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to &quot;push&quot; messages into a subscribed computer in the private network. Only the broker needs to be accessible.</li>
 <li><strong>MQTT is bi-directional by default.</strong> Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.</li>
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
@@ -439,14 +472,27 @@ in, and match it with the information publishers provide. Usually,
 subscribers are not interested in all messages that all publishers send.
 Subscribers therefore only subscribe to specific topics, which depend on
 the application. The topics are organized in a hierarchy, separated by a
-slash (&quot;/&quot;). The following is an example for topics that an application
-for home automation can use:</p>
-<pre><code>house/garage/lights/l1
+slash (&quot;/&quot;). The following are examples for topics that an application
+for home automation could use:</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id354575">house/garage/lights/l1
 house/garage/lights/l2
 house/garage/sensors/pi1
 house/garage/doors/d1
-</code></pre>
-<p>The light <em>l1</em> for instance subscribes to the topic
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id354575">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
+<pre><code>house/garage/lights/l1
+house/garage/lights/l2
+house/garage/sensors/pi1
+house/garage/doors/d1</code></pre>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The light <em>l1</em> for instance subscribes to the topic
 <code>house/garage/lights/l1</code> so that it can receive messages that switch it
 on or off. The passive infrared sensor <em>pi1</em> publishes messages to the
 topic <code>house/garage/sensors/pi1</code> every time it detects a movement.</p>
@@ -454,20 +500,38 @@ topic <code>house/garage/sensors/pi1</code> every time it detects a movement.</p
 <h2>Example Application</h2>
 <p>An application to switch on the lights whenever a movement is detected
 can work like this: (In pseudo code)</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id2c8b14">subscribe to house/garage/sensors/pi1
+whenever an MQTT message arrives at house/garage/sensors/pi1:
+    send a message 
+        to house/garage/lights/l1 with payload "on"
+    
+    after some time, send a message
+        to house/garage/lights/l1 with payload "off"
+</pre>
+<button type="button" class="copy-button" data-clipboard-target="#id2c8b14">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+  		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+  		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+	</svg>
+</button>
 <pre><code>subscribe to house/garage/sensors/pi1
 whenever an MQTT message arrives at house/garage/sensors/pi1:
     send a message 
         to house/garage/lights/l1 with payload &quot;on&quot;
     
     after some time, send a message
-        to house/garage/lights/l1 with payload &quot;off&quot;
-</code></pre>
-<h2>Topic Subscription Wildcards</h2>
-<p>When subscribing, topics can include wildcards, which make it possible for a client to
+        to house/garage/lights/l1 with payload &quot;off&quot;</code></pre>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Topic Subscription Wildcards</h1>
+<p>When subscribing, topics can include wildcards, which makes it possible for a client to
 subscribe to several topics with a single pattern:</p>
 <ul>
-<li>The &quot;+&quot; is used as a wildcard for a single level</li>
-<li>The &quot;#&quot; is used as a wildcard for several levels. It must only be
+<li>The <code>+</code> is used as a wildcard for a single level</li>
+<li>The <code>#</code> is used as a wildcard for several levels. It must only be
 placed at the end of a topic pattern.</li>
 </ul>
 <p>Examples:</p>
@@ -479,58 +543,134 @@ a subscriber can subscribe to <code>house/+/lights/+</code></li>
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p><strong>Exercise:</strong> A publisher sends a message to the topic <code>a/b/c/d</code>. Which
-of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscription topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)</p>
+of the following subscription topics with wildcards will receive this message?</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div>
-<table class="table table-sm">
-<caption style=""></caption>
-<thead>
-<tr class="row-1">
-<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
-</tr>
-</thead>
-<tbody class="row-hover">
-<tr class="row-1">
-<td class="column-1">1</td><td class="column-2">#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-2">
-<td class="column-1">2</td><td class="column-2">+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-3">
-<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-4">
-<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-5">
-<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-6">
-<td class="column-1">6</td><td class="column-2">a/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-7">
-<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-8">
-<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-9">
-<td class="column-1">9</td><td class="column-2">a/b/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-10">
-<td class="column-1">10</td><td class="column-2">a/b/c</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-11">
-<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-12">
-<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-13">
-<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-14">
-<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-15">
-<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-</tbody>
-</table>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="7ddeba">
+  <div class="card-body">
+    <h5 class="card-title">Topic #</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
 </div>
-
-
-
-
-
-
-
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('7ddeba', 0)">Subscribers with topic `#` will receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('7ddeba', 1)">Subscribers with topic `#` will not receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('7ddeba', 0)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">Correct. `#` matches all topics, so the message is forwarded.</div>
+<div class="visually-hidden" data="1">False. `#` matches all topics, so the message is forwarded..</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="7206fe">
+  <div class="card-body">
+    <h5 class="card-title">Topic +/+/+</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
+</div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('7206fe', 0)">Subscribers with topic "+/+/+" will receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('7206fe', 1)">Subscribers with topic "+/+/+" will not receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('7206fe', 1)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">False. We only subscribe to topics that include 3 levels.</div>
+<div class="visually-hidden" data="1">Correct. We only subscribe to topics that include 3 levels.</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="26be26">
+  <div class="card-body">
+    <h5 class="card-title">Topic +/+/+/+</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
+</div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('26be26', 0)">Subscribers with topic "+/+/+/+" will receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('26be26', 1)">Subscribers with topic "+/+/+/+" will not receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('26be26', 0)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">Correct. We subscribe to topics that have 4 levels.</div>
+<div class="visually-hidden" data="1">False. We subscribe to all topics that have 4 levels.</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="661659">
+  <div class="card-body">
+    <h5 class="card-title">Topic +/b/c/#</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
+</div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('661659', 0)">Subscribers with topic "+/b/c/#" will receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('661659', 1)">Subscribers with topic "+/b/c/#" will not receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('661659', 0)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">Correct. The topic matches the pattern.</div>
+<div class="visually-hidden" data="1">False. The topic matches the pattern.</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="8f2499">
+  <div class="card-body">
+    <h5 class="card-title">Topic a/b/c</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
+</div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('8f2499', 0)">Subscribers with topic "a/b/c" will not receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('8f2499', 1)">Subscribers with topic "a/b/c" will receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('8f2499', 0)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">Correct. The publishing topic also includes a 'd', which does not match, even at the end.</div>
+<div class="visually-hidden" data="1">False. The publishing topic also includes a 'd', which does not match, even at the end.</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="card mb-5 shadow-sm" id="8659da">
+  <div class="card-body">
+    <h5 class="card-title">Topic `a/b/c/d/+`</h5>
+    <div class="card-text"><p>A publisher sends a message to the topic <code>a/b/c/d</code></p>
+</div>
+</div>
+<ol class="list-group list-group-flush quiz">
+<li class="list-group-item unselected" onclick="quiz_select('8659da', 0)">Subscribers with topic "a/b/c/d/+" will receive the message.</li>
+<li class="list-group-item unselected" onclick="quiz_select('8659da', 1)">Subscribers with topic "a/b/c/d/+" will not receive the message.</li>
+</ol>
+<div class="card-footer">
+<div data="instructions">
+  <i>Select the alternative that matches best.</i>
+</div>
+<div class="visually-hidden" data="confirm">
+  <i>Sure? Then <a class="disabled" onclick="quiz_confirm('8659da', 1)">confirm</a>.</i>
+</div>
+<div class="visually-hidden" data="0">False. The last plus implies that there should be another level for the topic, after the d/.</div>
+<div class="visually-hidden" data="1">Correct. The last plus implies that there should be another level for the topic, after the d/.</div>
+</div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
 <section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Quality of Service</h1>
@@ -732,53 +872,8 @@ You can subscribe to topics and hence listen to everything that happens in the s
 <p>Because MQTT uses the publish-subscribe pattern, the MQTTX can simply subscribe
 to any topics that are interesting in your application and you can see
 which messages are sent to these topics, without disturbing the
-communication in the system.</p>
+communication in the system. This makes it easy to debug the communication during development.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><button class="w3collapsible">Solution for the exercise above. Click to reveal.</button>
-<div class="w3content">
-<div>
-<table class="table table-sm">
-<caption style=""></caption>
-<thead>
-<tr class="row-1">
-<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
-</tr>
-</thead>
-<tbody class="row-hover">
-<tr class="row-1">
-<td class="column-1">1</td><td class="column-2">#</td><td>Yes!</td></tr>
-<tr class="row-2">
-<td class="column-1">2</td><td class="column-2">+/+/+</td><td>No! We only subscribe to topics that include 3 levels.</td></tr>
-<tr class="row-3">
-<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td>Yes!</td></tr>
-<tr class="row-4">
-<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td>Yes!</td></tr>
-<tr class="row-5">
-<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td>Yes!</td></tr>
-<tr class="row-6">
-<td class="column-1">6</td><td class="column-2">a/#</td><td>Yes!</td></tr>
-<tr class="row-7">
-<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td>Yes!</td></tr>
-<tr class="row-8">
-<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td>Yes!</td></tr>
-<tr class="row-9">
-<td class="column-1">9</td><td class="column-2">a/b/#</td><td>Yes!</td></tr>
-<tr class="row-10">
-<td class="column-1">10</td><td class="column-2">a/b/c</td><td>No! The publishing topic also includes a 'd', which does not match, even at the end.</td></tr>
-<tr class="row-11">
-<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td>Yes!</td></tr>
-<tr class="row-12">
-<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td>Yes!</td></tr>
-<tr class="row-13">
-<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td>Yes!</td></tr>
-<tr class="row-14">
-<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td>No! The first b of the subscription topic does not match the first a of the publishing topic.</td></tr>
-<tr class="row-15">
-<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td>No! The last plus implies that there should be another level for the topic, after the d/.</td></tr>
-</tbody>
-</table>
-</div>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
@@ -837,7 +932,68 @@ communication in the system.</p>
   </script>
   <script>
 
+function quiz_select(quiz_id, alternative) {
+    quiz = document.getElementById(quiz_id);
+    let i = 0;
+    for (li of quiz.getElementsByTagName("li")) {
+        if (li.classList.contains('selected') || li.classList.contains('unselected')) {
+            if (i == alternative) {
+                li.classList.add('selected')
+                li.classList.remove('unselected')
+            } else {
+                li.classList.add('unselected')
+                li.classList.remove('selected')
+            }
+        }
+        i = i + 1
+    }
+    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
+        if (div.getAttribute("data") == "instructions") {
+            div.classList.add('visually-hidden')
+        } else if (div.getAttribute("data") == "confirm") {
+            div.classList.remove('visually-hidden')
+        }
+    }
+}
 
+function quiz_confirm(quiz_id, correct) {
+    quiz = document.getElementById(quiz_id);
+    let i = 0;
+    let selected = -1;
+    for (li of quiz.getElementsByTagName("li")) {
+        if (i == correct) {
+            if (li.classList.contains('selected')) {
+                // selected and true
+                selected = i
+                li.classList.remove('selected')
+                li.classList.add('selected-true')
+            } else if (li.classList.contains('unselected')) {
+                // unselected but true
+                li.classList.remove('unselected')
+                li.classList.add('unselected-true')
+            }
+        } else {
+            if (li.classList.contains('selected')) {
+                // selected but false
+                selected = i
+                li.classList.remove('selected')
+                li.classList.add('selected-false')
+            } else if (li.classList.contains('unselected')) {
+                // unselected and false
+                li.classList.remove('unselected')
+                li.classList.add('unselected-false')
+            }
+        }
+        i = i + 1
+    }
+    for (div of quiz.getElementsByClassName("card-footer")[0].getElementsByTagName("div")) {
+        if (div.getAttribute("data") == "confirm") {
+            div.classList.add('visually-hidden')
+        } else if (div.getAttribute("data") == selected) {
+            div.classList.remove('visually-hidden')
+        }
+    }
+}
 
 </script>
 </body>
