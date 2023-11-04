@@ -16,9 +16,9 @@ MQTT is often used in situations where events should be sent from many
 sensors and broadcast to several applications. IBM and others for
 instance use MQTT so that IoT devices can send updates into their cloud services.
 When Facebook introduced their standalone Messenger application, they
-also relied on MQTT to push messages to the clients.
+also relied on [MQTT to push messages to the clients](https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/).
 
-:aside: Read the article [Building Facebook Messenger](https://www.facebook.com/notes/facebook-engineering/building-facebook-messenger/10150259350998920)
+:aside: Read the article [Building Facebook Messenger](https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/)
 
 
 MQTT is simple to work with, and the following are "my favourite"
@@ -27,7 +27,7 @@ MQTT is simple to work with, and the following are "my favourite"
 1. **MQTT is simple to debug.** You can have extra clients during development that observe all communication. You can also manually send messages. This makes debugging much easier.
 2. **You only need to handle a single IP address.** That is the address of the broker. All other addressing happens indirectly via topics.
 3. **Application startup is simple.** You have to start the MQTT broker first, but clients can then connect in any order. The MQTT broker can also be hosted on a server and be always-on.
-4. **MQTT works also behind NAT.** NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to "push" messages into a subscribed computer in the prvate network. Only the broker needs to be accessible.
+4. **MQTT works also behind NAT.** NAT stands for network address translation, and is used when computers on a local network (like in your home) require a public address to communicate with other computers in a public network, like the internet. This translation of addresses means that a computer from outside your home cannot directly take initiative and communicate with a computer inside the network. But using MQTT with a broker outside the local network, it is also possible to "push" messages into a subscribed computer in the private network. Only the broker needs to be accessible.
 5. **MQTT is bi-directional by default.** Any client can send messages to any other client, at any time. You are not restricted to a client-server structure where only the client can initiate interactions.
 
 # Broker Architecture
@@ -178,13 +178,15 @@ in, and match it with the information publishers provide. Usually,
 subscribers are not interested in all messages that all publishers send.
 Subscribers therefore only subscribe to specific topics, which depend on
 the application. The topics are organized in a hierarchy, separated by a
-slash ("/"). The following is an example for topics that an application
-for home automation can use:
+slash ("/"). The following are examples for topics that an application
+for home automation could use:
 
-    house/garage/lights/l1
-    house/garage/lights/l2
-    house/garage/sensors/pi1
-    house/garage/doors/d1
+```
+house/garage/lights/l1
+house/garage/lights/l2
+house/garage/sensors/pi1
+house/garage/doors/d1
+```
 
 The light *l1* for instance subscribes to the topic
 `house/garage/lights/l1` so that it can receive messages that switch it
@@ -198,21 +200,24 @@ Topics are hence useful to structure the communication of an application. They a
 An application to switch on the lights whenever a movement is detected
 can work like this: (In pseudo code)
 
-    subscribe to house/garage/sensors/pi1
-    whenever an MQTT message arrives at house/garage/sensors/pi1:
-        send a message 
-            to house/garage/lights/l1 with payload "on"
-        
-        after some time, send a message
-            to house/garage/lights/l1 with payload "off"
-			
-## Topic Subscription Wildcards
+```
+subscribe to house/garage/sensors/pi1
+whenever an MQTT message arrives at house/garage/sensors/pi1:
+    send a message 
+        to house/garage/lights/l1 with payload "on"
+    
+    after some time, send a message
+        to house/garage/lights/l1 with payload "off"
+```
 
-When subscribing, topics can include wildcards, which make it possible for a client to
+		
+# Topic Subscription Wildcards
+
+When subscribing, topics can include wildcards, which makes it possible for a client to
 subscribe to several topics with a single pattern:
 
--   The "+" is used as a wildcard for a single level
--   The "\#" is used as a wildcard for several levels. It must only be
+-   The `+` is used as a wildcard for a single level
+-   The `#` is used as a wildcard for several levels. It must only be
     placed at the end of a topic pattern.
 
 Examples:
@@ -224,55 +229,73 @@ Examples:
 	
 
 **Exercise:** A publisher sends a message to the topic `a/b/c/d`. Which
-of the following 15 subscription topics will receive this message? (Check the boxes when you think a subscriber with the subscription topic will receive the message. Hints are at the bottom of this page, but do it for yourself first.)
+of the following subscription topics with wildcards will receive this message? 
 
 
+---
+type: quiz
+title: "Topic #"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic `#` will receive the message. 
+false-1: Subscribers with topic `#` will not receive the message.
+result-correct: Correct. `#` matches all topics, so the message is forwarded.
+result-false-1: False. `#` matches all topics, so the message is forwarded..
+---
 
 
-<div>
-<table class="table table-sm">
-<caption style=""></caption>
-<thead>
-<tr class="row-1">
-<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
-</tr>
-</thead>
-<tbody class="row-hover">
-<tr class="row-1">
-<td class="column-1">1</td><td class="column-2">#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-2">
-<td class="column-1">2</td><td class="column-2">+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-3">
-<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-4">
-<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-5">
-<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-6">
-<td class="column-1">6</td><td class="column-2">a/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-7">
-<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-8">
-<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-9">
-<td class="column-1">9</td><td class="column-2">a/b/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-10">
-<td class="column-1">10</td><td class="column-2">a/b/c</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-11">
-<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-12">
-<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-13">
-<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-14">
-<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td><input type="checkbox" class="form-check-input"></td></tr>
-<tr class="row-15">
-<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td><input type="checkbox" class="form-check-input"></td></tr>
-</tbody>
-</table>
-</div>
+---
+type: quiz
+title: "Topic +/+/+"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic "+/+/+" will not receive the message. 
+false-1: Subscribers with topic "+/+/+" will receive the message.
+result-correct: Correct. We only subscribe to topics that include 3 levels.
+result-false-1: False. We only subscribe to topics that include 3 levels.
+---
 
 
+---
+type: quiz
+title: "Topic +/+/+/+"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic "+/+/+/+" will receive the message. 
+false-1: Subscribers with topic "+/+/+/+" will not receive the message.
+result-correct: Correct. We subscribe to topics that have 4 levels.
+result-false-1: False. We subscribe to all topics that have 4 levels.
+---
+
+
+---
+type: quiz
+title: "Topic +/b/c/#"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic "+/b/c/#" will receive the message. 
+false-1: Subscribers with topic "+/b/c/#" will not receive the message.
+result-correct: Correct. The topic matches the pattern.
+result-false-1: False. The topic matches the pattern.
+---
+
+
+---
+type: quiz
+title: "Topic a/b/c"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic "a/b/c" will not receive the message. 
+false-1: Subscribers with topic "a/b/c" will receive the message.
+result-correct: Correct. The publishing topic also includes a 'd', which does not match, even at the end.
+result-false-1: False. The publishing topic also includes a 'd', which does not match, even at the end.
+---
+
+
+---
+type: quiz
+title: "Topic `a/b/c/d/+`"
+question: A publisher sends a message to the topic `a/b/c/d`
+correct: Subscribers with topic "a/b/c/d/+" will not receive the message. 
+false-1: Subscribers with topic "a/b/c/d/+" will receive the message.
+result-correct: Correct. The last plus implies that there should be another level for the topic, after the d/.
+result-false-1: False. The last plus implies that there should be another level for the topic, after the d/.
+---
 
 
 
@@ -454,54 +477,6 @@ source: figures/mqttx-2.png
 Because MQTT uses the publish-subscribe pattern, the MQTTX can simply subscribe
 to any topics that are interesting in your application and you can see
 which messages are sent to these topics, without disturbing the
-communication in the system. 
+communication in the system. This makes it easy to debug the communication during development.
 
 
-
-
----
-type: hint
-title: Solution for the exercise above. Click to reveal. 
----
-<div>
-<table class="table table-sm">
-<caption style=""></caption>
-<thead>
-<tr class="row-1">
-<th></th><th>Subscription Topic</th><th>Receive a/b/c/d ?</th>
-</tr>
-</thead>
-<tbody class="row-hover">
-<tr class="row-1">
-<td class="column-1">1</td><td class="column-2">#</td><td>Yes!</td></tr>
-<tr class="row-2">
-<td class="column-1">2</td><td class="column-2">+/+/+</td><td>No! We only subscribe to topics that include 3 levels.</td></tr>
-<tr class="row-3">
-<td class="column-1">3</td><td class="column-2">+/+/+/+</td><td>Yes!</td></tr>
-<tr class="row-4">
-<td class="column-1">4</td><td class="column-2">+/b/c/#</td><td>Yes!</td></tr>
-<tr class="row-5">
-<td class="column-1">5</td><td class="column-2">+/b/c/d</td><td>Yes!</td></tr>
-<tr class="row-6">
-<td class="column-1">6</td><td class="column-2">a/#</td><td>Yes!</td></tr>
-<tr class="row-7">
-<td class="column-1">7</td><td class="column-2">a/+/+/d</td><td>Yes!</td></tr>
-<tr class="row-8">
-<td class="column-1">8</td><td class="column-2">a/+/c/d</td><td>Yes!</td></tr>
-<tr class="row-9">
-<td class="column-1">9</td><td class="column-2">a/b/#</td><td>Yes!</td></tr>
-<tr class="row-10">
-<td class="column-1">10</td><td class="column-2">a/b/c</td><td>No! The publishing topic also includes a 'd', which does not match, even at the end.</td></tr>
-<tr class="row-11">
-<td class="column-1">11</td><td class="column-2">a/b/c/#</td><td>Yes!</td></tr>
-<tr class="row-12">
-<td class="column-1">12</td><td class="column-2">a/b/c/d/#</td><td>Yes!</td></tr>
-<tr class="row-13">
-<td class="column-1">13</td><td class="column-2">a/b/c/d</td><td>Yes!</td></tr>
-<tr class="row-14">
-<td class="column-1">14</td><td class="column-2">b/+/c/d</td><td>No! The first b of the subscription topic does not match the first a of the publishing topic.</td></tr>
-<tr class="row-15">
-<td class="column-1">15</td><td class="column-2">a/b/c/d/+</td><td>No! The last plus implies that there should be another level for the topic, after the d/.</td></tr>
-</tbody>
-</table>
-</div>
