@@ -19,6 +19,9 @@ index.md - TTM4175
   unit-cs1/index.md - Cyber Security 1
     unit-cs1/preparation.md - Preparation
     unit-cs1/teamwork.md - Teamwork
+  unit-cs2/index.md - Cyber Security 2
+    unit-cs2/preparation.md - Preparation
+    unit-cs2/teamwork.md - Teamwork
   unit-p1/index.md - IoT 1
     unit-p1/preparation-1.md - Preparation 1
     unit-p1/preparation-2.md - Preparation 2
