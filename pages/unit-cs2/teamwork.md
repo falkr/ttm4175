@@ -157,7 +157,7 @@ Consider the scenario where an attacker has just joined the network with no prio
 Use the following command to scan the network with Nmap and discover the machines that are "live" and the services they are running: 
 
 ```bash
-# nmap -sn 192.168.56.1/24`
+# nmap -sn 192.168.56.1/24
 ```
 
 
