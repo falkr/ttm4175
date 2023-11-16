@@ -29,7 +29,7 @@ After you run this command, study the output of the command and what type of inf
 ## Whois Lookup
 
 The next tool is "Whois" that can also be used in the information gathering and reconnaissance phase.
-The tools allows you to get information like  server name registrar, addresses, phone numbers, organization handles, URL, and others.
+The tool allows you to get information like  server name registrar, addresses, phone numbers, organization handles, URL, and others.
 Whois can be given an IP address of a site name.
 Run the following commands.
 Note that the IP address used in the second one is one of the IP addresses that we got from the last task:
@@ -46,7 +46,7 @@ Do you see any difference in the output? What type of information did you get?
 
 ## DNS Enumeration
 
-"dnsenum" is a reconnaissance tool that gather extensive information about a domain.
+"dnsenum" is a reconnaissance tool that gathers extensive information about a domain.
 For example, the host’s addresses, the namservers, mail servers, extra names and subdomains, calculated C class domain network ranges, reverse lookups on netranges. For more information you can see:
 
 ---
@@ -60,7 +60,7 @@ icon: file-earmark-text
 Run the following command and study the results that you get:
 
 ```bash
-whois 129.241.106.103
+dnsenum ntnu.no
 ```
 
 Is there any overlap with the information you get from the other tools?
