@@ -153,7 +153,9 @@ msfdb init                           % initialize the database
 
 Start Metasploit by running *msfconsole*:
 
-```# msfconsole```
+```
+# msfconsole
+```
 
 You will soon be greeted by an ASCII welcome logo.
 You are now in the Metasploit command console. At any point you can type help or ? to get a list of all available commands. The console functions pretty much like normal Linux terminal.
