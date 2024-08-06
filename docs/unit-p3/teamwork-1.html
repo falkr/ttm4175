@@ -219,14 +219,14 @@ figcaption {
               <a class="dropdown-item" href="../unit-net2/index.html">Lab 3: Ports, Web Servers</a>
               <a class="dropdown-item" href="../unit-net3/index.html">Lab 4: Routing, DNS</a>
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../unit-cs1/index.html">Cybersecurity 1: Intro and Ethical Hacking</a>
+              <a class="dropdown-item" href="../unit-cs2/index.html">Cybersecurity 2: Information Gathering</a>
+              <a class="dropdown-item" href="../unit-cs3/index.html">Cybersecurity 3: Exploitation</a>              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../unit-p1/index.html">IoT and the Microbit</a>
               <a class="dropdown-item" href="../unit-p2/index.html">State Machines</a>
               <a class="dropdown-item" href="../unit-p3/index.html">HTTP and JSON</a>
               <a class="dropdown-item" href="../unit-p4/index.html">MQTT</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../unit-cs1/index.html">Cybersecurity 1: Intro and Ethical Hacking</a>
-              <a class="dropdown-item" href="../unit-cs2/index.html">Cybersecurity 2: Information Gathering</a>
-              <a class="dropdown-item" href="../unit-cs3/index.html">Cybersecurity 3: Exploitation</a>
+
             </ul>
           </li>
 
@@ -350,7 +350,7 @@ print(response.text)
 <p>So these were requests to get the content of a website.
 But HTTP can also be used in a different way. <a href="Yr.no">Yr.no</a> provides weather information, which most people access either via the website or the mobile app.
 Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.</p>
-<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here in detail.</a>.
+<p>The API of Yr <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact">is explained here in detail</a>.
 Select the box that says <code>GET/compact</code>, as shown in the figure below.
 This box lets you try out a request, directly from the website.
 The required input data are latitude and longitude.
@@ -452,7 +452,8 @@ For now, we are just interested in the air temperature.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Starting from the dictionary you receive with <code>response.json()</code> function, can you navigate to the air temperature that is closest to the current time?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
-<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="tips"><ul>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Tips</h3>
+<ul>
 <li>Work step by step.</li>
 <li>Pretty print the structure after each step.</li>
 <li>Print the keys of a dictionary using its <code>keys()</code> function, for example <code>response.json().keys()</code>.</li>
@@ -460,7 +461,7 @@ For now, we are just interested in the air temperature.</p>
 <li>If you find a list, access its first element with <code>list[0]</code> or its last with <code>list[-1]</code>.</li>
 </ul>
 <p>This can be a bit of a puzzle, but should be no problem in the end.</p>
-</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h3>Function for the Temperature</h3>
 <p>Using the code above, create a function that takes the latitude and longitude as input arguments and that returns the air temperature at that location. This is how the function should look like:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
