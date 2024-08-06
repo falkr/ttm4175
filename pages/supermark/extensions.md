@@ -16,8 +16,8 @@ prev: ["Documentation", "index.html"]
 <tr><td ><a href="abstract.html">abstract</a></td>
 <td >An abstract at the beginning of an article or a page</td>
 <td >md/abstract</td></tr>
-<tr><td rowspan="9" ><a href="boxes.html">boxes</a></td>
-<td rowspan="9" >Boxes to highlight tips, warnings, milestones, guidelines or definitions</td>
+<tr><td rowspan="10" ><a href="boxes.html">boxes</a></td>
+<td rowspan="10" >Boxes to highlight tips, warnings, milestones, guidelines or definitions</td>
 <td >md/</td></tr>
 <tr><td >md/definition</td></tr>
 <tr><td >md/delivery</td></tr>
@@ -25,6 +25,7 @@ prev: ["Documentation", "index.html"]
 <tr><td >md/guideline</td></tr>
 <tr><td >md/milestone</td></tr>
 <tr><td >md/report</td></tr>
+<tr><td >md/task</td></tr>
 <tr><td >md/tip</td></tr>
 <tr><td >md/warning</td></tr>
 <tr><td ><a href="button.html">button</a></td>

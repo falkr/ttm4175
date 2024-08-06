@@ -44,6 +44,10 @@ Boxes to highlight tips, warnings, milestones, guidelines or definitions.
 <tr></tr></tbody></table>
 <table class="table"><tbody><td>Type</td><td>Markdown Paragraph Extension</td>
 <tr></tr>
+<td>Tag</td><td>task</td>
+<tr></tr></tbody></table>
+<table class="table"><tbody><td>Type</td><td>Markdown Paragraph Extension</td>
+<tr></tr>
 <td>Tag</td><td>tip</td>
 <tr></tr></tbody></table>
 <table class="table"><tbody><td>Type</td><td>Markdown Paragraph Extension</td>

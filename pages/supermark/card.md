@@ -38,7 +38,7 @@ Cards provide links with additional elements like text or arrows.
 
 <table class="table"><tbody><td>Python type</td><td>Card</td>
 <tr></tr>
-<td>type</td><td>card, card/person, card/text, card/arrow</td>
+<td>type</td><td>card/arrow, card/person, card, card/text</td>
 <tr></tr>
 <td>Language</td><td><a href="#">YAML</a></td>
 <tr></tr>

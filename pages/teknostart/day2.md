@@ -8,4 +8,11 @@
 # Overføring av pakker
 
 
-https://www2.tkn.tu-berlin.de/teaching/rn/animations/gbn_sr/
+---
+type: link
+link: "https://www2.tkn.tu-berlin.de/teaching/rn/animations/gbn_sr/"
+title: ""
+text: "Animation of Selective Repeat / Go Back N"
+icon: film
+---
+

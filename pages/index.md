@@ -1,11 +1,6 @@
-# Kommunikasjonsteknologi og digital sikkerhet
+# Cybersikkerhet og datakommunikasjon
 
-Kurset er introduksjonsemnet til studieprogram [Kommunikasjonsteknologi og digital sikkerhet](https://www.ntnu.no/studier/mtkom) og gir deg oversikt over flere emner og tema i studiet.
-
-<!--
-<a class="arrow" href="learning-goals.html">Read more about the Learning Goals</a>
--->
-
+Kurset er introduksjonsemnet til studieprogram [Cybersikkerhet og datakommunikasjon](https://www.ntnu.no/studier/mtkom) og gir deg oversikt over flere emner og tema i studiet.
 
 
 
@@ -20,32 +15,10 @@ columns: 2
 
 
 ---
-type: card/text
-title: Teknostart Dag 1
-text: "Tirsdag: Vi lærer hvordan internettet fungerer."
-link: teknostart/day1.html
+ref: teknostart/teknostart-grid.md
 ---
 
----
-type: card/text
-title: Teknostart Dag 2
-text: "Onsdag: Vi krypterer innhold og forhindrer datatap."
-link: teknostart/day2.html
----
 
----
-type: card/text
-title: Teknostart Dag 3
-text: "Torsdag: Vi lager nettet robust og pålitelig."
-link: teknostart/day3.html
----
-
----
-type: card/text
-title: Teknostart Dag 4
-text: "Fredag: Vi lager våre egen nettside."
-link: teknostart/day4.html
----
 
 
 # Timeplan
@@ -57,67 +30,83 @@ type: table
 {|
 ! Uke
 ! Tid
-! Tema 
+! Tema
+! Faglærer
 |-
 | 33
 | tir.-fre. 9:15
 | [Teknostart](teknostart/index.html)
+| Katrien, Stanislav, Tjerand, Poul
 |-
 | 34
 | Fredag 8:15-14:00
 | [Lab 1: Linux CLI](unit-cli/index.html)
+| Stanislav
 |-
 | 35
 | Fredag 8:15-14:00
 | [Lab 2: IPs, LAN](unit-net1/index.html)
+| Stanislav
 |-
 | 36
 | Fredag 8:15-14:00
 | [Lab 3: Ports, Web Servers](unit-net2/index.html)
+| Stanislav
 |-
 | 37
 | Fredag 8:15-14:00
 | [Lab 4: Routing, DNS](unit-net3/index.html)
+| Stanislav
 |-
 | 38
 | Fredag 8:15-14:00
-| Lab 5: Om Teamarbeid (Frank)
+| Lab 5: Om Teamarbeid
+| Katrien
 |-
 | 39
 | Fredag 8:15-14:00
-| (Lab 6: Cybersecurity 1)
+| Lab 6: Bærekraft (kun forelesning 8:15-10:00)
+| Iwona
 |-
 | 40
 | Fredag 8:15-10:00
-| Lab 7: Bærekraft (kun forelesning 8:15-10:00, Iwona Windekilde) 
+| [Lab 7: Cybersikkerhet 1: Intro and Ethical Hacking](unit-cs1/index.html)
+| Basel
 |-
 | 41
 | Fredag 8:15-14:00
-| [Lab 8: Introduction to IoT and the Microbit](unit-p1/index.html) (Frank Alexander)
+| [Lab 8: Cybersikkerhet 2: Information Gathering](unit-cs2/index.html)
+| Basel
 |-
 | 42
 | Fredag 8:15-14:00
-| [Lab 9: Tilstandmaskiner](unit-p2/index.html) (Frank Alexander)
+| [Lab 9: Cybersikkerhet 3: Exploitation](unit-cs3/index.html)
+| Basel
 |-
 | 43
 | Fredag 8:15-14:00
-| [Lab 10: HTTP and JSON](unit-p3/index.html) (Frank Alexander)
+| [Lab 10: Introduction to IoT and the Microbit](unit-p1/index.html)
+| Arne
 |-
 | 44
 | Fredag 8:15-14:00
-| Lab: Cybersikkerhet 1 (Basel Katt)
+| [Lab 11: Tilstandmaskiner](unit-p2/index.html)
+| Arne
 |-
 | 45
 | Fredag 8:15-14:00
-| [Lab 11: MQTT](unit-p4/index.html) (Frank Alexander)
+| [Lab 12: HTTP and JSON](unit-p3/index.html)
+| Stanislav
 |-
 | 46
 | Fredag 8:15-14:00
-| Lab: Cybersikkerhet 2 (Basel Katt)
+| [Lab 13: MQTT](unit-p4/index.html)
+| Tu
 |-
 | 47
 | Fredag 8:15-14:00
-| Lab: Cybersikkerhet 3 (Basel Katt)
+| 
+|
 |}
 
 

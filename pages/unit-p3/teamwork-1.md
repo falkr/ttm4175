@@ -56,7 +56,7 @@ So these were requests to get the content of a website.
 But HTTP can also be used in a different way. [Yr.no](Yr.no) provides weather information, which most people access either via the website or the mobile app. 
 Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.
 
-The API of Yr [is explained here in detail.](https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact).
+The API of Yr [is explained here in detail](https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact).
 Select the box that says `GET/compact`, as shown in the figure below.
 This box lets you try out a request, directly from the website.
 The required input data are latitude and longitude. 
@@ -164,8 +164,7 @@ When we want to use the temperature in our program, we need to extract it out of
 :task: Starting from the dictionary you receive with `response.json()` function, can you navigate to the air temperature that is closest to the current time?
 
 
-:tips:
-
+### Tips
 * Work step by step.
 * Pretty print the structure after each step.
 * Print the keys of a dictionary using its `keys()` function, for example `response.json().keys()`.

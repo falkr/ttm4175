@@ -10,7 +10,7 @@
 
 # Ellers i dag 
 
-* **15:00** [Fadderuke Kick-Off](https://www.samfundet.no/arrangement/3605-fadderuke-kick-off)
+* **14:00** [Fadderuke Kick-Off](https://www.samfundet.no/arrangement/3965-fadderuke-kickoff-2024)
 
 
 # Additional Material
@@ -20,8 +20,6 @@ type: youtube
 video: TNQsmPf24go
 ---
 
-&nbsp;
-&nbsp;
 
 * Today's [lecture slides](day1-slides.pdf)
 * IP address / DNS tools: [ShowMyIP](https://www.showmyip.com/), [Google Public DNS](https://dns.google/), [nslookup.io](https://www.nslookup.io/)

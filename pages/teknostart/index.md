@@ -1,5 +1,13 @@
 # Teknostart
 
+
+---
+ref: teknostart-grid.md
+---
+
+
+## Timeplan
+
 ---
 type: table
 ---
@@ -10,23 +18,23 @@ type: table
 |-
 | Mandag, 14. aug. 2023, 10:00
 | Immatrikulering og orientering
-| [EL-2](https://link.mazemap.com/Zx7Rran8)
+| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
 |-
 | Tirsdag, 15. aug. 2023, 9:15 - ca. 15:00
 | [Teknostart Dag 1](day1.html)
-| [EL-1](https://link.mazemap.com/oHWUNXyP)
+| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
 |-
 | Onsdag, 16. aug. 2023, 9:15 - ca. 15:00
 | [Teknostart Dag 2](day2.html)
-| [EL-1](https://link.mazemap.com/oHWUNXyP)
+| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
 |-
 | Torsdag, 17. aug. 2023, 9:15 - ca. 15:00
 | [Teknostart Dag 3](day3.html)
-| [EL-1](https://link.mazemap.com/oHWUNXyP)
+| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
 |-
 | Fredag, 18. aug. 2023, 9:15 - ca. 15:00
 | [Teknostart Dag 4](day4.html)
-| [EL-1](https://link.mazemap.com/oHWUNXyP)
+| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
 |}
 
 
@@ -36,18 +44,17 @@ type: table
 * [Ni steg du må gjøre ved studiestart](https://i.ntnu.no/ny-student)
 
 
-## Kurs om informasjonssikkerhet
+### Kurs om informasjonssikkerhet
 
 Du får en epost med lenke til et kurs om informasjonssikkerhet. [Les mer om kurset](information-security.html).
 
 
 # Om Teknostart
 
-**Visjon:** Teknostart skaper motiverte og inspirerte teknologistudenter, som bidrar til kunnskap for en bedre verden 
+Teknostart skaper motiverte og inspirerte teknologistudenter, som bidrar til kunnskap for en bedre verden 
+Hensikten med Teknostart er at studentene raskt finner seg til rette på studiet slik at de trives og mestrer studiene. 
 
-**Formål:** Hensikten med Teknostart er at studentene raskt finner seg til rette på studiet slik at de trives og mestrer studiene. 
-
-Teknostart skal ha undervisnings- og læringsaktiviteter som bidrar til sosial og akademisk inkludering og mestring. Teknostart skal sørge for at studentene får informasjon som bidrar til å justere studenters forventinger og lette overgangen til studenttilværelsen. Teknostart skal legge til rette for tilgjengelige identiteter (som studentene kan identifisere seg med). Dette gjelder særlig for underrepresenterte grupper, knyttet til kjønn, etnisitet og/eller alder 
+Teknostart skal ha undervisnings- og læringsaktiviteter som bidrar til sosial og akademisk inkludering og mestring. Teknostart skal sørge for at studentene får informasjon som bidrar til å justere studenters forventninger og lette overgangen til studenttilværelsen. Teknostart skal legge til rette for tilgjengelige identiteter (som studentene kan identifisere seg med). Dette gjelder særlig for underrepresenterte grupper, knyttet til kjønn, etnisitet og/eller alder 
 
 
 :goals: Læringsmål: 
