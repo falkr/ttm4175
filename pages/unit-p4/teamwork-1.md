@@ -251,12 +251,12 @@ To send chat messages via MQTT between contacts, we need to agree on the content
 
 
 
-### Chatting via MQTT.Fx
+### Chatting via MQTTX
 
 Let us first chat by MQTT only, that means, without the Chat UI from above. 
-We only want to use MQTT.Fx, and send and receive "raw" chat messages.
+We only want to use MQTTX, and send and receive "raw" chat messages.
 
-Install MQTT.Fx, as [explained in the preparation](prep-iot-mqtt.html#debugging-with-mqtt.fx).
+Install MQTTX, as [explained in the preparation](preparation-1.html#debugging-with-mqttx).
 
 Add our broker that runs on campus. It has the address `mqtt.item.ntnu.no` and uses the default port `1883`.
 You may need to generate a random client ID.

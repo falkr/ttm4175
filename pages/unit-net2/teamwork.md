@@ -33,7 +33,7 @@ These exercises should be completed in teams.
 ## Initializing the Environment
 
 
-We will use the same topology as last week, using one host as client and one as server. To get started, **close any running instances of GNS3 and launch it again**. You can load your project from last time or re-create the two-host topology according to [last week's instructions](/unit-net1/teamwork.html#launching-gns3-and-creating-a-basic-network).
+We will use the same topology as last week, using one host as client and one as server. To get started, **close any running instances of GNS3 and launch it again**. You can load your project from last time or re-create the two-host topology according to [last week's instructions](../unit-net1/teamwork.html#launching-gns3-and-creating-a-basic-network).
 
 
 :tip:
@@ -74,7 +74,7 @@ You can use the combination `Ctrl-C` to stop the server application and regain c
 ## Capturing HTTP Traffic
 
 
-6. Following the [instructions from last week](/unit-net1/teamwork.html#verifying-your-configuration), start a traffic capture on the link between the client and the server.
+6. Following the [instructions from last week](../unit-net1/teamwork.html#verifying-your-configuration), start a traffic capture on the link between the client and the server.
 
 
 7. With Wireshark open, run the previous `curl` commands again and discuss the HTTP traffic that appears.

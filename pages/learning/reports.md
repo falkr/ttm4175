@@ -91,8 +91,7 @@ går det an å skrive en veldig god rapport selv om man ikke løser alle
 oppgaver! Det handler om å reflektere over eget arbeid, hva som fungerte
 og hva som ikke fungerte. Derfor er det indirekte også plikt til å møte
 opp. Om dere ikke møter opp, har dere ikke grunnlag til å bidra til
-rapporten. **Når du blir syk eller er forhindret til å delta, skriv en
-mail til [kraemer@ntnu.no](kraemer@ntnu.no).**
+rapporten. 
 
 
 ### Bruk kun egne ord

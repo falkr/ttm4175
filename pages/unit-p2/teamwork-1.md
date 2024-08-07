@@ -16,7 +16,7 @@ Here's an overview:
 4. **Switch Light**: You get the state machine diagram, but build all code on your own.
 5. **Hand Sanitizer Station**: You create state machine diagram and code by yourself from a textual description.
 
-All background theory for the tasks is covered in this page about [State machines](prep-iot-stm.html) in general and [State machines in Micro Python](prep-iot-stmpy.html).
+All background theory for the tasks is covered in this page about [State machines](preparation-1.html) in general and [State machines in Micro Python](preparation-2.html).
 
 
 
@@ -26,7 +26,7 @@ You will need to draw some diagrams in this lab.
 
 * **Pencil and paper** are probably still the best tools for sketching a state machine when you are working on your own. Don't underestimate the value of making quick sketches and iterating on them before you make an electronic version of your diagram for documentation.
 * **Whiteboards or blackboards** have the benefit that you can work in groups, if you are physically at the same place.
-* **Drawing applications** are often easy to access and use, but do not know that you want to create a special diagram style. Though this is probably your best option. You can create simple state machine diagrams in a shared PowerPoint, to which you have access in Teams. Another option is [Draw.io](draw.io), but it requires you to login with a Google account. 
+* **Drawing applications** are often easy to access and use, but do not know that you want to create a special diagram style. Though this is probably your best option. You can create simple state machine diagrams in a shared PowerPoint, to which you have access in Teams. Another option is [Draw.io](https://www.drawio.com), but it requires you to login with a Google account. 
 
 
 ### Working Style

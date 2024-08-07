@@ -64,7 +64,7 @@ cd /home/netlab/teknostart_ctf
 
 ### Step 2: The CTF and Levelcheck Programs
 
-This is a terminal-based game and is written in the programming language [Python]((https://www.python.org/)). There are two files that are important for the CTF:
+This is a terminal-based game and is written in the programming language [Python](https://www.python.org/). There are two files that are important for the CTF:
 
 - `teknostart_ctf.py`, which is the actual CTF program. Its usage is explained in the next section.
 - `levelcheck` is needed for some levels and checks if the tasks have been completed. It prints out the flag if the task has been done correctly. It is used to retrieve the flag (password) for some levels, where it has to be checked whether you completed the task correctly.

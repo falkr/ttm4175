@@ -38,7 +38,7 @@ Cards provide links with additional elements like text or arrows.
 
 <table class="table"><tbody><td>Python type</td><td>Card</td>
 <tr></tr>
-<td>type</td><td>card/arrow, card/person, card, card/text</td>
+<td>type</td><td>card/text, card/person, card/arrow, card</td>
 <tr></tr>
 <td>Language</td><td><a href="#">YAML</a></td>
 <tr></tr>
@@ -60,7 +60,7 @@ Cards provide links with additional elements like text or arrows.
 type: card/text
 title: Dine studentrepresentanter
 text: Som student har du en del tillitsvalgte, representanter og andre kontaktpunkter.
-link: studentrepresentanter.html
+link: http://example.com
 link_title: Finn dine studentrepresentanter
 ---
 
@@ -76,7 +76,7 @@ link_title: Finn dine studentrepresentanter
 type: card/text
 title: Dine studentrepresentanter
 text: Som student har du en del tillitsvalgte, representanter og andre kontaktpunkter.
-link: studentrepresentanter.html
+link: http://example.com
 link_title: Finn dine studentrepresentanter
 ---
 ```
@@ -141,7 +141,7 @@ Avhengig av hva det gjelder, har du ulike muligheter for å kontakte noen:
 ---
 type: card/person
 name: Firstname Surname
-email: email@ntnu.no
+email: email@example.com
 detail: Course teacher
 image: "_placeholder 200 x 200"
 ---
@@ -157,7 +157,7 @@ image: "_placeholder 200 x 200"
 ---
 type: card/person
 name: Firstname Surname
-email: email@ntnu.no
+email: email@example.com
 detail: Course teacher
 image: "_placeholder 200 x 200"
 ---
@@ -173,7 +173,7 @@ image: "_placeholder 200 x 200"
 ---
 type: card/arrow
 title: For studenter
-link: student.html
+link: http://example.com
 ---
 
 
@@ -187,7 +187,7 @@ link: student.html
 ---
 type: card/arrow
 title: For studenter
-link: student.html
+link: http://example.com
 ---
 ```
 
@@ -202,7 +202,7 @@ link: student.html
 type: card/text
 title: IIK Snacks and Science
 text: Seminar om forskning for studenter ved IIK.
-link: snacks.html
+link: http://example.com
 ---
 
 
@@ -217,7 +217,7 @@ link: snacks.html
 type: card/text
 title: IIK Snacks and Science
 text: Seminar om forskning for studenter ved IIK.
-link: snacks.html
+link: http://example.com
 ---
 ```
 
@@ -238,28 +238,28 @@ columns: 4
 type: card/text
 title: Teknostart Dag 1
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 2
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 3
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 4
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 
@@ -280,28 +280,28 @@ columns: 4
 type: card/text
 title: Teknostart Dag 1
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 2
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 3
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 
 ---
 type: card/text
 title: Teknostart Dag 4
 text: Tirsdag
-link: day1.html
+link: http://example.com
 ---
 ```
 

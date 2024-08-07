@@ -53,7 +53,7 @@ The request returns a data structure of the type [Response](https://requests.rea
 # HTTP Client Requests: Checking the Weather
 
 So these were requests to get the content of a website. 
-But HTTP can also be used in a different way. [Yr.no](Yr.no) provides weather information, which most people access either via the website or the mobile app. 
+But HTTP can also be used in a different way. [Yr.no](http://yr.no) provides weather information, which most people access either via the website or the mobile app. 
 Yr also offers an API so that other applications can obtain weather information, that means, they can access the weather forecast without downloading the website.
 
 The API of Yr [is explained here in detail](https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_compact).
@@ -236,8 +236,8 @@ source: figures/smart-home.png
 ---
 
 * The sensor periodically measures its temperature and provides it to the server in the center, using HTTP POST requests. 
-* The server stores the temperature of the temperature sensor, and periodically requests the temperature forecast from the API from [yr.no](yr.no) via HTTP GET requests. 
-* The server also answers GET requests from clients to present both the sensor temperature and the prediction from [yr.no](yr.no) in a single page. 
+* The server stores the temperature of the temperature sensor, and periodically requests the temperature forecast from the API from [yr.no](http://yr.no) via HTTP GET requests. 
+* The server also answers GET requests from clients to present both the sensor temperature and the prediction from [yr.no](http://yr.no) in a single page. 
 
 :task: Create a sequence diagram with three components: temperature sensor, the server, Yr and the mobile client. Illustrate with the sequence diagram how the temperature sensor updates the server with the measured temperature, and how the mobile client makes a request to our server, which also involves getting the temperature forecast from Yr.
 

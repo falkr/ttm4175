@@ -2,7 +2,31 @@
 
 
 ---
-ref: teknostart-grid.md
+type: card/text
+title: Teknostart Dag 1
+text: "Tirsdag: Vi lærer hvordan internettet fungerer."
+link: day1.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 2
+text: "Onsdag: Vi krypterer innhold og forhindrer datatap."
+link: day2.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 3
+text: "Torsdag: Vi lager nettet robust og pålitelig."
+link: day3.html
+---
+
+---
+type: card/text
+title: Teknostart Dag 4
+text: "Fredag: Vi lager våre egen nettside."
+link: day4.html
 ---
 
 

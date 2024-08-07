@@ -8,7 +8,7 @@
 
 ## Lecture Slides and Links
 
-* Today's [lecture slides](day4-slides.pdf)
+* Today's [lecture slides](slides/day4-slides.pdf)
 * [W3 validator](https://validator.w3.org/#validate_by_input)
 * [NTNU wiki article on accessing your network directory and uploading web pages](https://i.ntnu.no/wiki/-/wiki/Norsk/Lag+nettside+på+folk-ntnu-no)
 * [W3Schools - HTML style examples](https://www.w3schools.com/html/html_styles.asp)
