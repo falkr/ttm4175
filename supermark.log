@@ -1,10 +1,14 @@
 ╭──────────────────────────────╮
-│ 🍌 Finished with 2 warnings. │
+│ 🍌 Finished with 4 warnings. │
 ╰──────────────────────────────╯
 ├── Image does not exist.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/supermark/hints.md 82
 ├── Hint should have a post-yaml section with the content.
 │   └── /home/runner/work/ttm4175/ttm4175/pages/supermark/hints.md 82
+├── supermark/extenions.html not found.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/supermark/writing.md 88
+├── supermark/api/supermark/index.html not found.
+│   └── /home/runner/work/ttm4175/ttm4175/pages/supermark/development.md 6
 ├── Found configuration file.
 │   └── config.toml
 ├── Found extension AbstractParagraphExtension
@@ -46,85 +50,86 @@
 ├── Breadcrumbs exist in /home/runner/work/ttm4175/ttm4175/pages/breadcrumbs.txt
 ├── Loading template /home/runner/work/ttm4175/ttm4175/templates/page.html.
 ├── Using threadpool.
-└── Translated
-    ├── /home/runner/work/ttm4175/ttm4175/docs/units.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/reflect.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/preparation.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/howto.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/unused/topic-table.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/preparation-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/preparation-2.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/preparation-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/teamwork-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs3/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/preparation.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/preparation-2.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/information-security.h
-    │   tml
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day2.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day4.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day3.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs2/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs1/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/commands-help.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/steps.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/figure.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/preparation-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/lines.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/rubrics.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/button.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/tree.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/goals.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/check.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/hints.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/installation.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/coursetable.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/quiz.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/abstract.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs2/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/extensions.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/rat.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/development.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs1/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/double.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/video.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/teamwork-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/boxes.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/writing.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/link.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs3/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/tipsbox.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/nav.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/usage.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/qna.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/checklistbox.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/quote.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/weekplan.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/teamwork-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-s1/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/preparation.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/learning/reports.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/learning/learning.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/preparation-1.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/index.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/preparation.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/table.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/teamwork.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/card.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/preparation-2.html
-    ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/iot-stm-examples.html
-    └── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/teamwork-1.html
+├── Translated
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/reflect.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/preparation.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/units.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/howto.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/unused/topic-table.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net1/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/preparation-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/preparation-2.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p1/teamwork-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/preparation-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs3/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/preparation.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/information-security.h
+│   │   tml
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day2.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day4.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/preparation-2.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day3.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/teknostart/day1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs2/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs1/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cli/commands-help.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/steps.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/figure.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/preparation-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/lines.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/tree.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/rubrics.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/button.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/goals.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/check.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/installation.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/hints.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/coursetable.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/quiz.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/abstract.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/rat.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/extensions.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs2/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/development.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs1/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/video.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/double.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/boxes.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/writing.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/link.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p4/teamwork-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/usage.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/nav.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/tipsbox.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/checklistbox.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/qna.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-cs3/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/quote.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/weekplan.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p3/teamwork-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-s1/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/preparation.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/learning/reports.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/table.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/learning/learning.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/preparation-1.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/index.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/preparation.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net3/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-net2/teamwork.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/supermark/card.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/iot-stm-examples.html
+│   ├── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/teamwork-1.html
+│   └── /home/runner/work/ttm4175/ttm4175/docs/unit-p2/preparation-2.html
+└── Copying resources.
