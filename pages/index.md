@@ -47,7 +47,6 @@ link: teknostart/day4.html
 
 # Timeplan
 
-
 ---
 type: table
 ---
