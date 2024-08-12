@@ -42,23 +42,23 @@ type: table
 |-
 | Mandag, 12. aug. 2024, 10:00
 | Immatrikulering og orientering
-| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
+| [Kjel-2](https://link.mazemap.com/N99JNTeY)
 |-
 | Tirsdag, 13. aug. 2024, 9:15 - ca. 15:00
 | [Teknostart Dag 1](day1.html)
-| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
+| [Kjel-2](https://link.mazemap.com/N99JNTeY)
 |-
 | Onsdag, 14. aug. 2024, 9:15 - ca. 15:00
 | [Teknostart Dag 2](day2.html)
-| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
+| [Kjel-2](https://link.mazemap.com/N99JNTeY)
 |-
 | Torsdag, 15. aug. 2024, 9:15 - ca. 15:00
 | [Teknostart Dag 3](day3.html)
-| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
+| [Kjel-2](https://link.mazemap.com/N99JNTeY)
 |-
 | Fredag, 16. aug. 2024, 9:15 - ca. 15:00
 | [Teknostart Dag 4](day4.html)
-| [Kjel-2](https://link.mazemap.com/SfZgoNTI)
+| [Kjel-2](https://link.mazemap.com/N99JNTeY)
 |}
 
 
