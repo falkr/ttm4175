@@ -1,7 +1,7 @@
 # Rapporter
 
 Det er ingen eksamen i emnet, men hvert team må levere inn en rapport
-for hver lab. 
+for hver av de tre lab-delene. 
 
 
 ## Hvorfor rapporter?
@@ -30,7 +30,9 @@ for hver lab.
 - Innleveringen skjer via Blackboard, som gruppeinnlevering. Det vil si det er nok at en av deres team av tre studenter leverer.
 - Rapporter som ikke blir levert innen tidsfristen regnes som ikke bestått.
 - Endelig rapport må leveres i PDF format, uansett med hvilket verktøy dere har skrevet den.
-- For oss er det viktig at PDF filen kalles ttm4175-lab-x-team-y.pdf, med x = {1, 2, 3} og y er deres teamnummer.
+- Vi anbefaler at dere bruker Word og samarbeider via Teams, slik at alle kan bidra.
+- Bruk mal som er tilgjengelig på Teams.
+- For oss er det viktig at PDF filen kalles ttm4175-part-x-team-y.pdf, med x = {1, 2, 3} og y er deres teamnummer.
 - Ved tekniske problemer ved opplasting eller innlevering, ta kontakt med fagansvarlig så fort som mulig, så ordner seg ting. Ikke utsett noe.
 
 
@@ -56,8 +58,6 @@ På slutten av hver rapport, skriv hva du syntes om labben.
 * Hva har du spesielt lært?
 * Har du forslag til forbedringer?
 
-Vi anbefaler at dere bruker **Word** til å skrive rapporten. Dere kan dele dokumenter med hverandre og skrive samtidig i Teams. 
-
 
 
 # Flere tipps
@@ -69,7 +69,7 @@ Det er meget sannsynlig at dere kommer til å skrive masteroppgaven på engelsk,
 
 ### Hvor mye skal vi skrive?
 
-Vi forventer sånn circa to sider med tekst per uke. Mengden vil øke om dere bruker en del figurer, som er anbefalt.
+Vi forventer sånn circa to sider med tekst per uke. Antall sider vil øke om dere bruker en del figurer, som er anbefalt.
 
 ### Bruk bilder
 
@@ -113,13 +113,3 @@ forhånd.
 Hvordan man siterer riktig krever noe kunnskap, og er noe å bli vant
 med. Sjekk [Hjelp til oppgaveskriving](https://i.ntnu.no/oppgaveskriving), og gjerne spør faglæreren
 om du lurer på noe.
-
-
-
-### Sjekkliste for rapporter
-
-- Include page numbers
-- Include the team name and the delivery name in the header of each page
-- Include a title page, which states delivery name, team name including a list of all members, date
-- Make sure images are readable and with high enough resolution.
-- Use of consistent styles.
