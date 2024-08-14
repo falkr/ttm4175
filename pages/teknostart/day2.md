@@ -8,6 +8,8 @@
 # Overføring av pakker
 
 
+* [Presentasjonen fra pakketap](slides/2024-dag2-pakketap.pdf)
+
 ---
 type: link
 link: "https://www2.tkn.tu-berlin.de/teaching/rn/animations/gbn_sr/"

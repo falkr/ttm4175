@@ -82,7 +82,7 @@ link: unit-p4/index.html
 
 Ett av hovedmålene med undervisningen er å engasjere alle for å skape et positivt læringsmiljø, og for å få alle til å lære og yte best mulig. Dette oppnår vi gjennom aktivt arbeid med emnet gjennom hele semesteret, og deltakelse på alle de planlagte undervisningsaktivitetene. Vi forventer at du:
 
-- Deltar aktivt på alle forelesningene. Om du er forhindret, send en mail til [Frank](mailto:kraemer@ntnu.no) på forhånd.
+- Deltar aktivt på alle forelesningene.	
 - Deltar aktivt i timene og lab.
 - Bidrar til positivt og konstruktivt gruppearbeid.
 - Bidrar i å skrive avsluttende rapport fra hver lab.

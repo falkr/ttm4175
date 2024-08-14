@@ -66,7 +66,7 @@ type: table
 
 * Informasjon om [studiestart](https://www.ntnu.no/studier/mtkom/studiestart)
 * [Ni steg du må gjøre ved studiestart](https://i.ntnu.no/ny-student)
-
+* [Presentasjon fra første dagen](slides/2024-dag0.pdf)
 
 ### Kurs om informasjonssikkerhet
 
