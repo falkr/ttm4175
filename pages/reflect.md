@@ -8,11 +8,15 @@ Fyll ut skjema for denne uken her:
 
 ---
 type: link
-link: https://ref.iik.ntnu.no/app/enroll/TTM4175
+link: https://reflect.iik.ntnu.no/enroll/fall2024/TTM4175
 title: Avsluttende refleksjon
 icon: cloud-sun
 ---
 
 
-:tip:
-If the form does not open properly or you get an error message, try right-clicking the link and opening it in a new tab or window.
+Noen tipps:
+* Hvis siden ikke åpnes, prøv å åpne den i et nytt vindu.
+* Siden er lagt av NTNU studenter i et prosjekt.
+* Du logger inn med NTNU bruker.
+* Faglærerne får lese refleksjoner i en aggregert rapport, men ser ikke hvem som har skrevet hva.
+* Ikke skriv noe sensitive opplysninger.
