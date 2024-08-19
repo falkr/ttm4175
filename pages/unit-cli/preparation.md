@@ -34,7 +34,7 @@ You can complete these parts in any order you prefer, but we suggest setting up 
 ## Setting up a Local CLI Environment on Your Own Machine
 
 - If you're using **MacOS** or a **Linux** distribution, you can summon a CLI environment by launching the *Terminal* app or your distribution's equivalent thereof.
-- For **Windows** users, we suggest setting up the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install-manual) which will allow you to run a Linux command line on your Windows machine.
+- For **Windows** users, we suggest setting up the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) (if you're on an older version of Windows, check [these instructions](https://learn.microsoft.com/en-us/windows/wsl/install-manual)) which will allow you to run a Linux command line on your Windows machine.
     - Follow steps 1-6 from the linked article and install a Linux distribution of your choice, for instance Ubuntu 20.04.
     - When launching the Ubuntu app for the first time, you'll be prompted to create a (local) user account. After picking a name and password of your choice, you'll be in a Linux CLI environment.
     - Future references to *opening a terminal* mean opening the Ubuntu app in your case.
