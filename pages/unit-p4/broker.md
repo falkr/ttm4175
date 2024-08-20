@@ -1,8 +1,14 @@
 # MQTT Broker (For Teaching Staff)
 
 
+
+:warning:
+This is only for teaching staff and maintenance of the MQTT broker, as a student you don't need to access the
+server directly. 
+
+
 We run a Mosquitto MQTT Broker on the server `mqtt20.iik.ntnu.no` on standard port 1883.
-To log into the server, you need a username, provided by [Pål Sæther](mailto:pal.sather@ntnu.no).
+To log into the server, you need access that is provided by Pål Sæther.
 
 
 ## Mosquitto Configuration
