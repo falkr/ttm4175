@@ -15,7 +15,7 @@
     - Understand basic virtualization principles
 
 
-* Today's [lecture slides](2023-ttm4175-week-34-linux-cli.pdf)
+* Today's [lecture slides](2024-ttm4175-week-34-linux-cli.pdf)
 
 ## Preparation
 
