@@ -132,7 +132,7 @@ Spoiler alert! Before clicking the box below, try to solve the exercise on your 
 type: hint
 title: "Hint (IP addresses)"
 ---
-You can use "any" private IP address in the ranges:
+You can use any private IP address in the ranges:
 
 * 10.0.0.0/8
 * 172.16.0.0/12

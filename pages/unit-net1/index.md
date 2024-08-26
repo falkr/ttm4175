@@ -12,7 +12,7 @@
     - IP subnets and masks
 
 
-* Today's [lecture slides](2023-ttm4175-week-35-net1.pdf)
+* Today's [lecture slides](2024-ttm4175-week-35-net1.pdf)
 
 ## Preparation
 
