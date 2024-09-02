@@ -83,7 +83,7 @@ type: table
 |-
 | 38
 | Fredag 8:15-14:00
-| Lab 5: Om Teamarbeid
+| Lab 5: Om Teamarbeid, <br/>Lab report 1 due on Friday, Sep. 20th
 | Katrien
 |-
 | 39
@@ -97,39 +97,44 @@ type: table
 | Basel
 |-
 | 41
+| Fredag 8:15-10:00
+| TBA
+| TBA
+|-
+| 42
 | Fredag 8:15-14:00
 | [Lab 8: Cybersikkerhet 2: Information Gathering](unit-cs2/index.html)
 | Basel
 |-
-| 42
+| 43
 | Fredag 8:15-14:00
 | [Lab 9: Cybersikkerhet 3: Exploitation](unit-cs3/index.html)
 | Basel
 |-
-| 43
-| Fredag 8:15-14:00
-| [Lab 10: Introduction to IoT and the Microbit](unit-p1/index.html)
-| Arne
-|-
 | 44
 | Fredag 8:15-14:00
-| [Lab 11: Tilstandmaskiner](unit-p2/index.html)
+| [Lab 10: Introduction to IoT and the Microbit](unit-p1/index.html), <br/>Lab report 2 due on Friday, Nov. 1st
 | Arne
 |-
 | 45
 | Fredag 8:15-14:00
+| [Lab 11: Tilstandmaskiner](unit-p2/index.html)
+| Arne
+|-
+| 46
+| Fredag 8:15-14:00
 | [Lab 12: HTTP and JSON](unit-p3/index.html)
 | Stanislav
 |-
-| 46
+| 47
 | Fredag 8:15-14:00
 | [Lab 13: MQTT](unit-p4/index.html)
 | Tu
 |-
-| 47
+| 48
 | Fredag 8:15-14:00
-| 
-|
+| Lab report 3 due on Friday, Nov. 29th
+| -
 |}
 
 
