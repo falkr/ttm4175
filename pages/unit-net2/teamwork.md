@@ -161,7 +161,7 @@ The Docker image we used as the basis for our container uses a different version
 We can also define our own image to create containers which run our desired software. As an example, we will create the web server from the fist part of today's lab. To this end, we will use the `ubuntu` image as a starting point and extend it to fit our needs. The Docker way of doing this involves a *Dockerfile* which you can think of as a recipe for building images.
 
 
-1. Download an exemplary Dockerfile project from `https://folk.ntnu.no/stanisll/2024/ttm4175/ttm4175-webserver.zip` using the command line. For this, you can use `curl` (it will complain, but will point you to relevant flags) or can consult `apropos` or a web search to find other command line tools that can be used instead.
+1. Download an exemplary Dockerfile project from `https://folk.ntnu.no/stanisll/2024/ttm4175/ttm4175-webserver.zip` using the command line. For this, you can use `curl` (it will complain, but will point you to relevant flags) or can consult `apropos` or a web search to find other command line tools that can be used instead. Mention and explain the command you used in your report.
 
 2. Extract the zip archive using `unzip ttm4175-webserver.zip` and navigate into the newly created `ttm4175-webserver` folder.
 
