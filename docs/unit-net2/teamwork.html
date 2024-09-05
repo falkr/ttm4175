@@ -335,7 +335,7 @@ Before you continue, make sure that the two hosts can reach each other by using 
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="4">
-<li>From the host (<code>ubuntu-host-1</code> if you're following the same naming and addressing scheme), try <code>curl 10.0.0.2</code>. Observe the output and relate it to the content you saw in step 1. Investigate how you can download the file <code>example.html</code>.</li>
+<li>From the host (<code>ubuntu-host-1</code> if you're following the same naming and addressing scheme), try <code>curl 10.0.0.2</code> (which is shorter but equivalent to <code>curl http://10.0.0.2/</code>, more clearly showing the underlying HTTP request process that <code>curl</code> performs; similar to how a browser would automatically prepend <code>http://</code> to the URL when you type it into the address bar). Observe the output and relate it to the content you saw in step 1. Investigate how you can download the file <code>example.html</code>.</li>
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><ol start="5">
@@ -352,7 +352,7 @@ Before you continue, make sure that the two hosts can reach each other by using 
 <li>
 <p>With Wireshark open, run the previous <code>curl</code> commands again and discuss the HTTP traffic that appears.</p>
 <ul>
-<li>What kind of information is exchanged between client and server in the HTTP messages in each direction?</li>
+<li>What kind of information is exchanged between client and server in the HTTP messages in each direction? You can read about <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP request methods</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP status codes</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP request headers</a> for more information.</li>
 <li>Click on an HTTP packet and check the detailed view in the lower half of the Wireshark window. Taking a look at these details, what can you tell about the protocol stack that is used here? Refer back to chapter 1.5.1 in the book and map the protocols you find to the different layers.</li>
 <li>Compare how the traffic changes when you request <code>example.html</code> and <code>lipsum.txt</code>. What could be the reason?</li>
 </ul>
