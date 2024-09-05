@@ -65,7 +65,7 @@ You can use the combination `Ctrl-C` to stop the server application and regain c
 3. With the server application running, we can access the content it serves. Instead of using a browser, we can use command line tools like `curl` to connect to the server and download HTML pages or other files that are offered. 
 
 
-4. From the host (`ubuntu-host-1` if you're following the same naming and addressing scheme), try `curl 10.0.0.2`. Observe the output and relate it to the content you saw in step 1. Investigate how you can download the file `example.html`.
+4. From the host (`ubuntu-host-1` if you're following the same naming and addressing scheme), try `curl 10.0.0.2` (which is shorter but equivalent to `curl http://10.0.0.2/`, more clearly showing the underlying HTTP request process that `curl` performs; similar to how a browser would automatically prepend `http://` to the URL when you type it into the address bar). Observe the output and relate it to the content you saw in step 1. Investigate how you can download the file `example.html`.
 
 
 5. On `ubuntu-host-2`, stop the server application, rename `example.html` to `index.html`, and restart the server application. Re-run the `curl` commands from the client from the previous step and discuss the differences in the output. What happens if you try requesting a page that does not exist?
@@ -79,7 +79,7 @@ You can use the combination `Ctrl-C` to stop the server application and regain c
 
 7. With Wireshark open, run the previous `curl` commands again and discuss the HTTP traffic that appears.
 
-    - What kind of information is exchanged between client and server in the HTTP messages in each direction?
+    - What kind of information is exchanged between client and server in the HTTP messages in each direction? You can read about [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), and [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) for more information.
     - Click on an HTTP packet and check the detailed view in the lower half of the Wireshark window. Taking a look at these details, what can you tell about the protocol stack that is used here? Refer back to chapter 1.5.1 in the book and map the protocols you find to the different layers.
     - Compare how the traffic changes when you request `example.html` and `lipsum.txt`. What could be the reason?
 

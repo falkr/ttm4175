@@ -134,7 +134,7 @@ type: table
 | 48
 | Fredag 8:15-14:00
 | Lab report 3 due on Friday, Nov. 29th
-| -
+| 
 |}
 
 
