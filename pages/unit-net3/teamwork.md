@@ -84,7 +84,7 @@ In addition to retrieving routing table information, the `ip route` command can 
 3. What happens if you try to ping or otherwise reach the server after deleting the route? Add the route again and confirm that connectivity is restored.
 
 
-4. Using your knowledge of routing and the `ip route` command, adjust the routing table entries on routers R1-R3 so that packets from the client to the server take the path client-R1-R2-server. Document and discuss the purpose of all commands and where you use them, and finally confirm your configuration by once again checking the output of the tool for checking the end-to-end path on the client.
+4. Using your knowledge of routing and the `ip route` command, adjust the routing table entries on routers R1, R2, and R3 so that packets from the client to the server take the path client-R1-R2-server. Document and discuss the purpose of all commands and where you use them, and finally confirm your configuration by once again checking the output of the tool for checking the end-to-end path on the client.
 
 
 :tip:
@@ -92,7 +92,7 @@ For this step, you will only need rules of the shape `<destination_network/mask>
 
 
 :tip:
-If your configuration happens to break along the way, you can just restart the device in question or the entire network to revert it back to its initial configuration.
+If your configuration happens to break along the way, you can just restart the device in question or the entire network to revert it back to its initial configuration. If restarting the device(s) from within GNS3 does not resolve the issue, you can also exit and restart GNS3.
 
 
 # DNS Server and Client-Side Nameserver Settings
@@ -116,7 +116,7 @@ Open a console on the `dns` host and navigate to `/etc/bind`. This is the home o
 1. Inspect the file `named.conf.local`. The `zone` defines the portion of the namespace for which this machine is responsible. Inside the zone definition, `file` points to the file that contains the actual DNS records for the zone. Use [the BIND 9 documentation](https://bind9.readthedocs.io/en/latest/reference.html#namedconf-statement-zone) or any other source to find the meaning of the `type master` part of the configuration.
 
 
-2. Take a look at the `file` that is referenced in the above configuration. Go through the file and discuss the broad meaning of the various entries. Feel free to consult [online resources](https://www.thegeekdiary.com/understanding-dns-zone-files/).
+2. Take a look at the `file` that is referenced in the above configuration. Go through the file and discuss the broad meaning of the various entries. Feel free to consult [online resources](https://web.archive.org/web/20230330153734/https://www.thegeekdiary.com/understanding-dns-zone-files/).
 
 
 3. You can make DNS requests from the client to the DNS server by invoking the `nslookup` utility that we used in the past. Issue the commands `nslookup ttm4175.com`, `nslookup ttm4175.com 10.240.1.2`, and `curl ttm4175.com` at the client. Explain the different outputs you get.

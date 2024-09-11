@@ -13,7 +13,7 @@ The overall goal of this unit is to complement knowledge on IP and subnets with 
 - Deploy simple network services
 
 
-* Today's [lecture slides](2023-ttm4175-week-37-net3.pdf)
+* Today's [lecture slides](2024-ttm4175-week-37-net3.pdf)
 
 
 ## Preparation
