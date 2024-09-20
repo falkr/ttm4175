@@ -83,7 +83,7 @@ type: table
 |-
 | 38
 | Fredag 8:15-14:00
-| Lab 5: Om Teamarbeid, <br/>Lab report 1 due on Friday, Sep. 20th
+| Lab 5: [Om Teamarbeid](unit-teamwork/index.html), <br/>Lab report 1 due on Friday, Sep. 20th
 | Katrien
 |-
 | 39
