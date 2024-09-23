@@ -22,7 +22,33 @@
   <script src="../assets/anchor.js"></script>
   <script src="../assets/clipboard.min.js"></script>
   <script src="../assets/script-aside.js"></script>
-  <style></style>
+  <style>/* === goals === */
+div.goals ul,
+div.goals ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div.goals ul {
+  margin: 2em 0;
+}
+
+div.goals ul li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+div.goals ul li:before {
+  content: '\f3cb';
+  font-family: bootstrap-icons !important;
+  font-size: 20;
+  float: left;
+  margin-left: -1.5em;
+  color: #00509e;
+}
+
+</style>
 </head>
 
 <body>
@@ -121,10 +147,19 @@
   <main class="container container-max-width">
     <section class="mt-5 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Om Teamarbeid</h1>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h2>Læringsmålene for i dag</h2>
+</div><aside class="col-md-4 chunk ps-2"></aside></div>
+<div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="goals"><ul>
+<li>Reflektere over hvordan tidligere gruppearbeid muligens påvirker hvordan man oppfører seg i gruppa.</li>
+<li>Få et bedre innsikt i de viktigste elementene av godt teamarbeid, som positiv og medvirkende kommunikasjon, rolleforståelse, tillit, tilbakemelding (og hvordan man kan gi både positive og konstruktive tilbakemeldinger til andre på en god måte)</li>
+<li>Sette fokus på gruppedimensjoner som muligens kan påvirke samarbeidet i gruppa (feks. deltakelse og dominans, rollestruktur og rollefordeling, beslutning og eierskap)</li>
+<li>Reflektere over nytten av å lage en samarbeidsavtale (og lage en samarbeidsavtale for gruppa)</li>
+</ul>
 <ul>
 <li>Today's <a href="2024-ttm4175-week-38-teamwork.pdf">lecture slides</a></li>
 </ul>
-</div><aside class="col-md-4 chunk ps-2"></aside></div>
+</div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
   </main>
 
@@ -181,7 +216,8 @@
     anchors.options.visible = 'always';
     var clipboard = new ClipboardJS('.copy-button');
   </script>
-  <script></script>
+  <script>
+</script>
 </body>
 
 </html>
