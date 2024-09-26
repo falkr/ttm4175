@@ -88,7 +88,7 @@ type: table
 |-
 | 39
 | Fredag 8:15-14:00
-| Lab 6: Bærekraft (kun forelesning 8:15-10:00)
+| [Lab 6: Bærekraft](unit-sustainability/index.html) (kun forelesning 8:15-10:00)
 | Iwona
 |-
 | 40
