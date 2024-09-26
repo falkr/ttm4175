@@ -11,5 +11,6 @@
 - Recognize the dual nature of ICT as both part of the problem and the solution in achieving sustainability.
 - Identify and explain how ICT can contribute to environmental, economic, and social sustainability.
 
-* Lecture slides: will be shared soon
+
+* Today's [lecture slides](2024-ttm4175-week-39-sustainability.pdf)
 * Preparatory reading material (via Blackboard): [The research landscape of ICT for sustainability: harnessing digital technology for sustainable development](https://ntnu.blackboard.com/bbcswebdav/pid-2584754-dt-content-rid-74339995_1/xid-74339995_1)
