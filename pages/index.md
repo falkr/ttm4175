@@ -99,7 +99,7 @@ type: table
 | 41
 | Fredag 8:15-10:00
 | No lecture
-| -
+| NA
 |-
 | 42
 | Fredag 8:15-14:00
