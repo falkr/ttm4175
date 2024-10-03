@@ -98,8 +98,8 @@ type: table
 |-
 | 41
 | Fredag 8:15-10:00
-| TBA
-| TBA
+| No lecture
+| -
 |-
 | 42
 | Fredag 8:15-14:00
