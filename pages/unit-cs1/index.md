@@ -13,6 +13,8 @@
 - Understand the potential consequences of falling victim to these threats.
 
 
+* Today's [lecture slides](2024-ttm4175-week-40-cs1.pdf)
+
 ## Preparation
 
 Go through the following preparation material before we meet in class:
