@@ -73,12 +73,11 @@ Spiderfoot comes with web UI that can help you to use the tool.
 To lunch the web UI, run the following command:
 
 ```bash
-spiderfoot -l 127.0.0.1:6000
+spiderfoot -l 127.0.0.1:5001
 ```
 
-Then open a browser and go to `127.0.0.1:6000`, or `localhost:6000`. 
-This will open the user interface.
-Click on "New Scan", and you will be asked to give a "Scan name" and "Scan Target".
+Then open a browser and go to `127.0.0.1:5001`, or `localhost:5001`. 
+This will open the user interface. Click on "New Scan", and you will be asked to give a "Scan name" and "Scan Target".
 The scan name can be any name you give it for your scan, let us call it "NTNU scan".
 The scan target can be of the following types: 
 
