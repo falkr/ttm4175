@@ -224,7 +224,8 @@ Nessus will now start its web interface on port 8834. To access it, point your w
 :aside:If you ever see a similar warning while browsing the Internet normally, be extremely careful. It could mean that someone is tampering with your traffic!
 
 
-+ Nessus will start downloading and installing plugins used to check for vulnerabilities. 
++ Create a free Nessus Essentials account, which you use to login.
++ Nessus will start downloading and installing plugins used to check for vulnerabilities.
 
 ## Starting a scan
 
