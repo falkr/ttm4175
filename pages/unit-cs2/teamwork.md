@@ -212,7 +212,7 @@ We are going to use Nessus, a widely used vulnerability scanner, to scan the vic
 
 ```bash
 cd Downloads
-sudo dpkg -i Nessus-8.7.1-debian6_amd64.deb
+sudo dpkg -i Nessus-10.8.3-debian10_amd64.deb
 /etc/init.d/nessusd start
 ```
 
