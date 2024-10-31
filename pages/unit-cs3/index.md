@@ -1,5 +1,6 @@
 # Exploitation
 
+* Today's [lecture slides](2024-ttm4175-week-43-cs3.pdf)
 
 ## Preparation
 
