@@ -231,7 +231,14 @@ figcaption {
   </nav>
 
   <main class="container container-max-width">
-    <section class="mt-5 mb-5 py-3">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
+<li class="breadcrumb-item"><a href="index.html">IoT 4</a></li>
+<li class="breadcrumb-item active" aria-current="page">Teamwork</li>
+</ol>
+</nav>
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Chatting via MQTT</h1>
 <p><strong>Goal:</strong> We want to use a simple Chat UI to create a chat system so that all teams can chat together. Our chat should then have the following features:</p>
 <ul>
@@ -249,7 +256,7 @@ figcaption {
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Step 1: The Chat User Interface</h1>
 <p>The Chat UI is a Python class that shows the history of chat messages with each contact, and allows us to send messages.
 We interact with it in two ways:</p>
@@ -523,7 +530,7 @@ Let's test them.
 </ul>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Step 2: Chat Messages via MQTT</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>To send chat messages via MQTT between contacts, we need to agree on the content of the MQTT message and how we use our topics for publishing and subscribing.</p>
@@ -582,7 +589,7 @@ You may need to generate a random client ID.</p>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>You can publish messages on the <em>Publish</em> tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the <em>Subscribe</em> tab.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Step 3: Connecting Chat GUI and MQTT</h1>
 <p>So far, this happened:</p>
 <ul>
@@ -767,7 +774,7 @@ gui.show()
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Send chat messages to another team, and check that you can also receive messages.</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Step 4: Receipts and Typing Indications</h1>
 <p>By now, basic sending of messages should work, but we do not yet send delivery receipts, read receipts, or typing indications.
 Let's look at the MQTT message payloads and topics that we are going to use for those:</p>
@@ -849,7 +856,7 @@ Let's look at the MQTT message payloads and topics that we are going to use for 
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="task box mt-3 mb-3"><p>Try to figure out from the code how we send the delivery receipts. Is the user interface involved in this?</p>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Task</h1>
 <p>Create a sequence diagram between two chat clients and the MQTT broker in between.</p>
 <ul>

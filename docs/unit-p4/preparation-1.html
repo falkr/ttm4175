@@ -304,7 +304,14 @@ ol.quiz li.unselected-true::before {
   </nav>
 
   <main class="container container-max-width">
-    <section class="mt-5 mb-5 py-3">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">TTM4175</a></li>
+<li class="breadcrumb-item"><a href="index.html">IoT 4</a></li>
+<li class="breadcrumb-item active" aria-current="page">Preparation 1</li>
+</ol>
+</nav>
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Background: Hacking Ferries</h1>
 <p>If you want, have a look at this TEDx Talk by Andy Stanford Clark, who is one of the inventors of MQTT.
 The talk is not so much about the MQTT protocol itself, but you'll get some context and background that may help you learn more in the following.</p>
@@ -313,7 +320,7 @@ The talk is not so much about the MQTT protocol itself, but you'll get some cont
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s9nrm8q5eGg?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>MQTT</h1>
 <p>MQTT is often used in situations where events should be sent from many
 sensors and broadcast to several applications. IBM and others for
@@ -333,7 +340,7 @@ also relied on <a href="https://engineering.fb.com/2011/08/12/android/building-f
 </ol>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Broker Architecture</h1>
 <p>MQTT is a protocol that is based on the <strong>client-broker</strong> topology. As a
 repetition, remember first the client-server architecture, as we have it
@@ -420,7 +427,7 @@ MQTT brokers available. The one we are going to use is called
 <strong>Mosquitto</strong>.</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Message Pattern: Publish-Subscribe</h1>
 <p>With the new architecture of a broker also comes a new message pattern that is suitable for this architecture. It is called <strong>publish-subscribe</strong>.</p>
 <ul>
@@ -465,7 +472,7 @@ after it also subscribes.</p>
     <img src="figures/mqtt-publish-subscribe.svg" class="figure-img img-fluid rounded" alt="">
 </figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Topics</h1>
 <p>Topics are used to define which information a subscriber is interested
 in, and match it with the information publishers provide. Usually,
@@ -525,7 +532,7 @@ whenever an MQTT message arrives at house/garage/sensors/pi1:
         to house/garage/lights/l1 with payload &quot;off&quot;</code></pre>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Topic Subscription Wildcards</h1>
 <p>When subscribing, topics can include wildcards, which makes it possible for a client to
 subscribe to several topics with a single pattern:</p>
@@ -672,7 +679,7 @@ of the following subscription topics with wildcards will receive this message?</
 </div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Quality of Service</h1>
 <p>Messages can be sent with three different quality-of-service (QoS)
 flags, which determine how much effort the broker and the clients spend
@@ -713,7 +720,7 @@ This also means that it is more expensive for the network to transport MQTT mess
     <img src="figures/mqtt-qos-2.svg" class="figure-img img-fluid rounded" alt="">
 </figure></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>MQTT Clients in Python</h1>
 <p>There are libraries to use MQTT in a variety of programming languages.
 For Python, there is a library for an MQTT client called <em>Paho</em>. As
@@ -817,7 +824,7 @@ These functions are called by the client whenever one of the events happens, tha
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mqttc.publish(<span class="st">&#39;a/b/c/d&#39;</span>, payload<span class="op">=</span><span class="st">&#39;Content of the message&#39;</span>, qos<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 </div></div><aside class="col-md-4 chunk ps-2"></aside></div>
 </section>
-<section class="mt-5 mb-5 py-3">
+<section class="mt-2 mb-5 py-3">
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><h1>Debugging With MQTTX</h1>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>MQTTX is a tool useful during development. Using MQTTX is
