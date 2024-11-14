@@ -35,5 +35,5 @@ index.md - TTM4175
     unit-p3/preparation-2.md - Preparation 2
     unit-p3/teamwork-1.md - Teamwork
   unit-p4/index.md - IoT 4
-    unit-p3/preparation-1.md - Preparation 1
-    unit-p3/teamwork-1.md - Teamwork
+    unit-p4/preparation-1.md - Preparation 1
+    unit-p4/teamwork-1.md - Teamwork

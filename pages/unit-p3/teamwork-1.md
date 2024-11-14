@@ -517,15 +517,6 @@ To repeat and clarify:
 
 :task: Uncomment the storage for the temperature in the code.
 
-### Optional Task: Adding the Yr Forecast
-
-
-:task: Extend your server logic so that it does not only return the temperature of the sensor, but also the temperature forecast from yr, so that it is displayed together. 
-
-Use the function for getting the forecast you have developed above. This means you web server which acts as a server because it implements the methods GET and POST, now also acts as a client towards Yr.no since it requests data from it. 
-
-
-
 # Optional Task: Nice HTML Output
 
 Now that we can send a simple string as a response, let's make the answer more advanced and send a proper website in HTML. HTML is in principle also only a string, but the browser reads the formatting tags and creates a nicely rendered page out of it. The following code contains a simple Python method that creates some HTML:

@@ -15,7 +15,7 @@ we will use it to store data from the Raspberry Pi.
 - Know more about HTTP, JSON, client-server, request-response.
 
 
-
+* Today's [lecture slides](2024-ttm4175-week-46-p3.pdf)
 
 
 ## Preparation
