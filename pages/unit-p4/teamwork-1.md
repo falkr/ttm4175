@@ -10,7 +10,7 @@
 Today's sub-goals:
 
 * In Step 1, we will have a look at the chat user interface to get familiar with it, but do not send any messages between each other. 
-* In Step 2, we use MQTT and MQTT.Fx to send messages between each other, in some raw way, but without a proper chat user interface.
+* In Step 2, we use MQTT and the debugging tool MQTTX to send messages between each other, in some raw way, but without a proper chat user interface.
 * In Step 3, we connect Chat User Interface with MQTT to send and receive messages.
 * In Step 4, we add delivery receipts, read receipts and typing indications.
 
@@ -258,51 +258,45 @@ We only want to use MQTTX, and send and receive "raw" chat messages.
 
 Install MQTTX, as [explained in the preparation](preparation-1.html#debugging-with-mqttx).
 
-Add our broker that runs on campus. It has the address `mqtt.item.ntnu.no` and uses the default port `1883`.
-You may need to generate a random client ID.
+Add our broker that runs on campus, by adding a new connection:
 
 ---
 type: figure
-source: figures/mqtt-fx-broker-1.png
-caption: "Open the broker configurations and add our MQTT broker."
+source: figures/mqttx-broker-1.png
+caption: "Add a new connection in MQTTX"
 ---
 
-Click the gear icon to add a new broker configuration.
-
----
-type: figure
-source: figures/mqtt-fx-broker-2.png
-caption: "Configuration for the broker."
----
-
-
-Connect to the broker. 
-
+Our broker has the address `mqtt20.iik.ntnu.no` and uses the default port `1883`.
+Enter the address as shown below. 
+Also give this connection a name to display. (We just use the same as the broker address.)
+The client ID must be unique for each client, and MQTTX generates a random one for you automatically.
+The other settings should remain their default.
 
 ---
 type: figure
-source: figures/mqtt-fx-broker-3.png
-caption: "The green light indicates that you are connected to the broker."
+source: figures/mqttx-broker-2.png
+caption: "Configuring the connection to match our broker settings"
 ---
 
-On the _Subscribe_ tab, enter the topic you need to subscribe to (from the task above).
-
----
-type: figure
-source: figures/mqtt-fx-broker-4.png
-caption: "For each subscription you get an entry in the list to the left."
----
+Then, click **Connect** and you should have a successful connection.
 
 ---
 type: figure
-source: figures/mqtt-fx-broker-5.png
-caption: "On the publish tab, you can send chat messages."
+source: figures/mqttx-broker-3.png
+caption: "A successful connection"
 ---
+
+When selecting the connection on the left, you can now add subscriptions to topics, and publish (in the lower right corner).
+
+---
+type: figure
+source: figures/mqttx-broker-4.png
+caption: "Subscribing and publishing to topics within a connection"
+---
+
 
 :task: Work together with another team. Make sure both teams have the correct topics, and send messages between each other. 
 
-
-You can publish messages on the _Publish_ tab. Enter the payload in the text field below. It can already be the json-formatted content for a complete chat message. Note that you see received messages on the _Subscribe_ tab.
 
 
 # Step 3: Connecting Chat GUI and MQTT
@@ -310,11 +304,11 @@ You can publish messages on the _Publish_ tab. Enter the payload in the text fie
 So far, this happened:
 
 * In Step 1, we had a look at the chat user interface to get familiar with it, but we did not send any chat messages.
-* In Step 2, we used MQTT and MQTT.Fx to send messages between each other, in some raw way, without a proper chat user interface.
+* In Step 2, we used MQTT and MQTTX to send messages between each other, in some raw way, without a proper chat user interface.
 
 Now we want to connect the chat user interface with MQTT, so that we can send and receive messages. We will not yet send receipts or typing indications.
 
-:tip: From now on, you don't need MQTT.Fx anymore, but it can be useful in case you need to debug.
+:tip: From now on, you don't need MQTTX anymore, but it can be useful in case you need to debug.
 When you stay subscribed to some topics, you can see if you actually receive messages in case not everything immediately works as you think.
 
 
