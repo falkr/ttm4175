@@ -358,7 +358,7 @@ def on_message(mqttc, obj, msg):
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
-mqttc.connect("mqtt.item.ntnu.no", 1883)
+mqttc.connect("mqtt20.iik.ntnu.no", 1883)
 mqttc.loop_start()
 mqttc.subscribe("ttm4175/chat/{}/message".format(my_id))
 
