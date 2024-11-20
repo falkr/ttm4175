@@ -618,7 +618,7 @@ You can find it in file <code>chat_with_mqtt_step_1.py</code>.</p>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><p>Here is the code:</p>
 </div><aside class="col-md-4 chunk ps-2"></aside></div>
 <div class="row g-0 my-3"><div class="col-md-8 px-4 chunk"><div class="source-code-frame mt-3 mb-3">
-<pre class="d-none" id="id9ce886">from chat_gui import ChatGui
+<pre class="d-none" id="id8b0108">from chat_gui import ChatGui
 import paho.mqtt.client as mqtt
 import json
 
@@ -649,7 +649,7 @@ def on_message(mqttc, obj, msg):
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
-mqttc.connect("mqtt.item.ntnu.no", 1883)
+mqttc.connect("mqtt20.iik.ntnu.no", 1883)
 mqttc.loop_start()
 mqttc.subscribe("ttm4175/chat/{}/message".format(my_id))
 
@@ -680,7 +680,7 @@ def on_read(sender, receiver, uuid):
 gui = ChatGui(my_id, on_send=on_send, on_type=on_type, on_read=on_read)
 gui.show()
 </pre>
-<button type="button" class="copy-button" data-clipboard-target="#id9ce886">
+<button type="button" class="copy-button" data-clipboard-target="#id8b0108">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
   		<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
   		<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
@@ -717,7 +717,7 @@ gui.show()
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>mqttc <span class="op">=</span> mqtt.Client()</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>mqttc.on_message <span class="op">=</span> on_message</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>mqttc.on_connect <span class="op">=</span> on_connect</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>mqttc.<span class="ex">connect</span>(<span class="st">&quot;mqtt.item.ntnu.no&quot;</span>, <span class="dv">1883</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>mqttc.<span class="ex">connect</span>(<span class="st">&quot;mqtt20.iik.ntnu.no&quot;</span>, <span class="dv">1883</span>)</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>mqttc.loop_start()</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>mqttc.subscribe(<span class="st">&quot;ttm4175/chat/</span><span class="sc">{}</span><span class="st">/message&quot;</span>.<span class="bu">format</span>(my_id))</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
