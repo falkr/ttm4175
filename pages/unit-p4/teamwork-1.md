@@ -321,7 +321,7 @@ You can find it in file `chat_with_mqtt_step_1.py`.
 This code uses the paho-mqtt package, which you need to install via
 
 ```bash 
-python3 -m pip install paho-mqtt
+python3 -m pip install paho-mqtt<2.0.0
 ```
 
 Here is the code:
