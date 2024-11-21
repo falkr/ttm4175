@@ -151,7 +151,7 @@ This is a known issue, [discussed here](https://github.com/hoffstadt/DearPyGui/i
 
 You can download a zip file with all source code for today's lab here: <https://github.com/falkr/ttm4175-chat/archive/main.zip>
 
-You can download a zip file with all source code for today's lab here: (sources/ttm4175-mqtt-source.zip)
+You can download a zip file with all source code for today's lab here: <https://ttm4175.iik.ntnu.no/unit-p4/ttm4175-mqtt-source.zip>
 
 Unzip it and open it in Visual Studio Code.
 
