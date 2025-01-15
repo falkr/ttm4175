@@ -150,6 +150,10 @@ type: figure
 source: img/vnc-relog.png
 ---
 
+If TigerVNC does not work for you, you can try the following alternatives.
+- You can use the *Remmina* VNC client which is installed on all the PCs in the Sahara lab. After launching, you have to select VNC instead of RDP and provide the IP address of your group VM.
+- If you'd like to use your own machine for connecting, depending on your operating system, you can try some other VNC clients. For instance, [Remote Ripple](https://remoteripple.com/download/) is available for most operating systems. Other popular choices are [TightVNC](https://www.tightvnc.com/download.php) and [RealVNC](https://www.realvnc.com/en/connect/download/viewer).
+
 
 :tip:
 If you still experience performance issues using VNC, you can also try connecting to your lab VM using the x2go software. A guide for doing so can be found [here](https://www.ntnu.no/wiki/download/attachments/272859791/ttm4200-openstack-guide.pdf?version=1&modificationDate=1669571371048&api=v2). The only difference is that in your case the user name will be `netlab` instead of `ttm4200`.
